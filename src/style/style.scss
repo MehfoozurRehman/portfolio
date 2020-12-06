@@ -25,10 +25,8 @@ a {
 }
 body {
   margin: 0;
-  margin-top: 70px;
   padding: 0;
   font-family: sans-serif;
-  height: 100vh;
   background-color: var(--bg);
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -205,24 +203,28 @@ html.transition *:after {
   color: var(--bg-color);
 }
 .main {
+  width: 100vw;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   position: relative;
 }
 .section {
   width: 100%;
   max-width: 1360px;
-  padding: 0em 2em;
-  min-height: 750px;
+  padding: 0px 2em;
+  padding-top: 80px;
+  height: 100vh;
+  max-height: 800px;
+  display: flex;
   .section-header {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    height: 70px;
+    height: 12%;
   }
   .header-name {
     font-size: 25px;
@@ -248,30 +250,30 @@ html.transition *:after {
     border-radius: 10px;
     background-color: $primary-color;
   }
+  .section-content {
+    height: 82%;
+  }
 }
 #jumbotron {
   display: flex;
   justify-content: space-between;
   align-items: center;
   .about_me {
-    font-size: 22px;
+    font-size: 30px;
     text-transform: uppercase;
     color: $primary-color;
   }
-  .about_me span {
-    color: $secondary-color;
-    font-size: 28px;
-  }
   .slogan {
-    font-size: 36px;
+    font-size: 40px;
     font-weight: 600;
     line-height: 45px;
-    color: $primary-color;
+    color: $secondary-color;
     letter-spacing: 3px;
+    padding: 0.3em 0em;
   }
   .info {
     letter-spacing: 2px;
-    font-size: 18px;
+    font-size: 20px;
     display: block;
     color: var(--color);
   }
@@ -282,48 +284,45 @@ html.transition *:after {
     width: 330px;
   }
   .cta a {
-    padding: 0.5em;
-    border-radius: 50px;
+    padding: 0.7em;
+    border-radius: 20px;
     width: 45%;
     font-size: 18px;
-    font-weight: 600;
     text-align: center;
   }
   .primary-cta {
     background-color: $primary-color;
-    color: var(--white);
+    color: white;
   }
   .primary-cta:hover {
     background-color: darken($primary-color, 20%);
   }
   .secondary-cta {
     background-color: $secondary-color;
-    color: var(--white);
+    color: white;
   }
   .secondary-cta:hover {
     background-color: darken($secondary-color, 20%);
   }
-  .img-wrapper {
+  .jumbotron-pic {
     border-radius: 1000px;
-    width: 342px;
-    height: 439px;
     border: 20px solid var(--bg-color);
-  }
-  img {
-    border-radius: 1000px;
-    width: 300px;
+    box-shadow: 0px 3px 6px rgb(0, 0, 0, 0.1);
+    width: 380px;
   }
 }
 #about {
   .about-content {
     width: 100%;
-    height: 550px;
     display: flex;
     justify-content: space-between;
   }
   .about-pic {
     width: 450px;
-    border-radius: 50px;
+    height: 550px;
+    border-radius: 30px;
+    border: 20px solid var(--bg-color);
+    box-shadow: 0px 3px 6px rgb(0, 0, 0, 0.1);
   }
   .about {
     width: 58%;
@@ -355,7 +354,6 @@ html.transition *:after {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 700px;
 }
 #resume {
   display: flex;
@@ -363,7 +361,6 @@ html.transition *:after {
   justify-content: space-between;
   .resume-content {
     width: 100%;
-    height: 650px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -475,12 +472,13 @@ html.transition *:after {
   }
 }
 #services {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   .services-content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 550px;
-    margin-top: 50px;
   }
   .services-row {
     display: flex;
@@ -488,8 +486,8 @@ html.transition *:after {
     align-items: center;
   }
   .services-card {
-    width: 390px;
-    height: 250px;
+    height: 270px;
+    width: 30%;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -553,25 +551,63 @@ html.transition *:after {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  height: fit-content;
+  max-height: fit-content;
+  .section-header {
+    height: 80px;
+  }
   .portfolio-content {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .portfolio-row {
     width: 1300px;
-    overflow: hidden;
-    overflow-x: scroll;
+    padding: 2em 0em;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  .portfolio-content::-webkit-scrollbar {
-    background-color: var(--bg-color);
+  .portfolio-card {
+    height: 350px;
+    display: flex;
+    border-radius: 5px;
+    position: relative;
     box-shadow: 0px 3px 6px rgb(0, 0, 0, 0.2);
+    //border: 5px solid var(--bg-color);
   }
-  .portfolio-content::-webkit-scrollbar-thumb {
-    background-color: $primary-color;
+  .portfolio-card-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
   }
-  .portfolio-pic {
-    height: 550px;
-    margin-right: 2em;
-    margin-bottom: 2em;
+  .portfolio-card-info {
+    position: absolute;
+    top: 0;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.9);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+    text-align: center;
+  }
+  .portfolio-card-info-heading {
+    font-size: 26px;
+    font-weight: 600;
+    color: $primary-color;
+    margin-bottom: 1em;
+  }
+  .portfolio-card-info-about {
+    font-size: 16px;
+    color: #95a5c6;
+  }
+  .portfolio-card:hover .portfolio-card-info {
+    display: flex;
   }
 }
 #pricing {
@@ -580,7 +616,6 @@ html.transition *:after {
   justify-content: space-between;
   .pricing-content {
     width: 100%;
-    height: 700px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -664,18 +699,17 @@ html.transition *:after {
   justify-content: space-between;
   align-items: center;
   position: relative;
-  height: 700px;
   .map {
     width: 100vw;
     max-width: 1660px;
-    height: 650px;
+    height: 100%;
   }
   .form {
     position: absolute;
-    bottom: 53px;
+    bottom: 30px;
     right: 120px;
     width: 400px;
-    height: 550px;
+    height: 535px;
     background: var(--bg-color);
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);
     display: flex;
@@ -726,9 +760,9 @@ html.transition *:after {
 .back-to-top {
   position: absolute;
   bottom: 30px;
-  right: 70px;
-  width: 60px;
-  height: 60px;
+  right: 10px;
+  width: 70px;
+  height: 75px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -736,19 +770,46 @@ html.transition *:after {
   border-radius: 50px;
 }
 .back-to-top-svg {
-  width: 30px;
+  width: 40px;
+  box-shadow: 0px 3px 6px rgb(0, 0, 0, 0.1);
+  border-radius: 50px;
   color: var(--white);
 }
 .back-to-top:hover {
-  box-shadow: 0px 3px 6px rgb(0, 0, 0, 0.7);
+  box-shadow: 0px 3px 6px rgb(0, 0, 0, 0.2);
 }
 .footer {
   width: 100%;
-  height: 100px;
+  height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: var(--color);
+  background-color: var(--bg-color);
+  .footer-wrapper {
+    width: 1360px;
+    display: flex;
+  }
+  .footer-content {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+  }
+  .footer-links {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+  }
+  .social-links {
+    width: 30px;
+    margin: 0em 2em;
+    transform: scale(1);
+  }
+  .social-links:hover {
+    transition: 200ms;
+    transform: scale(1.2);
+  }
 }
 @media (max-width: 1060px) {
   .desktop-nav {
@@ -784,7 +845,6 @@ html.transition *:after {
     margin-top: 40px;
     width: fit-content;
     flex-direction: column;
-    height: 1750px !important;
   }
   .pricing-card {
     margin: 1em;
