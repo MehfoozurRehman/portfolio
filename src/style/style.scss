@@ -10,6 +10,9 @@ html[data-theme="dark"] {
   --bg-color: #ffffff;
   --color: #1f2935;
   --white: #161d26;
+  .image {
+    filter: invert(0.5);
+  }
 }
 
 $primary-color: #0abead;
@@ -710,7 +713,7 @@ html.transition *:after {
     bottom: 30px;
     right: 120px;
     width: 400px;
-    height: 535px;
+    height: 65%;
     background: var(--bg-color);
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);
     display: flex;
@@ -774,7 +777,7 @@ html.transition *:after {
   width: 40px;
   box-shadow: 0px 3px 6px rgb(0, 0, 0, 0.1);
   border-radius: 50px;
-  color: var(--white);
+  color: white;
 }
 .back-to-top:hover {
   box-shadow: 0px 3px 6px rgb(0, 0, 0, 0.2);
@@ -810,6 +813,9 @@ html.transition *:after {
   .social-links:hover {
     transition: 200ms;
     transform: scale(1.2);
+  }
+  .image {
+    filter: invert(0.1);
   }
 }
 @media (max-width: 1060px) {
