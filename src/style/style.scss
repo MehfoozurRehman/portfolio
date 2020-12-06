@@ -497,16 +497,16 @@ html.transition *:after {
   }
   .services-card .icon {
     width: 55px;
-    fill: var(--white);
+    fill: white;
   }
   .services-card .card-heading {
     font-size: 22px;
     font-weight: 600;
-    color: var(--white);
+    color: white;
   }
   .services-card .card-info {
     font-size: 16px;
-    color: var(--white);
+    color: white;
     text-align: center;
   }
   .card-1 {
@@ -607,6 +607,7 @@ html.transition *:after {
     color: #95a5c6;
   }
   .portfolio-card:hover .portfolio-card-info {
+    transition: 200ms;
     display: flex;
   }
 }
@@ -682,7 +683,7 @@ html.transition *:after {
   }
   .card-cta {
     padding: 0.9em 1em;
-    border-radius: 50px;
+    border-radius: 30px;
     border: none;
     color: var(--white);
     font-size: 18px;
