@@ -263,7 +263,8 @@ html.transition *:after {
   align-items: center;
   .about_me {
     font-size: 30px;
-    text-transform: uppercase;
+    text-transform: capitalize;
+    letter-spacing: 5px;
     color: $primary-color;
   }
   .slogan {
