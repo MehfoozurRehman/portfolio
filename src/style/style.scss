@@ -574,7 +574,8 @@ html.transition *:after {
     align-items: center;
   }
   .portfolio-card {
-    height: 350px;
+    height: 300px;
+    width: 400px;
     display: flex;
     border-radius: 5px;
     position: relative;
@@ -609,6 +610,15 @@ html.transition *:after {
   .portfolio-card-info-about {
     font-size: 16px;
     color: #95a5c6;
+  }
+  .portfolio-card-info-link {
+    width: 70px;
+    padding: 1em;
+    opacity: 0.3;
+  }
+  .portfolio-card-info-link:hover {
+    transition: 100ms;
+    opacity: 0.9;
   }
   .portfolio-card:hover .portfolio-card-info {
     transition: 200ms;
