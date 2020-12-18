@@ -567,19 +567,17 @@ html.transition *:after {
     justify-content: space-between;
   }
   .portfolio-row {
-    width: 1300px;
     padding: 2em 0em;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   .portfolio-card {
-    height: 300px;
-    width: 400px;
-    display: flex;
-    border-radius: 5px;
     position: relative;
     box-shadow: 0px 3px 6px rgb(0, 0, 0, 0.2);
+    height: 270px;
+    width: 30%;
+    border-radius: 5px;
     //border: 5px solid var(--bg-color);
   }
   .portfolio-card-img {
