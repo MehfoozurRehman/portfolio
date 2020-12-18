@@ -1,0 +1,77 @@
+@import "./style.scss";
+
+#services {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .services-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .services-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .services-card {
+    height: 270px;
+    width: 30%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2em;
+  }
+  .services-card .icon {
+    width: 55px;
+    fill: white;
+  }
+  .services-card .card-heading {
+    font-size: 22px;
+    font-weight: 600;
+    color: white;
+  }
+  .services-card .card-info {
+    font-size: 16px;
+    color: white;
+    text-align: center;
+  }
+  .card-1 {
+    background-color: #8540ff;
+  }
+  .card-2 {
+    background-color: #ffc50c;
+  }
+  .card-3 {
+    background-color: #ec407a;
+  }
+  .card-4 {
+    background-color: #ff6331;
+  }
+  .card-5 {
+    background-color: #13b6ff;
+  }
+  .card-6 {
+    background-color: #49af46;
+  }
+  .card-1:hover {
+    background-color: darken(#8540ff, 10%);
+  }
+  .card-2:hover {
+    background-color: darken(#ffc50c, 10%);
+  }
+  .card-3:hover {
+    background-color: darken(#ec407a, 10%);
+  }
+  .card-4:hover {
+    background-color: darken(#ff6331, 10%);
+  }
+  .card-5:hover {
+    background-color: darken(#13b6ff, 10%);
+  }
+  .card-6:hover {
+    background-color: darken(#49af46, 10%);
+  }
+}

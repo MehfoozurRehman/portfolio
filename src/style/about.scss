@@ -1,0 +1,46 @@
+@import "./style.scss";
+
+#about {
+  .about-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .about-pic {
+    width: 450px;
+    height: 550px;
+    border-radius: 30px;
+    border: 20px solid var(--bg-color);
+    box-shadow: 0px 3px 6px rgb(0, 0, 0, 0.1);
+  }
+  .about {
+    width: 58%;
+  }
+  .about-heading {
+    font-size: 30px;
+    font-weight: 600;
+    color: $primary-color;
+  }
+  .about-info {
+    font-size: 18px;
+    color: var(--color);
+    line-height: 25px;
+    text-align: justify;
+  }
+  .skill-set-heading {
+    font-size: 22px;
+    color: $primary-color;
+  }
+  .skill {
+    font-size: 18px;
+    line-height: 35px;
+    color: var(--color);
+    list-style: disc;
+  }
+}
+#about .wapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
