@@ -70,7 +70,7 @@ input[type="checkbox"] {
   visibility: hidden;
 }
 
-label {
+.label {
   cursor: pointer;
   text-indent: -9999px;
   width: 52px;
@@ -81,7 +81,7 @@ label {
   position: relative;
 }
 
-label:after {
+.label:after {
   content: "";
   position: absolute;
   top: 3px;
@@ -93,16 +93,16 @@ label:after {
   transition: 0.3s;
 }
 
-input:checked + label {
+input:checked + .label {
   background: $primary-color;
 }
 
-input:checked + label:after {
+input:checked + .label:after {
   left: calc(100% - 5px);
   transform: translateX(-100%);
 }
 
-label:active:after {
+.label:active:after {
   width: 45px;
 }
 
@@ -733,7 +733,7 @@ html.transition *:after {
     padding: 2em 2.5em;
     border-radius: 5px;
   }
-  .form div {
+  .form .form_label {
     font-size: 15px;
     color: $primary-color;
   }
