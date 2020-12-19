@@ -17,10 +17,12 @@ html[data-theme="dark"] {
 
 $primary-color: #0abead;
 $secondary-color: #f57f17;
-$xl-width: 1600px;
-$lg-width: 1300px;
-$md-width: 900px;
-$sm-width: 600px;
+$xl-width: 1260px;
+$lg-width: 1060px;
+$md-width: 960px;
+$sm-width: 560px;
+$heading-font-size: 26px;
+$normal-font-size: 16px;
 
 *,
 *::before,
@@ -33,105 +35,19 @@ a {
 body {
   margin: 0;
   padding: 0;
+  width: 100vw;
+  height: 100%;
   font-family: sans-serif;
   background-color: var(--bg);
   overflow-x: hidden;
+  overflow-y: auto;
   scroll-behavior: smooth;
-  scroll-snap-type: mandatory;
 }
 body::-webkit-scrollbar {
   background-color: var(--bg-color);
-  border-radius: 12px;
+  border-radius: 5px;
 }
 body::-webkit-scrollbar-thumb {
   background-color: $primary-color;
-  border-radius: 12px;
+  border-radius: 5px;
 }
-.main {
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-/*
-@media (max-width: 1060px) {
-  .desktop-nav {
-    width: 60%;
-  }
-  #jumbotron {
-    margin-top: 200px;
-    flex-direction: column;
-  }
-  .slogan {
-    text-align: center;
-  }
-  .info {
-    text-align: center;
-  }
-  .cta {
-    width: 580px;
-  }
-  .services-row {
-    flex-direction: column;
-  }
-  .services-card {
-    margin: 1em;
-  }
-  #services {
-    height: 1830px;
-  }
-  #portfolio {
-    height: 1830px;
-  }
-  #pricing {
-    height: 1900px;
-    justify-content: center;
-  }
-  .pricing-content {
-    margin-top: 40px;
-    width: fit-content;
-    flex-direction: column;
-  }
-  .pricing-card {
-    margin: 1em;
-  }
-}
-@media (max-width: 930px) {
-  .desktop-nav {
-    width: 65%;
-  }
-}
-@media (max-width: 800px) {
-  .nav {
-    padding: 0em 1em;
-  }
-  .desktop-nav {
-    display: none;
-  }
-  .menu-btn {
-    display: flex;
-  }
-}
-@media (max-width: 700px) {
-  .form {
-    position: absolute;
-    bottom: 70px;
-    right: 0px;
-    width: 400px;
-    height: 500px;
-    background: var(--bg-color);
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 2em 2.5em;
-  }
-}
-@media (max-width: 650px) {
-  .form {
-    right: 80px;
-  }
-}
-*/

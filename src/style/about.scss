@@ -14,7 +14,7 @@
     box-shadow: 0px 3px 6px rgb(0, 0, 0, 0.1);
   }
   .about {
-    width: 58%;
+    width: 50%;
   }
   .about-heading {
     font-size: 30px;
@@ -37,10 +37,32 @@
     color: var(--color);
     list-style: disc;
   }
+  #about .wapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
-#about .wapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+@media (max-width: $xl-width) {
+  .about-content {
+    flex-direction: row;
+  }
+}
+@media (max-width: $lg-width) {
+  .about-content {
+    flex-direction: row;
+  }
+}
+@media (max-width: $md-width) {
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-pic {
+    margin-bottom: 2em;
+  }
+  #about .about {
+    width: 80%;
+  }
 }

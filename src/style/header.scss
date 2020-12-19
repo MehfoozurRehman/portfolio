@@ -11,11 +11,11 @@
   background-color: var(--bg-color);
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  padding-right: 15px;
 }
 .nav {
   width: 100%;
-  padding: 0em 2em;
-  max-width: $lg-width;
+  max-width: $xl-width;
   height: 70px;
   display: flex;
   justify-content: space-between;
@@ -71,7 +71,8 @@ html.transition *:after {
   transition-delay: 0 !important;
 }
 .brand-name {
-  font-size: 25px;
+  font-size: $heading-font-size;
+  font-weight: bold;
   color: $primary-color;
   letter-spacing: 2px;
   text-decoration: none;
@@ -129,13 +130,15 @@ html.transition *:after {
 .desktop-nav {
   display: flex;
   justify-content: space-between;
-  width: 50%;
+  align-items: center;
+  width: fit-content;
 }
 .nav-link {
   font-size: 15px;
   text-decoration: none;
   background-color: var(--bg-color);
   color: var(--color);
+  padding: 0px 1em;
 }
 .nav-link:hover {
   color: $primary-color;
@@ -143,7 +146,7 @@ html.transition *:after {
 .mobile-nav {
   display: none;
   flex-direction: column;
-  width: 100%;
+  width: 100vw;
   padding: 1em auto;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
 }
@@ -162,19 +165,22 @@ html.transition *:after {
   background-color: $primary-color;
   color: var(--bg-color);
 }
-@media (max-width: 1060px) {
-  .desktop-nav {
-    width: 60%;
-  }
-}
-@media (max-width: 930px) {
-  .desktop-nav {
-    width: 65%;
-  }
-}
-@media (max-width: 800px) {
+@media (max-width: $xl-width) {
   .nav {
-    padding: 0em 1em;
+    max-width: $lg-width;
+  }
+}
+@media (max-width: $lg-width) {
+  .nav {
+    max-width: $md-width;
+  }
+  .brand-name {
+    padding: 0px 0.5em;
+  }
+}
+@media (max-width: $md-width) {
+  .nav {
+    max-width: $md-width;
   }
   .desktop-nav {
     display: none;

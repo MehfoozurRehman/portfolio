@@ -6,82 +6,106 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
-  .map {
-    width: 100vw;
-    max-width: 1660px;
-    height: 100%;
+}
+.contact-content {
+  display: flex;
+}
+.map {
+  width: 65%;
+  height: 65vh;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+.form {
+  width: 35%;
+  height: 65vh;
+  background: var(--bg-color);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5em 2em;
+  border-radius: 5px;
+}
+.form .form_label {
+  font-size: 14px;
+  color: $primary-color;
+}
+.form-heading {
+  font-size: 22px;
+  margin: 0;
+  color: $primary-color;
+  font-weight: 600;
+}
+.form-input {
+  padding: 0.6em 1em;
+  background-color: var(--bg);
+  border: 1px solid $primary-color;
+  border-radius: 3px;
+  color: var(--white);
+}
+.form-input:focus {
+  outline: 2px solid $primary-color;
+  background-color: var(--bg-color);
+}
+.form-textarea {
+  height: 100px;
+}
+.form-cta {
+  padding: 0.4em;
+  font-size: 18px;
+  background-color: $primary-color;
+  border: none;
+  border-radius: 3px;
+  color: var(--bg);
+  cursor: pointer;
+  transition: 100ms;
+}
+.form-cta:hover,
+:focus {
+  background-color: var(--color);
+}
+.back-to-top {
+  position: absolute;
+  bottom: 18px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $primary-color;
+  border-radius: 50px;
+}
+.back-to-top-svg {
+  width: 25px;
+  box-shadow: 0px 3px 6px rgb(0, 0, 0, 0.1);
+  border-radius: 50px;
+  color: white;
+}
+.back-to-top:hover {
+  box-shadow: 0px 3px 6px rgb(0, 0, 0, 0.2);
+}
+@media (max-width: $xl-width) {
+  .contact-content {
+    flex-direction: row;
+  }
+}
+@media (max-width: $lg-width) {
+  .contact-content {
+    flex-direction: row;
+  }
+}
+@media (max-width: $md-width) {
+  .contact-content {
+    flex-direction: column;
+    align-items: center;
   }
   .form {
-    position: absolute;
-    bottom: 30px;
-    right: 120px;
-    width: 400px;
-    height: 65%;
-    background: var(--bg-color);
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 2em 2.5em;
-    border-radius: 5px;
+    width: 80%;
   }
-  .form .form_label {
-    font-size: 15px;
-    color: $primary-color;
-  }
-  .form-heading {
-    font-size: 22px;
-    margin: 0;
-    color: $primary-color;
-    font-weight: 600;
-  }
-  .form-input {
-    padding: 0.6em 1em;
-    background-color: var(--bg);
-    border: 1px solid $primary-color;
-    border-radius: 3px;
-    color: var(--white);
-  }
-  .form-input:focus {
-    outline: 2px solid $primary-color;
-    background-color: var(--bg-color);
-  }
-  .form-textarea {
-    height: 100px;
-  }
-  .form-cta {
-    padding: 0.4em;
-    font-size: 18px;
-    background-color: $primary-color;
-    border: none;
-    border-radius: 3px;
-    color: var(--bg);
-    cursor: pointer;
-    transition: 100ms;
-  }
-  .form-cta:hover,
-  :focus {
-    background-color: var(--color);
-  }
-  .back-to-top {
-    position: absolute;
-    bottom: 30px;
-    right: 10px;
-    width: 70px;
-    height: 75px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: $primary-color;
-    border-radius: 50px;
-  }
-  .back-to-top-svg {
-    width: 40px;
-    box-shadow: 0px 3px 6px rgb(0, 0, 0, 0.1);
-    border-radius: 50px;
-    color: white;
-  }
-  .back-to-top:hover {
-    box-shadow: 0px 3px 6px rgb(0, 0, 0, 0.2);
+  .map {
+    width: 80%;
+    margin-bottom: 2em;
   }
 }

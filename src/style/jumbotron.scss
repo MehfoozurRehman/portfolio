@@ -4,57 +4,69 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  .about_me {
-    font-size: 30px;
-    text-transform: capitalize;
-    letter-spacing: 5px;
-    color: $primary-color;
-  }
-  .slogan {
-    font-size: 40px;
-    font-weight: 600;
-    line-height: 45px;
-    color: $secondary-color;
-    letter-spacing: 3px;
-    padding: 0.3em 0em;
-  }
-  .info {
-    letter-spacing: 2px;
-    font-size: 20px;
-    display: block;
-    color: var(--color);
-  }
-  .cta {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 50px;
-    width: 330px;
-  }
-  .cta a {
-    padding: 0.7em;
-    border-radius: 20px;
-    width: 45%;
-    font-size: 18px;
-    text-align: center;
-  }
-  .primary-cta {
-    background-color: $primary-color;
-    color: white;
-  }
-  .primary-cta:hover {
-    background-color: darken($primary-color, 20%);
-  }
-  .secondary-cta {
-    background-color: $secondary-color;
-    color: white;
-  }
-  .secondary-cta:hover {
-    background-color: darken($secondary-color, 20%);
+}
+.about_me {
+  font-size: 30px;
+  text-transform: capitalize;
+  letter-spacing: 5px;
+  color: $primary-color;
+}
+.slogan {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 45px;
+  color: $secondary-color;
+  letter-spacing: 3px;
+  padding: 0.3em 0em;
+}
+.info {
+  letter-spacing: 2px;
+  font-size: 20px;
+  color: var(--color);
+}
+.cta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  width: 330px;
+}
+.cta a {
+  padding: 0.7em;
+  border-radius: 20px;
+  width: 45%;
+  font-size: 18px;
+  text-align: center;
+}
+.primary-cta {
+  background-color: $primary-color;
+  color: white;
+}
+.primary-cta:hover {
+  background-color: darken($primary-color, 20%);
+}
+.secondary-cta {
+  background-color: $secondary-color;
+  color: white;
+}
+.secondary-cta:hover {
+  background-color: darken($secondary-color, 20%);
+}
+.jumbotron-pic {
+  border-radius: 1000px;
+  border: 20px solid var(--bg-color);
+  box-shadow: 0px 3px 6px rgb(0, 0, 0, 0.1);
+  width: 380px;
+}
+@media (max-width: $md-width) {
+  #jumbotron {
+    justify-content: center;
   }
   .jumbotron-pic {
-    border-radius: 1000px;
-    border: 20px solid var(--bg-color);
-    box-shadow: 0px 3px 6px rgb(0, 0, 0, 0.1);
-    width: 380px;
+    display: none;
+  }
+  .col-half {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
