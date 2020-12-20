@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="style/footer.scss" />
   </head>
   <body>
-    <header class="header" id="header">
+    <header class="header">
       <nav class="nav">
         <a href="index.html" class="brand-name">Mehfooz-ur-Rehman</a>
         <div class="menu-btn" onclick="active()">
@@ -767,42 +767,43 @@
     </footer>
     <script>
       const menuBtn = document.querySelector(".menu-btn");
-      let menuOpen = false;
-      menuBtn.addEventListener("click", () => {
-        if (!menuOpen) {
-          menuBtn.classList.add("open");
-          menuOpen = true;
-        } else {
-          menuBtn.classList.remove("open");
-          menuOpen = false;
-        }
-      });
-      function active() {
-        var x = document.querySelector(".mobile-nav");
-        if (x.style.display === "flex") {
-          x.style.display = "none";
-        } else {
-          x.style.display = "flex";
-        }
-      }
-      var checkbox = document.querySelector("input[name=theme]");
+let menuOpen = false;
+menuBtn.addEventListener("click", () => {
+  if (!menuOpen) {
+    menuBtn.classList.add("open");
+    menuOpen = true;
+  } else {
+    menuBtn.classList.remove("open");
+    menuOpen = false;
+  }
+});
+function active() {
+  var x = document.querySelector(".mobile-nav");
+  if (x.style.display === "flex") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "flex";
+  }
+}
+var checkbox = document.querySelector("input[name=theme]");
 
-      checkbox.addEventListener("change", function () {
-        if (this.checked) {
-          trans();
-          document.documentElement.setAttribute("data-theme", "dark");
-        } else {
-          trans();
-          document.documentElement.setAttribute("data-theme", "light");
-        }
-      });
+checkbox.addEventListener("change", function () {
+  if (this.checked) {
+    trans();
+    document.documentElement.setAttribute("data-theme", "dark");
+  } else {
+    trans();
+    document.documentElement.setAttribute("data-theme", "light");
+  }
+});
 
-      let trans = () => {
-        document.documentElement.classList.add("transition");
-        window.setTimeout(() => {
-          document.documentElement.classList.remove("transition");
-        }, 1000);
-      };
+let trans = () => {
+  document.documentElement.classList.add("transition");
+  window.setTimeout(() => {
+    document.documentElement.classList.remove("transition");
+  }, 1000);
+};
+
     </script>
   </body>
 </html>
