@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="style/footer.scss" />
   </head>
   <body>
-    <header class="header">
+    <header class="header" id="header">
       <nav class="nav">
         <a href="index.html" class="brand-name">Mehfooz-ur-Rehman</a>
         <div class="menu-btn" onclick="active()">
@@ -45,7 +45,7 @@
           </div>
         </div>
       </nav>
-      <div class="mobile-nav" id="myLinks">
+      <div class="mobile-nav">
         <a href="index.html" class="mobile-nav-link">Home</a>
         <a href="#about" class="mobile-nav-link">About</a>
         <a href="#resume" class="mobile-nav-link">Resume</a>
@@ -778,7 +778,7 @@
         }
       });
       function active() {
-        var x = document.getElementById("myLinks");
+        var x = document.querySelector(".mobile-nav");
         if (x.style.display === "flex") {
           x.style.display = "none";
         } else {
