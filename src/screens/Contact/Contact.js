@@ -25,6 +25,18 @@ export default class Contact extends React.Component {
                 <input type="email" className="input-field" />
               </div>
               <div className="input-box">
+                <label htmlFor="user-name" className="input-label">
+                  Phone#
+                </label>
+                <input type="phone" className="input-field" />
+              </div>
+              <div className="input-box">
+                <label htmlFor="email-name" className="input-label">
+                  Budjet
+                </label>
+                <input type="email" className="input-field" />
+              </div>
+              <div className="input-box">
                 <label htmlFor="email-name" className="input-label">
                   Message
                 </label>

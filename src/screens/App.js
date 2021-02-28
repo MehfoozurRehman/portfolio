@@ -9,12 +9,13 @@ import Services from "./Services/Services";
 import Portfolio from "./Porfolio/Portfolio";
 import Skills from "./Skills/Skills";
 import About from "./About/About";
+import Jumbotron from "./Jumbotron/Jumbotron";
 
 function App() {
   return (
     <section id="top" className="container">
       <Header />
-      hello
+      <Jumbotron />
       <About />
       <Services />
       <Skills />
