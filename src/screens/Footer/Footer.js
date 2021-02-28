@@ -4,9 +4,29 @@ import "./Footer.css";
 export default function Footer() {
   return (
     <div className="footer">
-      <a href="index.html" className="brand-name">
-        Port <span>folio</span>
-      </a>
+      <div className="footer-top-row">
+        <a href="index.html" className="brand-name">
+          Port <span>folio</span>
+        </a>
+        <a href="#top" className="back-to-top">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 22.294 13.747"
+            fill="currentColor"
+          >
+            <g id="arrow-2" transform="translate(0 72.397) rotate(-90)">
+              <g id="chevron-right" transform="translate(58.65)">
+                <path
+                  id="Path_68"
+                  data-name="Path 68"
+                  d="M61.251,0l-2.6,2.6L67.2,11.147,58.65,19.693l2.6,2.6L72.4,11.147Z"
+                  transform="translate(-58.65)"
+                />
+              </g>
+            </g>
+          </svg>
+        </a>
+      </div>
       <div className="footer-row">
         <div className="footer-left">
           <p>

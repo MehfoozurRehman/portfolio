@@ -6,7 +6,7 @@
 }
 .brand-name {
   color: var(--third);
-  font-size: 49px;
+  font-size: var(--heading-font-size);
   font-weight: 800;
 }
 .brand-name span {
@@ -26,7 +26,7 @@
   display: flex;
 }
 .nav-link {
-  font-size: 18px;
+  font-size: var(--normal-font-size);
   margin: 1em;
   color: var(--third);
 }
@@ -35,7 +35,7 @@
   color: var(--primary);
 }
 .nav-btn {
-  font-size: 25px;
+  font-size: var(--btn-font-size);
   color: var(--third);
   background-color: var(--primary);
   border-radius: 5px;
