@@ -47,6 +47,7 @@
   color: var(--third);
   line-height: 35px;
   letter-spacing: 1px;
+  margin-bottom: 1em;
 }
 .blog-card-content-link {
   font-size: var(--normal-font-size);

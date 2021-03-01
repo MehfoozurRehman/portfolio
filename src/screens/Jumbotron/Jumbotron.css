@@ -34,8 +34,7 @@
   background-color: var(--primary);
 }
 .jumbotron-right {
-  width: 40%;
-  padding-right: 1em;
+  width: 35%;
 }
 .jumbotron-right img {
   width: 100%;
