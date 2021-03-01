@@ -22,13 +22,28 @@ export default class Header extends React.Component {
       }, 1000);
     };
   }
+  toggle_nav() {
+    const menuBtn = document.querySelector(".menu-btn");
+    const mobileNav = document.querySelector(".nav");
+    if (mobileNav.style.display === "none") {
+      document.querySelector(".nav").style.display = "flex";
+      menuBtn.classList.add("open");
+    } else {
+      document.querySelector(".nav").style.display = "none";
+      menuBtn.classList.remove("open");
+    }
+  }
   render() {
     return (
       <header className="header">
-        <a href="index.html" className="brand-name">
-          Port <span>folio</span>
-        </a>
-        <div className="nav-mobile-btn">i</div>
+        <div className="header-bar">
+          <a href="index.html" className="brand-name">
+            Port <span>folio</span>
+          </a>
+          <div class="menu-btn" onClick={this.toggle_nav}>
+            <div class="menu-btn__burger"></div>
+          </div>
+        </div>
         <nav className="nav">
           <div className="nav-links">
             <a href="index.html" className="nav-link">
