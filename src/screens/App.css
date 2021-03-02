@@ -48,12 +48,6 @@ body {
   width: 100vw;
   overflow-x: hidden;
 }
-body::-webkit-scrollbar {
-  width: 12px;
-}
-body::-webkit-scrollbar-thumb {
-  color: #0fbf61;
-}
 .container {
   margin: 0em auto;
   width: 100%;

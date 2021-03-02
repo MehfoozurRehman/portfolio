@@ -1,30 +1,30 @@
 import React from "react";
 import "./Contact.css";
-// import emailjs from "emailjs-com";
+import emailjs from "emailjs-com";
 
 export default function Contact() {
-  // function sendEmail(e) {
-  //   e.preventDefault();
+  function sendEmail(e) {
+    e.preventDefault();
 
-  //   emailjs
-  //     .sendForm(
-  //       "service_3dm7yud",
-  //       "template_zkv8k6g",
-  //       e.target,
-  //       "user_5E0L53uCeIn6J8FtgNgs8"
-  //     )
-  //     .then(
-  //       (result) => {
-  //         console.log(result.text);
-  //       },
-  //       (error) => {
-  //         console.log(error.text);
-  //       }
-  //     );
-  // }
-  // function alertsOpenClose() {
-  //   window.alert("Send Successfully");
-  // }
+    emailjs
+      .sendForm(
+        "service_3dm7yud",
+        "template_zkv8k6g",
+        e.target,
+        "user_5E0L53uCeIn6J8FtgNgs8"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  }
+  function alertsOpenClose() {
+    window.alert("Send Successfully");
+  }
   return (
     <section className="section" id="contact">
       <div className="section-header">
@@ -32,8 +32,7 @@ export default function Contact() {
         <div className="section-about">Send Me a Message</div>
       </div>
       <div className="section-content">
-        <form className="contact-form">
-          {/*onSubmit={sendEmail}*/}
+        <form className="contact-form" onSubmit={sendEmail}>
           <div className="form-row">
             <div className="input-box">
               <label htmlFor="user-name" className="input-label">
@@ -88,8 +87,12 @@ export default function Contact() {
               ></textarea>
             </div>
           </div>
-          <input type="button" value="Send Message" className="input-btn" />
-          {/*onClick={alertsOpenClose}*/}
+          <input
+            type="button"
+            value="Send Message"
+            className="input-btn"
+            onClick={alertsOpenClose}
+          />
         </form>
       </div>
     </section>
