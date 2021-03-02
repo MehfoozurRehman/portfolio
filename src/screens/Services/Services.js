@@ -36,7 +36,7 @@ export default function Services() {
                     transform="translate(257 2493)"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2"
+                    strokeWidth="2"
                   >
                     <ellipse
                       cx="54.5"
@@ -101,7 +101,7 @@ export default function Services() {
                           transform="translate(761 2493)"
                           fill="none"
                           stroke="currentColor"
-                          stroke-width="2"
+                          strokeWidth="2"
                         >
                           <ellipse
                             cx="54.5"
@@ -214,7 +214,7 @@ export default function Services() {
                     transform="translate(1265 2493)"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2"
+                    strokeWidth="2"
                   >
                     <ellipse
                       cx="54.5"
@@ -324,7 +324,7 @@ export default function Services() {
                     transform="translate(257 3069)"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2"
+                    strokeWidth="2"
                   >
                     <ellipse
                       cx="54.5"
@@ -538,7 +538,7 @@ export default function Services() {
                     transform="translate(761 3069)"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2"
+                    strokeWidth="2"
                   >
                     <ellipse
                       cx="54.5"
@@ -851,7 +851,7 @@ export default function Services() {
                     transform="translate(1265 3069)"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2"
+                    strokeWidth="2"
                   >
                     <ellipse
                       cx="54.5"

@@ -10,7 +10,7 @@ html {
   --normal-font-size: 16px;
   --heading-font-size: 30px;
   --normal-font-family: nunito, sans-serif;
-  --heading-font-family: serif;
+  --heading-font-family: roboto;
   scroll-behavior: smooth;
 }
 html[data-theme="dark"] {
@@ -52,7 +52,7 @@ body {
   margin: 0em auto;
   width: 100%;
   max-width: 1360px;
-  padding: 0em 2em;
+  padding: 0em 3em;
 }
 .section {
   height: fit-content;

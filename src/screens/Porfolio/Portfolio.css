@@ -23,7 +23,7 @@
   top: 0px;
   height: 100%;
   background-color: rgb(15, 191, 97, 0.9);
-  padding: 5em 2em;
+  padding: 3em 2em;
 }
 .portfolio-card:hover .portfolio-card-content {
   transition: ease-in-out 200ms;

@@ -24,9 +24,9 @@ export default function Testimonails() {
                   id="_"
                   data-name='"'
                   transform="translate(57 45) rotate(180)"
-                  font-size="200"
-                  font-family="PerpetuaTitlingMT-Light, Perpetua Titling MT"
-                  font-weight="300"
+                  fontSize="200"
+                  fontFamily="PerpetuaTitlingMT-Light, Perpetua Titling MT"
+                  fontWeight="300"
                 >
                   <tspan x="0" y="0">
                     &quot;
@@ -54,9 +54,9 @@ export default function Testimonails() {
                   id="_"
                   data-name='"'
                   transform="translate(57 45) rotate(180)"
-                  font-size="200"
-                  font-family="PerpetuaTitlingMT-Light, Perpetua Titling MT"
-                  font-weight="300"
+                  fontSize="200"
+                  fontFamily="PerpetuaTitlingMT-Light, Perpetua Titling MT"
+                  fontWeight="300"
                 >
                   <tspan x="0" y="0">
                     &quot;
@@ -84,9 +84,9 @@ export default function Testimonails() {
                   id="_"
                   data-name='"'
                   transform="translate(57 45) rotate(180)"
-                  font-size="200"
-                  font-family="PerpetuaTitlingMT-Light, Perpetua Titling MT"
-                  font-weight="300"
+                  fontSize="200"
+                  fontFamily="PerpetuaTitlingMT-Light, Perpetua Titling MT"
+                  fontWeight="300"
                 >
                   <tspan x="0" y="0">
                     &quot;
@@ -112,9 +112,9 @@ export default function Testimonails() {
                   id="_"
                   data-name='"'
                   transform="translate(57 45) rotate(180)"
-                  font-size="200"
-                  font-family="PerpetuaTitlingMT-Light, Perpetua Titling MT"
-                  font-weight="300"
+                  fontSize="200"
+                  fontFamily="PerpetuaTitlingMT-Light, Perpetua Titling MT"
+                  fontWeight="300"
                 >
                   <tspan x="0" y="0">
                     &quot;

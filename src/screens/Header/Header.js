@@ -40,8 +40,8 @@ export default class Header extends React.Component {
           <a href="index.html" className="brand-name">
             Port <span>folio</span>
           </a>
-          <div class="menu-btn" onClick={this.toggle_nav}>
-            <div class="menu-btn__burger"></div>
+          <div className="menu-btn" onClick={this.toggle_nav}>
+            <div className="menu-btn__burger"></div>
           </div>
         </div>
         <nav className="nav">
