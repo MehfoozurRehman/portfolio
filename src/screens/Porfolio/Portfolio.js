@@ -39,7 +39,7 @@ export default function Portfolio() {
                 ipsum dolor sit amet.
               </div>
               <a
-                href="www.google.com"
+                href="https://github.com/MehfoozurRehman"
                 title="learn-more"
                 className="portfolio-card-content-link"
               >
@@ -81,7 +81,7 @@ export default function Portfolio() {
                 ipsum dolor sit amet.
               </div>
               <a
-                href="github.com"
+                href="https://github.com/MehfoozurRehman"
                 title="learn-more"
                 className="portfolio-card-content-link"
               >
@@ -123,7 +123,7 @@ export default function Portfolio() {
                 ipsum dolor sit amet.
               </div>
               <a
-                href="github.com"
+                href="https://github.com/MehfoozurRehman"
                 title="learn-more"
                 className="portfolio-card-content-link"
               >
@@ -165,7 +165,7 @@ export default function Portfolio() {
                 ipsum dolor sit amet.
               </div>
               <a
-                href="github.com"
+                href="https://github.com/MehfoozurRehman"
                 title="learn-more"
                 className="portfolio-card-content-link"
               >
@@ -207,7 +207,7 @@ export default function Portfolio() {
                 ipsum dolor sit amet.
               </div>
               <a
-                href="github.com"
+                href="https://github.com/MehfoozurRehman"
                 title="learn-more"
                 className="portfolio-card-content-link"
               >
@@ -249,7 +249,7 @@ export default function Portfolio() {
                 ipsum dolor sit amet.
               </div>
               <a
-                href="github.com"
+                href="https://github.com/MehfoozurRehman"
                 title="learn-more"
                 className="portfolio-card-content-link"
               >

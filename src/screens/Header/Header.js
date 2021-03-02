@@ -2,6 +2,17 @@ import React from "react";
 import "./Header.css";
 
 export default class Header extends React.Component {
+  toggle_nav() {
+    const menuBtn = document.querySelector(".menu-btn");
+    const mobileNav = document.querySelector(".nav");
+    if (mobileNav.style.display === "none") {
+      document.querySelector(".nav").style.display = "flex";
+      menuBtn.classList.add("open");
+    } else {
+      document.querySelector(".nav").style.display = "none";
+      menuBtn.classList.remove("open");
+    }
+  }
   toggle_theme() {
     var checkbox = document.querySelector("input[name=theme]");
 
@@ -21,17 +32,6 @@ export default class Header extends React.Component {
         document.documentElement.classList.remove("transition");
       }, 1000);
     };
-  }
-  toggle_nav() {
-    const menuBtn = document.querySelector(".menu-btn");
-    const mobileNav = document.querySelector(".nav");
-    if (mobileNav.style.display === "none") {
-      document.querySelector(".nav").style.display = "flex";
-      menuBtn.classList.add("open");
-    } else {
-      document.querySelector(".nav").style.display = "none";
-      menuBtn.classList.remove("open");
-    }
   }
   render() {
     return (

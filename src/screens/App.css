@@ -52,7 +52,7 @@ body {
   margin: 0em auto;
   width: 100%;
   max-width: 1360px;
-  padding: 0em 1em;
+  padding: 0em 2em;
 }
 .section {
   height: fit-content;
@@ -80,7 +80,7 @@ body {
   font-weight: 800;
   color: var(--third);
   font-family: var(--heading-font-family);
-  margin: 0.5em 0em;
+  margin: 0.7em 0em;
 }
 .section-content {
   height: fit-content;

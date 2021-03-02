@@ -7,7 +7,7 @@ export default function Jumbotron() {
       <div className="section-content jumbotron-section">
         <div className="jumbotron-left">
           <div className="section-heading">
-            <span>Hi I'm</span> Mehfooz-ur-Rehman
+            <span>Hey I'm</span> Mehfooz-ur-Rehman
           </div>
           <div className="section-about">Let's Build Your Digital Identity</div>
           <p>Web Developer & UI/UX Designer</p>

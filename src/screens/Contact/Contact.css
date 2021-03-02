@@ -22,16 +22,13 @@
 .input-box .input-label {
   color: var(--third);
   font-size: var(--normal-font-size);
-  top: 20px;
-  left: 15px;
-  position: absolute;
+  margin-bottom: 0.5em;
 }
 .input-box .input-field {
   width: 100%;
   min-height: 60px;
   background-color: var(--sixth);
   border: 1px solid var(--primary);
-  border-radius: 5px;
   outline: none;
   padding: 1em;
   font-size: 14px;

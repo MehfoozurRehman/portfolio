@@ -9,8 +9,8 @@ export default function About() {
     <section className="section" id="about">
       <div className="section-content about-section">
         <div className="about-pic-container">
-          <img src={aboutSvg} alt="about-svg" className="about-svg" />
           <img src={aboutPic} alt="about-pic" className="about-pic" />
+          <img src={aboutSvg} alt="about-svg" className="about-svg" />
         </div>
         <div className="about-section-content">
           <div className="section-heading about-section-heading">About Me</div>

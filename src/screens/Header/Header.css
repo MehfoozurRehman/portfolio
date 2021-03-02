@@ -51,7 +51,6 @@
 .nav-btn:hover {
   transition: ease-in-out 100ms;
   background-color: var(--sixth);
-  margin-right: 0.5em;
 }
 .nav-mobile-btn {
   display: none;

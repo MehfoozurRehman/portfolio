@@ -5,17 +5,20 @@
 }
 .about-pic-container {
   position: relative;
-  padding: 2.5em;
+  padding: 2.5em 0em;
+  padding-right: 2.5em;
   max-width: 50%;
-  margin: 2em;
+  margin: 2em 0em;
+  margin-right: 2em;
 }
 .about-pic {
   width: 100%;
   height: 100%;
+  border-radius: 10px;
 }
 .about-svg {
   position: absolute;
-  top: 5px;
+  top: 6px;
   right: 0px;
   z-index: -2;
 }
@@ -25,7 +28,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 2em;
+  padding: 2.5em;
 }
 .about-section-heading {
   margin: 2em 0em;
@@ -53,5 +56,6 @@
   }
   .about-section-content {
     width: 100%;
+    padding: 0.5em;
   }
 }
