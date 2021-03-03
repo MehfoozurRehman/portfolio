@@ -25,6 +25,7 @@ export default function Contact() {
   function alertsOpenClose() {
     window.alert("Send Successfully");
   }
+
   return (
     <section className="section" id="contact">
       <div className="section-header">
@@ -61,7 +62,7 @@ export default function Contact() {
                 Phone#
               </label>
               <input
-                type="phone"
+                type="text"
                 className="input-field"
                 id="user-contact"
                 name="contact_number"
@@ -71,7 +72,7 @@ export default function Contact() {
               <label htmlFor="email-name" className="input-label">
                 Budjet
               </label>
-              <input type="email" className="input-field" />
+              <input type="text" className="input-field" />
             </div>
             <div className="input-box">
               <label htmlFor="message" className="input-label">
@@ -80,15 +81,14 @@ export default function Contact() {
               <textarea
                 className="input-field"
                 id="message"
-                autoComplete="none"
                 name="message"
                 cols="30"
                 rows="10"
-              ></textarea>
+              />
             </div>
           </div>
           <input
-            type="button"
+            type="submit"
             value="Send Message"
             className="input-btn"
             onClick={alertsOpenClose}
