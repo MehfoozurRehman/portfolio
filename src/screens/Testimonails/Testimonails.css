@@ -45,3 +45,8 @@
   color: var(--third);
   margin-top: 0.5em;
 }
+@media (max-width: 700px) {
+  .testimonals-card {
+    padding: 2em 1em;
+  }
+}

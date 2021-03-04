@@ -53,3 +53,9 @@
   transition: ease-in-out 100ms;
   background-color: var(--sixth);
 }
+@media (max-width: 700px) {
+  .input-box {
+    min-width: 100%;
+    margin-right: 0em;
+  }
+}

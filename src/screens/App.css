@@ -89,4 +89,7 @@ body {
   html {
     --heading-font-size: 20px;
   }
+  .container {
+    padding: 0em 1em;
+  }
 }

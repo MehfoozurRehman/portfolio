@@ -57,5 +57,9 @@
   .about-section-content {
     width: 100%;
     padding: 0.5em;
+    align-items: center;
+  }
+  .about-section-content * {
+    text-align: center;
   }
 }
