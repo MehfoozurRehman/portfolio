@@ -4,7 +4,7 @@ import projectPic1 from "../../Assets/portfolio/project (1).png";
 import projectPic2 from "../../Assets/portfolio/project (2).png";
 import projectPic3 from "../../Assets/portfolio/project (3).png";
 import projectPic4 from "../../Assets/portfolio/project (4).png";
-import projectPic5 from "../../Assets/portfolio/project (5).gif";
+import projectPic5 from "../../Assets/portfolio/project (5).png";
 import projectPic6 from "../../Assets/portfolio/project (6).png";
 
 export default function Portfolio() {

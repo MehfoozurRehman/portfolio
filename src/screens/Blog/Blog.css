@@ -12,6 +12,7 @@
 }
 .blog-card-img {
   width: 100%;
+  height: 300px;
   overflow: hidden;
 }
 .blog-card-content {

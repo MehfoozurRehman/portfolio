@@ -1,7 +1,7 @@
 html {
   --primary: #0fbf61;
   --secondary: #151d41;
-  --third: #ffffff;
+  --third: #f8f8f8;
   --forth: #ffffff00;
   --fifth: #eef0f9;
   --sixth: #7682b72e;
@@ -14,7 +14,7 @@ html {
   scroll-behavior: smooth;
 }
 html[data-theme="dark"] {
-  --secondary: #ffffff;
+  --secondary: #f8f8f8;
   --third: #151d41;
   --sixth: #f5f5f5;
 }
