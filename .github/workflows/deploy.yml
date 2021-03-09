@@ -19,12 +19,10 @@ jobs:
         uses: actions/checkout@main
       - name: Install Dependencies
         run: yarn install
-      - name: test:ci
-        run: npm run test:ci
-        env:
-          CI: false
       - name: Build
         run: yarn build
+        env:
+          CI: false
       - name: Archive Production Artifact
         uses: actions/upload-artifact@main
         with:
