@@ -19,6 +19,7 @@ jobs:
         uses: actions/checkout@main
       - name: Install Dependencies
         run: yarn install
+      - unset CI
       - name: Build
         run: yarn build
       - name: Archive Production Artifact
