@@ -1,32 +1,45 @@
-name: Deploy to Google
-
-# Run this workflow every time a new commit pushed to your repository
+name: Build and Deploy
 on:
   push:
-    branches: [main]
-
+    branches:
+      - main
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
-    env:
-      working-directory: ./functions
-
-    strategy:
-      matrix:
-        node-version: [10.x]
-
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - name: Yarn Installation
+        run: |
+          mkdir ~/.npm-global
+          npm config set prefix '~/.npm-global'
+          export PATH=~/.npm-global/bin:$PATH
+          source ~/.profile
+          npm install -g yarn
+      - name: Checkout Repo
+        uses: actions/checkout@master
+      - name: Install Dependencies
+        run: yarn install
+      - name: Build
+        run: yarn build
+      - name: Archive Production Artifact
+        uses: actions/upload-artifact@master
         with:
-          node-version: ${{ matrix.node-version }}
-      - name: install yarn
-        run: npm i -g yarn
-      - name: install libraries
-        run: yarn
-        working-directory: ${{env.working-directory}}
-      - name: install firebase
-        run: npm i firebase-tools -g
-      - name: deploy
-        run: firebase deploy --token ${{ secrets.GCLOUD_TOKEN }}
+          name: build
+          path: build
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+      - name: Download Artifact
+        uses: actions/download-artifact@master
+        with:
+          name: build
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
