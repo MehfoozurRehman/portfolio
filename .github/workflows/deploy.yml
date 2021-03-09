@@ -19,8 +19,9 @@ jobs:
         uses: actions/checkout@main
       - name: Install Dependencies
         run: yarn install
-      - name: Build
+      - name: ci
         run: npm ci
+      - name: Build
         run: yarn build
       - name: Archive Production Artifact
         uses: actions/upload-artifact@main
