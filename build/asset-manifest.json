@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/static/css/main.8f84da15.chunk.css",
+    "main.js": "/static/js/main.5ba5aa9e.chunk.js",
+    "main.js.map": "/static/js/main.5ba5aa9e.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.d0605945.js",
+    "runtime-main.js.map": "/static/js/runtime-main.d0605945.js.map",
+    "static/js/2.7d4d0783.chunk.js": "/static/js/2.7d4d0783.chunk.js",
+    "static/js/2.7d4d0783.chunk.js.map": "/static/js/2.7d4d0783.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.8f84da15.chunk.css.map": "/static/css/main.8f84da15.chunk.css.map",
+    "static/js/2.7d4d0783.chunk.js.LICENSE.txt": "/static/js/2.7d4d0783.chunk.js.LICENSE.txt",
+    "static/media/Mehfooz-ur-Rehman_CV.20f1582f.docx": "/static/media/Mehfooz-ur-Rehman_CV.20f1582f.docx",
+    "static/media/about-svg.598daab0.svg": "/static/media/about-svg.598daab0.svg",
+    "static/media/aboutPic.a7f3d520.jpg": "/static/media/aboutPic.a7f3d520.jpg",
+    "static/media/b2.5f3c3ac8.png": "/static/media/b2.5f3c3ac8.png",
+    "static/media/b5.c12d65dc.png": "/static/media/b5.c12d65dc.png",
+    "static/media/b7.ab8d50b3.png": "/static/media/b7.ab8d50b3.png",
+    "static/media/project (2).e33a11a4.png": "/static/media/project (2).e33a11a4.png",
+    "static/media/project (3).0b7f6685.png": "/static/media/project (3).0b7f6685.png",
+    "static/media/project (4).e8878953.png": "/static/media/project (4).e8878953.png",
+    "static/media/project (5).4e11c08f.png": "/static/media/project (5).4e11c08f.png",
+    "static/media/project (6).4e11c08f.png": "/static/media/project (6).4e11c08f.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d0605945.js",
+    "static/js/2.7d4d0783.chunk.js",
+    "static/css/main.8f84da15.chunk.css",
+    "static/js/main.5ba5aa9e.chunk.js"
+  ]
+}
