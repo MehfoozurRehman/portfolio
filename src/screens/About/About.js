@@ -18,9 +18,9 @@ export default function About() {
             Why hire me for your next project?
           </div>
           <p>
-            I'm Creative Director and UI/UX Designer from New York, working in
-            web development and print media. I enjoy turning complex problems
-            into simple, beautiful and intuitive designs.
+            I'm a Web Developer and UI/UX Designer from Samundri, Pakistan,
+            working in web development. I enjoy turning complex problems into
+            simple, beautiful and intuitive solutions.
           </p>
           <p>
             My job is to build your website so that it is functional and
