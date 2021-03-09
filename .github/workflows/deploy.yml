@@ -21,8 +21,12 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+        - name: install yarn
+        run: npm i -g yarn
       - name: install libraries
-        run: npm install
+        run: yarn
+      - name: build deployment
+        run: yarn build
         working-directory: ${{env.working-directory}}
       - name: install firebase
         run: npm i firebase-tools -g
