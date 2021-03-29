@@ -1,5 +1,6 @@
 import React from "react";
 import "./Header.css";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 export default class Header extends React.Component {
   toggle_nav() {
@@ -37,18 +38,18 @@ export default class Header extends React.Component {
     return (
       <header className="header">
         <div className="header-bar">
-          <a href="index.html" className="brand-name">
+          <Link to="/" className="brand-name">
             Port <span>folio</span>
-          </a>
+          </Link>
           <div className="menu-btn" onClick={this.toggle_nav}>
             <div className="menu-btn__burger"></div>
           </div>
         </div>
         <nav className="nav">
           <div className="nav-links">
-            <a href="index.html" className="nav-link">
+            <Link to="/" className="nav-link">
               Home
-            </a>
+            </Link>
             <a href="#about" className="nav-link">
               About Us
             </a>
