@@ -1,5 +1,6 @@
 import React from "react";
 import "./Portfolio.css";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import projectPic1 from "../../Assets/portfolio/project (1).png";
 import projectPic2 from "../../Assets/portfolio/project (2).png";
 import projectPic3 from "../../Assets/portfolio/project (3).png";
@@ -159,8 +160,8 @@ export default function Portfolio() {
                 Lorem ipsum dolor sit amet,Stet clita kasd is the most lorem
                 ipsum dolor sit amet.
               </div>
-              <a
-                href="https://github.com/MehfoozurRehman/vscode-clone"
+              <Link
+                to="/project-page"
                 title="learn-more"
                 className="portfolio-card-content-link"
               >
@@ -176,7 +177,7 @@ export default function Portfolio() {
                     transform="translate(0 -4.674)"
                   />
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
           <div className="portfolio-card">

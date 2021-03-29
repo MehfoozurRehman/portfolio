@@ -15,9 +15,7 @@ export default function ProjectDetailsPage() {
             src={projectImage}
             className="ProjectDetailsPage-project-image"
           />
-          <div className="section-about ProjectDetailsPage-section-ProjectDetailsPage">
-            Project Overview
-          </div>
+          <div className="section-about ">Project Overview</div>
           <p>
             This project attempts to approximate the development process of a
             “real world” web application. To that end, it has three overarching
@@ -38,7 +36,7 @@ export default function ProjectDetailsPage() {
             application
           </p>
           <p>
-            <span className="bullets">1.</span> The project will incorporate
+            <span className="bullets">2.</span> The project will incorporate
             several popular web development technologies. Much of the time, the
             tools and programming languages taught in a classroom setting are
             learned and practiced in isolation from one another. Although this
@@ -51,9 +49,7 @@ export default function ProjectDetailsPage() {
             integrating various technologies with one another in a single
             application
           </p>
-          <div className="section-about ProjectDetailsPage-section-ProjectDetailsPage">
-            High Level Project Description
-          </div>
+          <div className="section-about ">High Level Project Description</div>
           <p>
             For this project, you will build a web application that allows users
             to assemble a shopping cart of items to purchase. This system will
@@ -69,9 +65,7 @@ export default function ProjectDetailsPage() {
             enable it to interact with third party services (i.e. Google Maps,
             etc.)
           </p>
-          <div className="section-about ProjectDetailsPage-section-ProjectDetailsPage">
-            Milestones
-          </div>
+          <div className="section-about ">Milestones</div>
           <p>
             Specifications for each milestone will be provided to you as the
             project progresses. The following is a listing of each milestone
@@ -98,9 +92,20 @@ export default function ProjectDetailsPage() {
             <br />
             10. Displaying maps of stores, using web services
           </p>
-          <a href="https://www.github.com" className="ProjectDetailsPage-btn">
-            Download CV
-          </a>
+          <div className="btn-row">
+            <a
+              href="https://github.com/MehfoozurRehman/vscode-clone"
+              className="ProjectDetailsPage-btn-primary"
+            >
+              See Code
+            </a>
+            <a
+              href="https://github.com/MehfoozurRehman/vscode-clone"
+              className="ProjectDetailsPage-btn-secondary"
+            >
+              Live
+            </a>
+          </div>
         </div>
       </div>
     </section>

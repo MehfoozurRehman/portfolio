@@ -14,16 +14,27 @@
 .ProjectDetailsPage-section-heading {
   margin: 2em auto;
 }
-.ProjectDetailsPage-btn {
-  margin: 2em 0em;
+.ProjectDetailsPage-btn-primary {
+  margin: 2em 1em;
   padding: 1em 2em;
   width: fit-content;
   background-color: var(--primary);
   color: var(--third);
   border-radius: 5px;
 }
-.ProjectDetailsPage-btn:hover {
+.ProjectDetailsPage-btn-primary:hover {
   background-color: var(--sixth);
+}
+.ProjectDetailsPage-btn-secondary {
+  margin: 2em 1em;
+  padding: 1em 2em;
+  width: fit-content;
+  background-color: var(--sixth);
+  color: var(--third);
+  border-radius: 5px;
+}
+.ProjectDetailsPage-btn-secondary:hover {
+  background-color: var(--primary);
 }
 .bullets {
   font-weight: bold;
@@ -32,6 +43,13 @@
   width: 100%;
   height: 500px;
   padding: 2em 0em;
+}
+.btn-row {
+  padding: 2em 0em;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 @media (max-width: 900px) {
   .ProjectDetailsPage-section {
