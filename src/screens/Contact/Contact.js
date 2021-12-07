@@ -59,7 +59,7 @@ export default function Contact() {
             </div>
             <div className="input-box">
               <label htmlFor="user-contact" className="input-label">
-                Phone#
+                Phone
               </label>
               <input
                 type="text"
@@ -70,7 +70,7 @@ export default function Contact() {
             </div>
             <div className="input-box">
               <label htmlFor="email-name" className="input-label">
-                Budjet
+                Subject
               </label>
               <input type="text" className="input-field" />
             </div>
