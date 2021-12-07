@@ -50,7 +50,8 @@ export default function Skills() {
                 <div className="skills-card-content-pattren-child"></div>
               </div>
               <div className="skills-card-content-detail">
-                Html 5, CSS 3, JavaScript Bootstrap, React js, Sass
+                Html 5, CSS 3, JavaScript, Bootstrap, React js, Sass, Express,
+                MongoDb
               </div>
             </div>
           </div>
@@ -65,7 +66,7 @@ export default function Skills() {
                 <div className="skills-card-content-pattren-child"></div>
               </div>
               <div className="skills-card-content-detail">
-                Electron, React Native, C++
+                Electron, React Native, C++, Nodejs
               </div>
             </div>
           </div>
@@ -79,7 +80,9 @@ export default function Skills() {
                 <div className="skills-card-content-pattren-child"></div>
                 <div className="skills-card-content-pattren-child"></div>
               </div>
-              <div className="skills-card-content-detail">Fire Base</div>
+              <div className="skills-card-content-detail">
+                Fire Base, Simple Analytics
+              </div>
             </div>
           </div>
           <div className="skills-card">

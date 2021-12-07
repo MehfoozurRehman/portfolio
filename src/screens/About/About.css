@@ -40,6 +40,7 @@
   background-color: var(--primary);
   color: var(--third);
   border-radius: 5px;
+  cursor: pointer;
 }
 .about-btn:hover {
   background-color: var(--sixth);

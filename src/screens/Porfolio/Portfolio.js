@@ -1,14 +1,146 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Portfolio.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import projectPic1 from "../../Assets/portfolio/project (1).png";
 import projectPic2 from "../../Assets/portfolio/project (2).png";
-import projectPic3 from "../../Assets/portfolio/project (3).png";
-import projectPic4 from "../../Assets/portfolio/project (4).png";
-import projectPic5 from "../../Assets/portfolio/project (5).png";
-import projectPic6 from "../../Assets/portfolio/project (6).png";
+import axios from "axios";
 
+function PortfolioCard({ data }) {
+  const [image, setImage] = useState(
+    "https://cdn.dribbble.com/users/2346349/screenshots/9246147/media/06971345603f8422d664fa0ea362b3a5.gif"
+  );
+  const [languages, setLanguages] = useState([]);
+  useEffect(() => {
+    axios
+      .get(data.languages_url && data.languages_url, {
+        Authorization: "Bearer " + "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",
+      })
+      .then((res) => {
+        console.log(res.data);
+        setLanguages(res.data);
+      });
+  }, []);
+  useEffect(() => {
+    axios
+      .post(
+        "https://v2.convertapi.com/convert/web/to/jpg?Secret=3thJ1f0srxF1RZEA",
+        {
+          Parameters: [
+            {
+              Name: "Url",
+              Value: data.homepage,
+            },
+            {
+              Name: "StoreFile",
+              Value: true,
+            },
+            {
+              Name: "ImageWidth",
+              Value: "1920",
+            },
+            {
+              Name: "ImageHeight",
+              Value: "1080",
+            },
+            {
+              Name: "CropWidth",
+              Value: "1920",
+            },
+            {
+              Name: "CropHeight",
+              Value: "1080",
+            },
+          ],
+        }
+      )
+      .then((res) => {
+        // console.log(res.data.Files[0].Url);
+        setImage(res.data.Files[0].Url);
+      });
+  }, []);
+  let repoName = data.name.replace(/-/g, " ");
+  repoName = repoName.replace(/_/g, " ");
+  return (
+    <div className="portfolio-card">
+      <img src={image} alt="card-pic" className="portfolio-card-img" />
+      <div className="portfolio-card-content">
+        <div style={{ flex: 1 }}>
+          <div className="portfolio-card-content-date">{repoName}</div>
+          <div className="portfolio-card-content-heading">
+            {JSON.stringify(languages)
+              .replace(/[0-9]/g, "")
+              .replace(/"/g, "")
+              .replace(/:/g, "")
+              .replace(/,/g, ", ")
+              .replace(/}/g, "")
+              .replace(/{/g, "")}
+          </div>
+          <div className="portfolio-card-content-pattren">
+            <div className="portfolio-card-content-pattren-child"></div>
+            <div className="portfolio-card-content-pattren-child"></div>
+            <div className="portfolio-card-content-pattren-child"></div>
+          </div>
+          <div className="portfolio-card-content-detail">
+            {data.description}
+          </div>
+        </div>
+        <div style={{ display: "flex" }}>
+          <a
+            href={data.html_url}
+            title="learn-more"
+            className="portfolio-card-content-link"
+          >
+            Learn More
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 14.75 10.372"
+            >
+              <path
+                id="arrow"
+                d="M9.933,4.83a.523.523,0,0,0-.743.736l3.769,3.769H.52A.518.518,0,0,0,0,9.856a.524.524,0,0,0,.52.528H12.959L9.189,14.146a.534.534,0,0,0,0,.743.521.521,0,0,0,.743,0l4.662-4.662a.512.512,0,0,0,0-.736Z"
+                transform="translate(0 -4.674)"
+              />
+            </svg>
+          </a>
+          {data.homepage && (
+            <a
+              href={data.homepage}
+              title={data.homepage}
+              className="portfolio-card-content-link-reverse"
+            >
+              Preview
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="feather feather-eye"
+              >
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
 export default function Portfolio() {
+  const [projects, setProjects] = useState([]);
+  const [noOfProject, setNoOfProject] = useState(6);
+  useEffect(() => {
+    axios
+      .get("https://api.github.com/users/MehfoozurRehman/repos", {
+        Authorization: "Bearer " + "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",
+      })
+      .then((res) => {
+        setProjects(res.data);
+      });
+  }, []);
+
   return (
     <section className="section" id="portfolio">
       <div className="section-header">
@@ -17,250 +149,22 @@ export default function Portfolio() {
       </div>
       <div className="section-content">
         <div className="portfolio-row">
-          <div className="portfolio-card">
-            <img
-              src={projectPic2}
-              alt="card-pic"
-              className="portfolio-card-img"
-            />
-            <div className="portfolio-card-content">
-              <div className="portfolio-card-content-date">
-                Application Landing Page
-              </div>
-              <div className="portfolio-card-content-heading">
-                HTML 5, CSS 3, JavaScript
-              </div>
-              <div className="portfolio-card-content-pattren">
-                <div className="portfolio-card-content-pattren-child"></div>
-                <div className="portfolio-card-content-pattren-child"></div>
-                <div className="portfolio-card-content-pattren-child"></div>
-              </div>
-              <div className="portfolio-card-content-detail">
-                Lorem ipsum dolor sit amet,Stet clita kasd is the most lorem
-                ipsum dolor sit amet.
-              </div>
-              <a
-                href="https://online-app-website.web.app/"
-                title="learn-more"
-                className="portfolio-card-content-link"
-              >
-                Learn More
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 14.75 10.372"
-                >
-                  <path
-                    id="arrow"
-                    d="M9.933,4.83a.523.523,0,0,0-.743.736l3.769,3.769H.52A.518.518,0,0,0,0,9.856a.524.524,0,0,0,.52.528H12.959L9.189,14.146a.534.534,0,0,0,0,.743.521.521,0,0,0,.743,0l4.662-4.662a.512.512,0,0,0,0-.736Z"
-                    transform="translate(0 -4.674)"
-                  />
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div className="portfolio-card">
-            <img
-              src={projectPic3}
-              alt="card-pic"
-              className="portfolio-card-img"
-            />
-            <div className="portfolio-card-content">
-              <div className="portfolio-card-content-date">FBMA Corp.</div>
-              <div className="portfolio-card-content-heading">
-                HTML 5, CSS 3, JQuery, JavaScript, PHP, Bootstrap, Font Awesome
-              </div>
-              <div className="portfolio-card-content-pattren">
-                <div className="portfolio-card-content-pattren-child"></div>
-                <div className="portfolio-card-content-pattren-child"></div>
-                <div className="portfolio-card-content-pattren-child"></div>
-              </div>
-              <div className="portfolio-card-content-detail">
-                Lorem ipsum dolor sit amet,Stet clita kasd is the most lorem
-                ipsum dolor sit amet.
-              </div>
-              <a
-                href="https://github.com/MehfoozurRehman/fbmacorp"
-                title="learn-more"
-                className="portfolio-card-content-link"
-              >
-                Learn More
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 14.75 10.372"
-                >
-                  <path
-                    id="arrow"
-                    d="M9.933,4.83a.523.523,0,0,0-.743.736l3.769,3.769H.52A.518.518,0,0,0,0,9.856a.524.524,0,0,0,.52.528H12.959L9.189,14.146a.534.534,0,0,0,0,.743.521.521,0,0,0,.743,0l4.662-4.662a.512.512,0,0,0,0-.736Z"
-                    transform="translate(0 -4.674)"
-                  />
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div className="portfolio-card">
-            <img
-              src={projectPic4}
-              alt="card-pic"
-              className="portfolio-card-img"
-            />
-            <div className="portfolio-card-content">
-              <div className="portfolio-card-content-date">AIDA Pro</div>
-              <div className="portfolio-card-content-heading">
-                React Js, HTML 5, CSS 3, JavaScript, Bootstrap, React Router,
-                Sass
-              </div>
-              <div className="portfolio-card-content-pattren">
-                <div className="portfolio-card-content-pattren-child"></div>
-                <div className="portfolio-card-content-pattren-child"></div>
-                <div className="portfolio-card-content-pattren-child"></div>
-              </div>
-              <div className="portfolio-card-content-detail">
-                Lorem ipsum dolor sit amet,Stet clita kasd is the most lorem
-                ipsum dolor sit amet.
-              </div>
-              <a
-                href="https://github.com/MehfoozurRehman/Aida-Pro"
-                title="learn-more"
-                className="portfolio-card-content-link"
-              >
-                Learn More
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 14.75 10.372"
-                >
-                  <path
-                    id="arrow"
-                    d="M9.933,4.83a.523.523,0,0,0-.743.736l3.769,3.769H.52A.518.518,0,0,0,0,9.856a.524.524,0,0,0,.52.528H12.959L9.189,14.146a.534.534,0,0,0,0,.743.521.521,0,0,0,.743,0l4.662-4.662a.512.512,0,0,0,0-.736Z"
-                    transform="translate(0 -4.674)"
-                  />
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div className="portfolio-card">
-            <img
-              src={projectPic5}
-              alt="card-pic"
-              className="portfolio-card-img"
-            />
-            <div className="portfolio-card-content">
-              <div className="portfolio-card-content-date">VS Code Editor</div>
-              <div className="portfolio-card-content-heading">
-                HTML 5, CSS 3, React Js, Editor.js
-              </div>
-              <div className="portfolio-card-content-pattren">
-                <div className="portfolio-card-content-pattren-child"></div>
-                <div className="portfolio-card-content-pattren-child"></div>
-                <div className="portfolio-card-content-pattren-child"></div>
-              </div>
-              <div className="portfolio-card-content-detail">
-                Lorem ipsum dolor sit amet,Stet clita kasd is the most lorem
-                ipsum dolor sit amet.
-              </div>
-              <Link
-                to="/project-page"
-                title="learn-more"
-                className="portfolio-card-content-link"
-              >
-                Learn More
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 14.75 10.372"
-                >
-                  <path
-                    id="arrow"
-                    d="M9.933,4.83a.523.523,0,0,0-.743.736l3.769,3.769H.52A.518.518,0,0,0,0,9.856a.524.524,0,0,0,.52.528H12.959L9.189,14.146a.534.534,0,0,0,0,.743.521.521,0,0,0,.743,0l4.662-4.662a.512.512,0,0,0,0-.736Z"
-                    transform="translate(0 -4.674)"
-                  />
-                </svg>
-              </Link>
-            </div>
-          </div>
-          <div className="portfolio-card">
-            <img
-              src={projectPic6}
-              alt="card-pic"
-              className="portfolio-card-img"
-            />
-            <div className="portfolio-card-content">
-              <div className="portfolio-card-content-date">CSS Generator</div>
-              <div className="portfolio-card-content-heading">
-                HTML 5, CSS 3, JavaScript, JQuery
-              </div>
-              <div className="portfolio-card-content-pattren">
-                <div className="portfolio-card-content-pattren-child"></div>
-                <div className="portfolio-card-content-pattren-child"></div>
-                <div className="portfolio-card-content-pattren-child"></div>
-              </div>
-              <div className="portfolio-card-content-detail">
-                Lorem ipsum dolor sit amet,Stet clita kasd is the most lorem
-                ipsum dolor sit amet.
-              </div>
-              <a
-                href="https://github.com/MehfoozurRehman/css-generator"
-                title="learn-more"
-                className="portfolio-card-content-link"
-              >
-                Learn More
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 14.75 10.372"
-                >
-                  <path
-                    id="arrow"
-                    d="M9.933,4.83a.523.523,0,0,0-.743.736l3.769,3.769H.52A.518.518,0,0,0,0,9.856a.524.524,0,0,0,.52.528H12.959L9.189,14.146a.534.534,0,0,0,0,.743.521.521,0,0,0,.743,0l4.662-4.662a.512.512,0,0,0,0-.736Z"
-                    transform="translate(0 -4.674)"
-                  />
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div className="portfolio-card">
-            <img
-              src={projectPic1}
-              alt="card-pic"
-              className="portfolio-card-img"
-            />
-            <div className="portfolio-card-content">
-              <div className="portfolio-card-content-date">Code Pen Editor</div>
-              <div className="portfolio-card-content-heading">
-                React Js, HTML 5, CSS 3, JavaScript
-              </div>
-              <div className="portfolio-card-content-pattren">
-                <div className="portfolio-card-content-pattren-child"></div>
-                <div className="portfolio-card-content-pattren-child"></div>
-                <div className="portfolio-card-content-pattren-child"></div>
-              </div>
-              <div className="portfolio-card-content-detail">
-                Lorem ipsum dolor sit amet,Stet clita kasd is the most lorem
-                ipsum dolor sit amet.
-              </div>
-              <a
-                href="https://github.com/MehfoozurRehman/codepen-clone"
-                title="learn-more"
-                className="portfolio-card-content-link"
-              >
-                Learn More
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 14.75 10.372"
-                >
-                  <path
-                    id="arrow"
-                    d="M9.933,4.83a.523.523,0,0,0-.743.736l3.769,3.769H.52A.518.518,0,0,0,0,9.856a.524.524,0,0,0,.52.528H12.959L9.189,14.146a.534.534,0,0,0,0,.743.521.521,0,0,0,.743,0l4.662-4.662a.512.512,0,0,0,0-.736Z"
-                    transform="translate(0 -4.674)"
-                  />
-                </svg>
-              </a>
-            </div>
-          </div>
+          {projects
+            .sort((a, b) => (a.created_at < b.created_at ? 1 : -1))
+            .filter((project, i) => i < noOfProject)
+            .map((project) => (
+              <PortfolioCard key={project.id} data={project} />
+            ))}
         </div>
+        <a
+          className="about-btn"
+          onClick={() => {
+            setNoOfProject(noOfProject + 3);
+          }}
+          style={{ marginLeft: "44.2%" }}
+        >
+          Load More
+        </a>
       </div>
     </section>
   );

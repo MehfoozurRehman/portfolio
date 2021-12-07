@@ -57,11 +57,14 @@ export default function Services() {
               <div className="services-card-content-pattren-child"></div>
             </div>
             <div className="services-card-content-detail">
-              Lorem ipsum dolor sit amet,Stet clita kasd is the most lorem ipsum
-              dolor sit amet.
+              Web design refers to the design of websites that are displayed on
+              the internet. It usually refers to the user experience aspects of
+              website development rather than software development. ... A web
+              designer works on the appearance, layout, and, in some cases,
+              content of a website.
             </div>
             <a
-              href="#"
+              href="https://www.google.com/search?q=what+is+Web+Design&sxsrf=AOaemvKGodAHeQpBf8kBPRg7NvqYevw82A%3A1638905069047&ei=7bSvYYGwAv-Oxc8P-fqKmAc&ved=0ahUKEwjB2teTtdL0AhV_R_EDHXm9AnMQ4dUDCA4&uact=5&oq=what+is+Web+Design&gs_lcp=Cgdnd3Mtd2l6EAMyBAgAEEcyBAgAEEcyBAgAEEcyBAgAEEcyBAgAEEcyBAgAEEcyBAgAEEcyBAgAEEdKBAhBGABQmgJYmgJg2wZoAHADeACAAQCIAQCSAQCYAQCgAQKgAQHIAQjAAQE&sclient=gws-wiz"
               title="learn-more"
               className="services-card-content-link"
             >
@@ -173,11 +176,14 @@ export default function Services() {
               <div className="services-card-content-pattren-child"></div>
             </div>
             <div className="services-card-content-detail">
-              Lorem ipsum dolor sit amet,Stet clita kasd is the most lorem ipsum
-              dolor sit amet.
+              A graphic designer is a professional within the graphic design and
+              graphic arts industry who assembles together images, typography,
+              or motion graphics to create a piece of design. ... They are also
+              sometimes responsible for typesetting, illustration, user
+              interfaces, and web design.
             </div>
             <a
-              href="#"
+              href="https://www.google.com/search?q=what+is+Graphics+Design&sxsrf=AOaemvIM3pGWRk3YRJbw8C6h07RAn5MtDw%3A1638905045961&ei=1bSvYdr-OfyTxc8P-aqcsAs&ved=0ahUKEwiavdaItdL0AhX8SfEDHXkVB7YQ4dUDCA4&uact=5&oq=what+is+Graphics+Design&gs_lcp=Cgdnd3Mtd2l6EAMyBAgAEEcyBAgAEEcyBAgAEEcyBAgAEEcyBAgAEEcyBAgAEEcyBAgAEEcyBAgAEEdKBAhBGABQpgxYpgxgzw9oAHADeACAAQCIAQCSAQCYAQCgAQKgAQHIAQjAAQE&sclient=gws-wiz"
               title="learn-more"
               className="services-card-content-link"
             >
@@ -283,11 +289,14 @@ export default function Services() {
               <div className="services-card-content-pattren-child"></div>
             </div>
             <div className="services-card-content-detail">
-              Lorem ipsum dolor sit amet,Stet clita kasd is the most lorem ipsum
-              dolor sit amet.
+              Web development is the work involved in developing a website for
+              the Internet (World Wide Web) or an intranet (a private network).
+              ... Among Web professionals, "Web development" usually refers to
+              the main non-design aspects of building Web sites: writing markup
+              and coding.
             </div>
             <a
-              href="#"
+              href="https://www.google.com/search?q=what+is+Web+Development&sxsrf=AOaemvKDMJJmIkA6Oh7q5c98J35Y6hzbVQ%3A1638905036942&ei=zLSvYbjmM8-Hxc8PmKy04AY&ved=0ahUKEwi4_KqEtdL0AhXPQ_EDHRgWDWwQ4dUDCA4&uact=5&oq=what+is+Web+Development&gs_lcp=Cgdnd3Mtd2l6EAMyBAgAEEcyBAgAEEcyBAgAEEcyBAgAEEcyBAgAEEcyBAgAEEcyBAgAEEcyBAgAEEdKBAhBGABQ-RJYph9gpyFoAHADeACAAQCIAQCSAQCYAQCgAQHIAQjAAQE&sclient=gws-wiz"
               title="learn-more"
               className="services-card-content-link"
             >
@@ -497,11 +506,14 @@ export default function Services() {
               <div className="services-card-content-pattren-child"></div>
             </div>
             <div className="services-card-content-detail">
-              Lorem ipsum dolor sit amet,Stet clita kasd is the most lorem ipsum
-              dolor sit amet.
+              Application development is the process of creating a computer
+              program or a set of programs to perform the different tasks that a
+              business requires. ... Every app-building process follows the same
+              steps: gathering requirements, designing prototypes, testing,
+              implementation, and integration.
             </div>
             <a
-              href="#"
+              href="https://www.google.com/search?q=Application+Development&btnK=Google+Search&sxsrf=AOaemvL2Z2gA2lkZaqBouMLtxIzvqbZivA%3A1638905000143&source=hp&ei=qLSvYfrEBv-QseMPvIqh2Ac&iflsig=ALs-wAMAAAAAYa_CuO1WDhFryi0jtBD4Re2ZQ8SoifAR"
               title="learn-more"
               className="services-card-content-link"
             >
@@ -810,11 +822,14 @@ export default function Services() {
               <div className="services-card-content-pattren-child"></div>
             </div>
             <div className="services-card-content-detail">
-              Lorem ipsum dolor sit amet,Stet clita kasd is the most lorem ipsum
-              dolor sit amet.
+              Test analytics is a web-based tool that shows test trends. ... To
+              display the test trends, test analytics shows previous test
+              results for comparison. Not only that, you can also get error
+              rate, pass/fail ratio, and certain other parameters using this
+              tool. Also, multiple users can work on this tool at the same time.
             </div>
             <a
-              href="#"
+              href="https://www.google.com/search?q=what+isTesting+%26+Analytics&sxsrf=AOaemvIAhP_gHtvdhRHgLEDxt2vraPCcmw%3A1638905091177&ei=A7WvYbaiCvKIxc8P8veo2A0&ved=0ahUKEwj2r56etdL0AhVyRPEDHfI7CtsQ4dUDCA4&uact=5&oq=what+isTesting+%26+Analytics&gs_lcp=Cgdnd3Mtd2l6EAMyBAgAEEcyBAgAEEcyBAgAEEcyBAgAEEcyBAgAEEcyBAgAEEcyBAgAEEcyBAgAEEdKBAhBGABQ1wFY1wFg-wZoAHADeACAAQCIAQCSAQCYAQCgAQKgAQHIAQjAAQE&sclient=gws-wiz"
               title="learn-more"
               className="services-card-content-link"
             >
@@ -979,11 +994,14 @@ export default function Services() {
               <div className="services-card-content-pattren-child"></div>
             </div>
             <div className="services-card-content-detail">
-              Lorem ipsum dolor sit amet,Stet clita kasd is the most lorem ipsum
-              dolor sit amet.
+              SEO is the process of taking steps to help a website or piece of
+              content rank higher on Google. ... To make it a bit simpler,
+              search engine optimization means taking a piece of online content
+              and optimizing it so search engines like Google show it towards
+              the top of the page when someone searches for something.
             </div>
             <a
-              href="#"
+              href="https://www.google.com/search?q=what+is+Web+SEO&sxsrf=AOaemvIsnf0y9fLjPOQo1Nhpl8urqqT7sg%3A1638905119934&ei=H7WvYefCOMKTxc8PuM28qAQ&ved=0ahUKEwinzvmrtdL0AhXCSfEDHbgmD0UQ4dUDCA4&uact=5&oq=what+is+Web+SEO&gs_lcp=Cgdnd3Mtd2l6EAMyBAgAEEcyBAgAEEcyBAgAEEcyBAgAEEcyBAgAEEcyBAgAEEcyBAgAEEcyBAgAEEdKBAhBGABQtAVY-QhgkgtoAHACeACAAQCIAQCSAQCYAQCgAQGgAQLIAQjAAQE&sclient=gws-wiz"
               title="learn-more"
               className="services-card-content-link"
             >

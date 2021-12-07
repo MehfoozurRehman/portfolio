@@ -32,15 +32,14 @@ export default function Testimonails() {
                 </text>
               </svg>
               <p className="testimonals-card-details">
-                Lorem ipsum dolor sit amet,Stet clita kasd gubergren, no sea
-                takimata sanctus est is the lorem ipsum dolor sit amet. sed diam
-                nonumy eirmod tempor invidunt ut labore et dolore is the magna
-                aliquyam.
+                I will recommend you to my colleagues. Man, this thing is
+                getting better and better as I learn more about it. It's
+                incredible.
               </p>
-              <div className="testimonals-card-name">John Doe</div>
-              <div className="testimonals-card-designation">
+              <div className="testimonals-card-name">Jonah G.</div>
+              {/* <div className="testimonals-card-designation">
                 CEO, ABC Company
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="testimonals-slider">
@@ -64,15 +63,13 @@ export default function Testimonails() {
                 </text>
               </svg>
               <p className="testimonals-card-details">
-                Lorem ipsum dolor sit amet,Stet clita kasd gubergren, no sea
-                takimata sanctus est is the lorem ipsum dolor sit amet. sed diam
-                nonumy eirmod tempor invidunt ut labore et dolore is the magna
-                aliquyam.
+                This is simply unbelievable! You won't regret it. Development is
+                great.
               </p>
-              <div className="testimonals-card-name">John Doe</div>
-              <div className="testimonals-card-designation">
+              <div className="testimonals-card-name">Henrietta D.</div>
+              {/* <div className="testimonals-card-designation">
                 CEO, ABC Company
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="testimonals-slider">
@@ -96,15 +93,13 @@ export default function Testimonails() {
                 </text>
               </svg>
               <p className="testimonals-card-details">
-                Lorem ipsum dolor sit amet,Stet clita kasd gubergren, no sea
-                takimata sanctus est is the lorem ipsum dolor sit amet. sed diam
-                nonumy eirmod tempor invidunt ut labore et dolore is the magna
-                aliquyam.
+                Great job, I will definitely be ordering again! You won't regret
+                it. It's the perfect solution for our business.
               </p>
-              <div className="testimonals-card-name">John Doe</div>
-              <div className="testimonals-card-designation">
+              <div className="testimonals-card-name">Brook N.</div>
+              {/* <div className="testimonals-card-designation">
                 CEO, ABC Company
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="testimonals-slider">
@@ -128,15 +123,14 @@ export default function Testimonails() {
                 </text>
               </svg>
               <p className="testimonals-card-details">
-                Lorem ipsum dolor sit amet,Stet clita kasd gubergren, no sea
-                takimata sanctus est is the lorem ipsum dolor sit amet. sed diam
-                nonumy eirmod tempor invidunt ut labore et dolore is the magna
-                aliquyam.
+                Man, this thing is getting better and better as I learn more
+                about it. I love development. I would be lost without
+                development. I don't know what else to say.
               </p>
-              <div className="testimonals-card-name">John Doe</div>
-              <div className="testimonals-card-designation">
+              <div className="testimonals-card-name">Philippa S.</div>
+              {/* <div className="testimonals-card-designation">
                 CEO, ABC Company
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="testimonals-slider">
@@ -160,15 +154,14 @@ export default function Testimonails() {
                 </text>
               </svg>
               <p className="testimonals-card-details">
-                Lorem ipsum dolor sit amet,Stet clita kasd gubergren, no sea
-                takimata sanctus est is the lorem ipsum dolor sit amet. sed diam
-                nonumy eirmod tempor invidunt ut labore et dolore is the magna
-                aliquyam.
+                Your company is truly upstanding and is behind its product 100%.
+                We were treated like royalty. I am really satisfied with my
+                development. I will refer everyone I know.
               </p>
-              <div className="testimonals-card-name">John Doe</div>
-              <div className="testimonals-card-designation">
+              <div className="testimonals-card-name">Sanderson D.</div>
+              {/* <div className="testimonals-card-designation">
                 CEO, ABC Company
-              </div>
+              </div> */}
             </div>
           </div>
         </Swiper>

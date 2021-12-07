@@ -23,11 +23,11 @@ export default function About() {
             simple, beautiful and intuitive solutions.
           </p>
           <p>
-            My job is to build your website so that it is functional and
-            user-friendly but at the same time attractive. Moreover, I add a
-            personal touch to your product and make sure that it is eye-catching
-            and easy to use. My aim is to bring across your message and identity
-            in the most creative way.
+            My job is to build functional and user-friendly and at the same time
+            attractive websites for you. Moreover, I add a personal touch to
+            your product and make sure that it is eye-catching and easy to use.
+            My aim is to bring across your message and identity in the most
+            creative way.
           </p>
           <a href={cvFile} className="about-btn">
             Download CV

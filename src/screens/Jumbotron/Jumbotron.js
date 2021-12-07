@@ -120,10 +120,9 @@ export default function Jumbotron() {
           <div className="section-about">Let's Build Your Digital Identity</div>
           <p>Web Developer & UI/UX Designer</p>
           <p>
-            Lorem ipsum dolor sit amet,Stet clita kasd gubergren, no sea
-            takimata sanctus est is thelorem ipsum dolor sit amet. sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore is the magna
-            aliquyam.
+            I'm a Web Developer and UI/UX Designer from Samundri, Pakistan,
+            working in web development. I enjoy turning complex problems into
+            simple, beautiful and intuitive solutions.
           </p>
           <div className="jumbotron-cta">
             <a href="#contact" className="nav-btn">
