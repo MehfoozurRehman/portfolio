@@ -21,7 +21,7 @@ function PortfolioCard({ data }) {
   useEffect(() => {
     axios
       .post(
-        "https://v2.convertapi.com/convert/web/to/jpg?Secret=3thJ1f0srxF1RZEA",
+        "https://v2.convertapi.com/convert/web/to/jpg?Secret=gWBCljB4RSMq6UEJ",
         {
           Parameters: [
             {

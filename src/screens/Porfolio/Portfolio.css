@@ -36,11 +36,11 @@
   font-size: 20px;
   font-family: var(--normal-font-family);
   color: var(--secondary);
-  font-weight: bolder;
+  font-weight: bold;
   text-transform: uppercase;
 }
 .portfolio-card-content-heading {
-  font-size: var(--normal-font-size) - 1px;
+  font-size: var(--normal-font-size);
   font-family: var(--normal-font-family);
   color: var(--secondary);
   font-weight: 600;

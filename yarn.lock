@@ -1629,14 +1629,14 @@
     lz-string "^1.4.4"
     pretty-format "^27.0.2"
 
-"@testing-library/jest-dom@^5.14.1":
-  version "5.14.1"
-  resolved "https://registry.yarnpkg.com/@testing-library/jest-dom/-/jest-dom-5.14.1.tgz#8501e16f1e55a55d675fe73eecee32cdaddb9766"
-  integrity sha512-dfB7HVIgTNCxH22M1+KU6viG5of2ldoA5ly8Ar8xkezKHKXjRvznCdbMbqjYGgO2xjRbwnR+rR8MLUIqF3kKbQ==
+"@testing-library/jest-dom@^5.16.1":
+  version "5.16.1"
+  resolved "https://registry.yarnpkg.com/@testing-library/jest-dom/-/jest-dom-5.16.1.tgz#3db7df5ae97596264a7da9696fe14695ba02e51f"
+  integrity sha512-ajUJdfDIuTCadB79ukO+0l8O+QwN0LiSxDaYUTI4LndbbUsGi6rWU1SCexXzBA2NSjlVB9/vbkasQIL3tmPBjw==
   dependencies:
     "@babel/runtime" "^7.9.2"
     "@types/testing-library__jest-dom" "^5.9.1"
-    aria-query "^4.2.2"
+    aria-query "^5.0.0"
     chalk "^3.0.0"
     css "^3.0.0"
     css.escape "^1.5.1"
@@ -10446,10 +10446,10 @@ svgo@^1.0.0, svgo@^1.2.2:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
-swiper@^7.2.0:
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/swiper/-/swiper-7.2.0.tgz#aae2bb7632798467abd5c1ab3e2441598a70dbd7"
-  integrity sha512-CUL6Nvzcf3fU0b8dHaraYphgBT7l44PY1B6T8b+E12pim4DEcwFZDy/KZoIKrAnn+rfbayCmcksYmSDIP5nDHg==
+swiper@^7.3.1:
+  version "7.3.1"
+  resolved "https://registry.yarnpkg.com/swiper/-/swiper-7.3.1.tgz#697734231d43c67c0e03134c969ebbd5e5037b54"
+  integrity sha512-YHa8uI22UwF9Q6F9tCDSai7/BJo8uVHKampKYAIShlFrWoHfM+sCCn24Yeq3oqIKZv2bfSULzXKsXmh0VpCNeQ==
   dependencies:
     dom7 "^4.0.1"
     ssr-window "^4.0.1"
