@@ -31,8 +31,11 @@ export default function Footer() {
         <div className="footer-left">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum ipsam
-            odio accusantium error at commodi, expedita obcaecati dolor amet
-            debitis?
+            odio accusantium error at{" "}
+            <a href="https://www.sigmatraffic.com?ref=104502">
+              Buy traffic for your website
+            </a>{" "}
+            commodi, expedita obcaecati dolor amet debitis?
           </p>
         </div>
         <div className="footer-right">
