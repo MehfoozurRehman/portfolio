@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+$primary: #eb4a4a;
+$secondary: #808dad;
+$dark: #0e1630;
+$light: #ffffff;
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  background-color: $dark;
+}
