@@ -34,7 +34,6 @@ export default function Portfolio() {
           </div>
         </div>
       </div>
-      <div className="contact__section"></div>
     </>
   );
 }

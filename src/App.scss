@@ -206,6 +206,7 @@ body {
   max-width: 1440px;
   padding: 0em 1.5em;
   margin: 5em auto;
+  margin-bottom: 8em;
   display: flex;
 }
 .screen__header__left {
@@ -225,11 +226,11 @@ body {
   align-items: flex-end;
 }
 .screen__header__breadcrum__bar {
-  width: 60px;
+  width: 50px;
   height: 2px;
   background-color: $primary;
   margin-bottom: 0.5em;
-  margin-right: 1em;
+  margin-right: 0.5em;
 }
 .screen__header__right {
   flex: 1;
@@ -242,6 +243,136 @@ body {
   align-items: center;
   justify-content: flex-end;
   width: 100%;
+}
+.contact__section {
+  display: flex;
+  width: 100%;
+  max-width: 1440px;
+  padding: 0em 1.5em;
+  margin: 0em auto;
+  margin-bottom: 8em;
+}
+.contact__section__left,
+.contact__section__right {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.contact__section__left__sub__heading {
+  color: $primary;
+  display: flex;
+  align-items: flex-end;
+}
+.contact__section__left__sub__heading__bar {
+  width: 30px;
+  height: 2px;
+  background-color: $primary;
+  margin-bottom: 0.5em;
+  margin-right: 0.5em;
+}
+.contact__section__left__heading {
+  font-size: 25px;
+  color: $light;
+  font-weight: 500;
+  margin: 0.8em 0em;
+  margin-top: 0.5em;
+}
+.contact__section__left__info {
+  font-size: 16px;
+  color: $secondary;
+  margin-bottom: 2em;
+}
+.contact__section__left__link {
+  display: flex;
+  align-items: center;
+  margin: 0.8em 0em;
+}
+.contact__section__left__link__icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1c2647;
+  border-radius: 50px;
+  margin-right: 1em;
+  color: $primary;
+}
+.contact__section__left__link span {
+  color: $secondary;
+}
+.contact__section__left__socials {
+  display: flex;
+  align-items: center;
+  margin-top: 2em;
+}
+.contact__section__left__socials__link {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $secondary;
+}
+.contact__section__left__socials__link:hover {
+  transition: 300ms ease-in-out;
+  color: $primary;
+}
+.contact__section__right__label {
+  color: $light;
+  font-size: 14px;
+  margin-bottom: 0.3em;
+  margin-left: 0.1em;
+}
+.contact__section__right__input__box {
+  width: 100%;
+  height: 45px;
+  border-radius: 8px;
+  background-color: #1c2647;
+  border: 1px solid #1c2647;
+  outline: none;
+  padding: 0em 2em;
+  margin-bottom: 1em;
+  color: $light;
+}
+.contact__section__right__input__box:hover,
+.contact__section__right__input__box:focus {
+  border-color: $primary;
+}
+
+.contact__section__right__input__area {
+  width: 100%;
+  height: 180px;
+  border-radius: 8px;
+  background-color: #1c2647;
+  border: 1px solid #1c2647;
+  padding: 1.5em 2em;
+  margin-bottom: 1em;
+  outline: none;
+  color: $light;
+}
+.contact__section__right__input__area:hover,
+.contact__section__right__input__area:focus {
+  border-color: $primary;
+}
+.contact__section__right__btn {
+  background-color: transparent;
+  width: fit-content;
+  border: 1px solid $primary;
+  color: $primary;
+  padding: 0.6em 1.7em;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.contact__section__right__btn:hover {
+  transition: 300ms ease-in-out;
+  background-color: $primary;
+  color: $light;
+}
+.contact__section__right__input__error {
+  border-color: red;
+  color: red;
 }
 @media (max-width: 1100px) {
   .header__wrapper__menu {
@@ -269,6 +400,19 @@ body {
     margin-top: 2em;
     justify-content: flex-start;
     margin-left: -1.5em;
+  }
+  .contact__section {
+    flex-direction: column-reverse;
+  }
+  .contact__section__left,
+  .contact__section__right {
+    width: 100%;
+  }
+  .contact__section__right {
+    margin-bottom: 5em;
+  }
+  .screen__header {
+    margin-bottom: 7em;
   }
 }
 @media (max-width: 600px) {

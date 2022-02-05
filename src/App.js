@@ -9,7 +9,7 @@ import {
   ProjectDetails,
   Services,
 } from "./screens";
-import { Footer, Header } from "./components";
+import { ContactSection, Footer, Header } from "./components";
 
 export default function App() {
   return (
@@ -23,6 +23,7 @@ export default function App() {
         <Route path="/project-detail" element={<ProjectDetails />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <ContactSection />
       <Footer />
     </>
   );

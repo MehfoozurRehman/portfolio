@@ -13,7 +13,6 @@ export default function Services() {
         </div>
         <div className="screen__header__left__right"></div>
       </div>
-      <div className="contact__section"></div>
     </>
   );
 }
