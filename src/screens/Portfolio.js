@@ -1,4 +1,25 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { pic } from "../assets";
+function ProjectCard() {
+  return (
+    <Link to="/project-details" className="project__card">
+      <div className="project__card__name">Aida Pro</div>
+      <div className="project__card__description">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non, totam.
+      </div>
+      <div className="project__card__languages">
+        <div className="project__card__languages__entry">JavaScript</div>
+        <div className="project__card__languages__entry">Html</div>
+        <div className="project__card__languages__entry">JavaScript</div>
+        <div className="project__card__languages__entry">Html</div>
+        <div className="project__card__languages__entry">JavaScript</div>
+        <div className="project__card__languages__entry">Html</div>
+      </div>
+      <img src={pic} alt="" className="project__card__image" />
+    </Link>
+  );
+}
 
 function PortfolioFilters({ children, defaultChecked, onClick }) {
   return (
@@ -33,6 +54,31 @@ export default function Portfolio() {
             <PortfolioFilters>UI/UX Design</PortfolioFilters>
           </div>
         </div>
+      </div>
+      <div className="portfolio__projects">
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+      </div>
+      <div className="porfolio__loadmore">
+        <button className="contact__section__right__btn">Send</button>
       </div>
     </>
   );
