@@ -17,11 +17,11 @@ export default function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/" element={<AboutUs />} />
-        <Route path="/" element={<Services />} />
-        <Route path="/" element={<Portfolio />} />
-        <Route path="/" element={<ProjectDetails />} />
-        <Route path="/" element={<Contact />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/project-detail" element={<ProjectDetails />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </>
