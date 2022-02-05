@@ -1,4 +1,5 @@
 import React from "react";
+import { ProjectCard } from "../components";
 
 export default function ProjectDetails() {
   return (
@@ -12,6 +13,14 @@ export default function ProjectDetails() {
           </div>
         </div>
         <div className="screen__header__left__right"></div>
+      </div>
+      <div className="portfolio__projects">
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+      </div>
+      <div className="porfolio__loadmore">
+        <button className="contact__section__right__btn">Load More</button>
       </div>
     </>
   );
