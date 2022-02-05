@@ -74,10 +74,18 @@ export default function Header() {
             <NavLink to="/" id="home">
               Home
             </NavLink>
-            <NavLink to="/about">About Us</NavLink>
-            <NavLink to="/services">Services</NavLink>
-            <NavLink to="/portfolio">Portfolio</NavLink>
-            <NavLink to="/contact">Contact</NavLink>
+            <NavLink to="/about" id="about">
+              About Us
+            </NavLink>
+            <NavLink to="/services" id="services">
+              Services
+            </NavLink>
+            <NavLink to="/portfolio" id="portfolio">
+              Portfolio
+            </NavLink>
+            <NavLink to="/contact" id="contact">
+              Contact
+            </NavLink>
             <div className="header__wrapper__nav__bar" />
             <div className="header__wrapper__nav__phone">
               <Phone size={20} color="currentColor" />
