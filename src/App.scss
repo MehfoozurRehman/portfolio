@@ -503,16 +503,15 @@ body {
   max-width: 1440px;
   padding: 0em 2em;
   margin: 0em auto;
-  height: 500px;
+  min-height: 500px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 .services__section__left {
   width: 60%;
-  height: 100%;
+  height: 500px;
 }
-
 .services__section__left {
   display: flex;
   align-items: center;
@@ -583,7 +582,7 @@ body {
   display: flex;
   flex-direction: column;
   color: $light;
-  font-weight: bold;
+  font-weight: 500;
   margin-bottom: 1em;
 }
 .services__section__right__info {
@@ -594,10 +593,35 @@ body {
   max-width: 1440px;
   padding: 0em 2em;
   margin: 0em auto;
-  height: 600px;
+  min-height: 700px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.about__section__left {
+  width: 40%;
+}
+.about__section__right {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.about__section__right__box {
+  padding: 1.5em;
+  background-color: #19203b;
+  border-radius: 20px;
+  width: 48%;
+  height: fit-content;
+  margin-bottom: 1.5em;
+}
+.about__section__right__box__img {
+  width: 100%;
+  border-radius: 10px;
+}
+.about__section__right__box:hover {
+  transition: 300ms ease-in-out;
+  box-shadow: 0px 0px 30px rgba(25, 32, 59, 0.7);
 }
 .portfolio__section__header {
   width: 100%;
@@ -843,6 +867,9 @@ body {
     width: 100%;
     height: 100%;
   }
+  .about__section__right {
+    width: 50%;
+  }
 }
 @media (max-width: 900px) {
   .project__card {
@@ -861,6 +888,20 @@ body {
   .home__section__right {
     height: 500px;
     margin-bottom: 7em;
+  }
+  .about__section {
+    flex-direction: column;
+  }
+  .about__section__left {
+    min-height: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .about__section__right {
+    width: 80%;
+    margin-bottom: 6em;
   }
 }
 @media (max-width: 800px) {
@@ -919,6 +960,9 @@ body {
     height: 500px;
     width: 90%;
   }
+  .about__section__right {
+    width: 100%;
+  }
 }
 @media (max-width: 600px) {
   .header__wrapper__logo div {
@@ -971,6 +1015,15 @@ body {
   }
   .home__section__left__heading {
     font-size: 35px;
+  }
+  .about__section__right {
+    margin-top: 4em;
+  }
+  .about__section__left .services__section__right__info {
+    margin-bottom: 2em;
+  }
+  .about__section__right__box {
+    width: 100%;
   }
 }
 @media (max-width: 400px) {
