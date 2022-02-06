@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   ArrowRight,
   Facebook,
@@ -11,6 +11,8 @@ import {
 import { Link } from "react-router-dom";
 import { pic, CV } from "../assets";
 import { PortfolioFilter, ProjectCard } from "../components";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 function ServicesCard({ name, icon }) {
   return (
@@ -20,8 +22,55 @@ function ServicesCard({ name, icon }) {
     </div>
   );
 }
-
+function TestimonialsCard() {
+  return (
+    <div className="testimonials__card">
+      <div className="testimonials__card__header">
+        <div className="testimonials__card__header__box">
+          <img
+            src={pic}
+            alt="pic"
+            className="testimonials__card__header__box__img"
+          />
+        </div>
+        <div className="testimonials__card__header__content">
+          <div className="testimonials__card__header__content__heading">
+            Ibraham Shahid
+          </div>
+          <div className="testimonials__card__header__content__sub__heading">
+            UI / UX Developer
+          </div>
+        </div>
+      </div>
+      <div className="testimonials__card__header__info">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur
+        dolores consequuntur exercitationem quod et sed ea animi ipsa iure
+        cupiditate consectetur porro non asperiores quasi illo, est aliquid
+        tempora repellat?
+      </div>
+    </div>
+  );
+}
 export default function Home() {
+  const [screenSize, setScreenSize] = useState("large");
+  useEffect(() => {
+    if (window.innerWidth < 600) {
+      setScreenSize("small");
+    } else if (window.innerWidth < 1100) {
+      setScreenSize("medium");
+    } else {
+      setScreenSize("large");
+    }
+    window.addEventListener("resize", () => {
+      if (window.innerWidth < 600) {
+        setScreenSize("small");
+      } else if (window.innerWidth < 1100) {
+        setScreenSize("medium");
+      } else {
+        setScreenSize("large");
+      }
+    });
+  }, []);
   return (
     <>
       <section className="home__section" id="home__section">
@@ -272,15 +321,55 @@ export default function Home() {
           <ArrowRight size={20} color="currentColor" />
         </Link>
       </div>
-      <section className="testimonals__section" id="testimonals__section">
+      <section className="testimonials__section" id="testimonials__section">
         <div className="services__section__right__sub__heading">
           <div className="services__section__right__sub__heading__bar"></div>
-          Testimonals
+          Testimonials
         </div>
         <div className="services__section__right__heading">
           What clients say
         </div>
-        <div className="testimonals__section__content"></div>
+        <div className="testimonials__section__content">
+          <Swiper
+            spaceBetween={50}
+            slidesPerView={
+              screenSize === "large"
+                ? 3.5
+                : screenSize === "medium"
+                ? 2
+                : screenSize === "small"
+                ? 1
+                : 3.5
+            }
+            onSlideChange={() => console.log("slide change")}
+            onSwiper={(swiper) => console.log(swiper)}
+          >
+            <SwiperSlide>
+              <TestimonialsCard />
+            </SwiperSlide>
+            <SwiperSlide>
+              <TestimonialsCard />
+            </SwiperSlide>
+            <SwiperSlide>
+              <TestimonialsCard />
+            </SwiperSlide>
+            <SwiperSlide>
+              <TestimonialsCard />
+            </SwiperSlide>
+            <SwiperSlide>
+              <TestimonialsCard />
+            </SwiperSlide>
+            <SwiperSlide>
+              <TestimonialsCard />
+            </SwiperSlide>
+            <SwiperSlide>
+              <TestimonialsCard />
+            </SwiperSlide>
+            <SwiperSlide>
+              <TestimonialsCard />
+            </SwiperSlide>
+          </Swiper>
+        </div>
       </section>
     </>
   );
