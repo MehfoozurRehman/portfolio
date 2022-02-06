@@ -60,7 +60,9 @@ export default function ProjectDetails() {
         <ProjectCard />
       </div>
       <div className="porfolio__loadmore">
-        <button className="contact__section__right__btn">Load More</button>
+        <button title="load more" className="contact__section__right__btn">
+          Load More
+        </button>
       </div>
     </>
   );

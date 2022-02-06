@@ -47,7 +47,7 @@ export default function HomeSection() {
         </div>
       </div>
       <div className="home__section__right">
-        <button className="home__section__right__play__button">
+        <button title="play" className="home__section__right__play__button">
           <Play size={20} color="currentColor" fill="currentColor" />
         </button>
         <div className="home__section__right__experience">

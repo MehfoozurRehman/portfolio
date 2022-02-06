@@ -91,7 +91,9 @@ export default function ContactSection() {
           rows="10"
           className="contact__section__right__input__area"
         />
-        <button className="contact__section__right__btn">Send</button>
+        <button title="Send" className="contact__section__right__btn">
+          Send
+        </button>
       </form>
     </div>
   );

@@ -39,6 +39,7 @@ export default function Header() {
           </div>
           <div className="header__wrapper__nav__bar" />
           <button
+            title="menu button"
             className="header__wrapper__menu__btn"
             onClick={() => {
               isNavOpen ? setIsNavOpen(false) : setIsNavOpen(true);

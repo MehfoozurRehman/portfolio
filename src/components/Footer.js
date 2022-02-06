@@ -69,6 +69,7 @@ export default function Footer() {
             </Link>
           </div>
           <button
+            title="Back to top"
             onClick={() => {
               window.scrollTo({
                 top: 0,
