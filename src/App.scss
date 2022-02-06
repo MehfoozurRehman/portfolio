@@ -768,7 +768,22 @@ body {
 }
 .home__section__overlay {
   position: absolute;
-  display: none;
+  left: -35px;
+  display: flex;
+  flex-direction: column;
+  bottom: 40px;
+}
+.home__section__overlay__link {
+  color: $secondary;
+  margin-bottom: 1em;
+}
+.home__section__overlay__link svg {
+  width: 25px;
+  height: 25px;
+}
+.home__section__overlay__link:hover {
+  transition: 300ms ease-in-out;
+  color: $primary;
 }
 @media (max-width: 1100px) {
   .header__wrapper__menu {

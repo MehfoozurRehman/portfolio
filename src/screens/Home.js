@@ -73,33 +73,33 @@ export default function Home() {
               </div>
             </div>
           </div>
+          <div className="home__section__overlay">
+            <a
+              href="https://github.com/MehfoozurRehman"
+              className="home__section__overlay__link"
+            >
+              <GitHub size={20} color="currentColor" />
+            </a>
+            <a
+              href="https://web.facebook.com/MehfoozurRehmanIjaz/"
+              className="home__section__overlay__link"
+            >
+              <Facebook size={20} color="currentColor" />
+            </a>
+            <a
+              href="https://www.instagram.com/mehfoozurrehman___/"
+              className="home__section__overlay__link"
+            >
+              <Instagram size={20} color="currentColor" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/mehfooz-rehman-37a1b0231/"
+              className="home__section__overlay__link"
+            >
+              <Linkedin size={20} color="currentColor" />
+            </a>
+          </div>
           <img src={pic} alt="pic" />
-        </div>
-        <div className="home__section__overlay">
-          <a
-            href="https://github.com/MehfoozurRehman"
-            className="home__section__overlay__link"
-          >
-            <GitHub size={20} color="currentColor" />
-          </a>
-          <a
-            href="https://web.facebook.com/MehfoozurRehmanIjaz/"
-            className="home__section__overlay__link"
-          >
-            <Facebook size={20} color="currentColor" />
-          </a>
-          <a
-            href="https://www.instagram.com/mehfoozurrehman___/"
-            className="home__section__overlay__link"
-          >
-            <Instagram size={20} color="currentColor" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/mehfooz-rehman-37a1b0231/"
-            className="home__section__overlay__link"
-          >
-            <Linkedin size={20} color="currentColor" />
-          </a>
         </div>
       </section>
       <section className="services__section" id="services__section">
