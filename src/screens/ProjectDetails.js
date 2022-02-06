@@ -1,7 +1,7 @@
 import React from "react";
 import { ProjectCard } from "../components";
 import { pic } from "../assets";
-import { ArrowRight, ArrowUpRight } from "react-feather";
+import { ArrowRight } from "react-feather";
 
 export default function ProjectDetails() {
   return (

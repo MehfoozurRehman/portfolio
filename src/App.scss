@@ -409,6 +409,7 @@ body::-webkit-scrollbar-track {
   font-weight: bold;
   color: $primary;
   margin-bottom: 0.3em;
+  text-transform: capitalize;
 }
 .project__card__description {
   font-size: 14px;
