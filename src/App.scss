@@ -426,20 +426,8 @@ body {
 }
 .project__card:hover {
   transition: 300ms ease-in-out;
-  background-color: $primary;
-}
-.project__card:hover .project__card__name {
-  transition: 300ms ease-in-out;
-  color: $light;
-}
-.project__card:hover .project__card__description {
-  transition: 300ms ease-in-out;
-  color: $light;
-}
-.project__card:hover .project__card__languages__entry {
-  transition: 300ms ease-in-out;
-  background-color: $light;
-  color: $primary;
+  box-shadow: 0px 10px 30px rgba(25, 32, 59, 0.7);
+  background-color: #1c2647;
 }
 .porfolio__loadmore {
   width: 100%;
@@ -566,6 +554,10 @@ body {
 .service__card:last-child {
   border-bottom-right-radius: 0px;
 }
+.service__card:hover {
+  transition: 300ms ease-in-out;
+  box-shadow: 0px 0px 30px rgba(25, 32, 59, 0.7);
+}
 .services__section__right {
   width: 40%;
   height: 100%;
@@ -625,6 +617,159 @@ body {
   display: flex;
   align-items: flex-end;
 }
+.home__section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  padding: 0em 2em;
+  margin: 0em auto;
+  min-height: 600px;
+}
+.home__section__left {
+  flex: 1;
+}
+.home__section__left__heading {
+  font-size: 50px;
+  display: flex;
+  flex-direction: column;
+  color: $light;
+  font-weight: 500;
+  margin: 0.3em 0em;
+}
+.home__section__left__info {
+  font-size: 18px;
+  color: $secondary;
+  margin-bottom: 5em;
+}
+.home__section__left__buttons__primary {
+  background-color: $dark;
+  color: $primary;
+  border: 1px solid $primary;
+  padding: 0.7em 1.8em;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-right: 2em;
+}
+.home__section__left__buttons__primary:hover {
+  transition: 300ms ease-in-out;
+  background-color: $primary;
+  color: $light;
+}
+.home__section__left__buttons__secondary {
+  background-color: $dark;
+  color: $primary;
+  padding: 0.7em 0em;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-right: 1em;
+  position: relative;
+}
+.home__section__left__buttons__secondary::after {
+  position: absolute;
+  top: 32px;
+  left: 0px;
+  content: "";
+  width: 0px;
+  height: 2px;
+  background-color: $primary;
+}
+.home__section__left__buttons__secondary:hover::after {
+  transition: 500ms ease-in-out;
+  width: 100%;
+}
+.home__section__right {
+  position: relative;
+  border-top-left-radius: 50px;
+  height: 500px;
+}
+.home__section__right img {
+  min-width: 100%;
+  min-height: 100%;
+  border-top-left-radius: 80px;
+}
+.home__section__right__play__button {
+  position: absolute;
+  bottom: -30px;
+  left: -30px;
+  background-color: rgba(235, 74, 74, 0.3);
+  border: none;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0em;
+  border-radius: 50px;
+  color: $primary;
+  cursor: pointer;
+}
+.home__section__right__play__button svg {
+  z-index: 5;
+  width: 30px;
+  height: 30px;
+}
+.home__section__right__play__button::after {
+  position: absolute;
+  content: "";
+  width: 90px;
+  height: 90px;
+  background-color: rgba(235, 74, 74, 0.3);
+  border-radius: 50px;
+  z-index: 1;
+}
+.home__section__right__experience {
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  background-color: rgba(25, 32, 59, 0.9);
+  display: flex;
+  align-items: center;
+  padding: 0.5em 1em;
+  border-radius: 10px;
+}
+.home__section__right__experience svg {
+  margin-right: 1em;
+  width: 30px;
+  color: $primary;
+  height: 30px;
+}
+.home__section__right__experience__content {
+  display: flex;
+  flex-direction: column;
+}
+.home__section__right__experience__content__heading {
+  font-size: 16px;
+  color: $secondary;
+}
+.home__section__right__experience__content__info {
+  font-size: 18px;
+  color: $light;
+  display: flex;
+  align-items: flex-end;
+}
+.home__section__right__experience__content__info span {
+  font-size: 30px;
+  margin-bottom: -0.2em;
+  margin-right: 0.4em;
+}
+.home__section__right__experience__content__info::after {
+  position: absolute;
+  content: "";
+  width: 120%;
+  height: 120%;
+  background-color: rgba(25, 32, 59, 0.7);
+  border-radius: 10px;
+  z-index: -1;
+  left: -1em;
+  bottom: -0.5em;
+}
+.home__section__overlay {
+  position: absolute;
+  display: none;
+}
 @media (max-width: 1100px) {
   .header__wrapper__menu {
     display: flex;
@@ -666,6 +811,23 @@ body {
     justify-content: flex-start;
     margin-top: 1em;
   }
+  .home__section {
+    flex-direction: column;
+  }
+  .home__section__left {
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .home__section__right {
+    height: 600px;
+    width: 70%;
+  }
+  .home__section__right img {
+    width: 100%;
+    height: 100%;
+  }
 }
 @media (max-width: 900px) {
   .project__card {
@@ -680,6 +842,10 @@ body {
   }
   .portfolio__section__right .portfolio__filters {
     margin-left: 0em;
+  }
+  .home__section__right {
+    height: 500px;
+    margin-bottom: 7em;
   }
 }
 @media (max-width: 800px) {
@@ -734,6 +900,10 @@ body {
   .portfolio__section__right .portfolio__filters {
     margin-left: -0.5em;
   }
+  .home__section__right {
+    height: 500px;
+    width: 90%;
+  }
 }
 @media (max-width: 600px) {
   .header__wrapper__logo div {
@@ -781,9 +951,42 @@ body {
   .project__card {
     width: 100%;
   }
+  .home__section__right {
+    height: 350px;
+  }
+  .home__section__left__heading {
+    font-size: 35px;
+  }
 }
 @media (max-width: 400px) {
   .header__wrapper__nav .header__wrapper__nav__phone {
     display: none;
+  }
+  .home__section__left__buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .home__section__left__buttons__primary {
+    width: fit-content;
+    margin-right: 0em;
+    margin-top: -2em;
+  }
+  .home__section__left__buttons__secondary {
+    margin-right: 0em;
+    margin-top: 1em;
+  }
+  .services__section__right__sub__heading {
+    font-size: 14px;
+  }
+  .home__section__left__heading {
+    font-size: 30px;
+    text-align: center;
+  }
+  .home__section__left__info {
+    text-align: center;
+  }
+  .home__section__right {
+    height: 280px;
   }
 }

@@ -1,6 +1,15 @@
 import React from "react";
-import { ArrowRight, Feather } from "react-feather";
+import {
+  ArrowRight,
+  Facebook,
+  Feather,
+  GitHub,
+  Instagram,
+  Linkedin,
+  Play,
+} from "react-feather";
 import { Link } from "react-router-dom";
+import { pic } from "../assets";
 import { PortfolioFilter, ProjectCard } from "../components";
 
 function ServicesCard({ name, icon }) {
@@ -15,7 +24,84 @@ function ServicesCard({ name, icon }) {
 export default function Home() {
   return (
     <>
-      <section className="home__section" id="home__section"></section>
+      <section className="home__section" id="home__section">
+        <div className="home__section__left">
+          <div className="services__section__right__sub__heading">
+            <div className="services__section__right__sub__heading__bar"></div>
+            HEY I'M MEHFOOZ-UR-REHMAN
+          </div>
+          <div className="home__section__left__heading">
+            <span>Let's Build You A</span>
+            <span>Digital Identity</span>
+          </div>
+          <div className="home__section__left__info">
+            Web Developer & UI/UX Designer
+          </div>
+          <div className="home__section__left__buttons">
+            <Link
+              to="/contact"
+              onClick={() => {
+                document.getElementById("contact").checked = true;
+              }}
+              className="home__section__left__buttons__primary"
+            >
+              Hire me
+            </Link>
+            <Link
+              to="/portfolio"
+              onClick={() => {
+                document.getElementById("portfolio").checked = true;
+              }}
+              className="home__section__left__buttons__secondary"
+            >
+              Check Out My work
+            </Link>
+          </div>
+        </div>
+        <div className="home__section__right">
+          <button className="home__section__right__play__button">
+            <Play size={20} color="currentColor" fill="currentColor" />
+          </button>
+          <div className="home__section__right__experience">
+            <Feather size={20} color="currentColor" />
+            <div className="home__section__right__experience__content">
+              <div className="home__section__right__experience__content__heading">
+                Experience
+              </div>
+              <div className="home__section__right__experience__content__info">
+                <span>1</span>Year
+              </div>
+            </div>
+          </div>
+          <img src={pic} alt="pic" />
+        </div>
+        <div className="home__section__overlay">
+          <a
+            href="https://github.com/MehfoozurRehman"
+            className="home__section__overlay__link"
+          >
+            <GitHub size={20} color="currentColor" />
+          </a>
+          <a
+            href="https://web.facebook.com/MehfoozurRehmanIjaz/"
+            className="home__section__overlay__link"
+          >
+            <Facebook size={20} color="currentColor" />
+          </a>
+          <a
+            href="https://www.instagram.com/mehfoozurrehman___/"
+            className="home__section__overlay__link"
+          >
+            <Instagram size={20} color="currentColor" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/mehfooz-rehman-37a1b0231/"
+            className="home__section__overlay__link"
+          >
+            <Linkedin size={20} color="currentColor" />
+          </a>
+        </div>
+      </section>
       <section className="services__section" id="services__section">
         <div className="services__section__left">
           <div className="services__section__left__col">
