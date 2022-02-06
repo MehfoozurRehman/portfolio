@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Menu, Phone, X } from "react-feather";
 import { Link, useNavigate } from "react-router-dom";
 
-function NavLink({ children, to, id }) {
+function NavLink({ children, to, id, toSection }) {
   const navigate = useNavigate();
   return (
     <div className="header__wrapper__nav__link">
@@ -12,9 +12,18 @@ function NavLink({ children, to, id }) {
         className="header__wrapper__nav__link__input"
         name="header__wrapper__nav__link__input"
         id={id}
-        onClick={() => {
-          navigate(to);
-        }}
+        onClick={
+          toSection
+            ? () => {
+                navigate("/");
+                setTimeout(() => {
+                  document.getElementById(toSection).scrollIntoView();
+                }, 300);
+              }
+            : () => {
+                navigate(to);
+              }
+        }
       />
       <div className="header__wrapper__nav__link__content">{children}</div>
     </div>
@@ -74,10 +83,10 @@ export default function Header() {
             <NavLink to="/" id="home">
               Home
             </NavLink>
-            <NavLink to="/about" id="about">
+            <NavLink toSection="about__section" id="about">
               About Us
             </NavLink>
-            <NavLink to="/services" id="services">
+            <NavLink toSection="services__section" id="services">
               Services
             </NavLink>
             <NavLink to="/portfolio" id="portfolio">

@@ -22,12 +22,9 @@ export default function Footer() {
               Home
             </Link>
             <Link
-              to="/about"
+              to="/"
               onClick={() => {
-                window.scrollTo({
-                  top: 0,
-                  behavior: "smooth",
-                });
+                document.getElementById("about").scrollIntoView();
                 document.getElementById("about").checked = true;
               }}
               className="footer__wrapper__nav__link"
@@ -35,12 +32,9 @@ export default function Footer() {
               About Us
             </Link>
             <Link
-              to="/services"
+              to="/"
               onClick={() => {
-                window.scrollTo({
-                  top: 0,
-                  behavior: "smooth",
-                });
+                document.getElementById("services").scrollIntoView();
                 document.getElementById("services").checked = true;
               }}
               className="footer__wrapper__nav__link"
