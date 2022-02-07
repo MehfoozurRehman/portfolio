@@ -416,6 +416,7 @@ body::-webkit-scrollbar-track {
   font-size: 14px;
   color: $secondary;
   margin-bottom: 0.3em;
+  line-height: 25px;
 }
 .project__card__languages {
   display: flex;
@@ -599,6 +600,7 @@ body::-webkit-scrollbar-track {
 }
 .services__section__right__info {
   color: $secondary;
+  line-height: 25px;
 }
 .about__section {
   width: 100%;
@@ -871,6 +873,7 @@ body::-webkit-scrollbar-track {
 .testimonials__card__header__info {
   font-size: 14px;
   color: $secondary;
+  line-height: 25px;
 }
 @media (max-width: 1100px) {
   .header__wrapper__menu {

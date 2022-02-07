@@ -33,10 +33,10 @@ export default function ServicesSection() {
           <span>Better experiences</span>
         </div>
         <div className="services__section__right__info">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus,
-          eos doloremque. Autem ipsa aliquid quia. Quibusdam quo tenetur, illum
-          veritatis similique possimus fugiat molestias ut porro aspernatur
-          corporis commodi eligendi.
+          I can help you build nice, modern and intuative designs and then make
+          them reality. I will help you build your digital identity without the
+          hastle. I can build you websites, mobile apps and cms to get you
+          started and more.
         </div>
       </div>
     </section>
