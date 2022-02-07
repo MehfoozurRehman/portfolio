@@ -333,7 +333,7 @@ body::-webkit-scrollbar-track {
 .contact__section__right__label {
   color: $light;
   font-size: 14px;
-  margin-bottom: 0.3em;
+  margin-bottom: 0.5em;
   margin-left: 0.1em;
 }
 .contact__section__right__input__box {
@@ -882,6 +882,7 @@ body::-webkit-scrollbar-track {
     bottom: -20px;
     background-color: $dark;
     left: 0px;
+    z-index: 9999;
   }
   .header__wrapper__nav .header__wrapper__nav__bar {
     display: none;
@@ -954,6 +955,7 @@ body::-webkit-scrollbar-track {
   }
   .about__section {
     flex-direction: column;
+    padding: 0em 1.5em;
   }
   .about__section__left {
     min-height: 500px;
@@ -1072,6 +1074,7 @@ body::-webkit-scrollbar-track {
   }
   .project__card {
     width: 100%;
+    margin-right: 1em;
   }
   .home__section__right {
     height: 350px;
@@ -1119,5 +1122,8 @@ body::-webkit-scrollbar-track {
   }
   .home__section__right {
     height: 280px;
+  }
+  .about__section__left {
+    height: 700px;
   }
 }

@@ -54,19 +54,27 @@ export default function Header() {
         </div>
         {isNavOpen ? (
           <div className="header__wrapper__nav">
-            <NavLink to="/" id="home">
+            <NavLink to="/" id="home" setIsNavOpen={setIsNavOpen}>
               Home
             </NavLink>
-            <NavLink toSection="about__section" id="about">
+            <NavLink
+              toSection="about__section"
+              id="about"
+              setIsNavOpen={setIsNavOpen}
+            >
               About Us
             </NavLink>
-            <NavLink toSection="services__section" id="services">
+            <NavLink
+              toSection="services__section"
+              id="services"
+              setIsNavOpen={setIsNavOpen}
+            >
               Services
             </NavLink>
-            <NavLink to="/portfolio" id="portfolio">
+            <NavLink to="/portfolio" id="portfolio" setIsNavOpen={setIsNavOpen}>
               Portfolio
             </NavLink>
-            <NavLink to="/contact" id="contact">
+            <NavLink to="/contact" id="contact" setIsNavOpen={setIsNavOpen}>
               Contact
             </NavLink>
             <div className="header__wrapper__nav__bar" />

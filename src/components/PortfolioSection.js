@@ -54,6 +54,7 @@ export default function PortfolioSection() {
               top: 0,
               behavior: "smooth",
             });
+            document.getElementById("portfolio").checked = true;
           }}
           className="project__section__left__link__entry"
           style={{ marginTop: "0em" }}

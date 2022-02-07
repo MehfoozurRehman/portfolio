@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function NavLink({ children, to, id, toSection }) {
+export default function NavLink({ children, to, id, toSection, setIsNavOpen }) {
   const navigate = useNavigate();
   return (
     <div className="header__wrapper__nav__link">
@@ -18,9 +18,19 @@ export default function NavLink({ children, to, id, toSection }) {
                 setTimeout(() => {
                   document.getElementById(toSection).scrollIntoView();
                 }, 300);
+                if (window.innerWidth < 1100) {
+                  setIsNavOpen(false);
+                } else {
+                  setIsNavOpen(true);
+                }
               }
             : () => {
                 navigate(to);
+                if (window.innerWidth < 1100) {
+                  setIsNavOpen(false);
+                } else {
+                  setIsNavOpen(true);
+                }
               }
         }
       />
