@@ -42,8 +42,8 @@ export default function TestimonialsSection() {
               ? 1
               : 3.5
           }
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
+          // onSlideChange={() => console.log("slide change")}
+          // onSwiper={(swiper) => console.log(swiper)}
         >
           <SwiperSlide>
             <TestimonialsCard />
