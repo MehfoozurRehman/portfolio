@@ -24,7 +24,7 @@ export default function Footer() {
             <Link
               to="/"
               onClick={() => {
-                document.getElementById("about").scrollIntoView();
+                document.getElementById("about__section").scrollIntoView();
                 document.getElementById("about").checked = true;
               }}
               className="footer__wrapper__nav__link"
@@ -34,7 +34,7 @@ export default function Footer() {
             <Link
               to="/"
               onClick={() => {
-                document.getElementById("services").scrollIntoView();
+                document.getElementById("services__section").scrollIntoView();
                 document.getElementById("services").checked = true;
               }}
               className="footer__wrapper__nav__link"
