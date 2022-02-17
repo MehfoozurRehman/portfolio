@@ -2,6 +2,7 @@ import React from "react";
 import { ProjectCard } from "../components";
 import { pic } from "../assets";
 import { ArrowRight } from "react-feather";
+import { Image } from "cloudinary-react";
 
 export default function ProjectDetails() {
   return (
@@ -45,7 +46,7 @@ export default function ProjectDetails() {
             </a>
           </div>
         </div>
-        <img src={pic} alt="pic" className="project__section__right" />
+        <Image publicId="bilal" alt="pic" className="project__section__right" />
       </div>
       <div className="project__section" style={{ marginBottom: 0 }}>
         <div className="project__section__left">

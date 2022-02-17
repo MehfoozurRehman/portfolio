@@ -3,10 +3,11 @@ import { Route, Routes } from "react-router-dom";
 import "./App.scss";
 import { Contact, Home, Portfolio, ProjectDetails } from "./screens";
 import { ContactSection, Footer, Header } from "./components";
+import { CloudinaryContext } from "cloudinary-react";
 
 export default function App() {
   return (
-    <>
+    <CloudinaryContext cloudName="mehfoozurrehman">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -16,6 +17,6 @@ export default function App() {
       </Routes>
       <ContactSection />
       <Footer />
-    </>
+    </CloudinaryContext>
   );
 }
