@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { pic, CV } from "../assets";
+import { pic } from "../assets";
 
 export default function AboutSection() {
   return (
@@ -42,7 +42,10 @@ export default function AboutSection() {
           >
             My Portfolio
           </Link>
-          <a href={CV} className="home__section__left__buttons__secondary">
+          <a
+            href="http://www.africau.edu/images/default/sample.pdf"
+            className="home__section__left__buttons__secondary"
+          >
             Download CV
           </a>
         </div>
