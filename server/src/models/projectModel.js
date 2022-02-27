@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const projectSchema = mongoose.Schema(
   {
     name: String,
-    languages: String,
+    languages: Array,
     image: String,
     description: String,
     category: String,

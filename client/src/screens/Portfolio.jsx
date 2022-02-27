@@ -1,7 +1,21 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { PortfolioFilter, ProjectCard } from "../components";
 
 export default function Portfolio() {
+  const [limit, setLimit] = useState(6);
+  const [portfolioData, setPortfolioData] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://localhost:9000/api/v1/get_project")
+      .then((res) => {
+        setPortfolioData(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   return (
     <>
       <div className="screen__header">
@@ -22,29 +36,20 @@ export default function Portfolio() {
         </div>
       </div>
       <div className="portfolio__projects">
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
+        {portfolioData
+          .filter((item, i) => i < limit)
+          .map((data, i) => (
+            <ProjectCard data={data} key={i} />
+          ))}
       </div>
       <div className="porfolio__loadmore">
-        <button title="load more" className="contact__section__right__btn">
+        <button
+          title="load more"
+          className="contact__section__right__btn"
+          onClick={() => {
+            setLimit(limit + limit);
+          }}
+        >
           Load More
         </button>
       </div>

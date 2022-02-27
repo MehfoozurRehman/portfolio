@@ -1,9 +1,22 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
+import { useEffect } from "react";
 import { ArrowRight } from "react-feather";
 import { Link } from "react-router-dom";
 import { PortfolioFilter, ProjectCard } from "../components";
 
 export default function PortfolioSection() {
+  const [portfolioData, setPortfolioData] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://localhost:9000/api/v1/get_project")
+      .then((res) => {
+        setPortfolioData(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
   return (
     <>
       <div className="portfolio__section__header">
@@ -29,12 +42,11 @@ export default function PortfolioSection() {
         </div>
       </div>
       <div className="portfolio__projects">
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
+        {portfolioData
+          .filter((item, i) => i < 6)
+          .map((data, i) => (
+            <ProjectCard data={data} key={i} />
+          ))}
       </div>
       <div
         className="project__section__left__link"

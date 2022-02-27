@@ -1,10 +1,49 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ProjectCard } from "../components";
-import { pic } from "../assets";
 import { ArrowRight } from "react-feather";
 import { Image } from "cloudinary-react";
+import axios from "axios";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function ProjectDetails() {
+  const navigate = useNavigate();
+  const { state } = useLocation();
+  const [portfolioData, setPortfolioData] = useState([]);
+  useEffect(() => {
+    if (state != null || undefined) {
+      axios
+        .get("http://localhost:9000/api/v1/get_project")
+        .then((res) => {
+          setPortfolioData(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+      console.log(state);
+    } else {
+      navigate("/");
+    }
+  }, []);
+  var created_date = new Date(state.state.createdAt);
+
+  var months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  var year = created_date.getFullYear();
+  var month = months[created_date.getMonth()];
+  var date = created_date.getDate();
+
   return (
     <>
       <div className="screen__header">
@@ -21,32 +60,38 @@ export default function ProjectDetails() {
         <div className="project__section__left">
           <div className="project__section__left__heading">Project Brief:</div>
           <div className="project__section__left__info">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat,
-            rerum vitae dolorem porro nisi neque consequatur quas, earum sed
-            itaque quasi odit. Porro consequuntur fuga labore nihil sed facere
-            voluptatum.
+            {state.state.description}
           </div>
           <div className="project__section__left__bar"></div>
           <div className="project__section__left__heading">
             Project Detials:
           </div>
           <div className="project__section__left__about">
-            <span>Category:</span> App Design
+            <span>Category:</span> {state.state.category}
           </div>
           <div className="project__section__left__about">
-            <span>Date:</span> 01 January, 2021
+            <span>Date:</span>
+            {date + "-" + month + "-" + year}
           </div>
           <div className="project__section__left__about">
-            <span>Client:</span> DSME Global
+            <span>Client:</span>
+            {state.state.client}
           </div>
           <div className="project__section__left__link">
-            <a href="#" className="project__section__left__link__entry">
+            <a
+              href={state.state.url}
+              className="project__section__left__link__entry"
+            >
               Launch Project
               <ArrowRight size={20} color="currentColor" />
             </a>
           </div>
         </div>
-        <Image publicId="bilal" alt="pic" className="project__section__right" />
+        <Image
+          publicId={state.state.image}
+          alt="pic"
+          className="project__section__right"
+        />
       </div>
       <div className="project__section" style={{ marginBottom: 0 }}>
         <div className="project__section__left">
@@ -56,9 +101,11 @@ export default function ProjectDetails() {
         </div>
       </div>
       <div className="portfolio__projects">
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
+        {portfolioData
+          .filter((item, i) => i < 3 && item.category === state.state.category)
+          .map((data, i) => (
+            <ProjectCard data={data} key={i} />
+          ))}
       </div>
       <div className="porfolio__loadmore"></div>
     </>

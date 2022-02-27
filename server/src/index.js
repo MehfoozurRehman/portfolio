@@ -43,11 +43,11 @@ app.get("/", (req, res) => {
   });
 });
 app.post("/upload", function (req, res) {
-  const image = req.files.image;
-  console.log(image);
+  // const image = req.files.image;
+  // console.log(image);
   cloudinary.v2.uploader.upload(
-    "https://avatars.githubusercontent.com/u/69617285?v=4",
-    { public_id: "asad" },
+    "https://avatars.githubusercontent.com/u/68416499?s=400&u=e4115c8a9a984f4b5075cd9c1de86ecf1fe23da5&v=4",
+    { public_id: "mehfooz" },
     function (error, result) {
       console.log(result);
     }

@@ -18,7 +18,6 @@ export default function Header() {
         setIsNavOpen(true);
       }
     });
-    return () => window.removeEventListener("resize");
   }, []);
   return (
     <div className="header">

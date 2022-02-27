@@ -16,7 +16,7 @@ export default function ContactSection() {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
-  const [success, setSuccess] = useState(true);
+  const [success, setSuccess] = useState(false);
   useEffect(() => {
     setTimeout(() => {
       setSuccess(false);
