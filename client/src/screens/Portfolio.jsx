@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { PortfolioFilter, ProjectCard } from "../components";
 
 export default function Portfolio() {
+  const [filter, setFilter] = useState("");
   const [limit, setLimit] = useState(6);
   const [portfolioData, setPortfolioData] = useState([]);
   useEffect(() => {
@@ -28,16 +29,43 @@ export default function Portfolio() {
         </div>
         <div className="screen__header__right">
           <div className="portfolio__filters">
-            <PortfolioFilter defaultChecked={true}>All</PortfolioFilter>
-            <PortfolioFilter>Web App</PortfolioFilter>
-            <PortfolioFilter>Mobile App</PortfolioFilter>
-            <PortfolioFilter>UI/UX Design</PortfolioFilter>
+            <PortfolioFilter
+              onClick={() => {
+                setFilter("");
+              }}
+              defaultChecked={true}
+            >
+              All
+            </PortfolioFilter>
+            <PortfolioFilter
+              onClick={() => {
+                setFilter("Web App");
+              }}
+            >
+              Web App
+            </PortfolioFilter>
+            <PortfolioFilter
+              onClick={() => {
+                setFilter("Mobile App");
+              }}
+            >
+              Mobile App
+            </PortfolioFilter>
+            <PortfolioFilter
+              onClick={() => {
+                setFilter("UI/UX Design");
+              }}
+            >
+              UI/UX Design
+            </PortfolioFilter>
           </div>
         </div>
       </div>
       <div className="portfolio__projects">
         {portfolioData
-          .filter((item, i) => i < limit)
+          .filter((item, i) =>
+            filter === "" ? i < limit : i < limit && item.category === filter
+          )
           .map((data, i) => (
             <ProjectCard data={data} key={i} />
           ))}
@@ -47,7 +75,7 @@ export default function Portfolio() {
           title="load more"
           className="contact__section__right__btn"
           onClick={() => {
-            setLimit(limit + limit);
+            setLimit(limit + 3);
           }}
         >
           Load More

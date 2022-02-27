@@ -703,6 +703,7 @@ body::-webkit-scrollbar-track {
   color: $light;
   font-weight: 500;
   margin: 0.3em 0em;
+  max-width: 400px;
 }
 .home__section__left__info {
   font-size: 18px;

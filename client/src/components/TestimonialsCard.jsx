@@ -1,7 +1,7 @@
 import React from "react";
 import { pic } from "../assets";
 
-export default function TestimonialsCard() {
+export default function TestimonialsCard({ data }) {
   return (
     <div className="testimonials__card">
       <div className="testimonials__card__header">
@@ -14,19 +14,14 @@ export default function TestimonialsCard() {
         </div>
         <div className="testimonials__card__header__content">
           <div className="testimonials__card__header__content__heading">
-            Ibraham Shahid
+            {data.name}
           </div>
           <div className="testimonials__card__header__content__sub__heading">
-            UI / UX Developer
+            {data.role}
           </div>
         </div>
       </div>
-      <div className="testimonials__card__header__info">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur
-        dolores consequuntur exercitationem quod et sed ea animi ipsa iure
-        cupiditate consectetur porro non asperiores quasi illo, est aliquid
-        tempora repellat?
-      </div>
+      <div className="testimonials__card__header__info">{data.description}</div>
     </div>
   );
 }

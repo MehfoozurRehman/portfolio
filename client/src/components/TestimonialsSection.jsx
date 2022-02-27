@@ -3,7 +3,7 @@ import { TestimonialsCard } from "../components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
-export default function TestimonialsSection() {
+export default function TestimonialsSection({ info }) {
   const [screenSize, setScreenSize] = useState("large");
   useEffect(() => {
     if (window.innerWidth < 600) {
@@ -45,30 +45,11 @@ export default function TestimonialsSection() {
           // onSlideChange={() => console.log("slide change")}
           // onSwiper={(swiper) => console.log(swiper)}
         >
-          <SwiperSlide>
-            <TestimonialsCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <TestimonialsCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <TestimonialsCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <TestimonialsCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <TestimonialsCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <TestimonialsCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <TestimonialsCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <TestimonialsCard />
-          </SwiperSlide>
+          {info.testimonials.map((data) => (
+            <SwiperSlide>
+              <TestimonialsCard data={data} />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </section>

@@ -3,7 +3,7 @@ import { Menu, Phone, X } from "react-feather";
 import { Link } from "react-router-dom";
 import { NavLink } from "../components";
 
-export default function Header() {
+export default function Header({ info }) {
   const [isNavOpen, setIsNavOpen] = useState(false);
   useEffect(() => {
     if (window.innerWidth < 1100) {
@@ -35,7 +35,7 @@ export default function Header() {
         <div className="header__wrapper__menu">
           <div className="header__wrapper__nav__phone">
             <Phone size={20} color="currentColor" />
-            <span>+92 313 7178074</span>
+            <span>{info.number}</span>
           </div>
           <div className="header__wrapper__nav__bar" />
           <button

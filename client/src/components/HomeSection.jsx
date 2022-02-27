@@ -10,21 +10,16 @@ import {
 import { Link } from "react-router-dom";
 import { pic } from "../assets";
 
-export default function HomeSection() {
+export default function HomeSection({ info }) {
   return (
     <section className="home__section" id="home__section">
       <div className="home__section__left">
         <div className="services__section__right__sub__heading">
           <div className="services__section__right__sub__heading__bar"></div>
-          HEY I'M MEHFOOZ-UR-REHMAN
+          HEY I'M {info.name}
         </div>
-        <div className="home__section__left__heading">
-          <span>Let's Build You A</span>
-          <span>Digital Identity</span>
-        </div>
-        <div className="home__section__left__info">
-          Web Developer & UI/UX Designer
-        </div>
+        <div className="home__section__left__heading">{info.slogan}</div>
+        <div className="home__section__left__info">{info.role}</div>
         <div className="home__section__left__buttons">
           <Link
             to="/contact"

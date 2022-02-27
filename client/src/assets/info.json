@@ -1,0 +1,118 @@
+{
+  "name": "MEHFOOZ-UR-REHMAN",
+  "slogan": "Let's Build You A Digital Identity",
+  "role": "Web Developer & UI/UX Designer",
+  "number": "+92 313 7178074",
+  "skills": [
+    {
+      "image": "https://cdn-icons-png.flaticon.com/512/732/732212.png",
+      "name": "HTML 5"
+    },
+    {
+      "image": "https://cdn-icons-png.flaticon.com/512/732/732190.png",
+      "name": "CSS 3"
+    },
+    {
+      "image": "https://cdn-icons-png.flaticon.com/512/5968/5968292.png",
+      "name": "JavaScript"
+    },
+    {
+      "image": "https://cdn-icons-png.flaticon.com/512/1260/1260667.png",
+      "name": "React Js"
+    },
+    {
+      "image": "https://cdn-icons-png.flaticon.com/512/1260/1260775.png",
+      "name": "React Native"
+    },
+    {
+      "image": "https://cdn-icons-png.flaticon.com/512/919/919825.png",
+      "name": "Node Js"
+    },
+    {
+      "image": "https://cdn.worldvectorlogo.com/logos/adobe-xd.svg",
+      "name": "Adobe Xd"
+    },
+    {
+      "image": "https://cdn-icons-png.flaticon.com/512/5968/5968672.png",
+      "name": "Bootstrap"
+    },
+    {
+      "image": "https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/erkxwhl1gd48xfhe2yld",
+      "name": "MongoDb"
+    }
+  ],
+  "testimonials": [
+    {
+      "image": "./pic.jpg",
+      "name": "Ibraham Shahid",
+      "role": "UI / UX Developer",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur dolores consequuntur exercitationem quod et sed ea animi ipsa iure cupiditate consectetur porro non asperiores quasi illo, est aliquid tempora repellat?"
+    },
+    {
+      "image": "./pic.jpg",
+      "name": "Ibraham Shahid",
+      "role": "UI / UX Developer",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur dolores consequuntur exercitationem quod et sed ea animi ipsa iure cupiditate consectetur porro non asperiores quasi illo, est aliquid tempora repellat?"
+    },
+    {
+      "image": "./pic.jpg",
+      "name": "Ibraham Shahid",
+      "role": "UI / UX Developer",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur dolores consequuntur exercitationem quod et sed ea animi ipsa iure cupiditate consectetur porro non asperiores quasi illo, est aliquid tempora repellat?"
+    },
+    {
+      "image": "./pic.jpg",
+      "name": "Ibraham Shahid",
+      "role": "UI / UX Developer",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur dolores consequuntur exercitationem quod et sed ea animi ipsa iure cupiditate consectetur porro non asperiores quasi illo, est aliquid tempora repellat?"
+    },
+    {
+      "image": "./pic.jpg",
+      "name": "Ibraham Shahid",
+      "role": "UI / UX Developer",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur dolores consequuntur exercitationem quod et sed ea animi ipsa iure cupiditate consectetur porro non asperiores quasi illo, est aliquid tempora repellat?"
+    },
+    {
+      "image": "./pic.jpg",
+      "name": "Ibraham Shahid",
+      "role": "UI / UX Developer",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur dolores consequuntur exercitationem quod et sed ea animi ipsa iure cupiditate consectetur porro non asperiores quasi illo, est aliquid tempora repellat?"
+    },
+    {
+      "image": "./pic.jpg",
+      "name": "Ibraham Shahid",
+      "role": "UI / UX Developer",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur dolores consequuntur exercitationem quod et sed ea animi ipsa iure cupiditate consectetur porro non asperiores quasi illo, est aliquid tempora repellat?"
+    },
+    {
+      "image": "./pic.jpg",
+      "name": "Ibraham Shahid",
+      "role": "UI / UX Developer",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur dolores consequuntur exercitationem quod et sed ea animi ipsa iure cupiditate consectetur porro non asperiores quasi illo, est aliquid tempora repellat?"
+    },
+    {
+      "image": "../pic.jpg",
+      "name": "Ibraham Shahid",
+      "role": "UI / UX Developer",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur dolores consequuntur exercitationem quod et sed ea animi ipsa iure cupiditate consectetur porro non asperiores quasi illo, est aliquid tempora repellat?"
+    },
+    {
+      "image": "./pic.jpg",
+      "name": "Ibraham Shahid",
+      "role": "UI / UX Developer",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur dolores consequuntur exercitationem quod et sed ea animi ipsa iure cupiditate consectetur porro non asperiores quasi illo, est aliquid tempora repellat?"
+    },
+    {
+      "image": "./pic.jpg",
+      "name": "Ibraham Shahid",
+      "role": "UI / UX Developer",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur dolores consequuntur exercitationem quod et sed ea animi ipsa iure cupiditate consectetur porro non asperiores quasi illo, est aliquid tempora repellat?"
+    },
+    {
+      "image": "./pic.jpg",
+      "name": "Ibraham Shahid",
+      "role": "UI / UX Developer",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur dolores consequuntur exercitationem quod et sed ea animi ipsa iure cupiditate consectetur porro non asperiores quasi illo, est aliquid tempora repellat?"
+    }
+  ]
+}

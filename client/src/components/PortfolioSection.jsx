@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { PortfolioFilter, ProjectCard } from "../components";
 
 export default function PortfolioSection() {
+  const [filter, setFilter] = useState("");
   const [portfolioData, setPortfolioData] = useState([]);
   useEffect(() => {
     axios
@@ -34,16 +35,43 @@ export default function PortfolioSection() {
         </div>
         <div className="portfolio__section__right">
           <div className="portfolio__filters">
-            <PortfolioFilter defaultChecked={true}>All</PortfolioFilter>
-            <PortfolioFilter>Web App</PortfolioFilter>
-            <PortfolioFilter>Mobile App</PortfolioFilter>
-            <PortfolioFilter>UI/UX Design</PortfolioFilter>
+            <PortfolioFilter
+              onClick={() => {
+                setFilter("");
+              }}
+              defaultChecked={true}
+            >
+              All
+            </PortfolioFilter>
+            <PortfolioFilter
+              onClick={() => {
+                setFilter("Web App");
+              }}
+            >
+              Web App
+            </PortfolioFilter>
+            <PortfolioFilter
+              onClick={() => {
+                setFilter("Mobile App");
+              }}
+            >
+              Mobile App
+            </PortfolioFilter>
+            <PortfolioFilter
+              onClick={() => {
+                setFilter("UI/UX Design");
+              }}
+            >
+              UI/UX Design
+            </PortfolioFilter>
           </div>
         </div>
       </div>
       <div className="portfolio__projects">
         {portfolioData
-          .filter((item, i) => i < 6)
+          .filter((item, i) =>
+            filter === "" ? i < 6 : i < 6 && item.category === filter
+          )
           .map((data, i) => (
             <ProjectCard data={data} key={i} />
           ))}
