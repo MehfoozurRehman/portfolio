@@ -52,38 +52,42 @@ export default function Header({ info }) {
             )}
           </button>
         </div>
-        {isNavOpen ? (
-          <div className="header__wrapper__nav">
-            <NavLink to="/" id="home" setIsNavOpen={setIsNavOpen}>
-              Home
-            </NavLink>
-            <NavLink
-              toSection="about__section"
-              id="about"
-              setIsNavOpen={setIsNavOpen}
-            >
-              About Us
-            </NavLink>
-            <NavLink
-              toSection="services__section"
-              id="services"
-              setIsNavOpen={setIsNavOpen}
-            >
-              Services
-            </NavLink>
-            <NavLink to="/portfolio" id="portfolio" setIsNavOpen={setIsNavOpen}>
-              Portfolio
-            </NavLink>
-            <NavLink to="/contact" id="contact" setIsNavOpen={setIsNavOpen}>
-              Contact
-            </NavLink>
-            <div className="header__wrapper__nav__bar" />
-            <div className="header__wrapper__nav__phone">
-              <Phone size={20} color="currentColor" />
-              <span>+92 313 7178074</span>
-            </div>
-          </div>
-        ) : null}
+        {isNavOpen ? <Nav setIsNavOpen={setIsNavOpen} /> : null}
+      </div>
+    </div>
+  );
+}
+
+function Nav({ setIsNavOpen }) {
+  return (
+    <div className="header__wrapper__nav">
+      <NavLink to="/" id="home" setIsNavOpen={setIsNavOpen}>
+        Home
+      </NavLink>
+      <NavLink
+        toSection="about__section"
+        id="about"
+        setIsNavOpen={setIsNavOpen}
+      >
+        About Us
+      </NavLink>
+      <NavLink
+        toSection="services__section"
+        id="services"
+        setIsNavOpen={setIsNavOpen}
+      >
+        Services
+      </NavLink>
+      <NavLink to="/portfolio" id="portfolio" setIsNavOpen={setIsNavOpen}>
+        Portfolio
+      </NavLink>
+      <NavLink to="/contact" id="contact" setIsNavOpen={setIsNavOpen}>
+        Contact
+      </NavLink>
+      <div className="header__wrapper__nav__bar" />
+      <div className="header__wrapper__nav__phone">
+        <Phone size={20} color="currentColor" />
+        <span>+92 313 7178074</span>
       </div>
     </div>
   );
