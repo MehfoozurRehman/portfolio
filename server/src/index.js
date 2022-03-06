@@ -3,9 +3,11 @@ const cloudinary = require("cloudinary");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+const axios = require("axios");
 const fileUpload = require("express-fileupload");
 const contactRouter = require("./routers/contactRouter");
 const projectRouter = require("./routers/projectRouter");
+const projectModel = require("./models/projectModel");
 
 // api config
 dotenv.config();
@@ -41,6 +43,29 @@ app.get("/", (req, res) => {
   res.json({
     message: "hey welcome to mehfooz-ur-rehman's portfolio",
   });
+  axios
+    .get("https://api.github.com/users/MehfoozurRehman/repos", {
+      Authorization: "Bearer " + "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",
+    })
+    .then((res) => {
+      res.data.map((item) => {
+        setTimeout(() => {
+          new projectModel({
+            name: item.name,
+            languages: item.languages_url,
+            image: item.name.replace(/_/g, "").replace(/-/g, ""),
+            description: item.description,
+            category:
+              item.homepage === null || item.homepage === ""
+                ? { value: "Mobile App", label: "Mobile App" }
+                : { value: "Web App", label: "Web App" },
+            date: item.created_at,
+            client: "",
+            url: item.homepage,
+          }).save();
+        }, 3000);
+      });
+    });
 });
 app.post("/api/v1/upload", function (req, res) {
   cloudinary.v2.uploader.upload(

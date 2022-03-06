@@ -19,7 +19,6 @@ export default function ProjectDetails() {
         .catch((err) => {
           console.log(err);
         });
-      console.log(state);
     } else {
       navigate("/");
     }
@@ -67,7 +66,8 @@ export default function ProjectDetails() {
             Project Detials:
           </div>
           <div className="project__section__left__about">
-            <span>Category:</span> {state.state.category}
+            <span>Category:</span>
+            {state.state.category.map((item) => item.value)}
           </div>
           <div className="project__section__left__about">
             <span>Date:</span>

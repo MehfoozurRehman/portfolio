@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { TestimonialsCard } from "../components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { Link } from "react-router-dom";
 
 export default function TestimonialsSection({ info }) {
   const [screenSize, setScreenSize] = useState("large");
@@ -51,6 +52,23 @@ export default function TestimonialsSection({ info }) {
             </SwiperSlide>
           ))}
         </Swiper>
+      </div>
+      <div className="porfolio__loadmore" style={{ marginTop: -50 }}>
+        <Link
+          to="/write-testimonial"
+          onClick={() => {
+            setTimeout(() => {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }, 10);
+          }}
+          title="load more"
+          className="contact__section__right__btn"
+          style={{
+            textDecoration: "none",
+          }}
+        >
+          Write Testimonial
+        </Link>
       </div>
     </section>
   );

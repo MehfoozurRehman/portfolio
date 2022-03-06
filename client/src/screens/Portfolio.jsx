@@ -4,7 +4,7 @@ import { PortfolioFilter, ProjectCard } from "../components";
 
 export default function Portfolio() {
   const [filter, setFilter] = useState("");
-  const [limit, setLimit] = useState(6);
+  const [limit, setLimit] = useState(9);
   const [portfolioData, setPortfolioData] = useState([]);
   useEffect(() => {
     axios
@@ -63,23 +63,24 @@ export default function Portfolio() {
       </div>
       <div className="portfolio__projects">
         {portfolioData
-          .filter((item, i) =>
-            filter === "" ? i < limit : i < limit && item.category === filter
-          )
-          .map((data, i) => (
-            <ProjectCard data={data} key={i} />
-          ))}
+          .filter((item, i) => (filter === "" ? i < limit : i))
+          .map((data, i) => {
+            return <ProjectCard data={data} key={i} filter={filter} />;
+          })}
       </div>
+
       <div className="porfolio__loadmore">
-        <button
-          title="load more"
-          className="contact__section__right__btn"
-          onClick={() => {
-            setLimit(limit + 3);
-          }}
-        >
-          Load More
-        </button>
+        {filter === "" ? (
+          <button
+            title="load more"
+            className="contact__section__right__btn"
+            onClick={() => {
+              setLimit(limit + limit);
+            }}
+          >
+            Load More
+          </button>
+        ) : null}
       </div>
     </>
   );

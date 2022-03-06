@@ -7,6 +7,7 @@ import { PortfolioFilter, ProjectCard } from "../components";
 
 export default function PortfolioSection() {
   const [filter, setFilter] = useState("");
+  const [category, setCategory] = useState("");
   const [portfolioData, setPortfolioData] = useState([]);
   useEffect(() => {
     axios
@@ -69,11 +70,9 @@ export default function PortfolioSection() {
       </div>
       <div className="portfolio__projects">
         {portfolioData
-          .filter((item, i) =>
-            filter === "" ? i < 6 : i < 6 && item.category === filter
-          )
+          .filter((item, i) => i < 6)
           .map((data, i) => (
-            <ProjectCard data={data} key={i} />
+            <ProjectCard data={data} key={i} filter={filter} />
           ))}
       </div>
       <div
