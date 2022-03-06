@@ -431,6 +431,7 @@ body::-webkit-scrollbar-track {
   padding: 2em;
   margin-right: 2%;
   text-decoration: none;
+  min-height: 400px;
 }
 .project__card__name {
   font-size: 22px;
@@ -463,6 +464,7 @@ body::-webkit-scrollbar-track {
 .project__card__image {
   width: 100%;
   border-radius: 8px;
+  max-height: 200px;
 }
 .project__card:hover {
   transition: 300ms ease-in-out;
@@ -902,6 +904,7 @@ body::-webkit-scrollbar-track {
   font-size: 14px;
   color: $secondary;
   line-height: 25px;
+  word-wrap: break-word;
 }
 .skills__section {
   display: flex;

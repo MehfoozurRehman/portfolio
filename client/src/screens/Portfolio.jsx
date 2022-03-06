@@ -28,37 +28,7 @@ export default function Portfolio() {
           </div>
         </div>
         <div className="screen__header__right">
-          <div className="portfolio__filters">
-            <PortfolioFilter
-              onClick={() => {
-                setFilter("");
-              }}
-              defaultChecked={true}
-            >
-              All
-            </PortfolioFilter>
-            <PortfolioFilter
-              onClick={() => {
-                setFilter("Web App");
-              }}
-            >
-              Web App
-            </PortfolioFilter>
-            <PortfolioFilter
-              onClick={() => {
-                setFilter("Mobile App");
-              }}
-            >
-              Mobile App
-            </PortfolioFilter>
-            <PortfolioFilter
-              onClick={() => {
-                setFilter("UI/UX Design");
-              }}
-            >
-              UI/UX Design
-            </PortfolioFilter>
-          </div>
+          <PortfolioFilters setFilter={setFilter} />
         </div>
       </div>
       <div className="portfolio__projects">
@@ -83,5 +53,41 @@ export default function Portfolio() {
         ) : null}
       </div>
     </>
+  );
+}
+
+function PortfolioFilters({ setFilter }) {
+  return (
+    <div className="portfolio__filters">
+      <PortfolioFilter
+        onClick={() => {
+          setFilter("");
+        }}
+        defaultChecked={true}
+      >
+        All
+      </PortfolioFilter>
+      <PortfolioFilter
+        onClick={() => {
+          setFilter("Web App");
+        }}
+      >
+        Web App
+      </PortfolioFilter>
+      <PortfolioFilter
+        onClick={() => {
+          setFilter("Mobile App");
+        }}
+      >
+        Mobile App
+      </PortfolioFilter>
+      <PortfolioFilter
+        onClick={() => {
+          setFilter("UI/UX Design");
+        }}
+      >
+        UI/UX Design
+      </PortfolioFilter>
+    </div>
   );
 }

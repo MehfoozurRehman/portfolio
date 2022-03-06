@@ -2,6 +2,9 @@ import React from "react";
 import gravatarUrl from "gravatar-url";
 
 export default function TestimonialsCard({ data }) {
+  function limit(string = "", limit = 0) {
+    return string.substring(0, limit);
+  }
   return (
     <div className="testimonials__card">
       <div className="testimonials__card__header">
@@ -21,7 +24,9 @@ export default function TestimonialsCard({ data }) {
           </div>
         </div>
       </div>
-      <div className="testimonials__card__header__info">{data.message}</div>
+      <div className="testimonials__card__header__info">
+        {limit(data.message, 250)}
+      </div>
     </div>
   );
 }

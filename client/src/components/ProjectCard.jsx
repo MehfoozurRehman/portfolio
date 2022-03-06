@@ -19,7 +19,6 @@ export default function ProjectCard({ data, filter }) {
   data.category.map((item) => {
     filterMatch = item.value === filter;
   });
-
   return (
     <>
       {filter === "" ? (
