@@ -1,20 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import {
-  CheckCircle,
-  Facebook,
-  GitHub,
-  Instagram,
-  Linkedin,
-  Mail,
-  MapPin,
-  Phone,
-} from "react-feather";
+import { CheckCircle } from "react-feather";
 
 export default function TestimonialFormSection() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
+  const [designation, setDesignation] = useState("");
   const [message, setMessage] = useState("");
   const [success, setSuccess] = useState(false);
   useEffect(() => {
@@ -25,62 +16,23 @@ export default function TestimonialFormSection() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    // axios
-    //   .post("http://localhost:9000/api/v1/set_project", {
-    //     name: "Aida Pro",
-    //     languages: ["Html", "CSS", "Js", "React"],
-    //     image: "AidaPro",
-    //     description:
-    //       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero praesentium nemo harum dignissimos illum voluptas sapiente quia libero laboriosam iusto.",
-    //     category: "Web App",
-    //     date: Date.now(),
-    //     client: "DSME Global",
-    //     url: "https://aida-pro.web.app/",
-    //   })
-    //   .then(() => {
-    //     setName("");
-    //     setEmail("");
-    //     setSubject("");
-    //     setMessage("");
-    //     setSuccess(true);
-    //     window.scrollTo({ top: 0, behavior: "smooth" });
-    //   })
-    //   .catch((err) => {
-    //     console.log("contact error:" + err);
-    //   });
-    // const fdImage = new FormData();
-    // fdImage.append("image", image);
-    // fdImage.append("name", "AidaPro");
-    // axios
-    //   .post("http://localhost:9000/api/v1/upload", fdImage, {
-    //     headers: {
-    //       "Content-Type": "multipart/form-data",
-    //     },
-    //   })
-    //   .then(() => {
-    //     console.log(image);
-    //   })
-    //   .catch((err) => {
-    //     console.log("image error:" + err);
-    //   });
-
     axios
-      .post("http://localhost:9000/api/v1/set_contact", {
+      .post("http://localhost:9000/api/v1/set_testimonial", {
         name: name,
         email: email,
-        subject: subject,
+        designation: designation,
         message: message,
       })
       .then(() => {
         setName("");
         setEmail("");
-        setSubject("");
+        setDesignation("");
         setMessage("");
         setSuccess(true);
         window.scrollTo({ top: 0, behavior: "smooth" });
       })
       .catch((err) => {
-        console.log("contact error:" + err);
+        console.log("testimonial error:" + err);
       });
   }
   return (
@@ -135,14 +87,14 @@ export default function TestimonialFormSection() {
             }}
             required
           />
-          <div className="contact__section__right__label">Subject</div>
+          <div className="contact__section__right__label">Designation</div>
           <input
             type="text"
-            placeholder="Subject"
+            placeholder="Designation"
             className="contact__section__right__input__box"
-            value={subject}
+            value={designation}
             onChange={(e) => {
-              setSubject(e.target.value);
+              setDesignation(e.target.value);
             }}
             required
           />

@@ -3,8 +3,10 @@ import { TestimonialsCard } from "../components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 export default function TestimonialsSection({ info }) {
+  const [testimonialData, setTestimonialData] = useState([]);
   const [screenSize, setScreenSize] = useState("large");
   useEffect(() => {
     if (window.innerWidth < 600) {
@@ -24,6 +26,13 @@ export default function TestimonialsSection({ info }) {
       }
     });
   }, []);
+
+  useEffect(() => {
+    axios.get("http://localhost:9000/api/v1/get_testimonial").then((res) => {
+      setTestimonialData(res.data);
+    });
+  }, []);
+
   return (
     <section className="testimonials__section" id="testimonials__section">
       <div className="services__section__right__sub__heading">
@@ -46,7 +55,7 @@ export default function TestimonialsSection({ info }) {
           // onSlideChange={() => console.log("slide change")}
           // onSwiper={(swiper) => console.log(swiper)}
         >
-          {info.testimonials.map((data) => (
+          {testimonialData.map((data) => (
             <SwiperSlide>
               <TestimonialsCard data={data} />
             </SwiperSlide>

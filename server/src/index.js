@@ -7,6 +7,7 @@ const axios = require("axios");
 const fileUpload = require("express-fileupload");
 const contactRouter = require("./routers/contactRouter");
 const projectRouter = require("./routers/projectRouter");
+const testimonialRouter = require("./routers/testimonialRouter");
 const projectModel = require("./models/projectModel");
 
 // api config
@@ -82,5 +83,6 @@ app.post("/api/v1/upload", function (req, res) {
 });
 app.use("/api/v1", contactRouter);
 app.use("/api/v1", projectRouter);
+app.use("/api/v1", testimonialRouter);
 // listners
 app.listen(port, () => console.log(`api working on ${port}`));

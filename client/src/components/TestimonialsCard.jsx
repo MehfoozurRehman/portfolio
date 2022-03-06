@@ -1,5 +1,5 @@
 import React from "react";
-import { pic } from "../assets";
+import gravatarUrl from "gravatar-url";
 
 export default function TestimonialsCard({ data }) {
   return (
@@ -7,7 +7,7 @@ export default function TestimonialsCard({ data }) {
       <div className="testimonials__card__header">
         <div className="testimonials__card__header__box">
           <img
-            src={pic}
+            src={gravatarUrl(data.email, { size: 200 })}
             alt="pic"
             className="testimonials__card__header__box__img"
           />
@@ -17,11 +17,11 @@ export default function TestimonialsCard({ data }) {
             {data.name}
           </div>
           <div className="testimonials__card__header__content__sub__heading">
-            {data.role}
+            {data.designation}
           </div>
         </div>
       </div>
-      <div className="testimonials__card__header__info">{data.description}</div>
+      <div className="testimonials__card__header__info">{data.message}</div>
     </div>
   );
 }
