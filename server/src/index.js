@@ -15,7 +15,7 @@ const port = process.env.PORT || 9000;
 // middlewares
 app.use(express.json());
 app.use(cors());
-app.use(fileUpload());
+app.use(fileUpload({ useTempFiles: true, tempFileDir: "/tmp/" }));
 
 // db config
 mongoose
@@ -42,14 +42,16 @@ app.get("/", (req, res) => {
     message: "hey welcome to mehfooz-ur-rehman's portfolio",
   });
 });
-app.post("/upload", function (req, res) {
-  // const image = req.files.image;
-  // console.log(image);
+app.post("/api/v1/upload", function (req, res) {
   cloudinary.v2.uploader.upload(
-    "https://avatars.githubusercontent.com/u/68416499?s=400&u=e4115c8a9a984f4b5075cd9c1de86ecf1fe23da5&v=4",
-    { public_id: "mehfooz" },
+    req.files.image.tempFilePath,
+    { public_id: req.body.name },
     function (error, result) {
-      console.log(result);
+      if (error) {
+        console.log(error);
+      } else {
+        console.log(result);
+      }
     }
   );
 });
