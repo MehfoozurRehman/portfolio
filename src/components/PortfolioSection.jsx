@@ -11,7 +11,13 @@ export default function PortfolioSection() {
   const [portfolioData, setPortfolioData] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:9000/api/v1/get_project")
+      .get(
+        `${
+          import.meta.env.PROD
+            ? "https://portfolio-api-2022.herokuapp.com/"
+            : "http://localhost:9000/"
+        }api/v1/get_project`
+      )
       .then((res) => {
         setPortfolioData(res.data);
       })

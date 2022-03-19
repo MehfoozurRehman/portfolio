@@ -28,9 +28,17 @@ export default function TestimonialsSection({ info }) {
   }, []);
 
   useEffect(() => {
-    axios.get("http://localhost:9000/api/v1/get_testimonial").then((res) => {
-      setTestimonialData(res.data);
-    });
+    axios
+      .get(
+        `${
+          import.meta.env.PROD
+            ? "https://portfolio-api-2022.herokuapp.com/"
+            : "http://localhost:9000/"
+        }api/v1/get_testimonial`
+      )
+      .then((res) => {
+        setTestimonialData(res.data);
+      });
   }, []);
 
   return (

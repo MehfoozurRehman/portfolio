@@ -65,12 +65,19 @@ export default function ContactSection() {
     //   });
 
     axios
-      .post("http://localhost:9000/api/v1/set_contact", {
-        name: name,
-        email: email,
-        subject: subject,
-        message: message,
-      })
+      .post(
+        `${
+          import.meta.env.PROD
+            ? "https://portfolio-api-2022.herokuapp.com/"
+            : "http://localhost:9000/"
+        }api/v1/set_contact`,
+        {
+          name: name,
+          email: email,
+          subject: subject,
+          message: message,
+        }
+      )
       .then(() => {
         setName("");
         setEmail("");

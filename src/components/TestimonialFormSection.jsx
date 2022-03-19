@@ -17,12 +17,19 @@ export default function TestimonialFormSection() {
   function handleSubmit(e) {
     e.preventDefault();
     axios
-      .post("http://localhost:9000/api/v1/set_testimonial", {
-        name: name,
-        email: email,
-        designation: designation,
-        message: message,
-      })
+      .post(
+        `${
+          import.meta.env.PROD
+            ? "https://portfolio-api-2022.herokuapp.com/"
+            : "http://localhost:9000/"
+        }api/v1/set_testimonial`,
+        {
+          name: name,
+          email: email,
+          designation: designation,
+          message: message,
+        }
+      )
       .then(() => {
         setName("");
         setEmail("");
