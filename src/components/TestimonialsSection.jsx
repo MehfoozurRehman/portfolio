@@ -63,8 +63,8 @@ export default function TestimonialsSection({ info }) {
           // onSlideChange={() => console.log("slide change")}
           // onSwiper={(swiper) => console.log(swiper)}
         >
-          {testimonialData.map((data) => (
-            <SwiperSlide>
+          {testimonialData.map((data, i) => (
+            <SwiperSlide key={i}>
               <TestimonialsCard data={data} />
             </SwiperSlide>
           ))}

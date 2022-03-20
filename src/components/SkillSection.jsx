@@ -21,8 +21,8 @@ export default function SkillSection({ info }) {
       </div>
       <div className="services__section__right__heading">What can I do</div>
       <div className="skills__section__content">
-        {info.skills.map((item) => (
-          <SkillsCard image={item.image} name={item.name} />
+        {info.skills.map((item, i) => (
+          <SkillsCard key={i} image={item.image} name={item.name} />
         ))}
       </div>
     </section>
