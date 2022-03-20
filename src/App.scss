@@ -560,18 +560,11 @@ body::-webkit-scrollbar-track {
 }
 .services__section__left__col {
   width: 50%;
-  height: 60%;
-}
-.services__section__left__col:first-child {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.services__section__left__col:last-child {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 .service__card {
   width: 80%;
   display: flex;
@@ -580,6 +573,7 @@ body::-webkit-scrollbar-track {
   padding: 2.5em 2em;
   border-radius: 20px;
   color: $primary;
+  margin-bottom: 1em;
 }
 .service__card svg {
   margin-right: 2em;
@@ -651,14 +645,15 @@ body::-webkit-scrollbar-track {
   flex-wrap: wrap;
 }
 .about__section__right__box {
-  padding: 1.5em;
+  padding: 1em;
   background-color: #19203b;
   border-radius: 20px;
   width: 48%;
-  height: fit-content;
+  height: 180px;
   margin-bottom: 1.5em;
 }
 .about__section__right__box__img {
+  height: 100%;
   width: 100%;
   border-radius: 10px;
 }

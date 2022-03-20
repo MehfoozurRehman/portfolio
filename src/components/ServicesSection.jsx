@@ -13,13 +13,21 @@ export default function ServicesSection() {
           />
           <ServicesCard
             icon={<Feather size={40} color="currentColor" />}
+            name="UI / UX Design"
+          />
+          <ServicesCard
+            icon={<Feather size={40} color="currentColor" />}
             name="Mobile Development"
           />
         </div>
         <div className="services__section__left__col">
           <ServicesCard
             icon={<Feather size={40} color="currentColor" />}
-            name="UI / UX Design"
+            name="Frontend Development"
+          />
+          <ServicesCard
+            icon={<Feather size={40} color="currentColor" />}
+            name="Backend Development"
           />
         </div>
       </div>

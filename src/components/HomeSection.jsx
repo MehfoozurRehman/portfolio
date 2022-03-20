@@ -8,7 +8,7 @@ import {
   Play,
 } from "react-feather";
 import { Link } from "react-router-dom";
-import { pic } from "../assets";
+import { profile } from "../assets";
 
 export default function HomeSection({ info }) {
   return (
@@ -52,7 +52,7 @@ export default function HomeSection({ info }) {
               Experience
             </div>
             <div className="home__section__right__experience__content__info">
-              <span>1</span>Year
+              <span>1.5</span>Year
             </div>
           </div>
         </div>
@@ -82,7 +82,7 @@ export default function HomeSection({ info }) {
             <Linkedin size={20} color="currentColor" />
           </a>
         </div>
-        <img src={pic} alt="pic" />
+        <img src={profile} alt="pic" />
       </div>
     </section>
   );
