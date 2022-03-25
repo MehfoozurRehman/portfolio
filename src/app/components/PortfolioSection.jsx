@@ -1,21 +1,21 @@
-import axios from "axios";
-import React, { useState } from "react";
-import { useEffect } from "react";
-import { ArrowRight } from "react-feather";
-import { Link } from "react-router-dom";
-import { PortfolioFilter, ProjectCard } from "../components";
+import axios from 'axios';
+import React, { useState } from 'react';
+import { useEffect } from 'react';
+import { ArrowRight } from 'react-feather';
+import { Link } from 'react-router-dom';
+import { PortfolioFilter, ProjectCard } from '../components';
 
 export default function PortfolioSection() {
-  const [filter, setFilter] = useState("");
-  const [category, setCategory] = useState("");
+  const [filter, setFilter] = useState('');
+  const [category, setCategory] = useState('');
   const [portfolioData, setPortfolioData] = useState([]);
   useEffect(() => {
     axios
       .get(
         `${
           import.meta.env.PROD
-            ? "https://portfolio-api-2022.herokuapp.com/"
-            : "http://localhost:9000/"
+            ? 'https://mehfooz-ur-rehman.herokuapp.com/'
+            : 'http://localhost:9000/'
         }api/v1/get_project`
       )
       .then((res) => {
@@ -44,7 +44,7 @@ export default function PortfolioSection() {
           <div className="portfolio__filters">
             <PortfolioFilter
               onClick={() => {
-                setFilter("");
+                setFilter('');
               }}
               defaultChecked={true}
             >
@@ -52,21 +52,21 @@ export default function PortfolioSection() {
             </PortfolioFilter>
             <PortfolioFilter
               onClick={() => {
-                setFilter("Web App");
+                setFilter('Web App');
               }}
             >
               Web App
             </PortfolioFilter>
             <PortfolioFilter
               onClick={() => {
-                setFilter("Mobile App");
+                setFilter('Mobile App');
               }}
             >
               Mobile App
             </PortfolioFilter>
             <PortfolioFilter
               onClick={() => {
-                setFilter("UI/UX Design");
+                setFilter('UI/UX Design');
               }}
             >
               UI/UX Design
@@ -84,12 +84,12 @@ export default function PortfolioSection() {
       <div
         className="project__section__left__link"
         style={{
-          width: "100%",
-          maxWidth: "1440px",
-          margin: "0em auto",
-          padding: "0em 2em",
-          marginTop: "1em",
-          marginBottom: "6em",
+          width: '100%',
+          maxWidth: '1440px',
+          margin: '0em auto',
+          padding: '0em 2em',
+          marginTop: '1em',
+          marginBottom: '6em',
         }}
       >
         <Link
@@ -97,12 +97,12 @@ export default function PortfolioSection() {
           onClick={() => {
             window.scrollTo({
               top: 0,
-              behavior: "smooth",
+              behavior: 'smooth',
             });
-            document.getElementById("portfolio").checked = true;
+            document.getElementById('portfolio').checked = true;
           }}
           className="project__section__left__link__entry"
-          style={{ marginTop: "0em" }}
+          style={{ marginTop: '0em' }}
         >
           View More
           <ArrowRight size={20} color="currentColor" />

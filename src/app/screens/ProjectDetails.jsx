@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { ProjectCard } from "../components";
-import { ArrowRight } from "react-feather";
-import { Image } from "cloudinary-react";
-import axios from "axios";
-import { useLocation, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { ProjectCard } from '../components';
+import { ArrowRight } from 'react-feather';
+import { Image } from 'cloudinary-react';
+import axios from 'axios';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function ProjectDetails() {
   const navigate = useNavigate();
@@ -15,8 +15,8 @@ export default function ProjectDetails() {
         .get(
           `${
             import.meta.env.PROD
-              ? "https://portfolio-api-2022.herokuapp.com/"
-              : "http://localhost:9000/"
+              ? 'https://mehfooz-ur-rehman.herokuapp.com/'
+              : 'http://localhost:9000/'
           }api/v1/get_project`
         )
         .then((res) => {
@@ -26,24 +26,24 @@ export default function ProjectDetails() {
           console.log(err);
         });
     } else {
-      navigate("/");
+      navigate('/');
     }
   }, []);
   var created_date = new Date(state.state.createdAt);
 
   var months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
   ];
   var year = created_date.getFullYear();
   var month = months[created_date.getMonth()];
@@ -77,7 +77,7 @@ export default function ProjectDetails() {
           </div>
           <div className="project__section__left__about">
             <span>Date:</span>
-            {date + "-" + month + "-" + year}
+            {date + '-' + month + '-' + year}
           </div>
           <div className="project__section__left__about">
             <span>Client:</span>

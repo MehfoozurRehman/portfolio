@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import {
   CheckCircle,
   Facebook,
@@ -9,13 +9,13 @@ import {
   Mail,
   MapPin,
   Phone,
-} from "react-feather";
+} from 'react-feather';
 
 export default function ContactSection() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
-  const [message, setMessage] = useState("");
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
   const [success, setSuccess] = useState(false);
   useEffect(() => {
     setTimeout(() => {
@@ -68,8 +68,8 @@ export default function ContactSection() {
       .post(
         `${
           import.meta.env.PROD
-            ? "https://portfolio-api-2022.herokuapp.com/"
-            : "http://localhost:9000/"
+            ? 'https://mehfooz-ur-rehman.herokuapp.com/'
+            : 'http://localhost:9000/'
         }api/v1/set_contact`,
         {
           name: name,
@@ -79,15 +79,15 @@ export default function ContactSection() {
         }
       )
       .then(() => {
-        setName("");
-        setEmail("");
-        setSubject("");
-        setMessage("");
+        setName('');
+        setEmail('');
+        setSubject('');
+        setMessage('');
         setSuccess(true);
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       })
       .catch((err) => {
-        console.log("contact error:" + err);
+        console.log('contact error:' + err);
       });
   }
   return (

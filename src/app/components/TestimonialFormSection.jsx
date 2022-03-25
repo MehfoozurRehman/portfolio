@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { CheckCircle } from "react-feather";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { CheckCircle } from 'react-feather';
 
 export default function TestimonialFormSection() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [designation, setDesignation] = useState("");
-  const [message, setMessage] = useState("");
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [designation, setDesignation] = useState('');
+  const [message, setMessage] = useState('');
   const [success, setSuccess] = useState(false);
   useEffect(() => {
     setTimeout(() => {
@@ -20,8 +20,8 @@ export default function TestimonialFormSection() {
       .post(
         `${
           import.meta.env.PROD
-            ? "https://portfolio-api-2022.herokuapp.com/"
-            : "http://localhost:9000/"
+            ? 'https://mehfooz-ur-rehman.herokuapp.com/'
+            : 'http://localhost:9000/'
         }api/v1/set_testimonial`,
         {
           name: name,
@@ -31,15 +31,15 @@ export default function TestimonialFormSection() {
         }
       )
       .then(() => {
-        setName("");
-        setEmail("");
-        setDesignation("");
-        setMessage("");
+        setName('');
+        setEmail('');
+        setDesignation('');
+        setMessage('');
         setSuccess(true);
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       })
       .catch((err) => {
-        console.log("testimonial error:" + err);
+        console.log('testimonial error:' + err);
       });
   }
   return (
@@ -70,7 +70,7 @@ export default function TestimonialFormSection() {
         <form
           onSubmit={handleSubmit}
           className="contact__section__right"
-          style={{ width: "100%" }}
+          style={{ width: '100%' }}
         >
           <div className="contact__section__right__label">Name</div>
           <input

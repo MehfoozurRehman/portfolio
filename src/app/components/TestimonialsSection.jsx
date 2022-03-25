@@ -1,28 +1,28 @@
-import React, { useEffect, useState } from "react";
-import { TestimonialsCard } from "../components";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import { Link } from "react-router-dom";
-import axios from "axios";
+import React, { useEffect, useState } from 'react';
+import { TestimonialsCard } from '../components';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 export default function TestimonialsSection({ info }) {
   const [testimonialData, setTestimonialData] = useState([]);
-  const [screenSize, setScreenSize] = useState("large");
+  const [screenSize, setScreenSize] = useState('large');
   useEffect(() => {
     if (window.innerWidth < 600) {
-      setScreenSize("small");
+      setScreenSize('small');
     } else if (window.innerWidth < 1100) {
-      setScreenSize("medium");
+      setScreenSize('medium');
     } else {
-      setScreenSize("large");
+      setScreenSize('large');
     }
-    window.addEventListener("resize", () => {
+    window.addEventListener('resize', () => {
       if (window.innerWidth < 600) {
-        setScreenSize("small");
+        setScreenSize('small');
       } else if (window.innerWidth < 1100) {
-        setScreenSize("medium");
+        setScreenSize('medium');
       } else {
-        setScreenSize("large");
+        setScreenSize('large');
       }
     });
   }, []);
@@ -32,8 +32,8 @@ export default function TestimonialsSection({ info }) {
       .get(
         `${
           import.meta.env.PROD
-            ? "https://portfolio-api-2022.herokuapp.com/"
-            : "http://localhost:9000/"
+            ? 'https://mehfooz-ur-rehman.herokuapp.com/'
+            : 'http://localhost:9000/'
         }api/v1/get_testimonial`
       )
       .then((res) => {
@@ -52,11 +52,11 @@ export default function TestimonialsSection({ info }) {
         <Swiper
           spaceBetween={50}
           slidesPerView={
-            screenSize === "large"
+            screenSize === 'large'
               ? 3.5
-              : screenSize === "medium"
+              : screenSize === 'medium'
               ? 2
-              : screenSize === "small"
+              : screenSize === 'small'
               ? 1
               : 3.5
           }
@@ -75,13 +75,13 @@ export default function TestimonialsSection({ info }) {
           to="/write-testimonial"
           onClick={() => {
             setTimeout(() => {
-              window.scrollTo({ top: 0, behavior: "smooth" });
+              window.scrollTo({ top: 0, behavior: 'smooth' });
             }, 10);
           }}
           title="load more"
           className="contact__section__right__btn"
           style={{
-            textDecoration: "none",
+            textDecoration: 'none',
           }}
         >
           Write Testimonial
