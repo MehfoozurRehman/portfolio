@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useContext } from 'react';
+import { AuthContext } from '../App';
 import {
   AboutSection,
   HomeSection,
   PortfolioSection,
   ServicesSection,
   TestimonialsSection,
-} from "../components";
-import SkillSection from "../components/SkillSection";
+} from '../components';
+import SkillSection from '../components/SkillSection';
 
 export default function Home({ info }) {
+  const { isUser } = useContext(AuthContext);
+  console.log(isUser);
   return (
     <>
       <HomeSection info={info} />
