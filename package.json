@@ -11,7 +11,8 @@
     "build": "npm run server:build && npm run client:build",
     "serve": "vite preview",
     "test": "prettier --check . && eslint . && stylelint \"**/*.css\"",
-    "start": "node dist/server.js"
+    "start": "node dist/server.js",
+    "deploy": "npm run build && firebase deploy"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.6",
