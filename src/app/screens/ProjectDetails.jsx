@@ -84,13 +84,15 @@ export default function ProjectDetails() {
             {state.state.client}
           </div>
           <div className="project__section__left__link">
-            <a
-              href={state.state.url}
-              className="project__section__left__link__entry"
-            >
-              Launch Project
-              <ArrowRight size={20} color="currentColor" />
-            </a>
+            {state.state.url ? (
+              <a
+                href={state.state.url}
+                className="project__section__left__link__entry"
+              >
+                Launch Project
+                <ArrowRight size={20} color="currentColor" />
+              </a>
+            ) : null}
           </div>
         </div>
         <Image

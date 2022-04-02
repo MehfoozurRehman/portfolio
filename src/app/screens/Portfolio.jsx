@@ -87,13 +87,6 @@ function PortfolioFilters({ setFilter }) {
       >
         Mobile App
       </PortfolioFilter>
-      <PortfolioFilter
-        onClick={() => {
-          setFilter('UI/UX Design');
-        }}
-      >
-        UI/UX Design
-      </PortfolioFilter>
     </div>
   );
 }

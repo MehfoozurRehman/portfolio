@@ -3,11 +3,10 @@ import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { ArrowRight } from 'react-feather';
 import { Link } from 'react-router-dom';
-import { PortfolioFilter, ProjectCard } from '../components';
+import { ProjectCard } from '../components';
 
 export default function PortfolioSection() {
   const [filter, setFilter] = useState('');
-  const [category, setCategory] = useState('');
   const [portfolioData, setPortfolioData] = useState([]);
   useEffect(() => {
     axios
@@ -41,37 +40,7 @@ export default function PortfolioSection() {
           </div>
         </div>
         <div className="portfolio__section__right">
-          <div className="portfolio__filters">
-            <PortfolioFilter
-              onClick={() => {
-                setFilter('');
-              }}
-              defaultChecked={true}
-            >
-              All
-            </PortfolioFilter>
-            <PortfolioFilter
-              onClick={() => {
-                setFilter('Web App');
-              }}
-            >
-              Web App
-            </PortfolioFilter>
-            <PortfolioFilter
-              onClick={() => {
-                setFilter('Mobile App');
-              }}
-            >
-              Mobile App
-            </PortfolioFilter>
-            <PortfolioFilter
-              onClick={() => {
-                setFilter('UI/UX Design');
-              }}
-            >
-              UI/UX Design
-            </PortfolioFilter>
-          </div>
+          <div className="portfolio__filters"></div>
         </div>
       </div>
       <div className="portfolio__projects">
