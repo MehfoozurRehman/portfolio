@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Facebook, GitHub, Instagram, Linkedin, Menu, X } from "react-feather";
 
 export default function App() {
@@ -10,18 +10,39 @@ export default function App() {
 }
 
 function Header({}) {
+  const [nav, setNav] = useState(true);
+  useEffect(() => {
+    if (window.innerWidth < 1000) {
+      setNav(false);
+    } else {
+      setNav(true);
+    }
+    window.addEventListener("resize", () => {
+      if (window.innerWidth < 1000) {
+        setNav(false);
+      } else {
+        setNav(true);
+      }
+    });
+  }, []);
+
   return (
     <div className="header">
-      <div className="header__content">
-        <div className="header__content__logo">
-          <div className="header__content__logo__slogan">M.</div>
-          <div className="header__content__logo__text">Mehfoozurrehman</div>
-        </div>
-        <button className="header__content__menu">
-          <X size={18} color="currentColor" />
-          <Menu size={18} color="currentColor" />
-        </button>
-        <div className="header__content__nav">
+      <button
+        onClick={() => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+          document.getElementById("home").checked = true;
+        }}
+        className="header__logo"
+      >
+        <div className="header__logo__slogan">M.</div>
+        <div className="header__logo__text">Mehfooz-ur-rehman</div>
+      </button>
+      {nav ? (
+        <div className="header__nav">
           <NavLink defaultChecked={true} scrollTo="home">
             Home
           </NavLink>
@@ -31,35 +52,53 @@ function Header({}) {
           <NavLink scrollTo="blog">Blog</NavLink>
           <NavLink scrollTo="contact">Contact</NavLink>
         </div>
-        <div className="header__content__actions">
-          <a
-            href="https://github.com/MehfoozurRehman"
-            className="header__content__actions__link"
-          >
-            <GitHub size={18} color="currentColor" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/mehfooz-rehman-37a1b0231/"
-            className="header__content__actions__link"
-          >
-            <Linkedin size={18} color="currentColor" />
-          </a>
-          <a
-            href="https://www.instagram.com/mehfoozurrehman___/"
-            className="header__content__actions__link"
-          >
-            <Instagram size={18} color="currentColor" />
-          </a>
-          <a
-            href="https://www.facebook.com/MehfoozurRehmanIjaz/?_rdc=1&_rdr"
-            className="header__content__actions__link"
-          >
-            <Facebook size={18} color="currentColor" />
-          </a>
-          <a href="#contact" className="header__content__actions__btn">
-            Lets Talk
-          </a>
-        </div>
+      ) : null}
+
+      <div className="header__actions">
+        <a
+          href="https://github.com/MehfoozurRehman"
+          className="header__actions__link"
+        >
+          <GitHub size={18} color="currentColor" />
+          <span>github</span>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/mehfooz-rehman-37a1b0231/"
+          className="header__actions__link"
+        >
+          <Linkedin size={18} color="currentColor" />
+          <span>linkedin</span>
+        </a>
+        <a
+          href="https://www.instagram.com/mehfoozurrehman___/"
+          className="header__actions__link"
+        >
+          <Instagram size={18} color="currentColor" />
+          <span>instagram</span>
+        </a>
+        <a
+          href="https://www.facebook.com/MehfoozurRehmanIjaz/?_rdc=1&_rdr"
+          className="header__actions__link"
+        >
+          <Facebook size={18} color="currentColor" />
+          <span>facebook</span>
+        </a>
+        <a href="#contact" className="header__actions__btn">
+          Lets Talk
+        </a>
+        <button
+          onClick={() => {
+            nav ? setNav(false) : setNav(true);
+          }}
+          name="menu"
+          className="header__menu"
+        >
+          {nav ? (
+            <X size={18} color="currentColor" />
+          ) : (
+            <Menu size={18} color="currentColor" />
+          )}
+        </button>
       </div>
     </div>
   );
@@ -67,17 +106,18 @@ function Header({}) {
 
 function NavLink({ children, defaultChecked, scrollTo }) {
   return (
-    <div className="header__content__nav__link">
+    <div className="header__nav__link">
       <input
+        id={scrollTo}
         type="radio"
-        name="header__content__nav__link"
-        className="header__content__nav__link__input"
+        name="header__nav__link"
+        className="header__nav__link__input"
         defaultChecked={defaultChecked}
         onClick={() => {
           document.getElementById(scrollTo).scrollIntoView();
         }}
       />
-      <div className="header__content__nav__link__content">{children}</div>
+      <div className="header__nav__link__content">{children}</div>
     </div>
   );
 }
