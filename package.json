@@ -1,56 +1,41 @@
 {
-  "name": "vite-react-express-boilerplate",
-  "version": "0.0.0",
-  "scripts": {
-    "clean": "rimraf dist",
-    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
-    "client:dev": "vite",
-    "server:dev": "nodemon src/server.js",
-    "server:build": "babel --verbose --out-dir dist --only 'src/server.js,src/lib/' src",
-    "client:build": "vite build",
-    "build": "npm run server:build && npm run client:build",
-    "serve": "vite preview",
-    "test": "prettier --check . && eslint . && stylelint \"**/*.css\"",
-    "start": "node dist/server.js",
-    "deploy": "npm run build && firebase deploy"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.17.6",
-    "@babel/core": "^7.17.9",
-    "@vitejs/plugin-react": "^1.3.1",
-    "babel-eslint": "^10.1.0",
-    "babel-loader": "^8.2.4",
-    "concurrently": "^7.1.0",
-    "eslint": "^8.13.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-react": "^7.29.4",
-    "eslint-plugin-react-hooks": "^4.4.0",
-    "http-proxy-middleware": "^2.0.4",
-    "lint-staged": "^12.3.8",
-    "nodemon": "^2.0.15",
-    "prettier": "2.6.2",
-    "prop-types": "^15.8.1",
-    "rimraf": "^3.0.2",
-    "stylelint": "^14.7.1",
-    "stylelint-config-prettier": "^9.0.3",
-    "stylelint-config-standard": "^25.0.0",
-    "vite": "^2.9.5"
-  },
+  "name": "portolio",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.1.1",
+    "@testing-library/user-event": "^13.5.0",
     "axios": "^0.26.1",
-    "cloudinary": "^1.29.1",
-    "cloudinary-react": "^1.7.2",
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.0",
-    "express": "^4.17.3",
-    "express-fileupload": "^1.3.1",
-    "gravatar-url": "^4.0.1",
-    "mongoose": "^6.3.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-feather": "^2.0.9",
-    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
     "sass": "^1.50.0",
-    "swiper": "^8.1.1"
+    "swr": "^1.3.0",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

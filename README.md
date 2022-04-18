@@ -1,73 +1,70 @@
-# Vite React Express Boilerplate
+# Getting Started with Create React App
 
-> Quickly bootstrap a new project with Vite React Express Boilerplate.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This boilerplate is a fork of [lmachens/vite-boilerplate](https://github.com/lmachens/vite-boilerplate), but replaces TypeScript with JavaScript and removes Storybook.
+## Available Scripts
 
-This boilerplate contains all the tools you need to build a modern web app with JavaScript, React, Vite, and Express.  
-You can use it to quickly bootstrap your project.
+In the project directory, you can run:
 
-ESLint, stylelint, prettier, husky and lintstaged are configured to give you a solid development experience.
+### `npm start`
 
-## Installing / Developing
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-First, [create a repository from this template](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/creating-a-repository-from-a-template).
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-Now you are ready to go:
+### `npm test`
 
-```shell
-npm install
-```
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-This will install the dependencies required to run the boilerplate.
+### `npm run build`
 
-```shell
-npm run dev
-```
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-Boom! These scripts run your server and client in development mode.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-The default PORTS are:
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-- `3001` for the server
-- `3000` for the client
+### `npm run eject`
 
-If you don't like to call all scripts at once, you can also run:
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-```shell
-npm run server:dev
-npm run client:dev
-```
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-You can configure the server port by setting the `PORT` environment variable. Creating a `.env` file is supported. You can copy `.env.example` to `.env`.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-| KEY  | VALUE                                                         |
-| ---- | ------------------------------------------------------------- |
-| PORT | (Optional) Port for the server environment (defaults to 3001) |
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Building
+## Learn More
 
-To build the project, run:
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-```shell
-npm run build
-```
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-This will build the client and server.
+### Code Splitting
 
-```shell
-npm start
-```
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-In production, you have a single server serving everything.
+### Analyzing the Bundle Size
 
-`/api/*` is the API endpoint.  
-`/*` is the client.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-## Tests
+### Making a Progressive Web App
 
-A test runner is not installed (right now). But ESLint and Prettier are checked on commit and pushed thanks to husky and lintstaged.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-## Licensing
+### Advanced Configuration
 
-MIT
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
