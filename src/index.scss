@@ -38,6 +38,15 @@ body {
 
 .header {
   width: 100%;
+  position: fixed;
+  left: 0em;
+  background-color: var(--secondary);
+}
+
+.header__content {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0em auto;
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -45,7 +54,7 @@ body {
   padding: 1em 2em;
 }
 
-.header__logo {
+.header__content__logo {
   display: flex;
   align-items: center;
   background-color: transparent;
@@ -53,7 +62,7 @@ body {
   border: none;
   cursor: pointer;
 }
-.header__logo__slogan {
+.header__content__logo__slogan {
   width: 40px;
   height: 35px;
   color: var(--white);
@@ -67,21 +76,21 @@ body {
   margin-right: 0.5em;
 }
 
-.header__logo__text {
+.header__content__logo__text {
   color: var(--white);
   font-size: 20px;
 }
 
-.header__nav {
+.header__content__nav {
   display: flex;
   align-items: center;
 }
 
-.header__nav__link {
+.header__content__nav__link {
   position: relative;
 }
 
-.header__nav__link__input {
+.header__content__nav__link__input {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -92,7 +101,7 @@ body {
   z-index: 99;
 }
 
-.header__nav__link__content {
+.header__content__nav__link__content {
   color: var(--text);
   font-size: 15px;
   padding: 0.5em 1em;
@@ -101,7 +110,7 @@ body {
   justify-content: center;
   position: relative;
 }
-.header__nav__link__content:after {
+.header__content__nav__link__content:after {
   content: "";
   position: absolute;
   top: 32px;
@@ -110,38 +119,40 @@ body {
   height: 1px;
   background-color: var(--primary);
 }
-.header__nav__link__input:hover ~ .header__nav__link__content {
+.header__content__nav__link__input:hover
+  ~ .header__content__nav__link__content {
   transition: 300ms ease-in-out;
   color: white;
 }
-.header__nav__link__input:checked ~ .header__nav__link__content {
+.header__content__nav__link__input:checked
+  ~ .header__content__nav__link__content {
   transition: 300ms ease-in-out;
   color: white;
 }
-.header__nav__link__input:checked ~ .header__nav__link__content::after {
+.header__content__nav__link__input:checked
+  ~ .header__content__nav__link__content::after {
   transition: 300ms ease-in-out;
   width: calc(100% - 30px);
 }
 
-.header__actions {
+.header__content__actions {
   display: flex;
   align-items: center;
 }
-.header__actions__link {
+.header__content__actions__link {
   margin-left: 1em;
   color: var(--text);
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.header__actions__link span {
-  opacity: 0;
-  width: 0px;
+.header__content__actions__link span {
+  display: none;
 }
-.header__actions__link:hover {
+.header__content__actions__link:hover {
   color: var(--primary);
 }
-.header__actions__btn {
+.header__content__actions__btn {
   padding: 0.5em 1.5em;
   border-radius: 5px;
   display: flex;
@@ -154,10 +165,10 @@ body {
   text-decoration: none;
   font-size: 14px;
 }
-.header__actions__btn:hover {
+.header__content__actions__btn:hover {
   background-color: var(--primary);
 }
-.header__menu {
+.header__content__menu {
   width: 40px;
   height: 35px;
   display: none;
@@ -171,17 +182,17 @@ body {
   margin-left: 1em;
   cursor: pointer;
 }
-.header__menu:hover {
+.header__content__menu:hover {
   background-color: var(--primary);
 }
 @media (max-width: 1000px) {
-  .header__menu {
+  .header__content__menu {
     display: flex;
   }
-  .header__actions__btn {
+  .header__content__actions__btn {
     display: none;
   }
-  .header__nav {
+  .header__content__nav {
     position: absolute;
     top: 60px;
     background-color: var(--secondary);
@@ -194,7 +205,7 @@ body {
   }
 }
 @media (max-width: 500px) {
-  .header__logo__text {
+  .header__content__logo__text {
     display: none;
   }
 }
