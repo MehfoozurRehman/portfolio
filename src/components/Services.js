@@ -1,16 +1,21 @@
 import React from "react";
 import { Box, Layout, Package, Shield } from "react-feather";
+import Fade from "react-reveal/Fade";
 
 function ServicesCard({ info, title, projects, icon }) {
   return (
-    <div className="services__section__content__entry">
-      <div className="services__section__content__entry__icon">{icon}</div>
-      <div className="services__section__content__entry__sub__heading">
-        {projects} Project
+    <Fade>
+      <div className="services__section__content__entry">
+        <div className="services__section__content__entry__icon">{icon}</div>
+        <div className="services__section__content__entry__sub__heading">
+          {projects} Project
+        </div>
+        <div className="services__section__content__entry__heading">
+          {title}
+        </div>
+        <div className="services__section__content__entry__info">{info}</div>
       </div>
-      <div className="services__section__content__entry__heading">{title}</div>
-      <div className="services__section__content__entry__info">{info}</div>
-    </div>
+    </Fade>
   );
 }
 
