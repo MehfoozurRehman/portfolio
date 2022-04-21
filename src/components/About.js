@@ -71,6 +71,9 @@ export default function About() {
           💼 <span>Tools:</span> Visual Studio Code, Android Studio, GitHub
           Desktop, Windows Terminal, Firebase, Netlify, Adobe XD and Git.
         </div>
+        <a href="#" className="about__section__right__button">
+          Download CV
+        </a>
       </div>
     </section>
   );
