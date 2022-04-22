@@ -1,12 +1,17 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { ArrowLeft, ArrowRight, GitHub, Globe, Layers } from "react-feather";
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import "swiper/scss";
-import "swiper/scss/navigation";
-import "swiper/scss/pagination";
+import {
+  ArrowLeft,
+  ArrowRight,
+  Box,
+  GitHub,
+  Globe,
+  Layout,
+} from "react-feather";
+import { Fade } from "react-reveal";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-function PortfolioFilter({ label, defaultChecked }) {
+function PortfolioFilter({ label, defaultChecked, onClick }) {
   return (
     <div className="portfolio__section__header__middle__entry">
       <input
@@ -14,6 +19,7 @@ function PortfolioFilter({ label, defaultChecked }) {
         name="portfolio__section__header__middle__entry"
         className="portfolio__section__header__middle__entry__input"
         defaultChecked={defaultChecked}
+        onClick={onClick}
       />
       <div className="portfolio__section__header__middle__entry__content">
         {label}
@@ -23,6 +29,7 @@ function PortfolioFilter({ label, defaultChecked }) {
 }
 
 export default function Portfolio() {
+  const [filters, setFilters] = useState("");
   const [projectsData, setProjectsData] = useState([]);
   useEffect(() => {
     axios
@@ -32,7 +39,6 @@ export default function Portfolio() {
         console.log(res.data);
       });
   }, []);
-  const swiper = useSwiper();
   return (
     <div id="portfolio__section" className="portfolio__section">
       <div className="portfolio__section__header">
@@ -45,10 +51,25 @@ export default function Portfolio() {
           </div>
         </div>
         <div className="portfolio__section__header__middle">
-          <PortfolioFilter defaultChecked={true} label="All" />
-          <PortfolioFilter label="Web App" />
-          <PortfolioFilter label="Mobile App" />
-          <PortfolioFilter label="UI/UX Design" />
+          <PortfolioFilter
+            defaultChecked={true}
+            label="All"
+            onClick={() => {
+              setFilters("");
+            }}
+          />
+          <PortfolioFilter
+            label="Web App"
+            onClick={() => {
+              setFilters("web");
+            }}
+          />
+          <PortfolioFilter
+            label="Mobile App"
+            onClick={() => {
+              setFilters("mobile");
+            }}
+          />
         </div>
         <div className="portfolio__section__header__right">
           <button
@@ -66,49 +87,71 @@ export default function Portfolio() {
         </div>
       </div>
       <div className="portfolio__section__content">
-        <Swiper
-          navigation={{ nextEl: "#swiper-forward", prevEl: "#swiper-back" }}
-        >
+        <Swiper>
           {projectsData
-            // .filter((item) => item.homepage === "helloworld")
-            .map((item) => (
-              <SwiperSlide key={item.id}>
-                <div className="portfolio__section__content__entry">
-                  <div className="portfolio__section__content__entry__heading">
-                    <Layers size={30} color="currentColor" />
-                    <span>
-                      {item.name.replace(/-/g, " ").replace(/_/g, " ")}
-                    </span>
-                  </div>
-                  <div className="portfolio__section__content__entry__info">
-                    {item.description && item.description.lengh > 50
-                      ? item.description.substring(1, 50)
-                      : item.description}
-                  </div>
-                  <div className="portfolio__section__content__entry__content">
-                    {item.language}
-                  </div>
-                  <div className="portfolio__section__content__entry__buttons">
-                    <a
-                      href={item.html_url}
-                      className="portfolio__section__content__entry__button"
-                    >
-                      <GitHub size={20} color="currentColor" />
-                      Github
-                    </a>
-                    {item.homepage !== null ? (
-                      <a
-                        href={item.homepage}
-                        className="portfolio__section__content__entry__button"
-                      >
-                        <Globe size={20} color="currentColor" />
-                        Website
-                      </a>
-                    ) : null}
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
+            .filter((item) =>
+              filters === ""
+                ? item && item.description && item.description !== null
+                : filters === "web"
+                ? item.homepage &&
+                  item.homepage !== null &&
+                  item.description &&
+                  item.description !== null
+                : filters === "mobile"
+                ? (item.name.includes("mobile") ||
+                    item.name.includes("sasti") ||
+                    item.name.includes("app")) &&
+                  item.description &&
+                  item.description !== null
+                : null
+            )
+            .map((item, i) => {
+              return (
+                <SwiperSlide key={i}>
+                  <Fade>
+                    <div className="portfolio__section__content__entry">
+                      <div className="portfolio__section__content__entry__heading">
+                        {item.homepage !== null ? (
+                          <Layout size={30} color="currentColor" />
+                        ) : (
+                          <Box size={30} color="currentColor" />
+                        )}
+
+                        <span>
+                          {item.name.replace(/-/g, " ").replace(/_/g, " ")}
+                        </span>
+                      </div>
+                      <div className="portfolio__section__content__entry__info">
+                        {item.description && item.description.length > 180
+                          ? item.description.substring(1, 180) + "..."
+                          : item.description}
+                      </div>
+                      <div className="portfolio__section__content__entry__content">
+                        {item.language !== null ? item.language : "HTML"}
+                      </div>
+                      <div className="portfolio__section__content__entry__buttons">
+                        <a
+                          href={item.html_url}
+                          className="portfolio__section__content__entry__button"
+                        >
+                          <GitHub size={20} color="currentColor" />
+                          Github
+                        </a>
+                        {item.homepage && item.homepage !== null ? (
+                          <a
+                            href={item.homepage}
+                            className="portfolio__section__content__entry__button"
+                          >
+                            <Globe size={20} color="currentColor" />
+                            Website
+                          </a>
+                        ) : null}
+                      </div>
+                    </div>
+                  </Fade>
+                </SwiperSlide>
+              );
+            })}
         </Swiper>
       </div>
     </div>

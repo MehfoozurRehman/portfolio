@@ -521,8 +521,8 @@ body {
 .portfolio__section {
   display: flex;
   flex-direction: column;
-  padding: 2em;
-  padding-bottom: 8em;
+  padding: 8em 2em;
+  margin-top: -6em;
 }
 .portfolio__section__header {
   display: flex;
@@ -617,6 +617,7 @@ body {
   background-color: var(--secondary);
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
+  user-select: none;
 }
 .portfolio__section__content__entry__heading {
   display: flex;
@@ -635,6 +636,7 @@ body {
   color: var(--text);
   word-break: break-all;
   margin-bottom: 0.8em;
+  min-height: 100px;
 }
 .portfolio__section__content__entry__content {
   font-size: 14px;
@@ -660,7 +662,7 @@ body {
 .portfolio__section__content__entry__button {
   padding: 0.5em 1em;
   background-color: var(--secondary);
-  color: white;
+  color: var(--white);
   border-radius: 5px;
   border: 1px solid var(--primary);
   display: flex;
@@ -673,6 +675,23 @@ body {
 }
 .portfolio__section__content__entry__button:hover {
   background-color: var(--primary);
+}
+.portfolio__section__content__entry:hover {
+  background-color: var(--primary);
+}
+.portfolio__section__content__entry:hover * {
+  background-color: var(--primary);
+  color: var(--white);
+  stroke: var(--white);
+}
+.portfolio__section__content__entry:hover
+  .portfolio__section__content__entry__button:hover
+  * {
+  background-color: var(--secondary);
+}
+.portfolio__section__content__entry:hover
+  .portfolio__section__content__entry__button:hover {
+  background-color: var(--secondary);
 }
 @media (max-width: 1250px) {
   .services__section__content__entry {
