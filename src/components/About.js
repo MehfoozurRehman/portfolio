@@ -29,7 +29,7 @@ export default function About() {
               />
             </svg>
             <div className="about__section__left__projects__overlay">
-              <span>100 +</span>
+              <span>10 +</span>
               Projects <br /> completed
             </div>
           </div>
@@ -43,7 +43,7 @@ export default function About() {
               />
             </svg>
             <div className="about__section__left__clients__overlay">
-              <span>5 +</span>
+              <span>3 +</span>
               Happy clients
             </div>
           </div>
