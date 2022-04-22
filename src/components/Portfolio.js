@@ -111,7 +111,7 @@ export default function Portfolio() {
                   <Fade>
                     <div className="portfolio__section__content__entry">
                       <div className="portfolio__section__content__entry__heading">
-                        {item.homepage !== null ? (
+                        {item.homepage && item.homepage !== null ? (
                           <Layout size={30} color="currentColor" />
                         ) : (
                           <Box size={30} color="currentColor" />

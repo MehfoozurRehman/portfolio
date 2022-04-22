@@ -7,6 +7,7 @@ import Services from "./components/Services";
 import "swiper/scss";
 import "swiper/scss/navigation";
 import "swiper/scss/pagination";
+import GitHubCalendar from "react-github-calendar";
 
 export default function App() {
   return (
@@ -16,6 +17,19 @@ export default function App() {
       <About />
       <Services />
       <Portfolio />
+      <GitHubCalendar
+        username="mehfoozurrehman"
+        color="#eb4a4a"
+        fontSize={14}
+        year={new Date().getFullYear()}
+        style={{
+          color: "white",
+          margin: "0em auto",
+          marginBottom: "8em",
+          padding: "2em",
+        }}
+        blockSize={18}
+      />
     </>
   );
 }
