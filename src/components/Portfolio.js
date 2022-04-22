@@ -33,7 +33,9 @@ export default function Portfolio() {
   const [projectsData, setProjectsData] = useState([]);
   useEffect(() => {
     axios
-      .get("https://api.github.com/users/MehfoozurRehman/repos?per_page=10000")
+      .get(
+        "https://api.github.com/users/MehfoozurRehman/repos?per_page=10000&sort=updated"
+      )
       .then((res) => {
         setProjectsData(res.data);
         console.log(res.data);
@@ -98,9 +100,7 @@ export default function Portfolio() {
                   item.description &&
                   item.description !== null
                 : filters === "mobile"
-                ? (item.name.includes("mobile") ||
-                    item.name.includes("sasti") ||
-                    item.name.includes("app")) &&
+                ? !item.homepage &&
                   item.description &&
                   item.description !== null
                 : null
