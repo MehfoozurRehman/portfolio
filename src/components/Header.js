@@ -43,7 +43,7 @@ export default function Header({}) {
             <NavLink scrollTo="about">About</NavLink>
             <NavLink scrollTo="services">Services</NavLink>
             <NavLink scrollTo="portfolio">Portfolio</NavLink>
-            <NavLink scrollTo="testimonials">Testimonials</NavLink>
+            <NavLink scrollTo="clients">Clients</NavLink>
             <NavLink scrollTo="blog">Blog</NavLink>
           </div>
         ) : null}
