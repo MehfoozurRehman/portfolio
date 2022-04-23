@@ -28,14 +28,14 @@ export default function App() {
         style={{
           color: "white",
           margin: "0em auto",
-          marginBottom: "3em",
+          marginBottom: "5em",
           padding: "2em",
         }}
         blockSize={18}
       />
       <Book />
-      <Clients />
       <Blog />
+      <Clients />
     </>
   );
 }

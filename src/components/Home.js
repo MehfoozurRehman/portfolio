@@ -11,7 +11,7 @@ export default function Home() {
   }, []);
 
   return (
-    <section id="home__section" className="home__section">
+    <section id="home__section" className="home__section section">
       <div className="home__section__left">
         <div className="home__section__left__sub__heading">Hi there!</div>
         <div className="home__section__left__heading">

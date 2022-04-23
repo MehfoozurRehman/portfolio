@@ -4,7 +4,8 @@ import HTMLFlipBook from "react-pageflip";
 export default function Book({}) {
   return (
     <HTMLFlipBook
-      width={500}
+      width={400}
+      maxWidth={800}
       height={500}
       style={{
         margin: "0em auto",

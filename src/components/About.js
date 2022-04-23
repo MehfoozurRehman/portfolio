@@ -4,7 +4,7 @@ import Fade from "react-reveal/Fade";
 
 export default function About() {
   return (
-    <section id="about__section" className="about__section">
+    <section id="about__section" className="about__section section">
       <div className="about__section__left">
         <Fade>
           <div className="about__section__left__experience">

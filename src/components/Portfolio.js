@@ -30,6 +30,7 @@ function PortfolioFilter({ label, defaultChecked, onClick }) {
 
 export default function Portfolio() {
   const [filters, setFilters] = useState("");
+  const [perView, setPerView] = useState(4);
   const [projectsData, setProjectsData] = useState([]);
   useEffect(() => {
     axios
@@ -40,9 +41,37 @@ export default function Portfolio() {
         setProjectsData(res.data);
         console.log(res.data);
       });
+    if (window.innerWidth <= 400) {
+      setPerView(1);
+    } else if (window.innerWidth <= 550) {
+      setPerView(2);
+    } else if (window.innerWidth <= 900) {
+      setPerView(3);
+    } else if (window.innerWidth <= 1360) {
+      setPerView(4);
+    } else if (window.innerWidth <= 1440) {
+      setPerView(4);
+    } else {
+      setPerView(4);
+    }
+    window.addEventListener("resize", () => {
+      if (window.innerWidth <= 400) {
+        setPerView(1);
+      } else if (window.innerWidth <= 550) {
+        setPerView(1);
+      } else if (window.innerWidth <= 900) {
+        setPerView(2);
+      } else if (window.innerWidth <= 1360) {
+        setPerView(4);
+      } else if (window.innerWidth <= 1440) {
+        setPerView(4);
+      } else {
+        setPerView(4);
+      }
+    });
   }, []);
   return (
-    <div id="portfolio__section" className="portfolio__section">
+    <div id="portfolio__section" className="portfolio__section section">
       <div className="portfolio__section__header">
         <div className="portfolio__section__header__left">
           <div className="portfolio__section__header__left__sub__heading">
@@ -89,7 +118,7 @@ export default function Portfolio() {
         </div>
       </div>
       <div className="portfolio__section__content">
-        <Swiper>
+        <Swiper initialSlide={4} slidesPerView={perView} loop={true}>
           {projectsData
             .filter((item) =>
               filters === ""
@@ -106,8 +135,9 @@ export default function Portfolio() {
                 : null
             )
             .map((item, i) => {
+              console.log(item);
               return (
-                <SwiperSlide key={i}>
+                <SwiperSlide key={item.id}>
                   <Fade>
                     <div className="portfolio__section__content__entry">
                       <div className="portfolio__section__content__entry__heading">

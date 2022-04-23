@@ -43,11 +43,10 @@ export default function Header({}) {
             <NavLink scrollTo="about">About</NavLink>
             <NavLink scrollTo="services">Services</NavLink>
             <NavLink scrollTo="portfolio">Portfolio</NavLink>
-            <NavLink scrollTo="clients">Clients</NavLink>
             <NavLink scrollTo="blog">Blog</NavLink>
+            <NavLink scrollTo="clients">Clients</NavLink>
           </div>
         ) : null}
-
         <div className="header__content__actions">
           <a
             href="https://github.com/MehfoozurRehman"

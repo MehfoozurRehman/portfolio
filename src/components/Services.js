@@ -26,7 +26,7 @@ export default function Services() {
         What i will do for you
       </div>
       <div className="services__section__heading">Services</div>
-      <div className="services__section__content">
+      <div className="services__section__content section">
         <ServicesCard
           icon={<Layout size={80} color="currentColor" strokeWidth={1} />}
           projects={39}
