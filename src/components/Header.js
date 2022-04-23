@@ -77,9 +77,14 @@ export default function Header({}) {
             <Facebook size={18} color="currentColor" />
             <span>facebook</span>
           </a>
-          <a href="#contact" className="header__content__actions__btn">
+          <button
+            onClick={() => {
+              document.getElementById("contact__section").scrollIntoView();
+            }}
+            className="header__content__actions__btn"
+          >
             Lets Talk
-          </a>
+          </button>
           <button
             onClick={() => {
               nav ? setNav(false) : setNav(true);

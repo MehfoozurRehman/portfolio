@@ -7,16 +7,16 @@ export default function About() {
     <section id="about__section" className="about__section">
       <div className="about__section__left">
         <Fade>
-          <div className="about__section__left__experiance">
+          <div className="about__section__left__experience">
             <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M61.4,-21.8C67.3,-1.8,51.3,23.4,29.1,39.4C6.9,55.4,-21.5,62,-40.9,49.5C-60.4,37,-70.8,5.3,-62.5,-18C-54.1,-41.3,-27.1,-56.3,0.3,-56.4C27.7,-56.5,55.5,-41.8,61.4,-21.8Z"
                 transform="translate(100 100)"
               />
             </svg>
-            <div className="about__section__left__experiance__overlay">
+            <div className="about__section__left__experience__overlay">
               <span>1.5 +</span>
-              Years of <br /> experiance
+              Years of <br /> experience
             </div>
           </div>
         </Fade>

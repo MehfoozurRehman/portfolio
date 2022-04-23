@@ -165,6 +165,7 @@ body {
   color: var(--white);
   text-decoration: none;
   font-size: 14px;
+  cursor: pointer;
 }
 .header__content__actions__btn:hover {
   background-color: var(--primary);
@@ -312,12 +313,12 @@ body {
   height: 400px;
   border-radius: 30px;
 }
-.about__section__left__experiance {
+.about__section__left__experience {
   position: absolute;
   top: 50px;
   left: 0px;
 }
-.about__section__left__experiance svg {
+.about__section__left__experience svg {
   width: 300px;
   height: 300px;
   position: absolute;
@@ -325,7 +326,7 @@ body {
   left: 6px;
   fill: var(--secondary);
 }
-.about__section__left__experiance__overlay {
+.about__section__left__experience__overlay {
   font-size: 14px;
   display: flex;
   flex-direction: column;
@@ -336,7 +337,7 @@ body {
   height: 300px;
   color: var(--text);
 }
-.about__section__left__experiance__overlay span {
+.about__section__left__experience__overlay span {
   font-size: 25px;
   color: var(--primary);
   font-weight: bold;
@@ -695,38 +696,146 @@ body {
   .portfolio__section__content__entry__button:hover {
   background-color: var(--secondary);
 }
-.experiance__page__special {
+.experience__page__special {
   background-color: #0c1229;
   padding: 2em;
   color: var(--text);
   text-align: center;
 }
-.experiance__page {
+.experience__page {
   background-color: #0c1229;
   padding: 2em;
   color: var(--text);
 }
-.experiance__page__heading {
+.experience__page__heading {
   color: var(--primary);
   font-size: 25px;
   margin-bottom: 0.5em;
   text-align: center;
 }
-.experiance__page__sub__heading {
+.experience__page__sub__heading {
   color: var(--primary);
   font-size: 18px;
   margin-bottom: 0.5em;
   font-weight: bold;
 }
-.experiance__page__info {
+.experience__page__info {
   color: var(--white);
   font-size: 15px;
   margin-bottom: 0.5em;
 }
-.experiance__page__content {
+.experience__page__content {
   border-bottom: 1px solid rgba(129, 142, 189, 0.3);
   padding-bottom: 0.5em;
   margin-bottom: 1em;
+}
+.clients__section {
+  padding: 8em 2em;
+  margin-top: -8em;
+  display: flex;
+  flex-direction: column;
+}
+.clients__section__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3em;
+}
+.clients__section__header__left {
+  display: flex;
+  flex-direction: column;
+}
+.clients__section__header__left__sub__heading {
+  font-size: 18px;
+  color: var(--text);
+}
+.clients__section__header__left__heading {
+  font-size: 30px;
+  color: var(--primary);
+}
+.clients__section__header__right {
+  padding: 0.7em 1.8em;
+  color: var(--white);
+  font-size: 14px;
+  background-color: var(--secondary);
+  border: 1px solid var(--primary);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.clients__section__header__right:hover {
+  background-color: var(--primary);
+}
+.clients__section__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.blog__section {
+  display: flex;
+  flex-direction: column;
+  padding: 8em 2em;
+  max-width: 1400px;
+  margin: 0em auto;
+  margin-top: -8em;
+}
+.blog__section__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2em;
+}
+.blog__section__header__sub__heading {
+  font-size: 18px;
+  color: var(--text);
+}
+.blog__section__header__heading {
+  font-size: 30px;
+  color: var(--primary);
+}
+.blog__section__content {
+  display: flex;
+  justify-content: space-between;
+}
+.blog__section__content__entry {
+  width: 30%;
+  background-color: #0c1229;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+}
+.blog__section__content__entry__image {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 12px 12px 0px 0px;
+}
+.blog__section__content__entry__image__img {
+  width: 100%;
+}
+.blog__section__content__entry__content {
+  padding: 1.5em;
+}
+.blog__section__content__entry__heading {
+  color: var(--white);
+  font-size: 18px;
+  margin-bottom: 0.5em;
+}
+.blog__section__content__entry__content__row {
+  display: flex;
+  align-items: center;
+  color: var(--text);
+}
+.blog__section__content__entry__content__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50px;
+  background-color: var(--primary);
+  margin: 0em 1em;
+}
+.blog__section__content__entry:hover {
+  transition: 300ms ease-in-out;
+  border-color: var(--primary);
 }
 @media (max-width: 1250px) {
   .services__section__content__entry {
@@ -737,7 +846,7 @@ body {
   }
 }
 @media (max-width: 1150px) {
-  .about__section__left__experiance {
+  .about__section__left__experience {
     left: -50px;
   }
   .about__section__left__projects {
@@ -851,11 +960,11 @@ body {
   .about__section__left {
     margin-top: 4em;
   }
-  .about__section__left__experiance {
+  .about__section__left__experience {
     left: -100px;
     top: 0px;
   }
-  .about__section__left__experiance svg {
+  .about__section__left__experience svg {
     width: 250px;
     height: 250px;
     top: -90px;
