@@ -29,14 +29,16 @@ body {
 
 #root {
   width: 100%;
-  max-width: 1600px;
-  margin: 0em auto;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   overflow-x: hidden;
 }
-
+.section__wrapper {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0em auto;
+}
 .header {
   width: 100%;
   position: fixed;
@@ -188,24 +190,31 @@ body {
 .header__content__menu:hover {
   background-color: var(--primary);
 }
-.home__section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0em 2em;
-  padding-top: 5em;
-  padding-bottom: 1em;
+.home__section__wrapper {
   position: relative;
   overflow: hidden;
+  width: 100%;
 }
-.home__section svg {
+.home__section__wrapper svg {
   position: absolute;
-  bottom: 0px;
+  bottom: -50px;
   left: 0px;
   width: 110%;
   z-index: 0;
   fill: #0c1229;
 }
+.home__section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0em auto;
+  padding: 0em 2em;
+  padding-top: 5em;
+  padding-bottom: 1em;
+}
+
 .home__section__left {
   width: 50%;
   padding-bottom: 7em;
@@ -293,9 +302,14 @@ body {
 .home__section__right__img {
   height: 650px;
 }
-.about__section {
-  display: flex;
+.about__section__wrapper {
   background-color: #0c1229;
+}
+.about__section {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0em auto;
+  display: flex;
   align-items: center;
   padding: 8em 2em;
   margin-top: -5em;
@@ -452,17 +466,22 @@ body {
 .about__section__right__button:hover {
   background-color: var(--primary);
 }
+.services__section__wrapper {
+  background: linear-gradient(#0c1229, transparent);
+}
 .services__section {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-bottom: 5em;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0em auto;
   margin-top: -5em;
 }
 .services__section__sub__heading {
   font-size: 18px;
   color: var(--text);
-  background-color: #0c1229;
   width: 100%;
   text-align: center;
   padding-top: 8em;
@@ -470,7 +489,6 @@ body {
 .services__section__heading {
   font-size: 30px;
   color: var(--primary);
-  background-color: #0c1229;
   width: 100%;
   text-align: center;
 }
@@ -478,7 +496,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(#0c1229, #0c1229, #0c1229, #0c1229, transparent);
+
   padding: 0em 2em;
   padding-top: 2em;
   flex-wrap: wrap;
@@ -863,6 +881,235 @@ body {
   transition: 300ms ease-in-out;
   border-color: var(--primary);
 }
+.contact__section__wrapper {
+  width: 100%;
+  position: relative;
+  background-color: var(--primary);
+}
+.contact__section__wrapper > svg {
+  width: 100%;
+  fill: var(--primary);
+  position: absolute;
+  top: -230px;
+  z-index: -1;
+}
+.contact__section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0em auto;
+  padding: 0em 2em;
+  padding-bottom: 5em;
+}
+.contact__section__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3em;
+}
+.contact__section__header__sub__heading {
+  font-size: 18px;
+  color: var(--white);
+}
+.contact__section__header__heading {
+  font-size: 35px;
+  color: var(--secondary);
+}
+.contact__section__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.contact__section__content__left {
+  flex: 1;
+  max-width: 550px;
+  margin-right: 3em;
+}
+.contact__section__content__left__heading {
+  font-size: 20px;
+  color: var(--secondary);
+  margin-bottom: 1em;
+}
+.contact__section__content__left__input {
+  border-bottom: 1px solid var(--secondary);
+  width: 100%;
+  margin-bottom: 1em;
+  position: relative;
+  height: 40px;
+}
+
+.contact__section__content__left__textarea {
+  border-bottom: 1px solid var(--secondary);
+  width: 100%;
+  margin-bottom: 1em;
+  position: relative;
+  height: 120px;
+}
+.contact__section__content__left__input__label {
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  color: var(--secondary);
+  font-size: 14px;
+  background-color: var(--primary);
+  z-index: 0;
+  user-select: none;
+}
+.contact__section__content__left__input__field {
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  min-height: 100%;
+  min-width: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  color: var(--white);
+}
+.contact__section__content__left__input__field:-webkit-autofill,
+.contact__section__content__left__input__field:-webkit-autofill:hover,
+.contact__section__content__left__input__field:-webkit-autofill:active,
+.contact__section__content__left__input__field:-webkit-autofill:focus {
+  background-color: var(--primary) !important;
+  color: #ffffff !important;
+  -webkit-box-shadow: 0 0 0 1000px var(--primary) inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+.contact__section__content__left__input__field::placeholder {
+  color: var(--secondary);
+}
+.contact__section__content__left__textarea
+  .contact__section__content__left__input__field {
+  margin-top: 0.7em;
+  height: calc(100% - 1em);
+  min-height: calc(100% - 1em);
+  resize: none;
+  margin-bottom: 0.3em;
+}
+.contact__section__content__left__textarea
+  .contact__section__content__left__input__field::-webkit-scrollbar {
+  width: 5px;
+}
+.contact__section__content__left__textarea
+  .contact__section__content__left__input__field::-webkit-scrollbar-thumb {
+  background-color: var(--white);
+  border-radius: 50px;
+}
+.contact__section__content__left__textarea
+  .contact__section__content__left__input__field::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.contact__section__content__left__input:hover {
+  border-color: var(--white);
+}
+.contact__section__content__left__input:focus-within {
+  border-color: var(--white);
+}
+.contact__section__content__left__input:focus-within
+  .contact__section__content__left__input__label {
+  transition: 300ms ease-in-out;
+  top: -10px;
+  color: var(--white);
+  z-index: 10;
+}
+.contact__section__content__left__textarea:hover {
+  border-color: var(--white);
+}
+.contact__section__content__left__textarea:focus-within {
+  border-color: var(--white);
+}
+.contact__section__content__left__textarea:focus-within
+  .contact__section__content__left__input__label {
+  transition: 300ms ease-in-out;
+  top: -10px;
+  color: var(--white);
+}
+.contact__section__content__left__button {
+  background-color: var(--secondary);
+  padding: 0.9em 2em;
+  color: var(--white);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-top: 1em;
+}
+.contact__section__content__left__button:hover {
+  background-color: var(--white);
+  color: var(--secondary);
+}
+.contact__section__content__right {
+  flex: 1;
+  background-color: var(--secondary);
+  padding: 3em;
+  border-radius: 20px;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: fit-content;
+}
+.contact__section__content__right__entry {
+  margin-bottom: 2em;
+  display: flex;
+  align-items: center;
+}
+.contact__section__content__right__entry:last-child {
+  margin-bottom: 0em;
+}
+.contact__section__content__right__entry__icon {
+  background-color: var(--primary);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 50px;
+  min-height: 50px;
+  border-radius: 50px;
+  margin-right: 1em;
+}
+.contact__section__content__right__entry__content {
+  display: flex;
+  flex-direction: column;
+}
+.contact__section__content__right__entry__content__entry {
+  font-size: 14px;
+  color: var(--text);
+  margin-bottom: 0.5em;
+}
+.contact__section__content__right__entry__content__entry:last-child {
+  margin-bottom: 0em;
+}
+.footer__section__wapper {
+  width: 100%;
+  background-color: var(--primary);
+}
+.footer__section {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0em auto;
+  padding: 1em 2em;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--secondary);
+}
+.footer__section__left {
+  display: flex;
+  margin-left: -1em;
+}
+.footer__section__left .header__content__actions__link {
+  color: var(--secondary);
+}
+.footer__section__left .header__content__actions__link:hover {
+  color: var(--white);
+}
+.footer__section__right {
+  color: var(--secondary);
+}
 @media (max-width: 1250px) {
   .services__section__content__entry {
     width: 32%;
@@ -880,6 +1127,12 @@ body {
   }
   .about__section__left__clients {
     left: -50px;
+  }
+  .contact__section__wrapper svg {
+    top: -150px;
+  }
+  .contact__section__content__right {
+    max-width: 400px;
   }
 }
 @media (max-width: 1000px) {
@@ -942,6 +1195,19 @@ body {
   }
 }
 @media (max-width: 800px) {
+  .contact__section__content {
+    flex-direction: column;
+  }
+  .contact__section__content__left {
+    max-width: 100%;
+    width: 100%;
+    margin-right: 0em;
+  }
+  .contact__section__content__right {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 3em;
+  }
   .home__section {
     flex-direction: column;
   }
@@ -965,6 +1231,9 @@ body {
 @media (max-width: 700px) {
   .home__section__right {
     width: 100%;
+  }
+  .contact__section__wrapper svg {
+    top: -100px;
   }
 }
 @media (max-width: 600px) {
@@ -994,8 +1263,21 @@ body {
   .clients__section__header__right {
     min-width: 50%;
   }
+  .footer__section {
+    flex-direction: column;
+  }
+  .footer__section__left {
+    justify-content: center;
+    margin-bottom: 1em;
+  }
+  .footer__section__right {
+    text-align: center;
+  }
 }
 @media (max-width: 500px) {
+  .contact__section__wrapper svg {
+    top: -70px;
+  }
   .portfolio__section__content__entry {
     width: 100%;
   }
@@ -1072,5 +1354,26 @@ body {
   .section {
     padding-right: 1em;
     padding-left: 1em;
+  }
+  .contact__section__content__right__entry {
+    flex-direction: column;
+  }
+  .contact__section__content__right__entry__icon {
+    margin-right: 0em;
+    margin-bottom: 1em;
+  }
+  .contact__section__content__right__entry__content__entry {
+    text-align: center;
+    word-break: break-all;
+  }
+}
+@media (max-width: 350px) {
+  .contact__section__wrapper svg {
+    top: -50px;
+  }
+}
+@media (max-width: 250px) {
+  .contact__section__wrapper svg {
+    top: -35px;
   }
 }

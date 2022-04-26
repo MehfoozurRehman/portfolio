@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Facebook, GitHub, Instagram, Linkedin, Menu, X } from "react-feather";
+import OutsideClickHandler from "react-outside-click-handler";
 import NavLink from "./NavLink";
 
 export default function Header({}) {
@@ -36,16 +37,24 @@ export default function Header({}) {
           <div className="header__content__logo__text">Mehfooz-ur-rehman</div>
         </button>
         {nav ? (
-          <div className="header__content__nav">
-            <NavLink defaultChecked={true} scrollTo="home">
-              Home
-            </NavLink>
-            <NavLink scrollTo="about">About</NavLink>
-            <NavLink scrollTo="services">Services</NavLink>
-            <NavLink scrollTo="portfolio">Portfolio</NavLink>
-            <NavLink scrollTo="blog">Blog</NavLink>
-            <NavLink scrollTo="clients">Clients</NavLink>
-          </div>
+          <OutsideClickHandler
+            onOutsideClick={() => {
+              if (window.innerWidth < 1000) {
+                setNav(false);
+              }
+            }}
+          >
+            <div className="header__content__nav">
+              <NavLink defaultChecked={true} scrollTo="home">
+                Home
+              </NavLink>
+              <NavLink scrollTo="about">About</NavLink>
+              <NavLink scrollTo="services">Services</NavLink>
+              <NavLink scrollTo="portfolio">Portfolio</NavLink>
+              <NavLink scrollTo="blog">Blog</NavLink>
+              <NavLink scrollTo="clients">Clients</NavLink>
+            </div>
+          </OutsideClickHandler>
         ) : null}
         <div className="header__content__actions">
           <a
