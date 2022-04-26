@@ -35,9 +35,10 @@ export default function Blog() {
         <div className="blog__section__header__heading">Blog</div>
       </div>
       <div className="blog__section__content">
-        {blogData.map((blog) => {
+        {blogData.map((blog, i) => {
           return (
             <BlogCard
+              key={i}
               heading={blog.heading}
               date={blog.date}
               author={blog.author}

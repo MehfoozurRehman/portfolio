@@ -39,31 +39,42 @@ export default function Portfolio() {
       )
       .then((res) => {
         setProjectsData(res.data);
-        console.log(res.data);
       });
-    if (window.innerWidth <= 400) {
+    if (window.innerWidth <= 550) {
       setPerView(1);
-    } else if (window.innerWidth <= 550) {
-      setPerView(2);
+    } else if (window.innerWidth <= 650) {
+      setPerView(1.4);
+    } else if (window.innerWidth <= 780) {
+      setPerView(1.8);
     } else if (window.innerWidth <= 900) {
-      setPerView(3);
+      setPerView(2);
+    } else if (window.innerWidth <= 1000) {
+      setPerView(2.2);
+    } else if (window.innerWidth <= 1150) {
+      setPerView(2.5);
     } else if (window.innerWidth <= 1360) {
-      setPerView(4);
-    } else if (window.innerWidth <= 1440) {
+      setPerView(3);
+    } else if (window.innerWidth <= 1600) {
       setPerView(4);
     } else {
       setPerView(4);
     }
     window.addEventListener("resize", () => {
-      if (window.innerWidth <= 400) {
+      if (window.innerWidth <= 550) {
         setPerView(1);
-      } else if (window.innerWidth <= 550) {
-        setPerView(1);
+      } else if (window.innerWidth <= 650) {
+        setPerView(1.5);
+      } else if (window.innerWidth <= 780) {
+        setPerView(1.5);
       } else if (window.innerWidth <= 900) {
         setPerView(2);
+      } else if (window.innerWidth <= 1000) {
+        setPerView(2.2);
+      } else if (window.innerWidth <= 1150) {
+        setPerView(2.5);
       } else if (window.innerWidth <= 1360) {
-        setPerView(4);
-      } else if (window.innerWidth <= 1440) {
+        setPerView(3);
+      } else if (window.innerWidth <= 1600) {
         setPerView(4);
       } else {
         setPerView(4);
@@ -134,8 +145,7 @@ export default function Portfolio() {
                   item.description !== null
                 : null
             )
-            .map((item, i) => {
-              console.log(item);
+            .map((item) => {
               return (
                 <SwiperSlide key={item.id}>
                   <Fade>
