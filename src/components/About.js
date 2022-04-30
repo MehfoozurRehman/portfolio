@@ -1,8 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import aboutPic from "../assets/aboutPic.png";
 import Fade from "react-reveal/Fade";
+import axios from "axios";
 
 export default function About() {
+  const [projectsCompleted, setProjectsCompleted] = useState(0);
+  const [workingFor, setWorkingFor] = useState("");
+  function getAge(dateString) {
+    var ageInMilliseconds = new Date() - new Date(dateString);
+    return Math.floor(ageInMilliseconds / 1000 / 60 / 60 / 24 / 365); // convert to years
+  }
+  useEffect(() => {
+    axios.get("https://api.github.com/users/MehfoozurRehman").then((res) => {
+      // console.log(res.data, res.data.public_repos);
+      setProjectsCompleted(res.data.public_repos);
+      setWorkingFor(res.data.company);
+    });
+  }, []);
+
   return (
     <div className="about__section__wrapper">
       <section id="about__section" className="about__section section">
@@ -16,7 +31,7 @@ export default function About() {
                 />
               </svg>
               <div className="about__section__left__experience__overlay">
-                <span>1.5 +</span>
+                <span>{getAge("2020-07-17")} +</span>
                 Years of <br /> experience
               </div>
             </div>
@@ -30,7 +45,7 @@ export default function About() {
                 />
               </svg>
               <div className="about__section__left__projects__overlay">
-                <span>10 +</span>
+                <span>{projectsCompleted} +</span>
                 Projects <br /> completed
               </div>
             </div>
@@ -62,13 +77,13 @@ export default function About() {
           <div className="about__section__right__heading">About me</div>
           <div className="about__section__right__info">
             I'm a Web Developer based in Pakistan. I enjoy turning complex
-            problems into simple, beautiful and intuitive solutions.
+            problems into simple, beautiful and intuitive solutions. Working at
+            this time for "{workingFor}"
             <br />
-            <br />
-            My job is to build functional and user-friendly and at the same time
-            attractive websites for you. Moreover, I add a personal touch to
-            your product and make sure that it is eye-catching and easy to use.
-            My aim is to bring across your message and identity in the most
+            <br />I like to build functional and user-friendly and at the same
+            time attractive websites for you. Moreover, I add a personal touch
+            to your product and make sure that it is eye-catching and easy to
+            use. My aim is to bring across your message and identity in the most
             creative way.
           </div>
           <div className="about__section__right__languages">

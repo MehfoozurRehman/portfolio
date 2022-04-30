@@ -37,7 +37,7 @@ export default function App() {
           blockSize={18}
         />
         <Book />
-        <Clients />
+        {/* <Clients /> */}
         <Blog />
       </div>
       <Contact />

@@ -7,13 +7,15 @@ function ServicesCard({ info, title, projects, icon }) {
     <Fade>
       <div className="services__section__content__entry">
         <div className="services__section__content__entry__icon">{icon}</div>
-        <div className="services__section__content__entry__sub__heading">
-          {projects} Project
-        </div>
+        {/* <div className="services__section__content__entry__sub__heading">
+          {projects} Projects
+        </div> */}
         <div className="services__section__content__entry__heading">
           {title}
         </div>
-        <div className="services__section__content__entry__info">{info}</div>
+        <div className="services__section__content__entry__info">
+          {info.substring(0, 200) + "..."}
+        </div>
       </div>
     </Fade>
   );
@@ -32,25 +34,25 @@ export default function Services() {
             icon={<Layout size={80} color="currentColor" strokeWidth={1} />}
             projects={39}
             title="Web Development"
-            info="Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, a? Rerum quaerat, magni libero officiis pariatur facere natus autem fugiat minus atque sit molestiae eveniet rem alias aperiam eaque laudantium!"
+            info="Web development, also known as website development, refers to the tasks associated with creating, building, and maintaining websites and web applications that run online on a browser. It may, however, also include web design, web programming, and database management."
           />
           <ServicesCard
             icon={<Box size={80} color="currentColor" strokeWidth={1} />}
             projects={39}
             title="Mobile Development"
-            info="Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, a? Rerum quaerat, magni libero officiis pariatur facere natus autem fugiat minus atque sit molestiae eveniet rem alias aperiam eaque laudantium!"
+            info="Mobile application development is the process of creating software applications that run on a mobile device, and a typical mobile application utilizes a network connection to work with remote computing resources."
           />
           <ServicesCard
             icon={<Package size={80} color="currentColor" strokeWidth={1} />}
             projects={39}
             title="UI / UX Design"
-            info="Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, a? Rerum quaerat, magni libero officiis pariatur facere natus autem fugiat minus atque sit molestiae eveniet rem alias aperiam eaque laudantium!"
+            info="User interface (UI) design refers to the aesthetic elements by which people interact with a product, such as buttons, icons, menu bars, typography, colors, and more. User experience (UX) design refers to the experience a user has when interacting with a product."
           />
           <ServicesCard
             icon={<Shield size={90} color="currentColor" strokeWidth={1} />}
             projects={39}
             title="SEO / Security"
-            info="Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, a? Rerum quaerat, magni libero officiis pariatur facere natus autem fugiat minus atque sit molestiae eveniet rem alias aperiam eaque laudantium!"
+            info="SEO security is the use of SEO metrics to identify flaws in a site's security, to act to solve those issues and to monitor site activity with security in mind. Good SEO practitioners follow security news closely and should increase their clients' site security by a significant factor."
           />
         </div>
       </div>

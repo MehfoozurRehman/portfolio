@@ -45,7 +45,7 @@ export default function Portfolio() {
     } else if (window.innerWidth <= 650) {
       setPerView(1.4);
     } else if (window.innerWidth <= 780) {
-      setPerView(1.8);
+      setPerView(1.5);
     } else if (window.innerWidth <= 900) {
       setPerView(2);
     } else if (window.innerWidth <= 1000) {
@@ -54,16 +54,16 @@ export default function Portfolio() {
       setPerView(2.5);
     } else if (window.innerWidth <= 1360) {
       setPerView(3);
-    } else if (window.innerWidth <= 1600) {
-      setPerView(4);
+    } else if (window.innerWidth <= 1440) {
+      setPerView(3.5);
     } else {
-      setPerView(4);
+      setPerView(3.5);
     }
     window.addEventListener("resize", () => {
       if (window.innerWidth <= 550) {
         setPerView(1);
       } else if (window.innerWidth <= 650) {
-        setPerView(1.5);
+        setPerView(1.4);
       } else if (window.innerWidth <= 780) {
         setPerView(1.5);
       } else if (window.innerWidth <= 900) {
@@ -74,10 +74,10 @@ export default function Portfolio() {
         setPerView(2.5);
       } else if (window.innerWidth <= 1360) {
         setPerView(3);
-      } else if (window.innerWidth <= 1600) {
-        setPerView(4);
+      } else if (window.innerWidth <= 1440) {
+        setPerView(3.5);
       } else {
-        setPerView(4);
+        setPerView(3.5);
       }
     });
   }, []);
