@@ -13,6 +13,7 @@ import "swiper/scss/navigation";
 import "swiper/scss/pagination";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Chatbot from "./components/Chatbot";
 
 export default function App() {
   return (
@@ -42,6 +43,7 @@ export default function App() {
       </div>
       <Contact />
       <Footer />
+      <Chatbot />
     </>
   );
 }

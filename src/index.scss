@@ -38,6 +38,7 @@ body {
   width: 100%;
   max-width: 1440px;
   margin: 0em auto;
+  overflow: visible;
 }
 .header {
   width: 100%;
@@ -1110,6 +1111,7 @@ body {
 .footer__section__right {
   color: var(--secondary);
 }
+
 @media (max-width: 1250px) {
   .services__section__content__entry {
     width: 32%;
