@@ -8,12 +8,12 @@ import Services from "./components/Services";
 import Book from "./components/Book";
 import Clients from "./components/Clients";
 import Blog from "./components/Blog";
-import "swiper/scss";
-import "swiper/scss/navigation";
-import "swiper/scss/pagination";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Chatbot from "./components/Chatbot";
+import "swiper/scss";
+import "swiper/scss/navigation";
+import "swiper/scss/pagination";
 
 export default function App() {
   return (
@@ -43,7 +43,7 @@ export default function App() {
       </div>
       <Contact />
       <Footer />
-      <Chatbot />
+      {/* <Chatbot /> */}
     </>
   );
 }
