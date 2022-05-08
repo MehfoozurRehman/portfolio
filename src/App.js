@@ -21,7 +21,7 @@ export default function App() {
         <Portfolio />
         <GitHubCalendar
           username="mehfoozurrehman"
-          color="#c43131"
+          color="#df3c3c"
           fontSize={14}
           year={new Date().getFullYear()}
           style={{

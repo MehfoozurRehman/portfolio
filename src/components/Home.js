@@ -13,7 +13,7 @@ export default function Home() {
             <span>
               <TypeWriterEffect
                 startDelay={0}
-                cursorColor="#c43131"
+                cursorColor="#df3c3c"
                 multiText={[
                   "Web App",
                   "Mobile App",
