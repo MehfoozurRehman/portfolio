@@ -9,9 +9,6 @@ import Book from "./components/Book";
 import Blog from "./components/Blog";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import "swiper/scss";
-import "swiper/scss/navigation";
-import "swiper/scss/pagination";
 
 export default function App() {
   return (
@@ -24,7 +21,7 @@ export default function App() {
         <Portfolio />
         <GitHubCalendar
           username="mehfoozurrehman"
-          color="#eb4a4a"
+          color="#c43131"
           fontSize={14}
           year={new Date().getFullYear()}
           style={{

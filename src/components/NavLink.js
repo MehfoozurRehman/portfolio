@@ -7,6 +7,7 @@ export default function NavLink({ children, defaultChecked, scrollTo }) {
         id={scrollTo}
         type="radio"
         name="header__content__nav__link"
+        title={scrollTo}
         className="header__content__nav__link__input"
         defaultChecked={defaultChecked}
         onClick={() => {

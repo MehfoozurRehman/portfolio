@@ -1,55 +1,7 @@
 import React, { useState } from "react";
 import { Mail, MapPin, Phone } from "react-feather";
-
-function Input({ label, type, name, onChange }) {
-  const [isFilled, setIfFilled] = useState("");
-  return (
-    <div className="contact__section__content__left__input">
-      <label
-        htmlFor={name}
-        autoComplete="none"
-        className="contact__section__content__left__input__label"
-        style={isFilled === "" ? null : { top: -10, zIndex: 10 }}
-      >
-        {label}
-      </label>
-      <input
-        type={type}
-        name={name}
-        id={name}
-        onChange={(e) => {
-          setIfFilled(e.target.value);
-          onChange(e.target.value);
-        }}
-        className="contact__section__content__left__input__field"
-      />
-    </div>
-  );
-}
-function Textarea({ label, name, onChange }) {
-  const [isFilled, setIfFilled] = useState("");
-  return (
-    <div className="contact__section__content__left__textarea">
-      <label
-        htmlFor={name}
-        autoComplete="none"
-        className="contact__section__content__left__input__label"
-        style={isFilled === "" ? null : { top: -10 }}
-      >
-        {label}
-      </label>
-      <textarea
-        className="contact__section__content__left__input__field"
-        name={name}
-        id={name}
-        onChange={(e) => {
-          setIfFilled(e.target.value);
-          onChange(e.target.value);
-        }}
-      />
-    </div>
-  );
-}
+import Input from "./Input";
+import Textarea from "./Textarea";
 
 export default function Contact() {
   const [name, setName] = useState("");

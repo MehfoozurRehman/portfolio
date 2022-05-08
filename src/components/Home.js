@@ -1,15 +1,8 @@
-import React, { useEffect, useState } from "react";
-import pic from "../assets/pic.png";
+import React from "react";
 import TypeWriterEffect from "react-typewriter-effect";
+import pic from "../assets/pic.png";
 
 export default function Home() {
-  const [text, setText] = useState("Digital Identity");
-  useEffect(() => {
-    setTimeout(() => {
-      setText("Website");
-    }, 3000);
-  }, []);
-
   return (
     <div className="home__section__wrapper">
       <section id="home__section" className="home__section section">
@@ -20,7 +13,7 @@ export default function Home() {
             <span>
               <TypeWriterEffect
                 startDelay={0}
-                cursorColor="#eb4a4a"
+                cursorColor="#c43131"
                 multiText={[
                   "Web App",
                   "Mobile App",
@@ -52,6 +45,7 @@ export default function Home() {
               document.getElementById("portfolio").checked = true;
             }}
             className="home__section__left__button"
+            title="Check out my work"
           >
             Check out my work
           </a>

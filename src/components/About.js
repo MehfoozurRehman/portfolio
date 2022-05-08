@@ -2,17 +2,13 @@ import React, { useEffect, useState } from "react";
 import aboutPic from "../assets/aboutPic.png";
 import Fade from "react-reveal/Fade";
 import axios from "axios";
+import { getExperience } from "../utils/function";
 
 export default function About() {
   const [projectsCompleted, setProjectsCompleted] = useState(0);
   const [workingFor, setWorkingFor] = useState("");
-  function getAge(dateString) {
-    var ageInMilliseconds = new Date() - new Date(dateString);
-    return Math.floor(ageInMilliseconds / 1000 / 60 / 60 / 24 / 365); // convert to years
-  }
   useEffect(() => {
     axios.get("https://api.github.com/users/MehfoozurRehman").then((res) => {
-      // console.log(res.data, res.data.public_repos);
       setProjectsCompleted(res.data.public_repos);
       setWorkingFor(res.data.company);
     });
@@ -31,7 +27,7 @@ export default function About() {
                 />
               </svg>
               <div className="about__section__left__experience__overlay">
-                <span>{getAge("2020-07-17")} +</span>
+                <span>{getExperience("2020-07-17")} +</span>
                 Years of <br /> experience
               </div>
             </div>

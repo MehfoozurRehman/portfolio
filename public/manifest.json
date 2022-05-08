@@ -1,25 +1,25 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Mehfooz-ur-Rehman",
+  "name": "Mehfooz-ur-Rehman",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "https://avatars.githubusercontent.com/u/68416499?s=400&u=e4115c8a9a984f4b5075cd9c1de86ecf1fe23da5&v=4",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "type": "image/png"
     },
     {
-      "src": "logo192.png",
+      "src": "https://avatars.githubusercontent.com/u/68416499?s=400&u=e4115c8a9a984f4b5075cd9c1de86ecf1fe23da5&v=4",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "https://avatars.githubusercontent.com/u/68416499?s=400&u=e4115c8a9a984f4b5075cd9c1de86ecf1fe23da5&v=4",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#c43131",
+  "background_color": "#0e1630"
 }

@@ -1,45 +1,16 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
-import {
-  ArrowLeft,
-  ArrowRight,
-  Box,
-  GitHub,
-  Globe,
-  Layout,
-} from "react-feather";
-import { Fade } from "react-reveal";
+import { ArrowLeft, ArrowRight } from "react-feather";
+import Fade from "react-reveal/Fade";
 import { Swiper, SwiperSlide } from "swiper/react";
-
-function PortfolioFilter({ label, defaultChecked, onClick }) {
-  return (
-    <div className="portfolio__section__header__middle__entry">
-      <input
-        type="radio"
-        name="portfolio__section__header__middle__entry"
-        className="portfolio__section__header__middle__entry__input"
-        defaultChecked={defaultChecked}
-        onClick={onClick}
-      />
-      <div className="portfolio__section__header__middle__entry__content">
-        {label}
-      </div>
-    </div>
-  );
-}
+import axios from "axios";
+import PortfolioFilter from "./PortfolioFilter";
+import ProjectCard from "./ProjectCard";
 
 export default function Portfolio() {
   const [filters, setFilters] = useState("");
   const [perView, setPerView] = useState(4);
   const [projectsData, setProjectsData] = useState([]);
-  useEffect(() => {
-    axios
-      .get(
-        "https://api.github.com/users/MehfoozurRehman/repos?per_page=10000&sort=updated"
-      )
-      .then((res) => {
-        setProjectsData(res.data);
-      });
+  function windowSize() {
     if (window.innerWidth <= 550) {
       setPerView(1);
     } else if (window.innerWidth <= 650) {
@@ -59,27 +30,17 @@ export default function Portfolio() {
     } else {
       setPerView(3.5);
     }
-    window.addEventListener("resize", () => {
-      if (window.innerWidth <= 550) {
-        setPerView(1);
-      } else if (window.innerWidth <= 650) {
-        setPerView(1.4);
-      } else if (window.innerWidth <= 780) {
-        setPerView(1.5);
-      } else if (window.innerWidth <= 900) {
-        setPerView(2);
-      } else if (window.innerWidth <= 1000) {
-        setPerView(2.2);
-      } else if (window.innerWidth <= 1150) {
-        setPerView(2.5);
-      } else if (window.innerWidth <= 1360) {
-        setPerView(3);
-      } else if (window.innerWidth <= 1440) {
-        setPerView(3.5);
-      } else {
-        setPerView(3.5);
-      }
-    });
+  }
+  useEffect(() => {
+    axios
+      .get(
+        "https://api.github.com/users/MehfoozurRehman/repos?per_page=10000&sort=updated"
+      )
+      .then((res) => {
+        setProjectsData(res.data);
+      });
+    windowSize();
+    window.addEventListener("resize", windowSize);
   }, []);
   return (
     <div id="portfolio__section" className="portfolio__section section">
@@ -117,19 +78,26 @@ export default function Portfolio() {
           <button
             className="portfolio__section__header__right__button"
             id="swiper-back"
+            title="swiper-back"
           >
             <ArrowLeft size={20} color="currentColor" />
           </button>
           <button
             className="portfolio__section__header__right__button"
             id="swiper-forward"
+            title="swiper-forward"
           >
             <ArrowRight size={20} color="currentColor" />
           </button>
         </div>
       </div>
       <div className="portfolio__section__content">
-        <Swiper initialSlide={4} slidesPerView={perView} loop={true}>
+        <Swiper
+          initialSlide={4}
+          lazy={true}
+          slidesPerView={perView}
+          loop={true}
+        >
           {projectsData
             .filter((item) =>
               filters === ""
@@ -145,53 +113,13 @@ export default function Portfolio() {
                   item.description !== null
                 : null
             )
-            .map((item) => {
-              return (
-                <SwiperSlide key={item.id}>
-                  <Fade>
-                    <div className="portfolio__section__content__entry">
-                      <div className="portfolio__section__content__entry__heading">
-                        {item.homepage && item.homepage !== null ? (
-                          <Layout size={30} color="currentColor" />
-                        ) : (
-                          <Box size={30} color="currentColor" />
-                        )}
-
-                        <span>
-                          {item.name.replace(/-/g, " ").replace(/_/g, " ")}
-                        </span>
-                      </div>
-                      <div className="portfolio__section__content__entry__info">
-                        {item.description && item.description.length > 180
-                          ? item.description.substring(1, 180) + "..."
-                          : item.description}
-                      </div>
-                      <div className="portfolio__section__content__entry__content">
-                        {item.language !== null ? item.language : "HTML"}
-                      </div>
-                      <div className="portfolio__section__content__entry__buttons">
-                        <a
-                          href={item.html_url}
-                          className="portfolio__section__content__entry__button"
-                        >
-                          <GitHub size={20} color="currentColor" />
-                          Github
-                        </a>
-                        {item.homepage && item.homepage !== null ? (
-                          <a
-                            href={item.homepage}
-                            className="portfolio__section__content__entry__button"
-                          >
-                            <Globe size={20} color="currentColor" />
-                            Website
-                          </a>
-                        ) : null}
-                      </div>
-                    </div>
-                  </Fade>
-                </SwiperSlide>
-              );
-            })}
+            .map((item) => (
+              <SwiperSlide key={item.id}>
+                <Fade>
+                  <ProjectCard item={item} />
+                </Fade>
+              </SwiperSlide>
+            ))}
         </Swiper>
       </div>
     </div>

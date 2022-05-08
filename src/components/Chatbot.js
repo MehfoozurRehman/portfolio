@@ -7,7 +7,6 @@ export default function Chatbot() {
     const element = document.getElementById(id);
     element.scrollTop = element.scrollHeight;
   };
-
   function handleSubmit(e) {
     e.preventDefault();
     scrollToBottom("chatbot__wrapper__panel__chat");
@@ -156,7 +155,7 @@ function ChatBotStyles({}) {
           display: flex;
           align-items: center;
           justify-content: center;
-          background-color: #eb4a4a;
+          background-color: #c43131;
           color: white;
           cursor: pointer;
           box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
@@ -169,7 +168,7 @@ function ChatBotStyles({}) {
           width: 100%;
         }
         .chatbot__wrapper__panel__header svg {
-          fill: #eb4a4a;
+          fill: #c43131;
           width: 135%;
           margin-left: -20px;
           border-top-left-radius: 10px;
@@ -230,7 +229,7 @@ function ChatBotStyles({}) {
           width: 5px;
         }
         .chatbot__wrapper__panel__chat::-webkit-scrollbar-thumb {
-          background-color: #eb4a4a;
+          background-color: #c43131;
           border-radius: 50px;
         }
         .chatbot__wrapper__panel__chat__message {
@@ -253,7 +252,7 @@ function ChatBotStyles({}) {
           font-size: 15px;
         }
         .chatbot__wrapper__panel__chat__message__content {
-          background-color: #eb4a4a;
+          background-color: #c43131;
           border-radius: 20px;
           padding: 1em 1.2em;
           border-top-left-radius: 0px;
@@ -281,7 +280,7 @@ function ChatBotStyles({}) {
           height: 40px;
           padding: 0em 1em;
           border-radius: 5px;
-          border: 1px solid #eb4a4a;
+          border: 1px solid #c43131;
           outline: none;
           margin-right: 0.5em;
         }
@@ -291,7 +290,7 @@ function ChatBotStyles({}) {
         .chatbot__wrapper__panel__form__button {
           height: 40px;
           width: 40px;
-          background-color: #eb4a4a;
+          background-color: #c43131;
           color: white;
           border: none;
           display: flex;

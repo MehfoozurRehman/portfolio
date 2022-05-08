@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
-  --primary: #eb4a4a;
-  --secondary: #0e1630;
+  --primary: #c43131;
+  --secondary: #00071d;
   --white: white;
   --text: #818ebd;
 }
@@ -12,6 +12,14 @@
 *::before {
   box-sizing: border-box;
   scroll-behavior: smooth;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border-radius: 50px;
 }
 
 a:hover,
@@ -202,7 +210,7 @@ body {
   left: 0px;
   width: 110%;
   z-index: 0;
-  fill: #0c1229;
+  fill: #000414;
 }
 .home__section {
   display: flex;
@@ -304,7 +312,7 @@ body {
   height: 650px;
 }
 .about__section__wrapper {
-  background-color: #0c1229;
+  background-color: #000414;
 }
 .about__section {
   width: 100%;
@@ -468,7 +476,7 @@ body {
   background-color: var(--primary);
 }
 .services__section__wrapper {
-  background: linear-gradient(#0c1229, transparent);
+  background: linear-gradient(#000414, transparent);
 }
 .services__section {
   display: flex;
@@ -567,7 +575,7 @@ body {
 }
 .portfolio__section__header__middle {
   display: flex;
-  background-color: #0c1229;
+  background-color: #000414;
   padding: 0.8em 2em;
   border-radius: 10px;
 }
@@ -616,7 +624,7 @@ body {
   padding: 1.2em;
   border-radius: 5px;
   color: var(--text);
-  background-color: #0c1229;
+  background-color: #000414;
   border: none;
   margin-left: 0.5em;
   display: flex;
@@ -628,20 +636,15 @@ body {
   background-color: var(--primary);
   color: var(--white);
 }
-// .swiper-slide {
-//   width: fit-content !important;
-//   margin-right: 2em;
-//   padding: 2em 0em;
-// }
 .portfolio__section__content__entry {
   width: 350px;
   min-height: fit-content;
   padding: 2em;
   background-color: var(--secondary);
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   user-select: none;
-  border: 1px solid var(--secondary);
+  border: 1px solid #000414;
 }
 .portfolio__section__content__entry__heading {
   display: flex;
@@ -704,49 +707,14 @@ body {
 .portfolio__section__content__entry:hover {
   border-color: var(--primary);
 }
-// .portfolio__section__content__entry:hover * {
-//   background-color: var(--primary);
-//   color: var(--white);
-//   stroke: var(--white);
-// }
-// .portfolio__section__content__entry:hover
-//   .portfolio__section__content__entry__content::before {
-//   background-color: var(--white);
-// }
-// .portfolio__section__content__entry:hover
-//   .portfolio__section__content__entry__button
-//   * {
-//   border-color: var(--secondary);
-//   background-color: var(--secondary);
-// }
-// .portfolio__section__content__entry:hover
-//   .portfolio__section__content__entry__button {
-//   border-color: var(--secondary);
-//   background-color: var(--secondary);
-// }
-// .portfolio__section__content__entry:hover
-//   .portfolio__section__content__entry__button:hover
-//   * {
-//   transition: 0ms ease-in-out !important;
-//   border-color: var(--white);
-//   background-color: var(--white);
-//   stroke: var(--secondary);
-// }
-// .portfolio__section__content__entry:hover
-//   .portfolio__section__content__entry__button:hover {
-//   transition: 200ms ease-in-out !important;
-//   border-color: var(--white);
-//   background-color: var(--white);
-//   color: var(--secondary);
-// }
 .experience__page__special {
-  background-color: #0c1229;
+  background-color: #000414;
   padding: 2em;
   color: var(--text);
   text-align: center;
 }
 .experience__page {
-  background-color: #0c1229;
+  background-color: #000414;
   padding: 2em;
   color: var(--text);
 }
@@ -842,7 +810,7 @@ body {
 .blog__section__content__entry {
   width: calc(33% - 2em);
   margin-right: 2em;
-  background-color: #0c1229;
+  background-color: #000414;
   border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   text-decoration: none;
@@ -978,6 +946,7 @@ body {
 .contact__section__content__left__input__field:-webkit-autofill:focus {
   background-color: var(--primary) !important;
   color: #ffffff !important;
+  box-shadow: 0 0 0 1000px var(--primary) inset !important;
   -webkit-box-shadow: 0 0 0 1000px var(--primary) inset !important;
   -webkit-text-fill-color: #ffffff !important;
 }

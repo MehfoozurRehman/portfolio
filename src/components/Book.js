@@ -46,7 +46,7 @@ export default function Book({}) {
       <div className="experience__page__special">
         <div className="experience__page__heading">The end</div>
         <div className="experience__page__info">
-          Lets build and grow togather
+          Lets build and grow together
         </div>
       </div>
     </HTMLFlipBook>
