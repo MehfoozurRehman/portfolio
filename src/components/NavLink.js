@@ -13,10 +13,7 @@ export default function NavLink({ scrollTo, label, defaultChecked }) {
           document.getElementById(scrollTo + "__section").scrollIntoView();
         }}
       />
-      <div className="header__content__nav__links__entry__content">
-        <div className="header__content__nav__links__entry__content__dot" />
-        {label}
-      </div>
+      <div className="header__content__nav__links__entry__content">{label}</div>
     </div>
   );
 }
