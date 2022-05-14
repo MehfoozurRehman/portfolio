@@ -1,12 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --primary: #64ffda;
+  --secondary: #0a192f;
+  --white: white;
+  --text: #818ebd;
+  --hover: rgba(99, 255, 219, 0.3);
+}
+
 *,
 *::after,
 *::before {
   box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border-radius: 50px;
+}
+
+a:hover,
+button:hover {
+  transition: 300ms ease-in-out;
 }
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: "Jost", sans-serif;
+  overflow-x: hidden;
+  background-color: var(--secondary);
 }
 .App {
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  background-color: var(--secondary);
+  position: relative;
+}
+.header__content {
+  width: 100%;
+  max-width: 1500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0em auto;
+  padding: 1em 2em;
+}
+.header__content__logo {
+  padding: 0em;
+  background-color: transparent;
+  border: none;
+  margin: -10px 0em;
+  cursor: pointer;
+}
+.header__content__logo__img {
+  width: 65px;
+  height: 65px;
+}
+.header__content__logo__img:hover g g {
+  transition: 300ms ease-in-out;
+  fill: var(--hover);
+}
+.header__content__logo__img:hover .icon {
+  transition: 100ms ease-in-out;
+  fill: white;
+}
+.header__content__menu {
+  background-color: transparent;
+  border: 2px solid var(--primary);
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  color: var(--primary);
+  padding: 0em;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+.header__content__menu:hover {
+  transition: 300ms ease-in-out;
+  background-color: var(--hover);
+  color: var(--white);
+}
+.header__content__menu svg {
+  transform: rotate(-45deg);
+}
+.header__content__nav {
+  display: flex;
+  align-items: center;
+}
+.header__content__nav__links {
+  display: flex;
+  align-items: center;
+}
+.header__content__nav__links__entry {
+  position: relative;
+  margin-left: 1em;
+  user-select: none;
+}
+.header__content__nav__links__entry__input {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.header__content__nav__links__entry__content {
+  color: var(--text);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+.header__content__nav__links__entry__content__dot {
+  background-color: var(--primary);
+  margin-right: 1em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50px;
+}
+.header__content__nav__links__entry__input:hover
+  ~ .header__content__nav__links__entry__content,
+.header__content__nav__links__entry__input:checked
+  ~ .header__content__nav__links__entry__content {
+  transition: 300ms ease-in-out;
+  color: var(--primary);
+}
+.header__content__nav__button {
+  width: fit-content;
+  height: 38px;
+  color: var(--primary);
+  padding: 0em 1.8em;
+  border: 1px solid var(--primary);
+  border-radius: 5px;
+  background-color: transparent;
+  margin-left: 1.5em;
+  cursor: pointer;
+  font-size: 14px;
+  user-select: none;
+}
+.header__content__nav__button:hover {
+  transition: 300ms ease-in-out;
+  background-color: var(--hover);
+  color: var(--white);
+}
+@media (max-width: 950px) {
+  .header__content__menu {
+    display: flex;
+  }
+  .header__content__nav {
+    position: absolute;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 180px;
+    background-color: var(--secondary);
+    border-radius: 10px;
+    padding: 1em 1.5em;
+    top: 80px;
+    right: 1.5em;
+    box-shadow: 0px 0px 20px rgba(99, 255, 219, 0.05);
+  }
+  .header__content__nav__links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .header__content__nav__links__entry {
+    margin-left: 0em;
+    margin-bottom: 1em;
+  }
+  .header__content__nav__links__entry__content__dot {
+    margin-right: 1.4em;
+  }
+  .header__content__nav__button {
+    margin-left: 0em;
+    width: 100%;
+  }
 }
