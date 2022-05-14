@@ -4,7 +4,7 @@
   --primary: #64ffda;
   --secondary: #0a192f;
   --white: white;
-  --text: #818ebd;
+  --text: #8892b0;
   --hover: rgba(99, 255, 219, 0.3);
 }
 
@@ -102,7 +102,7 @@ body {
   justify-content: space-between;
   align-items: center;
   margin: 0em auto;
-  padding: 1em 2em;
+  padding: 1.5em 2em;
   max-width: 1440px;
   position: relative;
 }
@@ -171,7 +171,6 @@ body {
 }
 .header__content__nav__links__entry__content {
   color: var(--text);
-  font-size: 14px;
   display: flex;
   align-items: center;
 }
@@ -206,6 +205,58 @@ body {
   transition: 300ms ease-in-out;
   background-color: var(--hover);
   color: var(--white);
+}
+.home__section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0em auto;
+  padding: 7em 2em;
+  height: 700px;
+}
+.home__section__sub__heading {
+  color: var(--primary);
+  margin-bottom: -0.1em;
+}
+.home__section__heading {
+  color: #b1bddd;
+  font-size: 30px;
+  margin-bottom: 0.5em;
+}
+.home__section__slogan {
+  color: var(--text);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 120%;
+}
+.home__section__info {
+  font-size: 14px;
+  color: var(--text);
+  width: 100%;
+  max-width: 400px;
+  margin: 2.5em 0em;
+}
+.home__section__info span {
+  color: var(--primary);
+  margin-left: 0.5em;
+}
+.home__section__button {
+  width: fit-content;
+  padding: 1em 2em;
+  border: 1px solid var(--primary);
+  background-color: transparent;
+  color: var(--white);
+  cursor: pointer;
+}
+.home__section__button:hover {
+  background-color: var(--hover);
+}
+@media (max-width: 1300px) {
+  .home__section {
+    padding: 7em 6em;
+  }
 }
 @media (max-width: 950px) {
   .header__content__menu {
@@ -242,5 +293,11 @@ body {
 @media (max-width: 500px) {
   .socials {
     display: none;
+  }
+  .home__section {
+    padding: 7em 2em;
+  }
+  .home__section__slogan {
+    font-size: 35px;
   }
 }

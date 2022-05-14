@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.scss";
 import Header from "./components/Header";
+import HomeSection from "./components/HomeSection";
 import Socials from "./components/Socials";
 
 export default function App() {
@@ -8,8 +9,7 @@ export default function App() {
     <div className="App">
       <Socials />
       <Header />
-      {/* Herosection */}
-      <div className="home__section"></div>
+      <HomeSection />
       {/* Aboutme */}
       {/* Services */}
       {/* Experiance */}
