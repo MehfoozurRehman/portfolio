@@ -8,6 +8,7 @@ import Services from "./components/Services";
 import Work from "./components/Work";
 import NoteWorthyProjects from "./components/NoteWorthyProjects";
 import GithubCalender from "./components/GithubCalender";
+import Clients from "./components/Clients";
 
 export default function App() {
   return (
@@ -20,7 +21,7 @@ export default function App() {
       <Work />
       <NoteWorthyProjects />
       <GithubCalender />
-      {/* Clents */}
+      <Clients />
       {/* Testimonials */}
       {/* Blog */}
       {/* Contact */}

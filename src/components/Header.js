@@ -22,8 +22,8 @@ export default function Header({}) {
       scrollTo: "work",
     },
     {
-      label: "Clents",
-      scrollTo: "clents",
+      label: "Clients",
+      scrollTo: "clients",
     },
     {
       label: "Testimonials",

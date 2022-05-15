@@ -13,7 +13,7 @@ export default function GithubCalender({}) {
         style={{
           color: "white",
           margin: "0em 2em",
-          marginBottom: "8em",
+          marginBottom: "3em",
           marginTop: "-3em",
           padding: "2em",
         }}
