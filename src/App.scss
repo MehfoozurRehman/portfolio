@@ -394,7 +394,6 @@ body {
   margin-top: 2em;
   margin-bottom: -2em;
   margin-right: -4em;
-  width: 100%;
 }
 .services__section__content__entry {
   flex: 1;
@@ -442,7 +441,7 @@ body {
   border: 10px solid #040f1f;
 }
 .services__section__content__entry__info {
-  font-size: 16px;
+  font-size: 14px;
   color: var(--text);
 }
 .services__section__content__entry:hover {
@@ -528,7 +527,7 @@ body {
 }
 @media (max-width: 800px) {
   .services__section__content {
-    margin-left: 0em;
+    width: calc(100% + 1em);
   }
   .services__section__content__entry {
     max-width: 100%;
@@ -544,6 +543,9 @@ body {
 @media (max-width: 500px) {
   .social__links {
     display: none;
+  }
+  .services__section__content {
+    width: calc(100%);
   }
   .social__email {
     display: none;
