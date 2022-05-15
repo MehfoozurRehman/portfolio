@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Menu, X } from "react-feather";
+import OutsideClickHandler from "react-outside-click-handler";
 import NavLink from "./NavLink";
 
 export default function Header({}) {
@@ -111,31 +112,43 @@ export default function Header({}) {
         </button>
         {isNavOpen ? (
           <div className="header__content__nav">
-            <div className="header__content__nav__links">
-              {navLinks.map((link, index) => (
-                <NavLink
-                  key={link.label}
-                  index={index}
-                  label={link.label}
-                  scrollTo={link.scrollTo}
-                  defaultChecked={link.defaultChecked}
-                />
-              ))}
-            </div>
-            <div className="header__content__nav__button">
-              <input
-                id="contact"
-                type="radio"
-                name="header__content__nav__links__entry"
-                className="header__content__nav__button__input"
-                onClick={() => {
-                  document.getElementById("contact__section").scrollIntoView();
-                }}
-              />
-              <div className="header__content__nav__button__content">
-                Contact
+            <OutsideClickHandler
+              onOutsideClick={() => {
+                if (window.innerWidth < 950) {
+                  setIsNavOpen(false);
+                }
+              }}
+            >
+              <div className="header__content__nav__wrapper">
+                <div className="header__content__nav__links">
+                  {navLinks.map((link, index) => (
+                    <NavLink
+                      key={link.label}
+                      index={index}
+                      label={link.label}
+                      scrollTo={link.scrollTo}
+                      defaultChecked={link.defaultChecked}
+                    />
+                  ))}
+                </div>
+                <div className="header__content__nav__button">
+                  <input
+                    id="contact"
+                    type="radio"
+                    name="header__content__nav__links__entry"
+                    className="header__content__nav__button__input"
+                    onClick={() => {
+                      document
+                        .getElementById("contact__section")
+                        .scrollIntoView();
+                    }}
+                  />
+                  <div className="header__content__nav__button__content">
+                    Contact
+                  </div>
+                </div>
               </div>
-            </div>
+            </OutsideClickHandler>
           </div>
         ) : null}
       </div>

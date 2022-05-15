@@ -2,15 +2,22 @@ import React from "react";
 import project from "../assets/project.jpg";
 import { GitHub, Link } from "react-feather";
 
-export default function WorkCard({ tech, right }) {
+export default function WorkCard({
+  tech,
+  right,
+  banner,
+  info,
+  siteLink,
+  githubLink,
+}) {
   return (
     <div
       className="work__section__entry"
       style={right ? { justifyContent: "flex-end" } : null}
     >
-      <a href="#" className="work__section__entry__left">
+      <a href={siteLink} className="work__section__entry__left">
         <img
-          src={project}
+          src={banner ? banner : project}
           alt="project_img"
           className="work__section__entry__left__img"
         />
@@ -27,9 +34,9 @@ export default function WorkCard({ tech, right }) {
           className="work__section__entry__right__info"
           style={right ? { textAlign: "left" } : null}
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro saepe
-          dolores tempore voluptate voluptatem eum qui. Nobis consectetur in
-          odio a iure iste laborum vero, assumenda omnis. Laudantium, ab unde.
+          {info
+            ? info
+            : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro saepe dolores tempore voluptate voluptatem eum qui. Nobis consectetur in odio a iure iste laborum vero, assumenda omnis. Laudantium, ab unde."}
         </div>
         <div
           className="work__section__entry__right__tech"
@@ -38,10 +45,16 @@ export default function WorkCard({ tech, right }) {
           {tech.map((item, i) => (i !== tech.length - 1 ? item + ", " : item))}
         </div>
         <div className="work__section__entry__right__links">
-          <a href="#" className="work__section__entry__right__links__link">
+          <a
+            href={siteLink}
+            className="work__section__entry__right__links__link"
+          >
             <GitHub size={20} color="currentColor" />
           </a>
-          <a href="#" className="work__section__entry__right__links__link">
+          <a
+            href={githubLink}
+            className="work__section__entry__right__links__link"
+          >
             <Link size={20} color="currentColor" />
           </a>
         </div>
