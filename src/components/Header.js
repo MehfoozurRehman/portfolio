@@ -121,15 +121,20 @@ export default function Header({}) {
                 />
               ))}
             </div>
-            <button
-              className="header__content__nav__button"
-              onClick={() => {
-                document.getElementById("contact__section").scrollIntoView();
-                document.getElementById("home").checked = false;
-              }}
-            >
-              Contact
-            </button>
+            <div className="header__content__nav__button">
+              <input
+                id="contact"
+                type="radio"
+                name="header__content__nav__links__entry"
+                className="header__content__nav__button__input"
+                onClick={() => {
+                  document.getElementById("contact__section").scrollIntoView();
+                }}
+              />
+              <div className="header__content__nav__button__content">
+                Contact
+              </div>
+            </div>
           </div>
         ) : null}
       </div>

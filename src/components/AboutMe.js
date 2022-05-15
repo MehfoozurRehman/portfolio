@@ -2,7 +2,7 @@ import React from "react";
 
 export default function AboutMe({}) {
   return (
-    <div className="about__section">
+    <section id="about__section" className="about__section">
       <div className="about__section__left">
         <div className="about__section__left__content">
           <div className="about__section__left__content__blob">
@@ -103,6 +103,6 @@ export default function AboutMe({}) {
         </div>
         <button className="home__section__button">Download CV</button>
       </div>
-    </div>
+    </section>
   );
 }

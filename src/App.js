@@ -3,6 +3,7 @@ import "./App.scss";
 import AboutMe from "./components/AboutMe";
 import Header from "./components/Header";
 import HomeSection from "./components/HomeSection";
+import Services from "./components/Services";
 import Socials from "./components/Socials";
 
 export default function App() {
@@ -11,9 +12,8 @@ export default function App() {
       <Socials />
       <Header />
       <HomeSection />
-      {/* Aboutme */}
       <AboutMe />
-      {/* Services */}
+      <Services />
       {/* Experiance */}
       {/* Portfolio */}
       {/* Notworthy */}

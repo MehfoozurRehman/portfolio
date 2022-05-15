@@ -2,7 +2,7 @@ import React from "react";
 
 export default function HomeSection({}) {
   return (
-    <div className="home__section">
+    <section id="home__section" className="home__section">
       <div className="home__section__sub__heading">Hi, i am</div>
       <div className="home__section__heading">Mefooz-ur-Rehman</div>
       <div className="home__section__slogan">
@@ -15,6 +15,6 @@ export default function HomeSection({}) {
         <span>Crazybeings Studio</span>
       </div>
       <button className="home__section__button">Check out my work!</button>
-    </div>
+    </section>
   );
 }
