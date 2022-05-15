@@ -9,6 +9,7 @@ import Work from "./components/Work";
 import NoteWorthyProjects from "./components/NoteWorthyProjects";
 import GithubCalender from "./components/GithubCalender";
 import Clients from "./components/Clients";
+import Blogs from "./components/Blogs";
 
 export default function App() {
   return (
@@ -23,7 +24,7 @@ export default function App() {
       <GithubCalender />
       <Clients />
       {/* Testimonials */}
-      {/* Blog */}
+      <Blogs />
       {/* Contact */}
       {/* Footer */}
     </div>

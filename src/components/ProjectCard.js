@@ -4,12 +4,12 @@ import { Box, GitHub, Globe, Layout } from "react-feather";
 export default function ProjectCard({ item }) {
   return (
     <div
-      className="services__section__content__entry"
+      className="card"
       style={{
         minHeight: 250,
       }}
     >
-      <div className="services__section__content__entry__heading">
+      <div className="card__heading">
         {item.homepage && item.homepage !== null ? (
           <Layout size={30} color="currentColor" />
         ) : (
@@ -18,7 +18,7 @@ export default function ProjectCard({ item }) {
 
         <span>{item.name.replace(/-/g, " ").replace(/_/g, " ")}</span>
       </div>
-      <div className="services__section__content__entry__info">
+      <div className="card__info">
         {item.description && item.description.length > 180
           ? item.description.substring(1, 180) + "..."
           : item.description}

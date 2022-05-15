@@ -401,7 +401,7 @@ body {
 .services__section__content__reverse {
   flex-wrap: nowrap;
 }
-.services__section__content__entry {
+.card {
   flex: 1;
   min-width: 300px;
   max-width: 400px;
@@ -419,8 +419,9 @@ body {
   border-radius: 10px;
   margin-right: 2em;
   transition: 300ms ease-in-out;
+  text-decoration: none;
 }
-.services__section__content__entry__heading {
+.card__heading {
   font-size: 18px;
   color: var(--text-light);
   margin-bottom: 1.2em;
@@ -429,10 +430,10 @@ body {
   align-items: center;
   text-transform: capitalize;
 }
-.services__section__content__entry__heading svg {
+.card__heading svg {
   margin-right: 1em;
 }
-.services__section__content__entry__heading::after {
+.card__heading::after {
   content: "";
   position: absolute;
   bottom: -10px;
@@ -442,7 +443,7 @@ body {
   border-radius: 5px;
   background-color: var(--primary);
 }
-.services__section__content__entry__heading::before {
+.card__heading::before {
   content: "";
   z-index: 1;
   position: absolute;
@@ -452,7 +453,7 @@ body {
   height: 28px;
   border: 10px solid var(--secondary-dark);
 }
-.services__section__content__entry__info {
+.card__info {
   font-size: 15px;
   color: var(--text);
   min-height: 50px;
@@ -491,17 +492,21 @@ body {
 .portfolio__section__content__entry__button:hover {
   color: var(--primary);
 }
-.services__section__content__entry__img {
+.card__img {
   width: 100px;
   margin: 0em auto;
   mix-blend-mode: luminosity;
 }
-.services__section__content__entry:hover {
+.card__banner {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 1em;
+}
+.card:hover {
   transition: 300ms ease-in-out;
   border-color: var(--primary);
 }
-.services__section__content__entry:hover
-  .services__section__content__entry__img {
+.card:hover .card__img {
   mix-blend-mode: normal;
 }
 .work__section {
@@ -638,7 +643,7 @@ body {
     display: flex;
     flex-wrap: wrap;
   }
-  .services__section__content__reverse .services__section__content__entry {
+  .services__section__content__reverse .card {
     margin-right: 2em;
   }
 }
@@ -697,7 +702,7 @@ body {
   .services__section__content {
     width: calc(100% + 1em);
   }
-  .services__section__content__entry {
+  .card {
     max-width: 100%;
     margin-right: 0em;
   }
@@ -728,7 +733,7 @@ body {
     width: 100%;
     flex-direction: column;
   }
-  .services__section__content__reverse .services__section__content__entry {
+  .services__section__content__reverse .card {
     margin-right: 0em;
   }
   .social__links {
