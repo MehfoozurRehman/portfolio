@@ -6,6 +6,8 @@ import HomeSection from "./components/HomeSection";
 import AboutMe from "./components/AboutMe";
 import Services from "./components/Services";
 import Work from "./components/Work";
+import NoteWorthyProjects from "./components/NoteWorthyProjects";
+import GithubCalender from "./components/GithubCalender";
 
 export default function App() {
   return (
@@ -16,8 +18,8 @@ export default function App() {
       <AboutMe />
       <Services />
       <Work />
-      {/* Notworthy */}
-      {/* Github calender */}
+      <NoteWorthyProjects />
+      <GithubCalender />
       {/* Clents */}
       {/* Testimonials */}
       {/* Blog */}

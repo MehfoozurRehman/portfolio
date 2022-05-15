@@ -242,7 +242,7 @@ body {
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1100px;
   padding: 10em 2em;
   padding-bottom: 0em;
   min-height: fit-content;
@@ -290,7 +290,7 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1100px;
   padding: 8em 2em;
   overflow-x: hidden;
 }
@@ -379,7 +379,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1100px;
   padding: 8em 2em;
   overflow-x: hidden;
   margin-top: -8em;
@@ -422,6 +422,12 @@ body {
   color: var(--text-light);
   margin-bottom: 1.2em;
   position: relative;
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+}
+.services__section__content__entry__heading svg {
+  margin-right: 1em;
 }
 .services__section__content__entry__heading::after {
   content: "";
@@ -446,6 +452,41 @@ body {
 .services__section__content__entry__info {
   font-size: 15px;
   color: var(--text);
+  min-height: 50px;
+}
+.portfolio__section__content__entry__content {
+  font-size: 15px;
+  color: var(--text);
+  margin: 1em 0em;
+  position: relative;
+  margin-left: 2em;
+}
+.portfolio__section__content__entry__content::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50px;
+  background-color: var(--primary);
+  position: absolute;
+  left: -2em;
+  top: 7px;
+}
+.portfolio__section__content__entry__buttons {
+  display: flex;
+  align-items: center;
+}
+.portfolio__section__content__entry__button {
+  display: flex;
+  align-items: center;
+  margin-right: 1em;
+  color: var(--text);
+  text-decoration: none;
+}
+.portfolio__section__content__entry__button svg {
+  margin-right: 0.5em;
+}
+.portfolio__section__content__entry__button:hover {
+  color: var(--primary);
 }
 .services__section__content__entry:hover {
   transition: 300ms ease-in-out;
@@ -455,7 +496,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1100px;
   padding: 8em 2em;
   overflow-x: hidden;
   margin-top: -8em;
@@ -655,6 +696,9 @@ body {
   .about__section__left__content__img {
     max-width: 280px;
     height: 280px;
+  }
+  .github__calender__wapper {
+    display: none;
   }
 }
 @media (max-width: 500px) {
