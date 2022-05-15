@@ -1,10 +1,11 @@
 import React from "react";
 import "./App.scss";
-import AboutMe from "./components/AboutMe";
+import Socials from "./components/Socials";
 import Header from "./components/Header";
 import HomeSection from "./components/HomeSection";
+import AboutMe from "./components/AboutMe";
 import Services from "./components/Services";
-import Socials from "./components/Socials";
+import Work from "./components/Work";
 
 export default function App() {
   return (
@@ -14,11 +15,11 @@ export default function App() {
       <HomeSection />
       <AboutMe />
       <Services />
-      {/* Experiance */}
-      {/* Portfolio */}
+      <Work />
       {/* Notworthy */}
       {/* Github calender */}
       {/* Clents */}
+      {/* Testimonials */}
       {/* Blog */}
       {/* Contact */}
       {/* Footer */}

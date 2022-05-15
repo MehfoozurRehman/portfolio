@@ -18,16 +18,16 @@ export default function Header({}) {
       scrollTo: "services",
     },
     {
-      label: "Experience",
-      scrollTo: "experience",
-    },
-    {
-      label: "Portfolio",
-      scrollTo: "portfolio",
+      label: "Work",
+      scrollTo: "work",
     },
     {
       label: "Clents",
       scrollTo: "clents",
+    },
+    {
+      label: "Testimonials",
+      scrollTo: "testimonials",
     },
     {
       label: "Blog",
