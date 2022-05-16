@@ -23,18 +23,6 @@ export default function Blogs({}) {
           title="Testing & Analytics"
           info="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, natus earum magnam animi molestias quisquam obcaecati ipsum non nulla consequatur"
         />
-        <BlogCard
-          title="UI / UX Design"
-          info="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, natus earum magnam animi molestias quisquam obcaecati ipsum non nulla consequatur"
-        />
-        <BlogCard
-          title="Graphic Design"
-          info="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, natus earum magnam animi molestias quisquam obcaecati ipsum non nulla consequatur"
-        />
-        <BlogCard
-          title="Graphic Design"
-          info="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, natus earum magnam animi molestias quisquam obcaecati ipsum non nulla consequatur,"
-        />
       </div>
     </section>
   );

@@ -11,6 +11,12 @@ export default function BlogCard({ title, info }) {
       <div style={{ padding: "2em" }}>
         <div className="card__heading">{title}</div>
         <div className="card__info">{info}</div>
+        <div
+          className="portfolio__section__content__entry__content"
+          style={{ marginBottom: "0em" }}
+        >
+          20/10/2022 - By Admin
+        </div>
       </div>
     </a>
   );
