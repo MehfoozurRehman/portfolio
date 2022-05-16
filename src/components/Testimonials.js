@@ -25,7 +25,7 @@ export default function Testimonials({}) {
   }, []);
 
   return (
-    <section id="services__section" className="services__section">
+    <section id="testimonials__section" className="services__section">
       <div className="services__section__header">
         <div className="home__section__sub__heading">
           Feedback from my clients & team
