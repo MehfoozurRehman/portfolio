@@ -1,33 +1,38 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import "./App.scss";
-import Socials from "./components/Socials";
-import Header from "./components/Header";
-import HomeSection from "./components/HomeSection";
-import AboutMe from "./components/AboutMe";
-import Services from "./components/Services";
-import Work from "./components/Work";
-import NoteWorthyProjects from "./components/NoteWorthyProjects";
-import GithubCalender from "./components/GithubCalender";
-import Clients from "./components/Clients";
-import Blogs from "./components/Blogs";
-import Testimonials from "./components/Testimonials";
+import Loading from "./components/Loading";
+const Socials = lazy(() => import("./components/Socials"));
+const Header = lazy(() => import("./components/Header"));
+const HomeSection = lazy(() => import("./components/HomeSection"));
+const AboutMe = lazy(() => import("./components/AboutMe"));
+const Services = lazy(() => import("./components/Services"));
+const Work = lazy(() => import("./components/Work"));
+const NoteWorthyProjects = lazy(() =>
+  import("./components/NoteWorthyProjects")
+);
+const GithubCalender = lazy(() => import("./components/GithubCalender"));
+const Clients = lazy(() => import("./components/Clients"));
+const Blogs = lazy(() => import("./components/Blogs"));
+const Testimonials = lazy(() => import("./components/Testimonials"));
 
 export default function App() {
   return (
-    <div className="App">
-      <Socials />
-      <Header />
-      <HomeSection />
-      <AboutMe />
-      <Services />
-      <Work />
-      <NoteWorthyProjects />
-      <GithubCalender />
-      <Clients />
-      <Testimonials />
-      <Blogs />
-      {/* Contact */}
-      {/* Footer */}
-    </div>
+    <Suspense fallback={<Loading />}>
+      <div className="App">
+        <Socials />
+        <Header />
+        <HomeSection />
+        <AboutMe />
+        <Services />
+        <Work />
+        <NoteWorthyProjects />
+        <GithubCalender />
+        <Clients />
+        <Testimonials />
+        <Blogs />
+        {/* Contact */}
+        {/* Footer */}
+      </div>
+    </Suspense>
   );
 }

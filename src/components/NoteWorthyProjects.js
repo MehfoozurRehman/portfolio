@@ -4,7 +4,7 @@ import ProjectCard from "./ProjectCard";
 
 export default function NoteWorthyProjects({}) {
   const [projectsData, setProjectsData] = useState([]);
-  const [limit, setLimit] = useState(9);
+  const [limit, setLimit] = useState(7);
   useEffect(() => {
     axios
       .get(

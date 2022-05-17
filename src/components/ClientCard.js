@@ -5,7 +5,10 @@ export default function ClientCard({ image, url }) {
     <a
       href={url}
       className="card"
-      style={{ minWidth: "fit-content", minHeight: 120 }}
+      style={{
+        minWidth: "fit-content",
+        minHeight: 100,
+      }}
     >
       <img src={image} alt={url} className="card__img" />
     </a>
