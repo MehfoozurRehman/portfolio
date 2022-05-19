@@ -405,6 +405,85 @@ body {
 .services__section__content__reverse {
   flex-wrap: nowrap;
 }
+.services__section__content__left {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.services__section__content__left__entry {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5em;
+}
+.services__section__content__left__entry__icon {
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  margin-right: 1em;
+}
+.services__section__content__left__entry__content {
+  color: var(--text);
+}
+.services__section__content__right {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  position: relative;
+  align-items: flex-end;
+}
+.services__section__content__right__form {
+  background-color: var(--secondary-dark);
+  width: 100%;
+  max-width: 500px;
+  padding: 3em;
+  position: absolute;
+  top: -110px;
+  border-radius: 10px;
+  z-index: 5;
+}
+.services__section__content__right__form__input {
+  position: relative;
+  margin-bottom: 2em;
+  display: flex;
+  flex-direction: column;
+}
+.services__section__content__right__form__input__label {
+  position: absolute;
+  top: -10px;
+  background-color: var(--secondary-dark);
+  left: 0.5em;
+  color: var(--text);
+  padding: 0em 0.5em;
+  font-size: 14px;
+}
+.services__section__content__right__form__input__field {
+  height: 45px;
+  background-color: transparent;
+  border: 1px solid var(--text);
+  padding: 0em 1em;
+  color: var(--white);
+  outline: none;
+}
+.services__section__content__right__form__input__field__textarea {
+  height: 150px;
+  padding: 1em;
+}
+.services__section__content__right__form__input__field:hover,
+.services__section__content__right__form__input__field:focus {
+  transition: 300ms ease-in-out;
+  border-color: var(--primary);
+}
+.services__section__content__right__form__input:hover
+  .services__section__content__right__form__input__label,
+.services__section__content__right__form__input:focus-within
+  .services__section__content__right__form__input__label {
+  transition: 300ms ease-in-out;
+  color: var(--primary);
+}
 .card {
   flex: 1;
   min-width: 300px;
@@ -634,6 +713,90 @@ body {
   100% {
     fill: transparent;
   }
+}
+.footer {
+  background-color: var(--primary);
+  width: 100%;
+}
+.footer__content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1100px;
+  padding: 5em 2em;
+  overflow-x: hidden;
+  margin: 0em auto;
+  padding-bottom: 5em;
+  position: relative;
+}
+.footer__content__button {
+  position: absolute;
+  bottom: 90px;
+  right: 0px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--secondary);
+  border-radius: 50px;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+}
+.footer__content__button:hover {
+  color: var(--white);
+}
+.footer__content__row {
+  margin-bottom: 1em;
+  display: flex;
+}
+.footer__content__row__col {
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 2em;
+  justify-content: center;
+}
+.footer__content__row .header__content__logo__img g g {
+  transition: 300ms ease-in-out;
+  fill: var(--secondary-dark);
+}
+.footer__content__row .header__content__logo__img:hover g g {
+  transition: 300ms ease-in-out;
+  fill: var(--secondary);
+}
+.header__content__logo__img:hover .icon {
+  transition: 100ms ease-in-out;
+  fill: var(--white);
+}
+.footer__content__row__col__text {
+  color: var(--secondary);
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.footer__content__row__col__social {
+  display: flex;
+  align-items: center;
+}
+.footer__content__row__col__social__link {
+  color: var(--secondary);
+  margin-right: 1em;
+}
+.footer__content__row__col__social__link:hover {
+  transition: 300ms ease-in-out;
+  color: var(--secondary-dark);
+}
+.footer__content__row__link {
+  background-color: transparent;
+  border: none;
+  padding: 0em;
+  margin-right: 1em;
+  cursor: pointer;
+  color: var(--secondary);
+}
+.footer__content__row__link:hover {
+  transition: 300ms ease-in-out;
+  color: var(--secondary-dark);
 }
 @media (max-width: 1440px) {
   .social__links {

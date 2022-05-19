@@ -1,0 +1,112 @@
+import React from "react";
+import { Mail, MapPin, Phone } from "react-feather";
+import BlogCard from "./BlogCard";
+
+export default function Contact({}) {
+  return (
+    <section
+      id="contact__section"
+      className="services__section"
+      style={{ overflow: "unset" }}
+    >
+      <div
+        className="services__section__header"
+        style={{ alignItems: "flex-start" }}
+      >
+        <div className="home__section__sub__heading">Get in touch</div>
+        <div className="home__section__heading">Contact</div>
+      </div>
+      <div
+        className="services__section__content"
+        style={{ alignItems: "flex-start", marginRight: "-2em" }}
+      >
+        <div className="services__section__content__left">
+          <div className="services__section__content__left__entry">
+            <div className="services__section__content__left__entry__icon">
+              <MapPin size={20} color="currentColor" />
+            </div>
+            <div className="services__section__content__left__entry__content">
+              Samundri, Faisalabad, Punjab, Pakistan
+            </div>
+          </div>
+          <div className="services__section__content__left__entry">
+            <div className="services__section__content__left__entry__icon">
+              <Phone size={20} color="currentColor" />
+            </div>
+            <div className="services__section__content__left__entry__content">
+              +92 313 7178074
+              <br />
+              +92 335 7291419
+            </div>
+          </div>
+          <div className="services__section__content__left__entry">
+            <div className="services__section__content__left__entry__icon">
+              <Mail size={20} color="currentColor" />
+            </div>
+            <div className="services__section__content__left__entry__content">
+              mehfoozijaz786@gmail.com
+              <br />
+              mehfooz_ur_rehman@outlook.com
+            </div>
+          </div>
+        </div>
+        <div className="services__section__content__right">
+          <form className="services__section__content__right__form">
+            <div
+              className="home__section__heading"
+              style={{ marginBottom: "1em", marginTop: 0 }}
+            >
+              Say Something
+            </div>
+            <InputBox placeholder="Your Name" type="text" />
+            <InputBox placeholder="Email Address" type="email" />
+            <InputBox placeholder="Subject" type="text" />
+            <TextareaBox placeholder="Message" />
+            <button
+              className="home__section__button"
+              style={{ width: "100%", marginTop: 20 }}
+            >
+              Check out my work!
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function InputBox({ placeholder, type }) {
+  return (
+    <div className="services__section__content__right__form__input">
+      <label
+        className="services__section__content__right__form__input__label"
+        htmlFor={placeholder}
+      >
+        {placeholder}
+      </label>
+      <input
+        type={type}
+        name={placeholder}
+        id={placeholder}
+        className="services__section__content__right__form__input__field"
+      />
+    </div>
+  );
+}
+function TextareaBox({ placeholder }) {
+  return (
+    <div className="services__section__content__right__form__input">
+      <label
+        className="services__section__content__right__form__input__label"
+        htmlFor={placeholder}
+      >
+        {placeholder}
+      </label>
+      <textarea
+        name={placeholder}
+        id={placeholder}
+        className="services__section__content__right__form__input__field services__section__content__right__form__input__field__textarea"
+      />
+    </div>
+  );
+}
