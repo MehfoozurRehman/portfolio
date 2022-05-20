@@ -416,8 +416,8 @@ body {
   margin-bottom: 1.5em;
 }
 .services__section__content__left__entry__icon {
-  width: 50px;
-  height: 50px;
+  min-width: 50px;
+  min-height: 50px;
   background-color: var(--primary);
   display: flex;
   align-items: center;
@@ -438,7 +438,7 @@ body {
 .services__section__content__right__form {
   background-color: var(--secondary-dark);
   width: 100%;
-  max-width: 500px;
+  max-width: 450px;
   padding: 3em;
   position: absolute;
   top: -110px;
@@ -447,21 +447,23 @@ body {
 }
 .services__section__content__right__form__input {
   position: relative;
-  margin-bottom: 2em;
+  margin-bottom: 1.5em;
   display: flex;
   flex-direction: column;
 }
 .services__section__content__right__form__input__label {
   position: absolute;
-  top: -10px;
+  top: 10px;
   background-color: var(--secondary-dark);
   left: 0.5em;
   color: var(--text);
   padding: 0em 0.5em;
   font-size: 14px;
+  z-index: -1;
+  transition: 300ms ease-in-out;
 }
 .services__section__content__right__form__input__field {
-  height: 45px;
+  height: 40px;
   background-color: transparent;
   border: 1px solid var(--text);
   padding: 0em 1em;
@@ -469,7 +471,7 @@ body {
   outline: none;
 }
 .services__section__content__right__form__input__field__textarea {
-  height: 150px;
+  height: 120px;
   padding: 1em;
 }
 .services__section__content__right__form__input__field:hover,
@@ -825,6 +827,9 @@ body {
   .work__section__entry__right {
     max-width: 450px;
   }
+  .services__section__content__test {
+    margin-right: 0em;
+  }
 }
 @media (max-width: 1150px) {
   .about__section__left__content__img {
@@ -838,9 +843,16 @@ body {
   .services__section__content__reverse .services__section__content__col {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
   }
   .services__section__content__reverse .card {
     margin-right: 2em;
+  }
+  .footer__content {
+    padding: 5em 6em;
+  }
+  .footer__content__button {
+    right: 4em;
   }
 }
 @media (max-width: 1100px) {
@@ -850,6 +862,7 @@ body {
     align-items: flex-start;
     padding: 8em 6em;
   }
+
   .about__section__left {
     width: 100%;
     margin-right: 0em;
@@ -857,6 +870,23 @@ body {
   }
   .home__section__info {
     max-width: 500px;
+  }
+}
+@media (max-width: 1000px) {
+  .services__section__content__special {
+    flex-direction: column;
+  }
+  .services__section__content__left {
+    width: 100%;
+    margin-bottom: 5em;
+  }
+  .services__section__content__right {
+    width: 100%;
+  }
+  .services__section__content__right__form {
+    position: relative;
+    top: 0px;
+    max-width: 100%;
   }
 }
 @media (max-width: 950px) {
@@ -917,6 +947,9 @@ body {
     position: relative;
     max-width: 100%;
   }
+  .footer__content__row:last-child {
+    display: none;
+  }
 }
 @media (max-width: 580px) {
   .about__section__left__content__img {
@@ -926,8 +959,6 @@ body {
   .github__calender__wapper {
     display: none;
   }
-}
-@media (max-width: 500px) {
   .services__section__content__reverse .services__section__content__col {
     width: 100%;
     flex-direction: column;
@@ -935,6 +966,11 @@ body {
   .services__section__content__reverse .card {
     margin-right: 0em;
   }
+  .services__section__content__right__form {
+    padding: 3em 2em;
+  }
+}
+@media (max-width: 500px) {
   .social__links {
     display: none;
   }
@@ -956,6 +992,15 @@ body {
   }
   .work__section {
     padding: 8em 2em;
+  }
+  .footer__content {
+    padding: 5em 2em;
+  }
+  .footer__content__row__col {
+    max-width: 300px;
+  }
+  .footer__content__button {
+    right: 2em;
   }
   .home__section__slogan {
     font-size: 32px;

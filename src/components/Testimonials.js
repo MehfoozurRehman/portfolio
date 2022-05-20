@@ -32,10 +32,7 @@ export default function Testimonials({}) {
         </div>
         <div className="home__section__heading">Testimonials</div>
       </div>
-      <div
-        className="services__section__content"
-        style={{ marginRight: "0em" }}
-      >
+      <div className="services__section__content services__section__content__test">
         <Swiper slidesPerView={slidesPerView} spaceBetween={30}>
           <SwiperSlide>
             <TestimonialsCard

@@ -18,7 +18,7 @@ const Testimonials = lazy(() => import("./components/Testimonials"));
 const Contact = lazy(() => import("./components/Contact"));
 
 export default function App() {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   function scrollCheck() {
     if (
       window.innerHeight + document.documentElement.scrollTop >=
@@ -30,7 +30,6 @@ export default function App() {
     }
   }
   useEffect(() => {
-    scrollCheck();
     window.addEventListener("scroll", scrollCheck);
   }, []);
   return (
