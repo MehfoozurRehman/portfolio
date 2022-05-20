@@ -14,7 +14,9 @@ export default function HomeSection({}) {
         intuitive solutions. Working at this time for
         <span>Crazybeings Studio</span>
       </div>
-      <button className="home__section__button">Check out my work!</button>
+      <button className="home__section__button" title="Check out my work!">
+        Check out my work!
+      </button>
     </section>
   );
 }

@@ -24,11 +24,24 @@ export default function Work({}) {
         tech={["ReactJS", "Sass", "Firebase", "Adobe Xd", "Rest"]}
         banner={aida}
         info="A website for startup to help companies and freelancers or jobseekers connect with candidates pre curated for companies according to customized requirements of companies"
-        siteLink=""
-        githubLink=""
+        siteLink="https://aida-pro.web.app/"
+        githubLink="https://github.com/MehfoozurRehman/Aida-Website"
       />
-      <WorkCard tech={tech} right />
-      <WorkCard tech={tech} />
+      <WorkCard
+        right
+        tech={["ReactJS", "Sass", "Firebase", "Adobe Xd", "Rest"]}
+        banner={aida}
+        info="A website for startup to help companies and freelancers or jobseekers connect with candidates pre curated for companies according to customized requirements of companies"
+        siteLink="https://aida-pro.web.app/"
+        githubLink="https://github.com/MehfoozurRehman/Aida-Website"
+      />
+      <WorkCard
+        tech={["ReactJS", "Sass", "Firebase", "Adobe Xd", "Rest"]}
+        banner={aida}
+        info="A website for startup to help companies and freelancers or jobseekers connect with candidates pre curated for companies according to customized requirements of companies"
+        siteLink="https://aida-pro.web.app/"
+        githubLink="https://github.com/MehfoozurRehman/Aida-Website"
+      />
     </section>
   );
 }

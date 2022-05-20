@@ -63,6 +63,7 @@ export default function Header({}) {
             document.getElementById("home").checked = true;
           }}
           className="header__content__logo"
+          title="logo"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -103,6 +104,7 @@ export default function Header({}) {
           onClick={() => {
             setIsNavOpen(!isNavOpen);
           }}
+          title="menu open/close"
         >
           {isNavOpen ? (
             <X size={20} color="currentColor" />
@@ -142,6 +144,7 @@ export default function Header({}) {
                         .getElementById("contact__section")
                         .scrollIntoView();
                     }}
+                    title="contact"
                   />
                   <div className="header__content__nav__button__content">
                     Contact

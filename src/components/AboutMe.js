@@ -101,7 +101,9 @@ export default function AboutMe({}) {
           💼 <span>Tools:</span> Visual Studio Code, Android Studio, GitHub
           Desktop, Windows Terminal, Firebase, Netlify, Adobe XD and Git.
         </div>
-        <button className="home__section__button">Download CV</button>
+        <button className="home__section__button" title="Download CV">
+          Download CV
+        </button>
       </div>
     </section>
   );

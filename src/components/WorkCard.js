@@ -15,7 +15,7 @@ export default function WorkCard({
       className="work__section__entry"
       style={right ? { justifyContent: "flex-end" } : null}
     >
-      <a href={siteLink} className="work__section__entry__left">
+      <a href={siteLink} className="work__section__entry__left" title="website">
         <img
           src={banner ? banner : project}
           alt="project_img"
@@ -48,12 +48,14 @@ export default function WorkCard({
           <a
             href={siteLink}
             className="work__section__entry__right__links__link"
+            title="github"
           >
             <GitHub size={20} color="currentColor" />
           </a>
           <a
             href={githubLink}
             className="work__section__entry__right__links__link"
+            title="website"
           >
             <Link size={20} color="currentColor" />
           </a>

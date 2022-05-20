@@ -60,8 +60,9 @@ export default function Contact({}) {
             <button
               className="home__section__button"
               style={{ width: "100%", marginTop: 20 }}
+              title="send"
             >
-              Check out my work!
+              Send
             </button>
           </form>
         </div>

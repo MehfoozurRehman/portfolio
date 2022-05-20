@@ -16,11 +16,11 @@ export default function Clients({}) {
       >
         <div className="services__section__content__col">
           <ClientCard
-            image="https://dsmeglobal-api.herokuapp.com/Signature.svg"
+            image="https://res.cloudinary.com/mehfoozurrehman/image/upload/v1652953683/dsme_global/xxu5mv3bttbyshstnh4o.png"
             url="https://dsmeglobals.web.app/"
           />
           <ClientCard
-            image="https://dsmeglobal-api.herokuapp.com/Peervest.svg"
+            image="https://res.cloudinary.com/mehfoozurrehman/image/upload/v1652953748/dsme_global/jsmxlwnwrpcus85rtlcg.png"
             url="https://dsmeglobals.web.app/"
           />
           <ClientCard
@@ -30,15 +30,15 @@ export default function Clients({}) {
         </div>
         <div className="services__section__content__col">
           <ClientCard
-            image="https://dsmeglobal-api.herokuapp.com/Chenab.svg"
+            image="https://res.cloudinary.com/mehfoozurrehman/image/upload/v1652953818/dsme_global/k8h1x7j6yu2vg0qallcj.png"
             url="https://dsmeglobals.web.app/"
           />
           <ClientCard
-            image="https://dsmeglobal-api.herokuapp.com/j7.svg"
+            image="https://res.cloudinary.com/mehfoozurrehman/image/upload/v1652955779/dsme_global/djov0em3g0anrwamsaen.png"
             url="https://dsmeglobals.web.app/"
           />
           <ClientCard
-            image="https://dsmeglobal-api.herokuapp.com/Caterers.svg"
+            image="https://res.cloudinary.com/mehfoozurrehman/image/upload/v1652954066/dsme_global/wtmzbduiojzs1qubzjvi.png"
             url="https://dsmeglobals.web.app/"
           />
           <ClientCard

@@ -19,6 +19,7 @@ export default function Footer({ show }) {
               document.getElementById("home__section").scrollIntoView();
               document.getElementById("home").checked = true;
             }}
+            title="back to top"
           >
             <ArrowUp size={20} color="currentColor" />
           </button>
@@ -34,6 +35,7 @@ export default function Footer({ show }) {
                 document.getElementById("home").checked = true;
               }}
               className="header__content__logo"
+              title="logo"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -135,6 +137,7 @@ function FooterLink({ title, scrollTo }) {
         document.getElementById(scrollTo + "__section").scrollIntoView();
         document.getElementById(scrollTo).checked = true;
       }}
+      title={scrollTo}
       className="footer__content__row__link"
     >
       {title}

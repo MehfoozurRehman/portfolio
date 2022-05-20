@@ -39,6 +39,7 @@ export default function NoteWorthyProjects({}) {
             setLimit(limit + 3);
           }}
           style={{ margin: "0em auto", marginTop: "4em" }}
+          title="Load more projects"
         >
           Load more
         </button>
