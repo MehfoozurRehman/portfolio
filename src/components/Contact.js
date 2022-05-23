@@ -25,7 +25,7 @@ export default function Contact({}) {
               <MapPin size={20} color="currentColor" />
             </div>
             <div className="services__section__content__left__entry__content">
-              Samundri, Faisalabad, Punjab, Pakistan
+              Punjab, Pakistan
             </div>
           </div>
           <div className="services__section__content__left__entry">
@@ -34,8 +34,6 @@ export default function Contact({}) {
             </div>
             <div className="services__section__content__left__entry__content">
               +92 313 7178074
-              <br />
-              +92 335 7291419
             </div>
           </div>
           <div className="services__section__content__left__entry">
@@ -44,8 +42,6 @@ export default function Contact({}) {
             </div>
             <div className="services__section__content__left__entry__content">
               mehfoozijaz786@gmail.com
-              <br />
-              mehfooz_ur_rehman@outlook.com
             </div>
           </div>
         </div>

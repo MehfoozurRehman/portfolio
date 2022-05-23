@@ -1,11 +1,18 @@
-export default function TestimonialsCard({ title, info }) {
+export default function TestimonialsCard({
+  imageSrc,
+  title,
+  info,
+  designation,
+}) {
   return (
     <div className="card" style={{ maxWidth: "100%", marginRight: "0em" }}>
       <img
         src={
-          "https://ui-avatars.com/api/?name=" +
-          title +
-          "&background=0a192f&color=64ffda&size=65"
+          imageSrc
+            ? imageSrc
+            : "https://ui-avatars.com/api/?name=" +
+              title +
+              "&background=0a192f&color=64ffda&size=65"
         }
         alt=""
         className="card__image__reverse"
@@ -22,7 +29,7 @@ export default function TestimonialsCard({ title, info }) {
           marginTop: 0,
         }}
       >
-        {title}
+        {designation}
       </div>
       <div className="card__info" style={{ textAlign: "center" }}>
         <span style={{ fontSize: 20, fontWeight: "bold", marginRight: 10 }}>

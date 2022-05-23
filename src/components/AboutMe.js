@@ -14,7 +14,6 @@ export default function AboutMe({}) {
       setProjectsCompleted(res.data.public_repos);
     });
   }, []);
-
   return (
     <section id="about__section" className="about__section">
       <div className="about__section__left">

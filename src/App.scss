@@ -418,14 +418,14 @@ body {
   margin-bottom: 1.5em;
 }
 .services__section__content__left__entry__icon {
-  min-width: 50px;
-  min-height: 50px;
+  min-width: 40px;
+  min-height: 40px;
   background-color: var(--primary);
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50px;
-  margin-right: 1em;
+  margin-right: 1.2em;
 }
 .services__section__content__left__entry__content {
   color: var(--text);
@@ -561,6 +561,8 @@ body {
   margin: 0em auto;
   border-radius: 50px;
   margin-bottom: 1em;
+  width: 56px;
+  height: 56px;
 }
 .portfolio__section__content__entry__content {
   font-size: 15px;
