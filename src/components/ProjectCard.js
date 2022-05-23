@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, GitHub, Globe, Layout } from "react-feather";
 
 export default function ProjectCard({ item }) {

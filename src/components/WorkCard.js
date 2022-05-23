@@ -1,4 +1,3 @@
-import React from "react";
 import project from "../assets/project.jpg";
 import { GitHub, Link } from "react-feather";
 

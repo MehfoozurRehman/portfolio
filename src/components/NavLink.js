@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function NavLink({ scrollTo, label, defaultChecked }) {
   return (
     <div className="header__content__nav__links__entry">

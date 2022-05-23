@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function TestimonialsCard({ title, info }) {
   return (
     <div className="card" style={{ maxWidth: "100%", marginRight: "0em" }}>

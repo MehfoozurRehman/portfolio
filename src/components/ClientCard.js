@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function ClientCard({ image, url }) {
   return (
     <a

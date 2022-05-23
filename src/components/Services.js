@@ -1,4 +1,3 @@
-import React from "react";
 import ServicesCard from "./ServicesCard";
 
 export default function Services({}) {

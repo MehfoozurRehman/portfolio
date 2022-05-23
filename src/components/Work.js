@@ -1,4 +1,3 @@
-import React from "react";
 import { aida } from "../assets";
 import WorkCard from "./WorkCard";
 

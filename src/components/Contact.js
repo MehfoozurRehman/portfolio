@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Mail, MapPin, Phone } from "react-feather";
-import BlogCard from "./BlogCard";
 
 export default function Contact({}) {
   return (

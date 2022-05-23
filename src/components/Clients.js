@@ -1,4 +1,3 @@
-import React from "react";
 import ClientCard from "./ClientCard";
 
 export default function Clients({}) {

@@ -1,4 +1,3 @@
-import React from "react";
 import Calendar from "react-github-calendar";
 
 export default function GithubCalender({}) {

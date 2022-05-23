@@ -1,9 +1,9 @@
-import { lazy, Suspense, useState } from "react";
+import { lazy, Suspense } from "react";
 import "./App.scss";
-import Footer from "./components/Footer";
 import Loading from "./components/Loading";
 const Socials = lazy(() => import("./components/Socials"));
 const Header = lazy(() => import("./components/Header"));
+const Footer = lazy(() => import("./components/Footer"));
 const HomeSection = lazy(() => import("./components/HomeSection"));
 const AboutMe = lazy(() => import("./components/AboutMe"));
 const Services = lazy(() => import("./components/Services"));

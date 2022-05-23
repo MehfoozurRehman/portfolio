@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function BlogCard({ title, info }) {
   return (
     <a href="#" className="card" style={{ padding: 0 }}>
