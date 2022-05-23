@@ -1,10 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { pic } from "../assets";
+import axios from "axios";
+import { getExperience } from "../utils/getExperience";
 
 export default function AboutMe({}) {
   const [yearsOfExperience, setYearsOfExperience] = useState(0);
   const [projectsCompleted, setProjectsCompleted] = useState(0);
-  const [happyClients, setHappyClients] = useState(0);
+  const [happyClients, setHappyClients] = useState(3);
+
+  useEffect(() => {
+    axios.get("https://api.github.com/users/MehfoozurRehman").then((res) => {
+      setYearsOfExperience(getExperience(res.data.created_at));
+      setProjectsCompleted(res.data.public_repos);
+    });
+  }, []);
+
   return (
     <section id="about__section" className="about__section">
       <div className="about__section__left">
@@ -102,9 +112,13 @@ export default function AboutMe({}) {
           💼 <span>Tools:</span> Visual Studio Code, Android Studio, GitHub
           Desktop, Windows Terminal, Firebase, Netlify, Adobe XD and Git.
         </div>
-        <button className="home__section__button" title="Download CV">
+        <a
+          href="https://docs.google.com/document/d/1Z3e-5Ti2Zw9aol5RH5BUoiL8AC7HROHHQQkfvX6MQbQ/edit?usp=sharing"
+          className="home__section__button"
+          title="Download CV"
+        >
           Download CV
-        </button>
+        </a>
       </div>
     </section>
   );
