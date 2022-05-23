@@ -1,29 +1,19 @@
-import React from "react";
-import {
-  ArrowUp,
-  Codesandbox,
-  Facebook,
-  GitHub,
-  Instagram,
-  Linkedin,
-} from "react-feather";
+import { ArrowUp } from "react-feather";
 
-export default function Footer({ show }) {
+export default function Footer({}) {
   return (
     <section id="footer__section" className="footer">
       <div className="footer__content">
-        {show ? null : (
-          <button
-            className="footer__content__button"
-            onClick={() => {
-              document.getElementById("home__section").scrollIntoView();
-              document.getElementById("home").checked = true;
-            }}
-            title="back to top"
-          >
-            <ArrowUp size={20} color="currentColor" />
-          </button>
-        )}
+        <button
+          className="footer__content__button"
+          onClick={() => {
+            document.getElementById("home__section").scrollIntoView();
+            document.getElementById("home").checked = true;
+          }}
+          title="back to top"
+        >
+          <ArrowUp size={20} color="currentColor" />
+        </button>
         <div className="footer__content__row">
           <div className="footer__content__row__col">
             <button
@@ -72,11 +62,12 @@ export default function Footer({ show }) {
               </svg>
             </button>
             <div className="footer__content__row__col__text">
-              Hope you did considered me for your next project. I am ready to
-              build a small name and career out of what i am passionate about
-              (Helping in empowering other people)
+              I am here to build a small name and career out of what i am
+              passionate about (Helping in empowering other people) and i hope
+              you liked this please consider sending feedback or contacting me
+              for work looking forward to working with you 🫠
             </div>
-            <div className="footer__content__row__col__social">
+            {/* <div className="footer__content__row__col__social">
               <a
                 href="https://github.com/MehfoozurRehman"
                 title="github"
@@ -112,10 +103,10 @@ export default function Footer({ show }) {
               >
                 <Codesandbox size={20} color="currentColor" />
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
-        <div className="footer__content__row">
+        {/* <div className="footer__content__row">
           <FooterLink scrollTo="home" title="Home" />
           <FooterLink scrollTo="about" title="About Me" />
           <FooterLink scrollTo="services" title="Services" />
@@ -124,7 +115,7 @@ export default function Footer({ show }) {
           <FooterLink scrollTo="testimonials" title="Testimonials" />
           <FooterLink scrollTo="blog" title="Blog" />
           <FooterLink scrollTo="contact" title="Contact" />
-        </div>
+        </div> */}
       </div>
     </section>
   );

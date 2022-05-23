@@ -1,6 +1,10 @@
-import React from "react";
+import { useState } from "react";
+import { pic } from "../assets";
 
 export default function AboutMe({}) {
+  const [yearsOfExperience, setYearsOfExperience] = useState(0);
+  const [projectsCompleted, setProjectsCompleted] = useState(0);
+  const [happyClients, setHappyClients] = useState(0);
   return (
     <section id="about__section" className="about__section">
       <div className="about__section__left">
@@ -13,8 +17,7 @@ export default function AboutMe({}) {
               ></path>
             </svg>
             <div className="about__section__left__content__blob__content">
-              9+
-              <span>Experience</span>
+              {yearsOfExperience} +<span>Years of Experience</span>
             </div>
           </div>
           <div className="about__section__left__content__blob">
@@ -25,8 +28,7 @@ export default function AboutMe({}) {
               ></path>
             </svg>
             <div className="about__section__left__content__blob__content">
-              9+
-              <span>Projects Completed</span>
+              {projectsCompleted} +<span>Projects Completed</span>
             </div>
           </div>
           <div className="about__section__left__content__blob">
@@ -37,12 +39,11 @@ export default function AboutMe({}) {
               ></path>
             </svg>
             <div className="about__section__left__content__blob__content">
-              9+
-              <span>Happy Clients</span>
+              {happyClients} +<span>Happy Clients</span>
             </div>
           </div>
           <img
-            src="https://mehfooz-ur-rehman.web.app/static/media/aboutPic.c8db198608f0b077ba50.png"
+            src={pic}
             alt="img"
             className="about__section__left__content__img"
           />

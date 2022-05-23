@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useEffect, useState } from "react";
+import { lazy, Suspense, useState } from "react";
 import "./App.scss";
 import Footer from "./components/Footer";
 import Loading from "./components/Loading";
@@ -18,24 +18,10 @@ const Testimonials = lazy(() => import("./components/Testimonials"));
 const Contact = lazy(() => import("./components/Contact"));
 
 export default function App() {
-  const [show, setShow] = useState(true);
-  function scrollCheck() {
-    if (
-      window.innerHeight + document.documentElement.scrollTop >=
-      document.documentElement.offsetHeight - 500
-    ) {
-      setShow(false);
-    } else {
-      setShow(true);
-    }
-  }
-  useEffect(() => {
-    window.addEventListener("scroll", scrollCheck);
-  }, []);
   return (
     <Suspense fallback={<Loading />}>
       <div className="App">
-        <Socials show={show} />
+        <Socials />
         <Header />
         <HomeSection />
         <AboutMe />
@@ -48,7 +34,7 @@ export default function App() {
         <Blogs />
         <Contact />
       </div>
-      <Footer show={show} />
+      <Footer />
     </Suspense>
   );
 }

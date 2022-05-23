@@ -351,8 +351,8 @@ body {
 }
 .about__section__left__content__blob:nth-child(1)
   .about__section__left__content__blob__content {
-  top: 100px;
-  left: 95px;
+  top: 90px;
+  left: 90px;
 }
 .about__section__left__content__blob:nth-child(2) {
   position: absolute;
@@ -439,7 +439,7 @@ body {
   background-color: var(--secondary-dark);
   width: 100%;
   max-width: 450px;
-  padding: 3em;
+  padding: 2.5em;
   position: absolute;
   top: -110px;
   border-radius: 10px;
@@ -541,16 +541,19 @@ body {
   content: "";
   z-index: 1;
   position: absolute;
-  bottom: -25px;
+  bottom: -30px;
   left: 25px;
   width: 50px;
   height: 28px;
   border: 10px solid var(--secondary-dark);
+  border-top: none;
+  border-bottom: 0px;
 }
 .card__info {
   font-size: 15px;
   color: var(--text);
   min-height: 50px;
+  z-index: 2;
 }
 .card__image__reverse {
   margin: 0em auto;
@@ -717,7 +720,6 @@ body {
   }
 }
 .footer {
-  background-color: var(--primary);
   width: 100%;
 }
 .footer__content {
@@ -737,7 +739,7 @@ body {
   right: 0px;
   width: 50px;
   height: 50px;
-  background-color: var(--secondary);
+  background-color: var(--secondary-dark);
   border-radius: 50px;
   border: none;
   color: var(--text);
@@ -772,7 +774,7 @@ body {
   fill: var(--white);
 }
 .footer__content__row__col__text {
-  color: var(--secondary);
+  color: var(--text);
   margin-top: 1em;
   margin-bottom: 1em;
 }
@@ -781,12 +783,12 @@ body {
   align-items: center;
 }
 .footer__content__row__col__social__link {
-  color: var(--secondary);
+  color: var(--text);
   margin-right: 1em;
 }
 .footer__content__row__col__social__link:hover {
   transition: 300ms ease-in-out;
-  color: var(--secondary-dark);
+  color: var(--primary);
 }
 .footer__content__row__link {
   background-color: transparent;
@@ -794,11 +796,11 @@ body {
   padding: 0em;
   margin-right: 1em;
   cursor: pointer;
-  color: var(--secondary);
+  color: var(--text);
 }
 .footer__content__row__link:hover {
   transition: 300ms ease-in-out;
-  color: var(--secondary-dark);
+  color: var(--primary);
 }
 @media (max-width: 1440px) {
   .social__links {

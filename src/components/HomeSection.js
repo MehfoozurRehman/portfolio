@@ -14,7 +14,14 @@ export default function HomeSection({}) {
         intuitive solutions. Working at this time for
         <span>Crazybeings Studio</span>
       </div>
-      <button className="home__section__button" title="Check out my work!">
+      <button
+        className="home__section__button"
+        title="Check out my work!"
+        onClick={() => {
+          document.getElementById("work__section").scrollIntoView();
+          document.getElementById("work").checked = true;
+        }}
+      >
         Check out my work!
       </button>
     </section>
