@@ -12,8 +12,6 @@ export default function Testimonials({}) {
       setTestimonials(res.data);
     });
   }, []);
-  console.log(testimonials);
-
   useEffect(() => {
     if (window.innerWidth < 700) {
       setSlidesPerView(1);
@@ -44,7 +42,7 @@ export default function Testimonials({}) {
       <div className="services__section__content services__section__content__test">
         <Swiper slidesPerView={slidesPerView} spaceBetween={30}>
           {testimonials.map((item) => (
-            <SwiperSlide>
+            <SwiperSlide key={JSON.stringify(item)}>
               <TestimonialsCard
                 imageSrc={item.avatar}
                 title={item.name}

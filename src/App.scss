@@ -556,6 +556,7 @@ body {
   color: var(--text);
   min-height: 50px;
   z-index: 2;
+  text-transform: capitalize;
 }
 .card__image__reverse {
   margin: 0em auto;
@@ -607,6 +608,7 @@ body {
 .card__banner {
   width: 100%;
   border-radius: 10px 10px 0px 0px;
+  max-height: 200px;
 }
 .card:hover {
   transition: 300ms ease-in-out;

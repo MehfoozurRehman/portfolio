@@ -1,6 +1,9 @@
 import BlogCard from "./BlogCard";
+import { useMedium } from "react-use-medium";
 
 export default function Blogs({}) {
+  const { data, isFetched } = useMedium("dheerajmahra");
+  console.log(data.items);
   return (
     <section id="blog__section" className="services__section">
       <div className="services__section__header">
@@ -10,18 +13,14 @@ export default function Blogs({}) {
         <div className="home__section__heading">Blogs</div>
       </div>
       <div className="services__section__content">
-        <BlogCard
-          title="Web Development"
-          info="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, natus earum magnam animi molestias quisquam obcaecati ipsum non nulla consequatur"
-        />
-        <BlogCard
-          title="Application Development"
-          info="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, natus earum magnam animi molestias quisquam obcaecati ipsum non nulla consequatur"
-        />
-        <BlogCard
-          title="Testing & Analytics"
-          info="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, natus earum magnam animi molestias quisquam obcaecati ipsum non nulla consequatur"
-        />
+        {isFetched
+          ? data &&
+            data.items
+              .filter((item, i) => i < 6 && i > 2)
+              .map((item) => (
+                <BlogCard key={JSON.stringify(item)} data={item} />
+              ))
+          : null}
       </div>
     </section>
   );
