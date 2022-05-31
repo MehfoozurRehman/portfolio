@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import { Menu, X } from "react-feather";
 import OutsideClickHandler from "react-outside-click-handler";
 import NavLink from "./NavLink";
@@ -36,7 +36,7 @@ export default function Header({}) {
     },
   ];
   const [isNavOpen, setIsNavOpen] = useState(true);
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (window.innerWidth < 950) {
       setIsNavOpen(false);
     } else {
