@@ -1,6 +1,8 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import "./App.scss";
 import Loading from "./components/Loading";
+import { getReferrer } from "./utils/getReferrer";
+import { trackVisits } from "./utils/trackVisits";
 const Socials = lazy(() => import("./components/Socials"));
 const Header = lazy(() => import("./components/Header"));
 const Footer = lazy(() => import("./components/Footer"));
@@ -18,6 +20,11 @@ const Testimonials = lazy(() => import("./components/Testimonials"));
 const Contact = lazy(() => import("./components/Contact"));
 
 export default function App() {
+  useEffect(() => {
+    console.log(trackVisits());
+    console.log(getReferrer());
+  }, []);
+
   return (
     <Suspense fallback={<Loading />}>
       <div className="App">
