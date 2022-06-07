@@ -1,9 +1,11 @@
 import { useLayoutEffect, useState } from "react";
 import { Menu, X } from "react-feather";
 import OutsideClickHandler from "react-outside-click-handler";
+import { useNavigate } from "react-router-dom";
 import NavLink from "./NavLink";
 
 export default function Header({}) {
+  const navigate = useNavigate();
   const navLinks = [
     {
       label: "Home",
@@ -60,7 +62,10 @@ export default function Header({}) {
               top: 0,
               behavior: "smooth",
             });
-            document.getElementById("home").checked = true;
+            navigate("/");
+            setTimeout(() => {
+              document.getElementById("home").checked = true;
+            }, 300);
           }}
           className="header__content__logo"
           title="logo"
