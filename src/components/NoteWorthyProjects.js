@@ -1,20 +1,16 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import useSWR from "swr";
 import { useNavigate } from "react-router-dom";
+import { fetcher } from "../utils/fetcher";
 import ProjectCard from "./ProjectCard";
 
 export default function NoteWorthyProjects({}) {
   const navigate = useNavigate();
-  const [projectsData, setProjectsData] = useState([]);
-  useEffect(() => {
-    axios
-      .get(
-        "https://api.github.com/users/MehfoozurRehman/repos?per_page=10000&sort=updated"
-      )
-      .then((res) => {
-        setProjectsData(res.data);
-      });
-  }, []);
+  const { data, error } = useSWR(
+    "https://api.github.com/users/MehfoozurRehman/repos?per_page=10000&sort=updated",
+    fetcher,
+    { suspense: true }
+  );
+
   return (
     <section id="projects__section" className="services__section">
       <div className="services__section__header">
@@ -24,14 +20,16 @@ export default function NoteWorthyProjects({}) {
         <div className="home__section__heading">Projects</div>
       </div>
       <div className="services__section__content">
-        {projectsData
-          .filter(
-            (item, i) =>
-              item.description && item.description.length !== 0 && i <= 10
-          )
-          .map((item) => (
-            <ProjectCard item={item} key={item.id} />
-          ))}
+        {error ? (
+          <div>failed to load</div>
+        ) : (
+          data
+            ?.filter(
+              (item, i) =>
+                item.description && item.description.length !== 0 && i <= 10
+            )
+            .map((item) => <ProjectCard item={item} key={item.id} />)
+        )}
       </div>
 
       <button

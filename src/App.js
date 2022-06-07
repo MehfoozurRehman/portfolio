@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.scss";
+import "swiper/scss";
 import Loading from "./components/Loading";
 import { getReferrer } from "./utils/getReferrer";
 import { trackVisits } from "./utils/trackVisits";

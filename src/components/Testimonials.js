@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import TestimonialsCard from "./TestimonialsCard";
-import "swiper/scss";
-import axios from "axios";
+import { fetcher } from "../utils/fetcher";
+import useSWR from "swr";
 
 export default function Testimonials({}) {
-  const [testimonials, setTestimonials] = useState([]);
   const [slidesPerView, setSlidesPerView] = useState(2.5);
-  useEffect(() => {
-    axios.get("https://testimonialapi.toolcarton.com/api").then((res) => {
-      setTestimonials(res.data);
-    });
-  }, []);
+
+  const { data, error } = useSWR(
+    "https://testimonialapi.toolcarton.com/api",
+    fetcher,
+    { suspense: true }
+  );
   useEffect(() => {
     if (window.innerWidth < 700) {
       setSlidesPerView(1);
@@ -41,16 +41,20 @@ export default function Testimonials({}) {
       </div>
       <div className="services__section__content services__section__content__test">
         <Swiper slidesPerView={slidesPerView} spaceBetween={30}>
-          {testimonials.map((item) => (
-            <SwiperSlide key={JSON.stringify(item)}>
-              <TestimonialsCard
-                imageSrc={item.avatar}
-                title={item.name}
-                info={item.message}
-                designation={item.designation}
-              />
-            </SwiperSlide>
-          ))}
+          {error ? (
+            <div>failed to load</div>
+          ) : (
+            data.map((item) => (
+              <SwiperSlide key={JSON.stringify(item)}>
+                <TestimonialsCard
+                  imageSrc={item.avatar}
+                  title={item.name}
+                  info={item.message}
+                  designation={item.designation}
+                />
+              </SwiperSlide>
+            ))
+          )}
         </Swiper>
       </div>
     </section>

@@ -1,19 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { pic } from "../assets";
-import axios from "axios";
+import useSWR from "swr";
 import { getExperience } from "../utils/getExperience";
+import { fetcher } from "../utils/fetcher";
 
 export default function AboutMe({}) {
-  const [yearsOfExperience, setYearsOfExperience] = useState(0);
-  const [projectsCompleted, setProjectsCompleted] = useState(0);
   const [happyClients, setHappyClients] = useState(3);
+  const { data } = useSWR(
+    "https://api.github.com/users/MehfoozurRehman",
+    fetcher,
+    { suspense: true }
+  );
 
-  useEffect(() => {
-    axios.get("https://api.github.com/users/MehfoozurRehman").then((res) => {
-      setYearsOfExperience(getExperience(res.data.created_at));
-      setProjectsCompleted(res.data.public_repos);
-    });
-  }, []);
   return (
     <section id="about__section" className="about__section">
       <div className="about__section__left">
@@ -26,7 +24,7 @@ export default function AboutMe({}) {
               ></path>
             </svg>
             <div className="about__section__left__content__blob__content">
-              {yearsOfExperience} +<span>Years of Experience</span>
+              {getExperience(data.created_at)} +<span>Years of Experience</span>
             </div>
           </div>
           <div className="about__section__left__content__blob">
@@ -37,7 +35,7 @@ export default function AboutMe({}) {
               ></path>
             </svg>
             <div className="about__section__left__content__blob__content">
-              {projectsCompleted} +<span>Projects Completed</span>
+              {data.public_repos} +<span>Projects Completed</span>
             </div>
           </div>
           <div className="about__section__left__content__blob">
