@@ -3,7 +3,7 @@ import { useMedium } from "react-use-medium";
 
 export default function Blogs({}) {
   const { data, isFetched } = useMedium("dheerajmahra");
-  console.log(data.items);
+
   return (
     <section id="blog__section" className="services__section">
       <div className="services__section__header">

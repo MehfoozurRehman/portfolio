@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.scss";
 import Loading from "./components/Loading";
@@ -11,10 +11,16 @@ const Home = lazy(() => import("./screens/Home"));
 const Archive = lazy(() => import("./screens/Archive"));
 
 export default function App() {
+  const [showFooter, setShowFooter] = useState(false);
   useEffect(() => {
-    console.log(trackVisits());
-    console.log(getReferrer());
-  }, []);
+    // console.log(trackVisits());
+    // console.log(getReferrer());
+    if (window.location.pathname === "/") {
+      setShowFooter(true);
+    } else {
+      setShowFooter(false);
+    }
+  }, [window.location.pathname]);
 
   return (
     <Suspense fallback={<Loading />}>
@@ -26,7 +32,7 @@ export default function App() {
           <Route path="/archive" element={<Archive />} />
         </Routes>
       </div>
-      <Footer />
+      {showFooter ? <Footer /> : null}
     </Suspense>
   );
 }

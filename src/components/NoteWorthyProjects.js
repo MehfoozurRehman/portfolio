@@ -1,10 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import ProjectCard from "./ProjectCard";
 
 export default function NoteWorthyProjects({}) {
+  const navigate = useNavigate();
   const [projectsData, setProjectsData] = useState([]);
-  const [limit, setLimit] = useState(7);
   useEffect(() => {
     axios
       .get(
@@ -26,24 +27,26 @@ export default function NoteWorthyProjects({}) {
         {projectsData
           .filter(
             (item, i) =>
-              item.description && item.description.length !== 0 && i <= limit
+              item.description && item.description.length !== 0 && i <= 10
           )
           .map((item) => (
             <ProjectCard item={item} key={item.id} />
           ))}
       </div>
-      {projectsData.length + 1 !== limit ? (
-        <button
-          className="home__section__button"
-          onClick={() => {
-            setLimit(limit + 3);
-          }}
-          style={{ margin: "0em auto", marginTop: "4em" }}
-          title="Load more projects"
-        >
-          Load more
-        </button>
-      ) : null}
+
+      <button
+        className="home__section__button"
+        onClick={() => {
+          navigate("/archive");
+          setTimeout(() => {
+            window.scrollTo({ behavior: "smooth", top: 0 });
+          }, 300);
+        }}
+        style={{ margin: "0em auto", marginTop: "4em" }}
+        title="Load more projects"
+      >
+        Load more
+      </button>
     </section>
   );
 }
