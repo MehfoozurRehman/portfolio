@@ -8,7 +8,7 @@ export default function BlogCard({ data }) {
       <div style={{ padding: "2em" }}>
         <div className="card__heading">{data.title}</div>
         <div className="card__info">
-          {getText(data.description).substring("", 130) + "..."}
+          {getText(data.description).substring(0, 130) + "..."}
         </div>
         <div
           className="portfolio__section__content__entry__content"

@@ -13,14 +13,14 @@ export function parseDate(date) {
     "November",
     "December",
   ];
-  const year = date && date.replace(/-/g, "").substring("", 4);
+  const year = date && date.replace(/-/g, "").substring(0, 4);
   const month =
-    date && date.replace(/-/g, "").substring("", 6).replace(year, "");
+    date && date.replace(/-/g, "").substring(0, 6).replace(year, "");
   const day =
     date &&
     date
       .replace(/-/g, "")
-      .substring("", 8)
+      .substring(0, 8)
       .replace(year + month, "");
   return (
     day +

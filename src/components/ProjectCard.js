@@ -31,7 +31,7 @@ export default function ProjectCard({ item }) {
         {sowFullInfo
           ? item.description
           : item.description && item.description.length > 120
-          ? item.description.substring(1, 120) + "..."
+          ? item.description.substring(0, 120) + "..."
           : item.description}
       </div>
       <div className="portfolio__section__content__entry__content">
