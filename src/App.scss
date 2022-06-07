@@ -47,7 +47,7 @@ body {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 1440px;
+  max-width: 1600px;
   position: relative;
   margin: 0em auto;
 }
@@ -56,7 +56,7 @@ body {
   flex-direction: column;
   align-items: center;
   position: fixed;
-  left: calc(50% - 720px + 2em);
+  left: calc(50% - 800px + 2em);
   bottom: 0px;
 }
 .social__links__entries {
@@ -82,7 +82,7 @@ body {
   flex-direction: column;
   align-items: flex-end;
   position: fixed;
-  right: calc(50% - 720px + 2em);
+  right: calc(50% - 800px + 2em);
   bottom: 0px;
 }
 .social__email__text {
@@ -110,7 +110,7 @@ body {
   align-items: center;
   margin: 0em auto;
   padding: 1.5em 2em;
-  max-width: 1440px;
+  max-width: 1600px;
   position: relative;
 }
 .header__content__logo {
@@ -246,7 +246,7 @@ body {
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  max-width: 1100px;
+  max-width: 1360px;
   padding: 10em 2em;
   padding-bottom: 0em;
   min-height: fit-content;
@@ -296,7 +296,7 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 1100px;
+  max-width: 1360px;
   padding: 8em 2em;
   overflow-x: hidden;
 }
@@ -385,7 +385,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 1100px;
+  max-width: 1360px;
   padding: 8em 2em;
   overflow-x: hidden;
   margin-top: -8em;
@@ -507,6 +507,7 @@ body {
   margin-right: 2em;
   transition: 300ms ease-in-out;
   text-decoration: none;
+  position: relative;
 }
 .card__heading {
   font-size: 18px;
@@ -557,6 +558,8 @@ body {
   min-height: 50px;
   z-index: 2;
   text-transform: capitalize;
+  height: fit-content;
+  width: 100%;
 }
 .card__image__reverse {
   margin: 0em auto;
@@ -621,7 +624,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 1100px;
+  max-width: 1360px;
   padding: 8em 2em;
   overflow-x: hidden;
   margin-top: -8em;
@@ -732,7 +735,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 1100px;
+  max-width: 1360px;
   padding: 5em 2em;
   overflow-x: hidden;
   margin: 0em auto;
@@ -807,6 +810,19 @@ body {
 .footer__content__row__link:hover {
   transition: 300ms ease-in-out;
   color: var(--primary);
+}
+.services__section__content__list {
+  background-color: var(--secondary-dark);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2em;
+  padding: 2em;
+  border-radius: 10px;
+  border: 1px solid var(--secondary-dark);
+}
+.services__section__content__list:hover {
+  border-color: var(--primary);
 }
 @media (max-width: 1440px) {
   .social__links {

@@ -1,4 +1,5 @@
 import { lazy, Suspense, useEffect } from "react";
+import { Route, Routes } from "react-router-dom";
 import "./App.scss";
 import Loading from "./components/Loading";
 import { getReferrer } from "./utils/getReferrer";
@@ -6,18 +7,8 @@ import { trackVisits } from "./utils/trackVisits";
 const Socials = lazy(() => import("./components/Socials"));
 const Header = lazy(() => import("./components/Header"));
 const Footer = lazy(() => import("./components/Footer"));
-const HomeSection = lazy(() => import("./components/HomeSection"));
-const AboutMe = lazy(() => import("./components/AboutMe"));
-const Services = lazy(() => import("./components/Services"));
-const Work = lazy(() => import("./components/Work"));
-const NoteWorthyProjects = lazy(() =>
-  import("./components/NoteWorthyProjects")
-);
-const GithubCalender = lazy(() => import("./components/GithubCalender"));
-const Clients = lazy(() => import("./components/Clients"));
-const Blogs = lazy(() => import("./components/Blogs"));
-const Testimonials = lazy(() => import("./components/Testimonials"));
-const Contact = lazy(() => import("./components/Contact"));
+const Home = lazy(() => import("./screens/Home"));
+const Archive = lazy(() => import("./screens/Archive"));
 
 export default function App() {
   useEffect(() => {
@@ -30,16 +21,10 @@ export default function App() {
       <div className="App">
         <Socials />
         <Header />
-        <HomeSection />
-        <AboutMe />
-        <Services />
-        <Work />
-        <NoteWorthyProjects />
-        <GithubCalender />
-        <Clients />
-        <Testimonials />
-        <Blogs />
-        <Contact />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/archive" element={<Archive />} />
+        </Routes>
       </div>
       <Footer />
     </Suspense>

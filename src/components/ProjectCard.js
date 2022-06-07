@@ -1,11 +1,16 @@
+import { useState } from "react";
 import { Box, GitHub, Globe, Layout } from "react-feather";
 
 export default function ProjectCard({ item }) {
+  const [sowFullInfo, setSowFullInfo] = useState(false);
   return (
     <div
       className="card"
-      style={{
-        minHeight: 250,
+      onMouseOver={() => {
+        setSowFullInfo(true);
+      }}
+      onMouseOut={() => {
+        setSowFullInfo(false);
       }}
     >
       <div className="card__heading">
@@ -17,9 +22,16 @@ export default function ProjectCard({ item }) {
 
         <span>{item.name.replace(/-/g, " ").replace(/_/g, " ")}</span>
       </div>
-      <div className="card__info">
-        {item.description && item.description.length > 180
-          ? item.description.substring(1, 180) + "..."
+      <div
+        className="card__info"
+        style={{
+          minHeight: 100,
+        }}
+      >
+        {sowFullInfo
+          ? item.description
+          : item.description && item.description.length > 120
+          ? item.description.substring(1, 120) + "..."
           : item.description}
       </div>
       <div className="portfolio__section__content__entry__content">
