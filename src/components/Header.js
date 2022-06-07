@@ -145,9 +145,12 @@ export default function Header({}) {
                     name="header__content__nav__links__entry"
                     className="header__content__nav__button__input"
                     onClick={() => {
-                      document
-                        .getElementById("contact__section")
-                        .scrollIntoView();
+                      navigate("/");
+                      setTimeout(() => {
+                        document
+                          .getElementById("contact__section")
+                          .scrollIntoView();
+                      }, 300);
                     }}
                     title="contact"
                   />
