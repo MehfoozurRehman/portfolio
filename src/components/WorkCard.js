@@ -8,6 +8,7 @@ export default function WorkCard({
   info,
   siteLink,
   githubLink,
+  name,
 }) {
   return (
     <div
@@ -28,7 +29,7 @@ export default function WorkCard({
         <div className="work__section__entry__right__sub__heading">
           DSME Globals
         </div>
-        <div className="work__section__entry__right__heading">AIDA Pro</div>
+        <div className="work__section__entry__right__heading">{name}</div>
         <div
           className="work__section__entry__right__info"
           style={right ? { textAlign: "left" } : null}

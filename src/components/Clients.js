@@ -51,7 +51,7 @@ export default function Clients({}) {
         </div>
         <div className="services__section__content__col">
           <ClientCard
-            image="https://dsmeglobals.web.app/static/media/logo.0806177f9fd861de2386.png"
+            image="https://dsmeglobals.web.app/static/media/logoDark.4027353b32e5c69aabd79c857d51be55.svg"
             url="https://dsmeglobals.web.app/"
           />
           <ClientCard

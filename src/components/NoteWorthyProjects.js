@@ -26,7 +26,7 @@ export default function NoteWorthyProjects({}) {
           data
             ?.filter(
               (item, i) =>
-                item.description && item.description.length !== 0 && i <= 10
+                item.description && item.description.length !== 0 && i <= 8
             )
             .map((item) => <ProjectCard item={item} key={item.id} />)
         )}

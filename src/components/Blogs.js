@@ -2,7 +2,7 @@ import BlogCard from "./BlogCard";
 import { useMedium } from "react-use-medium";
 
 export default function Blogs({}) {
-  const { data, isFetched } = useMedium("dheerajmahra");
+  const { data, isFetched } = useMedium("samerbuna");
 
   return (
     <section id="blog__section" className="services__section">
@@ -16,7 +16,7 @@ export default function Blogs({}) {
         {isFetched
           ? data &&
             data.items
-              .filter((item, i) => i < 6 && i > 2)
+              .filter((item, i) => i < 4 && i > 0)
               .map((item) => (
                 <BlogCard key={JSON.stringify(item)} data={item} />
               ))
