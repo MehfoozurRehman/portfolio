@@ -15,11 +15,11 @@ export default function Clients({}) {
       >
         <div className="services__section__content__col">
           <ClientCard
-            image="https://res.cloudinary.com/mehfoozurrehman/image/upload/v1652953683/dsme_global/xxu5mv3bttbyshstnh4o.png"
+            image="https://res.cloudinary.com/mehfoozurrehman/image/upload/v1652953683/dsme_global/xxu5mv3bttbyshstnh4o.webp"
             url="https://dsmeglobals.web.app/"
           />
           <ClientCard
-            image="https://res.cloudinary.com/mehfoozurrehman/image/upload/v1652953748/dsme_global/jsmxlwnwrpcus85rtlcg.png"
+            image="https://res.cloudinary.com/mehfoozurrehman/image/upload/v1652953748/dsme_global/jsmxlwnwrpcus85rtlcg.webp"
             url="https://dsmeglobals.web.app/"
           />
           <ClientCard
@@ -29,15 +29,15 @@ export default function Clients({}) {
         </div>
         <div className="services__section__content__col">
           <ClientCard
-            image="https://res.cloudinary.com/mehfoozurrehman/image/upload/v1652953818/dsme_global/k8h1x7j6yu2vg0qallcj.png"
+            image="https://res.cloudinary.com/mehfoozurrehman/image/upload/v1652953818/dsme_global/k8h1x7j6yu2vg0qallcj.webp"
             url="https://dsmeglobals.web.app/"
           />
           <ClientCard
-            image="https://res.cloudinary.com/mehfoozurrehman/image/upload/v1652955779/dsme_global/djov0em3g0anrwamsaen.png"
+            image="https://res.cloudinary.com/mehfoozurrehman/image/upload/v1652955779/dsme_global/djov0em3g0anrwamsaen.webp"
             url="https://dsmeglobals.web.app/"
           />
           <ClientCard
-            image="https://res.cloudinary.com/mehfoozurrehman/image/upload/v1652954066/dsme_global/wtmzbduiojzs1qubzjvi.png"
+            image="https://res.cloudinary.com/mehfoozurrehman/image/upload/v1652954066/dsme_global/wtmzbduiojzs1qubzjvi.webp"
             url="https://dsmeglobals.web.app/"
           />
           <ClientCard
@@ -45,7 +45,7 @@ export default function Clients({}) {
             url="https://dsmeglobals.web.app/"
           />
           <ClientCard
-            image="https://rlb-dashboard.web.app/static/media/NoPath.b442dcf7.png"
+            image="https://rlb-dashboard.web.app/static/media/NoPath.b442dcf7.webp"
             url="https://dsmeglobals.web.app/"
           />
         </div>
@@ -59,7 +59,7 @@ export default function Clients({}) {
             url="https://dsmeglobals.web.app/"
           />
           <ClientCard
-            image="https://bitflydex.web.app/assets/logo.3a72d94c.png"
+            image="https://bitflydex.web.app/assets/logo.3a72d94c.webp"
             url="https://dsmeglobals.web.app/"
           />
         </div>
@@ -77,7 +77,7 @@ export default function Clients({}) {
             url="https://dsmeglobals.web.app/"
           />
           <ClientCard
-            image="https://whitewalker-inu.web.app/static/media/logo.b57853b2238c1aa068ca.png"
+            image="https://whitewalker-inu.web.app/static/media/logo.b57853b2238c1aa068ca.webp"
             url="https://dsmeglobals.web.app/"
           />
           <ClientCard
@@ -95,7 +95,7 @@ export default function Clients({}) {
             url="https://dsmeglobals.web.app/"
           />
           <ClientCard
-            image="https://picode-web.web.app/assets/logo.f77205d4.png"
+            image="https://picode-web.web.app/assets/logo.f77205d4.webp"
             url="https://dsmeglobals.web.app/"
           />
         </div>
