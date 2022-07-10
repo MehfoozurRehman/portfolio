@@ -51,6 +51,8 @@ export default function Testimonials({}) {
                   title={item.name}
                   info={item.message}
                   designation={item.designation}
+                  width={50}
+                  height={50}
                 />
               </SwiperSlide>
             ))

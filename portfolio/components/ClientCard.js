@@ -1,3 +1,5 @@
+import Image from "next/future/image";
+
 export default function ClientCard({ image, url }) {
   return (
     <a
@@ -8,7 +10,14 @@ export default function ClientCard({ image, url }) {
         minHeight: 100,
       }}
     >
-      <img src={image} alt={url} className="card__img" loading="lazy" />
+      <Image
+        src={image}
+        alt={url}
+        className="card__img"
+        loading="lazy"
+        width={100}
+        height={50}
+      />
     </a>
   );
 }

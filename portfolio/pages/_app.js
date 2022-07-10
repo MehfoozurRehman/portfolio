@@ -1,32 +1,27 @@
 import { Suspense, useState } from "react";
-import Loading from "../components/Loading";
-import dynamic from "next/dynamic";
 import Head from "next/head";
+import Loading from "../components/Loading";
+import Socials from "../components/Socials";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 import "../styles/globals.scss";
 import "swiper/scss";
-
-const Socials = dynamic(() => import("../components/Socials"), {
-  suspense: true,
-});
-const Header = dynamic(() => import("../components/Header"), {
-  suspense: true,
-});
-const Footer = dynamic(() => import("../components/Footer"), {
-  suspense: true,
-});
+import logo from "../assets/logo.svg";
 
 export default function App({ Component, pageProps }) {
   const [showFooter, setShowFooter] = useState(false);
 
   return (
     <>
-      <Head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Mehfooz-ur-Rehman" />
-        <title>Mehfooz-ur-Rehman</title>
-      </Head>
       <Suspense fallback={<Loading />}>
+        <Head>
+          <meta charSet="utf-8" />
+          <link rel="icon" href={logo} />
+          <link rel="apple-touch-icon" href={logo} />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="description" content="Mehfooz-ur-Rehman" />
+          <title>Mehfooz-ur-Rehman</title>
+        </Head>
         <div className="App">
           <Socials />
           <Header />

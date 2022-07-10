@@ -1,38 +1,14 @@
-import React, { lazy, useEffect } from "react";
-import dynamic from "next/dynamic";
-const HomeSection = dynamic(() => import("../components/HomeSection"), {
-  suspense: true,
-});
-const AboutMe = dynamic(() => import("../components/AboutMe"), {
-  suspense: true,
-});
-const Services = dynamic(() => import("../components/Services"), {
-  suspense: true,
-});
-const Work = dynamic(() => import("../components/Work"), {
-  suspense: true,
-});
-const NoteWorthyProjects = dynamic(
-  () => import("../components/NoteWorthyProjects"),
-  {
-    suspense: true,
-  }
-);
-const GithubCalender = dynamic(() => import("../components/GithubCalender"), {
-  suspense: true,
-});
-const Clients = dynamic(() => import("../components/Clients"), {
-  suspense: true,
-});
-const Blogs = dynamic(() => import("../components/Blogs"), {
-  suspense: true,
-});
-const Testimonials = dynamic(() => import("../components/Testimonials"), {
-  suspense: true,
-});
-const Contact = dynamic(() => import("../components/Contact"), {
-  suspense: true,
-});
+import React, { useEffect } from "react";
+import HomeSection from "../components/HomeSection";
+import AboutMe from "../components/AboutMe";
+import Services from "../components/Services";
+import Work from "../components/Work";
+import NoteWorthyProjects from "../components/NoteWorthyProjects";
+import GithubCalender from "../components/GithubCalender";
+import Clients from "../components/Clients";
+import Blogs from "../components/Blogs";
+import Testimonials from "../components/Testimonials";
+import Contact from "../components/Contact";
 
 export default function Index({ setShowFooter }) {
   useEffect(() => {

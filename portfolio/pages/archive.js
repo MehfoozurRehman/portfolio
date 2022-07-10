@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import useSWR from "swr";
 import { Box, GitHub, Globe, Layout } from "react-feather";
 import { fetcher } from "../utils/fetcher";
+import useSWR from "swr";
 
 export default function Archive({ setShowFooter }) {
   useEffect(() => {

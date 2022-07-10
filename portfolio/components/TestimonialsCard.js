@@ -1,3 +1,5 @@
+import Image from "next/future/image";
+
 export default function TestimonialsCard({
   imageSrc,
   title,
@@ -6,7 +8,7 @@ export default function TestimonialsCard({
 }) {
   return (
     <div className="card" style={{ maxWidth: "100%", marginRight: "0em" }}>
-      <img
+      <Image
         src={
           imageSrc
             ? imageSrc
@@ -14,7 +16,9 @@ export default function TestimonialsCard({
               title +
               "&background=0a192f&color=64ffda&size=65"
         }
-        alt=""
+        alt={title}
+        width={200}
+        height={150}
         className="card__image__reverse"
       />
       <div className="card__heading__reverse" style={{ margin: "0em auto" }}>
