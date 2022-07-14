@@ -1,0 +1,14 @@
+name: Generate action docs
+on:
+  - push
+  - pull_request
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+
+      - name: Update README.md from action.yml
+        uses: Dirrk/action-docs@v1
