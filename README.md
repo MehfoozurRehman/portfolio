@@ -40,7 +40,8 @@ bash
 
 ## Screenshots
 
-![image](https://user-images.githubusercontent.com/68416499/187097453-d619ef5d-c7eb-4ad1-ae8d-09594c4939e7.png)
+![image](https://user-images.githubusercontent.com/100939524/187102534-fe8c289c-c46d-49a9-acc9-d914ea140833.png)
+
 
 ## Tech Stack
 
