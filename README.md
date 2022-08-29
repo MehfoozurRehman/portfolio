@@ -1,4 +1,5 @@
 # portfolio
+
 A Personal portfolio project to display what can i do, what i did for my clients and to introduce myself to potential employers
 
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/main/LICENSEs)
@@ -40,7 +41,8 @@ bash
 
 ## Screenshots
 
-![image](https://user-images.githubusercontent.com/68416499/187097453-d619ef5d-c7eb-4ad1-ae8d-09594c4939e7.png)
+![image](https://user-images.githubusercontent.com/100939524/187102409-3aca8e31-50ef-4c24-87cb-45a268d0dec6.png)
+
 
 ## Tech Stack
 
