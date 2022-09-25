@@ -16,7 +16,8 @@
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "yarn build && firebase deploy"
   },
   "eslintConfig": {
     "extends": [
