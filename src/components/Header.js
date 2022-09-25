@@ -24,18 +24,18 @@ export default function Header() {
       label: "Work",
       scrollTo: "work",
     },
-    {
-      label: "Clients",
-      scrollTo: "clients",
-    },
+    // {
+    //   label: "Clients",
+    //   scrollTo: "clients",
+    // },
     {
       label: "Testimonials",
       scrollTo: "testimonials",
     },
-    {
-      label: "Blog",
-      scrollTo: "blog",
-    },
+    // {
+    //   label: "Blog",
+    //   scrollTo: "blog",
+    // },
   ];
   const [isNavOpen, setIsNavOpen] = useState(true);
   useLayoutEffect(() => {

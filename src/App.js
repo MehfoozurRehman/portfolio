@@ -3,8 +3,8 @@ import { Route, Routes } from "react-router-dom";
 import "./App.scss";
 import "swiper/scss";
 import Loading from "./components/Loading";
-import { getReferrer } from "./utils/getReferrer";
-import { trackVisits } from "./utils/trackVisits";
+// import { getReferrer } from "./utils/getReferrer";
+// import { trackVisits } from "./utils/trackVisits";
 const Socials = lazy(() => import("./components/Socials"));
 const Header = lazy(() => import("./components/Header"));
 const Footer = lazy(() => import("./components/Footer"));
@@ -21,7 +21,7 @@ export default function App() {
     } else {
       setShowFooter(false);
     }
-  }, [window.location.pathname]);
+  }, []);
 
   return (
     <Suspense fallback={<Loading />}>

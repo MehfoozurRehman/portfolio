@@ -2,7 +2,7 @@ import BlogCard from "./BlogCard";
 import { useMedium } from "react-use-medium";
 
 export default function Blogs() {
-  const { data, isFetched } = useMedium("samerbuna");
+  const { data, isFetched } = useMedium("mehfoozurrehman");
 
   return (
     <section id="blog__section" className="services__section">
