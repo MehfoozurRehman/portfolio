@@ -31,7 +31,9 @@ export default function HomeSection() {
         I'm a Web Developer based in Pakistan. Proficent in web and mobile
         deveopment. I enjoy turning complex problems into simple, beautiful and
         intuitive solutions. Working at this time for
-        <span>Crazybeings Studio</span>
+        <a href="https://crazybeings.com/" target="_blank">
+          Crazybeings Studio
+        </a>
       </motion.div>
       <motion.button
         initial={{ opacity: 0 }}
