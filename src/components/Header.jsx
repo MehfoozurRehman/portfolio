@@ -2,6 +2,7 @@ import { useLayoutEffect, useState } from "react";
 import { Menu, X } from "react-feather";
 import OutsideClickHandler from "react-outside-click-handler";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import NavLink from "./NavLink";
 
 export default function Header() {
@@ -24,10 +25,10 @@ export default function Header() {
       label: "Work",
       scrollTo: "work",
     },
-    // {
-    //   label: "Clients",
-    //   scrollTo: "clients",
-    // },
+    {
+      label: "Clients",
+      scrollTo: "clients",
+    },
     {
       label: "Testimonials",
       scrollTo: "testimonials",
@@ -55,8 +56,10 @@ export default function Header() {
 
   return (
     <div className="header">
-      <div className="header__content">
-        <button
+      <motion.div layout className="header__content">
+        <motion.button
+          initial={{ opacity: 0, translateX: -100 }}
+          animate={{ opacity: 1, translateX: 0 }}
           onClick={() => {
             window.scrollTo({
               top: 0,
@@ -103,8 +106,10 @@ export default function Header() {
               </g>
             </g>
           </svg>
-        </button>
-        <button
+        </motion.button>
+        <motion.button
+          initial={{ opacity: 0, translateX: 100 }}
+          animate={{ opacity: 1, translateX: 0, rotate: 45 }}
           className="header__content__menu"
           onClick={() => {
             setIsNavOpen(!isNavOpen);
@@ -116,9 +121,13 @@ export default function Header() {
           ) : (
             <Menu size={20} color="currentColor" />
           )}
-        </button>
+        </motion.button>
         {isNavOpen ? (
-          <div className="header__content__nav">
+          <motion.div
+            initial={{ opacity: 0, translateY: -100 }}
+            animate={{ opacity: 1, translateY: 0 }}
+            className="header__content__nav"
+          >
             <OutsideClickHandler
               onOutsideClick={() => {
                 if (window.innerWidth < 950) {
@@ -138,7 +147,11 @@ export default function Header() {
                     />
                   ))}
                 </div>
-                <div className="header__content__nav__button">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="header__content__nav__button"
+                >
                   <input
                     id="contact"
                     type="radio"
@@ -157,12 +170,12 @@ export default function Header() {
                   <div className="header__content__nav__button__content">
                     Contact
                   </div>
-                </div>
+                </motion.div>
               </div>
             </OutsideClickHandler>
-          </div>
+          </motion.div>
         ) : null}
-      </div>
+      </motion.div>
     </div>
   );
 }

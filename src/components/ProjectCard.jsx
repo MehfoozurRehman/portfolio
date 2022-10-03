@@ -1,17 +1,15 @@
-import { useState } from "react";
 import { Box, GitHub, Globe, Layout } from "react-feather";
+import { motion } from "framer-motion";
 
 export default function ProjectCard({ item }) {
-  const [sowFullInfo, setSowFullInfo] = useState(false);
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, translateY: 10 }}
+      whileInView={{
+        opacity: 1,
+        translateY: 0,
+      }}
       className="card"
-      onMouseOver={() => {
-        setSowFullInfo(true);
-      }}
-      onMouseOut={() => {
-        setSowFullInfo(false);
-      }}
     >
       <div className="card__heading">
         {item.homepage && item.homepage !== null ? (
@@ -28,9 +26,7 @@ export default function ProjectCard({ item }) {
           minHeight: 100,
         }}
       >
-        {sowFullInfo
-          ? item.description
-          : item.description && item.description.length > 120
+        {item.description && item.description.length > 120
           ? item.description.substring(0, 120) + "..."
           : item.description}
       </div>
@@ -55,6 +51,6 @@ export default function ProjectCard({ item }) {
           </a>
         ) : null}
       </div>
-    </div>
+    </motion.div>
   );
 }
