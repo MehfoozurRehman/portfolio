@@ -408,6 +408,25 @@ body {
   margin-bottom: -2em;
   margin-right: -4em;
 }
+.md__container {
+  flex-wrap: wrap;
+  margin-top: 2em;
+  margin-bottom: -2em;
+}
+.md__container img {
+  width: 100%;
+}
+.md__container * {
+  color: #8892b0;
+}
+.md__container h1 {
+  font-size: 40px;
+  text-transform: capitalize;
+  line-height: 50%;
+}
+.md__container p a img {
+  max-width: 100px;
+}
 .services__section__content__reverse {
   flex-wrap: nowrap;
 }

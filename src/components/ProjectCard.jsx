@@ -1,9 +1,14 @@
 import { Box, GitHub, Globe, Layout } from "react-feather";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 export default function ProjectCard({ item }) {
+  const navigate = useNavigate();
   return (
     <motion.div
+      onClick={() => {
+        navigate("/details/" + item.name);
+      }}
       initial={{ opacity: 0, translateY: 10 }}
       whileInView={{
         opacity: 1,
