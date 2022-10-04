@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@builder.io/partytown": "^0.7.1",
     "framer-motion": "^7.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -17,8 +18,9 @@
   },
   "scripts": {
     "dev": "vite --host",
-    "build": "vite build",
+    "build": "yarn partytown && vite build",
     "preview": "vite preview",
+    "partytown": "partytown copylib public/~partytown",
     "deploy": "yarn build && firebase deploy"
   },
   "eslintConfig": {

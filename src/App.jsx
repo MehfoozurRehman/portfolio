@@ -1,8 +1,10 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
+import Loading from "./components/Loading";
+import { Partytown } from "@builder.io/partytown/react";
 import "./App.scss";
 import "swiper/scss";
-import Loading from "./components/Loading";
+
 // import { getReferrer } from "./utils/getReferrer";
 // import { trackVisits } from "./utils/trackVisits";
 const Socials = lazy(() => import("./components/Socials"));
@@ -25,18 +27,21 @@ export default function App() {
   }, []);
 
   return (
-    <Suspense fallback={<Loading />}>
-      <div className="App">
-        <Socials />
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/archive" element={<Archive />} />
-          <Route path="/details/:id" element={<ProjectDetails />} />
-          <Route path="*" element={<>404</>} />
-        </Routes>
-      </div>
-      {showFooter ? <Footer /> : null}
-    </Suspense>
+    <>
+      <Partytown debug={true} forward={["dataLayer.push"]} />
+      <Suspense fallback={<Loading />}>
+        <div className="App">
+          <Socials />
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/archive" element={<Archive />} />
+            <Route path="/details/:id" element={<ProjectDetails />} />
+            <Route path="*" element={<>404</>} />
+          </Routes>
+        </div>
+        {showFooter ? <Footer /> : null}
+      </Suspense>
+    </>
   );
 }
