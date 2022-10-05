@@ -1,7 +1,29 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Mail, MapPin, Phone } from "react-feather";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_3dm7yud",
+        "template_vu88eib",
+        form.current,
+        "user_5E0L53uCeIn6J8FtgNgs8"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
   return (
     <section
       id="contact__section"
@@ -46,7 +68,11 @@ export default function Contact() {
           </div>
         </div>
         <div className="services__section__content__right">
-          <form className="services__section__content__right__form">
+          <form
+            className="services__section__content__right__form"
+            ref={form}
+            onSubmit={sendEmail}
+          >
             <div className="home__section__heading">Say Something</div>
             <InputBox placeholder="Your Name" type="text" />
             <InputBox placeholder="Email Address" type="email" />
@@ -56,6 +82,7 @@ export default function Contact() {
               className="home__section__button"
               style={{ width: "100%", marginTop: 20 }}
               title="send"
+              type="submit"
             >
               Send
             </button>
@@ -66,7 +93,7 @@ export default function Contact() {
   );
 }
 
-function InputBox({ placeholder, type, onChange }) {
+function InputBox({ placeholder, type, onChange, ...props }) {
   const [onFucus, setOnFocus] = useState(false);
   const [value, setValue] = useState("");
   return (
@@ -100,6 +127,7 @@ function InputBox({ placeholder, type, onChange }) {
           onChange(e);
         }}
         className="services__section__content__right__form__input__field"
+        {...props}
       />
     </div>
   );
