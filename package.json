@@ -5,6 +5,7 @@
   "dependencies": {
     "@builder.io/partytown": "^0.7.1",
     "@emailjs/browser": "^3.7.0",
+    "firebase": "^9.12.0",
     "framer-motion": "^7.5.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
