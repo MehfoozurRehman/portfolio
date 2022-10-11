@@ -855,13 +855,13 @@
   resolved "https://registry.yarnpkg.com/@remix-run/router/-/router-1.0.2.tgz#1c17eadb2fa77f80a796ad5ea9bf108e6993ef06"
   integrity sha512-GRSOFhJzjGN+d4sKHTMSvNeUPoZiDHWmRnXfzaxrqe7dE/Nzlc8BiMSJdLDESZlndM7jIUrZ/F4yWqVYlI0rwQ==
 
-"@rollup/pluginutils@^4.1.2":
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/@rollup/pluginutils/-/pluginutils-4.2.1.tgz#e6c6c3aba0744edce3fb2074922d3776c0af2a6d"
-  integrity sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ==
+"@rollup/pluginutils@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@rollup/pluginutils/-/pluginutils-5.0.0.tgz#a9b1a3769a15ba501eff8c9bd8d2cd0767d6a690"
+  integrity sha512-LJAlpJhSH4cAoNrh5G4mQ7VJJgmGVN1A91Skwpd6uMT4CGmDbrZ59RQWwNB08WkLtKOzTHFj6pKgVn18zlDFrQ==
   dependencies:
-    estree-walker "^2.0.1"
-    picomatch "^2.2.2"
+    estree-walker "^2.0.2"
+    picomatch "^2.3.1"
 
 "@sindresorhus/is@^0.7.0":
   version "0.7.0"
@@ -2195,7 +2195,7 @@ eslint-visitor-keys@^3.3.0:
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-3.3.0.tgz#f6480fa6b1f30efe2d1968aa8ac745b862469826"
   integrity sha512-mQ+suqKJVyeuwGYHAdjMFqjCyfl8+Ldnxuyp3ldiMBFKkvytrXUZWaiPCEav8qDHKty44bD+qV1IP4T+w+xXRA==
 
-estree-walker@^2.0.1:
+estree-walker@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/estree-walker/-/estree-walker-2.0.2.tgz#52f010178c2a4c117a7757cfe942adb7d2da4cac"
   integrity sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==
@@ -2454,10 +2454,10 @@ follow-redirects@^1.14.7:
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.2.tgz#b460864144ba63f2681096f274c4e57026da2c13"
   integrity sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==
 
-framer-motion@^7.5.2:
-  version "7.5.2"
-  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-7.5.2.tgz#6808f518fb5bcba3177ea377084b5a06d06f6a21"
-  integrity sha512-HKQetVN92thmbl5ALDkmdr0xcTP6JD80l6rASs2g5e92zFkWYBE7rZLy++sbCq0L6JSviusb5t0txt19K8xSwg==
+framer-motion@^7.5.3:
+  version "7.5.3"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-7.5.3.tgz#a1de7d6c4abbf7333619d4a6c8df74c12240be43"
+  integrity sha512-VvANga9Z7bYtKMAsM/je81FwJDHfThOYywN04xVQ4OGdMVY09Bowx/q7nZd6XtytLuv6byc6GT1mYwag+SQ/nw==
   dependencies:
     "@motionone/dom" "10.13.1"
     framesync "6.1.2"
@@ -2907,10 +2907,10 @@ imagemin@^7.0.1:
     p-pipe "^3.0.0"
     replace-ext "^1.0.0"
 
-imagetools-core@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/imagetools-core/-/imagetools-core-3.2.1.tgz#f4dc2b5a6c12afef17ff9455de13df51fac0708e"
-  integrity sha512-cTa1cQqGUhw1eqBpz6Jdby7aYP4d18v1hLG9j3mS/223+gx/fmRv+B/E/zDYlX7NoZ5gh4Tvft6mcxek7suE/A==
+imagetools-core@^3.2.3:
+  version "3.2.3"
+  resolved "https://registry.yarnpkg.com/imagetools-core/-/imagetools-core-3.2.3.tgz#407abe2f506d7ed7010b5aec7d9c08a696a1ee9d"
+  integrity sha512-YbZhedg/zja34yV6iRDhfo4cmAYSwxaErkuzc/RpMMAELgszpDKf3MLH6VlsR+QkenPUEGkGAVpJAM2GbUls9Q==
   dependencies:
     sharp "^0.31.0"
 
@@ -3365,7 +3365,7 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
-magic-string@^0.26.0, magic-string@^0.26.2, magic-string@^0.26.3:
+magic-string@^0.26.2, magic-string@^0.26.3:
   version "0.26.4"
   resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.26.4.tgz#3d057d3d0234c3b179aa3f421b33fe5d8a4044a8"
   integrity sha512-e5uXtVJ22aEpK9u1+eQf0fSxHeqwyV19K+uGnlROCxUhzwRip9tBsaMViK/0vC3viyPd5Gtucp3UmEp/Q2cPTQ==
@@ -4039,7 +4039,7 @@ picocolors@^1.0.0:
   resolved "https://registry.yarnpkg.com/picocolors/-/picocolors-1.0.0.tgz#cb5bdc74ff3f51892236eaf79d68bc44564ab81c"
   integrity sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==
 
-picomatch@^2.0.4, picomatch@^2.2.1, picomatch@^2.2.2, picomatch@^2.3.1:
+picomatch@^2.0.4, picomatch@^2.2.1, picomatch@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-2.3.1.tgz#3ba3833733646d9d3e4995946c1365a67fb07a42"
   integrity sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==
@@ -5220,19 +5220,18 @@ vfile@^5.0.0:
     unist-util-stringify-position "^3.0.0"
     vfile-message "^3.0.0"
 
-vite-imagetools@^4.0.9:
-  version "4.0.9"
-  resolved "https://registry.yarnpkg.com/vite-imagetools/-/vite-imagetools-4.0.9.tgz#434769dbc260134b4a8e68cbf5d87b926859c8fc"
-  integrity sha512-MQZWqYH/dbliA1IC7jiARgzpn+NCT3LEGgmln+IIj2WJiVX/Ry+KgmJoIK1OvA6tUsGXNpQSLhAqBQKRA9NuGQ==
+vite-imagetools@^4.0.11:
+  version "4.0.11"
+  resolved "https://registry.yarnpkg.com/vite-imagetools/-/vite-imagetools-4.0.11.tgz#ffc376bb47575dc0ccb2e0a46de6c7e860995ffb"
+  integrity sha512-S6+vzsd/6kSBdPIdjJFGeZ4+UV/aIK09V7oLb/Z9soV3jNwKh60WBi6jF+RnKtY7F9FMU3W6xPbln+VPHI0icA==
   dependencies:
-    "@rollup/pluginutils" "^4.1.2"
-    imagetools-core "^3.2.1"
-    magic-string "^0.26.0"
+    "@rollup/pluginutils" "^5.0.0"
+    imagetools-core "^3.2.3"
 
-vite-plugin-chunk-split@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/vite-plugin-chunk-split/-/vite-plugin-chunk-split-0.4.0.tgz#84b23cc5ce290f705abc32b4435e612788c828d6"
-  integrity sha512-9K1jSVu2pEVrpUCNm9HG8V7anNlYeN7bYyKwMDC7xY97SemMuIwajEQPkC8dwQfaOx3M4vFXyO5RfcPhRR9Njg==
+vite-plugin-chunk-split@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/vite-plugin-chunk-split/-/vite-plugin-chunk-split-0.4.1.tgz#8a3252fefc556fc8ae9c564eca310878abd39c6b"
+  integrity sha512-/p9FFU1DCT5bjO8opwJ2MpmvbA9kVkfwDCaTiuYM2nLRTcdPJRQDOyAihskZS6vrcozAZOfWXkRaw1klAcey3A==
   dependencies:
     es-module-lexer "^1.0.3"
     magic-string "^0.26.3"
@@ -5282,10 +5281,10 @@ vite-plugin-webfont-dl@^3.1.1:
   dependencies:
     axios "^0.25"
 
-vite@^3.1.6:
-  version "3.1.6"
-  resolved "https://registry.yarnpkg.com/vite/-/vite-3.1.6.tgz#4c6db3000326342c918204a42a130fb3ffed2414"
-  integrity sha512-qMXIwnehvvcK5XfJiXQUiTxoYAEMKhM+jqCY6ZSTKFBKu1hJnAKEzP3AOcnTerI0cMZYAaJ4wpW1wiXLMDt4mA==
+vite@^3.1.7:
+  version "3.1.7"
+  resolved "https://registry.yarnpkg.com/vite/-/vite-3.1.7.tgz#9fc2b57a395f79175d38fa3cffd15080b0d9cbfc"
+  integrity sha512-5vCAmU4S8lyVdFCInu9M54f/g8qbOMakVw5xJ4pjoaDy5wgy9sLLZkGdSLN52dlsBqh0tBqxjaqqa8LgPqwRAA==
   dependencies:
     esbuild "^0.15.9"
     postcss "^8.4.16"
