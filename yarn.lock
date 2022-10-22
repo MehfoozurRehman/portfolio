@@ -1931,10 +1931,10 @@ follow-redirects@^1.14.7:
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.2.tgz#b460864144ba63f2681096f274c4e57026da2c13"
   integrity sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==
 
-framer-motion@^7.5.3:
-  version "7.5.3"
-  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-7.5.3.tgz#a1de7d6c4abbf7333619d4a6c8df74c12240be43"
-  integrity sha512-VvANga9Z7bYtKMAsM/je81FwJDHfThOYywN04xVQ4OGdMVY09Bowx/q7nZd6XtytLuv6byc6GT1mYwag+SQ/nw==
+framer-motion@^7.6.1:
+  version "7.6.1"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-7.6.1.tgz#45356eb5519275bce42121a3b3849a6243d45a22"
+  integrity sha512-8US03IWJKrLoSb81l5OahNzB9Sv7Jo1RhIwUoTG/25BRUdO9lOqq/klsdZqNmNG0ua9IEJJQ8hkYpETJ4N6VSw==
   dependencies:
     "@motionone/dom" "10.13.1"
     framesync "6.1.2"
@@ -3442,7 +3442,7 @@ pend@~1.2.0:
   resolved "https://registry.yarnpkg.com/pend/-/pend-1.2.0.tgz#7a57eb550a6783f9115331fcf4663d5c8e007a50"
   integrity sha512-F3asv42UuXchdzt+xXqfW1OGlVBe+mxa2mqI0pg5yAHZPvFmY3Y6drSf/GQ1A86WgWEN9Kzh/WrgKa6iGcHXLg==
 
-picocolors@^1.0.0:
+picocolors@^1.0, picocolors@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/picocolors/-/picocolors-1.0.0.tgz#cb5bdc74ff3f51892236eaf79d68bc44564ab81c"
   integrity sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==
@@ -4591,13 +4591,14 @@ vite-plugin-imagemin@^0.6.1:
     jpegtran-bin "^6.0.1"
     pathe "^0.2.0"
 
-vite-plugin-webfont-dl@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/vite-plugin-webfont-dl/-/vite-plugin-webfont-dl-3.2.1.tgz#a49e14696bb5b3921eca04b3b25eade61f12bf1e"
-  integrity sha512-wUOXwkWm4tjmPtcvADF/sA6kCoPo4oorRIVmSyih6DNZgs9eb8RxgMepHS5j2r6jUQfdMDbMNfF611zH4Z+0Lg==
+vite-plugin-webfont-dl@^3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/vite-plugin-webfont-dl/-/vite-plugin-webfont-dl-3.4.0.tgz#4affae31204aa78235bb1a8cda2c1cc579bd7743"
+  integrity sha512-PS5y8M3TIj6Bwfw/9ahuiCHaEM0O6O2j4TIaNAmUaFbf+APmRlAMAN2unr384Y+5XuWMvtSRG+OqXYyMYUaOkg==
   dependencies:
     axios "^0.25"
     clean-css "^5.3"
+    picocolors "^1.0"
 
 vite@^3.1.8:
   version "3.1.8"
