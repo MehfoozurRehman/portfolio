@@ -61,7 +61,7 @@ export default function NoteWorthyProjects() {
             window.scrollTo({ behavior: "smooth", top: 0 });
           }, 300);
         }}
-        style={{ margin: "0em auto", marginTop: "4em" }}
+        style={{ margin: "0 auto", marginTop: "4em" }}
         title="Load more projects"
       >
         Load more

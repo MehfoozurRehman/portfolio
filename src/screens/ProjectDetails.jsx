@@ -17,7 +17,7 @@ export default function ProjectDetails() {
     <section
       id="projects__section"
       className="services__section"
-      style={{ marginTop: "0em" }}
+      style={{ marginTop: 0 }}
     >
       <ReactMarkdown className="md__container" children={data} />
     </section>

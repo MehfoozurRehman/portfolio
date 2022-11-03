@@ -11,7 +11,7 @@ export default function GithubCalender() {
         year={new Date().getFullYear()}
         style={{
           color: "white",
-          margin: "0em 2em",
+          margin: "0 2em",
           marginBottom: "3em",
           marginTop: "-3em",
           padding: "2em",

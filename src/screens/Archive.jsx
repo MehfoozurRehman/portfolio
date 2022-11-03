@@ -14,7 +14,7 @@ export default function Archive() {
     <section
       id="projects__section"
       className="services__section"
-      style={{ marginTop: "0em" }}
+      style={{ marginTop: 0 }}
     >
       <div className="services__section__header">
         <div className="home__section__sub__heading">
@@ -22,10 +22,7 @@ export default function Archive() {
         </div>
         <div className="home__section__heading">Archive</div>
       </div>
-      <div
-        className="services__section__content"
-        style={{ marginRight: "0em" }}
-      >
+      <div className="services__section__content" style={{ marginRight: 0 }}>
         {error ? (
           <div>failed to load</div>
         ) : (

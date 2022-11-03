@@ -5,7 +5,7 @@ export default function TestimonialsCard({
   designation,
 }) {
   return (
-    <div className="card" style={{ maxWidth: "100%", marginRight: "0em" }}>
+    <div className="card" style={{ maxWidth: "100%", marginRight: 0 }}>
       <img
         src={
           imageSrc
@@ -17,7 +17,7 @@ export default function TestimonialsCard({
         alt=""
         className="card__image__reverse"
       />
-      <div className="card__heading__reverse" style={{ margin: "0em auto" }}>
+      <div className="card__heading__reverse" style={{ margin: "0 auto" }}>
         {title}
       </div>
       <div

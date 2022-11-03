@@ -12,7 +12,7 @@ export default function BlogCard({ data }) {
         </div>
         <div
           className="portfolio__section__content__entry__content"
-          style={{ marginBottom: "0em" }}
+          style={{ marginBottom: 0 }}
         >
           {parseDate(data.pubDate)} - By {data.author}
         </div>
