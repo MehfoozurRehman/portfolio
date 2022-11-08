@@ -9,8 +9,7 @@ export default function Testimonials() {
 
   const { data, error } = useSWR(
     "https://testimonialapi.toolcarton.com/api",
-    fetcher,
-    { suspense: true }
+    fetcher
   );
   useEffect(() => {
     if (window.innerWidth < 700) {
@@ -44,7 +43,7 @@ export default function Testimonials() {
           {error ? (
             <div>failed to load</div>
           ) : (
-            data.map((item) => (
+            data?.map((item) => (
               <SwiperSlide key={JSON.stringify(item)}>
                 <TestimonialsCard
                   imageSrc={item.avatar}

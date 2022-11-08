@@ -10,8 +10,7 @@ export default function ProjectDetails() {
     "https://raw.githubusercontent.com/mehfoozurrehman/" +
       location.pathname.split("/")[2] +
       "/main/README.md",
-    mdxFetcher,
-    { suspense: true }
+    mdxFetcher
   );
   return (
     <section

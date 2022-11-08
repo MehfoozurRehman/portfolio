@@ -42,7 +42,7 @@ export default function WorkCard({
           className="work__section__entry__right__tech"
           style={right ? { textAlign: "left" } : null}
         >
-          {tech.map((item, i) => (i !== tech.length - 1 ? item + ", " : item))}
+          {tech?.map((item, i) => (i !== tech.length - 1 ? item + ", " : item))}
         </div>
         <div className="work__section__entry__right__links">
           <a

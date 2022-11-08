@@ -1,17 +1,18 @@
-import { lazy, Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import Loading from "./components/Loading";
-import "./App.scss";
-import "swiper/scss";
+
+import Socials from "./components/Socials";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+
+import ProjectDetails from "./screens/ProjectDetails";
+import Archive from "./screens/Archive";
+import Home from "./screens/Home";
 
 // import { getReferrer } from "./utils/getReferrer";
 // import { trackVisits } from "./utils/trackVisits";
-const Socials = lazy(() => import("./components/Socials"));
-const Header = lazy(() => import("./components/Header"));
-const Footer = lazy(() => import("./components/Footer"));
-const Home = lazy(() => import("./screens/Home"));
-const Archive = lazy(() => import("./screens/Archive"));
-const ProjectDetails = lazy(() => import("./screens/ProjectDetails"));
+
+import "./App.scss";
 
 export default function App() {
   const [showFooter, setShowFooter] = useState(false);
@@ -26,7 +27,7 @@ export default function App() {
   }, []);
 
   return (
-    <Suspense fallback={<Loading />}>
+    <>
       <div className="App">
         <Socials />
         <Header />
@@ -38,6 +39,6 @@ export default function App() {
         </Routes>
       </div>
       {showFooter ? <Footer /> : null}
-    </Suspense>
+    </>
   );
 }

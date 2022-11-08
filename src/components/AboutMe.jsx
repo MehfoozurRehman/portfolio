@@ -8,8 +8,7 @@ export default function AboutMe() {
   const happyClients = 3;
   const { data } = useSWR(
     "https://api.github.com/users/MehfoozurRehman",
-    fetcher,
-    { suspense: true }
+    fetcher
   );
 
   return (
@@ -37,7 +36,8 @@ export default function AboutMe() {
               ></path>
             </svg>
             <div className="about__section__left__content__blob__content">
-              {getExperience(data.created_at)} +<span>Years of Experience</span>
+              {getExperience(data?.created_at)} +
+              <span>Years of Experience</span>
             </div>
           </motion.div>
           <motion.div
@@ -52,7 +52,7 @@ export default function AboutMe() {
               ></path>
             </svg>
             <div className="about__section__left__content__blob__content">
-              {data.public_repos} +<span>Projects Completed</span>
+              {data?.public_repos} +<span>Projects Completed</span>
             </div>
           </motion.div>
           <motion.div

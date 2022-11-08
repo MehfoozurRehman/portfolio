@@ -16,8 +16,8 @@ export default function Blogs() {
         {isFetched
           ? data &&
             data.items
-              .filter((item, i) => i < 4 && i > 0)
-              .map((item) => (
+              ?.filter((item, i) => i < 4 && i > 0)
+              ?.map((item) => (
                 <BlogCard key={JSON.stringify(item)} data={item} />
               ))
           : null}

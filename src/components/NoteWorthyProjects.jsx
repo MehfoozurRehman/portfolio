@@ -8,8 +8,7 @@ export default function NoteWorthyProjects() {
   const navigate = useNavigate();
   const { data, error } = useSWR(
     "https://api.github.com/users/MehfoozurRehman/repos?per_page=10000&sort=updated",
-    fetcher,
-    { suspense: true }
+    fetcher
   );
 
   return (
@@ -48,8 +47,8 @@ export default function NoteWorthyProjects() {
           <div>failed to load</div>
         ) : (
           data
-            ?.filter((item, i) => i <= 8)
-            .map((item) => <ProjectCard item={item} key={item.id} />)
+            ?.filter((_item, i) => i <= 8)
+            ?.map((item) => <ProjectCard item={item} key={item.id} />)
         )}
       </motion.div>
 

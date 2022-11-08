@@ -137,7 +137,7 @@ export default function Header() {
             >
               <div className="header__content__nav__wrapper">
                 <div className="header__content__nav__links">
-                  {navLinks.map((link, index) => (
+                  {navLinks?.map((link, index) => (
                     <NavLink
                       key={link.label}
                       index={index}
