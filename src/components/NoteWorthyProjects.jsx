@@ -2,7 +2,6 @@ import useSWR from "swr";
 import { useNavigate } from "react-router-dom";
 import { fetcher } from "../utils/fetcher";
 import ProjectCard from "./ProjectCard";
-import { motion } from "framer-motion";
 
 export default function NoteWorthyProjects() {
   const navigate = useNavigate();
@@ -14,35 +13,12 @@ export default function NoteWorthyProjects() {
   return (
     <section id="projects__section" className="services__section">
       <div className="services__section__header">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{
-            opacity: 1,
-          }}
-          className="home__section__sub__heading"
-        >
+        <div className="home__section__sub__heading">
           Other Noteworthy Projects
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{
-            opacity: 1,
-          }}
-          className="home__section__heading"
-        >
-          Projects
-        </motion.div>
+        </div>
+        <div className="home__section__heading">Projects</div>
       </div>
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{
-          opacity: 1,
-          transition: {
-            staggerChildren: 0.5,
-          },
-        }}
-        className="services__section__content"
-      >
+      <div className="services__section__content">
         {error ? (
           <div>failed to load</div>
         ) : (
@@ -50,7 +26,7 @@ export default function NoteWorthyProjects() {
             ?.filter((_item, i) => i <= 8)
             ?.map((item) => <ProjectCard item={item} key={item.id} />)
         )}
-      </motion.div>
+      </div>
 
       <button
         className="home__section__button"

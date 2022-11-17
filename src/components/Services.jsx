@@ -1,39 +1,13 @@
 import ServicesCard from "./ServicesCard";
-import { motion } from "framer-motion";
 
 export default function Services() {
   return (
     <section id="services__section" className="services__section">
       <div className="services__section__header">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{
-            opacity: 1,
-          }}
-          className="home__section__sub__heading"
-        >
-          What i can do for you
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{
-            opacity: 1,
-          }}
-          className="home__section__heading"
-        >
-          Services
-        </motion.div>
+        <div className="home__section__sub__heading">What i can do for you</div>
+        <div className="home__section__heading">Services</div>
       </div>
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{
-          opacity: 1,
-          transition: {
-            staggerChildren: 0.5,
-          },
-        }}
-        className="services__section__content"
-      >
+      <div className="services__section__content">
         <ServicesCard
           title="Web Development"
           skills={[
@@ -64,7 +38,7 @@ export default function Services() {
         />
         <ServicesCard title="UI / UX Design" skills={["Adobe Xd", "Figma"]} />
         <ServicesCard title="Graphic Design" skills={["Illustrator", "Gimp"]} />
-      </motion.div>
+      </div>
     </section>
   );
 }

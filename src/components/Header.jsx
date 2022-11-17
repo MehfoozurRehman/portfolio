@@ -2,7 +2,6 @@ import { useLayoutEffect, useState } from "react";
 import { Menu, X } from "react-feather";
 import OutsideClickHandler from "react-outside-click-handler";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
 import NavLink from "./NavLink";
 
 export default function Header() {
@@ -56,10 +55,8 @@ export default function Header() {
 
   return (
     <div className="header">
-      <motion.div layout className="header__content">
-        <motion.button
-          initial={{ opacity: 0, translateX: -100 }}
-          animate={{ opacity: 1, translateX: 0 }}
+      <div layout className="header__content">
+        <button
           onClick={() => {
             window.scrollTo({
               top: 0,
@@ -106,10 +103,8 @@ export default function Header() {
               </g>
             </g>
           </svg>
-        </motion.button>
-        <motion.button
-          initial={{ opacity: 0, translateX: 100 }}
-          animate={{ opacity: 1, translateX: 0, rotate: 45 }}
+        </button>
+        <button
           className="header__content__menu"
           onClick={() => {
             setIsNavOpen(!isNavOpen);
@@ -121,13 +116,9 @@ export default function Header() {
           ) : (
             <Menu size={20} color="currentColor" />
           )}
-        </motion.button>
+        </button>
         {isNavOpen ? (
-          <motion.div
-            initial={{ opacity: 0, translateY: -100 }}
-            animate={{ opacity: 1, translateY: 0 }}
-            className="header__content__nav"
-          >
+          <div className="header__content__nav">
             <OutsideClickHandler
               onOutsideClick={() => {
                 if (window.innerWidth < 950) {
@@ -147,11 +138,7 @@ export default function Header() {
                     />
                   ))}
                 </div>
-                <motion.div
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="header__content__nav__button"
-                >
+                <div className="header__content__nav__button">
                   <input
                     id="contact"
                     type="radio"
@@ -170,12 +157,12 @@ export default function Header() {
                   <div className="header__content__nav__button__content">
                     Contact
                   </div>
-                </motion.div>
+                </div>
               </div>
             </OutsideClickHandler>
-          </motion.div>
+          </div>
         ) : null}
-      </motion.div>
+      </div>
     </div>
   );
 }
