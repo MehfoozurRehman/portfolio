@@ -35,7 +35,6 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/archive" element={<Archive />} />
           <Route path="/details/:id" element={<ProjectDetails />} />
-          <Route path="*" element={<>404</>} />
         </Routes>
       </div>
       {showFooter ? <Footer /> : null}
