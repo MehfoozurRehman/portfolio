@@ -1,4 +1,5 @@
 import { ArrowUp } from "react-feather";
+import { qrcode } from "../assets";
 
 export default function Footer() {
   return (
@@ -104,6 +105,11 @@ export default function Footer() {
                 <Codesandbox size={20} color="currentColor" />
               </a>
             </div> */}
+            <img
+              src={qrcode}
+              alt="buy me coffee qr code"
+              style={{ width: 150, height: 150 }}
+            />
           </div>
         </div>
         {/* <div className="footer__content__row">

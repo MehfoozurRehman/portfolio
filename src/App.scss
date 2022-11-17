@@ -200,6 +200,23 @@ body {
   transition: 300ms ease-in-out;
   color: var(--primary);
 }
+.header__content__nav__link {
+  background-color: #fd0;
+  color: black;
+  height: 38px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 0em 1.5em;
+  margin-left: 1em;
+  text-align: center;
+}
+.header__content__nav__link:hover {
+  transition: 300ms ease-in-out;
+  background-color: rgb(230, 200, 5);
+}
 .header__content__nav__button {
   position: relative;
   margin-left: 1.5em;
@@ -972,6 +989,13 @@ body {
   .header__content__nav__button {
     margin-left: 0;
     width: 100%;
+  }
+  .header__content__nav__link {
+    margin-left: 0em;
+    margin-top: 1em;
+    border-radius: 5px;
+    padding: 0.5em 1em;
+    height: fit-content;
   }
 }
 @media (max-width: 800px) {
