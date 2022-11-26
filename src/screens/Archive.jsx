@@ -1,11 +1,14 @@
-import React from "react";
-import useSWR from "swr";
 import { Box, GitHub, Globe, Layout } from "react-feather";
+
+import React from "react";
 import { fetcher } from "../utils/fetcher";
+import { useNavigate } from "react-router-dom";
+import useSWR from "swr";
 
 export default function Archive() {
+  const navigate = useNavigate();
   const { data, error } = useSWR(
-    "https://api.github.com/users/MehfoozurRehman/repos?per_page=10000&sort=updated",
+    "https://api.github.com/users/MehfoozurRehman/repos?per_page=10000",
     fetcher
   );
 
@@ -26,7 +29,17 @@ export default function Archive() {
           <div>failed to load</div>
         ) : (
           data?.map((item) => (
-            <div className="services__section__content__list" key={item.id}>
+            <div
+              onClick={() => {
+                navigate("/details/" + item.name);
+                window.scrollTo({
+                  top: 0,
+                  behavior: "smooth",
+                });
+              }}
+              className="services__section__content__list"
+              key={item.id}
+            >
               <div className="card__heading">
                 {item.homepage && item.homepage !== null ? (
                   <Layout size={30} color="currentColor" />

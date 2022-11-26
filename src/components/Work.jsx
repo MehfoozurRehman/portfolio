@@ -1,4 +1,5 @@
-import { aida, seevitals, dsmeglobal } from "../assets";
+import { aida, dsmeglobal, seevitals } from "../assets";
+
 import WorkCard from "./WorkCard";
 
 export default function Work() {

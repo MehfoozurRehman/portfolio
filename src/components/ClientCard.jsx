@@ -5,6 +5,7 @@ export default function ClientCard({ image, url }) {
       className="card"
       style={{
         minWidth: "fit-content",
+        maxWidth: "fit-content",
         minHeight: 100,
       }}
     >

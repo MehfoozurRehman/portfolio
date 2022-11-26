@@ -1,5 +1,6 @@
-import project from "../assets/project.webp";
 import { GitHub, Link } from "react-feather";
+
+import project from "../assets/project.webp";
 
 export default function WorkCard({
   tech,

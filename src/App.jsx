@@ -1,18 +1,17 @@
-import { useEffect, useState } from "react";
+import "./App.scss";
+
 import { Route, Routes } from "react-router-dom";
+import { useEffect, useState } from "react";
 
-import Socials from "./components/Socials";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-
-import ProjectDetails from "./screens/ProjectDetails";
 import Archive from "./screens/Archive";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 import Home from "./screens/Home";
+import ProjectDetails from "./screens/ProjectDetails";
+import Socials from "./components/Socials";
 
 // import { getReferrer } from "./utils/getReferrer";
 // import { trackVisits } from "./utils/trackVisits";
-
-import "./App.scss";
 
 export default function App() {
   const [showFooter, setShowFooter] = useState(false);

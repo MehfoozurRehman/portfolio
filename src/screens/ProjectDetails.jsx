@@ -1,12 +1,12 @@
 import React from "react";
-import useSWR from "swr";
 import ReactMarkdown from "react-markdown";
 import { mdxFetcher } from "../utils/mdxFetcher";
 import { useLocation } from "react-router-dom";
+import useSWR from "swr";
 
 export default function ProjectDetails() {
   const location = useLocation();
-  const { data, error } = useSWR(
+  const { data } = useSWR(
     "https://raw.githubusercontent.com/mehfoozurrehman/" +
       location.pathname.split("/")[2] +
       "/main/README.md",

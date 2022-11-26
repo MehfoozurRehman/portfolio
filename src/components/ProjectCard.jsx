@@ -1,16 +1,8 @@
 import { Box, GitHub, Globe, Layout } from "react-feather";
 
-import { useNavigate } from "react-router-dom";
-
 export default function ProjectCard({ item }) {
-  const navigate = useNavigate();
   return (
-    <div
-      onClick={() => {
-        navigate("/details/" + item.name);
-      }}
-      className="card"
-    >
+    <div className="card">
       <div className="card__heading">
         {item.homepage && item.homepage !== null ? (
           <Layout size={30} color="currentColor" />
@@ -20,12 +12,7 @@ export default function ProjectCard({ item }) {
 
         <span>{item.name.replace(/-/g, " ").replace(/_/g, " ")}</span>
       </div>
-      <div
-        className="card__info"
-        style={{
-          minHeight: 100,
-        }}
-      >
+      <div className="card__info">
         {item.description && item.description.length > 120
           ? item.description.substring(0, 120) + "..."
           : item.description}
@@ -36,6 +23,7 @@ export default function ProjectCard({ item }) {
       <div className="portfolio__section__content__entry__buttons">
         <a
           href={item.html_url}
+          target="_blank"
           className="portfolio__section__content__entry__button"
         >
           <GitHub size={20} color="currentColor" />
@@ -44,6 +32,7 @@ export default function ProjectCard({ item }) {
         {item.homepage && item.homepage !== null ? (
           <a
             href={item.homepage}
+            target="_blank"
             className="portfolio__section__content__entry__button"
           >
             <Globe size={20} color="currentColor" />

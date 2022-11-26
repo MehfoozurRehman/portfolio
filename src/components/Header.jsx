@@ -1,8 +1,9 @@
-import { useLayoutEffect, useState } from "react";
 import { Menu, X } from "react-feather";
+import { useLayoutEffect, useState } from "react";
+
+import NavLink from "./NavLink";
 import OutsideClickHandler from "react-outside-click-handler";
 import { useNavigate } from "react-router-dom";
-import NavLink from "./NavLink";
 
 export default function Header() {
   const navigate = useNavigate();

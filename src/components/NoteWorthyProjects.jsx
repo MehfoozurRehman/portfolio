@@ -1,7 +1,7 @@
-import useSWR from "swr";
-import { useNavigate } from "react-router-dom";
-import { fetcher } from "../utils/fetcher";
 import ProjectCard from "./ProjectCard";
+import { fetcher } from "../utils/fetcher";
+import { useNavigate } from "react-router-dom";
+import useSWR from "swr";
 
 export default function NoteWorthyProjects() {
   const navigate = useNavigate();
