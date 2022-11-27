@@ -651,9 +651,10 @@ body {
   color: var(--primary);
 }
 .card__img {
-  max-width: 130px;
-  max-height: 40px;
+  max-width: 150px;
+  max-height: 100px;
   margin: 0 auto;
+  mix-blend-mode: luminosity;
 }
 .card__banner {
   width: 100%;

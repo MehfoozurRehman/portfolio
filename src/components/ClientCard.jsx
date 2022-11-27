@@ -1,7 +1,6 @@
-export default function ClientCard({ image, url }) {
+export default function ClientCard({ image, name }) {
   return (
-    <a
-      href={url}
+    <div
       className="card"
       style={{
         minWidth: "fit-content",
@@ -9,7 +8,7 @@ export default function ClientCard({ image, url }) {
         minHeight: 100,
       }}
     >
-      <img src={image} alt={url} className="card__img" loading="lazy" />
-    </a>
+      <img src={image} alt={name} className="card__img" loading="lazy" />
+    </div>
   );
 }

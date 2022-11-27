@@ -3,8 +3,7 @@ import { getExperience } from "../utils/getExperience";
 import { pic } from "../assets";
 import useSWR from "swr";
 
-export default function AboutMe() {
-  const happyClients = 5;
+export default function AboutMe({ happyClients }) {
   const { data } = useSWR(
     "https://api.github.com/users/MehfoozurRehman",
     fetcher
@@ -45,7 +44,7 @@ export default function AboutMe() {
               ></path>
             </svg>
             <div className="about__section__left__content__blob__content">
-              {happyClients} +<span>Happy Clients</span>
+              {happyClients?.length} +<span>Happy Clients</span>
             </div>
           </div>
           <img

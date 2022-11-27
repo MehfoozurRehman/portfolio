@@ -56,7 +56,7 @@ export default function Header() {
 
   return (
     <div className="header">
-      <div layout className="header__content">
+      <div className="header__content">
         <button
           onClick={() => {
             window.scrollTo({

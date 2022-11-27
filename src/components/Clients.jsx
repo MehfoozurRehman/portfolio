@@ -1,6 +1,6 @@
 import ClientCard from "./ClientCard";
 
-export default function Clients() {
+export default function Clients({ data }) {
   return (
     <section id="clients__section" className="services__section">
       <div className="services__section__header">
@@ -10,62 +10,16 @@ export default function Clients() {
         <div className="home__section__heading">Clients</div>
       </div>
       <div className="services__section__content">
-        <ClientCard
-          image="https://res.cloudinary.com/mehfoozurrehman/image/upload/v1652953683/dsme_global/xxu5mv3bttbyshstnh4o.webp"
-          url="https://dsmeglobals.web.app/"
-        />
-        <ClientCard
-          image="https://res.cloudinary.com/mehfoozurrehman/image/upload/v1652953683/dsme_global/xxu5mv3bttbyshstnh4o.webp"
-          url="https://dsmeglobals.web.app/"
-        />
-        <ClientCard
-          image="https://res.cloudinary.com/mehfoozurrehman/image/upload/v1652953683/dsme_global/xxu5mv3bttbyshstnh4o.webp"
-          url="https://dsmeglobals.web.app/"
-        />
-        <ClientCard
-          image="https://res.cloudinary.com/mehfoozurrehman/image/upload/v1652953683/dsme_global/xxu5mv3bttbyshstnh4o.webp"
-          url="https://dsmeglobals.web.app/"
-        />
-        <ClientCard
-          image="https://res.cloudinary.com/mehfoozurrehman/image/upload/v1652953683/dsme_global/xxu5mv3bttbyshstnh4o.webp"
-          url="https://dsmeglobals.web.app/"
-        />
-        <ClientCard
-          image="https://res.cloudinary.com/mehfoozurrehman/image/upload/v1652953683/dsme_global/xxu5mv3bttbyshstnh4o.webp"
-          url="https://dsmeglobals.web.app/"
-        />
-        <ClientCard
-          image="https://res.cloudinary.com/mehfoozurrehman/image/upload/v1652953683/dsme_global/xxu5mv3bttbyshstnh4o.webp"
-          url="https://dsmeglobals.web.app/"
-        />
-        <ClientCard
-          image="https://res.cloudinary.com/mehfoozurrehman/image/upload/v1652953683/dsme_global/xxu5mv3bttbyshstnh4o.webp"
-          url="https://dsmeglobals.web.app/"
-        />
-        <ClientCard
-          image="https://res.cloudinary.com/mehfoozurrehman/image/upload/v1652953683/dsme_global/xxu5mv3bttbyshstnh4o.webp"
-          url="https://dsmeglobals.web.app/"
-        />
-        <ClientCard
-          image="https://res.cloudinary.com/mehfoozurrehman/image/upload/v1652953683/dsme_global/xxu5mv3bttbyshstnh4o.webp"
-          url="https://dsmeglobals.web.app/"
-        />
-        <ClientCard
-          image="https://res.cloudinary.com/mehfoozurrehman/image/upload/v1652953683/dsme_global/xxu5mv3bttbyshstnh4o.webp"
-          url="https://dsmeglobals.web.app/"
-        />
-        <ClientCard
-          image="https://res.cloudinary.com/mehfoozurrehman/image/upload/v1652953683/dsme_global/xxu5mv3bttbyshstnh4o.webp"
-          url="https://dsmeglobals.web.app/"
-        />
-        <ClientCard
-          image="https://res.cloudinary.com/mehfoozurrehman/image/upload/v1652953683/dsme_global/xxu5mv3bttbyshstnh4o.webp"
-          url="https://dsmeglobals.web.app/"
-        />
-        <ClientCard
-          image="https://res.cloudinary.com/mehfoozurrehman/image/upload/v1652953683/dsme_global/xxu5mv3bttbyshstnh4o.webp"
-          url="https://dsmeglobals.web.app/"
-        />
+        {data?.map((item) => (
+          <ClientCard
+            key={item._id}
+            name={item.name}
+            image={
+              "https://res.cloudinary.com/mehfoozurrehman/image/upload/" +
+              item.logo
+            }
+          />
+        ))}
       </div>
     </section>
   );
