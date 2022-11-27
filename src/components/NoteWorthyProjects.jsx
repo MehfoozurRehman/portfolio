@@ -9,10 +9,7 @@ export default function NoteWorthyProjects() {
   const navigate = useNavigate();
   const { data, error } = useSWR(
     "https://api.github.com/users/MehfoozurRehman/repos?per_page=10000&sort=updated",
-    fetcher,
-    {
-      suspense: true,
-    }
+    fetcher
   );
 
   return (
