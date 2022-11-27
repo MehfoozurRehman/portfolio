@@ -10,34 +10,34 @@ export default function Services() {
       <div className="services__section__content">
         <ServicesCard
           title="Web Development"
-          skills={[
-            "ReactJS",
-            "MongoDB",
-            "ExpressJS",
-            "NodeJS",
-            "Typescript",
-            "Graphql",
-            "Rest",
-          ]}
+          skills={["ReactJS", "NextJS", "Remix", "Jotai", "Typescript"]}
         />
         <ServicesCard
           title="Application Development"
-          skills={[
-            "React Native",
-            "Electron",
-            "MongoDB",
-            "ExpressJS",
-            "NodeJS",
-            "Graphql",
-            "Rest",
-          ]}
+          skills={["React Native", "Electron", "Redux"]}
+        />
+        <ServicesCard
+          title="Backend Development"
+          skills={["MongoDB", "ExpressJS", "NodeJS", "Graphql", "Rest"]}
         />
         <ServicesCard
           title="Testing & Analytics"
-          skills={["Firebase", "Simple Analytics", "Jest"]}
+          skills={["Firebase", "Google Analytics", "Simple Analytics", "Jest"]}
+        />
+        <ServicesCard
+          title="Hosting"
+          skills={[
+            "Railway",
+            "Netlify",
+            "Heroku",
+            "Vercel",
+            "Github",
+            "Firebase",
+          ]}
         />
         <ServicesCard title="UI / UX Design" skills={["Adobe Xd", "Figma"]} />
         <ServicesCard title="Graphic Design" skills={["Illustrator", "Gimp"]} />
+        <ServicesCard title="General" skills={["Git", "yarn", "npm"]} />
       </div>
     </section>
   );

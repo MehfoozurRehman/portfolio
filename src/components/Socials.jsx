@@ -33,13 +33,6 @@ export default function Socials() {
             <Instagram size={20} color="currentColor" />
           </a>
           <a
-            href="https://www.linkedin.com/in/mehfooz-rehman-37a1b0231/"
-            title="linkedin"
-            className="social__links__entries__link"
-          >
-            <Linkedin size={20} color="currentColor" />
-          </a>
-          <a
             href="https://codesandbox.io/u/MehfoozurRehman"
             title="codesandbox"
             className="social__links__entries__link"

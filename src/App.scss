@@ -513,6 +513,13 @@ body {
   color: var(--white);
   outline: none;
 }
+.services__section__content__right__form__input__field:-webkit-autofill,
+.services__section__content__right__form__input__field:-webkit-autofill:hover,
+.services__section__content__right__form__input__field:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--white);
+  -webkit-box-shadow: 0 0 0px 1000px var(--secondary-dark) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
 .services__section__content__right__form__input__field__textarea {
   height: 120px;
   padding: 1em;

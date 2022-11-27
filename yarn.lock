@@ -259,10 +259,10 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
 
-"@emailjs/browser@^3.9.1":
-  version "3.9.1"
-  resolved "https://registry.yarnpkg.com/@emailjs/browser/-/browser-3.9.1.tgz#9d3824ba332e7441725d07a157cb913bc34a9928"
-  integrity sha512-8xhwTUoTDG5Tqjt8uC28zwmrwcjGhApXwUMyUaEmhhUVmCHhefetTlIR7Mlm4Ae8+Nm0+sC3oPe3K+BcR12QWA==
+"@emailjs/browser@^3.10.0":
+  version "3.10.0"
+  resolved "https://registry.yarnpkg.com/@emailjs/browser/-/browser-3.10.0.tgz#74de36d95838e117cf76f7b71b68ffbe5668367d"
+  integrity sha512-pregUOBkSjjctQoAgn8DcSaeY4ypHjXAJEzWlJysM3RkQXw1ulavfHva3YYeAkxfJ7qbIhpyvRmhyQlgNG4GVg==
 
 "@esbuild/android-arm@0.15.10":
   version "0.15.10"
@@ -4241,10 +4241,10 @@ svgo@^2.1.0:
     picocolors "^1.0.0"
     stable "^0.1.8"
 
-swiper@^8.4.4:
-  version "8.4.4"
-  resolved "https://registry.yarnpkg.com/swiper/-/swiper-8.4.4.tgz#868ccad5384624e84143b469c75bc54ba004e668"
-  integrity sha512-jA/8BfOZwT8PqPSnMX0TENZYitXEhNa7ZSNj1Diqh5LZyUJoBQaZcqAiPQ/PIg1+IPaRn/V8ZYVb0nxHMh51yw==
+swiper@^8.4.5:
+  version "8.4.5"
+  resolved "https://registry.yarnpkg.com/swiper/-/swiper-8.4.5.tgz#149ca81f67393d3f33abddd0f968fc37e99980b5"
+  integrity sha512-zveyEFBBv4q1sVkbJHnuH4xCtarKieavJ4SxP0QEHvdpPLJRuD7j/Xg38IVVLbp7Db6qrPsLUePvxohYx39Agw==
   dependencies:
     dom7 "^4.0.4"
     ssr-window "^4.0.2"
@@ -4532,10 +4532,10 @@ vite-imagetools@^4.0.11:
     "@rollup/pluginutils" "^5.0.0"
     imagetools-core "^3.2.3"
 
-vite-plugin-chunk-split@^0.4.3:
-  version "0.4.3"
-  resolved "https://registry.yarnpkg.com/vite-plugin-chunk-split/-/vite-plugin-chunk-split-0.4.3.tgz#dceb593e330adcb047ba543cfde198186a5a332e"
-  integrity sha512-PW22WxPRXL+ZlOQ98Ma34g0aNjBQDbA3V7b1s8dVANfKKeBznhxcLOQH7/nv2zmXtKellNiB0ABt37odmBuxwg==
+vite-plugin-chunk-split@^0.4.4:
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/vite-plugin-chunk-split/-/vite-plugin-chunk-split-0.4.4.tgz#92d179d0be5d107dd1798c3a34ce95bdfb3a1f5d"
+  integrity sha512-IXd2AeecLxaovSpZLvz0Xy5LvqwKEP35QUE+YmZ07BqdByvtNpw+nAkOUcAxbHR10Yo8AkLs7kXMO80N9qPIww==
   dependencies:
     es-module-lexer "^1.0.3"
     magic-string "^0.26.3"

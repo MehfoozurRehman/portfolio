@@ -12,7 +12,7 @@ export default function ProjectCard({ item }) {
 
         <span>{item.name.replace(/-/g, " ").replace(/_/g, " ")}</span>
       </div>
-      <div className="card__info">
+      <div className="card__info" style={{ minHeight: 100 }}>
         {item.description && item.description.length > 120
           ? item.description.substring(0, 120) + "..."
           : item.description}

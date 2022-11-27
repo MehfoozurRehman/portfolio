@@ -2,12 +2,17 @@ import ProjectCard from "./ProjectCard";
 import { fetcher } from "../utils/fetcher";
 import { useNavigate } from "react-router-dom";
 import useSWR from "swr";
+import { useTransition } from "react";
 
 export default function NoteWorthyProjects() {
+  const [_isPending, startTransition] = useTransition();
   const navigate = useNavigate();
   const { data, error } = useSWR(
     "https://api.github.com/users/MehfoozurRehman/repos?per_page=10000&sort=updated",
-    fetcher
+    fetcher,
+    {
+      suspense: true,
+    }
   );
 
   return (
@@ -31,10 +36,10 @@ export default function NoteWorthyProjects() {
       <button
         className="home__section__button"
         onClick={() => {
-          navigate("/archive");
-          setTimeout(() => {
+          startTransition(() => {
             window.scrollTo({ behavior: "smooth", top: 0 });
-          }, 300);
+            navigate("/archive");
+          });
         }}
         style={{ margin: "0 auto", marginTop: "4em" }}
         title="Load more projects"

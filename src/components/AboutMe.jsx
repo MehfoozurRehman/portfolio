@@ -4,7 +4,7 @@ import { pic } from "../assets";
 import useSWR from "swr";
 
 export default function AboutMe() {
-  const happyClients = 3;
+  const happyClients = 5;
   const { data } = useSWR(
     "https://api.github.com/users/MehfoozurRehman",
     fetcher
