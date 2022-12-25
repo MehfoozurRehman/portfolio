@@ -7,6 +7,7 @@ export default function TestimonialsCard({
   return (
     <div className="card" style={{ maxWidth: "100%", marginRight: 0 }}>
       <img
+        loading="lazy"
         src={
           imageSrc
             ? imageSrc

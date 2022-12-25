@@ -8,7 +8,7 @@ export default function ClientCard({ image, name }) {
         minHeight: 100,
       }}
     >
-      <img src={image} alt={name} className="card__img" loading="lazy" />
+      <img loading="lazy" src={image} alt={name} className="card__img" />
     </div>
   );
 }

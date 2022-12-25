@@ -18,6 +18,7 @@ export default function WorkCard({
     >
       <a href={siteLink} className="work__section__entry__left" title="website">
         <img
+          loading="lazy"
           src={banner ? banner : project}
           alt="project_img"
           className="work__section__entry__left__img"

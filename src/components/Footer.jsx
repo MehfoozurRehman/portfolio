@@ -106,6 +106,7 @@ export default function Footer() {
               </a>
             </div> */}
             <img
+              loading="lazy"
               src={qrcode}
               alt="buy me coffee qr code"
               style={{ width: 150, height: 150 }}

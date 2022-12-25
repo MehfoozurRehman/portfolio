@@ -4,7 +4,12 @@ import { parseDate } from "../utils/perseDate";
 export default function BlogCard({ data }) {
   return (
     <a href={data.link} className="card" style={{ padding: 0 }}>
-      <img src={data.thumbnail} alt={data.title} className="card__banner" />
+      <img
+        loading="lazy"
+        src={data.thumbnail}
+        alt={data.title}
+        className="card__banner"
+      />
       <div style={{ padding: "2em" }}>
         <div className="card__heading">{data.title}</div>
         <div className="card__info">
