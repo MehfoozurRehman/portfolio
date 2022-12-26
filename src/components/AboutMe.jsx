@@ -48,7 +48,6 @@ export default function AboutMe({ happyClients }) {
             </div>
           </div>
           <img
-            loading="lazy"
             src={pic}
             alt="img"
             className="about__section__left__content__img"
