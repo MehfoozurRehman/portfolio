@@ -1,4 +1,3 @@
-import React from "react";
 import ReactMarkdown from "react-markdown";
 import { mdxFetcher } from "../utils/mdxFetcher";
 import { useLocation } from "react-router-dom";

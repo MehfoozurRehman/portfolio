@@ -3,7 +3,11 @@ import { getExperience } from "../utils/getExperience";
 import { pic } from "../assets";
 import useSWR from "swr";
 
-export default function AboutMe({ happyClients }) {
+interface AboutMeProps {
+  happyClients: any;
+}
+
+export default function AboutMe({ happyClients }: AboutMeProps) {
   const { data } = useSWR(
     "https://api.github.com/users/MehfoozurRehman",
     fetcher

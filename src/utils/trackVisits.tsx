@@ -1,5 +1,5 @@
 export function trackVisits() {
-  var visits = localStorage.getItem("visits");
+  let visits: any = localStorage.getItem("visits");
   if (visits === null) {
     visits = 1;
   } else {

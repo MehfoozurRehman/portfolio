@@ -1,9 +1,16 @@
+interface TestimonialsCardProps {
+  imageSrc?: string;
+  title: string;
+  info: string;
+  designation: string;
+}
+
 export default function TestimonialsCard({
   imageSrc,
   title,
   info,
   designation,
-}) {
+}: TestimonialsCardProps) {
   return (
     <div className="card" style={{ maxWidth: "100%", marginRight: 0 }}>
       <img

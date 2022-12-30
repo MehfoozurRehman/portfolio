@@ -1,4 +1,9 @@
-export default function ServicesCard({ title, skills }) {
+interface ServicesCardProps {
+  title: string;
+  skills?: string[];
+}
+
+export default function ServicesCard({ title, skills }: ServicesCardProps) {
   return (
     <div className="card">
       <div className="card__heading">{title}</div>

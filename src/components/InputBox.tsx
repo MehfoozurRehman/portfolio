@@ -1,6 +1,11 @@
 import { useState } from "react";
 
-export function TextareaBox({ placeholder }) {
+interface InputBoxProps {
+  placeholder: string;
+  type: string;
+}
+
+export function InputBox({ placeholder, type, ...props }: InputBoxProps) {
   const [onFucus, setOnFocus] = useState(false);
   const [value, setValue] = useState("");
   return (
@@ -18,8 +23,9 @@ export function TextareaBox({ placeholder }) {
       >
         {placeholder}
       </label>
-      <textarea
-        name={placeholder}
+      <input
+        type={type}
+        id={placeholder}
         value={value}
         onFocus={() => {
           setOnFocus(true);
@@ -30,8 +36,8 @@ export function TextareaBox({ placeholder }) {
         onChange={(e) => {
           setValue(e.target.value);
         }}
-        id={placeholder}
-        className="services__section__content__right__form__input__field services__section__content__right__form__input__field__textarea"
+        className="services__section__content__right__form__input__field"
+        {...props}
       />
     </div>
   );

@@ -1,6 +1,11 @@
 import ClientCard from "./ClientCard";
+import { Key } from "react";
 
-export default function Clients({ data }) {
+interface ClientsProps {
+  data: any;
+}
+
+export default function Clients({ data }: ClientsProps) {
   return (
     <section id="clients__section" className="services__section">
       <div className="services__section__header">
@@ -10,7 +15,7 @@ export default function Clients({ data }) {
         <div className="home__section__heading">Clients</div>
       </div>
       <div className="services__section__content">
-        {data?.map((item) => (
+        {data?.map((item: { _id: Key; name: any; logo: string }) => (
           <ClientCard
             key={item._id}
             name={item.name}

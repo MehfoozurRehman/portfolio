@@ -1,6 +1,17 @@
 import { Box, GitHub, Globe, Layout } from "react-feather";
 
-export default function ProjectCard({ item }) {
+interface ProjectCardProps {
+  item: {
+    id: number;
+    name: string;
+    description: string;
+    language: string;
+    html_url: string;
+    homepage: string;
+  };
+}
+
+export default function ProjectCard({ item }: ProjectCardProps) {
   return (
     <div className="card">
       <div className="card__heading">

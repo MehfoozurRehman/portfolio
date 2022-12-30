@@ -1,7 +1,18 @@
 import { getText } from "../utils/getText";
 import { parseDate } from "../utils/perseDate";
 
-export default function BlogCard({ data }) {
+interface BlogCardProps {
+  data: {
+    link: string;
+    thumbnail: string;
+    title: string;
+    description: string;
+    pubDate: string;
+    author: string;
+  };
+}
+
+export default function BlogCard({ data }: BlogCardProps) {
   return (
     <a href={data.link} className="card" style={{ padding: 0 }}>
       <img

@@ -2,6 +2,16 @@ import { GitHub, Link } from "react-feather";
 
 import project from "../assets/project.webp";
 
+interface WorkCardProps {
+  tech: string[];
+  right?: boolean;
+  banner?: string;
+  info?: string;
+  siteLink?: string;
+  githubLink?: string;
+  name: string;
+}
+
 export default function WorkCard({
   tech,
   right,
@@ -10,7 +20,7 @@ export default function WorkCard({
   siteLink,
   githubLink,
   name,
-}) {
+}: WorkCardProps) {
   return (
     <div
       className="work__section__entry"

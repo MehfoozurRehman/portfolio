@@ -1,6 +1,5 @@
 import { Box, GitHub, Globe, Layout } from "react-feather";
 
-import React from "react";
 import { fetcher } from "../utils/fetcher";
 import { useNavigate } from "react-router-dom";
 import useSWR from "swr";

@@ -127,18 +127,3 @@ export default function Footer() {
     </section>
   );
 }
-
-// function FooterLink({ title, scrollTo }) {
-//   return (
-//     <button
-//       onClick={() => {
-//         document.getElementById(scrollTo + "__section").scrollIntoView();
-//         document.getElementById(scrollTo).checked = true;
-//       }}
-//       title={scrollTo}
-//       className="footer__content__row__link"
-//     >
-//       {title}
-//     </button>
-//   );
-// }

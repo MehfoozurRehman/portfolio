@@ -1,4 +1,4 @@
-export function parseDate(date) {
+export function parseDate(date: string) {
   const months = [
     "January",
     "February",

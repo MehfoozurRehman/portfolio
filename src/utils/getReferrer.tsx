@@ -1,5 +1,5 @@
 export function getReferrer() {
-  var referrer = document.referrer;
+  let referrer = document.referrer;
   if (referrer === "") {
     referrer = "Direct";
   }

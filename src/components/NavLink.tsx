@@ -1,6 +1,16 @@
 import { useNavigate } from "react-router-dom";
 
-export default function NavLink({ scrollTo, label, defaultChecked }) {
+interface NavLinkProps {
+  scrollTo: string;
+  label: string;
+  defaultChecked?: boolean;
+}
+
+export default function NavLink({
+  scrollTo,
+  label,
+  defaultChecked,
+}: NavLinkProps) {
   const navigate = useNavigate();
   return (
     <div className="header__content__nav__links__entry">

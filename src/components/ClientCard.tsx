@@ -1,4 +1,9 @@
-export default function ClientCard({ image, name }) {
+interface ClientCardProps {
+  image: string;
+  name: string;
+}
+
+export default function ClientCard({ image, name }: ClientCardProps) {
   return (
     <div
       className="card"
