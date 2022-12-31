@@ -7,7 +7,6 @@
   --text-light: #b1bddd;
   --hover: rgba(99, 255, 219, 0.3);
 }
-
 *,
 *::after,
 *::before {
@@ -15,7 +14,6 @@
   scroll-behavior: smooth;
   font-family: "Jost", sans-serif;
 }
-
 *::-webkit-scrollbar {
   width: 10px;
 }
@@ -23,7 +21,6 @@
   background-color: var(--primary);
   border-radius: 50px;
 }
-
 a:hover,
 button:hover {
   transition: 300ms ease-in-out;
@@ -437,7 +434,6 @@ body {
 .md__container h1 {
   font-size: 40px;
   text-transform: capitalize;
-  line-height: 50%;
 }
 .md__container p a img {
   max-width: 100px;

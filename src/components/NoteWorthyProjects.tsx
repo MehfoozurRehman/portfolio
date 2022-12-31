@@ -8,7 +8,7 @@ export default function NoteWorthyProjects() {
   const [_isPending, startTransition] = useTransition();
   const navigate = useNavigate();
   const { data, error } = useSWR(
-    "https://api.github.com/users/MehfoozurRehman/repos?per_page=10000&sort=updated",
+    "https://api.github.com/users/MehfoozurRehman/repos?sort=updated",
     fetcher
   );
 
@@ -25,11 +25,10 @@ export default function NoteWorthyProjects() {
           <div>failed to load</div>
         ) : (
           data
-            ?.filter((_item, i) => i <= 8)
-            ?.map((item) => <ProjectCard item={item} key={item.id} />)
+            ?.filter((item, i) => i <= 8 && item.fork === false)
+            ?.map((item: any) => <ProjectCard item={item} key={item.id} />)
         )}
       </div>
-
       <button
         className="home__section__button"
         onClick={() => {

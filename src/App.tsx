@@ -1,23 +1,18 @@
-import "./App.scss";
+import { Suspense, useEffect, useState } from "react";
 
-import { Route, Routes } from "react-router-dom";
-import { useEffect, useState } from "react";
-
-import Archive from "./screens/Archive";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import Home from "./screens/Home";
-import ProjectDetails from "./screens/ProjectDetails";
+import Loading from "./components/Loading";
+import { Outlet } from "react-router-dom";
 import Socials from "./components/Socials";
-
-// import { getReferrer } from "./utils/getReferrer";
-// import { trackVisits } from "./utils/trackVisits";
+import { getReferrer } from "./utils/getReferrer";
+import { trackVisits } from "./utils/trackVisits";
 
 export default function App() {
   const [showFooter, setShowFooter] = useState(false);
   useEffect(() => {
-    // console.log(trackVisits());
-    // console.log(getReferrer());
+    console.log(trackVisits());
+    console.log(getReferrer());
     if (window.location.pathname === "/") {
       setShowFooter(true);
     } else {
@@ -26,17 +21,13 @@ export default function App() {
   }, []);
 
   return (
-    <>
+    <Suspense fallback={<Loading />}>
       <div className="App">
         <Socials />
         <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/archive" element={<Archive />} />
-          <Route path="/details/:id" element={<ProjectDetails />} />
-        </Routes>
+        <Outlet />
       </div>
       {showFooter ? <Footer /> : null}
-    </>
+    </Suspense>
   );
 }
