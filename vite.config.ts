@@ -1,3 +1,4 @@
+import { VitePWA } from "vite-plugin-pwa";
 import { ViteWebfontDownload } from "vite-plugin-webfont-dl";
 import { chunkSplitPlugin } from "vite-plugin-chunk-split";
 import { defineConfig } from "vite";
@@ -9,6 +10,26 @@ import viteImagemin from "vite-plugin-imagemin";
 export default defineConfig({
   plugins: [
     react(),
+    VitePWA({
+      registerType: "autoUpdate",
+      workbox: {
+        runtimeCaching: [
+          {
+            handler: "NetworkOnly",
+            urlPattern: /\/api\/.*\/*.json/,
+            method: "POST",
+            options: {
+              backgroundSync: {
+                name: "myQueueName",
+                options: {
+                  maxRetentionTime: 24 * 60,
+                },
+              },
+            },
+          },
+        ],
+      },
+    }),
     ViteWebfontDownload(),
     chunkSplitPlugin(),
     viteCompression({
