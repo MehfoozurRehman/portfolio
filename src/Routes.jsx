@@ -1,4 +1,3 @@
-import React, { lazy } from "react";
 import {
   Route,
   RouterProvider,
@@ -9,6 +8,7 @@ import {
 import App from "./App";
 import Home from "./screens/Home";
 import ProjectDetails from "./screens/ProjectDetails";
+import { lazy } from "react";
 
 const Archive = lazy(() => import("./screens/Archive"));
 
