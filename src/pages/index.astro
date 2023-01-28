@@ -1,7 +1,39 @@
 ---
+import "@fontsource/jost";
+import "@fontsource/dancing-script";
 import "../styles.scss";
+
+import HeroSection from "../components/HeroSection";
+import ExperienceSection from "../components/ExperienceSection";
+import AboutSection from "../components/AboutSection";
+import WorkSection from "../components/WorkSection";
+import TestimonialSection from "../components/TestimonialSection";
+import ContactSection from "../components/ContactSection";
+import FooterSection from "../components/FooterSection";
+import HeaderSection from "../components/HeaderSection";
 ---
 
-<header class="header">header</header>
-<main class="main">main</main>
-<footer class="footer">footer</footer>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Mehfooz-ur-Rehman" />
+    <meta name="author" content="Mehfooz-ur-Rehman" />
+    <meta name="keywords" content="Mehfooz-ur-Rehman" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="icon" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <title>Mehfooz-ur-Rehman</title>
+  </head>
+  <body>
+    <HeaderSection client:only />
+    <HeroSection />
+    <AboutSection />
+    <ExperienceSection />
+    <WorkSection />
+    <TestimonialSection />
+    <ContactSection />
+    <FooterSection />
+  </body>
+</html>
