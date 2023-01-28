@@ -1,5 +1,5 @@
 {
-  "name": "@example/basics",
+  "name": "portfolio",
   "type": "module",
   "version": "0.0.1",
   "private": true,
@@ -11,6 +11,14 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^2.0.2"
+    "@astrojs/react": "^2.0.1",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "astro": "^2.0.2",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "sass": "^1.57.1"
   }
 }
