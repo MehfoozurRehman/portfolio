@@ -1,3 +1,211 @@
+$color: #f1f1f1;
+$background: #10141a;
+$green: #286f6c;
+$yellow: #eec049;
+$orange: #f26440;
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
 body {
-  background-color: black;
+  margin: 0;
+  padding: 0;
+  font-family: "Jost", sans-serif;
+  background-color: $background;
+  font-size: 14px;
+}
+a:hover,
+button:hover {
+  transition: 300ms ease-in-out;
+}
+.header {
+  width: 100%;
+  background-color: $background;
+  position: fixed;
+  top: 0;
+}
+.header__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: 1em 2em;
+}
+.header__content__logo {
+  font-weight: bold;
+  font-size: 2em;
+  color: $color;
+  text-decoration: none;
+  background-color: transparent;
+  font-family: "Dancing Script", cursive;
+  border: none;
+  cursor: pointer;
+}
+.header__content__logo span:first-child {
+  color: $orange;
+}
+.header__content__logo span:nth-child(2) {
+  margin: 0 0.5em;
+  color: $yellow;
+}
+.header__content__logo span:last-child {
+  color: $green;
+}
+.header__content__nav {
+  display: flex;
+}
+.header__content__nav__link {
+  text-decoration: none;
+  color: $color;
+  font-size: 1em;
+  font-weight: 600;
+  margin: 0 1em;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  text-transform: uppercase;
+}
+.header__content__nav__link:hover {
+  color: $yellow;
+}
+.header__content__nav__link__active {
+  color: $yellow;
+}
+.header__content__nav__link__active::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: calc(50% - 5px);
+  width: 10px;
+  height: 2px;
+  background-color: $yellow;
+}
+.header__content__links {
+  display: flex;
+  align-items: center;
+}
+.header__content__links__link {
+  display: flex;
+  align-items: center;
+  color: $color;
+  font-size: 1em;
+  text-decoration: none;
+  margin-right: 1em;
+}
+.header__content__links__link:hover {
+  color: $yellow;
+}
+.header__content__links__link svg {
+  margin-right: 0.5em;
+}
+.header__content__links__button,
+.header__content__links__button__menu {
+  background-color: lighten($background, 5%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $yellow;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.header__content__links__button:hover,
+.header__content__links__button__menu:hover {
+  background-color: lighten($background, 10%);
+}
+.header__content__links__button__menu {
+  display: none;
+}
+.hero {
+  margin-top: 80px;
+}
+@media (max-width: 1000px) {
+  .header__content__nav {
+    position: absolute;
+    top: 100%;
+    right: 2em;
+    flex-direction: column;
+    background-color: $background;
+    width: 130px;
+    padding: 2em 1em;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+    border-radius: 10px;
+  }
+  .header__content__nav__link {
+    margin: 0.5em 0;
+    font-size: 14px;
+  }
+  .header__content__links__button {
+    background-color: transparent;
+    margin-right: 0.5em;
+  }
+  .header__content__links__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $yellow;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50px;
+    margin-right: 0em;
+    cursor: pointer;
+  }
+  .header__content__links__link:hover,
+  .header__content__links__button:hover {
+    background-color: lighten($background, 5%);
+  }
+  .header__content__links__link svg {
+    margin-right: 0;
+  }
+  .header__content__links__link span {
+    display: none;
+  }
+  .header__content__links__button__menu {
+    display: flex;
+  }
+}
+@media (max-width: 600px) {
+  .header__content__links__button {
+    display: none;
+  }
+  .header__content__logo {
+    font-size: 1.5em;
+  }
+}
+@media (max-width: 450px) {
+  .header__content {
+    padding: 1em 1.2em;
+  }
+  .header__content__logo {
+    font-size: 1.5em;
+  }
+  .header__content__links__link {
+    scale: 0.9;
+  }
+  .header__content__links__button__menu {
+    scale: 0.9;
+  }
+}
+@media (max-width: 350px) {
+  .header__content__links__link {
+    scale: 0.8;
+  }
+  .header__content__links__link:first-child {
+    display: none;
+  }
+  .header__content__logo {
+    font-size: 1.2em;
+  }
+  .header__content__links__button__menu {
+    scale: 0.8;
+  }
 }
