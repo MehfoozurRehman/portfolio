@@ -33,9 +33,13 @@ button:hover {
 }
 .header {
   width: 100%;
-  background-color: $background;
   position: fixed;
   top: 0;
+  z-index: 999;
+}
+.header__active {
+  transition: 300ms ease-in-out;
+  background-color: $background;
 }
 .header__content {
   display: flex;
@@ -60,7 +64,7 @@ button:hover {
   color: $orange;
 }
 .header__content__logo span:nth-child(2) {
-  margin: 0 0.5em;
+  margin: 0 0.3em;
   color: $yellow;
 }
 .header__content__logo span:last-child {
@@ -135,84 +139,191 @@ button:hover {
   display: none;
 }
 .hero {
+  padding-top: 30px;
+  background-color: darken($background, 1.5%);
+}
+.hero__content {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   max-width: 1366px;
   margin: 0 auto;
-  padding: 3em 2em;
-  margin-top: 110px;
+  padding: 8em 2em;
 }
-.hero__left {
+.hero__content__left {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
-.hero__left__slogan {
+.hero__content__left__slogan {
   background-color: lighten($background, 5%);
   color: $color;
   font-weight: bold;
   margin-bottom: 2em;
+  font-size: 0.9rem;
   margin-left: -0.5em;
   padding: 0.8em 2em;
   width: fit-content;
   border-radius: 5px;
 }
-.hero__left__heading {
-  font-size: 2.5rem;
+.hero__content__left__heading {
+  font-size: 2.4rem;
   color: $color;
-  font-weight: 600;
+  font-weight: bold;
   margin-bottom: 0.5em;
-  max-width: 500px;
+  max-width: 600px;
   width: 100%;
   text-transform: uppercase;
-  line-height: 110%;
 }
-.hero__left__heading span:first-child {
+.hero__content__left__heading span:first-child {
   color: $orange;
 }
-.hero__left__heading span:last-child {
+.hero__content__left__heading span:last-child {
   color: $yellow;
 }
-.hero__left__info {
+.hero__content__left__info {
   color: $color;
   font-size: 1.1rem;
   margin-bottom: 2em;
   max-width: 500px;
+  line-height: 200%;
   width: 100%;
 }
-.hero__left__info a {
+.hero__content__left__info a {
   color: $green;
 }
-.hero__left__info a:hover {
+.hero__content__left__info a:hover {
   color: $yellow;
 }
-.hero__left__button {
+.hero__content__left__button {
   background-color: $yellow;
   color: $background;
-  padding: 0.8em 2em;
+  padding: 0.7em 2em;
   border: none;
   border-radius: 5px;
+  font-size: 1rem;
   font-weight: bold;
   width: 150px;
   cursor: pointer;
   transition: 300ms ease-in-out;
 }
-.hero__left__button:hover {
+.hero__content__left__button:hover {
   background-color: $green;
   color: $color;
 }
-.hero__right {
+.hero__content__right {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.hero__right__img {
+.hero__content__right__img {
   width: 100%;
   max-width: 500px;
   height: 400px;
 }
+.about {
+  padding: 10em 2em;
+  width: 100%;
+  max-width: 1366px;
+  margin: 0 auto;
+  display: flex;
+  gap: 5em;
+}
+.about__left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.about__left__entry {
+  color: $color;
+  font-size: 1.1rem;
+  display: flex;
+  width: 100%;
+  background-color: lighten($background, 5%);
+  padding: 1.5em 2em;
+  border-radius: 10px;
+  border: 1px solid darken($background, 1%);
+}
+.about__left__entry__icon {
+  margin-right: 1.5em;
+  color: $color;
+  aspect-ratio: 1/1;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.about__left__entry__icon svg {
+  width: 25px;
+  height: 25px;
+}
+.about__left__entry:nth-child(1) .about__left__entry__icon {
+  background-color: $green;
+}
+.about__left__entry:nth-child(2) .about__left__entry__icon {
+  background-color: $yellow;
+}
+.about__left__entry:nth-child(3) .about__left__entry__icon {
+  background-color: $orange;
+}
+.about__left__entry__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-transform: capitalize;
+}
+.about__left__entry__content__heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: $color;
+}
+.about__right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.about__right__heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: $color;
+  text-transform: uppercase;
+  margin-bottom: 0.5em;
+}
+.about__right__info {
+  color: $color;
+  font-size: 1rem;
+  margin-bottom: 1em;
+  max-width: 500px;
+  width: 100%;
+  line-height: 200%;
+}
+.about__right__stats {
+  display: flex;
+  gap: 2em;
+  margin-bottom: 1em;
+  max-width: 300px;
+  width: 100%;
+}
+.about__right__stats__entry {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.about__right__stats__entry__heading {
+  font-size: 1rem;
+  color: $color;
+}
+.about__right__stats__entry__info {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: $color;
+}
+
 @media (max-width: 1366px) {
   .header__content {
     max-width: 1200px;
@@ -225,23 +336,23 @@ button:hover {
   .hero {
     flex-direction: column;
   }
-  .hero__left {
+  .hero__content__left {
     margin-bottom: 2em;
     align-items: center;
     text-align: center;
     width: 100%;
   }
-  .hero__left__slogan {
+  .hero__content__left__slogan {
     margin-left: 0;
   }
-  .hero__left__heading {
+  .hero__content__left__heading {
     font-size: 2rem;
     max-width: 700px;
   }
-  .hero__left__info {
+  .hero__content__left__info {
     max-width: 700px;
   }
-  .hero__right {
+  .hero__content__right {
     display: none;
   }
 }
@@ -290,11 +401,11 @@ button:hover {
   .header__content__links__button__menu {
     display: flex;
   }
-  .hero__left__heading {
+  .hero__content__left__heading {
     font-size: 1.5rem;
     margin-bottom: 0.7em;
   }
-  .hero__left__info {
+  .hero__content__left__info {
     font-size: 1rem;
   }
 }
