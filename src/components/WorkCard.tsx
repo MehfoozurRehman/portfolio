@@ -1,5 +1,6 @@
 import { GitHub, Link } from "react-feather";
 
+import { memo } from "react";
 import project from "../assets/project.webp";
 
 interface WorkCardProps {
@@ -12,16 +13,16 @@ interface WorkCardProps {
   name: string;
 }
 
-export default function WorkCard({
-  tech,
-  right,
-  banner,
-  info,
-  siteLink,
-  githubLink,
-  name,
-}: WorkCardProps) {
-  return (
+const WorkCard = memo(
+  ({
+    tech,
+    right,
+    banner,
+    info,
+    siteLink,
+    githubLink,
+    name,
+  }: WorkCardProps) => (
     <div
       className="work__section__entry"
       style={right ? { justifyContent: "flex-end" } : null}
@@ -74,5 +75,7 @@ export default function WorkCard({
         </div>
       </div>
     </div>
-  );
-}
+  )
+);
+
+export default WorkCard;
