@@ -1,11 +1,9 @@
 import { Box, GitHub, Globe, Layout } from "react-feather";
 
 import { fetcher } from "../utils/fetcher";
-import { useNavigate } from "react-router-dom";
 import useSWR from "swr";
 
 export default function Archive() {
-  const navigate = useNavigate();
   const { data, error } = useSWR(
     "https://api.github.com/users/MehfoozurRehman/repos?per_page=10000",
     fetcher,
@@ -32,10 +30,9 @@ export default function Archive() {
         ) : (
           data
             ?.filter((item) => item.fork === false)
-            .map((item) => (
+            ?.map((item) => (
               <div
                 onClick={() => {
-                  navigate("/details/" + item.name);
                   window.scrollTo({
                     top: 0,
                     behavior: "smooth",

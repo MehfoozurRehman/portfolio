@@ -10,7 +10,6 @@ import Header from "./components/Header";
 import Home from "./screens/Home";
 import Loading from "./components/Loading";
 import { Outlet } from "react-router-dom";
-import ProjectDetails from "./screens/ProjectDetails";
 import Socials from "./components/Socials";
 import { createRoot } from "react-dom/client";
 
@@ -51,10 +50,6 @@ function Routes() {
             {
               path: "/archive",
               element: <Archive />,
-            },
-            {
-              path: "/details/:id",
-              element: <ProjectDetails />,
             },
           ],
         },
