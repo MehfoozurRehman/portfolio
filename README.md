@@ -1,40 +1,53 @@
-# Portfolio
+# portfolio
+A Personal portfolio project to display what can i do, what i did for my clients and to introduce myself to potential employers
 
-``
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/main/LICENSEs)
 
-## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
+## Run Locally
 
-```
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+Clone the project
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+bash
+  git clone https://github.com/MehfoozurRehman/portfolio
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-Any static assets, like images, can be placed in the `public/` directory.
+Go to the project directory
 
-## 🧞 Commands
+bash
+  cd portfolio
 
-All commands are run from the root of the project, from a terminal:
 
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `npm install`          | Installs dependencies                            |
-| `npm run dev`          | Starts local dev server at `localhost:3000`      |
-| `npm run build`        | Build your production site to `./dist/`          |
-| `npm run preview`      | Preview your build locally, before deploying     |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro --help` | Get help using the Astro CLI                     |
+Install dependencies
+
+bash
+  yarn install
+
+
+Start the server
+
+bash
+  yarn start
+
+
+
+## Roadmap
+
+- Pricing Page
+
+- Services Details
+
+
+## Screenshots
+
+![image](https://user-images.githubusercontent.com/100939524/187102534-fe8c289c-c46d-49a9-acc9-d914ea140833.png)
+
+
+## Tech Stack
+
+*Client:* React, Sass
+
+
+## Support
+
+For support, email mehfoozijaz786@gmail.com or join our Slack channel.
