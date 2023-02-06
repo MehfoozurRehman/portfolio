@@ -22,7 +22,7 @@ export default function TestimonialsCard({
               title +
               "&background=0a192f&color=64ffda&size=65"
         }
-        alt=""
+        alt={title}
         className="card__image__reverse"
       />
       <div className="card__heading__reverse" style={{ margin: "0 auto" }}>

@@ -1,5 +1,6 @@
 import { fetcher } from "../utils/fetcher";
 import { getExperience } from "../utils/getExperience";
+import { memo } from "react";
 import { pic } from "../assets";
 import useSWR from "swr";
 
@@ -7,7 +8,7 @@ interface AboutMeProps {
   happyClients: any;
 }
 
-export default function AboutMe({ happyClients }: AboutMeProps) {
+const AboutMe = memo(({ happyClients }: AboutMeProps) => {
   const { data } = useSWR(
     "https://api.github.com/users/MehfoozurRehman",
     fetcher
@@ -53,7 +54,7 @@ export default function AboutMe({ happyClients }: AboutMeProps) {
           </div>
           <img
             src={pic}
-            alt="img"
+            alt={data?.login}
             className="about__section__left__content__img"
           />
         </div>
@@ -121,4 +122,6 @@ export default function AboutMe({ happyClients }: AboutMeProps) {
       </div>
     </section>
   );
-}
+});
+
+export default AboutMe;

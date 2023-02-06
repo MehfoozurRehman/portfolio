@@ -31,7 +31,7 @@ const WorkCard = memo(
         <img
           loading="lazy"
           src={banner ? banner : project}
-          alt="project_img"
+          alt={name}
           className="work__section__entry__left__img"
         />
       </a>
