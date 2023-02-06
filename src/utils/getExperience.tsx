@@ -1,2 +1,10 @@
-export const getExperience = (dateString: any) =>
-  Math.floor(new Date() - new Date(dateString) / 1000 / 60 / 60 / 24 / 365);
+export function getExperience(dateString: string) {
+  const today = new Date();
+  const birthDate = new Date(dateString);
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const m = today.getMonth() - birthDate.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+  return age;
+}
