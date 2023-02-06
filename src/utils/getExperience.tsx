@@ -1,4 +1,2 @@
-export function getExperience(dateString: string) {
-  let timeDifference = new Date() - new Date(dateString);
-  return Math.floor(timeDifference / 1000 / 60 / 60 / 24 / 365);
-}
+export const getExperience = (dateString: any) =>
+  Math.floor(new Date() - new Date(dateString) / 1000 / 60 / 60 / 24 / 365);
