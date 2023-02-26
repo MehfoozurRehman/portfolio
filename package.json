@@ -17,7 +17,6 @@
     "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "node build/server.mjs",
     "deploy": "yarn build && firebase deploy"
   },
   "devDependencies": {
