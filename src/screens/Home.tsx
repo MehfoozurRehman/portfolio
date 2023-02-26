@@ -10,12 +10,13 @@ import Work from "../components/Work";
 import { fetcher } from "../utils/fetcher";
 import useSWR from "swr";
 
-// import Blogs from "../components/Blogs";
-
 export default function Home() {
   const { data } = useSWR(
     "https://dsmeglobal-api-production.up.railway.app/api/v1/get_client",
-    fetcher
+    fetcher,
+    {
+      suspense: true,
+    }
   );
   return (
     <>
@@ -27,7 +28,6 @@ export default function Home() {
       <GithubCalender />
       <Clients data={data} />
       <Testimonials />
-      {/* <Blogs /> */}
       <Contact />
     </>
   );

@@ -13,6 +13,7 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
   font-family: "Cabin", sans-serif;
+  line-height: 150%;
 }
 *::-webkit-scrollbar {
   width: 10px;
@@ -34,6 +35,15 @@ body {
   align-items: center;
   background-color: var(--secondary);
 }
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 #root {
   width: 100%;
 }
@@ -45,6 +55,9 @@ body {
   max-width: 1600px;
   position: relative;
   margin: 0 auto;
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 .social__links {
   display: flex;
