@@ -78,8 +78,7 @@ const AboutMe = memo(({ happyClients }: AboutMeProps) => {
           }}
         >
           I'm a Web Developer based in Pakistan. I enjoy turning complex
-          problems into simple, beautiful and intuitive solutions. Working at
-          this time for "Haramosh Studio"
+          problems into simple, beautiful and intuitive solutions.
         </div>
         <div
           className="home__section__info"

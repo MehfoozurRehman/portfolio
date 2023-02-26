@@ -1,4 +1,5 @@
 import "swiper/scss";
+import "swiper/scss/autoplay";
 import "./styles.scss";
 
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
