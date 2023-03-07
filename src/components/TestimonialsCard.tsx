@@ -12,7 +12,10 @@ export default function TestimonialsCard({
   designation,
 }: TestimonialsCardProps) {
   return (
-    <div className="card" style={{ maxWidth: "100%", marginRight: 0 }}>
+    <div
+      className="card"
+      style={{ maxWidth: "100%", marginRight: 0, marginBottom: 0 }}
+    >
       <img
         loading="lazy"
         src={

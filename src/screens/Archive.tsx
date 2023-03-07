@@ -5,7 +5,7 @@ import useSWR from "swr";
 
 export default function Archive() {
   const { data, error } = useSWR(
-    "https://api.github.com/users/MehfoozurRehman/repos?per_page=10000",
+    "https://api.github.com/users/MehfoozurRehman/repos?per_page=10000&sort=updated",
     fetcher,
     {
       suspense: true,
@@ -31,15 +31,10 @@ export default function Archive() {
           data
             ?.filter((item) => item.fork === false)
             ?.map((item) => (
-              <div
-                onClick={() => {
-                  window.scrollTo({
-                    top: 0,
-                    behavior: "smooth",
-                  });
-                }}
-                className="services__section__content__list"
+              <a
                 key={item.id}
+                href={item.homepage}
+                className="services__section__content__list"
               >
                 <div className="card__heading">
                   {item.homepage && item.homepage !== null ? (
@@ -78,7 +73,7 @@ export default function Archive() {
                     </a>
                   ) : null}
                 </div>
-              </div>
+              </a>
             ))
         )}
       </div>

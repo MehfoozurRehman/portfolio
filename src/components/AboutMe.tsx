@@ -52,7 +52,7 @@ const AboutMe = memo(({ happyClients }: AboutMeProps) => {
               ></path>
             </svg>
             <div className="about__section__left__content__blob__content">
-              {happyClients?.length} +<span>Happy Clients</span>
+              {happyClients} +<span>Happy Clients</span>
             </div>
           </div>
           <img
