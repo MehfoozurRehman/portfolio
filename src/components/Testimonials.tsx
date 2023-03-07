@@ -52,14 +52,14 @@ const Testimonials = memo(() => {
       </div>
       <div className="services__section__content services__section__content__test">
         <Swiper
-          slidesPerView={slidesPerView}
+          loop={true}
           spaceBetween={30}
           modules={[Autoplay]}
+          slidesPerView={slidesPerView}
           autoplay={{
             delay: 3000,
             disableOnInteraction: false,
           }}
-          loop={true}
         >
           {data?.map((item) => (
             <SwiperSlide key={JSON.stringify(item)}>

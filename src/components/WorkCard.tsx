@@ -27,11 +27,15 @@ const WorkCard = memo(
       className="work__section__entry"
       style={right ? { justifyContent: "flex-end" } : null}
     >
-      <a href={siteLink} className="work__section__entry__left" title="website">
+      <a
+        href={siteLink}
+        className="work__section__entry__left"
+        title={name.replace(".com", "")}
+      >
         <img
           loading="lazy"
           src={banner ? banner : project}
-          alt={name}
+          alt={name.replace(".com", "")}
           className="work__section__entry__left__img"
         />
       </a>
@@ -42,7 +46,9 @@ const WorkCard = memo(
         <div className="work__section__entry__right__sub__heading">
           DSME Globals
         </div>
-        <div className="work__section__entry__right__heading">{name}</div>
+        <div className="work__section__entry__right__heading">
+          {name.replace(".com", "")}
+        </div>
         <div
           className="work__section__entry__right__info"
           style={right ? { textAlign: "left" } : null}

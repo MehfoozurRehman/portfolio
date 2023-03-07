@@ -14,7 +14,7 @@
     "swr": "^2.0.4"
   },
   "scripts": {
-    "dev": "vite --host",
+    "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "deploy": "yarn build && firebase deploy"
