@@ -1,9 +1,6 @@
 # portfolio
 A Personal portfolio project to display what can i do, what i did for my clients and to introduce myself to potential employers
 
-[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/main/LICENSEs)
-
-
 ## Run Locally
 
 Clone the project
@@ -28,15 +25,6 @@ Start the server
 
 bash
   yarn start
-
-
-
-## Roadmap
-
-- Pricing Page
-
-- Services Details
-
 
 ## Screenshots
 
