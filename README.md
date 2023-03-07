@@ -38,4 +38,4 @@ bash
 
 ## Support
 
-For support, email mehfoozijaz786@gmail.com or join our Slack channel.
+For support, email mehfoozijaz786@gmail.com.
