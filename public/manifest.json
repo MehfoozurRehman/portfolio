@@ -1,0 +1,32 @@
+{
+  "short_name": "Mehfooz-ur-Rehman",
+  "name": "Mehfooz-ur-Rehman",
+  "description": "Mehfooz-ur-Rehman's Portfolio",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon.svg",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "favicon.svg",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0a192f",
+  "background_color": "#0a192f",
+  "dir": "auto",
+  "scope": ".",
+  "lang": "en",
+  "orientation": "natural"
+}
