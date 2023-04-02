@@ -1,5 +1,5 @@
 import { Menu, X } from "react-feather";
-import { useLayoutEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 
 import NavLink from "./NavLink";
 import OutsideClickHandler from "react-outside-click-handler";
@@ -35,19 +35,12 @@ const navLinks = [
 
 export default function Header() {
   const navigate = useNavigate();
-  const [isNavOpen, setIsNavOpen] = useState(true);
+  const [isNavOpen, setIsNavOpen] = useState(window.innerWidth >= 950);
 
-  function changeNavState() {
-    if (window.innerWidth < 950) {
-      setIsNavOpen(false);
-    } else {
-      setIsNavOpen(true);
-    }
-  }
-
-  useLayoutEffect(() => {
-    changeNavState();
+  useEffect(() => {
+    const changeNavState = () => setIsNavOpen(window.innerWidth >= 950);
     window.addEventListener("resize", changeNavState);
+    return () => window.removeEventListener("resize", changeNavState);
   }, []);
 
   return (
