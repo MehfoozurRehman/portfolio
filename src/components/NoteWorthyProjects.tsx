@@ -1,5 +1,5 @@
 import ProjectCard from "./ProjectCard";
-import { fetcher } from "../utils/fetcher";
+import fetcher from "../utils/fetcher";
 import { useNavigate } from "react-router-dom";
 import useSWR from "swr";
 import { useTransition } from "react";
