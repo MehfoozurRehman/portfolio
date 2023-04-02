@@ -14,15 +14,15 @@ const Archive = lazy(() => import("./screens/Archive"));
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    Component: App,
     children: [
       {
         path: "/",
-        element: <Home />,
+        Component: Home,
       },
       {
         path: "/archive",
-        element: <Archive />,
+        Component: Archive,
       },
     ],
   },
