@@ -5,35 +5,36 @@ import NavLink from "./NavLink";
 import OutsideClickHandler from "react-outside-click-handler";
 import { useNavigate } from "react-router-dom";
 
+const navLinks = [
+  {
+    label: "Home",
+    scrollTo: "home",
+    defaultChecked: true,
+  },
+  {
+    label: "About Me",
+    scrollTo: "about",
+  },
+  {
+    label: "Services",
+    scrollTo: "services",
+  },
+  {
+    label: "Work",
+    scrollTo: "work",
+  },
+  {
+    label: "Clients",
+    scrollTo: "clients",
+  },
+  {
+    label: "Testimonials",
+    scrollTo: "testimonials",
+  },
+];
+
 export default function Header() {
   const navigate = useNavigate();
-  const navLinks = [
-    {
-      label: "Home",
-      scrollTo: "home",
-      defaultChecked: true,
-    },
-    {
-      label: "About Me",
-      scrollTo: "about",
-    },
-    {
-      label: "Services",
-      scrollTo: "services",
-    },
-    {
-      label: "Work",
-      scrollTo: "work",
-    },
-    {
-      label: "Clients",
-      scrollTo: "clients",
-    },
-    {
-      label: "Testimonials",
-      scrollTo: "testimonials",
-    },
-  ];
   const [isNavOpen, setIsNavOpen] = useState(true);
 
   function changeNavState() {
