@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export default function Sidebar() {
   const links = [
@@ -12,11 +12,26 @@ export default function Sidebar() {
     { name: "Contact", path: "/dashboard/contact" },
   ];
   return (
-    <div>
-      Sidebar
-      {links.map((link) => (
-        <NavLink to={link.path}>{link.name}</NavLink>
-      ))}
+    <div className="container__dashbaord__sidebar">
+      <Link to="/dashboard" className="container__dashbaord__sidebar__logo">
+        <img
+          src="/favicon.svg"
+          alt="logo"
+          className="container__dashbaord__sidebar__logo__img"
+        />
+        Mehfooz-ur-Rehman
+      </Link>
+      <div className="container__dashbaord__sidebar__content">
+        {links.map((link,index) => (
+          <NavLink
+            className="container__dashbaord__sidebar__content__link"
+            to={link.path}
+            end={index === 0}
+          >
+            {link.name}
+          </NavLink>
+        ))}
+      </div>
     </div>
   );
 }
