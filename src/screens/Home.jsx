@@ -1,7 +1,7 @@
 export default function Home() {
   return (
-    <div className="container__main">
-      <section className="container__main__home__section" id="home">
+    <>
+      <section className="container__home__section" id="home">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, ut
         corporis. Nobis mollitia quia placeat atque laborum rem harum officia
         cum laboriosam facilis incidunt soluta maiores est accusantium
@@ -554,7 +554,7 @@ export default function Home() {
         perferendis, voluptatem perspiciatis ad, accusantium tempora laboriosam
         optio sint sequi nemo?
       </section>
-      <section className="container__main__about__section" id="about">
+      <section className="container__about__section" id="about">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, ut
         corporis. Nobis mollitia quia placeat atque laborum rem harum officia
         cum laboriosam facilis incidunt soluta maiores est accusantium
@@ -1107,6 +1107,6 @@ export default function Home() {
         perferendis, voluptatem perspiciatis ad, accusantium tempora laboriosam
         optio sint sequi nemo?
       </section>
-    </div>
+    </>
   );
 }
