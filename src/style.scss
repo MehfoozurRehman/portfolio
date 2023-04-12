@@ -1,9 +1,22 @@
+@import "https://unpkg.com/open-props/easings.min.css";
+
 $primary: #edb33c;
 $secondary: #f26440;
 $tertiary: #286f6c;
-$color: #0d2f3f;
-$background: rgba(255, 255, 255, 0.9);
-$background-light: #ffffff;
+
+html{
+  --background:#F8F7F1;
+  --background-light:#ffffff;
+  --color:#0d2f3f;
+}
+
+html[data-theme="dark"]{
+  --background:#0d2f3f;
+  --background-light:#1f2d3d;
+  --color:#ffffff;
+}
+
+
 *,
 *::before,
 *::after {
@@ -12,15 +25,34 @@ $background-light: #ffffff;
 body {
   margin: 0;
   padding: 0;
+  color: var(--color);
   font-family: "Kanit", sans-serif;
-  background-color: $primary;
-  color: $color;
 }
 .container{
-  background-color: $background;
+  background-color: var(--background);
+}
+.container__header{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9999;
+  padding: 1em 2em;
+}
+.container__header__logo{
+  width: 70px;
+  height: 70px;
+  color: var(--color);
+}
+.container__header__actions{
+  display: flex;
+  align-items: center;
 }
 .container__dashbaord{
-  background-color: $background;
+  background-color: var(--background);
   display: flex;
   padding: 1em;
   height: 100vh;
@@ -32,7 +64,7 @@ body {
   flex: 1;
   max-width: 280px;
   height: 100%;
-  background-color: $background-light;
+  background-color: var(--background-light);
   padding: 1em;
   border-radius:10px;
   margin-right: 1em;
@@ -42,7 +74,7 @@ body {
   flex-direction: column;
   align-items: center;
   text-decoration: none;
-  color: $color;
+  color: var(--color);
   margin-bottom: 1em;
 }
 .container__dashbaord__sidebar__logo__img{
@@ -56,19 +88,19 @@ body {
 .container__dashbaord__sidebar__content .active{
   transition: 300ms ease-in-out;
   background-color: $secondary;
-  color: $background-light;
+  color: var(--background-light);
 }
 .container__dashbaord__sidebar__content .active:hover{
   transition: 300ms ease-in-out;
   background-color: $secondary;
-  color: $background-light;
+  color: var(--background-light);
 }
 .container__dashbaord__sidebar__content__link{
   padding: 0em 1.5em;
   font-size: 14px;
   font-weight: 300;
   text-decoration: none;
-  color: $color;
+  color: var(--color);
   height: 38px;
   display: flex;
   align-items: center;
@@ -77,11 +109,101 @@ body {
 .container__dashbaord__sidebar__content__link:hover{
   transition: 300ms ease-in-out;
   background-color: lighten($secondary,30%);
-  color: $color;
+  color: var(--color);
 }
 .container__dashbaord__main{
   display: flex;
   flex-direction: column;
   width: calc(100% - 280px);
   height: 100%; 
+}
+.sun-and-moon > :is(.moon, .sun, .sun-beams) {
+  transform-origin: center center;
+}
+.sun-and-moon > :is(.moon, .sun) {
+  fill: var(--icon-fill);
+}
+.theme-toggle:is(:hover, :focus-visible) > .sun-and-moon > :is(.moon, .sun) {
+  fill: var(--icon-fill-hover);
+}
+.sun-and-moon > .sun-beams {
+  stroke: var(--icon-fill);
+  stroke-width: 2px;
+}
+.theme-toggle:is(:hover, :focus-visible) .sun-and-moon > .sun-beams {
+  stroke: var(--icon-fill-hover);
+}
+[data-theme="dark"] .sun-and-moon > .sun {
+  transform: scale(1.75);
+}
+[data-theme="dark"] .sun-and-moon > .sun-beams {
+  opacity: 0;
+}
+[data-theme="dark"] .sun-and-moon > .moon > circle {
+  transform: translate(-7px);
+}
+@supports (cx: 1) {
+  [data-theme="dark"] .sun-and-moon > .moon > circle {
+    transform: translate(0);
+    cx: 17;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .sun-and-moon > .sun {
+    transition: transform 0.5s var(--ease-elastic-3);
+  }
+  .sun-and-moon > .sun-beams {
+    transition: transform 0.5s var(--ease-elastic-4), opacity 0.5s var(--ease-3);
+  }
+  .sun-and-moon .moon > circle {
+    transition: transform 0.25s var(--ease-out-5);
+  }
+  @supports (cx: 1) {
+    .sun-and-moon .moon > circle {
+      transition: cx 0.25s var(--ease-out-5);
+    }
+  }
+  [data-theme="dark"] .sun-and-moon > .sun {
+    transform: scale(1.75);
+    transition-timing-function: var(--ease-3);
+    transition-duration: 0.25s;
+  }
+  [data-theme="dark"] .sun-and-moon > .sun-beams {
+    transform: rotate(-25deg);
+    transition-duration: 0.15s;
+  }
+  [data-theme="dark"] .sun-and-moon > .moon > circle {
+    transition-delay: 0.25s;
+    transition-duration: 0.5s;
+  }
+}
+.theme-toggle {
+  --size: 2rem;
+  --icon-fill: hsl(210 10% 30%);
+  --icon-fill-hover: hsl(210 10% 15%);
+  background: none;
+  border: none;
+  padding: 0;
+  inline-size: var(--size);
+  block-size: var(--size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  outline-offset: 5px;
+}
+.theme-toggle > svg {
+  inline-size: 100%;
+  block-size: 100%;
+  stroke-linecap: round;
+}
+[data-theme="dark"] .theme-toggle {
+  --icon-fill: hsl(210 10% 70%);
+  --icon-fill-hover: hsl(210 15% 90%);
+}
+@media (hover: none) {
+  .theme-toggle {
+    --size: 48px;
+  }
 }
