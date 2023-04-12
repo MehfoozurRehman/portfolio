@@ -1,5 +1,5 @@
 import { Menu, X } from "react-feather";
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import NavLink from "./NavLink";
 import OutsideClickHandler from "react-outside-click-handler";
@@ -147,13 +147,6 @@ export default function Header() {
                     Contact
                   </div>
                 </div>
-                <a
-                  href="https://www.buymeacoffee.com/mehfoozurrehman"
-                  className="header__content__nav__link"
-                  target="_blank"
-                >
-                  Buy me a coffee
-                </a>
               </div>
             </OutsideClickHandler>
           </div>
