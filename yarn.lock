@@ -1255,6 +1255,13 @@
   resolved "https://registry.yarnpkg.com/@trysound/sax/-/sax-0.2.0.tgz#cccaab758af56761eb7bf37af6f03f326dd798ad"
   integrity sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==
 
+"@types/cheerio@^0.22.22":
+  version "0.22.31"
+  resolved "https://registry.yarnpkg.com/@types/cheerio/-/cheerio-0.22.31.tgz#b8538100653d6bb1b08a1e46dec75b4f2a5d5eb6"
+  integrity sha512-Kt7Cdjjdi2XWSfrZ53v4Of0wG3ZcmaegFXjMmz9tfNrZSkzzo36G0AL1YqSdcIA78Etjt6E609pt5h1xnQkPUw==
+  dependencies:
+    "@types/node" "*"
+
 "@types/chroma-js@^2.4.0":
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/@types/chroma-js/-/chroma-js-2.4.0.tgz#476a16ae848c77478079d6749236fdb98837b92c"
@@ -1366,10 +1373,10 @@
     "@types/scheduler" "*"
     csstype "^3.0.2"
 
-"@types/react@^18.0.34":
-  version "18.0.34"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.0.34.tgz#e553444a578f023e6e1ac499514688fb80b0a984"
-  integrity sha512-NO1UO8941541CJl1BeOXi8a9dNKFK09Gnru5ZJqkm4Q3/WoQJtHvmwt0VX0SB9YCEwe7TfSSxDuaNmx6H2BAIQ==
+"@types/react@^18.0.35":
+  version "18.0.35"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.0.35.tgz#192061cb1044fe01f2d3a94272cd35dd50502741"
+  integrity sha512-6Laome31HpetaIUGFWl1VQ3mdSImwxtFZ39rh059a1MNnKGqBpC88J6NJ8n/Is3Qx7CefDGLgf/KhN/sYCf7ag==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -2198,6 +2205,15 @@ entities@^2.0.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/entities/-/entities-2.2.0.tgz#098dc90ebb83d8dffa089d55256b351d34c4da55"
   integrity sha512-p92if5Nz619I0w+akJrLZH0MX0Pb5DX39XOwQTtXSdQQOaYH03S1uIQp4mhOZtAXrxq4ViO67YTiLBo2638o9A==
+
+enzyme-to-json@^3.4.4:
+  version "3.6.2"
+  resolved "https://registry.yarnpkg.com/enzyme-to-json/-/enzyme-to-json-3.6.2.tgz#94f85c413bcae8ab67be53b0a94b69a560e27823"
+  integrity sha512-Ynm6Z6R6iwQ0g2g1YToz6DWhxVnt8Dy1ijR2zynRKxTyBGA8rCDXU3rs2Qc4OKvUvc2Qoe1bcFK6bnPs20TrTg==
+  dependencies:
+    "@types/cheerio" "^0.22.22"
+    lodash "^4.17.21"
+    react-is "^16.12.0"
 
 error-ex@^1.2.0:
   version "1.3.2"
@@ -3481,7 +3497,7 @@ lodash.sortby@^4.7.0:
   resolved "https://registry.yarnpkg.com/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
   integrity sha512-HDWXG8isMntAyRF5vZ7xKuEvOhT4AhlRt/3czTSjvGUxjYCBVRQY48ViDHyfYz9VIoBkW4TMGQNapx+l3RUwdA==
 
-lodash@^4.17.20:
+lodash@^4.17.20, lodash@^4.17.21:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
@@ -4138,7 +4154,7 @@ react-github-calendar@^4.0.0:
   dependencies:
     react-activity-calendar "^2.0.0"
 
-react-is@^16.13.1:
+react-is@^16.12.0, react-is@^16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
@@ -4173,6 +4189,13 @@ react-router@6.10.0:
   integrity sha512-Nrg0BWpQqrC3ZFFkyewrflCud9dio9ME3ojHCF/WLsprJVzkq3q3UeEhMCAW1dobjeGbWgjNn/PVF6m46ANxXQ==
   dependencies:
     "@remix-run/router" "1.5.0"
+
+react-use-is-online@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/react-use-is-online/-/react-use-is-online-1.3.0.tgz#9df431c3b121c42a26bce7e8da103a065e979ea9"
+  integrity sha512-DdV+jsqd6jYMpq0W8JaYEJNw5b0TLt/8h/sJv5AmpoDyl+LeHnKopS24MMvHh/sRTUPqOCct87LssbvOO6j/cw==
+  dependencies:
+    enzyme-to-json "^3.4.4"
 
 react@^18.2.0:
   version "18.2.0"
