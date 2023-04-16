@@ -1,17 +1,22 @@
 import "./styles.scss";
 
-import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
+import {
+  Outlet,
+  RouterProvider,
+  createBrowserRouter,
+} from "react-router-dom";
 
 import Archive from "./screens/Archive";
 import Home from "./screens/Home";
+import NotFound from "./screens/NotFound";
 import React from "react";
 import { createRoot } from "react-dom/client";
-import NotFound from "./screens/NotFound";
+import Header from "./components/Header";
 
 function Root() {
   return (
     <div className="container">
-      <header></header>
+      <Header />
       <Outlet />
       <footer></footer>
     </div>
@@ -36,3 +41,5 @@ const router = createBrowserRouter([
 createRoot(document.getElementById("root")).render(
   <RouterProvider router={router} />
 );
+
+

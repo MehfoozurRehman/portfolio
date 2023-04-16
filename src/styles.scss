@@ -1,7 +1,14 @@
-html {
+:root{
   --primary: #286f6c;
   --secondary: #edb33c;
   --tertiary: #f26440;
+}
+// html {
+//   --color: #fffaee;
+//   --background: linear-gradient(90deg, #302e2b, #242424, #302f2d);
+//   --background-light: #242424;
+// }
+html {
   --color: #123343;
   --background: linear-gradient(90deg, #fef6e5, #ffffff, #fffdf9);
   --background-light: #ffffff;
