@@ -1,20 +1,254 @@
 html {
-  --primary: #286F6C;
-  --secondary: #EDB33C;
-  --tertiary: #F26440;
+  --primary: #286f6c;
+  --secondary: #edb33c;
+  --tertiary: #f26440;
   --color: #123343;
-  --background: #F8F7F1;
-  --background-light: #FFFFFF;
+  --background: linear-gradient(90deg, #fef6e5, #ffffff, #fffdf9);
+  --background-light: #ffffff;
 }
 *,
 *::after,
 *::before {
   box-sizing: border-box;
+  word-break: break-all;
 }
 body {
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
-  background-color: var(--background);
-  font-size: 16px;
+  background: var(--background);
+  color: var(--color);
+}
+body::-webkit-scrollbar {
+  width: 10px;
+}
+body::-webkit-scrollbar-track {
+  background: var(--background-light);
+}
+body::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 50px;
+}
+a {
+  color: var(--tertiary);
+}
+.not__found__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  padding: 0em 2em;
+}
+.not__found__container__img {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 50px;
+}
+.not__found__container__link {
+  color: var(--tertiary);
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.not__found__container__link:hover {
+  transition: 300ms ease-in-out;
+  text-decoration: underline;
+}
+.archive__container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  align-items: center;
+  padding: 8em 2em;
+}
+.archive__container__heading {
+  font-size: 2rem;
+  text-transform: capitalize;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  color: var(--color);
+  margin-bottom: 2em;
+  text-align: center;
+}
+.archive__container__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.archive__container__content__entry {
+  display: flex;
+  width: 100%;
+  margin-bottom: 1em;
+}
+.archive__container__content__entry__left {
+  flex: 1;
+  position: relative;
+}
+.archive__container__content__entry__left::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  height: 100%;
+  width: 1px;
+  border: 1px dashed var(--color);
+}
+.archive__container__content__entry__left__title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color);
+  text-decoration: none;
+  text-transform: capitalize;
+}
+.archive__container__content__entry__left__title:hover {
+  transition: 300ms ease-in-out;
+  text-decoration: underline;
+}
+.archive__container__content__entry__left__created__at {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--color);
+  margin-top: 0.5em;
+}
+.archive__container__content__entry__left__link {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  margin-top: 0.5em;
+  font-weight: bold;
+  text-decoration: none;
+}
+.archive__container__content__entry__left__link svg {
+  margin-right: 0.3em;
+  width: 20px;
+  height: 20px;
+}
+.archive__container__content__entry__left__link:hover {
+  transition: 300ms ease-in-out;
+  text-decoration: underline;
+}
+.archive__container__content__entry__right {
+  flex: 1;
+  position: relative;
+}
+.archive__container__content__entry__right::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -60px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px dashed var(--color);
+}
+.archive__container__content__entry__right::after {
+  content: "";
+  position: absolute;
+  top: 12.5px;
+  left: -52.5px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+.archive__container__content__entry:nth-child(1n)
+  .archive__container__content__entry__right::after {
+  background-color: var(--primary);
+}
+.archive__container__content__entry:nth-child(2n)
+  .archive__container__content__entry__right::after {
+  background-color: var(--secondary);
+}
+.archive__container__content__entry:nth-child(3n)
+  .archive__container__content__entry__right::after {
+  background-color: var(--tertiary);
+}
+.archive__container__content__entry__right__language {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color);
+  margin-bottom: 0.5em;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+.archive__container__content__entry__right__description {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 200%;
+  color: var(--color);
+  margin-bottom: 0.5em;
+  text-decoration: none;
+}
+
+@media (max-width: 850px) {
+  .archive__container__heading {
+    font-size: 1.5rem;
+  }
+  .archive__container__content__entry__left__title {
+    font-size: 1.2rem;
+  }
+  .archive__container__content__entry {
+    flex-direction: column;
+    margin-left: 2em;
+    width: calc(100% - 5em);
+  }
+  .archive__container__content__entry__left {
+    margin-bottom: 1em;
+  }
+  .archive__container__content__entry__right__language {
+    font-size: 1rem;
+  }
+  .archive__container__content__entry__left::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: -60px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px dashed var(--color);
+  }
+  .archive__container__content__entry__left::after {
+    content: "";
+    position: absolute;
+    top: 10.5px;
+    left: -52.5px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+  }
+  .archive__container__content__entry:nth-child(1n)
+    .archive__container__content__entry__left::after {
+    background-color: var(--primary);
+  }
+  .archive__container__content__entry:nth-child(2n)
+    .archive__container__content__entry__left::after {
+    background-color: var(--secondary);
+  }
+  .archive__container__content__entry:nth-child(3n)
+    .archive__container__content__entry__left::after {
+    background-color: var(--tertiary);
+  }
+  .archive__container__content__entry__right::before {
+    display: none;
+  }
+  .archive__container__content__entry__right::after {
+    display: none;
+  }
+}
+@media (max-width: 400px) {
+  .archive__container__content__entry {
+    width: 100%;
+    margin-left: 0;
+  }
+  .archive__container__content__entry__left::before {
+    display: none;
+  }
+  .archive__container__content__entry__left::after {
+    display: none;
+  }
 }
