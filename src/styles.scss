@@ -39,6 +39,30 @@ body::-webkit-scrollbar-thumb {
 a {
   color: var(--tertiary);
 }
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--background);
+  z-index: 999;
+}
+.header__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 1em 2em;
+}
+.header__content__logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color);
+  text-decoration: none;
+  text-transform: capitalize;
+}
 .not__found__container {
   display: flex;
   justify-content: center;
