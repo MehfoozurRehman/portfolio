@@ -5,6 +5,7 @@ import "./styles.scss";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import { App } from "./App";
+import Loading from "./components/Loading";
 import { createRoot } from "react-dom/client";
 import { lazy } from "react";
 
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     Component: App,
+    errorElement: <Loading />,
     children: [
       {
         path: "/",
