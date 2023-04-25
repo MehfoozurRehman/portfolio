@@ -7,7 +7,7 @@ export default function GithubCalender() {
         username="mehfoozurrehman"
         showWeekdayLabels
         fontSize={14}
-        year={new Date().getFullYear()}
+        year="last"
         style={{
           color: "white",
           margin: "0 2em",
