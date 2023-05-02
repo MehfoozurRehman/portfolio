@@ -1,8 +1,11 @@
+import useSWR, { preload } from "swr";
+
 import fetcher from "../utils/fetcher";
 import getExperience from "../utils/getExperience";
 import { memo } from "react";
 import { pic } from "../assets";
-import useSWR from "swr";
+
+preload("https://api.github.com/users/MehfoozurRehman", fetcher);
 
 interface AboutMeProps {
   happyClients: any;
