@@ -1,7 +1,12 @@
 import { Box, GitHub, Globe, Layout } from "react-feather";
+import useSWR, { preload } from "swr";
 
 import fetcher from "../utils/fetcher";
-import useSWR from "swr";
+
+preload(
+  "https://api.github.com/users/MehfoozurRehman/repos?per_page=10000&sort=updated",
+  fetcher
+);
 
 export default function Archive() {
   const { data } = useSWR(

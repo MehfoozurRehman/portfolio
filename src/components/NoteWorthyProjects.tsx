@@ -1,7 +1,13 @@
+import useSWR, { preload } from "swr";
+
 import ProjectCard from "./ProjectCard";
 import fetcher from "../utils/fetcher";
 import { useNavigate } from "react-router-dom";
-import useSWR from "swr";
+
+preload(
+  "https://api.github.com/users/MehfoozurRehman/repos?sort=updated",
+  fetcher
+);
 
 export default function NoteWorthyProjects() {
   const navigate = useNavigate();
