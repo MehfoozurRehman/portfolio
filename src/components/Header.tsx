@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 import NavLink from "./NavLink";
 import OutsideClickHandler from "react-outside-click-handler";
-import { useNavigate } from "react-router-dom";
+import { useLocation } from "wouter";
 
 const navLinks = [
   {
@@ -34,7 +34,7 @@ const navLinks = [
 ];
 
 export default function Header() {
-  const navigate = useNavigate();
+  const [, navigate] = useLocation();
   const [isNavOpen, setIsNavOpen] = useState(window.innerWidth >= 950);
 
   const changeNavState = () => setIsNavOpen(window.innerWidth >= 950);
