@@ -20,14 +20,10 @@
     "preview": "vite preview",
     "deploy": "vite build && firebase deploy"
   },
-  "reactSnap": {
-    "source": "dist"
-  },
   "devDependencies": {
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.1",
     "@vitejs/plugin-react": "^4.0.0",
-    "react-snap": "^1.23.0",
     "sass": "^1.62.1",
     "typescript": "^5.0.4",
     "vite": "^4.3.4",
