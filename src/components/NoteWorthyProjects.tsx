@@ -13,10 +13,7 @@ export default function NoteWorthyProjects() {
   const navigate = useNavigate();
   const { data } = useSWR(
     "https://api.github.com/users/MehfoozurRehman/repos?sort=updated",
-    fetcher,
-    {
-      suspense: true,
-    }
+    fetcher
   );
 
   return (

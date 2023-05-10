@@ -1,13 +1,12 @@
 import { Outlet, useLocation } from "react-router-dom";
-import { Suspense, lazy } from "react";
 
 import Footer from "./components/Footer";
+import Header from "./components/Header";
 import Loading from "./components/Loading";
 import { Server } from "react-feather";
+import Socials from "./components/Socials";
+import { Suspense } from "react";
 import { useIsOnline } from "react-use-is-online";
-
-const Socials = lazy(() => import("./components/Socials"));
-const Header = lazy(() => import("./components/Header"));
 
 export function App() {
   const location = useLocation();

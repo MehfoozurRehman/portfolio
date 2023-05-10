@@ -19,16 +19,13 @@ preload(
 export default function Home() {
   const { data: clients } = useSWR(
     "https://dsmeglobal-api-production.up.railway.app/api/v1/get_client",
-    fetcher,
-    {
-      suspense: true,
-    }
+    fetcher
   );
 
   return (
     <>
       <HomeSection />
-      <AboutMe happyClients={clients.length} />
+      <AboutMe happyClients={clients?.length} />
       <Services />
       <Work />
       <NoteWorthyProjects />

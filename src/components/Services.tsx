@@ -43,7 +43,7 @@ export default function Services() {
         <div className="home__section__heading">Services</div>
       </div>
       <div className="services__section__content">
-        {services.map((service, index) => (
+        {services?.map((service, index) => (
           <ServicesCard
             key={index}
             title={service.title}

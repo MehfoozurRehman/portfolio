@@ -3,14 +3,12 @@ import "swiper/scss/autoplay";
 import "./styles.scss";
 
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { createRoot, hydrateRoot } from "react-dom/client";
 
 import { App } from "./App";
+import Archive from "./screens/Archive";
+import Home from "./screens/Home";
 import Loading from "./components/Loading";
-import { lazy } from "react";
-
-const Home = lazy(() => import("./screens/Home"));
-const Archive = lazy(() => import("./screens/Archive"));
+import { createRoot } from "react-dom/client";
 
 const router = createBrowserRouter([
   {
@@ -30,12 +28,6 @@ const router = createBrowserRouter([
   },
 ]);
 
-const rootElement = document.getElementById("root");
-
-if (rootElement.hasChildNodes()) {
-  hydrateRoot(rootElement, <RouterProvider router={router} />);
-} else {
-  createRoot(document.getElementById("root")).render(
-    <RouterProvider router={router} />
-  );
-}
+createRoot(document.getElementById("root")).render(
+  <RouterProvider router={router} />
+);

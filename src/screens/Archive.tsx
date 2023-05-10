@@ -1,20 +1,12 @@
 import { Box, GitHub, Globe, Layout } from "react-feather";
-import useSWR, { preload } from "swr";
 
 import fetcher from "../utils/fetcher";
-
-preload(
-  "https://api.github.com/users/MehfoozurRehman/repos?per_page=10000&sort=updated",
-  fetcher
-);
+import useSWR from "swr";
 
 export default function Archive() {
   const { data } = useSWR(
     "https://api.github.com/users/MehfoozurRehman/repos?per_page=10000&sort=updated",
-    fetcher,
-    {
-      suspense: true,
-    }
+    fetcher
   );
 
   return (
@@ -33,11 +25,7 @@ export default function Archive() {
         {data
           ?.filter((item) => item.fork === false)
           ?.map((item) => (
-            <a
-              key={item.id}
-              href={item.homepage}
-              className="services__section__content__list"
-            >
+            <div key={item.id} className="services__section__content__list">
               <div className="card__heading">
                 {item.homepage && item.homepage !== null ? (
                   <Layout size={30} color="currentColor" />
@@ -75,7 +63,7 @@ export default function Archive() {
                   </a>
                 ) : null}
               </div>
-            </a>
+            </div>
           ))}
       </div>
     </section>

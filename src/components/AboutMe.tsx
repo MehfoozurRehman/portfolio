@@ -15,9 +15,7 @@ const AboutMe = memo(({ happyClients }: AboutMeProps) => {
   const { data } = useSWR(
     "https://api.github.com/users/MehfoozurRehman",
     fetcher,
-    {
-      suspense: true,
-    }
+
   );
 
   return (
