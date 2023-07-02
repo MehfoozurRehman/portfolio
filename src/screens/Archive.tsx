@@ -6,7 +6,10 @@ import useSWR from "swr";
 export default function Archive() {
   const { data } = useSWR(
     "https://api.github.com/users/MehfoozurRehman/repos?per_page=10000&sort=updated",
-    fetcher
+    fetcher,
+    {
+      suspense: true,
+    }
   );
 
   return (
