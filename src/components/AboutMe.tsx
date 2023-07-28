@@ -41,7 +41,8 @@ const AboutMe = memo(({ happyClients }: AboutMeProps) => {
               ></path>
             </svg>
             <div className="about__section__left__content__blob__content">
-              {data?.public_repos} +<span>Projects Completed</span>
+              {data?.public_repos + data?.total_private_repos} +
+              <span>Projects Completed</span>
             </div>
           </div>
           <div className="about__section__left__content__blob">
