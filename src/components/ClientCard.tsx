@@ -18,7 +18,9 @@ export default function ClientCard({ image, name }: ClientCardProps) {
         src={image}
         alt={name}
         className="card__img"
-        height={100}
+        style={{
+          minHeight: 100,
+        }}
       />
     </div>
   );
