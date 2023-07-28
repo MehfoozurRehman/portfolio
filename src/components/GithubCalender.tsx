@@ -5,9 +5,9 @@ export default function GithubCalender() {
     <div className="github__calender__wapper">
       <Calendar
         username="mehfoozurrehman"
-        showWeekdayLabels
+        blockRadius={5}
         fontSize={14}
-        year="last"
+        year={new Date().getFullYear()}
         style={{
           color: "white",
           margin: "0 2em",
