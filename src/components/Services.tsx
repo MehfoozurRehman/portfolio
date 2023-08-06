@@ -20,6 +20,7 @@ const services = [
     title: "Backend Development",
     skills: [
       "MongoDB",
+      "PostgreSQL",
       "ExpressJS",
       "NodeJS",
       "Graphql",
@@ -27,6 +28,7 @@ const services = [
       "Firebase",
       "Railway",
       "Heroku",
+      "AWS ec2",
     ],
   },
   {
