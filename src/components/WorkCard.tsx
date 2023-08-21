@@ -1,7 +1,6 @@
 import { GitHub, Link } from "react-feather";
 
 import { memo } from "react";
-import project from "../assets/project.webp";
 
 interface WorkCardProps {
   tech: string[];
@@ -11,6 +10,7 @@ interface WorkCardProps {
   siteLink?: string;
   githubLink?: string;
   name: string;
+  company: string;
 }
 
 const WorkCard = memo(
@@ -22,6 +22,7 @@ const WorkCard = memo(
     siteLink,
     githubLink,
     name,
+    company,
   }: WorkCardProps) => (
     <div
       className="work__section__entry"
@@ -34,7 +35,7 @@ const WorkCard = memo(
       >
         <img
           loading="lazy"
-          src={banner ? banner : project}
+          src={banner}
           alt={name.replace(".com", "")}
           className="work__section__entry__left__img"
         />
@@ -44,7 +45,7 @@ const WorkCard = memo(
         style={right ? { left: 0, alignItems: "flex-start" } : null}
       >
         <div className="work__section__entry__right__sub__heading">
-          DSME Globals
+          {company}
         </div>
         <div className="work__section__entry__right__heading">
           {name.replace(".com", "")}
@@ -66,13 +67,6 @@ const WorkCard = memo(
         <div className="work__section__entry__right__links">
           <a
             href={siteLink}
-            className="work__section__entry__right__links__link"
-            title="github"
-          >
-            <GitHub size={20} color="currentColor" />
-          </a>
-          <a
-            href={githubLink}
             className="work__section__entry__right__links__link"
             title="website"
           >
