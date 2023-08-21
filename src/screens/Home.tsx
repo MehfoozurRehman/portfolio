@@ -264,6 +264,7 @@ export default function Home() {
         {works?.map((work, index) => (
           <WorkCard
             key={index}
+            company={work.company}
             name={work.name}
             tech={work.tech}
             banner={work.banner}
