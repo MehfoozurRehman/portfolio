@@ -270,7 +270,6 @@ export default function Home() {
             banner={work.banner}
             info={work.info}
             siteLink={work.siteLink}
-            githubLink={work.githubLink}
             right={work.right}
           />
         ))}
