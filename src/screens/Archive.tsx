@@ -28,6 +28,7 @@ export default function Archive() {
             justifyContent: "center",
             alignItems: "center",
             height: "100vh",
+            color: "#64ffda",
           }}
         >
           Loading...
