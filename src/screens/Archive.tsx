@@ -4,12 +4,9 @@ import fetcher from "../utils/fetcher";
 import useSWR from "swr";
 
 export default function Archive() {
-  const { data } = useSWR(
+  const { data, isLoading } = useSWR(
     "https://api.github.com/users/MehfoozurRehman/repos?per_page=10000&sort=updated",
-    fetcher,
-    {
-      suspense: true,
-    }
+    fetcher
   );
 
   return (
@@ -24,6 +21,18 @@ export default function Archive() {
         </div>
         <div className="home__section__heading">Archive</div>
       </div>
+      {isLoading && (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100vh",
+          }}
+        >
+          Loading...
+        </div>
+      )}
       {data !== undefined && (
         <div className="services__section__content" style={{ marginRight: 0 }}>
           {data
