@@ -8,22 +8,12 @@ interface WorkCardProps {
   banner?: string;
   info?: string;
   siteLink?: string;
-  githubLink?: string;
   name: string;
   company: string;
 }
 
 const WorkCard = memo(
-  ({
-    tech,
-    right,
-    banner,
-    info,
-    siteLink,
-    githubLink,
-    name,
-    company,
-  }: WorkCardProps) => (
+  ({ tech, right, banner, info, siteLink, name, company }: WorkCardProps) => (
     <div
       className="work__section__entry"
       style={right ? { justifyContent: "flex-end" } : null}
