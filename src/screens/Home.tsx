@@ -5,13 +5,11 @@ import useSWR, { preload } from "swr";
 
 import { Autoplay } from "swiper";
 import Calendar from "react-github-calendar";
-import ClientCard from "../components/ClientCard";
 import InputBox from "../components/InputBox";
 import ProjectCard from "../components/ProjectCard";
 import ServicesCard from "../components/ServicesCard";
 import TestimonialsCard from "../components/TestimonialsCard";
 import TextareaBox from "../components/TextareaBox";
-import WorkCard from "../components/WorkCard";
 import emailjs from "@emailjs/browser";
 import fetcher from "../utils/fetcher";
 import getExperience from "../utils/getExperience";
@@ -19,12 +17,17 @@ import { pic } from "../assets";
 import { services } from "../data/services";
 import { testimonials } from "../data/testimonials";
 import { useLocation } from "wouter";
-import { works } from "../data/works";
 
-preload(
-  "https://dsmeglobal-api-production.up.railway.app/api/v1/get_client",
-  fetcher
-);
+// import ClientCard from "../components/ClientCard";
+
+// import WorkCard from "../components/WorkCard";
+
+// import { works } from "../data/works";
+
+// preload(
+//   "https://dsmeglobal-api-production.up.railway.app/api/v1/get_client",
+//   fetcher
+// );
 preload("https://api.github.com/users/MehfoozurRehman", fetcher);
 preload(
   "https://api.github.com/users/MehfoozurRehman/repos?sort=updated",
@@ -37,10 +40,10 @@ export default function Home() {
     "https://api.github.com/users/MehfoozurRehman/repos?sort=updated",
     fetcher
   );
-  const { data: clients } = useSWR(
-    "https://dsmeglobal-api-production.up.railway.app/api/v1/get_client",
-    fetcher
-  );
+  // const { data: clients } = useSWR(
+  //   "https://dsmeglobal-api-production.up.railway.app/api/v1/get_client",
+  //   fetcher
+  // );
   const { data } = useSWR(
     "https://api.github.com/users/MehfoozurRehman",
     fetcher
@@ -171,8 +174,7 @@ export default function Home() {
                 ></path>
               </svg>
               <div className="about__section__left__content__blob__content">
-                {data?.public_repos + data?.total_private_repos} +
-                <span>Projects Completed</span>
+                {data?.public_repos} +<span>Projects Completed</span>
               </div>
             </div>
             <div className="about__section__left__content__blob">
@@ -183,7 +185,7 @@ export default function Home() {
                 ></path>
               </svg>
               <div className="about__section__left__content__blob__content">
-                {clients?.length} +<span>Happy Clients</span>
+                5 + <span>Happy Clients</span>
               </div>
             </div>
             <img
@@ -254,7 +256,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section id="work__section" className="work__section">
+      {/* <section id="work__section" className="work__section">
         <div className="work__section__header">
           <div className="home__section__sub__heading">
             Some Things I’ve Built
@@ -273,7 +275,23 @@ export default function Home() {
             right={work.right}
           />
         ))}
-      </section>
+      </section> */}
+      <div className="github__calender__wapper">
+        <Calendar
+          username="mehfoozurrehman"
+          blockRadius={5}
+          fontSize={14}
+          year={new Date().getFullYear()}
+          style={{
+            color: "white",
+            margin: "0 2em",
+            marginBottom: "3em",
+            marginTop: "-3em",
+            padding: "2em",
+          }}
+          blockSize={16}
+        />
+      </div>
       <section id="projects__section" className="services__section">
         <div className="services__section__header">
           <div className="home__section__sub__heading">
@@ -301,23 +319,8 @@ export default function Home() {
           Load more
         </button>
       </section>
-      <div className="github__calender__wapper">
-        <Calendar
-          username="mehfoozurrehman"
-          blockRadius={5}
-          fontSize={14}
-          year={new Date().getFullYear()}
-          style={{
-            color: "white",
-            margin: "0 2em",
-            marginBottom: "3em",
-            marginTop: "-3em",
-            padding: "2em",
-          }}
-          blockSize={16}
-        />
-      </div>
-      <section id="clients__section" className="services__section">
+
+      {/* <section id="clients__section" className="services__section">
         <div className="services__section__header">
           <div className="home__section__sub__heading">
             Who I have worked with
@@ -355,7 +358,7 @@ export default function Home() {
             ))}
           </Swiper>
         </div>
-      </section>
+      </section> */}
       <section id="testimonials__section" className="services__section">
         <div className="services__section__header">
           <div className="home__section__sub__heading">
