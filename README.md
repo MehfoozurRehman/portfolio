@@ -1,41 +1,38 @@
-# portfolio
-A Personal portfolio project to display what can i do, what i did for my clients and to introduce myself to potential employers
+# create-svelte
 
-## Run Locally
+Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
-Clone the project
+## Creating a project
 
-bash
-  git clone https://github.com/MehfoozurRehman/portfolio
+If you're seeing this, you've probably already done this step. Congrats!
 
+```bash
+# create a new project in the current directory
+npm create svelte@latest
 
-Go to the project directory
+# create a new project in my-app
+npm create svelte@latest my-app
+```
 
-bash
-  cd portfolio
+## Developing
 
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
-Install dependencies
+```bash
+npm run dev
 
-bash
-  yarn install
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
 
+## Building
 
-Start the server
+To create a production version of your app:
 
-bash
-  yarn start
+```bash
+npm run build
+```
 
-## Screenshots
+You can preview the production build with `npm run preview`.
 
-![image](https://user-images.githubusercontent.com/100939524/187102534-fe8c289c-c46d-49a9-acc9-d914ea140833.png)
-
-
-## Tech Stack
-
-*Client:* React, Sass
-
-
-## Support
-
-For support, email mehfoozijaz786@gmail.com.
+> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
