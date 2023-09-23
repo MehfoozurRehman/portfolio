@@ -21,10 +21,6 @@ import { testimonials } from "../data/testimonials";
 import { useLocation } from "wouter";
 import { works } from "../data/works";
 
-preload(
-  "https://dsmeglobal-api-production.up.railway.app/api/v1/get_client",
-  fetcher
-);
 preload("https://api.github.com/users/MehfoozurRehman", fetcher);
 preload(
   "https://api.github.com/users/MehfoozurRehman/repos?sort=updated",
@@ -37,33 +33,29 @@ export default function Home() {
     "https://api.github.com/users/MehfoozurRehman/repos?sort=updated",
     fetcher
   );
-  const { data: clients } = useSWR(
-    "https://dsmeglobal-api-production.up.railway.app/api/v1/get_client",
-    fetcher
-  );
   const { data } = useSWR(
     "https://api.github.com/users/MehfoozurRehman",
     fetcher
   );
 
-  const sliderConfig = [
-    { width: 500, slides: 1 },
-    { width: 700, slides: 2 },
-    { width: 1000, slides: 3 },
-    { width: 1366, slides: 4 },
-    { width: 1500, slides: 5 },
-    { width: Infinity, slides: 6 },
-  ];
+  // const sliderConfig = [
+  //   { width: 500, slides: 1 },
+  //   { width: 700, slides: 2 },
+  //   { width: 1000, slides: 3 },
+  //   { width: 1366, slides: 4 },
+  //   { width: 1500, slides: 5 },
+  //   { width: Infinity, slides: 6 },
+  // ];
 
-  const [clientSlidesPerView, setClientSlidesPerView] = useState(6);
+  // const [clientSlidesPerView, setClientSlidesPerView] = useState(6);
   const [isMobile, setIsMobile] = useState(false);
 
-  function changeClientSlidesPerView() {
-    const windowWidth = window.innerWidth;
-    const { slides } = sliderConfig.find((s) => s.width > windowWidth);
-    setIsMobile(windowWidth < 800);
-    setClientSlidesPerView(slides);
-  }
+  // function changeClientSlidesPerView() {
+  //   const windowWidth = window.innerWidth;
+  //   const { slides } = sliderConfig.find((s) => s.width > windowWidth);
+  //   setIsMobile(windowWidth < 800);
+  //   setClientSlidesPerView(slides);
+  // }
   const [testimonialSlidesPerView, setTestimonialtestimonialSlidesPerView] =
     useState(2);
 
@@ -83,12 +75,12 @@ export default function Home() {
   }
 
   useEffect(() => {
-    changeClientSlidesPerView();
+    // changeClientSlidesPerView();
     changeTestimonialSlidesPerView();
-    window.addEventListener("resize", changeClientSlidesPerView);
+    // window.addEventListener("resize", changeClientSlidesPerView);
     window.addEventListener("resize", changeTestimonialSlidesPerView);
     return () => {
-      window.removeEventListener("resize", changeClientSlidesPerView);
+      // window.removeEventListener("resize", changeClientSlidesPerView);
       window.removeEventListener("resize", changeTestimonialSlidesPerView);
     };
   }, []);
@@ -183,7 +175,7 @@ export default function Home() {
                 ></path>
               </svg>
               <div className="about__section__left__content__blob__content">
-                {clients?.length} +<span>Happy Clients</span>
+                50 +<span>Happy Clients</span>
               </div>
             </div>
             <img
@@ -317,7 +309,7 @@ export default function Home() {
           blockSize={16}
         />
       </div>
-      <section id="clients__section" className="services__section">
+      {/* <section id="clients__section" className="services__section">
         <div className="services__section__header">
           <div className="home__section__sub__heading">
             Who I have worked with
@@ -355,7 +347,7 @@ export default function Home() {
             ))}
           </Swiper>
         </div>
-      </section>
+      </section> */}
       <section id="testimonials__section" className="services__section">
         <div className="services__section__header">
           <div className="home__section__sub__heading">
