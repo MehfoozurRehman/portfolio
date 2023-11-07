@@ -1,5 +1,5 @@
-import dayyan from "../assets/dayyan.jpg";
-import hammad from "../assets/hammad.png";
+import dayyan from "../assets/dayyan.webp";
+import hammad from "../assets/hammad.webp";
 
 export const testimonials = [
   {
