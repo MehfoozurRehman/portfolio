@@ -19,7 +19,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "vite build && firebase deploy"
+    "deploy": "vite build && firebase deploy",
+    "format": "npx prettier --write ."
   },
   "devDependencies": {
     "@types/react": "^18.2.36",
