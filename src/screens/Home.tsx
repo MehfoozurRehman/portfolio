@@ -3,9 +3,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { useEffect, useRef, useState } from "react";
 import useSWR, { preload } from "swr";
 
-import { Autoplay } from "swiper";
 import Calendar from "react-github-calendar";
-import ClientCard from "../components/ClientCard";
+// import ClientCard from "../components/ClientCard";
 import InputBox from "../components/InputBox";
 import ProjectCard from "../components/ProjectCard";
 import ServicesCard from "../components/ServicesCard";
@@ -361,15 +360,7 @@ export default function Home() {
             paddingRight: isMobile ? 0 : "2em",
           }}
         >
-          <Swiper
-            slidesPerView={testimonialSlidesPerView}
-            spaceBetween={30}
-            modules={[Autoplay]}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false,
-            }}
-          >
+          <Swiper slidesPerView={testimonialSlidesPerView} spaceBetween={30}>
             {testimonials?.map((item, index) => (
               <SwiperSlide key={index}>
                 <TestimonialsCard
