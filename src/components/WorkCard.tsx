@@ -65,7 +65,7 @@ const WorkCard = memo(
         </div>
       </div>
     </div>
-  )
+  ),
 );
 
 export default WorkCard;
