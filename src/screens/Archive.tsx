@@ -37,8 +37,8 @@ export default function Archive() {
       {data !== undefined && (
         <div className="services__section__content" style={{ marginRight: 0 }}>
           {data
-            ?.filter((item) => item.fork === false)
-            ?.map((item) => (
+            ?.filter((item: { fork: boolean }) => item.fork === false)
+            ?.map((item: any) => (
               <div key={item.id} className="services__section__content__list">
                 <div className="card__heading">
                   {item.homepage && item.homepage !== null ? (
@@ -50,9 +50,7 @@ export default function Archive() {
                 </div>
                 <div
                   className="card__info"
-                  style={{
-                    minHeight: "fit-content",
-                  }}
+                  style={{ minHeight: "fit-content" }}
                 >
                   {item.description}
                 </div>
@@ -67,7 +65,7 @@ export default function Archive() {
                     <GitHub size={20} color="currentColor" />
                     Github
                   </a>
-                  {item.homepage && item.homepage !== null ? (
+                  {item.homepage && item.homepage !== null && (
                     <a
                       href={item.homepage}
                       className="portfolio__section__content__entry__button"
@@ -75,7 +73,7 @@ export default function Archive() {
                       <Globe size={20} color="currentColor" />
                       Website
                     </a>
-                  ) : null}
+                  )}
                 </div>
               </div>
             ))}
