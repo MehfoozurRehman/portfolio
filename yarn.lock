@@ -1058,6 +1058,13 @@
   dependencies:
     regenerator-runtime "^0.13.11"
 
+"@babel/runtime@^7.21.0":
+  version "7.23.2"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.23.2.tgz#062b0ac103261d68a966c4c7baf2ae3e62ec3885"
+  integrity sha512-mM8eg4yl5D6i3lu2QKPuPH4FArvJ8KhTofbE7jwMUv9KX5mBvwPAqnV3MlyBNqdp9RyRKP6Yck8TrfYrPvX3bg==
+  dependencies:
+    regenerator-runtime "^0.14.0"
+
 "@babel/template@^7.18.10":
   version "7.18.10"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.18.10.tgz#6f9134835970d1dbf0835c0d100c9f38de0c5e71"
@@ -1471,10 +1478,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/chroma-js@^2.4.0":
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/@types/chroma-js/-/chroma-js-2.4.0.tgz#476a16ae848c77478079d6749236fdb98837b92c"
-  integrity sha512-JklMxityrwjBTjGY2anH8JaTx3yjRU3/sEHSblLH1ba5lqcSh1LnImXJZO5peJfXyqKYWjHTGy4s5Wz++hARrw==
+"@types/chroma-js@^2.4.2":
+  version "2.4.3"
+  resolved "https://registry.yarnpkg.com/@types/chroma-js/-/chroma-js-2.4.3.tgz#2f10bd16483a87d8ead68764fc439550e9c4cbb6"
+  integrity sha512-1ly5ly/7S/YF8aD7MxUQnFOZxdegimuOunJl0xDsLlguu5JrwuSTVGVH3UpIUlh6YauI0RMNT4cqjBonhgbdIQ==
 
 "@types/estree@0.0.39":
   version "0.0.39"
@@ -2010,7 +2017,7 @@ chalk@^4.0.2, chalk@^4.1.2:
   optionalDependencies:
     fsevents "~2.3.2"
 
-chroma-js@^2.4.0:
+chroma-js@^2.4.2:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/chroma-js/-/chroma-js-2.4.2.tgz#dffc214ed0c11fa8eefca2c36651d8e57cbfb2b0"
   integrity sha512-U9eDw6+wt7V8z5NncY2jJfZa+hUH8XEj8FQHgFJTrUFnJfXYf4Ml4adI2vXZOjqRDpFWtYVWypDfZwnJ+HIR4A==
@@ -2213,10 +2220,12 @@ cwebp-bin@^5.0.0:
     bin-wrapper "^4.0.1"
     logalot "^2.1.0"
 
-date-fns@^2.29.3:
-  version "2.29.3"
-  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.29.3.tgz#27402d2fc67eb442b511b70bbdf98e6411cd68a8"
-  integrity sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==
+date-fns@^2.30.0:
+  version "2.30.0"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.30.0.tgz#f367e644839ff57894ec6ac480de40cae4b0f4d0"
+  integrity sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==
+  dependencies:
+    "@babel/runtime" "^7.21.0"
 
 dayjs@^1.11.10:
   version "1.11.10"
@@ -4354,14 +4363,14 @@ randombytes@^2.1.0:
   dependencies:
     safe-buffer "^5.1.0"
 
-react-activity-calendar@^2.0.0:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/react-activity-calendar/-/react-activity-calendar-2.0.1.tgz#edb80ca16b55c1968380f949b4bb60108efe631b"
-  integrity sha512-Y9XMU5whkgQAkQj67TckFyLAuA6ZEFJ4TFRL/dgAcoj/RlIM/eWJiuPk4VL+LraOIw2H+AvCStleu4ou21uMKA==
+react-activity-calendar@^2.1.7:
+  version "2.1.7"
+  resolved "https://registry.yarnpkg.com/react-activity-calendar/-/react-activity-calendar-2.1.7.tgz#f98efd1edc5bc7080c2f4a894437df786426029d"
+  integrity sha512-Dhm55DHVDdtMpM9YtNq6RDqzBoP4ZWxPIe2nmHhWxwuRyar+gWYUJG5ZRVvaOI5PjlOOC0dIaMKB5+XH+konBA==
   dependencies:
-    "@types/chroma-js" "^2.4.0"
-    chroma-js "^2.4.0"
-    date-fns "^2.29.3"
+    "@types/chroma-js" "^2.4.2"
+    chroma-js "^2.4.2"
+    date-fns "^2.30.0"
 
 react-dom@^18.2.0:
   version "18.2.0"
@@ -4378,12 +4387,12 @@ react-feather@^2.0.10:
   dependencies:
     prop-types "^15.7.2"
 
-react-github-calendar@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/react-github-calendar/-/react-github-calendar-4.0.1.tgz#f04eca6e2478988efbeef92b3dc27b7ae96a5a48"
-  integrity sha512-WTJFto5i628k8XhRKv/VsV93RL9jGoMl6thxv7UWPaF1Okyo3u/mHhEg261nkPI+8CbPSzmlgfoGUnldZKJgvA==
+react-github-calendar@^4.0.5:
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/react-github-calendar/-/react-github-calendar-4.0.5.tgz#5af5cbe14c1260f1fd0cb1bb6013a1ea5b8e1cec"
+  integrity sha512-/miRrdC4Ek4smNQIcxLQsCU2kbanvmYTkVSnTmNGsG33kighkPBiHigVZYXYZv817Bek+7bbG9wAOEjIFuofHQ==
   dependencies:
-    react-activity-calendar "^2.0.0"
+    react-activity-calendar "^2.1.7"
 
 react-is@^16.12.0, react-is@^16.13.1:
   version "16.13.1"
@@ -4486,6 +4495,11 @@ regenerator-runtime@^0.13.11:
   version "0.13.11"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.11.tgz#f6dca3e7ceec20590d07ada785636a90cdca17f9"
   integrity sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==
+
+regenerator-runtime@^0.14.0:
+  version "0.14.0"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.14.0.tgz#5e19d68eb12d486f797e15a3c6a918f7cec5eb45"
+  integrity sha512-srw17NI0TUWHuGa5CFGGmhfNIeja30WMBfbslPNhf6JrqQlLN5gcrvig1oqPxiVaXb0oW0XRKtH6Nngs5lKCIA==
 
 regenerator-transform@^0.15.1:
   version "0.15.1"
