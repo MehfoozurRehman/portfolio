@@ -1,3 +1,3 @@
 export default function Testimonials() {
-  return <div>Testimonials</div>;
+  return <section id="testimonial">Testimonials</section>;
 }
