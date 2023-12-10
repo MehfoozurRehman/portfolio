@@ -30,9 +30,13 @@ export default function Experience() {
   return (
     <section id="experience" className="experience">
       <div className="experience__heading">Work Experience</div>
+      <div className="experience__info">
+        I have worked with a wide range of technologies in the web development
+        world. From frontend to backend, I have a good grasp on all of them.
+      </div>
       <div className="experience__content">
-        {experience.map((exp) => (
-          <div className="experience__content__entry">
+        {experience.map((exp, index) => (
+          <div className="experience__content__entry" key={index}>
             <div className="experience__content__entry__left">
               <div className="experience__content__entry__title">
                 {exp.company}
