@@ -7,8 +7,14 @@ import Work from "@/components/work/Work";
 
 export default async function Home() {
   const dataFromGithub = await fetch(
-    "https://api.github.com/users/mehfoozurrehman"
+    "https://api.github.com/users/mehfoozurrehman",
+    {
+      headers: {
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`,
+      },
+    }
   ).then((res) => res.json());
+
   return (
     <>
       <Jumbotron dataFromGithub={dataFromGithub} />
