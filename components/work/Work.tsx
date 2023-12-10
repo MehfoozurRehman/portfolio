@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { WorkSlider } from "./WorkSlider";
+import WorkSlider from "./WorkSlider";
 
 export default function Work() {
   return (
