@@ -78,7 +78,9 @@ export default function About({ dataFromGithub }: any) {
           <div className="about__content__right__row">
             <div className="about__content__right__row__left">
               <div className="about__content__right__row__left__heading">
-                +{dataFromGithub?.public_repos}
+                +
+                {dataFromGithub?.public_repos +
+                  (dataFromGithub?.total_private_repos || 0)}
               </div>
               <div className="about__content__right__row__left__text">
                 Projects Completed
