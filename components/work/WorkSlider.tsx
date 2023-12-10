@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import ScrollContainer from "react-indiana-drag-scroll";
 
@@ -7,7 +8,8 @@ export default function WorkSlider() {
   return (
     <ScrollContainer className="work__content__slider">
       <Link href="/projects/1" className="work__content__slider__entry">
-        <img
+        <Image
+          fill
           src="https://cdn.dribbble.com/userupload/7413980/file/original-3ab43399a9768ae7811b5e1c175a6f0c.png?resize=752x752&vertical=center"
           alt=""
           className="work__content__slider__entry__img"
@@ -22,7 +24,8 @@ export default function WorkSlider() {
         </div>
       </Link>
       <Link href="/projects/1" className="work__content__slider__entry">
-        <img
+        <Image
+          fill
           src="https://cdn.dribbble.com/userupload/7413980/file/original-3ab43399a9768ae7811b5e1c175a6f0c.png?resize=752x752&vertical=center"
           alt=""
           className="work__content__slider__entry__img"
@@ -37,7 +40,8 @@ export default function WorkSlider() {
         </div>
       </Link>
       <Link href="/projects/1" className="work__content__slider__entry">
-        <img
+        <Image
+          fill
           src="https://cdn.dribbble.com/userupload/7413980/file/original-3ab43399a9768ae7811b5e1c175a6f0c.png?resize=752x752&vertical=center"
           alt=""
           className="work__content__slider__entry__img"
@@ -52,7 +56,8 @@ export default function WorkSlider() {
         </div>
       </Link>
       <Link href="/projects/1" className="work__content__slider__entry">
-        <img
+        <Image
+          fill
           src="https://cdn.dribbble.com/userupload/7413980/file/original-3ab43399a9768ae7811b5e1c175a6f0c.png?resize=752x752&vertical=center"
           alt=""
           className="work__content__slider__entry__img"
@@ -67,7 +72,8 @@ export default function WorkSlider() {
         </div>
       </Link>
       <Link href="/projects/1" className="work__content__slider__entry">
-        <img
+        <Image
+          fill
           src="https://cdn.dribbble.com/userupload/7413980/file/original-3ab43399a9768ae7811b5e1c175a6f0c.png?resize=752x752&vertical=center"
           alt=""
           className="work__content__slider__entry__img"
@@ -82,7 +88,8 @@ export default function WorkSlider() {
         </div>
       </Link>
       <Link href="/projects/1" className="work__content__slider__entry">
-        <img
+        <Image
+          fill
           src="https://cdn.dribbble.com/userupload/7413980/file/original-3ab43399a9768ae7811b5e1c175a6f0c.png?resize=752x752&vertical=center"
           alt=""
           className="work__content__slider__entry__img"
@@ -97,7 +104,8 @@ export default function WorkSlider() {
         </div>
       </Link>
       <Link href="/projects/1" className="work__content__slider__entry">
-        <img
+        <Image
+          fill
           src="https://cdn.dribbble.com/userupload/7413980/file/original-3ab43399a9768ae7811b5e1c175a6f0c.png?resize=752x752&vertical=center"
           alt=""
           className="work__content__slider__entry__img"
@@ -112,7 +120,8 @@ export default function WorkSlider() {
         </div>
       </Link>
       <Link href="/projects/1" className="work__content__slider__entry">
-        <img
+        <Image
+          fill
           src="https://cdn.dribbble.com/userupload/7413980/file/original-3ab43399a9768ae7811b5e1c175a6f0c.png?resize=752x752&vertical=center"
           alt=""
           className="work__content__slider__entry__img"
@@ -127,7 +136,8 @@ export default function WorkSlider() {
         </div>
       </Link>
       <Link href="/projects/1" className="work__content__slider__entry">
-        <img
+        <Image
+          fill
           src="https://cdn.dribbble.com/userupload/7413980/file/original-3ab43399a9768ae7811b5e1c175a6f0c.png?resize=752x752&vertical=center"
           alt=""
           className="work__content__slider__entry__img"
@@ -142,7 +152,8 @@ export default function WorkSlider() {
         </div>
       </Link>
       <Link href="/projects/1" className="work__content__slider__entry">
-        <img
+        <Image
+          fill
           src="https://cdn.dribbble.com/userupload/7413980/file/original-3ab43399a9768ae7811b5e1c175a6f0c.png?resize=752x752&vertical=center"
           alt=""
           className="work__content__slider__entry__img"
