@@ -38,8 +38,14 @@ export default function Nav() {
       },
       { threshold: 0.5 }
     );
+
     links.forEach((link) => {
-      observer.observe(document.getElementById(link.id)!);
+      const element = document.getElementById(link.id);
+      if (element) {
+        observer.observe(element);
+      } else {
+        console.warn(`Element with id '${link.id}' not found.`);
+      }
     });
   }, []);
 
