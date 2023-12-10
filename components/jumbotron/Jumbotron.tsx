@@ -42,7 +42,24 @@ export default async function Jumbotron({ dataFromGithub }: any) {
             </div>
           </div>
         </div>
-        <div className="jumbotron__bottom__right"></div>
+        <div className="jumbotron__bottom__right">
+          <div className="jumbotron__bottom__right__content">
+            Hi there 👋, I'm Mehfooz-ur-Rehman, a Full Stack Developer 🚀 from
+            Pakistan, currently, I'm a Software Engineer at{" "}
+            <a href="https://www.10pearls.com/" target="_blank">
+              {dataFromGithub?.company}
+            </a>
+          </div>
+          <Image
+            fill
+            src={
+              dataFromGithub?.avatar_url
+                ? dataFromGithub?.avatar_url
+                : "/image.png"
+            }
+            alt="mehfooz ur rehman"
+          />
+        </div>
       </div>
     </section>
   );
