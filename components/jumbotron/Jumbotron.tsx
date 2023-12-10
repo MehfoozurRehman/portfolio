@@ -1,11 +1,25 @@
-import { JumbotronImage } from "./JumbotronImage";
+import Image from "next/image";
+import SplashSvg from "./SplashSvg";
 import dayjs from "dayjs";
 
 export default async function Jumbotron({ dataFromGithub }: any) {
   return (
     <section id="home" className="jumbotron">
       <div className="jumbotron__content">
-        <JumbotronImage />
+        <div className="jumbotron__bottom__center">
+          <SplashSvg />
+          <Image
+            fill
+            className="jumbotron__bottom__center"
+            src="/image.png"
+            alt="mehfooz ur rehman"
+            style={{
+              width: "100%",
+              height: "100%",
+              transition: "all 1s ease",
+            }}
+          />
+        </div>
         <div className="jumbotron__top__left">
           Let's Build You A Digital Identity
         </div>
