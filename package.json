@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@vercel/speed-insights": "^1.0.1",
     "dayjs": "^1.11.10",
     "next": "14.0.4",
     "react": "^18",
@@ -22,6 +23,7 @@
     "@types/react-dom": "^18",
     "autoprefixer": "^10.4.16",
     "postcss": "^8",
+    "sass": "^1.69.5",
     "typescript": "^5"
   }
 }
