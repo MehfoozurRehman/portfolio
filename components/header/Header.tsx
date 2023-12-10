@@ -6,12 +6,7 @@ export default function Header() {
     <div className="header__wrapper">
       <header className="header">
         <Link href="/" className="header__logo">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="50"
-            height="50"
-            viewBox="0 0 169 168"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 169 168">
             <g transform="translate(-857.568 -473.344)">
               <g transform="translate(857.568 473.344)" fill="transparent">
                 <path
