@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const testimonials = [
   {
     id: 1,
@@ -35,7 +37,8 @@ export default function Testimonials() {
       <div className="testimonial__content">
         {testimonials.map((testimonial, index) => (
           <div className="testimonial__content__entry" key={index}>
-            <img
+            <Image
+              fill
               src={testimonial.image}
               alt={testimonial.name}
               className="testimonial__content__entry__img"
