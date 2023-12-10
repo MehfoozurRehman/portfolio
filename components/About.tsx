@@ -49,7 +49,10 @@ export default function About({ dataFromGithub }: any) {
               </div>
               <div className="about__content__left__entry__skills">
                 {service.skills.map((skill) => (
-                  <div className="about__content__left__entry__skills__skill">
+                  <div
+                    key={skill}
+                    className="about__content__left__entry__skills__skill"
+                  >
                     {skill}
                   </div>
                 ))}
