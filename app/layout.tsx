@@ -1,7 +1,5 @@
 import "../styles/global.scss";
 
-import Footer from "@/components/Footer";
-import Header from "@/components/header/Header";
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -21,9 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={nunito.className}>
-        <Header />
         {children}
-        <Footer />
         <SpeedInsights />
       </body>
     </html>
