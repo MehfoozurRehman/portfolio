@@ -1,9 +1,10 @@
-import "./globals.css";
+import "../styles/global.scss";
 
 import Footer from "@/components/Footer";
 import Header from "@/components/header/Header";
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const nunito = Nunito({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
   );
