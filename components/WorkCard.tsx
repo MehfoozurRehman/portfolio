@@ -15,7 +15,7 @@ const WorkCard = memo(
   ({ tech, right, banner, info, siteLink, name, company }: WorkCardProps) => (
     <div
       className="work__section__entry"
-      style={right ? { justifyContent: "flex-end" } : null}
+      style={right ? { justifyContent: "flex-end" } : {}}
     >
       <a
         href={siteLink}
@@ -31,7 +31,7 @@ const WorkCard = memo(
       </a>
       <div
         className="work__section__entry__right"
-        style={right ? { left: 0, alignItems: "flex-start" } : null}
+        style={right ? { left: 0, alignItems: "flex-start" } : {}}
       >
         <div className="work__section__entry__right__sub__heading">
           {company}
@@ -41,15 +41,13 @@ const WorkCard = memo(
         </div>
         <div
           className="work__section__entry__right__info"
-          style={right ? { textAlign: "left" } : null}
+          style={right ? { textAlign: "left" } : {}}
         >
-          {info
-            ? info
-            : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro saepe dolores tempore voluptate voluptatem eum qui. Nobis consectetur in odio a iure iste laborum vero, assumenda omnis. Laudantium, ab unde."}
+          {info ? info : ""}
         </div>
         <div
           className="work__section__entry__right__tech"
-          style={right ? { textAlign: "left" } : null}
+          style={right ? { textAlign: "left" } : {}}
         >
           {tech?.map((item, i) => (i !== tech.length - 1 ? item + ", " : item))}
         </div>

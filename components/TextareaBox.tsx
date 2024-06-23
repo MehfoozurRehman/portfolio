@@ -9,7 +9,7 @@ export default function TextareaBox({ placeholder }: TextareaBoxProps) {
   const [value, setValue] = useState("");
 
   const isInputFocused = value !== "" || onFucus;
-  const inputStyle = isInputFocused ? { top: -10, zIndex: 1 } : null;
+  const inputStyle = isInputFocused ? { top: -10, zIndex: 1 } : {};
 
   return (
     <div className="services__section__content__right__form__input">
