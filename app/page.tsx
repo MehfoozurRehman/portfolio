@@ -28,7 +28,6 @@ export default function Home() {
     "https://api.github.com/users/MehfoozurRehman/repos?sort=updated",
     fetcher
   );
-  console.log(projects);
   const { data } = useSWR(
     "https://api.github.com/users/MehfoozurRehman",
     fetcher
