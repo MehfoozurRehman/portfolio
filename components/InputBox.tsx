@@ -23,7 +23,7 @@ export default function InputBox({
             ? { top: -10, zIndex: 1 }
             : onFucus
             ? { top: -10, zIndex: 1 }
-            : null
+            : {}
         }
         htmlFor={placeholder}
       >
