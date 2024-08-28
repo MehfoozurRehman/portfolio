@@ -1,3 +1,5 @@
+import "./style.scss";
+
 import Index from "./Index.tsx";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
