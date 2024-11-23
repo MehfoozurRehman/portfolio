@@ -22,7 +22,7 @@ export default function TestimonialsCard({
           imageSrc
             ? imageSrc
             : `https://ui-avatars.com/api/?name=${encodeURIComponent(
-                title
+                title,
               )}&background=0a192f&color=64ffda&size=65`
         }
         alt={title}
