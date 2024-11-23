@@ -30,7 +30,8 @@ export default function Footer() {
                   top: 0,
                   behavior: "smooth",
                 });
-                document.getElementById("home").checked = true;
+                (document.getElementById("home") as HTMLInputElement).checked =
+                  true;
               }}
               className="header__content__logo"
               title="logo"
