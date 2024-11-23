@@ -15,7 +15,8 @@ export default function Footer() {
           className="footer__content__button"
           onClick={() => {
             document.getElementById("home__section").scrollIntoView();
-            document.getElementById("home").checked = true;
+            (document.getElementById("home") as HTMLInputElement).checked =
+              true;
           }}
           title="back to top"
         >
