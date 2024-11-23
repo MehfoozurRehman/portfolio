@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 import NavLink from "./NavLink";
 import OutsideClickHandler from "react-outside-click-handler";
-import { useLocation } from "wouter";
+import { useNavigate } from "react-router";
 
 const navLinks = [
   {
@@ -34,7 +34,7 @@ const navLinks = [
 ];
 
 export default function Header() {
-  const [, navigate] = useLocation();
+  const navigate = useNavigate();
   const [isNavOpen, setIsNavOpen] = useState(window.innerWidth >= 950);
 
   const changeNavState = () => setIsNavOpen(window.innerWidth >= 950);
@@ -55,7 +55,8 @@ export default function Header() {
             });
             navigate("/");
             setTimeout(() => {
-              document.getElementById("home").checked = true;
+              (document.getElementById("home") as HTMLInputElement).checked =
+                true;
             }, 300);
           }}
           className="header__content__logo"
