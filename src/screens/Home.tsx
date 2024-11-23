@@ -23,18 +23,18 @@ import { useNavigate } from "react-router";
 preload("https://api.github.com/users/MehfoozurRehman", fetcher);
 preload(
   "https://api.github.com/users/MehfoozurRehman/repos?sort=updated",
-  fetcher
+  fetcher,
 );
 
 export default function Home() {
   const navigate = useNavigate();
   const { data: projects } = useSWR(
     "https://api.github.com/users/MehfoozurRehman/repos?sort=updated",
-    fetcher
+    fetcher,
   );
   const { data } = useSWR(
     "https://api.github.com/users/MehfoozurRehman",
-    fetcher
+    fetcher,
   );
 
   // const sliderConfig = [
@@ -104,7 +104,7 @@ export default function Home() {
         "service_3dm7yud",
         "template_vu88eib",
         form.current,
-        "user_5E0L53uCeIn6J8FtgNgs8"
+        "user_5E0L53uCeIn6J8FtgNgs8",
       );
       setSubmitted(true);
     } catch (error) {
@@ -277,9 +277,7 @@ export default function Home() {
           {projects
             ?.filter((item) => item.description && !item.fork)
             ?.slice(0, 6)
-            ?.map((item) => (
-              <ProjectCard item={item} key={item.id} />
-            ))}
+            ?.map((item) => <ProjectCard item={item} key={item.id} />)}
         </div>
         <button
           className="home__section__button"
