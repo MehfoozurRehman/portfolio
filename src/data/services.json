@@ -1,7 +1,7 @@
-export const services = [
+[
   {
-    title: "Frontend Development",
-    skills: [
+    "title": "Frontend Development",
+    "skills": [
       "ReactJS",
       "NextJS",
       "Remix",
@@ -11,12 +11,12 @@ export const services = [
       "Electron",
       "Redux",
       "Netlify",
-      "Vercel",
-    ],
+      "Vercel"
+    ]
   },
   {
-    title: "Backend Development",
-    skills: [
+    "title": "Backend Development",
+    "skills": [
       "MongoDB",
       "PostgreSQL",
       "ExpressJS",
@@ -26,11 +26,11 @@ export const services = [
       "Firebase",
       "Railway",
       "Heroku",
-      "AWS ec2",
-    ],
+      "AWS ec2"
+    ]
   },
   {
-    title: "General",
-    skills: ["Adobe Xd", "Figma", "Illustrator", "Gimp", "Git", "yarn", "npm"],
-  },
-];
+    "title": "General",
+    "skills": ["Adobe Xd", "Figma", "Illustrator", "Gimp", "Git", "yarn", "npm"]
+  }
+]
