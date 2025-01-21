@@ -24,8 +24,8 @@ importers:
         specifier: ^2.0.10
         version: 2.0.10(react@19.0.0)
       react-github-calendar:
-        specifier: ^4.5.3
-        version: 4.5.3(react@19.0.0)
+        specifier: ^4.5.4
+        version: 4.5.4(react@19.0.0)
       react-outside-click-handler:
         specifier: ^1.3.0
         version: 1.3.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -3031,8 +3031,8 @@ packages:
   randombytes@2.1.0:
     resolution: {integrity: sha512-vYl3iOX+4CKUWuxGi9Ukhie6fsqXqS9FE2Zaic4tNFD2N2QQaXOMFbuKK4QmDHC0JO6B1Zp41J0LpT0oR68amQ==}
 
-  react-activity-calendar@2.7.6:
-    resolution: {integrity: sha512-Qgb0/W8I9bHDQZ9EsjgNwufYXMPDY8me5pVI+/PavuhUk21ukWhF9rsa06JEkAf4HXEZyWr8xWueNA//iEmyPQ==}
+  react-activity-calendar@2.7.7:
+    resolution: {integrity: sha512-qCCADV8f5RWawTwBl+qTjslP5vnFkFuyU8R6uWzu/iZz1B5D4ODyUctG6g6VRWVlBqrPdc7d0H1tg11qz+qsmg==}
     peerDependencies:
       react: ^18.0.0 || ^19.0.0
 
@@ -3051,8 +3051,8 @@ packages:
     peerDependencies:
       react: '>=16.8.6'
 
-  react-github-calendar@4.5.3:
-    resolution: {integrity: sha512-ZrNpWqzY8PmYj1+Ms0ydH9eW5F9pKCv8Xg6UZpUssABczsn6GIeY3LrIJWP2E6JMp/HwTAzQBK55PM3Qs+CiVQ==}
+  react-github-calendar@4.5.4:
+    resolution: {integrity: sha512-ASJzqlB0wOv1v8Sd+L7ksb3u0pb8wzkNqyms0jLey1XS815eDJbxEwxsyTQpshSDx1sEvo4H/MOwGyv+jnBhGQ==}
     peerDependencies:
       react: ^18.0.0 || ^19.0.0
 
@@ -7139,7 +7139,7 @@ snapshots:
     dependencies:
       safe-buffer: 5.2.1
 
-  react-activity-calendar@2.7.6(react@19.0.0):
+  react-activity-calendar@2.7.7(react@19.0.0):
     dependencies:
       date-fns: 4.1.0
       react: 19.0.0
@@ -7159,10 +7159,10 @@ snapshots:
       prop-types: 15.8.1
       react: 19.0.0
 
-  react-github-calendar@4.5.3(react@19.0.0):
+  react-github-calendar@4.5.4(react@19.0.0):
     dependencies:
       react: 19.0.0
-      react-activity-calendar: 2.7.6(react@19.0.0)
+      react-activity-calendar: 2.7.7(react@19.0.0)
       react-error-boundary: 5.0.0(react@19.0.0)
 
   react-is@16.13.1: {}
