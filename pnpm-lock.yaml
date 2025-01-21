@@ -24,8 +24,8 @@ importers:
         specifier: ^2.0.10
         version: 2.0.10(react@19.0.0)
       react-github-calendar:
-        specifier: ^4.5.3
-        version: 4.5.3(react@19.0.0)
+        specifier: ^4.5.4
+        version: 4.5.4(react@19.0.0)
       react-outside-click-handler:
         specifier: ^1.3.0
         version: 1.3.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -1626,8 +1626,8 @@ packages:
   electron-to-chromium@1.5.64:
     resolution: {integrity: sha512-IXEuxU+5ClW2IGEYFC2T7szbyVgehupCWQe5GNh+H065CD6U6IFN0s4KeAMFGNmQolRU4IV7zGBWSYMmZ8uuqQ==}
 
-  electron-to-chromium@1.5.83:
-    resolution: {integrity: sha512-LcUDPqSt+V0QmI47XLzZrz5OqILSMGsPFkDYus22rIbgorSvBYEFqq854ltTmUdHkY92FSdAAvsh4jWEULMdfQ==}
+  electron-to-chromium@1.5.84:
+    resolution: {integrity: sha512-I+DQ8xgafao9Ha6y0qjHHvpZ9OfyA1qKlkHkjywxzniORU2awxyz7f/iVJcULmrF2yrM3nHQf+iDjJtbbexd/g==}
 
   encoding-sniffer@0.2.0:
     resolution: {integrity: sha512-ju7Wq1kg04I3HtiYIOrUrdfdDvkyO9s5XM8QAj/bN61Yo/Vb4vgJxy5vi4Yxk01gWHbrofpPtpxM8bKger9jhg==}
@@ -1900,8 +1900,8 @@ packages:
   fast-json-stable-stringify@2.1.0:
     resolution: {integrity: sha512-lhd/wF+Lk98HZoTCtlVraHtfh5XYijIjalXck7saUtuanSDyLMxnHhSXEDJqHxD7msR8D0uCmqlkwjCV8xvwHw==}
 
-  fast-uri@3.0.5:
-    resolution: {integrity: sha512-5JnBCWpFlMo0a3ciDy/JckMzzv1U9coZrIhedq+HXxxUfDTAiS0LA8OKVao4G9BxmCVck/jtA5r3KAtRWEyD8Q==}
+  fast-uri@3.0.6:
+    resolution: {integrity: sha512-Atfo14OibSv5wAp4VWNsFYE1AchQRTv9cBGWET4pZWHzYshFSS9NQI6I57rdKn9croWVMbYFbLhJ+yJvmZIIHw==}
 
   fast-xml-parser@4.5.0:
     resolution: {integrity: sha512-/PlTQCI96+fZMAOLMZK4CWG1ItCbfZ/0jx7UIJFChPNrx7tcEgerUgWbeieCM9MfHInUDyK8DWYZ+YrywDJuTg==}
@@ -3031,8 +3031,8 @@ packages:
   randombytes@2.1.0:
     resolution: {integrity: sha512-vYl3iOX+4CKUWuxGi9Ukhie6fsqXqS9FE2Zaic4tNFD2N2QQaXOMFbuKK4QmDHC0JO6B1Zp41J0LpT0oR68amQ==}
 
-  react-activity-calendar@2.7.6:
-    resolution: {integrity: sha512-Qgb0/W8I9bHDQZ9EsjgNwufYXMPDY8me5pVI+/PavuhUk21ukWhF9rsa06JEkAf4HXEZyWr8xWueNA//iEmyPQ==}
+  react-activity-calendar@2.7.7:
+    resolution: {integrity: sha512-qCCADV8f5RWawTwBl+qTjslP5vnFkFuyU8R6uWzu/iZz1B5D4ODyUctG6g6VRWVlBqrPdc7d0H1tg11qz+qsmg==}
     peerDependencies:
       react: ^18.0.0 || ^19.0.0
 
@@ -3051,8 +3051,8 @@ packages:
     peerDependencies:
       react: '>=16.8.6'
 
-  react-github-calendar@4.5.3:
-    resolution: {integrity: sha512-ZrNpWqzY8PmYj1+Ms0ydH9eW5F9pKCv8Xg6UZpUssABczsn6GIeY3LrIJWP2E6JMp/HwTAzQBK55PM3Qs+CiVQ==}
+  react-github-calendar@4.5.4:
+    resolution: {integrity: sha512-ASJzqlB0wOv1v8Sd+L7ksb3u0pb8wzkNqyms0jLey1XS815eDJbxEwxsyTQpshSDx1sEvo4H/MOwGyv+jnBhGQ==}
     peerDependencies:
       react: ^18.0.0 || ^19.0.0
 
@@ -4972,7 +4972,7 @@ snapshots:
   ajv@8.17.1:
     dependencies:
       fast-deep-equal: 3.1.3
-      fast-uri: 3.0.5
+      fast-uri: 3.0.6
       json-schema-traverse: 1.0.0
       require-from-string: 2.0.2
 
@@ -5158,7 +5158,7 @@ snapshots:
   browserslist@4.24.4:
     dependencies:
       caniuse-lite: 1.0.30001695
-      electron-to-chromium: 1.5.83
+      electron-to-chromium: 1.5.84
       node-releases: 2.0.19
       update-browserslist-db: 1.1.2(browserslist@4.24.4)
 
@@ -5594,7 +5594,7 @@ snapshots:
 
   electron-to-chromium@1.5.64: {}
 
-  electron-to-chromium@1.5.83: {}
+  electron-to-chromium@1.5.84: {}
 
   encoding-sniffer@0.2.0:
     dependencies:
@@ -6001,7 +6001,7 @@ snapshots:
 
   fast-json-stable-stringify@2.1.0: {}
 
-  fast-uri@3.0.5: {}
+  fast-uri@3.0.6: {}
 
   fast-xml-parser@4.5.0:
     dependencies:
@@ -7139,7 +7139,7 @@ snapshots:
     dependencies:
       safe-buffer: 5.2.1
 
-  react-activity-calendar@2.7.6(react@19.0.0):
+  react-activity-calendar@2.7.7(react@19.0.0):
     dependencies:
       date-fns: 4.1.0
       react: 19.0.0
@@ -7159,10 +7159,10 @@ snapshots:
       prop-types: 15.8.1
       react: 19.0.0
 
-  react-github-calendar@4.5.3(react@19.0.0):
+  react-github-calendar@4.5.4(react@19.0.0):
     dependencies:
       react: 19.0.0
-      react-activity-calendar: 2.7.6(react@19.0.0)
+      react-activity-calendar: 2.7.7(react@19.0.0)
       react-error-boundary: 5.0.0(react@19.0.0)
 
   react-is@16.13.1: {}
