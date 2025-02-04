@@ -24,8 +24,8 @@ importers:
         specifier: ^2.0.10
         version: 2.0.10(react@19.0.0)
       react-github-calendar:
-        specifier: ^4.5.4
-        version: 4.5.4(react@19.0.0)
+        specifier: ^4.5.5
+        version: 4.5.5(react@19.0.0)
       react-outside-click-handler:
         specifier: ^1.3.0
         version: 1.3.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -597,10 +597,6 @@ packages:
     resolution: {integrity: sha512-HrcgcIESLm9aIR842yhJ5RWan/gebQUJ6E/E5+rf0y9o6oj7w0Br+sWuL6kEQ/o/AdfvR1Je9jG18/gnpwjEyA==}
     peerDependencies:
       '@babel/core': ^7.0.0-0 || ^8.0.0-0 <8.0.0
-
-  '@babel/runtime@7.26.0':
-    resolution: {integrity: sha512-FDSOghenHTiToteC/QRlv2q3DhPZ/oOXTBoirfWNx1Cx3TMVcGWQtMMmQcSvb/JjpNeGzx8Pq/b4fKEJuWm1sw==}
-    engines: {node: '>=6.9.0'}
 
   '@babel/runtime@7.26.7':
     resolution: {integrity: sha512-AOPI3D+a8dXnja+iwsUqGRjr1BbZIe771sXdapOtYI531gSqpi92vXivKcq2asu/DFpdl1ceFAKZyRzK2PCVcQ==}
@@ -1357,8 +1353,8 @@ packages:
   caniuse-lite@1.0.30001683:
     resolution: {integrity: sha512-iqmNnThZ0n70mNwvxpEC2nBJ037ZHZUoBI5Gorh1Mw6IlEAZujEoU1tXA628iZfzm7R9FvFzxbfdgml82a3k8Q==}
 
-  caniuse-lite@1.0.30001695:
-    resolution: {integrity: sha512-vHyLade6wTgI2u1ec3WQBxv+2BrTERV28UXQu9LO6lZ9pYeMk34vjXFLOxo1A4UBA8XTL4njRQZdno/yYaSmWw==}
+  caniuse-lite@1.0.30001696:
+    resolution: {integrity: sha512-pDCPkvzfa39ehJtJ+OwGT/2yvT2SbjfHhiIW2LWOAcMQ7BzwxT/XuyUp4OTOd0XFWA6BKw0JalnBHgSi5DGJBQ==}
 
   caw@2.0.1:
     resolution: {integrity: sha512-Cg8/ZSBEa8ZVY9HspcGUYaK63d/bN7rqS3CYCzEGUxuYv6UlmcjzDUz2fCFFHyTvUW5Pk0I+3hkA3iXlIj6guA==}
@@ -1647,8 +1643,8 @@ packages:
   electron-to-chromium@1.5.64:
     resolution: {integrity: sha512-IXEuxU+5ClW2IGEYFC2T7szbyVgehupCWQe5GNh+H065CD6U6IFN0s4KeAMFGNmQolRU4IV7zGBWSYMmZ8uuqQ==}
 
-  electron-to-chromium@1.5.88:
-    resolution: {integrity: sha512-K3C2qf1o+bGzbilTDCTBhTQcMS9KW60yTAaTeeXsfvQuTDDwlokLam/AdqlqcSy9u4UainDgsHV23ksXAOgamw==}
+  electron-to-chromium@1.5.90:
+    resolution: {integrity: sha512-C3PN4aydfW91Natdyd449Kw+BzhLmof6tzy5W1pFC5SpQxVXT+oyiyOG9AgYYSN9OdA/ik3YkCrpwqI8ug5Tug==}
 
   encoding-sniffer@0.2.0:
     resolution: {integrity: sha512-ju7Wq1kg04I3HtiYIOrUrdfdDvkyO9s5XM8QAj/bN61Yo/Vb4vgJxy5vi4Yxk01gWHbrofpPtpxM8bKger9jhg==}
@@ -3057,8 +3053,8 @@ packages:
   randombytes@2.1.0:
     resolution: {integrity: sha512-vYl3iOX+4CKUWuxGi9Ukhie6fsqXqS9FE2Zaic4tNFD2N2QQaXOMFbuKK4QmDHC0JO6B1Zp41J0LpT0oR68amQ==}
 
-  react-activity-calendar@2.7.7:
-    resolution: {integrity: sha512-qCCADV8f5RWawTwBl+qTjslP5vnFkFuyU8R6uWzu/iZz1B5D4ODyUctG6g6VRWVlBqrPdc7d0H1tg11qz+qsmg==}
+  react-activity-calendar@2.7.8:
+    resolution: {integrity: sha512-lj9IIMrRAoMsXSf6wWo7AcMNXie61Y5EuNApm6rVdJswngyw8LS2Ja50yHrGBFu9GaL1HMutGIoSbr5ifEi9xw==}
     peerDependencies:
       react: ^18.0.0 || ^19.0.0
 
@@ -3077,8 +3073,8 @@ packages:
     peerDependencies:
       react: '>=16.8.6'
 
-  react-github-calendar@4.5.4:
-    resolution: {integrity: sha512-ASJzqlB0wOv1v8Sd+L7ksb3u0pb8wzkNqyms0jLey1XS815eDJbxEwxsyTQpshSDx1sEvo4H/MOwGyv+jnBhGQ==}
+  react-github-calendar@4.5.5:
+    resolution: {integrity: sha512-GUw+c5DKFUfJtL1p6rqolPPx2MTPKvQVUrYw+2YGXp3JhNQBEgOxDXoC2WC2diDLhI3XOA+kTS/lLvp3Ftd42A==}
     peerDependencies:
       react: ^18.0.0 || ^19.0.0
 
@@ -4564,10 +4560,6 @@ snapshots:
       '@babel/types': 7.26.7
       esutils: 2.0.3
 
-  '@babel/runtime@7.26.0':
-    dependencies:
-      regenerator-runtime: 0.14.1
-
   '@babel/runtime@7.26.7':
     dependencies:
       regenerator-runtime: 0.14.1
@@ -5226,8 +5218,8 @@ snapshots:
 
   browserslist@4.24.4:
     dependencies:
-      caniuse-lite: 1.0.30001695
-      electron-to-chromium: 1.5.88
+      caniuse-lite: 1.0.30001696
+      electron-to-chromium: 1.5.90
       node-releases: 2.0.19
       update-browserslist-db: 1.1.2(browserslist@4.24.4)
 
@@ -5303,7 +5295,7 @@ snapshots:
 
   caniuse-lite@1.0.30001683: {}
 
-  caniuse-lite@1.0.30001695: {}
+  caniuse-lite@1.0.30001696: {}
 
   caw@2.0.1:
     dependencies:
@@ -5663,7 +5655,7 @@ snapshots:
 
   electron-to-chromium@1.5.64: {}
 
-  electron-to-chromium@1.5.88: {}
+  electron-to-chromium@1.5.90: {}
 
   encoding-sniffer@0.2.0:
     dependencies:
@@ -7213,7 +7205,7 @@ snapshots:
     dependencies:
       safe-buffer: 5.2.1
 
-  react-activity-calendar@2.7.7(react@19.0.0):
+  react-activity-calendar@2.7.8(react@19.0.0):
     dependencies:
       date-fns: 4.1.0
       react: 19.0.0
@@ -7225,7 +7217,7 @@ snapshots:
 
   react-error-boundary@5.0.0(react@19.0.0):
     dependencies:
-      '@babel/runtime': 7.26.0
+      '@babel/runtime': 7.26.7
       react: 19.0.0
 
   react-feather@2.0.10(react@19.0.0):
@@ -7233,10 +7225,10 @@ snapshots:
       prop-types: 15.8.1
       react: 19.0.0
 
-  react-github-calendar@4.5.4(react@19.0.0):
+  react-github-calendar@4.5.5(react@19.0.0):
     dependencies:
       react: 19.0.0
-      react-activity-calendar: 2.7.7(react@19.0.0)
+      react-activity-calendar: 2.7.8(react@19.0.0)
       react-error-boundary: 5.0.0(react@19.0.0)
 
   react-is@16.13.1: {}
