@@ -36,8 +36,8 @@ importers:
         specifier: ^1.3.0
         version: 1.3.0(enzyme@3.11.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       swiper:
-        specifier: ^11.2.2
-        version: 11.2.2
+        specifier: ^11.2.5
+        version: 11.2.5
       swr:
         specifier: ^2.3.2
         version: 2.3.2(react@19.0.0)
@@ -3500,8 +3500,8 @@ packages:
     engines: {node: '>=10.13.0'}
     hasBin: true
 
-  swiper@11.2.2:
-    resolution: {integrity: sha512-FmAN6zACpVUbd/1prO9xQ9gKo9cc6RE2UKU/z4oXtS8fNyX4sdOW/HHT/e444WucLJs0jeMId6WjdWM2Lrs8zA==}
+  swiper@11.2.5:
+    resolution: {integrity: sha512-nG0kbIyBfeE2BPFt9nPUX03qUBF75o6+enzjIT/DfCmbh8ORlwhc4eZz1+4H/yseAgb3H+OoEYzmb64i0tYNnQ==}
     engines: {node: '>= 4.7.0'}
 
   swr@2.3.2:
@@ -7769,7 +7769,7 @@ snapshots:
       picocolors: 1.1.1
       stable: 0.1.8
 
-  swiper@11.2.2: {}
+  swiper@11.2.5: {}
 
   swr@2.3.2(react@19.0.0):
     dependencies:
