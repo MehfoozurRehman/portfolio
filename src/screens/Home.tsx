@@ -17,8 +17,8 @@ import getExperience from "../utils/getExperience";
 import { pic } from "../assets";
 import services from "../data/services.json";
 import testimonials from "../data/testimonials.json";
-import works from "../data/works.json";
 import { useNavigate } from "react-router";
+import works from "../data/works.json";
 
 preload("https://api.github.com/users/MehfoozurRehman", fetcher);
 preload(
