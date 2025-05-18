@@ -17,10 +17,10 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20" # or match your Node version
+          node-version: "20"
           cache: "pnpm"
 
-      - name: Install pnpm
+      - name: Enable and install pnpm
         run: corepack enable && corepack prepare pnpm@latest --activate
 
       - name: Install dependencies and build
