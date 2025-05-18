@@ -27,6 +27,8 @@ jobs:
 
       - name: Install dependencies and build
         run: pnpm install --frozen-lockfile && pnpm build
+        env:
+          VITE_GITHUB_TOKEN: ${{ secrets.VITE_GITHUB_TOKEN }}
 
       - name: Deploy Preview to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
