@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import useSWR, { preload } from "swr";
 
 import Calendar from "react-github-calendar";
-// import ClientCard from "../components/ClientCard";
 import InputBox from "../components/InputBox";
 import ProjectCard from "../components/ProjectCard";
 import ServicesCard from "../components/ServicesCard";
@@ -19,6 +18,8 @@ import services from "../data/services.json";
 import testimonials from "../data/testimonials.json";
 import { useNavigate } from "react-router";
 import works from "../data/works.json";
+
+// import ClientCard from "../components/ClientCard";
 
 preload("https://api.github.com/users/MehfoozurRehman", fetcher);
 preload(
@@ -118,7 +119,7 @@ export default function Home() {
         <div className="home__section__sub__heading">Hi, i am</div>
         <div className="home__section__heading">Mefooz-ur-Rehman</div>
         <div className="home__section__slogan">
-          Let's Build You A <span>Digital Identity</span>
+          Let's Build Your <span>Digital Identity</span>
         </div>
         <div className="home__section__info">
           I'm a Web Developer based in Pakistan. Proficient in web and mobile
