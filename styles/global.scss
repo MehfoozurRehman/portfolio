@@ -1,0 +1,23 @@
+html {
+  --primary: #273b42;
+  --secondary: #181818;
+  --background: #f8f7f3;
+  --background-light: #ffffff;
+}
+html[data-theme="dark"] {
+  --primary: #273b42;
+  --secondary: #ededed;
+  --background: #1a1a1a;
+  --background-light: #2c2c2c;
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito", sans-serif;
+  font-size: 18px;
+}
