@@ -1,39 +1,53 @@
-import { Globe, Layout, Moon, PhoneOutgoing, Smartphone, Sun } from "react-feather";
+import "../styles/landing.scss";
 
-import { Link } from "react-router";
+import { Globe, Layout, Menu, Moon, PhoneOutgoing, Smartphone, Sun, X } from "react-feather";
+import { Link, useLocation } from "react-router";
 
 const headerLinks = ["services", "works", "experiences", "testimonials"];
 
 function Header() {
+  const location = useLocation();
+
   return (
     <div className="landing__container__header">
       <div className="landing__container__header__content">
         <Link to="/" className="landing__container__header__content__logo">
           Mehfooz ur Rehman
         </Link>
-      </div>
-      <div className="landing__container__header__content__links">
-        {headerLinks.map((link) => (
-          <Link key={link} to={"#" + link} className="landing__container__header__content__links__link">
-            {link}
-          </Link>
-        ))}
-      </div>
-      <div className="landing__container__header__content__actions">
-        <div className="landing__container__header__content__actions__entry">
-          <Link to="/contact" className="landing__container__header__content__actions__entry__link">
-            +92 313 7178074
-          </Link>
-          <PhoneOutgoing size={20} color="currentColor" />
+
+        <div className="landing__container__header__content__links">
+          {headerLinks.map((link) => {
+            const isActive = location.hash === "#" + link;
+
+            return (
+              <Link key={link} to={"#" + link} className="landing__container__header__content__links__link">
+                {isActive && <span>{"< "}</span>}
+                {link}
+                {isActive && <span>{" >"}</span>}
+              </Link>
+            );
+          })}
         </div>
-        <div className="landing__container__header__content__actions__entry">
-          <Link to="/contact" className="landing__container__header__content__actions__entry__link">
-            Contact
-          </Link>
-        </div>
-        <div className="landing__container__header__content__actions__entry">
-          <Moon size={20} color="currentColor" />
-          <Sun size={20} color="currentColor" />
+        <div className="landing__container__header__content__actions">
+          <div className="landing__container__header__content__actions__entry">
+            <Link to="/contact" className="landing__container__header__content__actions__entry__link">
+              +92 313 7178074
+            </Link>
+            <PhoneOutgoing size={20} color="currentColor" />
+          </div>
+          <div className="landing__container__header__content__actions__entry">
+            <Link to="/contact" className="landing__container__header__content__actions__entry__link">
+              Contact
+            </Link>
+          </div>
+          <div className="landing__container__header__content__actions__entry">
+            <Moon size={20} color="currentColor" />
+            <Sun size={20} color="currentColor" />
+          </div>
+          <div className="landing__container__header__content__actions__entry special">
+            <Menu size={20} color="currentColor" />
+            <X size={20} color="currentColor" />
+          </div>
         </div>
       </div>
     </div>
