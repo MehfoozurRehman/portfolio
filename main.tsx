@@ -1,3 +1,5 @@
+import "./styles/global.scss";
+
 import { BrowserRouter } from "react-router";
 import Router from "./router";
 import { createRoot } from "react-dom/client";
