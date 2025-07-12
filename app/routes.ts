@@ -1,3 +1,6 @@
-import { type RouteConfig, index } from "@react-router/dev/routes";
+import { type RouteConfig } from "@react-router/dev/routes";
+import { nextRoutes } from "rr-next-routes/react-router";
 
-export default [index("routes/home.tsx")] satisfies RouteConfig;
+const routes = nextRoutes({ print: "info", folderName: "screens" });
+
+export default routes satisfies RouteConfig;
