@@ -1,5 +1,6 @@
 import "./styles/app.css";
 
+import { ConvexProvider, ConvexReactClient } from "convex/react";
 import {
   Links,
   Meta,
@@ -10,6 +11,8 @@ import {
 } from "react-router";
 
 import type { Route } from "./+types/root";
+
+const convex = new ConvexReactClient(import.meta.env.VITE_CONVEX_URL as string);
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -34,7 +37,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
+        <ConvexProvider client={convex}>{children}</ConvexProvider>
         <ScrollRestoration />
         <Scripts />
       </body>
