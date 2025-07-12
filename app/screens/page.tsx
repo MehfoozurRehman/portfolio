@@ -1,4 +1,5 @@
 import type { Route } from "./+types/page";
+import Testimonials from "~/components/Testimonials";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -46,6 +47,7 @@ export default function Welcome() {
               ))}
             </ul>
           </nav>
+          <Testimonials />
         </div>
       </div>
     </main>
