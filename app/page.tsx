@@ -97,14 +97,14 @@ export default async function Page() {
             <div className="max-w-none flex flex-col gap-4">
               <h2 className="text-2xl text-gray-200">About</h2>
               <p>
-                I’m a developer passionate about crafting accessible,
+                I&apos;m a developer passionate about crafting accessible,
                 pixel-perfect user interfaces that blend thoughtful design with
                 robust engineering. My favorite work lies at the intersection of
                 design and development, creating experiences that not only look
                 great but are meticulously built for performance and usability.
               </p>
               <p>
-                Currently, I'm a Senior Fullstack Developer at{" "}
+                Currently, I&apos;m a Senior Fullstack Developer at{" "}
                 <Link
                   target="_blank"
                   href="https://devscot.com/"
@@ -118,7 +118,7 @@ export default async function Page() {
                 solutions that drive business growth.
               </p>
               <p>
-                In the past, I've worked as a Frontend Developer at{" "}
+                In the past, I&apos;ve worked as a Frontend Developer at{" "}
                 <Link
                   target="_blank"
                   href="https://leadprofit.com"
@@ -127,11 +127,12 @@ export default async function Page() {
                   Leadprofit
                 </Link>
                 , where I focused on robust frontend architectures and seamless
-                user experiences. I've also collaborated with cross-functional
-                teams to deliver high-quality software solutions.
+                user experiences. I&apos;ve also collaborated with
+                cross-functional teams to deliver high-quality software
+                solutions.
               </p>
               <p>
-                When I'm not coding, I enjoy exploring new technologies,
+                When I&apos;m not coding, I enjoy exploring new technologies,
                 contributing to open-source projects, and sharing knowledge.
               </p>
             </div>
