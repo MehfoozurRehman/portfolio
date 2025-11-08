@@ -14,7 +14,7 @@ export default async function Page() {
       <div className="bg-slate-900 w-full h-full text-gray-400">
         <div className="w-full container lg:max-w-[1600px] mx-auto py-10 md:py-[5em] px-4 flex gap-5 md:flex-row flex-col">
           <div className="flex flex-1 flex-col h-[calc(100vh-10em)] sticky top-[5em] z-10">
-            <h1 className="text-4xl font-semibold flex items-center gap-3 text-gray-200">
+            <h1 className="text-4xl flex items-center gap-3 text-gray-200">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 169 168"
@@ -95,7 +95,7 @@ export default async function Page() {
           </div>
           <div className="flex flex-1 flex-col gap-8">
             <div className="max-w-none flex flex-col gap-4">
-              <h2 className="text-2xl font-semibold text-gray-200">About</h2>
+              <h2 className="text-2xl text-gray-200">About</h2>
               <p>
                 I’m a developer passionate about crafting accessible,
                 pixel-perfect user interfaces that blend thoughtful design with
@@ -136,17 +136,13 @@ export default async function Page() {
               </p>
             </div>
             <div className="prose prose-invert max-w-none flex flex-col gap-4">
-              <h2 className="text-2xl font-semibold text-gray-200">
-                Experience
-              </h2>
+              <h2 className="text-2xl text-gray-200">Experience</h2>
             </div>
             <div className="prose prose-invert max-w-none flex flex-col gap-4">
-              <h2 className="text-2xl font-semibold text-gray-200">Projects</h2>
+              <h2 className="text-2xl text-gray-200">Projects</h2>
             </div>
             <div className="prose prose-invert max-w-none flex flex-col gap-4">
-              <h2 className="text-2xl font-semibold text-gray-200">
-                Testimonials
-              </h2>
+              <h2 className="text-2xl text-gray-200">Testimonials</h2>
             </div>
           </div>
         </div>
