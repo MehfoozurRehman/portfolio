@@ -1,11 +1,12 @@
 import "./globals.css";
 
+import { Fira_Sans } from "next/font/google";
 import type { Metadata } from "next";
-import { Nunito } from "next/font/google";
 import { ThemeProvider } from "@/providers/theme";
 
-const nunito = Nunito({
+const firaSans = Fira_Sans({
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -20,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${nunito.className} bg-slate-900 antialiased`}>
+      <body className={`${firaSans.className} bg-slate-900 antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
