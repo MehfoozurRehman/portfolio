@@ -229,6 +229,58 @@ export default async function Page() {
             </div>
             <div className="prose prose-invert max-w-none flex flex-col gap-4">
               <h2 className="text-2xl text-gray-200">Testimonials</h2>
+              <div className="flex flex-col gap-6">
+                <div>
+                  <p className="text-gray-400 mb-2">
+                    &quot; Mehfooz is a very talented and has a great eye for
+                    design. He is very professional and always delivers on time.
+                    I would highly recommend Mehfooz for any web development...
+                    &quot;
+                  </p>
+                  <div className="flex flex-col gap-1">
+                    <span className="text-gray-200 font-medium">
+                      Dayyan Shahid
+                    </span>
+                    <span className="text-gray-400 text-sm">
+                      CEO Dsme Globals
+                    </span>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-gray-400 mb-2">
+                    &quot; I have had the pleasure of working with Mehfooz for
+                    over two years, and I must say that he has been an
+                    indispensable asset to our team. Mehfooz is an... &quot;
+                  </p>
+                  <div className="flex flex-col gap-1">
+                    <span className="text-gray-200 font-medium">
+                      Hammad Habib
+                    </span>
+                    <span className="text-gray-400 text-sm">
+                      CEO Crazybeings Studios
+                    </span>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-gray-400 mb-2">
+                    &quot; Mehfooz was very helpful, from beginning to end. He
+                    helped me get set up with VS Code Live Share, and then
+                    quickly solved one of my bugs/misunderstandings about React.
+                    He... &quot;
+                  </p>
+                  <div className="flex flex-col gap-1">
+                    <span className="text-gray-200 font-medium">
+                      blackswanlrn
+                    </span>
+                    <span className="text-gray-400 text-sm">
+                      Employer from Fiverr
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="prose prose-invert max-w-none flex flex-col gap-4">
+              <h2 className="text-2xl text-gray-200">Get in touch</h2>
             </div>
           </div>
         </div>
