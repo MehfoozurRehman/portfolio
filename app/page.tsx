@@ -1,6 +1,6 @@
 "use cache";
 
-import { Github, Instagram, Mail } from "lucide-react";
+import { GitFork, Github, Instagram, Mail, Star } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -11,7 +11,48 @@ import duration from "dayjs/plugin/duration";
 
 dayjs.extend(duration);
 
+interface GitHubRepo {
+  id: number;
+  name: string;
+  description: string | null;
+  html_url: string;
+  stargazers_count: number;
+  forks_count: number;
+  language: string | null;
+  updated_at: string;
+}
+
+async function getTopRepositories(username: string): Promise<GitHubRepo[]> {
+  try {
+    const response = await fetch(
+      `https://api.github.com/users/${username}/repos?sort=updated&per_page=100`,
+      {
+        next: { revalidate: 3600 }, // Revalidate every hour
+        headers: {
+          Accept: "application/vnd.github.v3+json",
+        },
+      }
+    );
+
+    if (!response.ok) {
+      console.error("Failed to fetch repositories:", response.statusText);
+      return [];
+    }
+
+    const repos: GitHubRepo[] = await response.json();
+
+    // Sort by stars (descending) and take top 6
+    return repos
+      .sort((a, b) => b.stargazers_count - a.stargazers_count)
+      .slice(0, 6);
+  } catch (error) {
+    console.error("Error fetching GitHub repositories:", error);
+    return [];
+  }
+}
+
 export default async function Page() {
+  const topRepos = await getTopRepositories("mehfoozurRehman");
   return (
     <>
       <Pointer />
@@ -226,6 +267,52 @@ export default async function Page() {
             </div>
             <div className="prose prose-invert max-w-none flex flex-col gap-4">
               <h2 className="text-2xl text-gray-200">Projects</h2>
+              {topRepos.length > 0 ? (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                  {topRepos.map((repo) => (
+                    <Link
+                      key={repo.id}
+                      href={repo.html_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition-colors border border-slate-700 hover:border-slate-600"
+                    >
+                      <div className="flex flex-col gap-3">
+                        <div className="flex items-start justify-between gap-2">
+                          <h3 className="text-lg font-semibold text-gray-200 hover:text-teal-300 transition-colors">
+                            {repo.name}
+                          </h3>
+                        </div>
+                        {repo.description && (
+                          <p className="text-gray-400 text-sm line-clamp-2">
+                            {repo.description}
+                          </p>
+                        )}
+                        <div className="flex items-center gap-4 text-sm text-gray-500">
+                          {repo.language && (
+                            <span className="flex items-center gap-1">
+                              <span className="w-3 h-3 rounded-full bg-teal-400"></span>
+                              {repo.language}
+                            </span>
+                          )}
+                          <span className="flex items-center gap-1">
+                            <Star className="h-4 w-4" />
+                            {repo.stargazers_count}
+                          </span>
+                          <span className="flex items-center gap-1">
+                            <GitFork className="h-4 w-4" />
+                            {repo.forks_count}
+                          </span>
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-gray-400 text-sm">
+                  No projects found. Check back later!
+                </p>
+              )}
             </div>
             <div className="prose prose-invert max-w-none flex flex-col gap-4">
               <h2 className="text-2xl text-gray-200">Testimonials</h2>
