@@ -6,6 +6,10 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ModeToggle } from "@/components/mode";
 import { Pointer } from "./pointer";
+import dayjs from "dayjs";
+import duration from "dayjs/plugin/duration";
+
+dayjs.extend(duration);
 
 export default async function Page() {
   return (
@@ -138,6 +142,87 @@ export default async function Page() {
             </div>
             <div className="prose prose-invert max-w-none flex flex-col gap-4">
               <h2 className="text-2xl text-gray-200">Experience</h2>
+              <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-2">
+                  <div className="flex flex-col gap-1">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+                      <h3 className="text-lg text-gray-200">
+                        Full-stack Developer
+                      </h3>
+                      <span className="text-sm text-gray-400">
+                        Dec 2020 - Present ·{" "}
+                        {Math.round(
+                          dayjs().diff(dayjs("2020-12-01"), "month") / 12
+                        )}{" "}
+                        yr
+                      </span>
+                    </div>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-1 text-gray-400">
+                      <span className="font-medium">Devscot</span>
+                      <span className="hidden sm:inline">·</span>
+                      <span>Full-time</span>
+                      <span className="hidden sm:inline">·</span>
+                      <span>Faisalabad, Punjab, Pakistan</span>
+                      <span className="hidden sm:inline">·</span>
+                      <span>Hybrid</span>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    <span className="px-2 py-1 bg-slate-800 text-gray-300 rounded-md text-sm">
+                      Next.js
+                    </span>
+                    <span className="px-2 py-1 bg-slate-800 text-gray-300 rounded-md text-sm">
+                      React.js
+                    </span>
+                    <span className="px-2 py-1 bg-slate-800 text-gray-300 rounded-md text-sm">
+                      Node.js
+                    </span>
+                  </div>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <div className="flex flex-col gap-1">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+                      <h3 className="text-lg text-gray-200">
+                        Full Stack Developer
+                      </h3>
+                      <span className="text-sm text-gray-400">
+                        Mar 2023 - Feb 2024 ·{" "}
+                        {Math.round(
+                          dayjs("2024-02-28").diff(
+                            dayjs("2023-03-01"),
+                            "month"
+                          ) / 12
+                        )}{" "}
+                        yr
+                      </span>
+                    </div>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-1 text-gray-400">
+                      <span className="font-medium">Leadprofit</span>
+                      <span className="hidden sm:inline">·</span>
+                      <span>Full-time</span>
+                      <span className="hidden sm:inline">·</span>
+                      <span>Samundari, Punjab, Pakistan</span>
+                      <span className="hidden sm:inline">·</span>
+                      <span>On-site</span>
+                    </div>
+                  </div>
+                  <p className="text-gray-400 mt-1">
+                    It was a great experience to support their internal systems
+                    and acquire valuable skills in the process.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    <span className="px-2 py-1 bg-slate-800 text-gray-300 rounded-md text-sm">
+                      KnockoutJS
+                    </span>
+                    <span className="px-2 py-1 bg-slate-800 text-gray-300 rounded-md text-sm">
+                      Meteor.js
+                    </span>
+                    <span className="px-2 py-1 bg-slate-800 text-gray-300 rounded-md text-sm">
+                      MongoDB
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="prose prose-invert max-w-none flex flex-col gap-4">
               <h2 className="text-2xl text-gray-200">Projects</h2>
