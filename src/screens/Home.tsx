@@ -5,12 +5,12 @@ import useSWR, { preload } from "swr";
 import dayjs from "dayjs";
 
 import { GitHubCalendar as Calendar } from "react-github-calendar";
-import InputBox from "../components/InputBox";
-import ProjectCard from "../components/ProjectCard";
-import ServicesCard from "../components/ServicesCard";
-import TestimonialsCard from "../components/TestimonialsCard";
-import TextareaBox from "../components/TextareaBox";
-import WorkCard from "../components/WorkCard";
+import InputBox from "../components/input-box";
+import ProjectCard from "../components/project-card";
+import ServicesCard from "../components/services-card";
+import TestimonialsCard from "../components/testimonials-card";
+import TextareaBox from "../components/textarea-box";
+import WorkCard from "../components/work-card";
 import emailjs from "@emailjs/browser";
 import fetcher from "../utils/fetcher";
 import services from "../data/services.json";

@@ -1,7 +1,7 @@
 import { Menu, X } from "react-feather";
 import { useEffect, useState } from "react";
 
-import NavLink from "./NavLink";
+import NavLink from "./nav-link";
 import OutsideClickHandler from "react-outside-click-handler";
 import { useNavigate } from "react-router";
 

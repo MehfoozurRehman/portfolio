@@ -4,11 +4,11 @@ import "./styles.scss";
 
 import { Outlet, useLocation } from "react-router";
 
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Loading from "./components/Loading";
+import Footer from "./components/footer";
+import Header from "./components/header";
+import Loading from "./components/loading";
 import { Server } from "react-feather";
-import Socials from "./components/Socials";
+import Socials from "./components/socials";
 import { Suspense } from "react";
 import { useIsOnline } from "react-use-is-online";
 
