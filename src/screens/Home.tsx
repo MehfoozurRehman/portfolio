@@ -2,7 +2,6 @@ import { Mail, MapPin, Phone } from "react-feather";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useEffect, useRef, useState } from "react";
 import useSWR, { preload } from "swr";
-import dayjs from "dayjs";
 
 import { GitHubCalendar as Calendar } from "react-github-calendar";
 import InputBox from "../components/input-box";
@@ -11,6 +10,7 @@ import ServicesCard from "../components/services-card";
 import TestimonialsCard from "../components/testimonials-card";
 import TextareaBox from "../components/textarea-box";
 import WorkCard from "../components/work-card";
+import dayjs from "dayjs";
 import emailjs from "@emailjs/browser";
 import fetcher from "../utils/fetcher";
 import services from "../data/services.json";
@@ -27,7 +27,7 @@ const fetchAllRepos = async () => {
   while (hasMore) {
     const res = await fetch(
       `https://api.github.com/user/repos?sort=updated&per_page=100&page=${page}&visibility=all`,
-      { headers: { Authorization: `Bearer ${token}` } }
+      { headers: { Authorization: `Bearer ${token}` } },
     );
     const data = await res.json();
 
@@ -56,7 +56,7 @@ export default function Home() {
   const { data: projects } = useSWR("all-repos", fetchAllRepos);
   const { data } = useSWR(
     "https://api.github.com/users/MehfoozurRehman",
-    fetcher
+    fetcher,
   );
 
   const [isMobile, setIsMobile] = useState(false);
@@ -106,7 +106,7 @@ export default function Home() {
         "service_3dm7yud",
         "template_vu88eib",
         form.current,
-        "user_5E0L53uCeIn6J8FtgNgs8"
+        "user_5E0L53uCeIn6J8FtgNgs8",
       );
       setSubmitted(true);
     } catch (error) {

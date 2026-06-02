@@ -58,11 +58,23 @@ export default function Archive() {
         </div>
       )}
       {data !== undefined && (
-        <div className="services__section__content" style={{ marginRight: 0 }}>
+        <div
+          className="services__section__content"
+          style={{
+            marginRight: 0,
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+            gap: "2em",
+          }}
+        >
           {data
             ?.filter((item: { fork: boolean }) => item.fork === false)
             ?.map((item: any) => (
-              <div key={item.id} className="services__section__content__list">
+              <div
+                key={item.id}
+                className="services__section__content__list"
+                style={{ width: "100%" }}
+              >
                 <div className="card__heading">
                   {item.homepage && item.homepage !== null ? (
                     <Layout size={30} color="currentColor" />
