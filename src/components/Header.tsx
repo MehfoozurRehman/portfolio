@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 import NavLink from "./nav-link";
 import OutsideClickHandler from "react-outside-click-handler";
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 
 const navLinks = [
   {
@@ -31,6 +31,8 @@ const navLinks = [
 
 export default function Header() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const isHome = location.pathname === "/";
   const [isNavOpen, setIsNavOpen] = useState(window.innerWidth >= 950);
 
   const changeNavState = () => setIsNavOpen(window.innerWidth >= 950);
@@ -92,20 +94,22 @@ export default function Header() {
             </g>
           </svg>
         </button>
-        <button
-          className="header__content__menu"
-          onClick={() => {
-            setIsNavOpen(!isNavOpen);
-          }}
-          title="menu open/close"
-        >
-          {isNavOpen ? (
-            <X size={20} color="currentColor" />
-          ) : (
-            <Menu size={20} color="currentColor" />
-          )}
-        </button>
-        {isNavOpen ? (
+        {isHome && (
+          <button
+            className="header__content__menu"
+            onClick={() => {
+              setIsNavOpen(!isNavOpen);
+            }}
+            title="menu open/close"
+          >
+            {isNavOpen ? (
+              <X size={20} color="currentColor" />
+            ) : (
+              <Menu size={20} color="currentColor" />
+            )}
+          </button>
+        )}
+        {isHome && isNavOpen ? (
           <div className="header__content__nav">
             <OutsideClickHandler
               onOutsideClick={() => {
