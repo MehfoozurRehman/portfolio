@@ -2,6 +2,7 @@ import { Mail, MapPin, Phone } from "react-feather";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useEffect, useRef, useState } from "react";
 import useSWR, { preload } from "swr";
+import dayjs from "dayjs";
 
 import Calendar from "react-github-calendar";
 import InputBox from "../components/InputBox";
@@ -12,12 +13,40 @@ import TextareaBox from "../components/TextareaBox";
 import WorkCard from "../components/WorkCard";
 import emailjs from "@emailjs/browser";
 import fetcher from "../utils/fetcher";
-import fetchAllRepos from "../utils/fetchAllRepos";
-import getExperience from "../utils/getExperience";
 import services from "../data/services.json";
 import testimonials from "../data/testimonials.json";
 import { useNavigate } from "react-router";
 import works from "../data/works.json";
+
+const fetchAllRepos = async () => {
+  const token = import.meta.env.VITE_GITHUB_TOKEN;
+  let allRepos = [];
+  let page = 1;
+  let hasMore = true;
+
+  while (hasMore) {
+    const res = await fetch(
+      `https://api.github.com/user/repos?sort=updated&per_page=100&page=${page}&visibility=all`,
+      { headers: { Authorization: `Bearer ${token}` } }
+    );
+    const data = await res.json();
+
+    if (!Array.isArray(data) || data.length === 0) {
+      hasMore = false;
+    } else {
+      const filteredRepos = data.filter((repo) => !repo.fork);
+      allRepos = [...allRepos, ...filteredRepos];
+      page++;
+    }
+  }
+
+  return allRepos;
+};
+
+const getExperience = (dateString: string | number | Date) => {
+  const years = dayjs().diff(dayjs(dateString), "month") / 12;
+  return Math.round(years);
+};
 
 preload("https://api.github.com/users/MehfoozurRehman", fetcher);
 preload("all-repos", fetchAllRepos);
