@@ -1,9 +1,9 @@
 import { Menu, X } from "react-feather";
 import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router";
 
 import NavLink from "./nav-link";
 import OutsideClickHandler from "react-outside-click-handler";
-import { useLocation, useNavigate } from "react-router";
 
 const navLinks = [
   {
@@ -31,8 +31,11 @@ const navLinks = [
 
 export default function Header() {
   const navigate = useNavigate();
+
   const location = useLocation();
+
   const isHome = location.pathname === "/";
+
   const [isNavOpen, setIsNavOpen] = useState(window.innerWidth >= 950);
 
   const changeNavState = () => setIsNavOpen(window.innerWidth >= 950);
@@ -47,10 +50,7 @@ export default function Header() {
       <div className="header__content">
         <button
           onClick={() => {
-            window.scrollTo({
-              top: 0,
-              behavior: "smooth",
-            });
+            window.scrollTo({ top: 0, behavior: "smooth" });
             navigate("/");
             setTimeout(() => {
               (document.getElementById("home") as HTMLInputElement).checked =
