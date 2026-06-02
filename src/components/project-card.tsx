@@ -1,14 +1,8 @@
 import { Box, GitHub, Globe, Layout } from "react-feather";
+import type { GithubRepo } from "../types/github";
 
 interface ProjectCardProps {
-  item: {
-    id: number;
-    name: string;
-    description: string;
-    language: string;
-    html_url: string;
-    homepage: string;
-  };
+  item: GithubRepo;
 }
 
 export default function ProjectCard({ item }: ProjectCardProps) {
