@@ -28,7 +28,6 @@ export default function HomeContact() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Validate form
     if (
       !formData.name ||
       !formData.email ||
@@ -44,10 +43,8 @@ export default function HomeContact() {
     setErrorMessage("");
 
     try {
-      // Using Formspree for simple form submission
-      // Replace the form ID with your actual Formspree form ID
       const response = await fetch(
-        "https://formspree.io/f/xyzabc123", // Update with your Formspree form ID
+        "https://formspree.io/f/xyzabc123",
         {
           method: "POST",
           body: JSON.stringify(formData),

@@ -44,7 +44,6 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
 
         <div className="cv-modal__content">
           <div className="cv-page">
-            {/* Header */}
             <div className="cv-section cv-header">
               <div className="cv-header__name">Mehfooz-ur-Rehman</div>
               <div className="cv-header__title">Full Stack Web Developer</div>
@@ -56,7 +55,6 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
               </div>
             </div>
 
-            {/* Professional Summary */}
             <div className="cv-section">
               <h2 className="cv-section__title">Professional Summary</h2>
               <p className="cv-section__content">
@@ -68,7 +66,6 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
               </p>
             </div>
 
-            {/* Experience */}
             <div className="cv-section">
               <h2 className="cv-section__title">Professional Experience</h2>
 
@@ -120,7 +117,6 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
               </div>
             </div>
 
-            {/* Skills */}
             <div className="cv-section">
               <h2 className="cv-section__title">Core Skills</h2>
 
@@ -149,7 +145,6 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
               </div>
             </div>
 
-            {/* Featured Projects */}
             <div className="cv-section">
               <h2 className="cv-section__title">Featured Projects</h2>
 
@@ -193,7 +188,6 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
               </div>
             </div>
 
-            {/* Education */}
             <div className="cv-section">
               <h2 className="cv-section__title">Education</h2>
 
