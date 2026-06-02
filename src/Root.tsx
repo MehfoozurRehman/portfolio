@@ -2,6 +2,8 @@ import "swiper/scss";
 import "swiper/scss/autoplay";
 import "./styles.scss";
 
+import { Outlet, useLocation } from "react-router";
+
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Loading from "./components/Loading";
@@ -9,7 +11,6 @@ import { Server } from "react-feather";
 import Socials from "./components/Socials";
 import { Suspense } from "react";
 import { useIsOnline } from "react-use-is-online";
-import { Outlet, useLocation } from "react-router";
 
 function Root() {
   const location = useLocation();
