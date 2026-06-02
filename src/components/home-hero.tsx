@@ -7,11 +7,11 @@ export default function HomeHero() {
         Let's Build Your <span>Digital Identity</span>
       </div>
       <div className="home__section__info">
-        I'm a Web Developer based in Pakistan. Proficient in web and mobile
-        development. I enjoy turning complex problems into simple, beautiful
-        and intuitive solutions. Working at this time for
-        <a href="https://crazybeingstudio.com/" target="_blank">
-          Crazybeings Studio
+        I'm a Full Stack Web Developer based in Pakistan. I turn complex
+        problems into simple, beautiful, and intuitive solutions. Currently
+        building innovative digital products at
+        <a href="https://devscot.com/" target="_blank" rel="noreferrer">
+          Devscot
         </a>
       </div>
       <button
