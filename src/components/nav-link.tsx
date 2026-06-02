@@ -24,7 +24,12 @@ export default function NavLink({
         className="header__content__nav__links__entry__input"
         onClick={() => {
           navigate("/");
-          document.getElementById(scrollTo + "__section").scrollIntoView();
+          setTimeout(() => {
+            const element = document.getElementById(scrollTo + "__section");
+            if (element) {
+              element.scrollIntoView();
+            }
+          }, 0);
         }}
       />
       <div className="header__content__nav__links__entry__content">{label}</div>
