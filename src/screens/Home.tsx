@@ -19,43 +19,18 @@ import testimonials from "../data/testimonials.json";
 import { useNavigate } from "react-router";
 import works from "../data/works.json";
 
-// import ClientCard from "../components/ClientCard";
-
 preload("https://api.github.com/users/MehfoozurRehman", fetcher);
-preload(
-  "https://api.github.com/users/MehfoozurRehman/repos?sort=updated",
-  fetcher
-);
+preload("all-repos", fetchAllRepos);
 
 export default function Home() {
   const navigate = useNavigate();
-  const { data: projects } = useSWR(
-    "https://api.github.com/users/MehfoozurRehman/repos?sort=updated",
-    fetcher
-  );
+  const { data: projects } = useSWR("all-repos", fetchAllRepos);
   const { data } = useSWR(
     "https://api.github.com/users/MehfoozurRehman",
     fetcher
   );
 
-  // const sliderConfig = [
-  //   { width: 500, slides: 1 },
-  //   { width: 700, slides: 2 },
-  //   { width: 1000, slides: 3 },
-  //   { width: 1366, slides: 4 },
-  //   { width: 1500, slides: 5 },
-  //   { width: Infinity, slides: 6 },
-  // ];
-
-  // const [clientSlidesPerView, setClientSlidesPerView] = useState(6);
   const [isMobile, setIsMobile] = useState(false);
-
-  // function changeClientSlidesPerView() {
-  //   const windowWidth = window.innerWidth;
-  //   const { slides } = sliderConfig.find((s) => s.width > windowWidth);
-  //   setIsMobile(windowWidth < 800);
-  //   setClientSlidesPerView(slides);
-  // }
   const [testimonialSlidesPerView, setTestimonialtestimonialSlidesPerView] =
     useState(2);
 
@@ -75,12 +50,9 @@ export default function Home() {
   }
 
   useEffect(() => {
-    // changeClientSlidesPerView();
     changeTestimonialSlidesPerView();
-    // window.addEventListener("resize", changeClientSlidesPerView);
     window.addEventListener("resize", changeTestimonialSlidesPerView);
     return () => {
-      // window.removeEventListener("resize", changeClientSlidesPerView);
       window.removeEventListener("resize", changeTestimonialSlidesPerView);
     };
   }, []);
@@ -310,45 +282,6 @@ export default function Home() {
           blockSize={16}
         />
       </div>
-      {/* <section id="clients__section" className="services__section">
-        <div className="services__section__header">
-          <div className="home__section__sub__heading">
-            Who I have worked with
-          </div>
-          <div className="home__section__heading">Clients</div>
-        </div>
-        <div
-          className="services__section__content"
-          style={{
-            paddingRight: isMobile ? 0 : "2em",
-            marginLeft: 0,
-          }}
-        >
-          <Swiper
-            loop={true}
-            spaceBetween={30}
-            modules={[Autoplay]}
-            slidesPerView={clientSlidesPerView}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false,
-            }}
-          >
-            {clients?.map((item: { _id: Key; name: any; logo: string }) => (
-              <SwiperSlide key={JSON.stringify(item)}>
-                <ClientCard
-                  key={item._id}
-                  name={item.name}
-                  image={
-                    "https://res.cloudinary.com/mehfoozurrehman/image/upload/" +
-                    item.logo
-                  }
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      </section> */}
       <section id="testimonials__section" className="services__section">
         <div className="services__section__header">
           <div className="home__section__sub__heading">
