@@ -113,24 +113,8 @@ export default function Footer() {
                 <Codesandbox size={20} color="currentColor" />
               </a>
             </div>
-            {/* <img
-              loading="lazy"
-              src={qrcode}
-              alt="buy me coffee qr code"
-              style={{ width: 150, height: 150 }}
-            /> */}
           </div>
         </div>
-        {/* <div className="footer__content__row">
-          <FooterLink scrollTo="home" title="Home" />
-          <FooterLink scrollTo="about" title="About Me" />
-          <FooterLink scrollTo="services" title="Services" />
-          <FooterLink scrollTo="work" title="Work" />
-          <FooterLink scrollTo="clients" title="Clients" />
-          <FooterLink scrollTo="testimonials" title="Testimonials" />
-          <FooterLink scrollTo="blog" title="Blog" />
-          <FooterLink scrollTo="contact" title="Contact" />
-        </div> */}
       </div>
     </section>
   );
