@@ -14,7 +14,6 @@ import emailjs from "@emailjs/browser";
 import fetcher from "../utils/fetcher";
 import fetchAllRepos from "../utils/fetchAllRepos";
 import getExperience from "../utils/getExperience";
-import { pic } from "../assets";
 import services from "../data/services.json";
 import testimonials from "../data/testimonials.json";
 import { useNavigate } from "react-router";
@@ -153,7 +152,7 @@ export default function Home() {
               </div>
             </div>
             <img
-              src={pic}
+              src="/pic.png"
               alt={data?.login}
               className="about__section__left__content__img"
             />
