@@ -1,8 +1,8 @@
-import Archive from "./screens/Archive";
-import Home from "./screens/Home";
+import Archive from "./screens/archive";
+import Home from "./screens/home";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router";
-import Root from "./Root";
+import Root from "./root";
 
 const router = createBrowserRouter([
   {
