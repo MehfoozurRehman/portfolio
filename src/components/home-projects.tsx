@@ -1,13 +1,10 @@
 import { useNavigate } from "react-router";
 import ProjectCard from "./project-card";
-import type { GithubRepo } from "../types/github";
+import { useGithubRepos } from "../hooks/use-github";
 
-interface HomeProjectsProps {
-  projects?: GithubRepo[];
-}
-
-export default function HomeProjects({ projects }: HomeProjectsProps) {
+export default function HomeProjects() {
   const navigate = useNavigate();
+  const { data: projects } = useGithubRepos();
 
   return (
     <section id="projects__section" className="services__section">
