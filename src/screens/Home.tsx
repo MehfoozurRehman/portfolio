@@ -12,6 +12,7 @@ import TextareaBox from "../components/TextareaBox";
 import WorkCard from "../components/WorkCard";
 import emailjs from "@emailjs/browser";
 import fetcher from "../utils/fetcher";
+import fetchAllRepos from "../utils/fetchAllRepos";
 import getExperience from "../utils/getExperience";
 import { pic } from "../assets";
 import services from "../data/services.json";
