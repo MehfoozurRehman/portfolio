@@ -1,9 +1,5 @@
 import dayjs from "dayjs";
-import type { GithubUser } from "../types/github";
-
-interface HomeAboutProps {
-  data?: GithubUser;
-}
+import { useGithubUser } from "../hooks/use-github";
 
 const getExperience = (dateString?: string | number | Date) => {
   if (!dateString) return 0;
@@ -11,7 +7,9 @@ const getExperience = (dateString?: string | number | Date) => {
   return Math.round(years);
 };
 
-export default function HomeAbout({ data }: HomeAboutProps) {
+export default function HomeAbout() {
+  const { data } = useGithubUser();
+
   return (
     <section id="about__section" className="about__section">
       <div className="about__section__left">

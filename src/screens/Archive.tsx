@@ -1,13 +1,8 @@
-import { Box, GitHub, Globe, Layout } from "react-feather";
-
-import fetcher from "../utils/fetcher";
-import useSWR from "swr";
+import ProjectCard from "../components/project-card";
+import { useGithubRepos } from "../hooks/use-github";
 
 export default function Archive() {
-  const { data, isLoading } = useSWR(
-    "https://api.github.com/users/MehfoozurRehman/repos?per_page=10000&sort=updated",
-    fetcher,
-  );
+  const { data, isLoading } = useGithubRepos();
 
   return (
     <section
@@ -39,10 +34,10 @@ export default function Archive() {
             <path
               fill="none"
               stroke="#64ffda"
-              stroke-width="15"
-              stroke-linecap="round"
-              stroke-dasharray="300 385"
-              stroke-dashoffset="0"
+              strokeWidth="15"
+              strokeLinecap="round"
+              strokeDasharray="300 385"
+              strokeDashoffset="0"
               d="M275 75c0 31-27 50-50 50-58 0-92-100-150-100-28 0-50 22-50 50s23 50 50 50c58 0 92-100 150-100 24 0 50 19 50 50Z"
             >
               <animate
@@ -58,60 +53,10 @@ export default function Archive() {
         </div>
       )}
       {data !== undefined && (
-        <div
-          className="services__section__content"
-          style={{
-            marginRight: 0,
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
-            gap: "2em",
-          }}
-        >
-          {data
-            ?.filter((item: { fork: boolean }) => item.fork === false)
-            ?.map((item: any) => (
-              <div
-                key={item.id}
-                className="services__section__content__list"
-                style={{ width: "100%" }}
-              >
-                <div className="card__heading">
-                  {item.homepage && item.homepage !== null ? (
-                    <Layout size={30} color="currentColor" />
-                  ) : (
-                    <Box size={30} color="currentColor" />
-                  )}
-                  <span>{item.name.replace(/-/g, " ").replace(/_/g, " ")}</span>
-                </div>
-                <div
-                  className="card__info"
-                  style={{ minHeight: "fit-content" }}
-                >
-                  {item.description}
-                </div>
-                <div className="portfolio__section__content__entry__content">
-                  {item.language !== null ? item.language : "HTML"}
-                </div>
-                <div className="portfolio__section__content__entry__buttons">
-                  <a
-                    href={item.html_url}
-                    className="portfolio__section__content__entry__button"
-                  >
-                    <GitHub size={20} color="currentColor" />
-                    Github
-                  </a>
-                  {item.homepage && item.homepage !== null && (
-                    <a
-                      href={item.homepage}
-                      className="portfolio__section__content__entry__button"
-                    >
-                      <Globe size={20} color="currentColor" />
-                      Website
-                    </a>
-                  )}
-                </div>
-              </div>
-            ))}
+        <div className="archive__grid">
+          {data.map((item) => (
+            <ProjectCard item={item} key={item.id} />
+          ))}
         </div>
       )}
     </section>
