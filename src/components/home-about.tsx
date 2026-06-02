@@ -1,5 +1,7 @@
 import dayjs from "dayjs";
+import { useState } from "react";
 import { useGithubUser } from "../hooks/use-github";
+import CVModal from "./cv-modal";
 
 const getExperience = (dateString?: string | number | Date) => {
   if (!dateString) return 0;
@@ -9,6 +11,7 @@ const getExperience = (dateString?: string | number | Date) => {
 
 export default function HomeAbout() {
   const { data } = useGithubUser();
+  const [isCVModalOpen, setIsCVModalOpen] = useState(false);
 
   return (
     <section id="about__section" className="about__section">
@@ -50,7 +53,7 @@ export default function HomeAbout() {
             </div>
           </div>
           <img
-            src="/pic.png"
+            src="/pic.webp"
             alt={data?.login}
             className="about__section__left__content__img"
           />
@@ -75,8 +78,10 @@ export default function HomeAbout() {
             maxWidth: "unset",
           }}
         >
-          I'm a Web Developer based in Pakistan. I enjoy turning complex
-          problems into simple, beautiful and intuitive solutions.
+          I'm a Full Stack Web Developer with 5+ years of experience building
+          scalable, user-centric applications. My philosophy is turning complex
+          problems into simple, beautiful, and intuitive solutions that users
+          actually enjoy.
         </div>
         <div
           className="home__section__info"
@@ -85,19 +90,19 @@ export default function HomeAbout() {
             maxWidth: "unset",
           }}
         >
-          I like to build functional and user-friendly and at the same time
-          attractive websites for you. Moreover, I add a personal touch to
-          your product and make sure that it is eye-catching and easy to use.
-          My aim is to bring across your message and identity in the most
-          creative way.
+          I specialize in crafting high-performance web applications using React,
+          TypeScript, Node.js, and modern frameworks. Whether it's frontend UI,
+          backend APIs, or full-stack development, I focus on clean code,
+          responsive design, and delivering measurable business value.
         </div>
-        <a
-          href="https://docs.google.com/document/d/1Z3e-5Ti2Zw9aol5RH5BUoiL8AC7HROHHQQkfvX6MQbQ/edit?usp=sharing"
+        <button
+          onClick={() => setIsCVModalOpen(true)}
           className="home__section__button"
-          title="Download CV"
+          title="View CV"
         >
-          Download CV
-        </a>
+          View My CV
+        </button>
+        <CVModal isOpen={isCVModalOpen} onClose={() => setIsCVModalOpen(false)} />
       </div>
     </section>
   );
