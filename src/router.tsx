@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import { SWRConfig } from "swr";
 import Root from "./root";
 import { preloadGithub } from "./hooks/use-github";
+import { localStorageProvider } from "./lib/swr-cache";
 
 preloadGithub();
 
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
 createRoot(document.getElementById("root")).render(
   <SWRConfig
     value={{
+      provider: localStorageProvider,
       revalidateOnFocus: false,
       dedupingInterval: 60000,
       keepPreviousData: true,
