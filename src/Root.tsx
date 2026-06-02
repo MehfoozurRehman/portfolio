@@ -1,5 +1,5 @@
-import "swiper/scss";
-import "swiper/scss/autoplay";
+import "swiper/css";
+import "swiper/css/autoplay";
 import "./styles.scss";
 
 import { Outlet, useLocation } from "react-router";

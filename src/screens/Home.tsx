@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import useSWR, { preload } from "swr";
 import dayjs from "dayjs";
 
-import Calendar from "react-github-calendar";
+import { GitHubCalendar as Calendar } from "react-github-calendar";
 import InputBox from "../components/InputBox";
 import ProjectCard from "../components/ProjectCard";
 import ServicesCard from "../components/ServicesCard";
