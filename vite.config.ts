@@ -8,7 +8,11 @@ import viteImagemin from "vite-plugin-imagemin";
 
 export default defineConfig({
   plugins: [
-    react(),
+    react({
+      babel: {
+        plugins: ["babel-plugin-react-compiler"],
+      },
+    }),
     VitePWA({ registerType: "autoUpdate" }),
     ViteWebfontDownload(),
     chunkSplitPlugin(),

@@ -7,3 +7,15 @@ onlyBuiltDependencies:
   - mozjpeg
   - optipng-bin
   - pngquant-bin
+
+minimumReleaseAge: 0
+
+allowBuilds:
+  '@parcel/watcher': true
+  cwebp-bin: true
+  esbuild: true
+  gifsicle: true
+  jpegtran-bin: true
+  mozjpeg: true
+  optipng-bin: true
+  pngquant-bin: true
