@@ -6,9 +6,7 @@ export interface ContactFormData {
 }
 
 export async function sendEmail(data: ContactFormData): Promise<void> {
-  // Using Formspree as a simple backend-less solution
-  // Formspree handles email sending without exposing credentials
-  const formspreeEndpoint = "https://formspree.io/f/xyzxyzxy"; // This will be configured
+  const formspreeEndpoint = "https://formspree.io/f/xyzxyzxy";
 
   const response = await fetch(formspreeEndpoint, {
     method: "POST",
