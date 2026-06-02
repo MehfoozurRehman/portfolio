@@ -1,7 +1,5 @@
 import { GitHub, Link } from "react-feather";
 
-import { memo } from "react";
-
 interface WorkCardProps {
   tech: string[];
   right?: boolean;
@@ -12,8 +10,7 @@ interface WorkCardProps {
   company: string;
 }
 
-const WorkCard = memo(
-  ({ tech, right, banner, info, siteLink, name, company }: WorkCardProps) => (
+const WorkCard = ({ tech, right, banner, info, siteLink, name, company }: WorkCardProps) => (
     <div
       className="work__section__entry"
       style={right ? { justifyContent: "flex-end" } : null}
@@ -65,7 +62,6 @@ const WorkCard = memo(
         </div>
       </div>
     </div>
-  ),
-);
+  );
 
 export default WorkCard;
