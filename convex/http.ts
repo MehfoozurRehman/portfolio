@@ -4,6 +4,12 @@ import { api } from "./_generated/api";
 
 const http = httpRouter();
 
+const corsHeaders = {
+  "Access-Control-Allow-Headers": "Content-Type",
+  "Access-Control-Allow-Methods": "POST, OPTIONS",
+  "Access-Control-Allow-Origin": "*",
+};
+
 type LeadRequest = {
   name?: unknown;
   email?: unknown;
@@ -21,7 +27,7 @@ http.route({
     const body: unknown = await request.json();
 
     if (!isLeadRequest(body)) {
-      return new Response("Invalid request body", { status: 400 });
+      return new Response("Invalid request body", { status: 400, headers: corsHeaders });
     }
 
     if (
@@ -32,7 +38,7 @@ http.route({
       body.email.trim().length === 0 ||
       body.project.trim().length === 0
     ) {
-      return new Response("Missing required fields", { status: 400 });
+      return new Response("Missing required fields", { status: 400, headers: corsHeaders });
     }
 
     await ctx.runMutation(api.leads.create, {
@@ -42,7 +48,15 @@ http.route({
       source: "portfolio",
     });
 
-    return Response.json({ ok: true });
+    return Response.json({ ok: true }, { headers: corsHeaders });
+  }),
+});
+
+http.route({
+  path: "/portfolioLead",
+  method: "OPTIONS",
+  handler: httpAction(async () => {
+    return new Response(null, { status: 204, headers: corsHeaders });
   }),
 });
 
