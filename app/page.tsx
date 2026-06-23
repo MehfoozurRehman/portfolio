@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ArrowUpRight, Code2, Link, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { ContactForm } from "./contact-form";
 import { process, profile, projects, services, stack, testimonials } from "./data";
 
 const sectionClass = "mx-auto max-w-6xl px-5 py-16 sm:px-6 lg:px-8 lg:py-24";
@@ -185,23 +186,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <form className="grid gap-4 rounded-lg border border-[#18231e]/15 bg-[#fff8ea] p-6 text-[#18231e]" action={`mailto:${profile.email}`} method="post" encType="text/plain">
-            <label className="grid gap-2">
-              <span className="text-sm font-extrabold text-[#244438]">Name</span>
-              <input className="w-full rounded-lg border border-[#18231e]/15 bg-white/80 px-4 py-3 outline-none transition focus:border-[#e6722e]" name="name" autoComplete="name" required placeholder="Your name" />
-            </label>
-            <label className="grid gap-2">
-              <span className="text-sm font-extrabold text-[#244438]">Email</span>
-              <input className="w-full rounded-lg border border-[#18231e]/15 bg-white/80 px-4 py-3 outline-none transition focus:border-[#e6722e]" name="email" type="email" autoComplete="email" required placeholder="you@company.com" />
-            </label>
-            <label className="grid gap-2">
-              <span className="text-sm font-extrabold text-[#244438]">Project</span>
-              <textarea className="min-h-36 w-full resize-y rounded-lg border border-[#18231e]/15 bg-white/80 px-4 py-3 outline-none transition focus:border-[#e6722e]" name="project" required placeholder="Tell me what you want to build, fix or automate." />
-            </label>
-            <button className="mt-2 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#e6722e] px-6 font-extrabold text-white" type="submit">
-              Start a project <ArrowUpRight size={18} aria-hidden="true" />
-            </button>
-          </form>
+          <ContactForm />
         </div>
       </section>
     </main>
