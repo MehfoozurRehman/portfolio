@@ -23,6 +23,7 @@ export type Service = {
 };
 
 export type Project = {
+  slug: string;
   title: string;
   category: string;
   summary: string;
@@ -31,6 +32,11 @@ export type Project = {
   icon: LucideIcon;
   url?: string;
   logoUrl?: string;
+  problem: string;
+  approach: string;
+  outcome: string;
+  responsibilities: string[];
+  highlights: string[];
 };
 
 export type Testimonial = {
@@ -110,6 +116,7 @@ export const services: Service[] = [
 
 export const projects: Project[] = [
   {
+    slug: "schooliee",
     title: "Schooliee",
     category: "School management platform",
     icon: School,
@@ -118,9 +125,15 @@ export const projects: Project[] = [
       "A cloud-based school ERP for small to mid-sized schools in Pakistan with admissions, attendance, exams, family profiles, challans, staff tools and parent communication.",
     businessValue:
       "Helps schools replace scattered spreadsheets and manual follow-ups with one reliable daily workflow.",
-    stack: ["Next.js", "Convex", "React Native", "WhatsApp", "AI"]
+    stack: ["Next.js", "Convex", "React Native", "WhatsApp", "AI"],
+    problem: "Schools were juggling admissions, attendance, challans, staff work and parent communication in disconnected tools and chats.",
+    approach: "Shaped the product around daily school operations with role-based workflows, practical mobile access and clear admin control.",
+    outcome: "Gives schools one workflow for the full academic cycle instead of separate spreadsheets and manual follow-ups.",
+    responsibilities: ["Product planning", "Full-stack implementation", "Parent and staff workflows", "Mobile delivery"],
+    highlights: ["Admissions", "Attendance", "Fees and challans", "Parent communication"]
   },
   {
+    slug: "dsme-globals",
     title: "DSME Globals",
     category: "Software and product development",
     icon: Building2,
@@ -130,9 +143,15 @@ export const projects: Project[] = [
       "A company site for a custom technology services firm focused on web and mobile development, scoping workshops, UI/UX and turnkey product delivery.",
     businessValue:
       "Shows the delivery side of the product work with a company profile centered on end-to-end software services.",
-    stack: ["Web apps", "Mobile apps", "UI/UX", "Product delivery"]
+    stack: ["Web apps", "Mobile apps", "UI/UX", "Product delivery"],
+    problem: "The company needed a clear, credible presence for services that were otherwise scattered across conversations and direct outreach.",
+    approach: "Built a concise service site that makes capabilities, delivery scope and contact paths easy to understand.",
+    outcome: "Creates a straightforward front door for product and software delivery work.",
+    responsibilities: ["Information architecture", "Responsive UI", "Service positioning", "Brand presentation"],
+    highlights: ["Company profile", "Service clarity", "Delivery focus", "Client-facing presence"]
   },
   {
+    slug: "leadprofit",
     title: "LeadProfit",
     category: "Amazon seller suite",
     icon: MessageCircle,
@@ -141,9 +160,15 @@ export const projects: Project[] = [
       "An Amazon seller platform that focuses on pricing, inventory, order tracking and analytics to keep operations and profitability visible.",
     businessValue:
       "Turns marketplace operations into one dashboard so sellers can monitor performance without guesswork.",
-    stack: ["Analytics", "Inventory", "Orders", "Amazon SP-API"]
+    stack: ["Analytics", "Inventory", "Orders", "Amazon SP-API"],
+    problem: "Amazon sellers need a single view of pricing, inventory and orders to avoid losing profit through blind spots.",
+    approach: "Focused the interface on operations visibility and actionable monitoring rather than raw data display.",
+    outcome: "Helps sellers keep tabs on daily marketplace activity from one place.",
+    responsibilities: ["Marketplace workflows", "Dashboard design", "Operational data modeling", "API integration"],
+    highlights: ["Pricing", "Inventory", "Orders", "Analytics"]
   },
   {
+    slug: "clipout",
     title: "Clipout",
     category: "Animated recording tool",
     icon: Bot,
@@ -152,9 +177,15 @@ export const projects: Project[] = [
       "A recording and animation tool that helps create polished clips with customizable templates and a streamlined capture flow.",
     businessValue:
       "Reduces the work needed to produce branded motion content and short recorded demos.",
-    stack: ["Templates", "Recording", "Motion", "Editing"]
+    stack: ["Templates", "Recording", "Motion", "Editing"],
+    problem: "Recording and polishing short demos can take too many manual steps for everyday marketing work.",
+    approach: "Built around templated capture and streamlined editing so the user stays in flow.",
+    outcome: "Makes branded motion content faster to produce and easier to repeat.",
+    responsibilities: ["Capture workflow", "Template-driven UI", "Editing flow", "Product UX"],
+    highlights: ["Recording", "Templates", "Motion", "Editing"]
   },
   {
+    slug: "whatsapp-business-automation",
     title: "WhatsApp Business Automation",
     category: "Customer support and lead handling",
     icon: MessageCircle,
@@ -162,9 +193,15 @@ export const projects: Project[] = [
       "Lead capture, confirmations, AI-assisted replies and business process automation around WhatsApp conversations.",
     businessValue:
       "Designed for businesses in markets where customers already prefer WhatsApp over complex portals.",
-    stack: ["Node.js", "OpenAI", "WhatsApp", "Webhooks"]
+    stack: ["Node.js", "OpenAI", "WhatsApp", "Webhooks"],
+    problem: "Businesses needed to respond to leads and handle follow-up without constant manual replies.",
+    approach: "Connected lead capture, automation and AI-assisted responses to WhatsApp-centric workflows.",
+    outcome: "Cuts down response time and keeps customer communication moving.",
+    responsibilities: ["Webhook logic", "Lead handling", "Automated replies", "AI assistance"],
+    highlights: ["Lead capture", "Confirmations", "Replies", "Workflow automation"]
   },
   {
+    slug: "teams-ai-meeting-assistant",
     title: "Teams AI Meeting Assistant",
     category: "Voice, captions and summaries",
     icon: Bot,
@@ -172,9 +209,15 @@ export const projects: Project[] = [
       "Meeting join, caption capture, summary and action-item workflows using Microsoft Graph and AI services.",
     businessValue:
       "Turns meetings into structured follow-ups instead of lost context and manual note taking.",
-    stack: ["Microsoft Graph", "AI", "Node.js", "Automation"]
+    stack: ["Microsoft Graph", "AI", "Node.js", "Automation"],
+    problem: "Meeting follow-up often gets lost once calls end and notes live in scattered places.",
+    approach: "Captured meeting context, captions and summaries through Microsoft Graph and AI services.",
+    outcome: "Turns calls into structured notes and action items people can actually use.",
+    responsibilities: ["Meeting automation", "Microsoft Graph integration", "Summary pipelines", "Action-item flow"],
+    highlights: ["Join flow", "Captions", "Summaries", "Actions"]
   },
   {
+    slug: "expo-mobile-apps",
     title: "Expo Mobile Apps",
     category: "Cross-platform mobile delivery",
     icon: Smartphone,
@@ -182,9 +225,15 @@ export const projects: Project[] = [
       "Production mobile apps shipped through Expo, EAS, TestFlight and Google Play Console.",
     businessValue:
       "One codebase with practical native delivery for startups and internal business tools.",
-    stack: ["Expo", "React Native", "EAS", "TypeScript"]
+    stack: ["Expo", "React Native", "EAS", "TypeScript"],
+    problem: "Teams needed mobile delivery without maintaining separate iOS and Android codebases.",
+    approach: "Used Expo and EAS to keep the app delivery practical while still shipping native builds.",
+    outcome: "Keeps cross-platform releases manageable for real production use.",
+    responsibilities: ["App architecture", "Store delivery", "Build pipelines", "Cross-platform UI"],
+    highlights: ["Expo", "EAS", "TestFlight", "Play Console"]
   },
   {
+    slug: "desktop-automation-tools",
     title: "Desktop Automation Tools",
     category: "Electron and background apps",
     icon: Laptop,
@@ -192,7 +241,12 @@ export const projects: Project[] = [
       "Desktop utilities that run background workflows and connect local machines to web dashboards.",
     businessValue:
       "Useful when the real workflow still depends on a user machine, files, browser sessions or local state.",
-    stack: ["Electron", "React", "Node.js", "Dashboards"]
+    stack: ["Electron", "React", "Node.js", "Dashboards"],
+    problem: "Some workflows cannot be moved fully to the browser because they rely on the user machine or local state.",
+    approach: "Used desktop tooling to bridge local sessions with cloud dashboards and background work.",
+    outcome: "Keeps hybrid workflows usable without forcing every step into a web app.",
+    responsibilities: ["Electron apps", "Background automation", "Local-to-cloud sync", "Operational tooling"],
+    highlights: ["Electron", "Background tasks", "Cloud sync", "Local sessions"]
   }
 ];
 
