@@ -29,6 +29,7 @@ export type Project = {
   businessValue: string;
   stack: string[];
   icon: LucideIcon;
+  url: string;
 };
 
 export type Testimonial = {
@@ -111,26 +112,40 @@ export const projects: Project[] = [
     title: "Schooliee",
     category: "School management platform",
     icon: School,
+    url: "https://www.schooliee.com",
     summary:
-      "A complete school operating system with fees, attendance, exams, parent portal, staff tools, challans, WhatsApp and AI assistant features.",
+      "A cloud-based school ERP for small to mid-sized schools in Pakistan with admissions, attendance, exams, family profiles, challans, staff tools and parent communication.",
     businessValue:
       "Helps schools replace scattered spreadsheets and manual follow-ups with one reliable daily workflow.",
     stack: ["Next.js", "Convex", "React Native", "WhatsApp", "AI"]
   },
   {
-    title: "Zood Real Estate",
-    category: "Real estate admin and public platform",
+    title: "DSME Globals",
+    category: "Software and product development",
     icon: Building2,
+    url: "https://dsmeglobal.web.app",
     summary:
-      "Property management, applications, invoices, analytics and Mapbox-based maps for a real estate workflow.",
+      "A company site for a custom technology services firm focused on web and mobile development, scoping workshops, UI/UX and turnkey product delivery.",
     businessValue:
-      "Gives property teams a cleaner way to manage inventory, customer activity and operational reporting.",
-    stack: ["React", "Node.js", "Mapbox", "MongoDB", "Invoices"]
+      "Shows the delivery side of the product work with a company profile centered on end-to-end software services.",
+    stack: ["Web apps", "Mobile apps", "UI/UX", "Product delivery"]
+  },
+  {
+    title: "LeadProfit",
+    category: "Amazon seller suite",
+    icon: MessageCircle,
+    url: "https://www.leadprofit.com",
+    summary:
+      "An Amazon seller platform that focuses on pricing, inventory, order tracking and analytics to keep operations and profitability visible.",
+    businessValue:
+      "Turns marketplace operations into one dashboard so sellers can monitor performance without guesswork.",
+    stack: ["Analytics", "Inventory", "Orders", "Amazon SP-API"]
   },
   {
     title: "WhatsApp Business Automation",
     category: "Customer support and lead handling",
     icon: MessageCircle,
+    url: "https://github.com/MehfoozurRehman",
     summary:
       "Lead capture, confirmations, AI-assisted replies and business process automation around WhatsApp conversations.",
     businessValue:
@@ -138,9 +153,21 @@ export const projects: Project[] = [
     stack: ["Node.js", "OpenAI", "WhatsApp", "Webhooks"]
   },
   {
+    title: "Clipout",
+    category: "Animated recording tool",
+    icon: Bot,
+    url: "https://clipout.video",
+    summary:
+      "A recording and animation tool that helps create polished clips with customizable templates and a streamlined capture flow.",
+    businessValue:
+      "Reduces the work needed to produce branded motion content and short recorded demos.",
+    stack: ["Templates", "Recording", "Motion", "Editing"]
+  },
+  {
     title: "Teams AI Meeting Assistant",
     category: "Voice, captions and summaries",
     icon: Bot,
+    url: "https://github.com/MehfoozurRehman",
     summary:
       "Meeting join, caption capture, summary and action-item workflows using Microsoft Graph and AI services.",
     businessValue:
@@ -151,6 +178,7 @@ export const projects: Project[] = [
     title: "Expo Mobile Apps",
     category: "Cross-platform mobile delivery",
     icon: Smartphone,
+    url: "https://github.com/MehfoozurRehman",
     summary:
       "Production mobile apps shipped through Expo, EAS, TestFlight and Google Play Console.",
     businessValue:
@@ -161,6 +189,7 @@ export const projects: Project[] = [
     title: "Desktop Automation Tools",
     category: "Electron and background apps",
     icon: Laptop,
+    url: "https://github.com/MehfoozurRehman",
     summary:
       "Desktop utilities that run background workflows and connect local machines to web dashboards.",
     businessValue:
