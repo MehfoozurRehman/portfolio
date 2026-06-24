@@ -142,16 +142,6 @@ export const projects: Project[] = [
     stack: ["Analytics", "Inventory", "Orders", "Amazon SP-API"]
   },
   {
-    title: "WhatsApp Business Automation",
-    category: "Customer support and lead handling",
-    icon: MessageCircle,
-    summary:
-      "Lead capture, confirmations, AI-assisted replies and business process automation around WhatsApp conversations.",
-    businessValue:
-      "Designed for businesses in markets where customers already prefer WhatsApp over complex portals.",
-    stack: ["Node.js", "OpenAI", "WhatsApp", "Webhooks"]
-  },
-  {
     title: "Clipout",
     category: "Animated recording tool",
     icon: Bot,
@@ -161,6 +151,16 @@ export const projects: Project[] = [
     businessValue:
       "Reduces the work needed to produce branded motion content and short recorded demos.",
     stack: ["Templates", "Recording", "Motion", "Editing"]
+  },
+  {
+    title: "WhatsApp Business Automation",
+    category: "Customer support and lead handling",
+    icon: MessageCircle,
+    summary:
+      "Lead capture, confirmations, AI-assisted replies and business process automation around WhatsApp conversations.",
+    businessValue:
+      "Designed for businesses in markets where customers already prefer WhatsApp over complex portals.",
+    stack: ["Node.js", "OpenAI", "WhatsApp", "Webhooks"]
   },
   {
     title: "Teams AI Meeting Assistant",
