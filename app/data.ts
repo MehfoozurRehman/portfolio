@@ -76,8 +76,7 @@ export const profile = {
   subheadline:
     "I help businesses turn messy operations into fast, reliable software: dashboards, mobile apps, automation, AI assistants, WhatsApp workflows and complete SaaS products.",
   about:
-    "I am a developer proficient in web, mobile and desktop app development. I enjoy turning complex problems into simple, beautiful and intuitive solutions, especially for consumer and business-facing systems where UI, UX and reliability matter.",
-  availability: "Open to hybrid and remote product builds from Samundri, Punjab, Pakistan."
+    "I am a developer proficient in web, mobile and desktop app development. I enjoy turning complex problems into simple, beautiful and intuitive solutions, especially for consumer and business-facing systems where UI, UX and reliability matter."
 } as const;
 
 export const services: Service[] = [
