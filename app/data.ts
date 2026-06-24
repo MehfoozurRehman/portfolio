@@ -30,6 +30,7 @@ export type Project = {
   stack: string[];
   icon: LucideIcon;
   url?: string;
+  logoUrl?: string;
 };
 
 export type Testimonial = {
@@ -124,6 +125,7 @@ export const projects: Project[] = [
     category: "Software and product development",
     icon: Building2,
     url: "https://dsmeglobal.web.app",
+    logoUrl: "/dsme-logo-transparent.png",
     summary:
       "A company site for a custom technology services firm focused on web and mobile development, scoping workshops, UI/UX and turnkey product delivery.",
     businessValue:

@@ -9,6 +9,22 @@ const eyebrowClass = "mb-4 flex items-center gap-2 text-[0.72rem] font-black upp
 const displayClass = "font-[family-name:var(--font-nunito)] font-extrabold leading-[0.98] tracking-normal";
 const cardClass = "rounded-[18px] border border-[#0C2120]/10 bg-[#F8F2E6]";
 
+function getProjectLogoSrc(project: { url?: string; logoUrl?: string }) {
+  if (project.logoUrl) {
+    return project.logoUrl;
+  }
+
+  if (!project.url) {
+    return null;
+  }
+
+  try {
+    return `https://www.google.com/s2/favicons?domain=${new URL(project.url).hostname}&sz=128`;
+  } catch {
+    return null;
+  }
+}
+
 export default function Home() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#F1EFE5] text-[#0C2120]">
@@ -176,9 +192,15 @@ export default function Home() {
           {projects.map((project) => (
             <article className={`${cardClass} flex min-h-[330px] flex-col p-5`} key={project.title}>
               <div className="mb-5 flex items-start justify-between gap-4">
-                <div className="grid size-10 place-items-center rounded-full bg-[#0C2120] text-[#F1EFE5]">
-                  <project.icon size={20} aria-hidden="true" />
-                </div>
+                {getProjectLogoSrc(project) ? (
+                  <div className="grid size-10 place-items-center overflow-hidden rounded-full border border-[#0C2120]/10 bg-[#F1EFE5]">
+                    <Image className={`object-contain ${project.logoUrl ? "size-8" : "size-7"}`} src={getProjectLogoSrc(project) ?? "/favicon.svg"} alt="" width={32} height={32} aria-hidden="true" />
+                  </div>
+                ) : (
+                  <div className="grid size-10 place-items-center rounded-full bg-[#0C2120] text-[#F1EFE5]">
+                    <project.icon size={20} aria-hidden="true" />
+                  </div>
+                )}
                 {project.url ? (
                   <a className="inline-flex items-center gap-2 rounded-full border border-[#0C2120]/10 px-3 py-1.5 text-[0.72rem] font-black text-[#0C2120] hover:border-[#D7720C] hover:text-[#D7720C]" href={project.url} target="_blank" rel="noreferrer">
                     Visit <ArrowUpRight size={14} aria-hidden="true" />
