@@ -29,7 +29,7 @@ export type Project = {
   businessValue: string;
   stack: string[];
   icon: LucideIcon;
-  url: string;
+  url?: string;
 };
 
 export type Testimonial = {
@@ -145,7 +145,6 @@ export const projects: Project[] = [
     title: "WhatsApp Business Automation",
     category: "Customer support and lead handling",
     icon: MessageCircle,
-    url: "https://github.com/MehfoozurRehman",
     summary:
       "Lead capture, confirmations, AI-assisted replies and business process automation around WhatsApp conversations.",
     businessValue:
@@ -167,7 +166,6 @@ export const projects: Project[] = [
     title: "Teams AI Meeting Assistant",
     category: "Voice, captions and summaries",
     icon: Bot,
-    url: "https://github.com/MehfoozurRehman",
     summary:
       "Meeting join, caption capture, summary and action-item workflows using Microsoft Graph and AI services.",
     businessValue:
@@ -178,7 +176,6 @@ export const projects: Project[] = [
     title: "Expo Mobile Apps",
     category: "Cross-platform mobile delivery",
     icon: Smartphone,
-    url: "https://github.com/MehfoozurRehman",
     summary:
       "Production mobile apps shipped through Expo, EAS, TestFlight and Google Play Console.",
     businessValue:
@@ -189,7 +186,6 @@ export const projects: Project[] = [
     title: "Desktop Automation Tools",
     category: "Electron and background apps",
     icon: Laptop,
-    url: "https://github.com/MehfoozurRehman",
     summary:
       "Desktop utilities that run background workflows and connect local machines to web dashboards.",
     businessValue:
