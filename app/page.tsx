@@ -15,20 +15,20 @@ export default function Home() {
         <a className="grid size-10 place-items-center rounded-full bg-[#0C2120] text-[0.76rem] font-black text-[#F1EFE5]" href="#top">
           MR
         </a>
-        <div className="flex items-center gap-1 text-[0.72rem] font-black uppercase tracking-[0.16em] text-[#50463F] sm:gap-2">
-          <a className="rounded-full px-3 py-2 hover:bg-[#0C2120]/5 hover:text-[#0C2120]" href="#work">
+        <div className="flex items-center gap-0 text-[0.62rem] font-black uppercase tracking-[0.14em] text-[#50463F] sm:gap-2 sm:text-[0.72rem]">
+          <a className="rounded-full px-2.5 py-2 hover:bg-[#0C2120]/5 hover:text-[#0C2120] sm:px-3" href="#work">
             Work
           </a>
-          <a className="rounded-full px-3 py-2 hover:bg-[#0C2120]/5 hover:text-[#0C2120]" href="#services">
+          <a className="rounded-full px-2.5 py-2 hover:bg-[#0C2120]/5 hover:text-[#0C2120] sm:px-3" href="#services">
             Services
           </a>
-          <a className="rounded-full bg-[#0C2120] px-4 py-2 text-[#F1EFE5] hover:bg-[#D7720C]" href="#contact">
+          <a className="rounded-full bg-[#0C2120] px-3 py-2 text-[#F1EFE5] hover:bg-[#D7720C] sm:px-4" href="#contact">
             Contact
           </a>
         </div>
       </nav>
 
-      <section id="top" className="mx-auto grid max-w-[1360px] gap-10 px-5 pb-12 pt-12 sm:px-8 lg:min-h-[calc(100vh-65px)] lg:grid-cols-[0.98fr_1.02fr] lg:items-center lg:px-12 lg:pb-16 lg:pt-8 xl:px-16">
+      <section id="top" className="mx-auto grid max-w-[1360px] gap-10 px-5 pb-12 pt-10 sm:px-8 lg:min-h-[calc(100vh-65px)] lg:grid-cols-[0.98fr_1.02fr] lg:items-start lg:px-12 lg:pb-16 lg:pt-24 xl:px-16">
         <div className="max-w-[600px]">
           <p className={eyebrowClass}>
             <Sparkles size={14} aria-hidden="true" />
@@ -40,7 +40,7 @@ export default function Home() {
           <h2 className="mt-5 max-w-[500px] text-[clamp(0.98rem,1.22vw,1.2rem)] font-black leading-[1.22] tracking-normal">
             I&apos;m Mehfooz-ur-Rehman, a full-stack developer for web, mobile, desktop, AI and automation systems.
           </h2>
-          <p className="mt-5 max-w-[500px] text-[0.95rem] leading-7 text-[#50463F]">
+          <p className="mt-5 max-w-[500px] text-[0.9rem] leading-7 text-[#50463F] sm:text-[0.95rem]">
             I turn messy operations into fast, reliable software: dashboards, apps, automation, AI assistants and complete SaaS products.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -51,7 +51,7 @@ export default function Home() {
               <Code2 size={18} aria-hidden="true" /> GitHub
             </a>
           </div>
-          <div className="mt-10 flex flex-wrap gap-x-7 gap-y-4 border-t border-[#0C2120]/10 pt-6">
+          <div className="mt-9 flex flex-wrap gap-x-7 gap-y-4 border-t border-[#0C2120]/10 pt-6">
             {[
               ["6+", "Years"],
               ["100", "Repos"],
@@ -63,8 +63,14 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <div className="mt-8 hidden max-w-[500px] items-center gap-5 border-t border-[#0C2120]/10 pt-5 text-[0.68rem] font-black uppercase tracking-[0.14em] text-[#50463F] sm:flex">
+            <span>Follow</span>
+            <a className="hover:text-[#D7720C]" href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+            <a className="hover:text-[#D7720C]" href={profile.github} target="_blank" rel="noreferrer">GitHub</a>
+            <a className="hover:text-[#D7720C]" href={profile.instagram} target="_blank" rel="noreferrer">Instagram</a>
+          </div>
         </div>
-        <div className="relative mx-auto w-full max-w-[500px] justify-self-center lg:justify-self-end">
+        <div className="relative mx-auto w-full max-w-[500px] justify-self-center lg:mt-2 lg:justify-self-end">
           <div className="absolute -left-7 top-12 z-10 hidden rounded-full bg-[#BCBDAC] px-6 py-4 text-[0.78rem] font-black uppercase tracking-[0.12em] text-[#0C2120] shadow-xl shadow-[#0C2120]/10 sm:block">
             Next.js / Convex / AI
           </div>
