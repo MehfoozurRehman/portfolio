@@ -34,7 +34,7 @@ export default function Home() {
             <Sparkles size={14} aria-hidden="true" />
             Available for product builds
           </p>
-          <h1 className={`${displayClass} text-[clamp(2rem,4.35vw,4.05rem)]`}>
+          <h1 className={`${displayClass} text-[clamp(2rem,3.9vw,3.65rem)]`}>
             Building products from idea to launch.
           </h1>
           <h2 className="mt-5 max-w-[500px] text-[clamp(0.92rem,1.22vw,1.18rem)] font-black leading-[1.22] tracking-normal">
