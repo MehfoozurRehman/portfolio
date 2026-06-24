@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import { ServiceWorkerCleanup } from "./service-worker-cleanup";
+import { ScrollToTopButton } from "./scroll-to-top-button";
 import "./globals.css";
 
 const nunito = Nunito({
@@ -49,6 +50,7 @@ export default function RootLayout({
     <html lang="en" className={`${nunito.variable} h-full bg-[#F1EFE5] antialiased`}>
       <body className="flex min-h-full flex-col bg-[#F1EFE5] font-[family-name:var(--font-nunito)]">
         <ServiceWorkerCleanup />
+        <ScrollToTopButton />
         {children}
       </body>
     </html>
