@@ -70,26 +70,32 @@ export default function Home() {
             <a className="hover:text-[#D7720C]" href={profile.instagram} target="_blank" rel="noreferrer">Instagram</a>
           </div>
         </div>
-        <div className="relative mx-auto w-full max-w-[500px] justify-self-center lg:mt-2 lg:justify-self-end">
-          <div className="absolute -left-7 top-12 z-10 hidden rounded-full bg-[#BCBDAC] px-6 py-4 text-[0.78rem] font-black uppercase tracking-[0.12em] text-[#0C2120] shadow-xl shadow-[#0C2120]/10 sm:block">
+        <div className="relative mx-auto w-full max-w-[520px] justify-self-center lg:mt-2 lg:justify-self-end">
+          <div className="absolute -left-7 top-10 z-10 hidden rounded-full bg-[#BCBDAC] px-6 py-4 text-[0.78rem] font-black uppercase tracking-[0.12em] text-[#0C2120] shadow-xl shadow-[#0C2120]/10 sm:block">
             Next.js / Convex / AI
           </div>
-          <div className="absolute -right-4 bottom-20 z-10 hidden size-36 place-items-center rounded-full bg-[#D7720C] p-6 text-center text-white shadow-xl shadow-[#D7720C]/20 sm:grid">
+          <div className="absolute -right-4 bottom-24 z-10 hidden size-[8.5rem] place-items-center rounded-full bg-[#D7720C] p-5 text-center text-white shadow-xl shadow-[#D7720C]/20 sm:grid">
             <strong className="text-[1.05rem] font-black leading-tight">Complete products, not just screens.</strong>
           </div>
-          <div className="overflow-hidden rounded-[34px] bg-[#0C2120] p-4 shadow-2xl shadow-[#0C2120]/20">
-            <div className="relative aspect-[0.9] overflow-hidden rounded-[28px] bg-[#668A85]">
+          <div className="absolute -bottom-6 left-8 hidden h-16 w-[82%] rounded-full bg-[#0C2120]/10 blur-2xl lg:block" />
+          <div className="relative overflow-hidden rounded-[32px] border-[14px] border-[#0C2120] bg-[#0C2120] shadow-2xl shadow-[#0C2120]/20">
+            <div className="relative aspect-[0.96] overflow-hidden rounded-[20px] bg-[#668A85]">
               <Image className="h-full w-full object-cover object-center" src="/pic.webp" alt="Mehfooz-ur-Rehman" width={720} height={840} priority />
             </div>
-            <div className="mt-4 grid gap-3 rounded-[24px] bg-[#F1EFE5] p-4 text-[#0C2120] sm:grid-cols-[1fr_auto] sm:items-center">
+            <div className="grid gap-3 border-t-[14px] border-[#0C2120] bg-[#F1EFE5] p-4 text-[#0C2120] sm:grid-cols-[1fr_auto] sm:items-center">
               <div>
                 <span className="text-[0.68rem] font-black uppercase tracking-[0.16em] text-[#D7720C]">{profile.role}</span>
                 <strong className="mt-1 block text-[1rem] leading-tight">Web, mobile, desktop, AI and automation.</strong>
               </div>
-              <a className="inline-flex size-12 items-center justify-center rounded-full bg-[#0C2120] text-[#F1EFE5]" href="#work" aria-label="View work">
+              <a className="inline-flex size-11 items-center justify-center rounded-full bg-[#0C2120] text-[#F1EFE5]" href="#work" aria-label="View work">
                 <ArrowUpRight size={20} aria-hidden="true" />
               </a>
             </div>
+          </div>
+          <div className="mt-5 grid grid-cols-3 border-y border-[#0C2120]/10 text-[0.68rem] font-black uppercase tracking-[0.14em] text-[#50463F]">
+            <span className="py-3">Product</span>
+            <span className="border-x border-[#0C2120]/10 px-3 py-3 text-center">Systems</span>
+            <span className="py-3 text-right">Launch</span>
           </div>
         </div>
       </section>
