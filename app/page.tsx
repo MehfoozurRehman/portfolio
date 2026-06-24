@@ -3,7 +3,7 @@ import { ArrowUpRight, Code2, Link, Mail, MessageCircle, Phone, Sparkles } from 
 import { ContactForm } from "./contact-form";
 import { process, profile, projects, services, stack, testimonials } from "./data";
 
-const sectionClass = "mx-auto max-w-[1440px] px-5 py-12 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 lg:py-16";
+const sectionClass = "mx-auto max-w-[1360px] px-5 py-12 sm:px-8 lg:px-12 xl:px-16 lg:py-16";
 const eyebrowClass = "mb-4 flex items-center gap-2 text-[0.72rem] font-black uppercase tracking-[0.16em] text-[#D7720C]";
 const displayClass = "font-[family-name:var(--font-nunito)] font-black leading-[0.98] tracking-normal";
 const cardClass = "rounded-[18px] border border-[#0C2120]/10 bg-[#F8F2E6]";
@@ -11,75 +11,74 @@ const cardClass = "rounded-[18px] border border-[#0C2120]/10 bg-[#F8F2E6]";
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#F1EFE5] text-[#0C2120]">
-      <nav className="mx-auto flex max-w-[1440px] items-center justify-between px-5 pt-5 sm:px-8 lg:px-12 xl:px-16 2xl:px-20">
-        <a className="grid size-11 place-items-center rounded-full bg-[#0C2120] text-[0.8rem] font-black text-[#F1EFE5]" href="#top">
+      <nav className="mx-auto flex max-w-[1360px] items-center justify-between px-5 pt-5 sm:px-8 lg:px-12 xl:px-16">
+        <a className="grid size-10 place-items-center rounded-full bg-[#0C2120] text-[0.76rem] font-black text-[#F1EFE5]" href="#top">
           MR
         </a>
-        <div className="flex items-center gap-1 text-[0.8rem] font-extrabold uppercase tracking-[0.12em] text-[#50463F] sm:gap-3">
+        <div className="flex items-center gap-1 text-[0.72rem] font-black uppercase tracking-[0.16em] text-[#50463F] sm:gap-2">
           <a className="rounded-full px-3 py-2 hover:bg-[#0C2120]/5 hover:text-[#0C2120]" href="#work">
             Work
           </a>
           <a className="rounded-full px-3 py-2 hover:bg-[#0C2120]/5 hover:text-[#0C2120]" href="#services">
             Services
           </a>
-          <a className="rounded-full px-3 py-2 hover:bg-[#0C2120]/5 hover:text-[#0C2120]" href="#contact">
+          <a className="rounded-full bg-[#0C2120] px-4 py-2 text-[#F1EFE5] hover:bg-[#D7720C]" href="#contact">
             Contact
           </a>
         </div>
       </nav>
 
-      <section id="top" className="mx-auto grid max-w-[1440px] gap-8 px-5 pb-10 pt-9 sm:px-8 lg:min-h-[calc(100vh-68px)] lg:grid-cols-[1.05fr_0.95fr] lg:items-start lg:px-12 lg:pb-12 lg:pt-20 xl:px-16 2xl:px-20">
-        <div className="max-w-[700px]">
+      <section id="top" className="mx-auto grid max-w-[1360px] gap-10 px-5 pb-12 pt-12 sm:px-8 lg:min-h-[calc(100vh-65px)] lg:grid-cols-[0.98fr_1.02fr] lg:items-center lg:px-12 lg:pb-16 lg:pt-8 xl:px-16">
+        <div className="max-w-[600px]">
           <p className={eyebrowClass}>
             <Sparkles size={14} aria-hidden="true" />
             Available for product builds
           </p>
-          <h1 className={`${displayClass} text-[clamp(2.55rem,4vw,4.4rem)]`}>
-            Mehfooz-ur-Rehman
+          <h1 className={`${displayClass} text-[clamp(2.18rem,4.35vw,4.15rem)]`}>
+            Building products from idea to launch.
           </h1>
-          <h2 className="mt-5 max-w-[590px] text-[clamp(1.25rem,1.75vw,2rem)] font-black leading-[1.1] tracking-normal">
-            Full-stack product developer building web, mobile, desktop and AI systems.
+          <h2 className="mt-5 max-w-[500px] text-[clamp(0.98rem,1.22vw,1.2rem)] font-black leading-[1.22] tracking-normal">
+            I&apos;m Mehfooz-ur-Rehman, a full-stack developer for web, mobile, desktop, AI and automation systems.
           </h2>
-          <p className="mt-5 max-w-[560px] text-[0.98rem] leading-7 text-[#50463F] sm:text-[1.05rem]">
+          <p className="mt-5 max-w-[500px] text-[0.95rem] leading-7 text-[#50463F]">
             I turn messy operations into fast, reliable software: dashboards, apps, automation, AI assistants and complete SaaS products.
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a className="inline-flex min-h-12 items-center gap-2 rounded-full bg-[#D7720C] px-6 text-sm font-black text-white shadow-lg shadow-[#D7720C]/20" href="#contact">
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <a className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[#D7720C] px-6 text-sm font-black text-white shadow-lg shadow-[#D7720C]/20" href="#contact">
               Let&apos;s build <ArrowUpRight size={18} aria-hidden="true" />
             </a>
-            <a className="inline-flex min-h-12 items-center gap-2 rounded-full border border-[#0C2120]/15 px-6 text-sm font-black text-[#0C2120]" href={profile.github} target="_blank" rel="noreferrer">
+            <a className="inline-flex min-h-11 items-center gap-2 rounded-full border border-[#0C2120]/15 px-5 text-sm font-black text-[#0C2120]" href={profile.github} target="_blank" rel="noreferrer">
               <Code2 size={18} aria-hidden="true" /> GitHub
             </a>
           </div>
-          <div className="mt-8 grid gap-3 sm:grid-cols-3">
+          <div className="mt-10 flex flex-wrap gap-x-7 gap-y-4 border-t border-[#0C2120]/10 pt-6">
             {[
-              ["6+", "years"],
-              ["100", "repos"],
-              [profile.company, "currently"]
+              ["6+", "Years"],
+              ["100", "Repos"],
+              [profile.company, "Current"]
             ].map(([value, label]) => (
-              <div className="rounded-[18px] border border-[#0C2120]/10 bg-[#F8F2E6] px-5 py-4" key={value}>
-                <strong className={`${displayClass} block text-[1.65rem]`}>{value}</strong>
-                <span className="text-xs font-extrabold uppercase tracking-[0.12em] text-[#668A85]">{label}</span>
+              <div key={value}>
+                <strong className={`${displayClass} block text-[1.55rem]`}>{value}</strong>
+                <span className="text-[0.68rem] font-black uppercase tracking-[0.14em] text-[#668A85]">{label}</span>
               </div>
             ))}
           </div>
         </div>
-        <div className="relative mx-auto w-full max-w-[460px] xl:max-w-[500px]">
-          <div className="absolute -left-4 top-8 hidden rounded-[22px] bg-[#BCBDAC] px-5 py-4 text-sm font-black text-[#0C2120] shadow-xl shadow-[#0C2120]/10 sm:block">
+        <div className="relative mx-auto w-full max-w-[500px] justify-self-center lg:justify-self-end">
+          <div className="absolute -left-7 top-12 z-10 hidden rounded-full bg-[#BCBDAC] px-6 py-4 text-[0.78rem] font-black uppercase tracking-[0.12em] text-[#0C2120] shadow-xl shadow-[#0C2120]/10 sm:block">
             Next.js / Convex / AI
           </div>
-          <div className="absolute -right-3 bottom-16 z-10 hidden max-w-[200px] rounded-[22px] bg-[#D7720C] p-5 text-white shadow-xl shadow-[#D7720C]/20 sm:block">
-            <span className="text-xs font-black uppercase tracking-[0.14em] text-white/75">Focus</span>
-            <strong className="mt-2 block text-lg leading-tight">Complete products, not just screens.</strong>
+          <div className="absolute -right-4 bottom-20 z-10 hidden size-36 place-items-center rounded-full bg-[#D7720C] p-6 text-center text-white shadow-xl shadow-[#D7720C]/20 sm:grid">
+            <strong className="text-[1.05rem] font-black leading-tight">Complete products, not just screens.</strong>
           </div>
-          <div className="overflow-hidden rounded-[30px] bg-[#0C2120] p-4 shadow-2xl shadow-[#0C2120]/20">
-            <div className="relative aspect-[0.84] overflow-hidden rounded-[24px] bg-[#668A85]">
+          <div className="overflow-hidden rounded-[34px] bg-[#0C2120] p-4 shadow-2xl shadow-[#0C2120]/20">
+            <div className="relative aspect-[0.9] overflow-hidden rounded-[28px] bg-[#668A85]">
               <Image className="h-full w-full object-cover object-center" src="/pic.webp" alt="Mehfooz-ur-Rehman" width={720} height={840} priority />
             </div>
-            <div className="mt-4 grid gap-3 rounded-[22px] bg-[#F1EFE5] p-4 text-[#0C2120] sm:grid-cols-[1fr_auto] sm:items-center">
+            <div className="mt-4 grid gap-3 rounded-[24px] bg-[#F1EFE5] p-4 text-[#0C2120] sm:grid-cols-[1fr_auto] sm:items-center">
               <div>
-                <span className="text-xs font-black uppercase tracking-[0.14em] text-[#D7720C]">{profile.role}</span>
-                <strong className="mt-1 block text-lg leading-tight">Web, mobile, desktop, AI and automation.</strong>
+                <span className="text-[0.68rem] font-black uppercase tracking-[0.16em] text-[#D7720C]">{profile.role}</span>
+                <strong className="mt-1 block text-[1rem] leading-tight">Web, mobile, desktop, AI and automation.</strong>
               </div>
               <a className="inline-flex size-12 items-center justify-center rounded-full bg-[#0C2120] text-[#F1EFE5]" href="#work" aria-label="View work">
                 <ArrowUpRight size={20} aria-hidden="true" />
