@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { ArrowUpRight, Code2, Link, Mail, MessageCircle, Phone, Sparkles } from "lucide-react";
+import { ArrowUpRight, Code2, GraduationCap, Link, Mail, MapPin, MessageCircle, Phone, Sparkles } from "lucide-react";
 import { ContactForm } from "./contact-form";
-import { process, profile, projects, services, stack, testimonials } from "./data";
+import { education, experience, metrics, process, profile, profileHighlights, projects, services, stack, testimonials } from "./data";
 
 const sectionClass = "mx-auto max-w-[1360px] px-5 py-11 sm:px-8 lg:px-12 xl:px-16 lg:py-14";
 const eyebrowClass = "mb-4 flex items-center gap-2 text-[0.72rem] font-black uppercase tracking-[0.16em] text-[#D7720C]";
@@ -10,7 +10,7 @@ const cardClass = "rounded-[18px] border border-[#0C2120]/10 bg-[#F8F2E6]";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#F1EFE5] text-[#0C2120]">
+    <main className="min-h-screen overflow-x-hidden bg-[#F1EFE5] text-[#0C2120]">
       <nav className="mx-auto flex max-w-[1360px] items-center justify-between px-5 pt-5 sm:px-8 lg:px-12 xl:px-16">
         <a className="grid size-14 place-items-center" href="#top" aria-label="Mehfooz-ur-Rehman home">
           <Image src="/logo.svg" alt="" width={56} height={56} priority />
@@ -18,6 +18,12 @@ export default function Home() {
         <div className="flex items-center gap-0 text-[0.62rem] font-black uppercase tracking-[0.14em] text-[#50463F] sm:gap-2 sm:text-[0.72rem]">
           <a className="rounded-full px-2.5 py-2 hover:bg-[#0C2120]/5 hover:text-[#0C2120] sm:px-3" href="#work">
             Work
+          </a>
+          <a className="hidden rounded-full px-2.5 py-2 hover:bg-[#0C2120]/5 hover:text-[#0C2120] sm:inline-flex sm:px-3" href="#about">
+            About
+          </a>
+          <a className="hidden rounded-full px-2.5 py-2 hover:bg-[#0C2120]/5 hover:text-[#0C2120] md:inline-flex sm:px-3" href="#experience">
+            Experience
           </a>
           <a className="rounded-full px-2.5 py-2 hover:bg-[#0C2120]/5 hover:text-[#0C2120] sm:px-3" href="#services">
             Services
@@ -41,7 +47,11 @@ export default function Home() {
             I&apos;m Mehfooz-ur-Rehman, a full-stack developer for web, mobile, desktop, AI and automation systems.
           </h2>
           <p className="mt-5 max-w-[500px] text-[0.9rem] leading-7 text-[#50463F] sm:text-[0.95rem]">
-            I turn messy operations into fast, reliable software: dashboards, apps, automation, AI assistants and complete SaaS products.
+            {profile.about}
+          </p>
+          <p className="mt-4 inline-flex max-w-[500px] items-start gap-2 text-[0.86rem] font-bold leading-6 text-[#0C2120]">
+            <MapPin className="mt-0.5 shrink-0 text-[#D7720C]" size={17} aria-hidden="true" />
+            {profile.availability}
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a className="inline-flex min-h-10 items-center gap-2 rounded-full bg-[#D7720C] px-5 text-[0.82rem] font-black text-white shadow-lg shadow-[#D7720C]/20 sm:min-h-11 sm:px-6 sm:text-sm" href="#contact">
@@ -53,8 +63,8 @@ export default function Home() {
           </div>
           <div className="mt-9 flex flex-wrap gap-x-7 gap-y-4 border-t border-[#0C2120]/10 pt-6">
             {[
-              ["6+", "Years"],
-              ["100", "Repos"],
+              ["5+", "Years"],
+              ["4", "Roles"],
               [profile.company, "Current"]
             ].map(([value, label]) => (
               <div key={value}>
@@ -100,6 +110,67 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="about" className={`${sectionClass} grid gap-10 border-t border-[#0C2120]/10 lg:grid-cols-[0.78fr_1.22fr]`}>
+        <div className="min-w-0">
+          <p className={eyebrowClass}>Profile</p>
+          <h2 className={`${displayClass} text-[clamp(1.45rem,2.1vw,2.3rem)]`}>A product developer with practical range.</h2>
+          <p className="mt-5 text-[0.92rem] leading-8 text-[#50463F]">{profile.subheadline}</p>
+          <div className="mt-7 grid min-w-0 gap-2 text-[0.82rem] font-black uppercase tracking-[0.12em] text-[#0C2120]">
+            <span>{profile.connections}</span>
+            <span>{profile.followers}</span>
+            <span className="break-all">{profile.publicLinkedIn}</span>
+          </div>
+        </div>
+        <div className="grid min-w-0 gap-3 sm:grid-cols-2">
+          {profileHighlights.map((item) => (
+            <article className={`${cardClass} min-w-0 p-5`} key={item.title}>
+              <item.icon className="mb-5 text-[#D7720C]" size={24} aria-hidden="true" />
+              <h3 className="mb-2 text-[1rem] font-black">{item.title}</h3>
+              <p className="text-[0.9rem] leading-7 text-[#50463F]">{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className={`${sectionClass} grid gap-3 border-t border-[#0C2120]/10 sm:grid-cols-2 xl:grid-cols-4`}>
+        {metrics.map((metric) => (
+          <article className="border-y border-[#0C2120]/10 py-5 sm:border sm:px-5" key={metric.label}>
+            <strong className={`${displayClass} block text-[2rem] text-[#D7720C]`}>{metric.value}</strong>
+            <h3 className="mt-2 text-[0.92rem] font-black">{metric.label}</h3>
+            <p className="mt-2 text-[0.82rem] leading-6 text-[#50463F]">{metric.detail}</p>
+          </article>
+        ))}
+      </section>
+
+      <section id="experience" className={`${sectionClass} border-t border-[#0C2120]/10`}>
+        <div className="mb-9 max-w-3xl">
+          <p className={eyebrowClass}>Experience</p>
+          <h2 className={`${displayClass} text-[clamp(1.45rem,2.1vw,2.3rem)]`}>Product work across schools, SaaS teams and business systems.</h2>
+        </div>
+        <div className="grid gap-4">
+          {experience.map((item) => (
+            <article className="grid gap-5 border-t border-[#0C2120]/10 py-6 lg:grid-cols-[0.38fr_1fr]" key={`${item.company}-${item.period}`}>
+              <div>
+                <p className="text-[0.74rem] font-black uppercase tracking-[0.14em] text-[#D7720C]">{item.period}</p>
+                <p className="mt-2 text-[0.86rem] font-bold leading-6 text-[#50463F]">{item.location}</p>
+              </div>
+              <div>
+                <h3 className="text-[1.15rem] font-black leading-tight">{item.role}</h3>
+                <p className="mt-1 text-[0.92rem] font-black text-[#668A85]">{item.company}</p>
+                <p className="mt-4 max-w-3xl text-[0.92rem] leading-8 text-[#50463F]">{item.summary}</p>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {item.skills.map((skill) => (
+                    <span className="rounded-full border border-[#0C2120]/10 bg-[#F8F2E6] px-3 py-1.5 text-[0.7rem] font-black text-[#0C2120]" key={skill}>
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section id="services" className={`${sectionClass} grid gap-10 border-t border-[#0C2120]/10 lg:grid-cols-[0.8fr_1.2fr]`}>
         <div>
           <p className={eyebrowClass}>What I build</p>
@@ -137,6 +208,34 @@ export default function Home() {
                     {item}
                   </span>
                 ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className={`${sectionClass} grid gap-6 border-y border-[#0C2120]/10 lg:grid-cols-[0.8fr_1.2fr]`}>
+        <div>
+          <p className={eyebrowClass}>Education</p>
+          <h2 className={`${displayClass} text-[clamp(1.45rem,2.1vw,2.3rem)]`}>Computer science foundation with product experience on top.</h2>
+        </div>
+        <div className="grid gap-3">
+          {education.map((item) => (
+            <article className={`${cardClass} grid gap-4 p-5 sm:grid-cols-[auto_1fr] sm:items-start`} key={item.school}>
+              <div className="grid size-11 place-items-center rounded-full bg-[#0C2120] text-[#F1EFE5]">
+                <GraduationCap size={22} aria-hidden="true" />
+              </div>
+              <div>
+                <h3 className="text-[1.05rem] font-black">{item.school}</h3>
+                <p className="mt-1 text-[0.92rem] font-bold text-[#50463F]">{item.degree}</p>
+                <p className="mt-2 text-[0.78rem] font-black uppercase tracking-[0.12em] text-[#D7720C]">{item.period}</p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {item.focus.map((focus) => (
+                    <span className="rounded-full border border-[#0C2120]/10 px-3 py-1.5 text-[0.7rem] font-black" key={focus}>
+                      {focus}
+                    </span>
+                  ))}
+                </div>
               </div>
             </article>
           ))}
