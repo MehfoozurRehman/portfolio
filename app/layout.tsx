@@ -46,8 +46,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${nunito.variable} h-full antialiased`}>
-      <body className="flex min-h-full flex-col font-[family-name:var(--font-nunito)]">
+    <html lang="en" className={`${nunito.variable} h-full bg-[#F1EFE5] antialiased`}>
+      <body className="flex min-h-full flex-col bg-[#F1EFE5] font-[family-name:var(--font-nunito)]">
         <ServiceWorkerCleanup />
         {children}
       </body>
