@@ -3,7 +3,7 @@ import { ArrowUpRight, Code2, Link, Mail, MessageCircle, Phone, Sparkles } from 
 import { ContactForm } from "./contact-form";
 import { process, profile, projects, services, stack, testimonials } from "./data";
 
-const sectionClass = "mx-auto max-w-[1360px] px-5 py-12 sm:px-8 lg:px-12 xl:px-16 lg:py-16";
+const sectionClass = "mx-auto max-w-[1360px] px-5 py-11 sm:px-8 lg:px-12 xl:px-16 lg:py-14";
 const eyebrowClass = "mb-4 flex items-center gap-2 text-[0.72rem] font-black uppercase tracking-[0.16em] text-[#D7720C]";
 const displayClass = "font-[family-name:var(--font-nunito)] font-black leading-[0.98] tracking-normal";
 const cardClass = "rounded-[18px] border border-[#0C2120]/10 bg-[#F8F2E6]";
@@ -28,7 +28,7 @@ export default function Home() {
         </div>
       </nav>
 
-      <section id="top" className="mx-auto grid max-w-[1360px] gap-10 px-5 pb-12 pt-10 sm:px-8 lg:min-h-[calc(100vh-65px)] lg:grid-cols-[0.98fr_1.02fr] lg:items-start lg:px-12 lg:pb-16 lg:pt-24 xl:px-16">
+      <section id="top" className="mx-auto grid max-w-[1360px] gap-10 px-5 pb-12 pt-10 sm:px-8 lg:min-h-[760px] lg:grid-cols-[0.98fr_1.02fr] lg:items-start lg:px-12 lg:pb-14 lg:pt-20 xl:px-16">
         <div className="max-w-[600px]">
           <p className={eyebrowClass}>
             <Sparkles size={14} aria-hidden="true" />
@@ -100,17 +100,17 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="services" className={`${sectionClass} grid gap-12 lg:grid-cols-[0.8fr_1.2fr]`}>
+      <section id="services" className={`${sectionClass} grid gap-10 border-t border-[#0C2120]/10 lg:grid-cols-[0.8fr_1.2fr]`}>
         <div>
           <p className={eyebrowClass}>What I build</p>
-          <h2 className={`${displayClass} text-[clamp(1.55rem,2.4vw,2.6rem)]`}>Complete business systems, not isolated screens.</h2>
+          <h2 className={`${displayClass} text-[clamp(1.45rem,2.1vw,2.3rem)]`}>Complete business systems, not isolated screens.</h2>
         </div>
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid border-t border-[#0C2120]/10 sm:grid-cols-2 lg:border-t-0">
           {services.map((service) => (
-            <article className={`${cardClass} p-6`} key={service.title}>
-              <service.icon className="mb-5 text-[#D7720C]" size={28} aria-hidden="true" />
-              <h3 className="mb-3 text-[1.1rem] font-black">{service.title}</h3>
-              <p className="text-[0.95rem] leading-7 text-[#50463F]">{service.description}</p>
+            <article className="border-b border-[#0C2120]/10 py-5 sm:px-5 sm:odd:border-r" key={service.title}>
+              <service.icon className="mb-4 text-[#D7720C]" size={24} aria-hidden="true" />
+              <h3 className="mb-2 text-[1rem] font-black">{service.title}</h3>
+              <p className="text-[0.9rem] leading-7 text-[#50463F]">{service.description}</p>
             </article>
           ))}
         </div>
@@ -119,18 +119,18 @@ export default function Home() {
       <section id="work" className={sectionClass}>
         <div className="mb-9 max-w-3xl">
           <p className={eyebrowClass}>Featured work</p>
-          <h2 className={`${displayClass} text-[clamp(1.55rem,2.4vw,2.6rem)]`}>Products shaped around operations, revenue and daily use.</h2>
+          <h2 className={`${displayClass} text-[clamp(1.45rem,2.1vw,2.3rem)]`}>Products shaped around operations, revenue and daily use.</h2>
         </div>
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
           {projects.map((project) => (
-            <article className={`${cardClass} flex min-h-[360px] flex-col p-6`} key={project.title}>
-              <div className="mb-5 grid size-11 place-items-center rounded-full bg-[#0C2120] text-[#F1EFE5]">
-                <project.icon size={22} aria-hidden="true" />
+            <article className={`${cardClass} flex min-h-[330px] flex-col p-5`} key={project.title}>
+              <div className="mb-5 grid size-10 place-items-center rounded-full bg-[#0C2120] text-[#F1EFE5]">
+                <project.icon size={20} aria-hidden="true" />
               </div>
               <p className="mb-2 text-[0.68rem] font-black uppercase tracking-[0.12em] text-[#668A85]">{project.category}</p>
-              <h3 className="mb-3 text-[1.25rem] font-black leading-tight">{project.title}</h3>
-              <p className="text-[0.95rem] leading-7 text-[#50463F]">{project.summary}</p>
-              <strong className="mt-4 block text-[0.95rem] leading-7">{project.businessValue}</strong>
+              <h3 className="mb-3 text-[1.15rem] font-black leading-tight">{project.title}</h3>
+              <p className="text-[0.9rem] leading-7 text-[#50463F]">{project.summary}</p>
+              <strong className="mt-4 block text-[0.9rem] leading-7">{project.businessValue}</strong>
               <div className="mt-auto flex flex-wrap gap-2 pt-6">
                 {project.stack.map((item) => (
                   <span className="rounded-full border border-[#0C2120]/10 px-3 py-1.5 text-[0.7rem] font-black text-[#0C2120]" key={item}>
@@ -143,26 +143,26 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={`${sectionClass} grid gap-10 lg:grid-cols-[0.8fr_1.2fr]`}>
+      <section className={`${sectionClass} grid gap-10 border-y border-[#0C2120]/10 lg:grid-cols-[0.8fr_1.2fr]`}>
         <div>
           <p className={eyebrowClass}>Stack</p>
-          <h2 className={`${displayClass} text-[clamp(1.55rem,2.4vw,2.6rem)]`}>Modern tools I already use to ship.</h2>
+          <h2 className={`${displayClass} text-[clamp(1.45rem,2.1vw,2.3rem)]`}>Modern tools I already use to ship.</h2>
         </div>
         <div className="flex content-start flex-wrap gap-2">
           {stack.map((item) => (
-            <span className="rounded-full border border-[#0C2120]/10 bg-[#F8F2E6] px-4 py-2 text-[0.8rem] font-black text-[#0C2120]" key={item}>
+            <span className="rounded-full border border-[#0C2120]/10 bg-[#F8F2E6] px-3.5 py-2 text-[0.76rem] font-black text-[#0C2120]" key={item}>
               {item}
             </span>
           ))}
         </div>
       </section>
 
-      <section className={`${sectionClass} grid gap-4 md:grid-cols-3`}>
+      <section className={`${sectionClass} grid gap-0 md:grid-cols-3`}>
         {process.map((item) => (
-          <article className={`${cardClass} p-6`} key={item.title}>
-            <item.icon className="mb-5 text-[#D7720C]" size={28} aria-hidden="true" />
-            <h3 className="mb-3 text-[1.1rem] font-black">{item.title}</h3>
-            <p className="text-[0.95rem] leading-7 text-[#50463F]">{item.text}</p>
+          <article className="border-y border-[#0C2120]/10 py-6 md:border-r md:px-6 md:first:border-l" key={item.title}>
+            <item.icon className="mb-5 text-[#D7720C]" size={24} aria-hidden="true" />
+            <h3 className="mb-3 text-[1rem] font-black">{item.title}</h3>
+            <p className="text-[0.9rem] leading-7 text-[#50463F]">{item.text}</p>
           </article>
         ))}
       </section>
@@ -170,12 +170,12 @@ export default function Home() {
       <section className={sectionClass}>
         <div className="mb-9 max-w-3xl">
           <p className={eyebrowClass}>Testimonials</p>
-          <h2 className={`${displayClass} text-[clamp(1.55rem,2.4vw,2.6rem)]`}>What clients and teammates already say.</h2>
+          <h2 className={`${displayClass} text-[clamp(1.45rem,2.1vw,2.3rem)]`}>What clients and teammates already say.</h2>
         </div>
         <div className="grid gap-4 lg:grid-cols-3">
           {testimonials.map((testimonial) => (
-            <blockquote className={`${cardClass} p-6`} key={testimonial.name}>
-              <p className={`${displayClass} text-[1.15rem] leading-tight`}>&ldquo;{testimonial.quote}&rdquo;</p>
+            <blockquote className={`${cardClass} p-5`} key={testimonial.name}>
+              <p className={`${displayClass} text-[1.05rem] leading-tight`}>&ldquo;{testimonial.quote}&rdquo;</p>
               <footer className="mt-7 grid gap-1">
                 <strong>{testimonial.name}</strong>
                 <span className="text-[#50463F]">{testimonial.role}</span>
