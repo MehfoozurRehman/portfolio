@@ -185,23 +185,23 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="bg-[#0C2120] text-[#F1EFE5]">
-        <div className={`${sectionClass} grid gap-12 lg:grid-cols-[0.9fr_1.1fr]`}>
+      <section id="contact" className="border-t border-[#0C2120]/10 bg-[#F1EFE5] text-[#0C2120]">
+        <div className={`${sectionClass} grid gap-10 lg:grid-cols-[0.9fr_1.1fr]`}>
           <div>
-            <p className="mb-4 flex items-center gap-2 text-[0.72rem] font-black uppercase tracking-[0.16em] text-[#BCBDAC]">Start here</p>
-            <h2 className={`${displayClass} text-[clamp(1.55rem,2.4vw,2.6rem)]`}>Need a reliable developer to build your product?</h2>
-            <p className="mt-6 max-w-xl text-[1rem] leading-8 text-[#BCBDAC]">
+            <p className={eyebrowClass}>Start here</p>
+            <h2 className={`${displayClass} text-[clamp(1.35rem,2.1vw,2.3rem)]`}>Need a reliable developer to build your product?</h2>
+            <p className="mt-6 max-w-xl text-[0.9rem] leading-7 text-[#50463F] sm:text-[0.95rem] sm:leading-8">
               Send the workflow, product idea or stuck project. I am strongest when the job needs product thinking,
               full-stack execution and a practical launch path.
             </p>
-            <div className="mt-8 grid gap-3 text-[#F1EFE5]">
-              <a className="inline-flex items-center gap-3" href={`mailto:${profile.email}`}>
+            <div className="mt-8 grid max-w-xl border-y border-[#0C2120]/10 text-[0.85rem] font-bold text-[#0C2120] sm:text-[0.9rem]">
+              <a className="inline-flex items-center gap-3 border-b border-[#0C2120]/10 py-3" href={`mailto:${profile.email}`}>
                 <Mail size={18} aria-hidden="true" /> {profile.email}
               </a>
-              <a className="inline-flex items-center gap-3" href={profile.whatsapp}>
+              <a className="inline-flex items-center gap-3 border-b border-[#0C2120]/10 py-3" href={profile.whatsapp}>
                 <MessageCircle size={18} aria-hidden="true" /> WhatsApp {profile.phone}
               </a>
-              <a className="inline-flex items-center gap-3" href={`tel:${profile.phone.replaceAll(" ", "")}`}>
+              <a className="inline-flex items-center gap-3 py-3" href={`tel:${profile.phone.replaceAll(" ", "")}`}>
                 <Phone size={18} aria-hidden="true" /> {profile.phone}
               </a>
             </div>
@@ -212,7 +212,7 @@ export default function Home() {
                 ["GitHub", profile.github],
                 ["CodeSandbox", profile.codesandbox]
               ].map(([label, href]) => (
-                <a className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/20 px-4 text-sm font-bold" href={href} target="_blank" rel="noreferrer" key={label}>
+                <a className="inline-flex min-h-10 items-center gap-2 rounded-full border border-[#0C2120]/10 px-3.5 text-[0.76rem] font-black sm:px-4 sm:text-[0.8rem]" href={href} target="_blank" rel="noreferrer" key={label}>
                   <Link size={16} aria-hidden="true" /> {label}
                 </a>
               ))}
