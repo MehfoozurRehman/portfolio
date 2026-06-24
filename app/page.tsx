@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ArrowUpRight, Code2, GraduationCap, Link, Mail, MapPin, MessageCircle, Phone, Sparkles } from "lucide-react";
 import { ContactForm } from "./contact-form";
+import { HomeLink } from "./home-link";
 import { education, experience, process, profile, profileHighlights, projects, services, stack, testimonials } from "./data";
 
 const sectionClass = "mx-auto max-w-[1360px] px-5 py-11 sm:px-8 lg:px-12 xl:px-16 lg:py-14";
@@ -11,10 +12,9 @@ const cardClass = "rounded-[18px] border border-[#0C2120]/10 bg-[#F8F2E6]";
 export default function Home() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#F1EFE5] text-[#0C2120]">
+      <div id="page-top" aria-hidden="true" />
       <nav className="mx-auto flex max-w-[1360px] items-center justify-between px-5 pt-5 sm:px-8 lg:px-12 xl:px-16">
-        <a className="grid size-14 place-items-center" href="#top" aria-label="Mehfooz-ur-Rehman home">
-          <Image src="/logo.svg" alt="" width={56} height={56} priority />
-        </a>
+        <HomeLink href="#page-top" />
         <div className="flex items-center gap-0 text-[0.62rem] font-black uppercase tracking-[0.14em] text-[#50463F] sm:gap-2 sm:text-[0.72rem]">
           <a className="rounded-full px-2.5 py-2 hover:bg-[#0C2120]/5 hover:text-[#0C2120] sm:px-3" href="#work">
             Work
