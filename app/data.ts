@@ -32,6 +32,7 @@ export type Project = {
   icon: LucideIcon;
   url?: string;
   logoUrl?: string;
+  heroImageUrl?: string;
   problem: string;
   approach: string;
   outcome: string;
@@ -121,6 +122,7 @@ export const projects: Project[] = [
     category: "School management platform",
     icon: School,
     url: "https://www.schooliee.com",
+    heroImageUrl: "/schooliee-hero.png",
     summary:
       "A cloud-based school ERP for small to mid-sized schools in Pakistan with admissions, attendance, exams, family profiles, challans, staff tools and parent communication.",
     businessValue:
@@ -139,6 +141,7 @@ export const projects: Project[] = [
     icon: Building2,
     url: "https://dsmeglobal.web.app",
     logoUrl: "/dsme-logo-transparent.png",
+    heroImageUrl: "/dsme-hero.png",
     summary:
       "A company site for a custom technology services firm focused on web and mobile development, scoping workshops, UI/UX and turnkey product delivery.",
     businessValue:
@@ -156,6 +159,7 @@ export const projects: Project[] = [
     category: "Amazon seller suite",
     icon: MessageCircle,
     url: "https://www.leadprofit.com",
+    heroImageUrl: "/leadprofit-hero.png",
     summary:
       "An Amazon seller platform that focuses on pricing, inventory, order tracking and analytics to keep operations and profitability visible.",
     businessValue:
@@ -173,6 +177,7 @@ export const projects: Project[] = [
     category: "Animated recording tool",
     icon: Bot,
     url: "https://clipout.video",
+    heroImageUrl: "/clipout-hero.png",
     summary:
       "A recording and animation tool that helps create polished clips with customizable templates and a streamlined capture flow.",
     businessValue:

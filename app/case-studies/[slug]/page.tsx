@@ -65,6 +65,19 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
               ) : null}
             </div>
 
+            {project.heroImageUrl ? (
+              <div className="mt-5 overflow-hidden rounded-[18px] border border-[#0C2120]/10 bg-[#0C2120]">
+                <Image
+                  src={project.heroImageUrl}
+                  alt={`${project.title} homepage screenshot`}
+                  width={1200}
+                  height={760}
+                  className="h-auto w-full object-cover"
+                  priority
+                />
+              </div>
+            ) : null}
+
             <div className="mt-6 grid grid-cols-2 gap-3 text-[0.78rem]">
               {[
                 ["Role", "Full-stack delivery"],
