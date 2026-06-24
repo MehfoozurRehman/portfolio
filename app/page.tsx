@@ -175,8 +175,13 @@ export default function Home() {
         <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
           {projects.map((project) => (
             <article className={`${cardClass} flex min-h-[330px] flex-col p-5`} key={project.title}>
-              <div className="mb-5 grid size-10 place-items-center rounded-full bg-[#0C2120] text-[#F1EFE5]">
-                <project.icon size={20} aria-hidden="true" />
+              <div className="mb-5 flex items-start justify-between gap-4">
+                <div className="grid size-10 place-items-center rounded-full bg-[#0C2120] text-[#F1EFE5]">
+                  <project.icon size={20} aria-hidden="true" />
+                </div>
+                <a className="inline-flex items-center gap-2 rounded-full border border-[#0C2120]/10 px-3 py-1.5 text-[0.72rem] font-black text-[#0C2120] hover:border-[#D7720C] hover:text-[#D7720C]" href={project.url} target="_blank" rel="noreferrer">
+                  Visit <ArrowUpRight size={14} aria-hidden="true" />
+                </a>
               </div>
               <p className="mb-2 text-[0.68rem] font-black uppercase tracking-[0.12em] text-[#668A85]">{project.category}</p>
               <h3 className="mb-3 text-[1.15rem] font-extrabold leading-tight">{project.title}</h3>
