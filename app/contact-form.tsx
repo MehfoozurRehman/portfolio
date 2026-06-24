@@ -7,7 +7,7 @@ import { profile } from "./data";
 type SubmissionState = "idle" | "submitting" | "submitted" | "failed";
 
 const inputClass =
-  "w-full rounded-[16px] border border-[#0C2120]/10 bg-white/80 px-4 py-3 text-[0.95rem] outline-none transition focus:border-[#D7720C]";
+  "w-full rounded-[14px] border border-[#0C2120]/10 bg-white/70 px-4 py-2.5 text-[0.86rem] outline-none transition focus:border-[#D7720C] sm:py-3 sm:text-[0.9rem]";
 
 export function ContactForm() {
   const [submissionState, setSubmissionState] = useState<SubmissionState>("idle");
@@ -55,21 +55,21 @@ export function ContactForm() {
   }
 
   return (
-    <form className="grid gap-4 rounded-[24px] border border-[#0C2120]/10 bg-[#F1EFE5] p-6 text-[#0C2120]" onSubmit={handleSubmit}>
+    <form className="grid gap-4 border-y border-[#0C2120]/10 bg-[#F8F2E6] py-6 text-[#0C2120] sm:border sm:px-6" onSubmit={handleSubmit}>
       <label className="grid gap-2">
-        <span className="text-sm font-black text-[#0C2120]">Name</span>
+        <span className="text-[0.82rem] font-black text-[#0C2120]">Name</span>
         <input className={inputClass} name="name" autoComplete="name" required placeholder="Your name" />
       </label>
       <label className="grid gap-2">
-        <span className="text-sm font-black text-[#0C2120]">Email</span>
+        <span className="text-[0.82rem] font-black text-[#0C2120]">Email</span>
         <input className={inputClass} name="email" type="email" autoComplete="email" required placeholder="you@company.com" />
       </label>
       <label className="grid gap-2">
-        <span className="text-sm font-black text-[#0C2120]">Project</span>
+        <span className="text-[0.82rem] font-black text-[#0C2120]">Project</span>
         <textarea className={`${inputClass} min-h-36 resize-y`} name="project" required placeholder="Tell me what you want to build, fix or automate." />
       </label>
       <button
-        className="mt-2 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#D7720C] px-6 font-black text-white shadow-lg shadow-[#D7720C]/20 disabled:cursor-wait disabled:opacity-70"
+        className="mt-2 inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-[#D7720C] px-6 text-[0.9rem] font-black text-white shadow-lg shadow-[#D7720C]/20 disabled:cursor-wait disabled:opacity-70 sm:min-h-12 sm:text-base"
         type="submit"
         disabled={submissionState === "submitting"}
       >
