@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
+import { ServiceWorkerCleanup } from "./service-worker-cleanup";
 import "./globals.css";
 
 const nunito = Nunito({
@@ -46,7 +47,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${nunito.variable} h-full antialiased`}>
-      <body className="flex min-h-full flex-col font-[family-name:var(--font-nunito)]">{children}</body>
+      <body className="flex min-h-full flex-col font-[family-name:var(--font-nunito)]">
+        <ServiceWorkerCleanup />
+        {children}
+      </body>
     </html>
   );
 }
