@@ -59,12 +59,6 @@ export type Education = {
   focus: string[];
 };
 
-export type ProfileMetric = {
-  value: string;
-  label: string;
-  detail: string;
-};
-
 export const profile = {
   name: "Mehfooz-ur-Rehman",
   role: "Full-stack product developer",
@@ -83,10 +77,7 @@ export const profile = {
     "I help businesses turn messy operations into fast, reliable software: dashboards, mobile apps, automation, AI assistants, WhatsApp workflows and complete SaaS products.",
   about:
     "I am a developer proficient in web, mobile and desktop app development. I enjoy turning complex problems into simple, beautiful and intuitive solutions, especially for consumer and business-facing systems where UI, UX and reliability matter.",
-  availability: "Open to hybrid and remote product builds from Samundri, Punjab, Pakistan.",
-  followers: "205 followers",
-  connections: "181 LinkedIn connections",
-  publicLinkedIn: "www.linkedin.com/in/mehfoozurrehman786"
+  availability: "Open to hybrid and remote product builds from Samundri, Punjab, Pakistan."
 } as const;
 
 export const services: Service[] = [
@@ -194,29 +185,6 @@ export const process: ProcessStep[] = [
     title: "Make it maintainable",
     icon: Code2,
     text: "Keep the code practical, typed, clean and easy to evolve after the first launch."
-  }
-];
-
-export const metrics: ProfileMetric[] = [
-  {
-    value: "5+",
-    label: "Years at Devscot",
-    detail: "Building company products and software-as-a-service workflows."
-  },
-  {
-    value: "4",
-    label: "Product roles",
-    detail: "Schooliee, Devscot, LeadProfit and CrazyBeings Studios."
-  },
-  {
-    value: "181",
-    label: "Connections",
-    detail: "Professional network across product, full-stack and business teams."
-  },
-  {
-    value: "205",
-    label: "Followers",
-    detail: "Growing public profile around full-stack product development."
   }
 ];
 
