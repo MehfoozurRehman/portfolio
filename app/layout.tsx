@@ -14,6 +14,12 @@ export const metadata: Metadata = {
   description:
     "Portfolio of Mehfooz-ur-Rehman, a full-stack product developer building web, mobile, desktop and AI-powered business systems.",
   metadataBase: new URL("https://mehfooz-ur-rehman.web.app"),
+  icons: {
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    shortcut: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/logo.svg", type: "image/svg+xml" }],
+  },
+  manifest: "/manifest.json",
   openGraph: {
     title: "Mehfooz-ur-Rehman | Full-stack Product Developer",
     description:
