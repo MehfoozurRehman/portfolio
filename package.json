@@ -10,7 +10,7 @@
     "deploy": "pnpm build && firebase deploy"
   },
   "dependencies": {
-    "convex": "^1.41.0",
+    "convex": "^1.42.0",
     "lucide-react": "^1.21.0",
     "next": "16.2.9",
     "react": "19.2.7",
@@ -26,5 +26,5 @@
     "tailwindcss": "^4.3.1",
     "typescript": "^6.0.3"
   },
-  "packageManager": "pnpm@11.8.0"
+  "packageManager": "pnpm@11.9.0"
 }
