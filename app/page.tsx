@@ -64,7 +64,6 @@ export default function Home() {
           <div className="mt-9 flex flex-wrap gap-x-7 gap-y-4 border-t border-[#0C2120]/10 pt-6">
             {[
               ["6+", "Years"],
-              ["4", "Roles"],
               [profile.company, "Current"]
             ].map(([value, label]) => (
               <div key={value}>
