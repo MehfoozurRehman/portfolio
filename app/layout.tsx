@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
-import { ServiceWorkerCleanup } from "./service-worker-cleanup";
+import Script from "next/script";
 import { ScrollToTopButton } from "./scroll-to-top-button";
+import { ServiceWorkerResetScript } from "./sw-reset-script";
 import "./globals.css";
 
 const nunito = Nunito({
@@ -49,7 +50,20 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${nunito.variable} h-full bg-[#F1EFE5] antialiased`}>
       <body className="flex min-h-full flex-col bg-[#F1EFE5] font-[family-name:var(--font-nunito)]">
-        <ServiceWorkerCleanup />
+        <ServiceWorkerResetScript />
+        <Script
+          async
+          data-collect-dnt="true"
+          src="https://scripts.simpleanalyticscdn.com/latest.js"
+          strategy="afterInteractive"
+        />
+        <noscript>
+          <img
+            alt=""
+            referrerPolicy="no-referrer-when-downgrade"
+            src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true"
+          />
+        </noscript>
         <ScrollToTopButton />
         {children}
       </body>
