@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ArrowUpRight, Code2, GraduationCap, Link, Mail, MapPin, MessageCircle, Phone, Sparkles } from "lucide-react";
 import { ContactForm } from "./contact-form";
-import { education, experience, metrics, process, profile, profileHighlights, projects, services, stack, testimonials } from "./data";
+import { education, experience, process, profile, profileHighlights, projects, services, stack, testimonials } from "./data";
 
 const sectionClass = "mx-auto max-w-[1360px] px-5 py-11 sm:px-8 lg:px-12 xl:px-16 lg:py-14";
 const eyebrowClass = "mb-4 flex items-center gap-2 text-[0.72rem] font-black uppercase tracking-[0.16em] text-[#D7720C]";
@@ -63,7 +63,7 @@ export default function Home() {
           </div>
           <div className="mt-9 flex flex-wrap gap-x-7 gap-y-4 border-t border-[#0C2120]/10 pt-6">
             {[
-              ["5+", "Years"],
+              ["6+", "Years"],
               ["4", "Roles"],
               [profile.company, "Current"]
             ].map(([value, label]) => (
@@ -115,11 +115,6 @@ export default function Home() {
           <p className={eyebrowClass}>Profile</p>
           <h2 className={`${displayClass} text-[clamp(1.45rem,2.1vw,2.3rem)]`}>A product developer with practical range.</h2>
           <p className="mt-5 text-[0.92rem] leading-8 text-[#50463F]">{profile.subheadline}</p>
-          <div className="mt-7 grid min-w-0 gap-2 text-[0.82rem] font-black uppercase tracking-[0.12em] text-[#0C2120]">
-            <span>{profile.connections}</span>
-            <span>{profile.followers}</span>
-            <span className="break-all">{profile.publicLinkedIn}</span>
-          </div>
         </div>
         <div className="grid min-w-0 gap-3 sm:grid-cols-2">
           {profileHighlights.map((item) => (
@@ -130,16 +125,6 @@ export default function Home() {
             </article>
           ))}
         </div>
-      </section>
-
-      <section className={`${sectionClass} grid gap-3 border-t border-[#0C2120]/10 sm:grid-cols-2 xl:grid-cols-4`}>
-        {metrics.map((metric) => (
-          <article className="border-y border-[#0C2120]/10 py-5 sm:border sm:px-5" key={metric.label}>
-            <strong className={`${displayClass} block text-[2rem] text-[#D7720C]`}>{metric.value}</strong>
-            <h3 className="mt-2 text-[0.92rem] font-black">{metric.label}</h3>
-            <p className="mt-2 text-[0.82rem] leading-6 text-[#50463F]">{metric.detail}</p>
-          </article>
-        ))}
       </section>
 
       <section id="experience" className={`${sectionClass} border-t border-[#0C2120]/10`}>
