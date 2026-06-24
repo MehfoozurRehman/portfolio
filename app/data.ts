@@ -213,21 +213,21 @@ export const profileHighlights = [
 export const experience: Experience[] = [
   {
     role: "Full-stack Developer",
-    company: "Schooliee - School Management System",
-    period: "Mar 2025 - Present",
-    location: "Samundri, Punjab, Pakistan · Hybrid",
-    summary:
-      "Building a multi-school management product that helps schools sign up, pay monthly and manage daily work with clearer communication between parents and schools.",
-    skills: ["Next.js", "React Native", "SaaS", "School workflows"]
-  },
-  {
-    role: "Full-stack Developer",
     company: "Devscot",
     period: "Dec 2020 - Present",
     location: "Samundri, Punjab, Pakistan · Hybrid",
     summary:
       "Working on company products and software-as-a-service projects that help businesses grow, simplify operations and improve internal workflows.",
     skills: ["Node.js", "React.js", "Product development", "Automation"]
+  },
+  {
+    role: "Full-stack Developer",
+    company: "Schooliee - School Management System",
+    period: "Mar 2025 - Present",
+    location: "Samundri, Punjab, Pakistan · Hybrid",
+    summary:
+      "Building a multi-school management product that helps schools sign up, pay monthly and manage daily work with clearer communication between parents and schools.",
+    skills: ["Next.js", "React Native", "SaaS", "School workflows"]
   },
   {
     role: "Full Stack Developer",
@@ -288,7 +288,7 @@ export const testimonials: Testimonial[] = [
     quote:
       "I have had the pleasure of working with Mehfooz for over two years, and he has been an indispensable asset to our team.",
     name: "Hammad Habib",
-    role: "CEO, Crazybeings Studios"
+    role: "CEO, Devscot"
   },
   {
     quote:

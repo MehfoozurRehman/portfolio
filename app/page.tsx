@@ -6,7 +6,7 @@ import { education, experience, process, profile, profileHighlights, projects, s
 
 const sectionClass = "mx-auto max-w-[1360px] px-5 py-11 sm:px-8 lg:px-12 xl:px-16 lg:py-14";
 const eyebrowClass = "mb-4 flex items-center gap-2 text-[0.72rem] font-black uppercase tracking-[0.16em] text-[#D7720C]";
-const displayClass = "font-[family-name:var(--font-nunito)] font-black leading-[0.98] tracking-normal";
+const displayClass = "font-[family-name:var(--font-nunito)] font-extrabold leading-[0.98] tracking-normal";
 const cardClass = "rounded-[18px] border border-[#0C2120]/10 bg-[#F8F2E6]";
 
 export default function Home() {
@@ -43,7 +43,7 @@ export default function Home() {
           <h1 className={`${displayClass} text-[clamp(2rem,3.9vw,3.65rem)]`}>
             Building products from idea to launch.
           </h1>
-          <h2 className="mt-5 max-w-[500px] text-[clamp(0.92rem,1.22vw,1.18rem)] font-black leading-[1.22] tracking-normal">
+          <h2 className="mt-5 max-w-[500px] text-[clamp(0.92rem,1.22vw,1.18rem)] font-extrabold leading-[1.22] tracking-normal">
             I&apos;m Mehfooz-ur-Rehman, a full-stack developer for web, mobile, desktop, AI and automation systems.
           </h2>
           <p className="mt-5 max-w-[500px] text-[0.9rem] leading-7 text-[#50463F] sm:text-[0.95rem]">
@@ -80,7 +80,7 @@ export default function Home() {
             Next.js / Convex / AI
           </div>
           <div className="absolute -right-4 bottom-24 z-10 hidden size-[8.5rem] place-items-center rounded-full bg-[#D7720C] p-5 text-center text-white shadow-xl shadow-[#D7720C]/20 sm:grid">
-            <strong className="text-[1.05rem] font-black leading-tight">Complete products, not just screens.</strong>
+            <strong className="text-[1.05rem] font-extrabold leading-tight">Complete products, not just screens.</strong>
           </div>
           <div className="absolute -bottom-6 left-8 hidden h-16 w-[82%] rounded-full bg-[#0C2120]/10 blur-2xl lg:block" />
           <div className="relative overflow-hidden rounded-[28px] border-[10px] border-[#0C2120] bg-[#0C2120] shadow-2xl shadow-[#0C2120]/20 sm:rounded-[32px] sm:border-[14px]">
@@ -115,7 +115,7 @@ export default function Home() {
           {profileHighlights.map((item) => (
             <article className={`${cardClass} min-w-0 p-5`} key={item.title}>
               <item.icon className="mb-5 text-[#D7720C]" size={24} aria-hidden="true" />
-              <h3 className="mb-2 text-[1rem] font-black">{item.title}</h3>
+              <h3 className="mb-2 text-[1rem] font-extrabold">{item.title}</h3>
               <p className="text-[0.9rem] leading-7 text-[#50463F]">{item.text}</p>
             </article>
           ))}
@@ -135,8 +135,8 @@ export default function Home() {
                 <p className="mt-2 text-[0.86rem] font-bold leading-6 text-[#50463F]">{item.location}</p>
               </div>
               <div>
-                <h3 className="text-[1.15rem] font-black leading-tight">{item.role}</h3>
-                <p className="mt-1 text-[0.92rem] font-black text-[#668A85]">{item.company}</p>
+                <h3 className="text-[1.15rem] font-extrabold leading-tight">{item.role}</h3>
+                <p className="mt-1 text-[0.92rem] font-extrabold text-[#668A85]">{item.company}</p>
                 <p className="mt-4 max-w-3xl text-[0.92rem] leading-8 text-[#50463F]">{item.summary}</p>
                 <div className="mt-5 flex flex-wrap gap-2">
                   {item.skills.map((skill) => (
@@ -160,7 +160,7 @@ export default function Home() {
           {services.map((service) => (
             <article className="border-b border-[#0C2120]/10 py-5 sm:px-5 sm:odd:border-r" key={service.title}>
               <service.icon className="mb-4 text-[#D7720C]" size={24} aria-hidden="true" />
-              <h3 className="mb-2 text-[1rem] font-black">{service.title}</h3>
+              <h3 className="mb-2 text-[1rem] font-extrabold">{service.title}</h3>
               <p className="text-[0.9rem] leading-7 text-[#50463F]">{service.description}</p>
             </article>
           ))}
@@ -179,7 +179,7 @@ export default function Home() {
                 <project.icon size={20} aria-hidden="true" />
               </div>
               <p className="mb-2 text-[0.68rem] font-black uppercase tracking-[0.12em] text-[#668A85]">{project.category}</p>
-              <h3 className="mb-3 text-[1.15rem] font-black leading-tight">{project.title}</h3>
+              <h3 className="mb-3 text-[1.15rem] font-extrabold leading-tight">{project.title}</h3>
               <p className="text-[0.9rem] leading-7 text-[#50463F]">{project.summary}</p>
               <strong className="mt-4 block text-[0.9rem] leading-7">{project.businessValue}</strong>
               <div className="mt-auto flex flex-wrap gap-2 pt-6">
@@ -206,9 +206,9 @@ export default function Home() {
                 <GraduationCap size={22} aria-hidden="true" />
               </div>
               <div>
-                <h3 className="text-[1.05rem] font-black">{item.school}</h3>
-                <p className="mt-1 text-[0.92rem] font-bold text-[#50463F]">{item.degree}</p>
-                <p className="mt-2 text-[0.78rem] font-black uppercase tracking-[0.12em] text-[#D7720C]">{item.period}</p>
+                <h3 className="text-[1.05rem] font-extrabold">{item.school}</h3>
+                <p className="mt-1 text-[0.92rem] font-medium text-[#50463F]">{item.degree}</p>
+                <p className="mt-2 text-[0.78rem] font-extrabold uppercase tracking-[0.12em] text-[#D7720C]">{item.period}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {item.focus.map((focus) => (
                     <span className="rounded-full border border-[#0C2120]/10 px-3 py-1.5 text-[0.7rem] font-black" key={focus}>
@@ -240,7 +240,7 @@ export default function Home() {
         {process.map((item) => (
           <article className="border-y border-[#0C2120]/10 py-6 md:border-r md:px-6 md:first:border-l" key={item.title}>
             <item.icon className="mb-5 text-[#D7720C]" size={24} aria-hidden="true" />
-            <h3 className="mb-3 text-[1rem] font-black">{item.title}</h3>
+            <h3 className="mb-3 text-[1rem] font-extrabold">{item.title}</h3>
             <p className="text-[0.9rem] leading-7 text-[#50463F]">{item.text}</p>
           </article>
         ))}
