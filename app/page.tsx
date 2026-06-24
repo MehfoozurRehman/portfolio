@@ -3,7 +3,7 @@ import { ArrowUpRight, Code2, Link, Mail, MessageCircle, Phone, Sparkles } from 
 import { ContactForm } from "./contact-form";
 import { process, profile, projects, services, stack, testimonials } from "./data";
 
-const sectionClass = "mx-auto max-w-[1920px] px-5 py-12 sm:px-8 lg:px-16 xl:px-24 2xl:px-32 lg:py-16";
+const sectionClass = "mx-auto max-w-[1440px] px-5 py-12 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 lg:py-16";
 const eyebrowClass = "mb-4 flex items-center gap-2 text-[0.72rem] font-black uppercase tracking-[0.16em] text-[#D7720C]";
 const displayClass = "font-[family-name:var(--font-nunito)] font-black leading-[0.98] tracking-normal";
 const cardClass = "rounded-[18px] border border-[#0C2120]/10 bg-[#F8F2E6]";
@@ -11,7 +11,7 @@ const cardClass = "rounded-[18px] border border-[#0C2120]/10 bg-[#F8F2E6]";
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#F1EFE5] text-[#0C2120]">
-      <nav className="mx-auto flex max-w-[1920px] items-center justify-between px-5 pt-5 sm:px-8 lg:px-16 xl:px-24 2xl:px-32">
+      <nav className="mx-auto flex max-w-[1440px] items-center justify-between px-5 pt-5 sm:px-8 lg:px-12 xl:px-16 2xl:px-20">
         <a className="grid size-11 place-items-center rounded-full bg-[#0C2120] text-[0.8rem] font-black text-[#F1EFE5]" href="#top">
           MR
         </a>
@@ -28,16 +28,16 @@ export default function Home() {
         </div>
       </nav>
 
-      <section id="top" className="mx-auto grid max-w-[1920px] gap-8 px-5 pb-10 pt-9 sm:px-8 lg:min-h-[calc(100vh-68px)] lg:grid-cols-[1.08fr_0.92fr] lg:items-start lg:px-16 lg:pb-12 lg:pt-20 xl:px-24 2xl:px-32">
-        <div className="max-w-[760px]">
+      <section id="top" className="mx-auto grid max-w-[1440px] gap-8 px-5 pb-10 pt-9 sm:px-8 lg:min-h-[calc(100vh-68px)] lg:grid-cols-[1.05fr_0.95fr] lg:items-start lg:px-12 lg:pb-12 lg:pt-20 xl:px-16 2xl:px-20">
+        <div className="max-w-[700px]">
           <p className={eyebrowClass}>
             <Sparkles size={14} aria-hidden="true" />
             Available for product builds
           </p>
-          <h1 className={`${displayClass} text-[clamp(2.8rem,4.6vw,5rem)]`}>
+          <h1 className={`${displayClass} text-[clamp(2.55rem,4vw,4.4rem)]`}>
             Mehfooz-ur-Rehman
           </h1>
-          <h2 className="mt-5 max-w-[620px] text-[clamp(1.35rem,2.1vw,2.35rem)] font-black leading-[1.08] tracking-normal">
+          <h2 className="mt-5 max-w-[590px] text-[clamp(1.25rem,1.75vw,2rem)] font-black leading-[1.1] tracking-normal">
             Full-stack product developer building web, mobile, desktop and AI systems.
           </h2>
           <p className="mt-5 max-w-[560px] text-[0.98rem] leading-7 text-[#50463F] sm:text-[1.05rem]">
@@ -58,13 +58,13 @@ export default function Home() {
               [profile.company, "currently"]
             ].map(([value, label]) => (
               <div className="rounded-[18px] border border-[#0C2120]/10 bg-[#F8F2E6] px-5 py-4" key={value}>
-                <strong className={`${displayClass} block text-[1.9rem]`}>{value}</strong>
+                <strong className={`${displayClass} block text-[1.65rem]`}>{value}</strong>
                 <span className="text-xs font-extrabold uppercase tracking-[0.12em] text-[#668A85]">{label}</span>
               </div>
             ))}
           </div>
         </div>
-        <div className="relative mx-auto w-full max-w-[470px] 2xl:max-w-[520px]">
+        <div className="relative mx-auto w-full max-w-[460px] xl:max-w-[500px]">
           <div className="absolute -left-4 top-8 hidden rounded-[22px] bg-[#BCBDAC] px-5 py-4 text-sm font-black text-[#0C2120] shadow-xl shadow-[#0C2120]/10 sm:block">
             Next.js / Convex / AI
           </div>
@@ -92,7 +92,7 @@ export default function Home() {
       <section id="services" className={`${sectionClass} grid gap-12 lg:grid-cols-[0.8fr_1.2fr]`}>
         <div>
           <p className={eyebrowClass}>What I build</p>
-          <h2 className={`${displayClass} text-[clamp(1.75rem,3vw,3.25rem)]`}>Complete business systems, not isolated screens.</h2>
+          <h2 className={`${displayClass} text-[clamp(1.55rem,2.4vw,2.6rem)]`}>Complete business systems, not isolated screens.</h2>
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
           {services.map((service) => (
@@ -108,7 +108,7 @@ export default function Home() {
       <section id="work" className={sectionClass}>
         <div className="mb-9 max-w-3xl">
           <p className={eyebrowClass}>Featured work</p>
-          <h2 className={`${displayClass} text-[clamp(1.75rem,3vw,3.25rem)]`}>Products shaped around operations, revenue and daily use.</h2>
+          <h2 className={`${displayClass} text-[clamp(1.55rem,2.4vw,2.6rem)]`}>Products shaped around operations, revenue and daily use.</h2>
         </div>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {projects.map((project) => (
@@ -117,7 +117,7 @@ export default function Home() {
                 <project.icon size={22} aria-hidden="true" />
               </div>
               <p className="mb-2 text-[0.68rem] font-black uppercase tracking-[0.12em] text-[#668A85]">{project.category}</p>
-              <h3 className="mb-3 text-[1.45rem] font-black leading-tight">{project.title}</h3>
+              <h3 className="mb-3 text-[1.25rem] font-black leading-tight">{project.title}</h3>
               <p className="text-[0.95rem] leading-7 text-[#50463F]">{project.summary}</p>
               <strong className="mt-4 block text-[0.95rem] leading-7">{project.businessValue}</strong>
               <div className="mt-auto flex flex-wrap gap-2 pt-6">
@@ -135,7 +135,7 @@ export default function Home() {
       <section className={`${sectionClass} grid gap-10 lg:grid-cols-[0.8fr_1.2fr]`}>
         <div>
           <p className={eyebrowClass}>Stack</p>
-          <h2 className={`${displayClass} text-[clamp(1.75rem,3vw,3.25rem)]`}>Modern tools I already use to ship.</h2>
+          <h2 className={`${displayClass} text-[clamp(1.55rem,2.4vw,2.6rem)]`}>Modern tools I already use to ship.</h2>
         </div>
         <div className="flex content-start flex-wrap gap-2">
           {stack.map((item) => (
@@ -159,12 +159,12 @@ export default function Home() {
       <section className={sectionClass}>
         <div className="mb-9 max-w-3xl">
           <p className={eyebrowClass}>Testimonials</p>
-          <h2 className={`${displayClass} text-[clamp(1.75rem,3vw,3.25rem)]`}>What clients and teammates already say.</h2>
+          <h2 className={`${displayClass} text-[clamp(1.55rem,2.4vw,2.6rem)]`}>What clients and teammates already say.</h2>
         </div>
         <div className="grid gap-4 lg:grid-cols-3">
           {testimonials.map((testimonial) => (
             <blockquote className={`${cardClass} p-6`} key={testimonial.name}>
-              <p className={`${displayClass} text-[1.35rem] leading-tight`}>&ldquo;{testimonial.quote}&rdquo;</p>
+              <p className={`${displayClass} text-[1.15rem] leading-tight`}>&ldquo;{testimonial.quote}&rdquo;</p>
               <footer className="mt-7 grid gap-1">
                 <strong>{testimonial.name}</strong>
                 <span className="text-[#50463F]">{testimonial.role}</span>
@@ -178,7 +178,7 @@ export default function Home() {
         <div className={`${sectionClass} grid gap-12 lg:grid-cols-[0.9fr_1.1fr]`}>
           <div>
             <p className="mb-4 flex items-center gap-2 text-[0.72rem] font-black uppercase tracking-[0.16em] text-[#BCBDAC]">Start here</p>
-            <h2 className={`${displayClass} text-[clamp(1.75rem,3vw,3.25rem)]`}>Need a reliable developer to build your product?</h2>
+            <h2 className={`${displayClass} text-[clamp(1.55rem,2.4vw,2.6rem)]`}>Need a reliable developer to build your product?</h2>
             <p className="mt-6 max-w-xl text-[1rem] leading-8 text-[#BCBDAC]">
               Send the workflow, product idea or stuck project. I am strongest when the job needs product thinking,
               full-stack execution and a practical launch path.
