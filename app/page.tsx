@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { ArrowUpRight, Code2, GraduationCap, Link, Mail, MessageCircle, Phone, Sparkles } from "lucide-react";
+import Link from "next/link";
+import { ArrowUpRight, Code2, GraduationCap, Link as LinkIcon, Mail, MessageCircle, Phone, Sparkles } from "lucide-react";
 import { ContactForm } from "./contact-form";
 import { HomeLink } from "./home-link";
 import { education, experience, process, profile, profileHighlights, projects, services, stack, testimonials } from "./data";
@@ -201,11 +202,16 @@ export default function Home() {
                     <project.icon size={20} aria-hidden="true" />
                   </div>
                 )}
-                {project.url ? (
-                  <a className="inline-flex items-center gap-2 rounded-full border border-[#0C2120]/10 px-3 py-1.5 text-[0.72rem] font-black text-[#0C2120] hover:border-[#D7720C] hover:text-[#D7720C]" href={project.url} target="_blank" rel="noreferrer">
-                    Visit <ArrowUpRight size={14} aria-hidden="true" />
-                  </a>
-                ) : null}
+                <div className="flex flex-wrap items-center justify-end gap-2">
+                  <Link className="inline-flex items-center gap-2 rounded-full border border-[#0C2120]/10 px-3 py-1.5 text-[0.72rem] font-black text-[#0C2120] hover:border-[#D7720C] hover:text-[#D7720C]" href={`/case-studies/${project.slug}`}>
+                    Case study <ArrowUpRight size={14} aria-hidden="true" />
+                  </Link>
+                  {project.url ? (
+                    <a className="inline-flex items-center gap-2 rounded-full border border-[#0C2120]/10 px-3 py-1.5 text-[0.72rem] font-black text-[#0C2120] hover:border-[#D7720C] hover:text-[#D7720C]" href={project.url} target="_blank" rel="noreferrer">
+                      Visit <ArrowUpRight size={14} aria-hidden="true" />
+                    </a>
+                  ) : null}
+                </div>
               </div>
               <p className="mb-2 text-[0.68rem] font-black uppercase tracking-[0.12em] text-[#668A85]">{project.category}</p>
               <h3 className="mb-3 text-[1.15rem] font-extrabold leading-tight">{project.title}</h3>
@@ -321,7 +327,7 @@ export default function Home() {
                 ["CodeSandbox", profile.codesandbox]
               ].map(([label, href]) => (
                 <a className="inline-flex min-h-10 items-center gap-2 rounded-full border border-[#0C2120]/10 px-3.5 text-[0.76rem] font-black sm:px-4 sm:text-[0.8rem]" href={href} target="_blank" rel="noreferrer" key={label}>
-                  <Link size={16} aria-hidden="true" /> {label}
+                  <LinkIcon size={16} aria-hidden="true" /> {label}
                 </a>
               ))}
             </div>
@@ -329,6 +335,40 @@ export default function Home() {
           <ContactForm />
         </div>
       </section>
+
+      <footer className="border-t border-[#0C2120]/8 bg-[#F7F2E7] text-[#0C2120]">
+        <div className={`${sectionClass} !py-3`}>
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-[0.76rem] font-medium leading-6 text-[#5F564B]">
+              Archive of earlier portfolio versions.
+            </p>
+            <div className="flex flex-wrap gap-1.5">
+              {[
+                ["v1", "https://mehfoozurrehmanv1.web.app/"],
+                ["v2", "https://mehfoozurrehmanv2.web.app/"],
+                ["v3", "https://mehfoozurrehmanv3.web.app/"],
+                ["v4", "https://mehfoozurrehmanv4.web.app/"],
+                ["v5", "https://mehfoozurrehmanv5.web.app/"],
+                ["v6", "https://mehfoozurrehmanv6.web.app/"]
+              ].map(([label, href]) => (
+                <a
+                  className="inline-flex items-center gap-1.5 rounded-full border border-[#0C2120]/10 px-2.5 py-1 text-[0.72rem] font-black text-[#0C2120] transition hover:border-[#D7720C] hover:text-[#D7720C]"
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  key={label}
+                >
+                  <span>{label}</span>
+                  <ArrowUpRight size={14} aria-hidden="true" />
+                </a>
+              ))}
+            </div>
+          </div>
+          <p className="mt-3 border-t border-[#0C2120]/10 pt-2 text-[0.68rem] leading-5 text-[#7B7267]">
+            Copyright {new Date().getFullYear()} Mehfoozur Rehman. All rights reserved.
+          </p>
+        </div>
+      </footer>
     </main>
   );
 }
