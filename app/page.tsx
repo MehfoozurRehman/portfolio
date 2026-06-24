@@ -12,8 +12,8 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#F1EFE5] text-[#0C2120]">
       <nav className="mx-auto flex max-w-[1360px] items-center justify-between px-5 pt-5 sm:px-8 lg:px-12 xl:px-16">
-        <a className="grid size-11 place-items-center" href="#top" aria-label="Mehfooz-ur-Rehman home">
-          <Image src="/logo.svg" alt="" width={44} height={44} priority />
+        <a className="grid size-14 place-items-center" href="#top" aria-label="Mehfooz-ur-Rehman home">
+          <Image src="/logo.svg" alt="" width={56} height={56} priority />
         </a>
         <div className="flex items-center gap-0 text-[0.62rem] font-black uppercase tracking-[0.14em] text-[#50463F] sm:gap-2 sm:text-[0.72rem]">
           <a className="rounded-full px-2.5 py-2 hover:bg-[#0C2120]/5 hover:text-[#0C2120] sm:px-3" href="#work">
