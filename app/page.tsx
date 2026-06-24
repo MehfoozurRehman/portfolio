@@ -34,20 +34,20 @@ export default function Home() {
             <Sparkles size={14} aria-hidden="true" />
             Available for product builds
           </p>
-          <h1 className={`${displayClass} text-[clamp(2.18rem,4.35vw,4.15rem)]`}>
+          <h1 className={`${displayClass} text-[clamp(2rem,4.35vw,4.05rem)]`}>
             Building products from idea to launch.
           </h1>
-          <h2 className="mt-5 max-w-[500px] text-[clamp(0.98rem,1.22vw,1.2rem)] font-black leading-[1.22] tracking-normal">
+          <h2 className="mt-5 max-w-[500px] text-[clamp(0.92rem,1.22vw,1.18rem)] font-black leading-[1.22] tracking-normal">
             I&apos;m Mehfooz-ur-Rehman, a full-stack developer for web, mobile, desktop, AI and automation systems.
           </h2>
           <p className="mt-5 max-w-[500px] text-[0.9rem] leading-7 text-[#50463F] sm:text-[0.95rem]">
             I turn messy operations into fast, reliable software: dashboards, apps, automation, AI assistants and complete SaaS products.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <a className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[#D7720C] px-6 text-sm font-black text-white shadow-lg shadow-[#D7720C]/20" href="#contact">
+            <a className="inline-flex min-h-10 items-center gap-2 rounded-full bg-[#D7720C] px-5 text-[0.82rem] font-black text-white shadow-lg shadow-[#D7720C]/20 sm:min-h-11 sm:px-6 sm:text-sm" href="#contact">
               Let&apos;s build <ArrowUpRight size={18} aria-hidden="true" />
             </a>
-            <a className="inline-flex min-h-11 items-center gap-2 rounded-full border border-[#0C2120]/15 px-5 text-sm font-black text-[#0C2120]" href={profile.github} target="_blank" rel="noreferrer">
+            <a className="inline-flex min-h-10 items-center gap-2 rounded-full border border-[#0C2120]/15 px-4 text-[0.82rem] font-black text-[#0C2120] sm:min-h-11 sm:px-5 sm:text-sm" href={profile.github} target="_blank" rel="noreferrer">
               <Code2 size={18} aria-hidden="true" /> GitHub
             </a>
           </div>
@@ -78,14 +78,14 @@ export default function Home() {
             <strong className="text-[1.05rem] font-black leading-tight">Complete products, not just screens.</strong>
           </div>
           <div className="absolute -bottom-6 left-8 hidden h-16 w-[82%] rounded-full bg-[#0C2120]/10 blur-2xl lg:block" />
-          <div className="relative overflow-hidden rounded-[32px] border-[14px] border-[#0C2120] bg-[#0C2120] shadow-2xl shadow-[#0C2120]/20">
-            <div className="relative aspect-[0.96] overflow-hidden rounded-[20px] bg-[#668A85]">
+          <div className="relative overflow-hidden rounded-[28px] border-[10px] border-[#0C2120] bg-[#0C2120] shadow-2xl shadow-[#0C2120]/20 sm:rounded-[32px] sm:border-[14px]">
+            <div className="relative aspect-[1.08] overflow-hidden rounded-[18px] bg-[#668A85] sm:aspect-[0.96] sm:rounded-[20px]">
               <Image className="h-full w-full object-cover object-center" src="/pic.webp" alt="Mehfooz-ur-Rehman" width={720} height={840} priority />
             </div>
-            <div className="grid gap-3 border-t-[14px] border-[#0C2120] bg-[#F1EFE5] p-4 text-[#0C2120] sm:grid-cols-[1fr_auto] sm:items-center">
+            <div className="grid gap-3 border-t-[10px] border-[#0C2120] bg-[#F1EFE5] p-4 text-[#0C2120] sm:grid-cols-[1fr_auto] sm:items-center sm:border-t-[14px]">
               <div>
                 <span className="text-[0.68rem] font-black uppercase tracking-[0.16em] text-[#D7720C]">{profile.role}</span>
-                <strong className="mt-1 block text-[1rem] leading-tight">Web, mobile, desktop, AI and automation.</strong>
+                <strong className="mt-1 block text-[0.95rem] leading-tight sm:text-[1rem]">Web, mobile, desktop, AI and automation.</strong>
               </div>
               <a className="inline-flex size-11 items-center justify-center rounded-full bg-[#0C2120] text-[#F1EFE5]" href="#work" aria-label="View work">
                 <ArrowUpRight size={20} aria-hidden="true" />
