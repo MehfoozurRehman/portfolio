@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Nunito } from "next/font/google";
 import { ServiceWorkerCleanup } from "./service-worker-cleanup";
 import { ScrollToTopButton } from "./scroll-to-top-button";
 import "./globals.css";
 
-const roboto = Roboto({
-  variable: "--font-roboto",
+const nunito = Nunito({
+  variable: "--font-nunito",
   subsets: ["latin"],
   display: "swap",
   weight: ["400", "500", "600", "700", "800", "900"],
@@ -47,8 +47,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${roboto.variable} h-full bg-[#F1EFE5] antialiased`}>
-      <body className="flex min-h-full flex-col bg-[#F1EFE5] font-[family-name:var(--font-roboto)]">
+    <html lang="en" className={`${nunito.variable} h-full bg-[#F1EFE5] antialiased`}>
+      <body className="flex min-h-full flex-col bg-[#F1EFE5] font-[family-name:var(--font-nunito)]">
         <ServiceWorkerCleanup />
         <ScrollToTopButton />
         {children}
