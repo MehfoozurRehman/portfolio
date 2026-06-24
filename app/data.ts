@@ -8,9 +8,11 @@ import {
   Map,
   MessageCircle,
   MonitorCog,
+  MousePointerClick,
   Rocket,
   School,
-  Smartphone
+  Smartphone,
+  UsersRound
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -41,6 +43,28 @@ export type ProcessStep = {
   icon: LucideIcon;
 };
 
+export type Experience = {
+  role: string;
+  company: string;
+  period: string;
+  location: string;
+  summary: string;
+  skills: string[];
+};
+
+export type Education = {
+  school: string;
+  degree: string;
+  period: string;
+  focus: string[];
+};
+
+export type ProfileMetric = {
+  value: string;
+  label: string;
+  detail: string;
+};
+
 export const profile = {
   name: "Mehfooz-ur-Rehman",
   role: "Full-stack product developer",
@@ -56,7 +80,13 @@ export const profile = {
   codesandbox: "https://codesandbox.io/u/MehfoozurRehman",
   headline: "Full-stack product developer building web, mobile, desktop and AI-powered business systems.",
   subheadline:
-    "I help businesses turn messy operations into fast, reliable software: dashboards, mobile apps, automation, AI assistants, WhatsApp workflows and complete SaaS products."
+    "I help businesses turn messy operations into fast, reliable software: dashboards, mobile apps, automation, AI assistants, WhatsApp workflows and complete SaaS products.",
+  about:
+    "I am a developer proficient in web, mobile and desktop app development. I enjoy turning complex problems into simple, beautiful and intuitive solutions, especially for consumer and business-facing systems where UI, UX and reliability matter.",
+  availability: "Open to hybrid and remote product builds from Samundri, Punjab, Pakistan.",
+  followers: "205 followers",
+  connections: "181 LinkedIn connections",
+  publicLinkedIn: "www.linkedin.com/in/mehfoozurrehman786"
 } as const;
 
 export const services: Service[] = [
@@ -164,6 +194,100 @@ export const process: ProcessStep[] = [
     title: "Make it maintainable",
     icon: Code2,
     text: "Keep the code practical, typed, clean and easy to evolve after the first launch."
+  }
+];
+
+export const metrics: ProfileMetric[] = [
+  {
+    value: "5+",
+    label: "Years at Devscot",
+    detail: "Building company products and software-as-a-service workflows."
+  },
+  {
+    value: "4",
+    label: "Product roles",
+    detail: "Schooliee, Devscot, LeadProfit and CrazyBeings Studios."
+  },
+  {
+    value: "181",
+    label: "Connections",
+    detail: "Professional network across product, full-stack and business teams."
+  },
+  {
+    value: "205",
+    label: "Followers",
+    detail: "Growing public profile around full-stack product development."
+  }
+];
+
+export const profileHighlights = [
+  {
+    title: "Full-stack execution",
+    text: "Comfortable across frontend, backend, mobile, desktop, automation and deployment.",
+    icon: Code2
+  },
+  {
+    title: "Business workflow focus",
+    text: "Builds around real operations: fees, attendance, invoices, leads, dashboards and reporting.",
+    icon: BriefcaseBusiness
+  },
+  {
+    title: "Product communication",
+    text: "Strong fit for teams that need clear implementation, UI judgment and practical delivery.",
+    icon: UsersRound
+  },
+  {
+    title: "Reliable daily software",
+    text: "Experience on systems where parents, schools, customers and internal teams use the product every day.",
+    icon: MousePointerClick
+  }
+];
+
+export const experience: Experience[] = [
+  {
+    role: "Full-stack Developer",
+    company: "Schooliee - School Management System",
+    period: "Mar 2025 - Present",
+    location: "Samundri, Punjab, Pakistan · Hybrid",
+    summary:
+      "Building a multi-school management product that helps schools sign up, pay monthly and manage daily work with clearer communication between parents and schools.",
+    skills: ["Next.js", "React Native", "SaaS", "School workflows"]
+  },
+  {
+    role: "Full-stack Developer",
+    company: "Devscot",
+    period: "Dec 2020 - Present",
+    location: "Samundri, Punjab, Pakistan · Hybrid",
+    summary:
+      "Working on company products and software-as-a-service projects that help businesses grow, simplify operations and improve internal workflows.",
+    skills: ["Node.js", "React.js", "Product development", "Automation"]
+  },
+  {
+    role: "Full Stack Developer",
+    company: "LeadProfit",
+    period: "Mar 2023 - Feb 2024",
+    location: "Samundri, Punjab, Pakistan · On-site",
+    summary:
+      "Supported internal systems and strengthened practical full-stack skills while working with business-facing software.",
+    skills: ["React.js", "KnockoutJS", "Node.js", "Internal tools"]
+  },
+  {
+    role: "Full-stack Developer",
+    company: "CrazyBeings Studios (Pvt) Ltd.",
+    period: "Dec 2020 - Mar 2023",
+    location: "Faisalabad, Punjab, Pakistan · Hybrid",
+    summary:
+      "Built SaaS and digital identity projects for businesses that needed stronger reach, clearer product presence and revenue-focused systems.",
+    skills: ["MERN Stack", "Express.js", "SaaS", "Digital products"]
+  }
+];
+
+export const education: Education[] = [
+  {
+    school: "Virtual University of Pakistan",
+    degree: "Bachelor's degree, Computer Science",
+    period: "Apr 2019 - Jul 2023",
+    focus: ["Computer Science", "English", "Mathematics"]
   }
 ];
 
