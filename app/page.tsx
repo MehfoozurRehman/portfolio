@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowUpRight, Code2, GraduationCap, Link, Mail, MapPin, MessageCircle, Phone, Sparkles } from "lucide-react";
+import { ArrowUpRight, Code2, GraduationCap, Link, Mail, MessageCircle, Phone, Sparkles } from "lucide-react";
 import { ContactForm } from "./contact-form";
 import { HomeLink } from "./home-link";
 import { education, experience, process, profile, profileHighlights, projects, services, stack, testimonials } from "./data";
@@ -48,10 +48,6 @@ export default function Home() {
           </h2>
           <p className="mt-5 max-w-[500px] text-[0.9rem] leading-7 text-[#50463F] sm:text-[0.95rem]">
             {profile.about}
-          </p>
-          <p className="mt-4 inline-flex max-w-[500px] items-start gap-2 text-[0.86rem] font-bold leading-6 text-[#0C2120]">
-            <MapPin className="mt-0.5 shrink-0 text-[#D7720C]" size={17} aria-hidden="true" />
-            {profile.availability}
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a className="inline-flex min-h-10 items-center gap-2 rounded-full bg-[#D7720C] px-5 text-[0.82rem] font-black text-white shadow-lg shadow-[#D7720C]/20 sm:min-h-11 sm:px-6 sm:text-sm" href="#contact">
