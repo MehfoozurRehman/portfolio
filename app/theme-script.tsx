@@ -1,18 +1,1 @@
-import Script from "next/script";
-
-const themeScript = `
-(() => {
-  try {
-    const storedTheme = localStorage.getItem("portfolio-theme");
-    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-    const theme = storedTheme === "dark" || storedTheme === "light" ? storedTheme : systemTheme;
-    document.documentElement.dataset.theme = theme;
-  } catch {
-    document.documentElement.dataset.theme = "light";
-  }
-})();
-`;
-
-export function ThemeScript() {
-  return <Script id="theme-script" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: themeScript }} />;
-}
+export const themeScript = `!function(){try{var e=localStorage.getItem("portfolio-theme"),t=e==="dark"||e==="light"?e:matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.dataset.theme=t;document.documentElement.style.colorScheme=t;document.documentElement.style.backgroundColor=t==="dark"?"#050507":"#f1efe5"}catch(e){document.documentElement.dataset.theme="light";document.documentElement.style.colorScheme="light";document.documentElement.style.backgroundColor="#f1efe5"}}();`;
