@@ -7,7 +7,7 @@ import { profile } from "./data";
 type SubmissionState = "idle" | "submitting" | "submitted" | "failed";
 
 const inputClass =
-  "w-full rounded-[14px] border border-[#0C2120]/10 bg-white/70 px-4 py-2.5 text-[0.86rem] outline-none transition focus:border-[#D7720C] sm:py-3 sm:text-[0.9rem]";
+  "w-full rounded-[14px] border border-[#0C2120]/10 bg-white/70 px-4 py-2.5 text-[0.86rem] outline-none transition hover:border-[#0C2120]/20 focus:border-[#D7720C] sm:py-3 sm:text-[0.9rem]";
 
 export function ContactForm() {
   const [submissionState, setSubmissionState] = useState<SubmissionState>("idle");
@@ -55,7 +55,7 @@ export function ContactForm() {
   }
 
   return (
-    <form className="grid gap-4 rounded-[18px] border border-[#0C2120]/10 px-5 py-6 text-[#0C2120] sm:px-6" onSubmit={handleSubmit}>
+    <form className="grid gap-4 rounded-[18px] border border-[#0C2120]/15 px-5 py-6 text-[#0C2120] transition duration-200 hover:border-[#D7720C]/45 sm:px-6" onSubmit={handleSubmit}>
       <label className="grid gap-2">
         <span className="text-[0.82rem] font-black text-[#0C2120]">Name</span>
         <input className={inputClass} name="name" autoComplete="name" required placeholder="Your name" />

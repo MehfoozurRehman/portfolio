@@ -5,10 +5,10 @@ import { ContactForm } from "./contact-form";
 import { HomeLink } from "./home-link";
 import { education, experience, process, profile, profileHighlights, projects, services, stack, testimonials } from "./data";
 
-const sectionClass = "mx-auto max-w-[1360px] px-5 py-11 sm:px-8 lg:px-12 xl:px-16 lg:py-14";
+const sectionClass = "mx-auto max-w-[1360px] px-5 py-12 sm:px-8 lg:px-12 lg:py-18 xl:px-16";
 const eyebrowClass = "mb-4 flex items-center gap-2 text-[0.72rem] font-black uppercase tracking-[0.16em] text-[#D7720C]";
 const displayClass = "font-[family-name:var(--font-nunito)] font-extrabold leading-[0.98] tracking-normal";
-const cardClass = "rounded-[18px] border border-[#0C2120]/10";
+const cardClass = "rounded-[18px] border border-[#0C2120]/15 transition duration-200 hover:border-[#D7720C]/45";
 
 function getProjectLogoSrc(project: { url?: string; logoUrl?: string }) {
   if (project.logoUrl) {
@@ -70,7 +70,7 @@ export default function Home() {
             <a className="inline-flex min-h-10 items-center gap-2 rounded-full bg-[#D7720C] px-5 text-[0.82rem] font-black text-white shadow-lg shadow-[#D7720C]/20 sm:min-h-11 sm:px-6 sm:text-sm" href="#contact">
               Let&apos;s build <ArrowUpRight size={18} aria-hidden="true" />
             </a>
-            <a className="inline-flex min-h-10 items-center gap-2 rounded-full border border-[#0C2120]/15 px-4 text-[0.82rem] font-black text-[#0C2120] sm:min-h-11 sm:px-5 sm:text-sm" href={profile.github} target="_blank" rel="noreferrer">
+            <a className="inline-flex min-h-10 items-center gap-2 rounded-full border border-[#0C2120]/15 px-4 text-[0.82rem] font-black text-[#0C2120] transition hover:border-[#D7720C]/50 hover:text-[#D7720C] sm:min-h-11 sm:px-5 sm:text-sm" href={profile.github} target="_blank" rel="noreferrer">
               <Code2 size={18} aria-hidden="true" /> GitHub
             </a>
           </div>
@@ -125,14 +125,14 @@ export default function Home() {
       <section id="about" className={`${sectionClass} grid gap-10 border-t border-[#0C2120]/10 lg:grid-cols-[0.78fr_1.22fr]`}>
         <div className="min-w-0">
           <p className={eyebrowClass}>Profile</p>
-          <h2 className={`${displayClass} text-[clamp(1.45rem,2.1vw,2.3rem)]`}>A product developer with practical range.</h2>
+          <h2 className={`${displayClass} text-[clamp(1.65rem,2.4vw,2.65rem)]`}>A product developer with practical range.</h2>
           <p className="mt-5 text-[0.92rem] leading-8 text-[#50463F]">{profile.subheadline}</p>
         </div>
         <div className="grid min-w-0 gap-3 sm:grid-cols-2">
           {profileHighlights.map((item) => (
             <article className={`${cardClass} min-w-0 p-5`} key={item.title}>
               <item.icon className="mb-5 text-[#D7720C]" size={24} aria-hidden="true" />
-              <h3 className="mb-2 text-[1rem] font-extrabold">{item.title}</h3>
+              <h3 className="mb-2 text-[1.08rem] font-extrabold leading-tight">{item.title}</h3>
               <p className="text-[0.9rem] leading-7 text-[#50463F]">{item.text}</p>
             </article>
           ))}
@@ -142,7 +142,7 @@ export default function Home() {
       <section id="experience" className={`${sectionClass} border-t border-[#0C2120]/10`}>
         <div className="mb-9 max-w-3xl">
           <p className={eyebrowClass}>Experience</p>
-          <h2 className={`${displayClass} text-[clamp(1.45rem,2.1vw,2.3rem)]`}>Product work across schools, SaaS teams and business systems.</h2>
+          <h2 className={`${displayClass} text-[clamp(1.65rem,2.4vw,2.65rem)]`}>Product work across schools, SaaS teams and business systems.</h2>
         </div>
         <div className="grid gap-3">
           {experience.map((item) => (
@@ -152,12 +152,12 @@ export default function Home() {
                 <p className="mt-2 text-[0.86rem] font-bold leading-6 text-[#50463F]">{item.location}</p>
               </div>
               <div>
-                <h3 className="text-[1.15rem] font-extrabold leading-tight">{item.role}</h3>
+                <h3 className="text-[1.25rem] font-extrabold leading-tight">{item.role}</h3>
                 <p className="mt-1 text-[0.92rem] font-extrabold text-[#668A85]">{item.company}</p>
                 <p className="mt-4 max-w-3xl text-[0.92rem] leading-8 text-[#50463F]">{item.summary}</p>
                 <div className="mt-5 flex flex-wrap gap-2">
                   {item.skills.map((skill) => (
-                    <span className="rounded-full border border-[#0C2120]/10 px-3 py-1.5 text-[0.7rem] font-black text-[#0C2120]" key={skill}>
+                    <span className="rounded-full border border-[#0C2120]/10 px-3 py-1.5 text-[0.7rem] font-black text-[#0C2120] transition hover:border-[#D7720C]/40" key={skill}>
                       {skill}
                     </span>
                   ))}
@@ -171,13 +171,13 @@ export default function Home() {
       <section id="services" className={`${sectionClass} grid gap-10 border-t border-[#0C2120]/10 lg:grid-cols-[0.8fr_1.2fr]`}>
         <div>
           <p className={eyebrowClass}>What I build</p>
-          <h2 className={`${displayClass} text-[clamp(1.45rem,2.1vw,2.3rem)]`}>Complete business systems, not isolated screens.</h2>
+          <h2 className={`${displayClass} text-[clamp(1.65rem,2.4vw,2.65rem)]`}>Complete business systems, not isolated screens.</h2>
         </div>
         <div className="grid gap-3 sm:grid-cols-2">
           {services.map((service) => (
             <article className={`${cardClass} p-5`} key={service.title}>
               <service.icon className="mb-4 text-[#D7720C]" size={24} aria-hidden="true" />
-              <h3 className="mb-2 text-[1rem] font-extrabold">{service.title}</h3>
+              <h3 className="mb-2 text-[1.12rem] font-extrabold leading-tight">{service.title}</h3>
               <p className="text-[0.9rem] leading-7 text-[#50463F]">{service.description}</p>
             </article>
           ))}
@@ -187,7 +187,7 @@ export default function Home() {
       <section id="work" className={sectionClass}>
         <div className="mb-9 max-w-3xl">
           <p className={eyebrowClass}>Featured work</p>
-          <h2 className={`${displayClass} text-[clamp(1.45rem,2.1vw,2.3rem)]`}>Products shaped around operations, revenue and daily use.</h2>
+          <h2 className={`${displayClass} text-[clamp(1.65rem,2.4vw,2.65rem)]`}>Products shaped around operations, revenue and daily use.</h2>
         </div>
         <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
           {projects.map((project) => (
@@ -203,23 +203,23 @@ export default function Home() {
                   </div>
                 )}
                 <div className="flex flex-wrap items-center justify-end gap-2">
-                  <Link className="inline-flex items-center gap-2 rounded-full border border-[#0C2120]/10 px-3 py-1.5 text-[0.72rem] font-black text-[#0C2120] hover:border-[#D7720C] hover:text-[#D7720C]" href={`/case-studies/${project.slug}`}>
+                  <Link className="inline-flex items-center gap-2 rounded-full border border-[#0C2120]/10 px-3 py-1.5 text-[0.72rem] font-black text-[#0C2120] transition hover:border-[#D7720C]/60 hover:text-[#D7720C]" href={`/case-studies/${project.slug}`}>
                     Case study <ArrowUpRight size={14} aria-hidden="true" />
                   </Link>
                   {project.url ? (
-                    <a className="inline-flex items-center gap-2 rounded-full border border-[#0C2120]/10 px-3 py-1.5 text-[0.72rem] font-black text-[#0C2120] hover:border-[#D7720C] hover:text-[#D7720C]" href={project.url} target="_blank" rel="noreferrer">
+                    <a className="inline-flex items-center gap-2 rounded-full border border-[#0C2120]/10 px-3 py-1.5 text-[0.72rem] font-black text-[#0C2120] transition hover:border-[#D7720C]/60 hover:text-[#D7720C]" href={project.url} target="_blank" rel="noreferrer">
                       Visit <ArrowUpRight size={14} aria-hidden="true" />
                     </a>
                   ) : null}
                 </div>
               </div>
               <p className="mb-2 text-[0.68rem] font-black uppercase tracking-[0.12em] text-[#668A85]">{project.category}</p>
-              <h3 className="mb-3 text-[1.15rem] font-extrabold leading-tight">{project.title}</h3>
+              <h3 className="mb-3 text-[1.28rem] font-extrabold leading-tight">{project.title}</h3>
               <p className="text-[0.9rem] leading-7 text-[#50463F]">{project.summary}</p>
-              <strong className="mt-4 block text-[0.9rem] leading-7">{project.businessValue}</strong>
+              <strong className="mt-5 block border-t border-[#0C2120]/10 pt-4 text-[0.94rem] leading-7 text-[#0C2120]">{project.businessValue}</strong>
               <div className="mt-auto flex flex-wrap gap-2 pt-6">
                 {project.stack.map((item) => (
-                  <span className="rounded-full border border-[#0C2120]/10 px-3 py-1.5 text-[0.7rem] font-black text-[#0C2120]" key={item}>
+                  <span className="rounded-full border border-[#0C2120]/10 px-3 py-1.5 text-[0.7rem] font-black text-[#0C2120] transition hover:border-[#D7720C]/40" key={item}>
                     {item}
                   </span>
                 ))}
@@ -232,7 +232,7 @@ export default function Home() {
       <section className={`${sectionClass} grid gap-6 border-y border-[#0C2120]/10 lg:grid-cols-[0.8fr_1.2fr]`}>
         <div>
           <p className={eyebrowClass}>Education</p>
-          <h2 className={`${displayClass} text-[clamp(1.45rem,2.1vw,2.3rem)]`}>Computer science foundation with product experience on top.</h2>
+          <h2 className={`${displayClass} text-[clamp(1.65rem,2.4vw,2.65rem)]`}>Computer science foundation with product experience on top.</h2>
         </div>
         <div className="grid gap-3">
           {education.map((item) => (
@@ -241,12 +241,12 @@ export default function Home() {
                 <GraduationCap size={22} aria-hidden="true" />
               </div>
               <div>
-                <h3 className="text-[1.05rem] font-extrabold">{item.school}</h3>
+                <h3 className="text-[1.16rem] font-extrabold leading-tight">{item.school}</h3>
                 <p className="mt-1 text-[0.92rem] font-medium text-[#50463F]">{item.degree}</p>
                 <p className="mt-2 text-[0.78rem] font-extrabold uppercase tracking-[0.12em] text-[#D7720C]">{item.period}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {item.focus.map((focus) => (
-                    <span className="rounded-full border border-[#0C2120]/10 px-3 py-1.5 text-[0.7rem] font-black" key={focus}>
+                    <span className="rounded-full border border-[#0C2120]/10 px-3 py-1.5 text-[0.7rem] font-black transition hover:border-[#D7720C]/40" key={focus}>
                       {focus}
                     </span>
                   ))}
@@ -260,11 +260,11 @@ export default function Home() {
       <section className={`${sectionClass} grid gap-10 border-y border-[#0C2120]/10 lg:grid-cols-[0.8fr_1.2fr]`}>
         <div>
           <p className={eyebrowClass}>Stack</p>
-          <h2 className={`${displayClass} text-[clamp(1.45rem,2.1vw,2.3rem)]`}>Modern tools I already use to ship.</h2>
+          <h2 className={`${displayClass} text-[clamp(1.65rem,2.4vw,2.65rem)]`}>Modern tools I already use to ship.</h2>
         </div>
         <div className="flex content-start flex-wrap gap-2">
           {stack.map((item) => (
-            <span className="rounded-full border border-[#0C2120]/10 px-3.5 py-2 text-[0.76rem] font-black text-[#0C2120]" key={item}>
+            <span className="rounded-full border border-[#0C2120]/10 px-3.5 py-2 text-[0.76rem] font-black text-[#0C2120] transition hover:border-[#D7720C]/40" key={item}>
               {item}
             </span>
           ))}
@@ -275,7 +275,7 @@ export default function Home() {
         {process.map((item) => (
           <article className={`${cardClass} p-5`} key={item.title}>
             <item.icon className="mb-5 text-[#D7720C]" size={24} aria-hidden="true" />
-            <h3 className="mb-3 text-[1rem] font-extrabold">{item.title}</h3>
+            <h3 className="mb-3 text-[1.12rem] font-extrabold leading-tight">{item.title}</h3>
             <p className="text-[0.9rem] leading-7 text-[#50463F]">{item.text}</p>
           </article>
         ))}
@@ -284,12 +284,12 @@ export default function Home() {
       <section className={sectionClass}>
         <div className="mb-9 max-w-3xl">
           <p className={eyebrowClass}>Testimonials</p>
-          <h2 className={`${displayClass} text-[clamp(1.45rem,2.1vw,2.3rem)]`}>What clients and teammates already say.</h2>
+          <h2 className={`${displayClass} text-[clamp(1.65rem,2.4vw,2.65rem)]`}>What clients and teammates already say.</h2>
         </div>
         <div className="grid gap-4 lg:grid-cols-3">
           {testimonials.map((testimonial) => (
             <blockquote className={`${cardClass} p-5`} key={testimonial.name}>
-              <p className={`${displayClass} text-[1.05rem] leading-tight`}>&ldquo;{testimonial.quote}&rdquo;</p>
+              <p className={`${displayClass} text-[1.14rem] leading-tight`}>&ldquo;{testimonial.quote}&rdquo;</p>
               <footer className="mt-7 grid gap-1">
                 <strong>{testimonial.name}</strong>
                 <span className="text-[#50463F]">{testimonial.role}</span>
@@ -303,19 +303,19 @@ export default function Home() {
         <div className={`${sectionClass} grid gap-10 lg:grid-cols-[0.9fr_1.1fr]`}>
           <div>
             <p className={eyebrowClass}>Start here</p>
-            <h2 className={`${displayClass} text-[clamp(1.35rem,2.1vw,2.3rem)]`}>Need a reliable developer to build your product?</h2>
+            <h2 className={`${displayClass} text-[clamp(1.65rem,2.4vw,2.65rem)]`}>Need a reliable developer to build your product?</h2>
             <p className="mt-6 max-w-xl text-[0.9rem] leading-7 text-[#50463F] sm:text-[0.95rem] sm:leading-8">
               Send the workflow, product idea or stuck project. I am strongest when the job needs product thinking,
               full-stack execution and a practical launch path.
             </p>
             <div className={`${cardClass} mt-8 grid max-w-xl overflow-hidden text-[0.85rem] font-bold text-[#0C2120] sm:text-[0.9rem]`}>
-              <a className="inline-flex items-center gap-3 border-b border-[#0C2120]/10 px-5 py-3" href={`mailto:${profile.email}`}>
+              <a className="inline-flex items-center gap-3 border-b border-[#0C2120]/10 px-5 py-3 transition hover:border-[#D7720C]/35 hover:text-[#D7720C]" href={`mailto:${profile.email}`}>
                 <Mail size={18} aria-hidden="true" /> {profile.email}
               </a>
-              <a className="inline-flex items-center gap-3 border-b border-[#0C2120]/10 px-5 py-3" href={profile.whatsapp}>
+              <a className="inline-flex items-center gap-3 border-b border-[#0C2120]/10 px-5 py-3 transition hover:border-[#D7720C]/35 hover:text-[#D7720C]" href={profile.whatsapp}>
                 <MessageCircle size={18} aria-hidden="true" /> WhatsApp {profile.phone}
               </a>
-              <a className="inline-flex items-center gap-3 px-5 py-3" href={`tel:${profile.phone.replaceAll(" ", "")}`}>
+              <a className="inline-flex items-center gap-3 px-5 py-3 transition hover:text-[#D7720C]" href={`tel:${profile.phone.replaceAll(" ", "")}`}>
                 <Phone size={18} aria-hidden="true" /> {profile.phone}
               </a>
             </div>
@@ -326,7 +326,7 @@ export default function Home() {
                 ["GitHub", profile.github],
                 ["CodeSandbox", profile.codesandbox]
               ].map(([label, href]) => (
-                <a className="inline-flex min-h-10 items-center gap-2 rounded-full border border-[#0C2120]/10 px-3.5 text-[0.76rem] font-black sm:px-4 sm:text-[0.8rem]" href={href} target="_blank" rel="noreferrer" key={label}>
+                <a className="inline-flex min-h-10 items-center gap-2 rounded-full border border-[#0C2120]/10 px-3.5 text-[0.76rem] font-black transition hover:border-[#D7720C]/50 hover:text-[#D7720C] sm:px-4 sm:text-[0.8rem]" href={href} target="_blank" rel="noreferrer" key={label}>
                   <LinkIcon size={16} aria-hidden="true" /> {label}
                 </a>
               ))}
