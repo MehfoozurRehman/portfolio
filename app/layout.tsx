@@ -3,7 +3,7 @@ import { Nunito } from "next/font/google";
 import Script from "next/script";
 import { ScrollToTopButton } from "./scroll-to-top-button";
 import { ServiceWorkerResetScript } from "./sw-reset-script";
-import { ThemeScript } from "./theme-script";
+import { themeScript } from "./theme-script";
 import "./globals.css";
 
 const nunito = Nunito({
@@ -50,8 +50,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className={`${nunito.variable} h-full bg-[var(--color-page)] antialiased`}>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body className="flex min-h-full flex-col bg-[var(--color-page)] font-[family-name:var(--font-nunito)] text-[var(--color-text)]">
-        <ThemeScript />
         <ServiceWorkerResetScript />
         <Script
           async

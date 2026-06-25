@@ -45,7 +45,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
+  :root:not([data-theme]) {
     color-scheme: dark;
     --color-page: #050507;
     --color-page-soft: #08090d;

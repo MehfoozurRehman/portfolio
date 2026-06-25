@@ -25,7 +25,10 @@ export function ThemeToggle() {
         return;
       }
 
-      document.documentElement.dataset.theme = getSystemTheme();
+      const nextTheme = getSystemTheme();
+      document.documentElement.dataset.theme = nextTheme;
+      document.documentElement.style.colorScheme = nextTheme;
+      document.documentElement.style.backgroundColor = nextTheme === "dark" ? "#050507" : "#f1efe5";
     };
 
     query.addEventListener("change", syncSystemTheme);
@@ -38,6 +41,8 @@ export function ThemeToggle() {
   function toggleTheme() {
     const nextTheme = getCurrentTheme() === "dark" ? "light" : "dark";
     document.documentElement.dataset.theme = nextTheme;
+    document.documentElement.style.colorScheme = nextTheme;
+    document.documentElement.style.backgroundColor = nextTheme === "dark" ? "#050507" : "#f1efe5";
     localStorage.setItem("portfolio-theme", nextTheme);
   }
 
