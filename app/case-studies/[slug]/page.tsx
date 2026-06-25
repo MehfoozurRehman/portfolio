@@ -36,14 +36,14 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
             <p className="mt-5 max-w-2xl text-[0.96rem] leading-8 text-[#50463F]">{project.summary}</p>
             <div className="mt-7 flex flex-wrap gap-2">
               {project.highlights.map((item) => (
-                <span className="rounded-full border border-[#0C2120]/10 bg-[#F8F2E6] px-3 py-1.5 text-[0.7rem] font-black" key={item}>
+                <span className="rounded-full border border-[#0C2120]/10 px-3 py-1.5 text-[0.7rem] font-black" key={item}>
                   {item}
                 </span>
               ))}
             </div>
           </div>
 
-          <div className="rounded-[24px] border border-[#0C2120]/10 bg-[#F8F2E6] p-5 shadow-sm">
+          <div className="rounded-[18px] border border-[#0C2120]/10 p-5">
             <div className="flex items-start justify-between gap-4">
               <div className="flex items-center gap-3">
                 <div className="grid size-12 place-items-center rounded-full border border-[#0C2120]/10 bg-[#F1EFE5]">
@@ -100,7 +100,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
             ["Approach", project.approach],
             ["Outcome", project.outcome]
           ].map(([label, value]) => (
-            <article className="rounded-[20px] border border-[#0C2120]/10 bg-[#F8F2E6] p-5" key={label}>
+            <article className="rounded-[18px] border border-[#0C2120]/10 p-5" key={label}>
               <p className="text-[0.68rem] font-black uppercase tracking-[0.14em] text-[#D7720C]">{label}</p>
               <p className="mt-3 text-[0.92rem] leading-7 text-[#50463F]">{value}</p>
             </article>
@@ -108,7 +108,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
         </section>
 
         <section className="mt-8 grid gap-4 lg:grid-cols-[1.05fr_0.95fr]">
-          <article className="rounded-[20px] border border-[#0C2120]/10 bg-[#F8F2E6] p-5">
+          <article className="rounded-[18px] border border-[#0C2120]/10 p-5">
             <p className="text-[0.68rem] font-black uppercase tracking-[0.14em] text-[#D7720C]">Responsibilities</p>
             <ul className="mt-4 grid gap-3 text-[0.92rem] leading-7 text-[#50463F]">
               {project.responsibilities.map((item) => (
@@ -120,7 +120,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
             </ul>
           </article>
 
-          <article className="rounded-[20px] border border-[#0C2120]/10 bg-[#F8F2E6] p-5">
+          <article className="rounded-[18px] border border-[#0C2120]/10 p-5">
             <p className="text-[0.68rem] font-black uppercase tracking-[0.14em] text-[#D7720C]">Stack</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {project.stack.map((item) => (

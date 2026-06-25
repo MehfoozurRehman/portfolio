@@ -8,7 +8,7 @@ import { education, experience, process, profile, profileHighlights, projects, s
 const sectionClass = "mx-auto max-w-[1360px] px-5 py-11 sm:px-8 lg:px-12 xl:px-16 lg:py-14";
 const eyebrowClass = "mb-4 flex items-center gap-2 text-[0.72rem] font-black uppercase tracking-[0.16em] text-[#D7720C]";
 const displayClass = "font-[family-name:var(--font-nunito)] font-extrabold leading-[0.98] tracking-normal";
-const cardClass = "rounded-[18px] border border-[#0C2120]/10 bg-[#F8F2E6]";
+const cardClass = "rounded-[18px] border border-[#0C2120]/10";
 
 function getProjectLogoSrc(project: { url?: string; logoUrl?: string }) {
   if (project.logoUrl) {
@@ -144,9 +144,9 @@ export default function Home() {
           <p className={eyebrowClass}>Experience</p>
           <h2 className={`${displayClass} text-[clamp(1.45rem,2.1vw,2.3rem)]`}>Product work across schools, SaaS teams and business systems.</h2>
         </div>
-        <div className="grid gap-4">
+        <div className="grid gap-3">
           {experience.map((item) => (
-            <article className="grid gap-5 border-t border-[#0C2120]/10 py-6 lg:grid-cols-[0.38fr_1fr]" key={`${item.company}-${item.period}`}>
+            <article className={`${cardClass} grid gap-5 p-5 lg:grid-cols-[0.38fr_1fr]`} key={`${item.company}-${item.period}`}>
               <div>
                 <p className="text-[0.74rem] font-black uppercase tracking-[0.14em] text-[#D7720C]">{item.period}</p>
                 <p className="mt-2 text-[0.86rem] font-bold leading-6 text-[#50463F]">{item.location}</p>
@@ -157,7 +157,7 @@ export default function Home() {
                 <p className="mt-4 max-w-3xl text-[0.92rem] leading-8 text-[#50463F]">{item.summary}</p>
                 <div className="mt-5 flex flex-wrap gap-2">
                   {item.skills.map((skill) => (
-                    <span className="rounded-full border border-[#0C2120]/10 bg-[#F8F2E6] px-3 py-1.5 text-[0.7rem] font-black text-[#0C2120]" key={skill}>
+                    <span className="rounded-full border border-[#0C2120]/10 px-3 py-1.5 text-[0.7rem] font-black text-[#0C2120]" key={skill}>
                       {skill}
                     </span>
                   ))}
@@ -173,9 +173,9 @@ export default function Home() {
           <p className={eyebrowClass}>What I build</p>
           <h2 className={`${displayClass} text-[clamp(1.45rem,2.1vw,2.3rem)]`}>Complete business systems, not isolated screens.</h2>
         </div>
-        <div className="grid border-t border-[#0C2120]/10 sm:grid-cols-2 lg:border-t-0">
+        <div className="grid gap-3 sm:grid-cols-2">
           {services.map((service) => (
-            <article className="border-b border-[#0C2120]/10 py-5 sm:px-5 sm:odd:border-r" key={service.title}>
+            <article className={`${cardClass} p-5`} key={service.title}>
               <service.icon className="mb-4 text-[#D7720C]" size={24} aria-hidden="true" />
               <h3 className="mb-2 text-[1rem] font-extrabold">{service.title}</h3>
               <p className="text-[0.9rem] leading-7 text-[#50463F]">{service.description}</p>
@@ -264,16 +264,16 @@ export default function Home() {
         </div>
         <div className="flex content-start flex-wrap gap-2">
           {stack.map((item) => (
-            <span className="rounded-full border border-[#0C2120]/10 bg-[#F8F2E6] px-3.5 py-2 text-[0.76rem] font-black text-[#0C2120]" key={item}>
+            <span className="rounded-full border border-[#0C2120]/10 px-3.5 py-2 text-[0.76rem] font-black text-[#0C2120]" key={item}>
               {item}
             </span>
           ))}
         </div>
       </section>
 
-      <section className={`${sectionClass} grid gap-0 md:grid-cols-3`}>
+      <section className={`${sectionClass} grid gap-3 md:grid-cols-3`}>
         {process.map((item) => (
-          <article className="border-y border-[#0C2120]/10 py-6 md:border-r md:px-6 md:first:border-l" key={item.title}>
+          <article className={`${cardClass} p-5`} key={item.title}>
             <item.icon className="mb-5 text-[#D7720C]" size={24} aria-hidden="true" />
             <h3 className="mb-3 text-[1rem] font-extrabold">{item.title}</h3>
             <p className="text-[0.9rem] leading-7 text-[#50463F]">{item.text}</p>
@@ -308,14 +308,14 @@ export default function Home() {
               Send the workflow, product idea or stuck project. I am strongest when the job needs product thinking,
               full-stack execution and a practical launch path.
             </p>
-            <div className="mt-8 grid max-w-xl border-y border-[#0C2120]/10 text-[0.85rem] font-bold text-[#0C2120] sm:text-[0.9rem]">
-              <a className="inline-flex items-center gap-3 border-b border-[#0C2120]/10 py-3" href={`mailto:${profile.email}`}>
+            <div className={`${cardClass} mt-8 grid max-w-xl overflow-hidden text-[0.85rem] font-bold text-[#0C2120] sm:text-[0.9rem]`}>
+              <a className="inline-flex items-center gap-3 border-b border-[#0C2120]/10 px-5 py-3" href={`mailto:${profile.email}`}>
                 <Mail size={18} aria-hidden="true" /> {profile.email}
               </a>
-              <a className="inline-flex items-center gap-3 border-b border-[#0C2120]/10 py-3" href={profile.whatsapp}>
+              <a className="inline-flex items-center gap-3 border-b border-[#0C2120]/10 px-5 py-3" href={profile.whatsapp}>
                 <MessageCircle size={18} aria-hidden="true" /> WhatsApp {profile.phone}
               </a>
-              <a className="inline-flex items-center gap-3 py-3" href={`tel:${profile.phone.replaceAll(" ", "")}`}>
+              <a className="inline-flex items-center gap-3 px-5 py-3" href={`tel:${profile.phone.replaceAll(" ", "")}`}>
                 <Phone size={18} aria-hidden="true" /> {profile.phone}
               </a>
             </div>
