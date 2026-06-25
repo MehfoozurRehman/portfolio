@@ -1,5 +1,90 @@
 @import "tailwindcss";
 
+:root {
+  color-scheme: light;
+  --color-page: #f1efe5;
+  --color-page-soft: #f7f2e7;
+  --color-text: #0c2120;
+  --color-muted: #50463f;
+  --color-soft: #668a85;
+  --color-accent: #d7720c;
+  --color-on-accent: #ffffff;
+  --color-danger: #b42318;
+  --color-inverse: #0c2120;
+  --color-inverse-text: #f1efe5;
+  --color-field: rgb(255 255 255 / 0.7);
+  --border-hairline: rgb(12 33 32 / 0.08);
+  --border-subtle: rgb(12 33 32 / 0.1);
+  --border-card: rgb(12 33 32 / 0.15);
+  --border-input-hover: rgb(12 33 32 / 0.2);
+  --border-hover: rgb(215 114 12 / 0.45);
+  --shadow-strong: rgb(12 33 32 / 0.2);
+  --shadow-accent: rgb(215 114 12 / 0.2);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-page: #050507;
+  --color-page-soft: #08090d;
+  --color-text: #f3f0e8;
+  --color-muted: #b8b0a4;
+  --color-soft: #91a8ad;
+  --color-accent: #f28a24;
+  --color-on-accent: #150b04;
+  --color-danger: #ff8b7d;
+  --color-inverse: #f3f0e8;
+  --color-inverse-text: #07080b;
+  --color-field: rgb(255 255 255 / 0.055);
+  --border-hairline: rgb(255 255 255 / 0.07);
+  --border-subtle: rgb(255 255 255 / 0.1);
+  --border-card: rgb(255 255 255 / 0.16);
+  --border-input-hover: rgb(255 255 255 / 0.24);
+  --border-hover: rgb(242 138 36 / 0.52);
+  --shadow-strong: rgb(0 0 0 / 0.45);
+  --shadow-accent: rgb(242 138 36 / 0.16);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --color-page: #050507;
+    --color-page-soft: #08090d;
+    --color-text: #f3f0e8;
+    --color-muted: #b8b0a4;
+    --color-soft: #91a8ad;
+    --color-accent: #f28a24;
+    --color-on-accent: #150b04;
+    --color-danger: #ff8b7d;
+    --color-inverse: #f3f0e8;
+    --color-inverse-text: #07080b;
+    --color-field: rgb(255 255 255 / 0.055);
+    --border-hairline: rgb(255 255 255 / 0.07);
+    --border-subtle: rgb(255 255 255 / 0.1);
+    --border-card: rgb(255 255 255 / 0.16);
+    --border-input-hover: rgb(255 255 255 / 0.24);
+    --border-hover: rgb(242 138 36 / 0.52);
+    --shadow-strong: rgb(0 0 0 / 0.45);
+    --shadow-accent: rgb(242 138 36 / 0.16);
+  }
+}
+
 html {
   scroll-behavior: smooth;
+  background: var(--color-page);
+}
+
+body {
+  background: var(--color-page);
+}
+
+.theme-toggle-icon-dark {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-toggle-icon-light {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-toggle-icon-dark {
+  display: block;
 }

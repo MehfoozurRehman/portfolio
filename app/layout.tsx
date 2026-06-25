@@ -3,6 +3,7 @@ import { Nunito } from "next/font/google";
 import Script from "next/script";
 import { ScrollToTopButton } from "./scroll-to-top-button";
 import { ServiceWorkerResetScript } from "./sw-reset-script";
+import { ThemeScript } from "./theme-script";
 import "./globals.css";
 
 const nunito = Nunito({
@@ -48,8 +49,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${nunito.variable} h-full bg-[#F1EFE5] antialiased`}>
-      <body className="flex min-h-full flex-col bg-[#F1EFE5] font-[family-name:var(--font-nunito)]">
+    <html lang="en" suppressHydrationWarning className={`${nunito.variable} h-full bg-[var(--color-page)] antialiased`}>
+      <body className="flex min-h-full flex-col bg-[var(--color-page)] font-[family-name:var(--font-nunito)] text-[var(--color-text)]">
+        <ThemeScript />
         <ServiceWorkerResetScript />
         <Script
           async

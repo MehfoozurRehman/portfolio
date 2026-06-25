@@ -17,36 +17,36 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
   }
 
   return (
-    <main className="min-h-screen bg-[#F1EFE5] text-[#0C2120]">
+    <main className="min-h-screen bg-[var(--color-page)] text-[var(--color-text)]">
       <div className="mx-auto max-w-[1200px] px-5 py-8 sm:px-8 lg:px-12 xl:px-16">
-        <Link className="inline-flex items-center gap-2 text-[0.75rem] font-black text-[#0C2120] transition hover:text-[#D7720C]" href="/">
+        <Link className="inline-flex items-center gap-2 text-[0.75rem] font-black text-[var(--color-text)] transition hover:text-[var(--color-accent)]" href="/">
           <ArrowLeft size={14} aria-hidden="true" /> Back to portfolio
         </Link>
 
-        <section className="mt-7 grid gap-10 border-t border-[#0C2120]/10 pt-9 lg:grid-cols-[1fr_0.84fr] lg:items-start">
+        <section className="mt-7 grid gap-10 border-t border-[var(--border-subtle)] pt-9 lg:grid-cols-[1fr_0.84fr] lg:items-start">
           <div className="max-w-3xl">
-            <p className="mb-4 flex items-center gap-2 text-[0.72rem] font-black uppercase tracking-[0.16em] text-[#D7720C]">
+            <p className="mb-4 flex items-center gap-2 text-[0.72rem] font-black uppercase tracking-[0.16em] text-[var(--color-accent)]">
               <Sparkles size={14} aria-hidden="true" />
               Case study
             </p>
-            <p className="text-[0.72rem] font-black uppercase tracking-[0.14em] text-[#668A85]">{project.category}</p>
+            <p className="text-[0.72rem] font-black uppercase tracking-[0.14em] text-[var(--color-soft)]">{project.category}</p>
             <h1 className="mt-3 text-[clamp(2.1rem,4vw,4.2rem)] font-[family-name:var(--font-nunito)] font-extrabold leading-[0.94]">
               {project.title}
             </h1>
-            <p className="mt-5 max-w-2xl text-[0.96rem] leading-8 text-[#50463F]">{project.summary}</p>
+            <p className="mt-5 max-w-2xl text-[0.96rem] leading-8 text-[var(--color-muted)]">{project.summary}</p>
             <div className="mt-7 flex flex-wrap gap-2">
               {project.highlights.map((item) => (
-                <span className="rounded-full border border-[#0C2120]/10 px-3 py-1.5 text-[0.7rem] font-black transition hover:border-[#D7720C]/40" key={item}>
+                <span className="rounded-full border border-[var(--border-subtle)] px-3 py-1.5 text-[0.7rem] font-black transition hover:border-[var(--border-hover)]" key={item}>
                   {item}
                 </span>
               ))}
             </div>
           </div>
 
-          <div className="rounded-[18px] border border-[#0C2120]/15 p-5 transition duration-200 hover:border-[#D7720C]/45">
+          <div className="rounded-[18px] border border-[var(--border-card)] p-5 transition duration-200 hover:border-[var(--border-hover)]">
             <div className="flex items-start justify-between gap-4">
               <div className="flex items-center gap-3">
-                <div className="grid size-12 place-items-center rounded-full border border-[#0C2120]/15 bg-[#F1EFE5]">
+                <div className="grid size-12 place-items-center rounded-full border border-[var(--border-card)] bg-[var(--color-page)]">
                   {project.logoUrl ? (
                     <Image src={project.logoUrl} alt="" width={36} height={36} className="size-8 object-contain" aria-hidden="true" />
                   ) : (
@@ -54,19 +54,19 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                   )}
                 </div>
                 <div>
-                  <p className="text-[0.68rem] font-black uppercase tracking-[0.14em] text-[#668A85]">Project snapshot</p>
+                  <p className="text-[0.68rem] font-black uppercase tracking-[0.14em] text-[var(--color-soft)]">Project snapshot</p>
                   <p className="mt-1 text-[0.95rem] font-extrabold">{project.title}</p>
                 </div>
               </div>
               {project.url ? (
-                <a className="inline-flex items-center gap-2 rounded-full border border-[#0C2120]/10 px-3 py-1.5 text-[0.72rem] font-black text-[#0C2120] transition hover:border-[#D7720C]/60 hover:text-[#D7720C]" href={project.url} target="_blank" rel="noreferrer">
+                <a className="inline-flex items-center gap-2 rounded-full border border-[var(--border-subtle)] px-3 py-1.5 text-[0.72rem] font-black text-[var(--color-text)] transition hover:border-[var(--border-hover)] hover:text-[var(--color-accent)]" href={project.url} target="_blank" rel="noreferrer">
                   Visit <ArrowUpRight size={14} aria-hidden="true" />
                 </a>
               ) : null}
             </div>
 
             {project.heroImageUrl ? (
-              <div className="mt-5 overflow-hidden rounded-[18px] border border-[#0C2120]/15 bg-[#0C2120]">
+              <div className="mt-5 overflow-hidden rounded-[18px] border border-[var(--border-card)] bg-[var(--color-inverse)]">
                 <Image
                   src={project.heroImageUrl}
                   alt={`${project.title} homepage screenshot`}
@@ -85,9 +85,9 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                 ["Stack", project.stack[0] ?? "Web"],
                 ["Mode", "Product build"]
               ].map(([label, value]) => (
-                <div className="rounded-[16px] border border-[#0C2120]/15 bg-[#F1EFE5] p-3 transition hover:border-[#D7720C]/35" key={label}>
-                  <p className="text-[0.65rem] font-black uppercase tracking-[0.14em] text-[#D7720C]">{label}</p>
-                  <p className="mt-1 font-bold text-[#0C2120]">{value}</p>
+                <div className="rounded-[16px] border border-[var(--border-card)] bg-[var(--color-page)] p-3 transition hover:border-[var(--border-hover)]" key={label}>
+                  <p className="text-[0.65rem] font-black uppercase tracking-[0.14em] text-[var(--color-accent)]">{label}</p>
+                  <p className="mt-1 font-bold text-[var(--color-text)]">{value}</p>
                 </div>
               ))}
             </div>
@@ -100,47 +100,47 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
             ["Approach", project.approach],
             ["Outcome", project.outcome]
           ].map(([label, value]) => (
-            <article className="rounded-[18px] border border-[#0C2120]/15 p-5 transition duration-200 hover:border-[#D7720C]/45" key={label}>
-              <p className="text-[0.74rem] font-black uppercase tracking-[0.14em] text-[#D7720C]">{label}</p>
-              <p className="mt-3 text-[0.92rem] leading-7 text-[#50463F]">{value}</p>
+            <article className="rounded-[18px] border border-[var(--border-card)] p-5 transition duration-200 hover:border-[var(--border-hover)]" key={label}>
+              <p className="text-[0.74rem] font-black uppercase tracking-[0.14em] text-[var(--color-accent)]">{label}</p>
+              <p className="mt-3 text-[0.92rem] leading-7 text-[var(--color-muted)]">{value}</p>
             </article>
           ))}
         </section>
 
         <section className="mt-8 grid gap-4 lg:grid-cols-[1.05fr_0.95fr]">
-          <article className="rounded-[18px] border border-[#0C2120]/15 p-5 transition duration-200 hover:border-[#D7720C]/45">
-            <p className="text-[0.74rem] font-black uppercase tracking-[0.14em] text-[#D7720C]">Responsibilities</p>
-            <ul className="mt-4 grid gap-3 text-[0.92rem] leading-7 text-[#50463F]">
+          <article className="rounded-[18px] border border-[var(--border-card)] p-5 transition duration-200 hover:border-[var(--border-hover)]">
+            <p className="text-[0.74rem] font-black uppercase tracking-[0.14em] text-[var(--color-accent)]">Responsibilities</p>
+            <ul className="mt-4 grid gap-3 text-[0.92rem] leading-7 text-[var(--color-muted)]">
               {project.responsibilities.map((item) => (
                 <li className="flex gap-3" key={item}>
-                  <CheckCircle2 className="mt-1 text-[#668A85]" size={16} aria-hidden="true" />
+                  <CheckCircle2 className="mt-1 text-[var(--color-soft)]" size={16} aria-hidden="true" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
           </article>
 
-          <article className="rounded-[18px] border border-[#0C2120]/15 p-5 transition duration-200 hover:border-[#D7720C]/45">
-            <p className="text-[0.74rem] font-black uppercase tracking-[0.14em] text-[#D7720C]">Stack</p>
+          <article className="rounded-[18px] border border-[var(--border-card)] p-5 transition duration-200 hover:border-[var(--border-hover)]">
+            <p className="text-[0.74rem] font-black uppercase tracking-[0.14em] text-[var(--color-accent)]">Stack</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {project.stack.map((item) => (
-                <span className="rounded-full border border-[#0C2120]/10 px-3 py-1.5 text-[0.7rem] font-black text-[#0C2120] transition hover:border-[#D7720C]/40" key={item}>
+                <span className="rounded-full border border-[var(--border-subtle)] px-3 py-1.5 text-[0.7rem] font-black text-[var(--color-text)] transition hover:border-[var(--border-hover)]" key={item}>
                   {item}
                 </span>
               ))}
             </div>
-            <div className="mt-6 rounded-[18px] border border-[#0C2120]/15 bg-[#F1EFE5] p-4 transition hover:border-[#D7720C]/35">
-              <p className="text-[0.68rem] font-black uppercase tracking-[0.14em] text-[#668A85]">At a glance</p>
-              <p className="mt-2 text-[0.92rem] leading-7 text-[#50463F]">
+            <div className="mt-6 rounded-[18px] border border-[var(--border-card)] bg-[var(--color-page)] p-4 transition hover:border-[var(--border-hover)]">
+              <p className="text-[0.68rem] font-black uppercase tracking-[0.14em] text-[var(--color-soft)]">At a glance</p>
+              <p className="mt-2 text-[0.92rem] leading-7 text-[var(--color-muted)]">
                 Built for day-to-day use, with the same practical tone the rest of the portfolio uses.
               </p>
             </div>
           </article>
         </section>
 
-        <section className="mt-10 border-t border-[#0C2120]/10 pt-5 text-[0.75rem] font-medium text-[#5F564B]">
+        <section className="mt-10 border-t border-[var(--border-subtle)] pt-5 text-[0.75rem] font-medium text-[var(--color-muted)]">
           <p>Case study built from the project already listed in the portfolio.</p>
-          <a className="mt-2 inline-flex font-black text-[#0C2120] transition hover:text-[#D7720C]" href={`mailto:${profile.email}`}>
+          <a className="mt-2 inline-flex font-black text-[var(--color-text)] transition hover:text-[var(--color-accent)]" href={`mailto:${profile.email}`}>
             {profile.email}
           </a>
         </section>
