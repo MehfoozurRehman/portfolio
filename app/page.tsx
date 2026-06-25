@@ -9,6 +9,7 @@ import { education, experience, process, profile, profileHighlights, projects, s
 const sectionClass = "mx-auto max-w-[1360px] px-5 py-12 sm:px-8 lg:px-12 lg:py-18 xl:px-16";
 const eyebrowClass = "mb-4 flex items-center gap-2 text-[0.72rem] font-black uppercase tracking-[0.16em] text-[var(--color-accent)]";
 const displayClass = "font-[family-name:var(--font-nunito)] font-extrabold leading-[0.98] tracking-normal";
+const sectionHeadingClass = `${displayClass} text-[clamp(1.35rem,1.65vw,1.85rem)]`;
 const cardClass = "rounded-[18px] border border-[var(--border-card)] transition duration-200 hover:border-[var(--border-hover)]";
 
 function getProjectLogoSrc(project: { url?: string; logoUrl?: string }) {
@@ -127,7 +128,7 @@ export default function Home() {
       <section id="about" className={`${sectionClass} grid gap-10 border-t border-[var(--border-subtle)] lg:grid-cols-[0.78fr_1.22fr]`}>
         <div className="min-w-0">
           <p className={eyebrowClass}>Profile</p>
-          <h2 className={`${displayClass} text-[clamp(1.65rem,2.4vw,2.65rem)]`}>A product developer with practical range.</h2>
+          <h2 className={sectionHeadingClass}>A product developer with practical range.</h2>
           <p className="mt-5 text-[0.92rem] leading-8 text-[var(--color-muted)]">{profile.subheadline}</p>
         </div>
         <div className="grid min-w-0 gap-3 sm:grid-cols-2">
@@ -144,7 +145,7 @@ export default function Home() {
       <section id="experience" className={`${sectionClass} border-t border-[var(--border-subtle)]`}>
         <div className="mb-9 max-w-3xl">
           <p className={eyebrowClass}>Experience</p>
-          <h2 className={`${displayClass} text-[clamp(1.65rem,2.4vw,2.65rem)]`}>Product work across schools, SaaS teams and business systems.</h2>
+          <h2 className={sectionHeadingClass}>Product work across schools, SaaS teams and business systems.</h2>
         </div>
         <div className="grid gap-3">
           {experience.map((item) => (
@@ -173,7 +174,10 @@ export default function Home() {
       <section id="services" className={`${sectionClass} grid gap-10 border-t border-[var(--border-subtle)] lg:grid-cols-[0.8fr_1.2fr]`}>
         <div>
           <p className={eyebrowClass}>What I build</p>
-          <h2 className={`${displayClass} text-[clamp(1.65rem,2.4vw,2.65rem)]`}>Complete business systems, not isolated screens.</h2>
+          <h2 className={sectionHeadingClass}>Complete business systems, not isolated screens.</h2>
+          <p className="mt-5 text-[0.92rem] leading-8 text-[var(--color-muted)]">
+            I build the workflows around the screen too: data, roles, automation, integrations and launch details.
+          </p>
         </div>
         <div className="grid gap-3 sm:grid-cols-2">
           {services.map((service) => (
@@ -189,7 +193,7 @@ export default function Home() {
       <section id="work" className={sectionClass}>
         <div className="mb-9 max-w-3xl">
           <p className={eyebrowClass}>Featured work</p>
-          <h2 className={`${displayClass} text-[clamp(1.65rem,2.4vw,2.65rem)]`}>Products shaped around operations, revenue and daily use.</h2>
+          <h2 className={sectionHeadingClass}>Products shaped around operations, revenue and daily use.</h2>
         </div>
         <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
           {projects.map((project) => (
@@ -234,7 +238,7 @@ export default function Home() {
       <section className={`${sectionClass} grid gap-6 border-y border-[var(--border-subtle)] lg:grid-cols-[0.8fr_1.2fr]`}>
         <div>
           <p className={eyebrowClass}>Education</p>
-          <h2 className={`${displayClass} text-[clamp(1.65rem,2.4vw,2.65rem)]`}>Computer science foundation with product experience on top.</h2>
+          <h2 className={sectionHeadingClass}>Computer science foundation with product experience on top.</h2>
         </div>
         <div className="grid gap-3">
           {education.map((item) => (
@@ -262,7 +266,7 @@ export default function Home() {
       <section className={`${sectionClass} grid gap-10 border-y border-[var(--border-subtle)] lg:grid-cols-[0.8fr_1.2fr]`}>
         <div>
           <p className={eyebrowClass}>Stack</p>
-          <h2 className={`${displayClass} text-[clamp(1.65rem,2.4vw,2.65rem)]`}>Modern tools I already use to ship.</h2>
+          <h2 className={sectionHeadingClass}>Modern tools I already use to ship.</h2>
         </div>
         <div className="flex content-start flex-wrap gap-2">
           {stack.map((item) => (
@@ -286,7 +290,7 @@ export default function Home() {
       <section className={sectionClass}>
         <div className="mb-9 max-w-3xl">
           <p className={eyebrowClass}>Testimonials</p>
-          <h2 className={`${displayClass} text-[clamp(1.65rem,2.4vw,2.65rem)]`}>What clients and teammates already say.</h2>
+          <h2 className={sectionHeadingClass}>What clients and teammates already say.</h2>
         </div>
         <div className="grid gap-4 lg:grid-cols-3">
           {testimonials.map((testimonial) => (
@@ -305,7 +309,7 @@ export default function Home() {
         <div className={`${sectionClass} grid gap-10 lg:grid-cols-[0.9fr_1.1fr]`}>
           <div>
             <p className={eyebrowClass}>Start here</p>
-            <h2 className={`${displayClass} text-[clamp(1.65rem,2.4vw,2.65rem)]`}>Need a reliable developer to build your product?</h2>
+            <h2 className={sectionHeadingClass}>Need a reliable developer to build your product?</h2>
             <p className="mt-6 max-w-xl text-[0.9rem] leading-7 text-[var(--color-muted)] sm:text-[0.95rem] sm:leading-8">
               Send the workflow, product idea or stuck project. I am strongest when the job needs product thinking,
               full-stack execution and a practical launch path.
