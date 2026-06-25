@@ -55,7 +55,7 @@ export function ContactForm() {
   }
 
   return (
-    <form className="grid gap-4 border-y border-[#0C2120]/10 bg-[#F8F2E6] py-6 text-[#0C2120] sm:border sm:px-6" onSubmit={handleSubmit}>
+    <form className="grid gap-4 rounded-[18px] border border-[#0C2120]/10 px-5 py-6 text-[#0C2120] sm:px-6" onSubmit={handleSubmit}>
       <label className="grid gap-2">
         <span className="text-[0.82rem] font-black text-[#0C2120]">Name</span>
         <input className={inputClass} name="name" autoComplete="name" required placeholder="Your name" />
