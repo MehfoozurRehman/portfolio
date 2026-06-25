@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import Script from "next/script";
+import { CursorHighlight } from "./cursor-highlight";
 import { ScrollToTopButton } from "./scroll-to-top-button";
 import { ServiceWorkerResetScript } from "./sw-reset-script";
 import { themeScript } from "./theme-script";
@@ -68,6 +69,7 @@ export default function RootLayout({
             src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true"
           />
         </noscript>
+        <CursorHighlight />
         <ScrollToTopButton />
         {children}
       </body>
