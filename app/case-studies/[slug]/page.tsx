@@ -19,11 +19,11 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
   return (
     <main className="min-h-screen bg-[#F1EFE5] text-[#0C2120]">
       <div className="mx-auto max-w-[1200px] px-5 py-8 sm:px-8 lg:px-12 xl:px-16">
-        <Link className="inline-flex items-center gap-2 text-[0.75rem] font-black text-[#0C2120] hover:text-[#D7720C]" href="/">
+        <Link className="inline-flex items-center gap-2 text-[0.75rem] font-black text-[#0C2120] transition hover:text-[#D7720C]" href="/">
           <ArrowLeft size={14} aria-hidden="true" /> Back to portfolio
         </Link>
 
-        <section className="mt-7 grid gap-8 border-t border-[#0C2120]/10 pt-7 lg:grid-cols-[1fr_0.84fr] lg:items-start">
+        <section className="mt-7 grid gap-10 border-t border-[#0C2120]/10 pt-9 lg:grid-cols-[1fr_0.84fr] lg:items-start">
           <div className="max-w-3xl">
             <p className="mb-4 flex items-center gap-2 text-[0.72rem] font-black uppercase tracking-[0.16em] text-[#D7720C]">
               <Sparkles size={14} aria-hidden="true" />
@@ -36,17 +36,17 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
             <p className="mt-5 max-w-2xl text-[0.96rem] leading-8 text-[#50463F]">{project.summary}</p>
             <div className="mt-7 flex flex-wrap gap-2">
               {project.highlights.map((item) => (
-                <span className="rounded-full border border-[#0C2120]/10 px-3 py-1.5 text-[0.7rem] font-black" key={item}>
+                <span className="rounded-full border border-[#0C2120]/10 px-3 py-1.5 text-[0.7rem] font-black transition hover:border-[#D7720C]/40" key={item}>
                   {item}
                 </span>
               ))}
             </div>
           </div>
 
-          <div className="rounded-[18px] border border-[#0C2120]/10 p-5">
+          <div className="rounded-[18px] border border-[#0C2120]/15 p-5 transition duration-200 hover:border-[#D7720C]/45">
             <div className="flex items-start justify-between gap-4">
               <div className="flex items-center gap-3">
-                <div className="grid size-12 place-items-center rounded-full border border-[#0C2120]/10 bg-[#F1EFE5]">
+                <div className="grid size-12 place-items-center rounded-full border border-[#0C2120]/15 bg-[#F1EFE5]">
                   {project.logoUrl ? (
                     <Image src={project.logoUrl} alt="" width={36} height={36} className="size-8 object-contain" aria-hidden="true" />
                   ) : (
@@ -59,14 +59,14 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                 </div>
               </div>
               {project.url ? (
-                <a className="inline-flex items-center gap-2 rounded-full border border-[#0C2120]/10 px-3 py-1.5 text-[0.72rem] font-black text-[#0C2120] hover:border-[#D7720C] hover:text-[#D7720C]" href={project.url} target="_blank" rel="noreferrer">
+                <a className="inline-flex items-center gap-2 rounded-full border border-[#0C2120]/10 px-3 py-1.5 text-[0.72rem] font-black text-[#0C2120] transition hover:border-[#D7720C]/60 hover:text-[#D7720C]" href={project.url} target="_blank" rel="noreferrer">
                   Visit <ArrowUpRight size={14} aria-hidden="true" />
                 </a>
               ) : null}
             </div>
 
             {project.heroImageUrl ? (
-              <div className="mt-5 overflow-hidden rounded-[18px] border border-[#0C2120]/10 bg-[#0C2120]">
+              <div className="mt-5 overflow-hidden rounded-[18px] border border-[#0C2120]/15 bg-[#0C2120]">
                 <Image
                   src={project.heroImageUrl}
                   alt={`${project.title} homepage screenshot`}
@@ -85,7 +85,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                 ["Stack", project.stack[0] ?? "Web"],
                 ["Mode", "Product build"]
               ].map(([label, value]) => (
-                <div className="rounded-[16px] border border-[#0C2120]/10 bg-[#F1EFE5] p-3" key={label}>
+                <div className="rounded-[16px] border border-[#0C2120]/15 bg-[#F1EFE5] p-3 transition hover:border-[#D7720C]/35" key={label}>
                   <p className="text-[0.65rem] font-black uppercase tracking-[0.14em] text-[#D7720C]">{label}</p>
                   <p className="mt-1 font-bold text-[#0C2120]">{value}</p>
                 </div>
@@ -100,16 +100,16 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
             ["Approach", project.approach],
             ["Outcome", project.outcome]
           ].map(([label, value]) => (
-            <article className="rounded-[18px] border border-[#0C2120]/10 p-5" key={label}>
-              <p className="text-[0.68rem] font-black uppercase tracking-[0.14em] text-[#D7720C]">{label}</p>
+            <article className="rounded-[18px] border border-[#0C2120]/15 p-5 transition duration-200 hover:border-[#D7720C]/45" key={label}>
+              <p className="text-[0.74rem] font-black uppercase tracking-[0.14em] text-[#D7720C]">{label}</p>
               <p className="mt-3 text-[0.92rem] leading-7 text-[#50463F]">{value}</p>
             </article>
           ))}
         </section>
 
         <section className="mt-8 grid gap-4 lg:grid-cols-[1.05fr_0.95fr]">
-          <article className="rounded-[18px] border border-[#0C2120]/10 p-5">
-            <p className="text-[0.68rem] font-black uppercase tracking-[0.14em] text-[#D7720C]">Responsibilities</p>
+          <article className="rounded-[18px] border border-[#0C2120]/15 p-5 transition duration-200 hover:border-[#D7720C]/45">
+            <p className="text-[0.74rem] font-black uppercase tracking-[0.14em] text-[#D7720C]">Responsibilities</p>
             <ul className="mt-4 grid gap-3 text-[0.92rem] leading-7 text-[#50463F]">
               {project.responsibilities.map((item) => (
                 <li className="flex gap-3" key={item}>
@@ -120,16 +120,16 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
             </ul>
           </article>
 
-          <article className="rounded-[18px] border border-[#0C2120]/10 p-5">
-            <p className="text-[0.68rem] font-black uppercase tracking-[0.14em] text-[#D7720C]">Stack</p>
+          <article className="rounded-[18px] border border-[#0C2120]/15 p-5 transition duration-200 hover:border-[#D7720C]/45">
+            <p className="text-[0.74rem] font-black uppercase tracking-[0.14em] text-[#D7720C]">Stack</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {project.stack.map((item) => (
-                <span className="rounded-full border border-[#0C2120]/10 px-3 py-1.5 text-[0.7rem] font-black text-[#0C2120]" key={item}>
+                <span className="rounded-full border border-[#0C2120]/10 px-3 py-1.5 text-[0.7rem] font-black text-[#0C2120] transition hover:border-[#D7720C]/40" key={item}>
                   {item}
                 </span>
               ))}
             </div>
-            <div className="mt-6 rounded-[18px] border border-[#0C2120]/10 bg-[#F1EFE5] p-4">
+            <div className="mt-6 rounded-[18px] border border-[#0C2120]/15 bg-[#F1EFE5] p-4 transition hover:border-[#D7720C]/35">
               <p className="text-[0.68rem] font-black uppercase tracking-[0.14em] text-[#668A85]">At a glance</p>
               <p className="mt-2 text-[0.92rem] leading-7 text-[#50463F]">
                 Built for day-to-day use, with the same practical tone the rest of the portfolio uses.
@@ -140,7 +140,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
 
         <section className="mt-10 border-t border-[#0C2120]/10 pt-5 text-[0.75rem] font-medium text-[#5F564B]">
           <p>Case study built from the project already listed in the portfolio.</p>
-          <a className="mt-2 inline-flex font-black text-[#0C2120] hover:text-[#D7720C]" href={`mailto:${profile.email}`}>
+          <a className="mt-2 inline-flex font-black text-[#0C2120] transition hover:text-[#D7720C]" href={`mailto:${profile.email}`}>
             {profile.email}
           </a>
         </section>
