@@ -97,7 +97,7 @@ export default function Home() {
         </div>
         <div className="relative mx-auto w-full max-w-[520px] justify-self-center lg:mt-2 lg:justify-self-end">
           <div className="absolute -left-7 top-10 z-10 hidden rounded-full bg-[var(--color-page-soft)] px-6 py-4 text-[0.78rem] font-black uppercase tracking-[0.12em] text-[var(--color-text)] shadow-xl shadow-[color:var(--shadow-strong)] sm:block">
-            Next.js / Convex / AI
+            Next.js / Firebase / AI
           </div>
           <div className="absolute -right-4 bottom-24 z-10 hidden size-[8.5rem] place-items-center rounded-full bg-[var(--color-accent)] p-5 text-center text-[var(--color-on-accent)] shadow-xl shadow-[color:var(--shadow-accent)] sm:grid">
             <strong className="text-[1.05rem] font-extrabold leading-tight">Complete products, not just screens.</strong>

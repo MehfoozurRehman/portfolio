@@ -2,7 +2,6 @@
 
 import { FormEvent, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
-import { profile } from "./data";
 
 type SubmissionState = "idle" | "submitting" | "submitted" | "failed";
 
@@ -29,22 +28,14 @@ export function ContactForm() {
         throw new Error("Missing required fields");
       }
 
-      const convexSiteUrl = process.env.NEXT_PUBLIC_CONVEX_SITE_URL;
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(lead),
+      });
 
-      if (convexSiteUrl) {
-        const response = await fetch(`${convexSiteUrl}/portfolioLead`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(lead),
-        });
-
-        if (!response.ok) {
-          throw new Error("Convex lead submission failed");
-        }
-      } else {
-        const subject = encodeURIComponent(`Portfolio inquiry from ${lead.name}`);
-        const body = encodeURIComponent(`${lead.project}\n\nReply to: ${lead.email}`);
-        window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`;
+      if (!response.ok) {
+        throw new Error("Contact submission failed");
       }
 
       form.reset();
@@ -76,7 +67,7 @@ export function ContactForm() {
         {submissionState === "submitting" ? "Sending..." : "Start a project"}
         <ArrowUpRight size={18} aria-hidden="true" />
       </button>
-      {submissionState === "submitted" ? <p className="leading-6 text-[var(--color-text)]">Thanks. Your message is ready for follow-up.</p> : null}
+      {submissionState === "submitted" ? <p className="leading-6 text-[var(--color-text)]">Thanks. Your message has been sent to my email.</p> : null}
       {submissionState === "failed" ? <p className="leading-6 text-[var(--color-danger)]">Something failed. Please try again or email me directly.</p> : null}
     </form>
   );

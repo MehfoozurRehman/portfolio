@@ -40,9 +40,10 @@ jobs:
       - name: Build static site
         run: pnpm build
 
-      - name: Deploy preview to Firebase Hosting
-        uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_MEHFOOZ_UR_REHMAN }}
-          projectId: mehfooz-ur-rehman
+      - name: Install Firebase CLI
+        run: pnpm dlx firebase-tools --version
+
+      - name: Deploy preview hosting and functions
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        run: pnpm dlx firebase-tools deploy --only hosting,functions --project mehfooz-ur-rehman

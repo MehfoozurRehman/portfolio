@@ -127,7 +127,7 @@ export const projects: Project[] = [
       "A cloud-based school ERP for small to mid-sized schools in Pakistan with admissions, attendance, exams, family profiles, challans, staff tools and parent communication.",
     businessValue:
       "Helps schools replace scattered spreadsheets and manual follow-ups with one reliable daily workflow.",
-    stack: ["Next.js", "Convex", "React Native", "WhatsApp", "AI"],
+    stack: ["Next.js", "Firebase", "React Native", "WhatsApp", "AI"],
     problem: "Schools were juggling admissions, attendance, challans, staff work and parent communication in disconnected tools and chats.",
     approach: "Shaped the product around daily school operations with role-based workflows, practical mobile access and clear admin control.",
     outcome: "Gives schools one workflow for the full academic cycle instead of separate spreadsheets and manual follow-ups.",
@@ -350,7 +350,6 @@ export const stack = [
   "TypeScript",
   "React Native",
   "Expo",
-  "Convex",
   "Prisma",
   "MongoDB",
   "Electron",
