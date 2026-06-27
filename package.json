@@ -7,9 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "deploy": "pnpm build && firebase deploy"
+    "deploy": "pnpm build && firebase deploy --only hosting"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "lucide-react": "^1.21.0",
     "next": "16.2.9",
     "react": "19.2.7",

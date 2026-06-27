@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 type SubmissionState = "idle" | "submitting" | "submitted" | "failed";
 
@@ -28,15 +29,20 @@ export function ContactForm() {
         throw new Error("Missing required fields");
       }
 
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(lead),
-      });
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
-      if (!response.ok) {
-        throw new Error("Contact submission failed");
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error("Email service is not configured");
       }
+
+      await emailjs.send(serviceId, templateId, {
+        from_name: lead.name,
+        from_email: lead.email,
+        message: lead.project,
+        to_email: "mehfoozijaz786@gmail.com",
+      }, { publicKey });
 
       form.reset();
       setSubmissionState("submitted");

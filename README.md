@@ -25,7 +25,6 @@ The site exports to `out` and deploys to Firebase Hosting.
 
 ```bash
 pnpm build
-firebase deploy --only functions --project mehfooz-ur-rehman
 firebase deploy --only hosting:mehfooz-ur-rehman --project mehfooz-ur-rehman
 ```
 
@@ -33,11 +32,10 @@ Deploy locally with the Firebase CLI after logging in from your machine.
 
 ## Contact form
 
-The contact form posts to a Firebase HTTPS function at `POST /api/contact`, which sends messages to `mehfoozijaz786@gmail.com` through SMTP.
+The contact form sends directly through EmailJS and delivers to `mehfoozijaz786@gmail.com`.
 
-Set these Firebase secrets before deploying:
+Set these EmailJS environment variables before deploying:
 
-- `SMTP_HOST`
-- `SMTP_PORT`
-- `SMTP_USER`
-- `SMTP_PASS`
+- `NEXT_PUBLIC_EMAILJS_SERVICE_ID`
+- `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID`
+- `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY`

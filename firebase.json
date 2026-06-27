@@ -1,18 +1,9 @@
 {
-  "functions": {
-    "source": "functions"
-  },
   "hosting": {
     "site": "mehfooz-ur-rehman",
     "public": "out",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "cleanUrls": true,
-    "rewrites": [
-      {
-        "source": "/api/contact",
-        "function": "contact"
-      }
-    ],
     "headers": [
       {
         "source": "/sw.js",
