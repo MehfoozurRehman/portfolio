@@ -1,6 +1,6 @@
-import { defineSecret } from "firebase-functions/params";
-import nodemailer from "nodemailer";
-import { onRequest } from "firebase-functions/v2/https";
+const { onRequest } = require("firebase-functions/v2/https");
+const { defineSecret } = require("firebase-functions/params");
+const nodemailer = require("nodemailer");
 
 const SMTP_HOST = defineSecret("SMTP_HOST");
 const SMTP_PORT = defineSecret("SMTP_PORT");
@@ -9,7 +9,7 @@ const SMTP_PASS = defineSecret("SMTP_PASS");
 
 const RECIPIENT_EMAIL = "mehfoozijaz786@gmail.com";
 
-export const contact = onRequest(
+exports.contact = onRequest(
   {
     region: "us-central1",
     secrets: [SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS],
@@ -62,7 +62,7 @@ export const contact = onRequest(
       console.error("Failed to send contact email", error);
       res.status(500).json({ error: "Failed to send email" });
     }
-  },
+  }
 );
 
 function escapeHtml(value) {

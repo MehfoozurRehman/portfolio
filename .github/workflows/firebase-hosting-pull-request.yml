@@ -49,5 +49,8 @@ jobs:
           printf '%s' '${{ secrets.GCP_SA_KEY_JSON }}' > "$HOME/.config/gcloud/application_default_credentials.json"
           echo "GOOGLE_APPLICATION_CREDENTIALS=$HOME/.config/gcloud/application_default_credentials.json" >> "$GITHUB_ENV"
 
-      - name: Deploy preview hosting and functions
-        run: pnpm dlx firebase-tools deploy --only hosting:mehfooz-ur-rehman,functions --project mehfooz-ur-rehman
+      - name: Deploy preview functions
+        run: pnpm dlx firebase-tools deploy --only functions --project mehfooz-ur-rehman
+
+      - name: Deploy preview hosting
+        run: pnpm dlx firebase-tools deploy --only hosting:mehfooz-ur-rehman --project mehfooz-ur-rehman
