@@ -25,7 +25,8 @@ The site exports to `out` and deploys to Firebase Hosting.
 
 ```bash
 pnpm build
-firebase deploy --only hosting
+firebase deploy --only functions --project mehfooz-ur-rehman
+firebase deploy --only hosting:mehfooz-ur-rehman --project mehfooz-ur-rehman
 ```
 
 Pushes to `main` also deploy through GitHub Actions using the Firebase service account secret.
