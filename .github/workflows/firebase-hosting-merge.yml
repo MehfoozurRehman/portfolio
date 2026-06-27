@@ -44,7 +44,11 @@ jobs:
       - name: Install Firebase CLI
         run: pnpm dlx firebase-tools --version
 
+      - name: Write Google Cloud credentials
+        run: |
+          mkdir -p "$HOME/.config/gcloud"
+          printf '%s' '${{ secrets.GCP_SA_KEY_JSON }}' > "$HOME/.config/gcloud/application_default_credentials.json"
+          echo "GOOGLE_APPLICATION_CREDENTIALS=$HOME/.config/gcloud/application_default_credentials.json" >> "$GITHUB_ENV"
+
       - name: Deploy hosting and functions
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         run: pnpm dlx firebase-tools deploy --only hosting:mehfooz-ur-rehman,functions --project mehfooz-ur-rehman
