@@ -63,11 +63,8 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
         <noscript>
-          <img
-            alt=""
-            referrerPolicy="no-referrer-when-downgrade"
-            src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true"
-          />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img alt="" referrerPolicy="no-referrer-when-downgrade" src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true" />
         </noscript>
         <CursorHighlight />
         <ScrollToTopButton />
