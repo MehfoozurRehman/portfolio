@@ -47,4 +47,4 @@ jobs:
       - name: Deploy hosting and functions
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-        run: pnpm dlx firebase-tools deploy --only hosting,functions --project mehfooz-ur-rehman
+        run: pnpm dlx firebase-tools deploy --only hosting:mehfooz-ur-rehman,functions --project mehfooz-ur-rehman
