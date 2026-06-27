@@ -1,6 +1,6 @@
 # Mehfooz-ur-Rehman Portfolio
 
-Premium portfolio for Mehfooz-ur-Rehman, built with Next.js App Router, TypeScript, Tailwind CSS, Convex, and Firebase Hosting.
+Premium portfolio for Mehfooz-ur-Rehman, built with Next.js App Router, TypeScript, Tailwind CSS, and Firebase Hosting.
 
 ## Stack
 
@@ -8,7 +8,6 @@ Premium portfolio for Mehfooz-ur-Rehman, built with Next.js App Router, TypeScri
 - React 19
 - TypeScript
 - Tailwind CSS v4
-- Convex cloud backend
 - Firebase Hosting static export
 
 ## Commands
@@ -31,13 +30,13 @@ firebase deploy --only hosting
 
 Pushes to `main` also deploy through GitHub Actions using the Firebase service account secret.
 
-## Convex
+## Contact form
 
-Production backend:
+The contact form posts to a Firebase HTTPS function at `POST /api/contact`, which sends messages to `mehfoozijaz786@gmail.com` through SMTP.
 
-- Convex app: `mhmd-vision/portfolio`
-- Client URL: `https://quixotic-dalmatian-102.convex.cloud`
-- HTTP actions URL: `https://quixotic-dalmatian-102.convex.site`
-- Lead endpoint: `POST /portfolioLead`
+Set these Firebase secrets before deploying:
 
-Frontend production env is tracked in `.env.production` because it contains public `NEXT_PUBLIC_*` values only.
+- `SMTP_HOST`
+- `SMTP_PORT`
+- `SMTP_USER`
+- `SMTP_PASS`

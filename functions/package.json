@@ -1,0 +1,13 @@
+{
+  "name": "portfolio-functions",
+  "private": true,
+  "type": "module",
+  "main": "index.mjs",
+  "engines": {
+    "node": "20"
+  },
+  "dependencies": {
+    "firebase-functions": "^6.3.2",
+    "nodemailer": "^6.10.1"
+  }
+}
