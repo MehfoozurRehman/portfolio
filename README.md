@@ -29,7 +29,7 @@ firebase deploy --only functions --project mehfooz-ur-rehman
 firebase deploy --only hosting:mehfooz-ur-rehman --project mehfooz-ur-rehman
 ```
 
-Pushes to `main` also deploy through GitHub Actions using the Firebase service account secret.
+Deploy locally with the Firebase CLI after logging in from your machine.
 
 ## Contact form
 
