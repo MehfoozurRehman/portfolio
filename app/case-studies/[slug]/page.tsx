@@ -73,7 +73,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                   width={1200}
                   height={760}
                   className="h-auto w-full object-cover"
-                  priority
+                  loading="lazy"
                 />
               </div>
             ) : null}
