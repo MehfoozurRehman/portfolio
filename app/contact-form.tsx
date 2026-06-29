@@ -37,12 +37,15 @@ export function ContactForm() {
         throw new Error("Email service is not configured");
       }
 
+      emailjs.init(publicKey);
+
       await emailjs.send(serviceId, templateId, {
         from_name: lead.name,
         from_email: lead.email,
         message: lead.project,
         to_email: "mehfoozijaz786@gmail.com",
-      }, { publicKey });
+        reply_to: lead.email.toLowerCase(),
+      });
 
       form.reset();
       setSubmissionState("submitted");
