@@ -104,3 +104,32 @@ body {
     display: none;
   }
 }
+
+/* GitHub Calendar Styles */
+.react-github-calendar {
+  color: var(--color-text);
+  font-family: inherit;
+}
+
+.react-github-calendar text {
+  fill: var(--color-muted);
+}
+
+.react-github-calendar-month-label {
+  color: var(--color-muted);
+  font-size: 0.75rem;
+}
+
+.react-github-calendar .react-github-calendar-month-label {
+  text-anchor: start;
+}
+
+/* Tooltip styling */
+.react-github-calendar-tooltip {
+  background-color: var(--color-inverse);
+  color: var(--color-inverse-text);
+  border-radius: 6px;
+  padding: 6px 8px;
+  font-size: 0.75rem;
+  box-shadow: 0 4px 12px var(--shadow-strong);
+}
