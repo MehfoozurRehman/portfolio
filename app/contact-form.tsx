@@ -29,9 +29,9 @@ export function ContactForm() {
         throw new Error("Missing required fields");
       }
 
-      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? "service_3dm7yud";
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? "template_vu88eib";
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? "user_5E0L53uCeIn6J8FtgNgs8";
 
       if (!serviceId || !templateId || !publicKey) {
         throw new Error("Email service is not configured");
