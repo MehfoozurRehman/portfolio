@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useState, useEffect } from "react";
 import { ArrowUpRight } from "lucide-react";
 import emailjs from "@emailjs/browser";
 
@@ -9,8 +9,19 @@ type SubmissionState = "idle" | "submitting" | "submitted" | "failed";
 const inputClass =
   "w-full rounded-[14px] border border-[var(--border-subtle)] bg-[var(--color-field)] px-4 py-2.5 text-[0.86rem] outline-none transition hover:border-[var(--border-input-hover)] focus:border-[var(--color-accent)] sm:py-3 sm:text-[0.9rem]";
 
+let emailjsInitialized = false;
+
 export function ContactForm() {
   const [submissionState, setSubmissionState] = useState<SubmissionState>("idle");
+
+  useEffect(() => {
+    if (emailjsInitialized) return;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? "user_5E0L53uCeIn6J8FtgNgs8";
+    if (publicKey) {
+      emailjs.init(publicKey);
+      emailjsInitialized = true;
+    }
+  }, []);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -31,13 +42,10 @@ export function ContactForm() {
 
       const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? "service_3dm7yud";
       const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? "template_vu88eib";
-      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? "user_5E0L53uCeIn6J8FtgNgs8";
 
-      if (!serviceId || !templateId || !publicKey) {
+      if (!serviceId || !templateId) {
         throw new Error("Email service is not configured");
       }
-
-      emailjs.init(publicKey);
 
       await emailjs.send(serviceId, templateId, {
         from_name: lead.name,
