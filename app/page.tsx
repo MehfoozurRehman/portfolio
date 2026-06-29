@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Code2, GraduationCap, Link as LinkIcon, Mail, MessageCircle, Phone, Sparkles } from "lucide-react";
 import { ContactForm } from "./contact-form";
+import { GitHubCalendarSection } from "./github-calendar";
 import { HomeLink } from "./home-link";
 import { ThemeToggle } from "./theme-toggle";
 import { education, experience, process, profile, profileHighlights, projects, services, stack, testimonials } from "./data";
@@ -234,6 +235,8 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <GitHubCalendarSection />
 
       <section className={`${sectionClass} grid gap-6 border-y border-[var(--border-subtle)] lg:grid-cols-[0.8fr_1.2fr]`}>
         <div>
