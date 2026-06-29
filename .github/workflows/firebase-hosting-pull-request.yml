@@ -45,4 +45,5 @@ jobs:
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_MEHFOOZ_UR_REHMAN }}
+          channelId: pr-${{ github.event.pull_request.number }}
           projectId: mehfooz-ur-rehman
