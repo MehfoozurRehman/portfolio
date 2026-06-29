@@ -41,10 +41,11 @@ jobs:
       - name: Build static site
         run: pnpm build
 
+      - name: Write Google Cloud credentials
+        run: |
+          mkdir -p "$HOME/.config/gcloud"
+          printf '%s' '${{ secrets.GCP_SA_KEY_JSON }}' > "$HOME/.config/gcloud/application_default_credentials.json"
+          echo "GOOGLE_APPLICATION_CREDENTIALS=$HOME/.config/gcloud/application_default_credentials.json" >> "$GITHUB_ENV"
+
       - name: Deploy to Firebase Hosting
-        uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_MEHFOOZ_UR_REHMAN }}
-          channelId: live
-          projectId: mehfooz-ur-rehman
+        run: pnpm dlx firebase-tools deploy --only hosting --project mehfooz-ur-rehman
