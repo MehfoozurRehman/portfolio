@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 
 import { GitHubCalendar } from "react-github-calendar";
 
@@ -10,14 +10,17 @@ const lightTheme = {
 };
 
 function GitHubCalendarContent() {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return document.documentElement.getAttribute("data-theme") === "dark";
+  });
   const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    const theme = document.documentElement.getAttribute("data-theme");
-    setIsDark(theme === "dark");
+  useLayoutEffect(() => {
     setMounted(true);
+  }, []);
 
+  useEffect(() => {
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         if (mutation.attributeName === "data-theme") {
