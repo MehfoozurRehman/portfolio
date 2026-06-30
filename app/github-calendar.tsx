@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 
 import { GitHubCalendar } from "react-github-calendar";
 
@@ -16,11 +16,10 @@ function GitHubCalendarContent() {
   });
   const [mounted, setMounted] = useState(false);
 
-  useLayoutEffect(() => {
-    setMounted(true);
-  }, []);
-
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         if (mutation.attributeName === "data-theme") {
@@ -36,12 +35,12 @@ function GitHubCalendarContent() {
   }, []);
 
   return (
-    <section className="mx-auto max-w-[1360px] px-5 py-12 sm:px-8 lg:px-12 lg:py-18 xl:px-16 border-t border-[var(--border-subtle)]">
+    <section className="mx-auto max-w-340 px-5 py-12 sm:px-8 lg:px-12 lg:py-18 xl:px-16 border-t border-(--border-subtle)">
       <div className="mb-9 max-w-3xl">
-        <p className="mb-4 text-[0.72rem] font-black uppercase tracking-[0.16em] text-[var(--color-accent)]">
+        <p className="mb-4 text-[0.72rem] font-black uppercase tracking-[0.16em] text-(--color-accent)">
           Activity
         </p>
-        <h2 className="font-[family-name:var(--font-nunito)] font-extrabold leading-[0.98] tracking-normal text-[clamp(1.35rem,1.65vw,1.85rem)]">
+        <h2 className="font-(family-name:--font-nunito) font-extrabold leading-[0.98] tracking-normal text-[clamp(1.35rem,1.65vw,1.85rem)]">
           GitHub contributions this year.
         </h2>
       </div>
@@ -50,7 +49,7 @@ function GitHubCalendarContent() {
         {mounted ? (
           <Suspense
             fallback={
-              <div className="h-32 bg-[var(--color-field)] rounded-lg animate-pulse" />
+              <div className="h-32 bg-(--color-field) rounded-lg animate-pulse" />
             }
           >
             <GitHubCalendar
@@ -74,7 +73,7 @@ function GitHubCalendarContent() {
             />
           </Suspense>
         ) : (
-          <div className="h-32 bg-[var(--color-field)] rounded-lg animate-pulse" />
+          <div className="h-32 bg-(--color-field) rounded-lg animate-pulse" />
         )}
       </div>
     </section>
