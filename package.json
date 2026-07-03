@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/generate-cv-pdf.js && next build",
+    "generate:cv": "node scripts/generate-cv-pdf.js",
     "start": "next start",
     "lint": "eslint",
     "deploy": "pnpm build && firebase deploy --only hosting"
@@ -13,6 +14,7 @@
     "@emailjs/browser": "^4.4.1",
     "lucide-react": "^1.23.0",
     "next": "16.2.10",
+    "pdfkit": "^0.19.1",
     "react": "19.2.7",
     "react-dom": "19.2.7",
     "react-github-calendar": "^5.0.6"

@@ -74,6 +74,9 @@ export default function Home() {
             <a className="inline-flex min-h-10 items-center gap-2 rounded-full bg-[var(--color-accent)] px-5 text-[0.82rem] font-black text-[var(--color-on-accent)] shadow-lg shadow-[color:var(--shadow-accent)] sm:min-h-11 sm:px-6 sm:text-sm" href="#contact">
               Let&apos;s build <ArrowUpRight size={18} aria-hidden="true" />
             </a>
+            <a className="inline-flex min-h-10 items-center gap-2 rounded-full border border-[var(--border-card)] px-4 text-[0.82rem] font-black text-[var(--color-text)] transition hover:border-[var(--border-hover)] hover:text-[var(--color-accent)] sm:min-h-11 sm:px-5 sm:text-sm" href="/cv.pdf" target="_blank" rel="noreferrer">
+              CV <ArrowUpRight size={18} aria-hidden="true" />
+            </a>
             <a className="inline-flex min-h-10 items-center gap-2 rounded-full border border-[var(--border-card)] px-4 text-[0.82rem] font-black text-[var(--color-text)] transition hover:border-[var(--border-hover)] hover:text-[var(--color-accent)] sm:min-h-11 sm:px-5 sm:text-sm" href={profile.github} target="_blank" rel="noreferrer">
               <Code2 size={18} aria-hidden="true" /> GitHub
             </a>
