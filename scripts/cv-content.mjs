@@ -1,4 +1,4 @@
-module.exports = {
+export const cvContent = {
   profile: {
     name: "Mehfooz-ur-Rehman",
     role: "Full-stack product developer",

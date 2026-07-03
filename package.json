@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/generate-cv-pdf.js && next build",
-    "generate:cv": "node scripts/generate-cv-pdf.js",
+    "build": "node scripts/generate-cv-pdf.mjs && next build",
+    "generate:cv": "node scripts/generate-cv-pdf.mjs",
     "start": "next start",
     "lint": "eslint",
     "deploy": "pnpm build && firebase deploy --only hosting"
