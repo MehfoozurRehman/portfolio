@@ -1,7 +1,9 @@
-const fs = require("fs");
-const path = require("path");
-const PDFDocument = require("pdfkit");
-const { profile, experience, education, stack, profileHighlights, services } = require("./cv-content.js");
+import fs from "node:fs";
+import path from "node:path";
+import PDFDocument from "pdfkit";
+import { cvContent } from "./cv-content.mjs";
+
+const { profile, experience, education, stack, profileHighlights, services } = cvContent;
 
 const outPath = path.join(process.cwd(), "public", "cv.pdf");
 fs.mkdirSync(path.dirname(outPath), { recursive: true });
