@@ -1,5 +1,5 @@
 import { ArrowLeft, ArrowUpRight, CheckCircle2, Sparkles } from "lucide-react";
-import { profile, projects } from "../../data";
+import { profile, projects } from "../../../data";
 
 import Image from "next/image";
 import Link from "next/link";

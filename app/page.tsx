@@ -18,7 +18,7 @@ import {
   services,
   stack,
   testimonials,
-} from "./data";
+} from "../data";
 
 import { ContactForm } from "../components/contact-form";
 import { GitHubCalendarSection } from "../components/github-calendar";
