@@ -16,7 +16,12 @@ export function HomeLink({ href }: HomeLinkProps) {
         history.replaceState(null, "", href);
       }}
     >
-      <svg className="size-14" viewBox="0 0 169 168" fill="none" aria-hidden="true">
+      <svg
+        className="size-14"
+        viewBox="0 0 169 168"
+        fill="none"
+        aria-hidden="true"
+      >
         <path
           d="M84.5 15.25a19.875 19.875 0 0 0-14.1 5.817L21.36 69.816A19.863 19.863 0 0 0 15.46 84a19.863 19.863 0 0 0 5.9 14.184l49.04 48.75a19.875 19.875 0 0 0 14.1 5.815c5.32 0 10.327-2.065 14.1-5.816l49.04-48.749A19.863 19.863 0 0 0 153.54 84a19.863 19.863 0 0 0-5.9-14.184L98.6 21.066a19.875 19.875 0 0 0-14.1-5.815Z"
           stroke="var(--color-accent)"
