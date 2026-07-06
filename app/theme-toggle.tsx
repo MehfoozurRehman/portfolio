@@ -1,12 +1,15 @@
 "use client";
 
 import { Moon, Sun } from "lucide-react";
+
 import { useEffect } from "react";
 
 type Theme = "dark" | "light";
 
 function getSystemTheme(): Theme {
-  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
 }
 
 function getCurrentTheme(): Theme {
@@ -28,7 +31,8 @@ export function ThemeToggle() {
       const nextTheme = getSystemTheme();
       document.documentElement.dataset.theme = nextTheme;
       document.documentElement.style.colorScheme = nextTheme;
-      document.documentElement.style.backgroundColor = nextTheme === "dark" ? "#050507" : "#f1efe5";
+      document.documentElement.style.backgroundColor =
+        nextTheme === "dark" ? "#050507" : "#f1efe5";
     };
 
     query.addEventListener("change", syncSystemTheme);
@@ -42,7 +46,8 @@ export function ThemeToggle() {
     const nextTheme = getCurrentTheme() === "dark" ? "light" : "dark";
     document.documentElement.dataset.theme = nextTheme;
     document.documentElement.style.colorScheme = nextTheme;
-    document.documentElement.style.backgroundColor = nextTheme === "dark" ? "#050507" : "#f1efe5";
+    document.documentElement.style.backgroundColor =
+      nextTheme === "dark" ? "#050507" : "#f1efe5";
     localStorage.setItem("portfolio-theme", nextTheme);
   }
 
