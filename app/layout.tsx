@@ -1,11 +1,12 @@
+import "./globals.css";
+
+import { CursorHighlight } from "./cursor-highlight";
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import Script from "next/script";
-import { CursorHighlight } from "./cursor-highlight";
 import { ScrollToTopButton } from "./scroll-to-top-button";
 import { ServiceWorkerResetScript } from "./sw-reset-script";
 import { themeScript } from "./theme-script";
-import "./globals.css";
 
 const nunito = Nunito({
   variable: "--font-nunito",
@@ -31,7 +32,9 @@ export const metadata: Metadata = {
       "Web, mobile, desktop, dashboards, automation and AI-powered business systems.",
     url: "https://mehfooz-ur-rehman.web.app",
     siteName: "Mehfooz-ur-Rehman",
-    images: [{ url: "/pic.webp", width: 900, height: 900, alt: "Mehfooz-ur-Rehman" }],
+    images: [
+      { url: "/pic.webp", width: 900, height: 900, alt: "Mehfooz-ur-Rehman" },
+    ],
     locale: "en_US",
     type: "website",
   },
@@ -50,7 +53,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${nunito.variable} h-full bg-[var(--color-page)] antialiased`}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${nunito.variable} h-full bg-[var(--color-page)] antialiased`}
+    >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
@@ -64,7 +71,11 @@ export default function RootLayout({
         />
         <noscript>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img alt="" referrerPolicy="no-referrer-when-downgrade" src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true" />
+          <img
+            alt=""
+            referrerPolicy="no-referrer-when-downgrade"
+            src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true"
+          />
         </noscript>
         <CursorHighlight />
         <ScrollToTopButton />
