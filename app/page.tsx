@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
 import {
   ArrowUpRight,
   Code2,
@@ -10,10 +8,6 @@ import {
   Phone,
   Sparkles,
 } from "lucide-react";
-import { ContactForm } from "./contact-form";
-import { GitHubCalendarSection } from "./github-calendar";
-import { HomeLink } from "./home-link";
-import { ThemeToggle } from "./theme-toggle";
 import {
   education,
   experience,
@@ -25,6 +19,13 @@ import {
   stack,
   testimonials,
 } from "./data";
+
+import { ContactForm } from "./contact-form";
+import { GitHubCalendarSection } from "./github-calendar";
+import { HomeLink } from "./home-link";
+import Image from "next/image";
+import Link from "next/link";
+import { ThemeToggle } from "./theme-toggle";
 
 const sectionClass =
   "mx-auto max-w-[1360px] px-5 py-12 sm:px-8 lg:px-12 lg:py-18 xl:px-16";
