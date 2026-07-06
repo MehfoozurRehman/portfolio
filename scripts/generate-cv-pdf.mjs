@@ -1,9 +1,10 @@
-import fs from "node:fs";
-import path from "node:path";
 import PDFDocument from "pdfkit";
 import { cvContent } from "./cv-content.mjs";
+import fs from "node:fs";
+import path from "node:path";
 
-const { profile, experience, education, stack, profileHighlights, services } = cvContent;
+const { profile, experience, education, stack, profileHighlights, services } =
+  cvContent;
 
 const outPath = path.join(process.cwd(), "public", "cv.pdf");
 fs.mkdirSync(path.dirname(outPath), { recursive: true });
@@ -46,12 +47,19 @@ function text(value, x, y, options = {}) {
     lineGap = 1.5,
     align,
   } = options;
-  doc.fillColor(fill).font(font).fontSize(size).text(value, x, y, { width, lineGap, align });
+  doc
+    .fillColor(fill)
+    .font(font)
+    .fontSize(size)
+    .text(value, x, y, { width, lineGap, align });
 }
 
 function height(value, width, options = {}) {
   const { size = 9.4, font = "Helvetica", lineGap = 1.5 } = options;
-  return doc.font(font).fontSize(size).heightOfString(value, { width, lineGap });
+  return doc
+    .font(font)
+    .fontSize(size)
+    .heightOfString(value, { width, lineGap });
 }
 
 function section(label, x, y, width) {
@@ -61,7 +69,12 @@ function section(label, x, y, width) {
     fill: color.accent,
     width,
   });
-  doc.moveTo(x, y + 14).lineTo(x + width, y + 14).lineWidth(0.8).strokeColor(color.rule).stroke();
+  doc
+    .moveTo(x, y + 14)
+    .lineTo(x + width, y + 14)
+    .lineWidth(0.8)
+    .strokeColor(color.rule)
+    .stroke();
   return y + 25;
 }
 
@@ -117,9 +130,21 @@ text(profile.headline, M, 92, {
 });
 
 doc.roundedRect(rightX, 32, sideW, 70, 10).fill("#ffffff");
-text(profile.email, rightX + 13, 46, { size: 8.2, fill: color.ink, width: sideW - 26 });
-text(profile.phone, rightX + 13, 62, { size: 8.2, fill: color.ink, width: sideW - 26 });
-text(profile.location, rightX + 13, 79, { size: 8.1, fill: color.muted, width: sideW - 26 });
+text(profile.email, rightX + 13, 46, {
+  size: 8.2,
+  fill: color.ink,
+  width: sideW - 26,
+});
+text(profile.phone, rightX + 13, 62, {
+  size: 8.2,
+  fill: color.ink,
+  width: sideW - 26,
+});
+text(profile.location, rightX + 13, 79, {
+  size: 8.1,
+  fill: color.muted,
+  width: sideW - 26,
+});
 
 let y = 154;
 
@@ -136,7 +161,12 @@ y += height(profile.about, mainW, { size: 9.6, lineGap: 2 }) + 18;
 // Experience
 y = section("Experience", M, y, mainW);
 experience.forEach(([role, company, period, location, summary]) => {
-  text(role, M, y, { size: 11, font: "Helvetica-Bold", fill: color.ink, width: mainW });
+  text(role, M, y, {
+    size: 11,
+    font: "Helvetica-Bold",
+    fill: color.ink,
+    width: mainW,
+  });
   text(`${company} | ${period}`, M, y + 15, {
     size: 8.5,
     font: "Helvetica-Bold",
@@ -188,7 +218,12 @@ services.forEach(([title]) => {
 sy += 8;
 sy = section("Education", rightX, sy, sideW);
 education.forEach(([school, degree, period]) => {
-  text(school, rightX, sy, { size: 9, font: "Helvetica-Bold", fill: color.ink, width: sideW });
+  text(school, rightX, sy, {
+    size: 9,
+    font: "Helvetica-Bold",
+    fill: color.ink,
+    width: sideW,
+  });
   text(degree, rightX, sy + 14, { size: 8.2, fill: color.text, width: sideW });
   text(period, rightX, sy + 27, { size: 8, fill: color.accent, width: sideW });
   sy += 48;
