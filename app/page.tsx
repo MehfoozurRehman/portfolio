@@ -20,12 +20,12 @@ import {
   testimonials,
 } from "./data";
 
-import { ContactForm } from "./contact-form";
-import { GitHubCalendarSection } from "./github-calendar";
-import { HomeLink } from "./home-link";
+import { ContactForm } from "../components/contact-form";
+import { GitHubCalendarSection } from "../components/github-calendar";
+import { HomeLink } from "../components/home-link";
 import Image from "next/image";
 import Link from "next/link";
-import { ThemeToggle } from "./theme-toggle";
+import { ThemeToggle } from "../components/theme-toggle";
 
 const sectionClass =
   "mx-auto max-w-[1360px] px-5 py-12 sm:px-8 lg:px-12 lg:py-18 xl:px-16";

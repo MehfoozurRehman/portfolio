@@ -1,12 +1,12 @@
 import "./globals.css";
 
-import { CursorHighlight } from "./cursor-highlight";
+import { CursorHighlight } from "../components/cursor-highlight";
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import Script from "next/script";
-import { ScrollToTopButton } from "./scroll-to-top-button";
-import { ServiceWorkerResetScript } from "./sw-reset-script";
-import { themeScript } from "./theme-script";
+import { ScrollToTopButton } from "../components/scroll-to-top-button";
+import { ServiceWorkerResetScript } from "../components/sw-reset-script";
+import { themeScript } from "../components/theme-script";
 
 const nunito = Nunito({
   variable: "--font-nunito",
