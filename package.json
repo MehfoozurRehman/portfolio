@@ -7,7 +7,6 @@
     "build": "node scripts/generate-cv-pdf.mjs && next build",
     "generate:cv": "node scripts/generate-cv-pdf.mjs",
     "start": "next start",
-    "lint": "eslint",
     "deploy": "pnpm build && firebase deploy --only hosting"
   },
   "dependencies": {
@@ -20,14 +19,12 @@
     "react-github-calendar": "^5.0.6"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.3.2",
+    "@tailwindcss/postcss": "^4.3.3",
     "@types/node": "^26.1.1",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
-    "eslint": "^9.39.4",
-    "eslint-config-next": "16.2.10",
     "sharp": "^0.35.3",
-    "tailwindcss": "^4.3.2",
+    "tailwindcss": "^4.3.3",
     "typescript": "^7.0.2"
   },
   "packageManager": "pnpm@11.9.0"
