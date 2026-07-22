@@ -621,7 +621,7 @@ export default function Home() {
             </div>
           </div>
           <p className="mt-3 border-t border-[var(--border-subtle)] pt-2 text-[0.68rem] leading-5 text-[var(--color-muted)]">
-            Copyright {new Date().getFullYear()} Mehfoozur Rehman. All rights
+            Copyright 2026 Mehfoozur Rehman. All rights
             reserved.
           </p>
         </div>
