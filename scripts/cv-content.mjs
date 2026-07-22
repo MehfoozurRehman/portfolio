@@ -10,6 +10,11 @@ export const cvContent = {
     phone: "+92 313 7178074",
     location: "Samundri, Faisalabad, Punjab, Pakistan",
   },
+  links: [
+    ["Portfolio", "mehfooz-ur-rehman.web.app"],
+    ["GitHub", "github.com/MehfoozurRehman"],
+    ["LinkedIn", "linkedin.com/in/mehfooz-rehman"],
+  ],
   profileHighlights: [
     [
       "Full-stack execution",
