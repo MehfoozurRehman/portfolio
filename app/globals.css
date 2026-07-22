@@ -1,11 +1,5 @@
 @import "tailwindcss";
 
-/* ============================================================
-   Design tokens
-   Light = warm archival paper · Dark = deep ink
-   Signature accent: vermilion · Secondary: pine
-   ============================================================ */
-
 :root {
   color-scheme: light;
 
@@ -141,7 +135,6 @@ body {
   color: var(--color-on-accent);
 }
 
-/* Grain overlay — subtle film texture across the whole page */
 body::before {
   content: "";
   position: fixed;
@@ -152,7 +145,6 @@ body::before {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* ---- Typography helpers ---- */
 .font-mono-label {
   font-family: var(--font-mono), ui-monospace, monospace;
   font-feature-settings: "cv01", "ss01";
@@ -170,7 +162,6 @@ body::before {
   color: transparent;
 }
 
-/* ---- Scroll reveal ---- */
 .reveal {
   opacity: 0;
   transform: translateY(22px);
@@ -195,7 +186,6 @@ body::before {
   }
 }
 
-/* ---- Marquee ---- */
 .marquee-track {
   display: flex;
   width: max-content;
@@ -231,7 +221,6 @@ body::before {
   }
 }
 
-/* ---- Hide scrollbar (still scrollable) ---- */
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -240,7 +229,6 @@ body::before {
   display: none;
 }
 
-/* ---- Ambient halos ---- */
 .halo {
   position: absolute;
   border-radius: 9999px;
@@ -249,7 +237,6 @@ body::before {
   z-index: 0;
 }
 
-/* ---- Card sheen ---- */
 .card-hover {
   transition:
     border-color 0.25s ease,
@@ -262,7 +249,6 @@ body::before {
   box-shadow: 0 18px 40px -24px var(--shadow-strong);
 }
 
-/* ---- Theme toggle icon swap ---- */
 .theme-toggle-icon-dark {
   display: none;
 }
@@ -273,7 +259,6 @@ body::before {
   display: block;
 }
 
-/* ---- Cursor glow ---- */
 .cursor-highlight[data-visible="true"] {
   opacity: 1;
 }
@@ -283,7 +268,6 @@ body::before {
   }
 }
 
-/* ---- Link underline sweep ---- */
 .link-sweep {
   background-image: linear-gradient(var(--color-accent), var(--color-accent));
   background-size: 0% 1.5px;
@@ -295,9 +279,6 @@ body::before {
   background-size: 100% 1.5px;
 }
 
-/* ============================================================
-   GitHub calendar
-   ============================================================ */
 .react-github-calendar {
   color: var(--color-text);
   font-family: inherit;

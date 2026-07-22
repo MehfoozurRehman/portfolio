@@ -27,13 +27,11 @@ export function SiteNav() {
     const ids = [...links.map((l) => l.href.slice(1)), "contact"];
 
     const onScroll = () => {
-      // At the very top, nothing is active.
       if (window.scrollY < 120) {
         setActive("");
         return;
       }
 
-      // If scrolled to the bottom, force the last section active.
       if (
         window.innerHeight + window.scrollY >=
         document.documentElement.scrollHeight - 4
@@ -42,8 +40,6 @@ export function SiteNav() {
         return;
       }
 
-      // Otherwise, the active section is the last one whose top has
-      // passed the line just below the fixed nav.
       let current = "";
       for (const id of ids) {
         const el = document.getElementById(id);
@@ -150,7 +146,6 @@ export function SiteNav() {
         </div>
       </nav>
 
-      {/* Mobile sheet */}
       <div
         className={`pointer-events-auto fixed inset-x-3 top-[68px] z-40 origin-top rounded-2xl border border-[var(--border-card)] bg-[var(--color-page-soft)]/95 p-2 shadow-[0_20px_60px_-30px_var(--shadow-strong)] backdrop-blur-xl transition-all duration-200 md:hidden ${
           open

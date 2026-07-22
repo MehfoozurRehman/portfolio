@@ -62,7 +62,6 @@ export default function Home() {
       <div id="page-top" aria-hidden="true" className="absolute top-0" />
       <SiteNav />
 
-      {/* ============ HERO ============ */}
       <section
         id="top"
         className="relative flex min-h-svh flex-col overflow-hidden pt-28 sm:pt-32"
@@ -194,7 +193,6 @@ export default function Home() {
               </Reveal>
             </div>
 
-            {/* Portrait */}
             <Reveal delay={140} className="relative mx-auto w-full max-w-[28.5rem]">
               <div className="relative">
                 <div className="absolute -inset-3 -z-10 rounded-[2rem] bg-gradient-to-br from-[var(--color-accent)]/25 to-[var(--color-accent-2)]/20 blur-2xl" />
@@ -229,7 +227,6 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Floating chips */}
                 <div className="absolute -left-4 top-8 hidden rounded-2xl border border-[var(--border-card)] bg-[var(--color-page-soft)]/90 px-3.5 py-2.5 shadow-lg shadow-[color:var(--shadow-ambient)] backdrop-blur-md sm:block">
                   <div className="font-mono-label text-[0.58rem] font-semibold uppercase tracking-[0.16em] text-[var(--color-soft)]">
                     Stack
@@ -254,7 +251,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* ============ MARQUEE (pinned to hero bottom) ============ */}
         <div className="marquee-wrap marquee-mask relative z-10 mt-12 overflow-hidden border-y border-[var(--border-subtle)] bg-[var(--color-page-soft)] py-4 sm:mt-16">
           <div className="marquee-track">
             {[...stack, ...stack].map((item, i) => (
@@ -270,7 +266,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ============ ABOUT ============ */}
       <section id="about" className={`${shell} py-14 sm:py-20`}>
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           <Reveal>
@@ -309,7 +304,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ============ SERVICES ============ */}
       <section
         id="services"
         className="border-y border-[var(--border-subtle)] bg-[var(--color-page-soft)]"
@@ -356,7 +350,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ============ WORK ============ */}
       <section id="work" className={`${shell} py-14 sm:py-20`}>
         <Reveal>
           <SectionMarker index="03" label="Featured work" />
@@ -464,10 +457,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ============ GITHUB ============ */}
       <GitHubCalendarSection />
 
-      {/* ============ EXPERIENCE ============ */}
       <section
         id="experience"
         className="border-y border-[var(--border-subtle)] bg-[var(--color-page-soft)]"
@@ -517,7 +508,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ============ PROCESS ============ */}
       <section className={`${shell} py-14 sm:py-20`}>
         <Reveal>
           <SectionMarker index="05" label="How I work" />
@@ -552,7 +542,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ============ EDUCATION + STACK ============ */}
       <section className="border-t border-[var(--border-subtle)] bg-[var(--color-page-soft)]">
         <div className={`${shell} grid gap-12 py-14 sm:py-20 lg:grid-cols-2 lg:gap-16`}>
           <Reveal>
@@ -611,7 +600,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ============ TESTIMONIALS ============ */}
       <section className={`${shell} py-14 sm:py-20`}>
         <Reveal>
           <SectionMarker index="08" label="Testimonials" />
@@ -651,7 +639,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ============ CONTACT ============ */}
       <section
         id="contact"
         className="relative overflow-hidden border-t border-[var(--border-subtle)] bg-[var(--color-page-soft)]"
@@ -735,7 +722,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ============ FOOTER ============ */}
       <footer className="border-t border-[var(--border-hairline)] bg-[var(--color-page)]">
         <div className={`${shell} py-8`}>
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">

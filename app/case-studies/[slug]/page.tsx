@@ -43,7 +43,6 @@ export default async function CaseStudyPage({
           <ArrowLeft size={14} aria-hidden="true" /> Back to portfolio
         </Link>
 
-        {/* Header */}
         <section className="mt-10 grid gap-10 lg:grid-cols-[1fr_0.82fr] lg:items-start">
           <div className="max-w-2xl">
             <p className={`${mono} text-[var(--color-accent)]`}>Case study</p>
@@ -140,7 +139,6 @@ export default async function CaseStudyPage({
           </aside>
         </section>
 
-        {/* Problem / Approach / Outcome */}
         <section className="mt-10 grid gap-3 md:grid-cols-3">
           {[
             ["Problem", project.problem],
@@ -162,7 +160,6 @@ export default async function CaseStudyPage({
           ))}
         </section>
 
-        {/* Responsibilities + Stack */}
         <section className="mt-3 grid gap-3 lg:grid-cols-[1.05fr_0.95fr]">
           <article className="rounded-2xl border border-[var(--border-card)] bg-[var(--color-raise)] p-6">
             <p className={`${mono} text-[var(--color-accent)]`}>
@@ -203,7 +200,6 @@ export default async function CaseStudyPage({
           </article>
         </section>
 
-        {/* CTA */}
         <section className="mt-10 flex flex-col items-start justify-between gap-5 rounded-2xl border border-[var(--border-card)] bg-[var(--color-page-soft)] p-6 sm:flex-row sm:items-center">
           <div>
             <p className={`${display} text-[1.2rem]`}>
