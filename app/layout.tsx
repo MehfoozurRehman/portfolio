@@ -2,7 +2,7 @@ import "./globals.css";
 
 import { CursorHighlight } from "../components/cursor-highlight";
 import type { Metadata } from "next";
-import { Nunito } from "next/font/google";
+import { JetBrains_Mono, Nunito } from "next/font/google";
 import Script from "next/script";
 import { ScrollToTopButton } from "../components/scroll-to-top-button";
 import { ServiceWorkerResetScript } from "../components/sw-reset-script";
@@ -13,6 +13,13 @@ const nunito = Nunito({
   subsets: ["latin"],
   display: "swap",
   weight: ["400", "500", "600", "700", "800", "900"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -56,10 +63,13 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${nunito.variable} h-full bg-[var(--color-page)] antialiased`}
+      className={`${nunito.variable} ${jetbrainsMono.variable} h-full bg-[var(--color-page)] antialiased`}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <noscript>
+          <style>{`.reveal{opacity:1 !important;transform:none !important}`}</style>
+        </noscript>
       </head>
       <body className="flex min-h-full flex-col bg-[var(--color-page)] font-[family-name:var(--font-nunito)] text-[var(--color-text)]">
         <ServiceWorkerResetScript />

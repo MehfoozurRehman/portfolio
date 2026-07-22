@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none" role="img" aria-label="Teams AI meeting assistant">
+  <defs>
+    <linearGradient id="ta-bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111319"/>
+      <stop offset="1" stop-color="#1b1210"/>
+    </linearGradient>
+    <radialGradient id="ta-glow" cx="0" cy="0" r="1" gradientTransform="translate(400 90) rotate(90) scale(300 420)">
+      <stop stop-color="#4dd4a7" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#4dd4a7" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ta-bar" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#ff6a2c"/>
+      <stop offset="1" stop-color="#d9531e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#ta-bg)"/>
+  <rect width="800" height="500" fill="url(#ta-glow)"/>
+  <g opacity="0.5" stroke="#ffffff" stroke-opacity="0.05">
+    <path d="M0 160h800M0 340h800M200 0v500M400 0v500M600 0v500"/>
+  </g>
+  <!-- waveform -->
+  <g>
+    <rect x="150" y="150" width="14" height="70" rx="7" fill="#ffffff" fill-opacity="0.2"/>
+    <rect x="180" y="120" width="14" height="130" rx="7" fill="#ffffff" fill-opacity="0.28"/>
+    <rect x="210" y="90" width="14" height="190" rx="7" fill="url(#ta-bar)"/>
+    <rect x="240" y="60" width="14" height="250" rx="7" fill="url(#ta-bar)"/>
+    <rect x="270" y="105" width="14" height="160" rx="7" fill="#ff6a2c" fill-opacity="0.7"/>
+    <rect x="300" y="140" width="14" height="90" rx="7" fill="#ffffff" fill-opacity="0.3"/>
+    <rect x="330" y="110" width="14" height="150" rx="7" fill="#4dd4a7"/>
+    <rect x="360" y="80" width="14" height="210" rx="7" fill="#4dd4a7" fill-opacity="0.8"/>
+    <rect x="390" y="130" width="14" height="110" rx="7" fill="#ffffff" fill-opacity="0.25"/>
+    <rect x="420" y="150" width="14" height="70" rx="7" fill="#ffffff" fill-opacity="0.18"/>
+  </g>
+  <!-- AI sparkle -->
+  <g transform="translate(470 110)">
+    <circle r="30" fill="#ff6a2c" fill-opacity="0.16"/>
+    <path d="M0 -15 L3.5 -3.5 L15 0 L3.5 3.5 L0 15 L-3.5 3.5 L-15 0 L-3.5 -3.5 Z" fill="#ff6a2c"/>
+  </g>
+  <!-- caption / summary card -->
+  <g>
+    <rect x="150" y="330" width="500" height="118" rx="20" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.12"/>
+    <circle cx="182" cy="362" r="9" fill="#4dd4a7"/>
+    <rect x="204" y="356" width="230" height="12" rx="6" fill="#ffffff" fill-opacity="0.5"/>
+    <rect x="182" y="392" width="420" height="10" rx="5" fill="#ffffff" fill-opacity="0.28"/>
+    <rect x="182" y="414" width="320" height="10" rx="5" fill="#ffffff" fill-opacity="0.2"/>
+  </g>
+  <text x="150" y="475" font-family="monospace" font-size="15" letter-spacing="3" fill="#ffffff" fill-opacity="0.3">CAPTIONS · SUMMARIES · ACTIONS</text>
+</svg>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none" role="img" aria-label="WhatsApp business automation">
+  <defs>
+    <linearGradient id="wa-bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#141019"/>
+      <stop offset="1" stop-color="#1d1310"/>
+    </linearGradient>
+    <radialGradient id="wa-glow" cx="0" cy="0" r="1" gradientTransform="translate(600 120) rotate(130) scale(320)">
+      <stop stop-color="#ff6a2c" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#ff6a2c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="wa-teal" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#4dd4a7"/>
+      <stop offset="1" stop-color="#1c6b56"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#wa-bg)"/>
+  <rect width="800" height="500" fill="url(#wa-glow)"/>
+  <g opacity="0.5" stroke="#ffffff" stroke-opacity="0.05">
+    <path d="M0 130h800M0 250h800M0 370h800M160 0v500M400 0v500M640 0v500"/>
+  </g>
+  <!-- flow connectors -->
+  <g stroke-width="2.5" fill="none" stroke-linecap="round">
+    <path d="M250 210 C 330 210, 350 300, 430 300" stroke="#4dd4a7" stroke-opacity="0.55" stroke-dasharray="2 12"/>
+    <path d="M430 300 C 510 300, 520 180, 590 180" stroke="#ff6a2c" stroke-opacity="0.65" stroke-dasharray="2 12"/>
+  </g>
+  <!-- node dots -->
+  <circle cx="250" cy="210" r="6" fill="#4dd4a7"/>
+  <circle cx="430" cy="300" r="6" fill="#ffffff" fill-opacity="0.8"/>
+  <circle cx="590" cy="180" r="6" fill="#ff6a2c"/>
+  <!-- incoming bubble -->
+  <g>
+    <rect x="120" y="150" width="190" height="86" rx="22" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.12"/>
+    <rect x="146" y="176" width="120" height="10" rx="5" fill="#ffffff" fill-opacity="0.5"/>
+    <rect x="146" y="198" width="80" height="10" rx="5" fill="#ffffff" fill-opacity="0.28"/>
+  </g>
+  <!-- outgoing (brand) bubble -->
+  <g>
+    <rect x="470" y="300" width="220" height="110" rx="24" fill="url(#wa-teal)"/>
+    <rect x="498" y="330" width="150" height="11" rx="5.5" fill="#06251d" fill-opacity="0.65"/>
+    <rect x="498" y="356" width="110" height="11" rx="5.5" fill="#06251d" fill-opacity="0.45"/>
+    <rect x="498" y="382" width="60" height="11" rx="5.5" fill="#06251d" fill-opacity="0.3"/>
+  </g>
+  <!-- bot spark -->
+  <g transform="translate(560 130)">
+    <circle r="34" fill="#ff6a2c" fill-opacity="0.16"/>
+    <path d="M0 -16 L4 -4 L16 0 L4 4 L0 16 L-4 4 L-16 0 L-4 -4 Z" fill="#ff6a2c"/>
+  </g>
+  <text x="120" y="440" font-family="monospace" font-size="15" letter-spacing="3" fill="#ffffff" fill-opacity="0.32">AUTOMATED · WHATSAPP</text>
+</svg>
