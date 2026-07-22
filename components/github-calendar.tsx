@@ -35,21 +35,30 @@ function GitHubCalendarContent() {
   }, []);
 
   return (
-    <section className="mx-auto max-w-340 px-5 py-12 sm:px-8 lg:px-12 lg:py-18 xl:px-16 border-t border-(--border-subtle)">
-      <div className="mb-9 max-w-3xl">
-        <p className="mb-4 text-[0.72rem] font-black uppercase tracking-[0.16em] text-(--color-accent)">
-          Activity
-        </p>
-        <h2 className="font-(family-name:--font-nunito) font-extrabold leading-[0.98] tracking-normal text-[clamp(1.35rem,1.65vw,1.85rem)]">
+    <section className="mx-auto w-full max-w-[1320px] px-5 py-10 sm:px-8 sm:py-12 lg:px-10">
+      <div className="mb-10">
+        <div className="mb-8 flex items-center gap-3">
+          <span className="font-mono-label text-[0.68rem] font-semibold tracking-[0.2em] text-(--color-soft)">
+            ✦
+          </span>
+          <span className="h-px w-8 bg-(--border-card)" />
+          <span className="font-mono-label text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-(--color-accent)">
+            Activity
+          </span>
+        </div>
+        <h2 className="font-(family-name:--font-nunito) font-extrabold leading-[0.98] tracking-[-0.01em] text-[clamp(1.55rem,2.9vw,2.35rem)] max-w-2xl">
           GitHub contributions this year.
         </h2>
       </div>
 
-      <div suppressHydrationWarning>
+      <div
+        suppressHydrationWarning
+        className="no-scrollbar overflow-x-auto rounded-2xl border border-(--border-card) bg-(--color-raise) p-6 sm:p-8"
+      >
         {mounted ? (
           <Suspense
             fallback={
-              <div className="h-32 bg-(--color-field) rounded-lg animate-pulse" />
+              <div className="h-32 animate-pulse rounded-lg bg-(--color-field)" />
             }
           >
             <GitHubCalendar
@@ -62,18 +71,11 @@ function GitHubCalendarContent() {
               blockRadius={5}
               fontSize={14}
               year={new Date().getFullYear()}
-              style={{
-                color: "white",
-                margin: "0 2em",
-                marginBottom: "3em",
-                marginTop: "-3em",
-                padding: "2em",
-              }}
-              blockSize={18}
+              blockSize={16}
             />
           </Suspense>
         ) : (
-          <div className="h-32 bg-(--color-field) rounded-lg animate-pulse" />
+          <div className="h-32 animate-pulse rounded-lg bg-(--color-field)" />
         )}
       </div>
     </section>

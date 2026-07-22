@@ -1,130 +1,324 @@
 @import "tailwindcss";
 
+/* ============================================================
+   Design tokens
+   Light = warm archival paper · Dark = deep ink
+   Signature accent: vermilion · Secondary: pine
+   ============================================================ */
+
 :root {
   color-scheme: light;
-  --color-page: #f1efe5;
-  --color-page-soft: #f7f2e7;
-  --color-text: #0c2120;
-  --color-muted: #50463f;
-  --color-soft: #668a85;
-  --color-accent: #d7720c;
-  --color-on-accent: #ffffff;
+
+  --color-page: #efece2;
+  --color-page-soft: #f6f3ea;
+  --color-raise: #faf8f1;
+  --color-text: #17140f;
+  --color-muted: #574f45;
+  --color-soft: #7c7264;
+  --color-accent: #d9531e;
+  --color-accent-2: #1c6b56;
+  --color-on-accent: #fdf6ee;
   --color-danger: #b42318;
-  --color-inverse: #0c2120;
-  --color-inverse-text: #f1efe5;
-  --color-field: rgb(255 255 255 / 0.7);
-  --border-hairline: rgb(12 33 32 / 0.08);
-  --border-subtle: rgb(12 33 32 / 0.1);
-  --border-card: rgb(12 33 32 / 0.15);
-  --border-input-hover: rgb(12 33 32 / 0.2);
-  --border-hover: rgb(215 114 12 / 0.45);
-  --shadow-strong: rgb(12 33 32 / 0.2);
-  --shadow-accent: rgb(215 114 12 / 0.2);
-  --cursor-glow: rgb(215 114 12 / 0.045);
-  --cursor-glow-soft: rgb(102 138 133 / 0.032);
+  --color-inverse: #17140f;
+  --color-inverse-text: #f4f0e6;
+  --color-field: rgb(255 255 255 / 0.66);
+
+  --border-hairline: rgb(23 20 15 / 0.07);
+  --border-subtle: rgb(23 20 15 / 0.11);
+  --border-card: rgb(23 20 15 / 0.14);
+  --border-input-hover: rgb(23 20 15 / 0.24);
+  --border-hover: rgb(217 83 30 / 0.5);
+
+  --shadow-strong: rgb(23 20 15 / 0.16);
+  --shadow-accent: rgb(217 83 30 / 0.22);
+  --shadow-ambient: rgb(23 20 15 / 0.08);
+
+  --grid-line: rgb(23 20 15 / 0.05);
+  --grain-opacity: 0.032;
+
+  --cursor-glow: rgb(217 83 30 / 0.05);
+  --cursor-glow-soft: rgb(28 107 86 / 0.035);
+
+  --halo-a: rgb(217 83 30 / 0.16);
+  --halo-b: rgb(28 107 86 / 0.14);
 }
 
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --color-page: #050507;
-  --color-page-soft: #08090d;
-  --color-text: #f3f0e8;
-  --color-muted: #b8b0a4;
-  --color-soft: #91a8ad;
-  --color-accent: #f28a24;
-  --color-on-accent: #150b04;
+
+  --color-page: #08090b;
+  --color-page-soft: #0d0f13;
+  --color-raise: #121419;
+  --color-text: #f1eee6;
+  --color-muted: #a89f92;
+  --color-soft: #7f8a86;
+  --color-accent: #ff6a2c;
+  --color-accent-2: #4dd4a7;
+  --color-on-accent: #140a04;
   --color-danger: #ff8b7d;
-  --color-inverse: #f3f0e8;
-  --color-inverse-text: #07080b;
-  --color-field: rgb(255 255 255 / 0.055);
+  --color-inverse: #f1eee6;
+  --color-inverse-text: #08090b;
+  --color-field: rgb(255 255 255 / 0.05);
+
   --border-hairline: rgb(255 255 255 / 0.07);
   --border-subtle: rgb(255 255 255 / 0.1);
-  --border-card: rgb(255 255 255 / 0.16);
-  --border-input-hover: rgb(255 255 255 / 0.24);
-  --border-hover: rgb(242 138 36 / 0.52);
-  --shadow-strong: rgb(0 0 0 / 0.45);
-  --shadow-accent: rgb(242 138 36 / 0.16);
-  --cursor-glow: rgb(242 138 36 / 0.055);
-  --cursor-glow-soft: rgb(145 168 173 / 0.038);
+  --border-card: rgb(255 255 255 / 0.14);
+  --border-input-hover: rgb(255 255 255 / 0.26);
+  --border-hover: rgb(255 106 44 / 0.55);
+
+  --shadow-strong: rgb(0 0 0 / 0.55);
+  --shadow-accent: rgb(255 106 44 / 0.2);
+  --shadow-ambient: rgb(0 0 0 / 0.4);
+
+  --grid-line: rgb(255 255 255 / 0.045);
+  --grain-opacity: 0.05;
+
+  --cursor-glow: rgb(255 106 44 / 0.06);
+  --cursor-glow-soft: rgb(77 212 167 / 0.04);
+
+  --halo-a: rgb(255 106 44 / 0.2);
+  --halo-b: rgb(77 212 167 / 0.16);
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
     color-scheme: dark;
-    --color-page: #050507;
-    --color-page-soft: #08090d;
-    --color-text: #f3f0e8;
-    --color-muted: #b8b0a4;
-    --color-soft: #91a8ad;
-    --color-accent: #f28a24;
-    --color-on-accent: #150b04;
+
+    --color-page: #08090b;
+    --color-page-soft: #0d0f13;
+    --color-raise: #121419;
+    --color-text: #f1eee6;
+    --color-muted: #a89f92;
+    --color-soft: #7f8a86;
+    --color-accent: #ff6a2c;
+    --color-accent-2: #4dd4a7;
+    --color-on-accent: #140a04;
     --color-danger: #ff8b7d;
-    --color-inverse: #f3f0e8;
-    --color-inverse-text: #07080b;
-    --color-field: rgb(255 255 255 / 0.055);
+    --color-inverse: #f1eee6;
+    --color-inverse-text: #08090b;
+    --color-field: rgb(255 255 255 / 0.05);
+
     --border-hairline: rgb(255 255 255 / 0.07);
     --border-subtle: rgb(255 255 255 / 0.1);
-    --border-card: rgb(255 255 255 / 0.16);
-    --border-input-hover: rgb(255 255 255 / 0.24);
-    --border-hover: rgb(242 138 36 / 0.52);
-    --shadow-strong: rgb(0 0 0 / 0.45);
-    --shadow-accent: rgb(242 138 36 / 0.16);
-    --cursor-glow: rgb(242 138 36 / 0.055);
-    --cursor-glow-soft: rgb(145 168 173 / 0.038);
+    --border-card: rgb(255 255 255 / 0.14);
+    --border-input-hover: rgb(255 255 255 / 0.26);
+    --border-hover: rgb(255 106 44 / 0.55);
+
+    --shadow-strong: rgb(0 0 0 / 0.55);
+    --shadow-accent: rgb(255 106 44 / 0.2);
+    --shadow-ambient: rgb(0 0 0 / 0.4);
+
+    --grid-line: rgb(255 255 255 / 0.045);
+    --grain-opacity: 0.05;
+
+    --cursor-glow: rgb(255 106 44 / 0.06);
+    --cursor-glow-soft: rgb(77 212 167 / 0.04);
+
+    --halo-a: rgb(255 106 44 / 0.2);
+    --halo-b: rgb(77 212 167 / 0.16);
   }
+}
+
+@theme inline {
+  --font-sans: var(--font-nunito);
+  --font-mono: var(--font-mono);
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
   background: var(--color-page);
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
   background: var(--color-page);
+  overflow-x: hidden;
 }
 
+::selection {
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+}
+
+/* Grain overlay — subtle film texture across the whole page */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: var(--grain-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---- Typography helpers ---- */
+.font-mono-label {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-feature-settings: "cv01", "ss01";
+}
+
+.text-gradient {
+  background: linear-gradient(
+    100deg,
+    var(--color-text) 0%,
+    var(--color-text) 55%,
+    var(--color-accent) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---- Scroll reveal ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal[data-shown="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ---- Marquee ---- */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 38s linear infinite;
+}
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+}
+.marquee-wrap:hover .marquee-track {
+  animation-play-state: paused;
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+/* ---- Hide scrollbar (still scrollable) ---- */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* ---- Ambient halos ---- */
+.halo {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ---- Card sheen ---- */
+.card-hover {
+  transition:
+    border-color 0.25s ease,
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease;
+}
+.card-hover:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px -24px var(--shadow-strong);
+}
+
+/* ---- Theme toggle icon swap ---- */
 .theme-toggle-icon-dark {
   display: none;
 }
-
 :root[data-theme="dark"] .theme-toggle-icon-light {
   display: none;
 }
-
 :root[data-theme="dark"] .theme-toggle-icon-dark {
   display: block;
 }
 
+/* ---- Cursor glow ---- */
 .cursor-highlight[data-visible="true"] {
   opacity: 1;
 }
-
 @media (pointer: coarse), (prefers-reduced-motion: reduce) {
   .cursor-highlight {
     display: none;
   }
 }
 
-/* GitHub Calendar Styles */
+/* ---- Link underline sweep ---- */
+.link-sweep {
+  background-image: linear-gradient(var(--color-accent), var(--color-accent));
+  background-size: 0% 1.5px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s ease;
+}
+.link-sweep:hover {
+  background-size: 100% 1.5px;
+}
+
+/* ============================================================
+   GitHub calendar
+   ============================================================ */
 .react-github-calendar {
   color: var(--color-text);
   font-family: inherit;
 }
-
 .react-github-calendar text {
   fill: var(--color-muted);
 }
-
 .react-github-calendar-month-label {
   color: var(--color-muted);
   font-size: 0.75rem;
 }
-
 .react-github-calendar .react-github-calendar-month-label {
   text-anchor: start;
 }
-
-/* Tooltip styling */
+.react-activity-calendar__scroll-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.react-activity-calendar__scroll-container::-webkit-scrollbar {
+  display: none;
+}
 .react-github-calendar-tooltip {
   background-color: var(--color-inverse);
   color: var(--color-inverse-text);

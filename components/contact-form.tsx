@@ -8,7 +8,9 @@ import emailjs from "@emailjs/browser";
 type SubmissionState = "idle" | "submitting" | "submitted" | "failed";
 
 const inputClass =
-  "w-full rounded-[14px] border border-[var(--border-subtle)] bg-[var(--color-field)] px-4 py-2.5 text-[0.86rem] outline-none transition hover:border-[var(--border-input-hover)] focus:border-[var(--color-accent)] sm:py-3 sm:text-[0.9rem]";
+  "w-full rounded-xl border border-[var(--border-subtle)] bg-[var(--color-field)] px-4 py-3 text-[0.9rem] outline-none transition hover:border-[var(--border-input-hover)] focus:border-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent)]/15";
+const labelClass =
+  "font-mono-label text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-soft)]";
 
 let emailjsInitialized = false;
 
@@ -70,13 +72,11 @@ export function ContactForm() {
 
   return (
     <form
-      className="grid gap-4 rounded-[18px] border border-[var(--border-card)] px-5 py-6 text-[var(--color-text)] transition duration-200 hover:border-[var(--border-hover)] sm:px-6"
+      className="grid gap-5 rounded-2xl border border-[var(--border-card)] bg-[var(--color-raise)] p-6 text-[var(--color-text)] shadow-[0_20px_50px_-40px_var(--shadow-strong)] sm:p-7"
       onSubmit={handleSubmit}
     >
       <label className="grid gap-2">
-        <span className="text-[0.82rem] font-black text-[var(--color-text)]">
-          Name
-        </span>
+        <span className={labelClass}>Name</span>
         <input
           className={inputClass}
           name="name"
@@ -86,9 +86,7 @@ export function ContactForm() {
         />
       </label>
       <label className="grid gap-2">
-        <span className="text-[0.82rem] font-black text-[var(--color-text)]">
-          Email
-        </span>
+        <span className={labelClass}>Email</span>
         <input
           className={inputClass}
           name="email"
@@ -99,23 +97,25 @@ export function ContactForm() {
         />
       </label>
       <label className="grid gap-2">
-        <span className="text-[0.82rem] font-black text-[var(--color-text)]">
-          Project
-        </span>
+        <span className={labelClass}>Project</span>
         <textarea
-          className={`${inputClass} min-h-36 resize-y`}
+          className={`${inputClass} min-h-44 resize-y`}
           name="project"
           required
           placeholder="Tell me what you want to build, fix or automate."
         />
       </label>
       <button
-        className="mt-2 inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-[var(--color-accent)] px-6 text-[0.9rem] font-black text-[var(--color-on-accent)] shadow-lg shadow-[color:var(--shadow-accent)] disabled:cursor-wait disabled:opacity-70 sm:min-h-12 sm:text-base"
+        className="group mt-1 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[var(--color-accent)] px-6 text-[0.92rem] font-bold text-[var(--color-on-accent)] shadow-lg shadow-[color:var(--shadow-accent)] transition hover:shadow-xl disabled:cursor-wait disabled:opacity-70"
         type="submit"
         disabled={submissionState === "submitting"}
       >
         {submissionState === "submitting" ? "Sending..." : "Start a project"}
-        <ArrowUpRight size={18} aria-hidden="true" />
+        <ArrowUpRight
+          size={18}
+          className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+          aria-hidden="true"
+        />
       </button>
       {submissionState === "submitted" ? (
         <p className="leading-6 text-[var(--color-text)]">

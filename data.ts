@@ -238,6 +238,7 @@ export const projects: Project[] = [
     title: "WhatsApp Business Automation",
     category: "Customer support and lead handling",
     icon: MessageCircle,
+    heroImageUrl: "/cover-whatsapp.svg",
     summary:
       "Lead capture, confirmations, AI-assisted replies and business process automation around WhatsApp conversations.",
     businessValue:
@@ -266,6 +267,7 @@ export const projects: Project[] = [
     title: "Teams AI Meeting Assistant",
     category: "Voice, captions and summaries",
     icon: Bot,
+    heroImageUrl: "/cover-teams-ai.svg",
     summary:
       "Meeting join, caption capture, summary and action-item workflows using Microsoft Graph and AI services.",
     businessValue:
@@ -290,6 +292,7 @@ export const projects: Project[] = [
     title: "Expo Mobile Apps",
     category: "Cross-platform mobile delivery",
     icon: Smartphone,
+    heroImageUrl: "/cover-expo.svg",
     summary:
       "Production mobile apps shipped through Expo, EAS, TestFlight and Google Play Console.",
     businessValue:
@@ -314,6 +317,7 @@ export const projects: Project[] = [
     title: "Desktop Automation Tools",
     category: "Electron and background apps",
     icon: Laptop,
+    heroImageUrl: "/cover-desktop.svg",
     summary:
       "Desktop utilities that run background workflows and connect local machines to web dashboards.",
     businessValue:
@@ -442,7 +446,6 @@ export const stack = [
   "Node.js",
   "Express.js",
   "Electron",
-  "Node.js",
   "OpenAI",
   "Gemini",
   "Firebase",
