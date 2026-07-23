@@ -27,8 +27,8 @@ importers:
         specifier: 19.2.8
         version: 19.2.8(react@19.2.8)
       react-github-calendar:
-        specifier: ^5.0.6
-        version: 5.0.6(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+        specifier: ^5.0.8
+        version: 5.0.8(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
     devDependencies:
       '@tailwindcss/postcss':
         specifier: ^4.3.3
@@ -787,8 +787,8 @@ packages:
     peerDependencies:
       react: ^19.2.8
 
-  react-github-calendar@5.0.6:
-    resolution: {integrity: sha512-BXgk1blzmkXjzc3CJRtSxscNuL0y/pHHVihmY+H+8bak0Syg2G/7gCM4Ja6CzE5wtABDv6N97kKSufWqMazq/g==}
+  react-github-calendar@5.0.8:
+    resolution: {integrity: sha512-anay9yE3XdXEFeuIE3eDFUOQ+cN2bbuhUMe/iOQFEsAdzvIB/jpV6qohSbK9BSdrfd7alq+gcsZWmxfsZu6Obg==}
     peerDependencies:
       react: ^18.0.0 || ^19.0.0
 
@@ -1422,7 +1422,7 @@ snapshots:
       react: 19.2.8
       scheduler: 0.27.0
 
-  react-github-calendar@5.0.6(react-dom@19.2.8(react@19.2.8))(react@19.2.8):
+  react-github-calendar@5.0.8(react-dom@19.2.8(react@19.2.8))(react@19.2.8):
     dependencies:
       react: 19.2.8
       react-activity-calendar: 3.2.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
