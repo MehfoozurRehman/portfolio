@@ -737,7 +737,6 @@ export default function Home() {
                 ["v5", "https://mehfoozurrehmanv5.web.app/"],
                 ["v6", "https://mehfoozurrehmanv6.web.app/"],
                 ["v7", "https://mehfoozurrehmanv7.web.app/"],
-                ["v8 · current", "https://mehfoozurrehmanv8.web.app/"],
               ].map(([label, href]) => (
                 <a
                   key={label}
@@ -753,7 +752,7 @@ export default function Home() {
             </div>
           </div>
           <p className="mt-5 border-t border-[var(--border-subtle)] pt-5 text-[0.72rem] text-[var(--color-muted)]">
-            © 2026 Mehfoozur Rehman. v8 · source on{" "}
+            © 2026 Mehfoozur Rehman. source on{" "}
             <a
               href="https://github.com/MehfoozurRehman/portfolio"
               target="_blank"
