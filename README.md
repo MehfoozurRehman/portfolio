@@ -1,4 +1,4 @@
-# Mehfooz-ur-Rehman Portfolio · v7
+# Mehfooz-ur-Rehman Portfolio · v8
 
 Premium portfolio for Mehfooz-ur-Rehman, built with Next.js App Router, TypeScript, Tailwind CSS, and Firebase Hosting.
 
@@ -27,7 +27,7 @@ The site exports to `out` and deploys to Firebase Hosting.
 pnpm deploy
 ```
 
-The v7 release is deployed to [mehfoozurrehmanv7.web.app](https://mehfoozurrehmanv7.web.app).
+The v8 release is deployed to [mehfoozurrehmanv8.web.app](https://mehfoozurrehmanv8.web.app).
 
 Deploy locally with the Firebase CLI after logging in from your machine.
 

@@ -726,7 +726,7 @@ export default function Home() {
         <div className={`${shell} py-8`}>
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <p className="font-mono-label text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[var(--color-soft)]">
-              Archive · portfolio versions
+              Portfolio versions
             </p>
             <div className="flex flex-wrap gap-1.5">
               {[
@@ -737,6 +737,7 @@ export default function Home() {
                 ["v5", "https://mehfoozurrehmanv5.web.app/"],
                 ["v6", "https://mehfoozurrehmanv6.web.app/"],
                 ["v7", "https://mehfoozurrehmanv7.web.app/"],
+                ["v8 · current", "https://mehfoozurrehmanv8.web.app/"],
               ].map(([label, href]) => (
                 <a
                   key={label}
@@ -752,9 +753,9 @@ export default function Home() {
             </div>
           </div>
           <p className="mt-5 border-t border-[var(--border-subtle)] pt-5 text-[0.72rem] text-[var(--color-muted)]">
-            © 2026 Mehfoozur Rehman. v7 · source on{" "}
+            © 2026 Mehfoozur Rehman. v8 · source on{" "}
             <a
-              href="https://github.com/MehfoozurRehman/v7"
+              href="https://github.com/MehfoozurRehman/portfolio"
               target="_blank"
               rel="noreferrer"
               className="text-[var(--color-text)] underline decoration-[var(--border-subtle)] underline-offset-4 transition hover:text-[var(--color-accent)]"

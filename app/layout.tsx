@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   title: "Mehfooz-ur-Rehman | Full-stack Product Developer",
   description:
     "Portfolio of Mehfooz-ur-Rehman, a full-stack product developer building web, mobile, desktop and AI-powered business systems.",
-  metadataBase: new URL("https://mehfoozurrehmanv7.web.app"),
+  metadataBase: new URL("https://mehfoozurrehmanv8.web.app"),
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
     shortcut: [{ url: "/favicon.svg", type: "image/svg+xml" }],
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     title: "Mehfooz-ur-Rehman | Full-stack Product Developer",
     description:
       "Web, mobile, desktop, dashboards, automation and AI-powered business systems.",
-    url: "https://mehfoozurrehmanv7.web.app",
+    url: "https://mehfoozurrehmanv8.web.app",
     siteName: "Mehfooz-ur-Rehman",
     images: [
       { url: "/pic.webp", width: 900, height: 900, alt: "Mehfooz-ur-Rehman" },
