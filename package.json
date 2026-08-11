@@ -11,8 +11,8 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
-    "lucide-react": "^1.28.0",
-    "next": "16.2.12",
+    "lucide-react": "^1.31.0",
+    "next": "16.3.0",
     "pdfkit": "^0.19.1",
     "react": "19.2.8",
     "react-dom": "19.2.8",
@@ -20,12 +20,12 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.3",
-    "@types/node": "^26.1.2",
+    "@types/node": "^26.2.0",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
     "sharp": "^0.35.3",
     "tailwindcss": "^4.3.3",
     "typescript": "^5.9.3"
   },
-  "packageManager": "pnpm@11.9.0"
+  "packageManager": "pnpm@11.21.0"
 }
