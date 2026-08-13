@@ -118,6 +118,7 @@ export const services: Service[] = [
 ];
 
 export const projects: Project[] = [
+  /*
   {
     slug: "schooliee",
     title: "Schooliee",
@@ -149,6 +150,7 @@ export const projects: Project[] = [
       "Parent communication",
     ],
   },
+  */
   {
     slug: "dsme-globals",
     title: "DSME Globals",
@@ -207,6 +209,7 @@ export const projects: Project[] = [
     ],
     highlights: ["Pricing", "Inventory", "Orders", "Analytics"],
   },
+  /*
   {
     slug: "clipout",
     title: "Clipout",
@@ -233,6 +236,7 @@ export const projects: Project[] = [
     ],
     highlights: ["Recording", "Templates", "Motion", "Editing"],
   },
+  */
   {
     slug: "whatsapp-business-automation",
     title: "WhatsApp Business Automation",
