@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   color-scheme: light;
@@ -37,7 +37,7 @@
   --halo-b: rgb(28 107 86 / 0.14);
 }
 
-:root[data-theme="dark"] {
+:root[data-theme='dark'] {
   color-scheme: dark;
 
   --color-page: #08090b;
@@ -136,7 +136,7 @@ body {
 }
 
 body::before {
-  content: "";
+  content: '';
   position: fixed;
   inset: 0;
   z-index: 60;
@@ -147,16 +147,11 @@ body::before {
 
 .font-mono-label {
   font-family: var(--font-mono), ui-monospace, monospace;
-  font-feature-settings: "cv01", "ss01";
+  font-feature-settings: 'cv01', 'ss01';
 }
 
 .text-gradient {
-  background: linear-gradient(
-    100deg,
-    var(--color-text) 0%,
-    var(--color-text) 55%,
-    var(--color-accent) 100%
-  );
+  background: linear-gradient(100deg, var(--color-text) 0%, var(--color-text) 55%, var(--color-accent) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -170,7 +165,7 @@ body::before {
     transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: opacity, transform;
 }
-.reveal[data-shown="true"] {
+.reveal[data-shown='true'] {
   opacity: 1;
   transform: none;
 }
@@ -192,20 +187,8 @@ body::before {
   animation: marquee 38s linear infinite;
 }
 .marquee-mask {
-  -webkit-mask-image: linear-gradient(
-    90deg,
-    transparent,
-    #000 8%,
-    #000 92%,
-    transparent
-  );
-  mask-image: linear-gradient(
-    90deg,
-    transparent,
-    #000 8%,
-    #000 92%,
-    transparent
-  );
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
 }
 .marquee-wrap:hover .marquee-track {
   animation-play-state: paused;
@@ -252,14 +235,14 @@ body::before {
 .theme-toggle-icon-dark {
   display: none;
 }
-:root[data-theme="dark"] .theme-toggle-icon-light {
+:root[data-theme='dark'] .theme-toggle-icon-light {
   display: none;
 }
-:root[data-theme="dark"] .theme-toggle-icon-dark {
+:root[data-theme='dark'] .theme-toggle-icon-dark {
   display: block;
 }
 
-.cursor-highlight[data-visible="true"] {
+.cursor-highlight[data-visible='true'] {
   opacity: 1;
 }
 @media (pointer: coarse), (prefers-reduced-motion: reduce) {

@@ -1,46 +1,43 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-import { ThemeToggle } from "./theme-toggle";
+import { ThemeToggle } from './theme-toggle';
 
 const links = [
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Work", href: "#work" },
-  { label: "Experience", href: "#experience" },
+  { label: 'About', href: '#about' },
+  { label: 'Services', href: '#services' },
+  { label: 'Work', href: '#work' },
+  { label: 'Experience', href: '#experience' },
 ];
 
 export function SiteNav() {
   const [scrolled, setScrolled] = useState(false);
-  const [active, setActive] = useState<string>("");
+  const [active, setActive] = useState<string>('');
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   useEffect(() => {
-    const ids = [...links.map((l) => l.href.slice(1)), "contact"];
+    const ids = [...links.map((l) => l.href.slice(1)), 'contact'];
 
     const onScroll = () => {
       if (window.scrollY < 120) {
-        setActive("");
+        setActive('');
         return;
       }
 
-      if (
-        window.innerHeight + window.scrollY >=
-        document.documentElement.scrollHeight - 4
-      ) {
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
         setActive(`#${ids[ids.length - 1]}`);
         return;
       }
 
-      let current = "";
+      let current = '';
       for (const id of ids) {
         const el = document.getElementById(id);
         if (el && el.getBoundingClientRect().top <= 130) {
@@ -51,18 +48,18 @@ export function SiteNav() {
     };
 
     onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
     return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
     };
   }, []);
 
   const goTop = (e: React.MouseEvent) => {
     e.preventDefault();
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    history.replaceState(null, "", "#page-top");
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    history.replaceState(null, '', '#page-top');
     setOpen(false);
   };
 
@@ -70,17 +67,10 @@ export function SiteNav() {
     <header className="pointer-events-none fixed inset-x-0 top-0 z-50 flex justify-center px-3 pt-3 sm:pt-4">
       <nav
         className={`pointer-events-auto flex w-full max-w-[1320px] items-center justify-between gap-2 rounded-2xl border px-3 py-2 transition-all duration-300 sm:px-4 ${
-          scrolled
-            ? "border-[var(--border-card)] bg-[var(--color-page-soft)]/80 shadow-[0_10px_40px_-24px_var(--shadow-strong)] backdrop-blur-xl"
-            : "border-transparent bg-transparent"
+          scrolled ? 'border-[var(--border-card)] bg-[var(--color-page-soft)]/80 shadow-[0_10px_40px_-24px_var(--shadow-strong)] backdrop-blur-xl' : 'border-transparent bg-transparent'
         }`}
       >
-        <a
-          href="#page-top"
-          onClick={goTop}
-          aria-label="Mehfooz-ur-Rehman — home"
-          className="group flex items-center gap-2.5"
-        >
+        <a href="#page-top" onClick={goTop} aria-label="Mehfooz-ur-Rehman — home" className="group flex items-center gap-2.5">
           <span className="grid size-9 place-items-center">
             <svg viewBox="0 0 169 168" className="size-9" fill="none" aria-hidden="true">
               <path
@@ -95,9 +85,7 @@ export function SiteNav() {
               />
             </svg>
           </span>
-          <span className="hidden font-mono-label text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-[var(--color-text)] sm:block">
-            Mehfooz
-          </span>
+          <span className="hidden font-mono-label text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-[var(--color-text)] sm:block">Mehfooz</span>
         </a>
 
         <div className="hidden items-center gap-1 md:flex">
@@ -106,9 +94,7 @@ export function SiteNav() {
               key={link.href}
               href={link.href}
               className={`rounded-full px-3.5 py-2 font-mono-label text-[0.7rem] font-semibold uppercase tracking-[0.14em] transition ${
-                active === link.href
-                  ? "bg-[var(--color-field)] text-[var(--color-accent)]"
-                  : "text-[var(--color-muted)] hover:text-[var(--color-text)]"
+                active === link.href ? 'bg-[var(--color-field)] text-[var(--color-accent)]' : 'text-[var(--color-muted)] hover:text-[var(--color-text)]'
               }`}
             >
               {link.label}
@@ -132,15 +118,9 @@ export function SiteNav() {
             className="grid size-9 place-items-center rounded-full border border-[var(--border-card)] text-[var(--color-text)] transition hover:border-[var(--border-hover)] md:hidden"
           >
             <span className="relative block h-3 w-4">
-              <span
-                className={`absolute left-0 h-0.5 w-4 bg-current transition-all ${open ? "top-1.5 rotate-45" : "top-0"}`}
-              />
-              <span
-                className={`absolute left-0 top-1.5 h-0.5 w-4 bg-current transition-all ${open ? "opacity-0" : "opacity-100"}`}
-              />
-              <span
-                className={`absolute left-0 h-0.5 w-4 bg-current transition-all ${open ? "top-1.5 -rotate-45" : "top-3"}`}
-              />
+              <span className={`absolute left-0 h-0.5 w-4 bg-current transition-all ${open ? 'top-1.5 rotate-45' : 'top-0'}`} />
+              <span className={`absolute left-0 top-1.5 h-0.5 w-4 bg-current transition-all ${open ? 'opacity-0' : 'opacity-100'}`} />
+              <span className={`absolute left-0 h-0.5 w-4 bg-current transition-all ${open ? 'top-1.5 -rotate-45' : 'top-3'}`} />
             </span>
           </button>
         </div>
@@ -148,12 +128,10 @@ export function SiteNav() {
 
       <div
         className={`pointer-events-auto fixed inset-x-3 top-[68px] z-40 origin-top rounded-2xl border border-[var(--border-card)] bg-[var(--color-page-soft)]/95 p-2 shadow-[0_20px_60px_-30px_var(--shadow-strong)] backdrop-blur-xl transition-all duration-200 md:hidden ${
-          open
-            ? "scale-100 opacity-100"
-            : "pointer-events-none scale-95 opacity-0"
+          open ? 'scale-100 opacity-100' : 'pointer-events-none scale-95 opacity-0'
         }`}
       >
-        {[...links, { label: "Contact", href: "#contact" }].map((link) => (
+        {[...links, { label: 'Contact', href: '#contact' }].map((link) => (
           <a
             key={link.href}
             href={link.href}
