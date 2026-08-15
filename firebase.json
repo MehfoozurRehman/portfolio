@@ -8,21 +8,15 @@
       "headers": [
         {
           "source": "**/*.@(html|json)",
-          "headers": [
-            { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
-          ]
+          "headers": [{ "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }]
         },
         {
           "source": "/**",
-          "headers": [
-            { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
-          ]
+          "headers": [{ "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }]
         },
         {
           "source": "_next/static/**",
-          "headers": [
-            { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
-          ]
+          "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
         }
       ],
       "trailingSlash": false
@@ -35,21 +29,15 @@
       "headers": [
         {
           "source": "**/*.@(html|json)",
-          "headers": [
-            { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
-          ]
+          "headers": [{ "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }]
         },
         {
           "source": "/**",
-          "headers": [
-            { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
-          ]
+          "headers": [{ "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }]
         },
         {
           "source": "_next/static/**",
-          "headers": [
-            { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
-          ]
+          "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
         }
       ],
       "trailingSlash": false

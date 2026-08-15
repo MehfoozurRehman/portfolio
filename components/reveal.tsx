@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from 'react';
 
-import type { ElementType, ReactNode } from "react";
+import type { ElementType, ReactNode } from 'react';
 
 type RevealProps = {
   children: ReactNode;
@@ -12,14 +12,8 @@ type RevealProps = {
   id?: string;
 };
 
-export function Reveal({
-  children,
-  as,
-  className = "",
-  delay = 0,
-  id,
-}: RevealProps) {
-  const Tag = (as ?? "div") as ElementType;
+export function Reveal({ children, as, className = '', delay = 0, id }: RevealProps) {
+  const Tag = (as ?? 'div') as ElementType;
   const ref = useRef<HTMLElement | null>(null);
   const [shown, setShown] = useState(false);
 
@@ -27,10 +21,7 @@ export function Reveal({
     const node = ref.current;
     if (!node) return;
 
-    if (
-      typeof window !== "undefined" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
+    if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       setShown(true);
       return;
     }
@@ -44,7 +35,7 @@ export function Reveal({
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
+      { threshold: 0.12, rootMargin: '0px 0px -8% 0px' },
     );
 
     observer.observe(node);
@@ -52,13 +43,7 @@ export function Reveal({
   }, []);
 
   return (
-    <Tag
-      id={id}
-      ref={ref}
-      className={`reveal ${className}`}
-      data-shown={shown}
-      style={delay ? { transitionDelay: `${delay}ms` } : undefined}
-    >
+    <Tag id={id} ref={ref} className={`reveal ${className}`} data-shown={shown} style={delay ? { transitionDelay: `${delay}ms` } : undefined}>
       {children}
     </Tag>
   );
