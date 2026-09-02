@@ -75,7 +75,7 @@ export type Education = {
 export const profile = {
   name: 'Mehfooz-ur-Rehman',
   role: 'Full-Stack Product Engineer & Founder',
-  company: 'Karobari',
+  company: 'Devscot',
   location: 'Faisalabad / Samundri, Punjab, Pakistan',
   email: 'mehfoozijaz786@gmail.com',
   phone: '+92 313 7178074',
