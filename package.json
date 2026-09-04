@@ -11,18 +11,18 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
-    "lucide-react": "^1.35.0",
+    "lucide-react": "^1.40.0",
     "next": "16.3.3",
-    "pdfkit": "^0.20.1",
+    "pdfkit": "^0.20.2",
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "react-github-calendar": "^5.0.9"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.3",
-    "@types/node": "^26.4.0",
+    "@types/node": "^26.4.1",
     "@types/react": "^19.2.18",
-    "@types/react-dom": "^19.2.5",
+    "@types/react-dom": "^19.2.7",
     "sharp": "^0.35.4",
     "tailwindcss": "^4.3.3",
     "typescript": "^5.9.3"
