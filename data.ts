@@ -74,7 +74,7 @@ export type Education = {
 
 export const profile = {
   name: 'Mehfooz-ur-Rehman',
-  role: 'Full-Stack Product Engineer & Founder',
+  role: 'Lead Full-Stack Product Engineer',
   company: 'Devscot',
   location: 'Faisalabad / Samundri, Punjab, Pakistan',
   email: 'mehfoozijaz786@gmail.com',
@@ -85,10 +85,10 @@ export const profile = {
   instagram: 'https://www.instagram.com/mehfoozurrehman___/',
   facebook: 'https://www.facebook.com/MehfoozurRehmanIjaz/',
   codesandbox: 'https://codesandbox.io/u/MehfoozurRehman',
-  headline: 'Full-Stack Product Engineer with 6+ years shipping Web, Mobile, Desktop, AI and conversational business engines.',
-  subheadline: 'Creator of Karobari — enabling Pakistani merchants and local businesses to create an automated digital store and manage multi-channel commerce with nothing but WhatsApp voice notes and text in Urdu or English.',
+  headline: 'Lead Full-Stack Product Engineer with 6+ years shipping Web, Mobile, Desktop, Real-Time Cloud and Enterprise SaaS systems.',
+  subheadline: 'Leading product engineering at Devscot — architecting high-concurrency SaaS platforms, real-time reactive systems, cross-platform mobile apps, and enterprise client software.',
   about:
-    'With over 6 years of hands-on engineering inside software houses and fast-moving product teams, I bridge deep technical execution with real commercial empathy. Having built enterprise ERPs, cross-platform mobile apps, 3D geospatial platforms, and real-time AI tools, I am now focused on solving the fundamental commerce bottleneck for Pakistani businesses: giving any physical store an automated digital identity and selling engine operated entirely through WhatsApp.',
+    'With over 6 years of hands-on engineering experience, I lead full-stack product development at Devscot, architecting production web, mobile, and real-time cloud systems. I combine deep technical execution with high-velocity product delivery—specializing in scalable enterprise SaaS, cross-platform apps, real-time reactive databases (Convex), and automation infrastructure.',
 } as const;
 
 export const services: Service[] = [
@@ -255,20 +255,12 @@ export const profileHighlights = [
 
 export const experience: Experience[] = [
   {
-    role: 'Founder & Lead Architect',
-    company: 'Karobari',
-    period: '2025 - Present',
-    location: 'Pakistan · Remote',
-    summary: 'Spearheading the AI business operating system that empowers Pakistani merchants to create digital stores, track inventory, and sell online exclusively through WhatsApp voice notes and text.',
-    skills: ['Next.js 16', 'React 19', 'Convex', 'OpenAI Agents', 'WhatsApp Cloud API', 'Product Leadership'],
-  },
-  {
     role: 'Lead Full-Stack Product Developer',
     company: 'Devscot',
-    period: 'Dec 2020 - Present (4+ Years)',
+    period: 'Dec 2020 - Present (5+ Years)',
     location: 'Samundri / Faisalabad, Pakistan · Hybrid',
-    summary: 'Leading full-stack engineering and product architecture across flagship SaaS platforms, mobile apps, and custom client software. Designed multi-tenant backends, real-time dashboards, and automation engines used daily by enterprise clients.',
-    skills: ['Next.js', 'React.js', 'React Native', 'Node.js', 'Product Strategy', 'System Architecture'],
+    summary: 'Leading full-stack engineering and product architecture across flagship SaaS platforms, mobile apps, and custom enterprise systems. Driving high-intensity development (12-16 hrs daily), designing multi-tenant reactive backends, real-time dashboards, and automation infrastructure used daily by enterprise clients.',
+    skills: ['Next.js 16', 'React 19', 'TypeScript', 'Convex', 'React Native', 'Node.js', 'System Architecture'],
   },
   {
     role: 'Full-Stack Developer',
@@ -277,6 +269,14 @@ export const experience: Experience[] = [
     location: 'Pakistan · Hybrid',
     summary: 'Architected and built the comprehensive Schooliee SaaS ecosystem, featuring web administration portals, teacher/parent mobile apps, automated fee challan billing, and native WhatsApp messaging gateways.',
     skills: ['Next.js', 'React Native', 'Expo', 'Convex', 'Prisma', 'WhatsApp Automation'],
+  },
+  {
+    role: 'Founder & Lead Architect',
+    company: 'Karobari',
+    period: '2025 - Present',
+    location: 'Pakistan · Remote',
+    summary: 'Spearheading the AI business operating system that empowers Pakistani merchants to create digital stores, track inventory, and sell online via WhatsApp voice notes and text.',
+    skills: ['Next.js 16', 'React 19', 'Convex', 'OpenAI Agents', 'WhatsApp Cloud API'],
   },
   {
     role: 'Full-Stack Developer',
