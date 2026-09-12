@@ -119,7 +119,7 @@ export default function Home() {
                 <div className="mt-11 grid max-w-[34rem] grid-cols-3 gap-4 border-t border-[var(--border-subtle)] pt-6">
                   {[
                     ['6+', 'Years shipping'],
-                    ['20+', 'Products built'],
+                    ['400+', 'Projects built'],
                     [profile.company, 'Currently at'],
                   ].map(([value, label]) => (
                     <div key={label}>
