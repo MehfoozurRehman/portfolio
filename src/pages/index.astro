@@ -1,0 +1,541 @@
+---
+import { Image, Picture } from 'astro:assets';
+import { ArrowDown, ArrowRight, ArrowUpRight, CodeXml, GraduationCap, Mail, MapPin, MessageCircle, Phone } from '@lucide/astro';
+import { education, experience, process, profile, profileHighlights, projects, services, stack, testimonials } from '../data';
+import Base from '../layouts/Base.astro';
+import SiteNav from '../components/SiteNav.astro';
+import SectionMarker from '../components/SectionMarker.astro';
+import GitHubActivity from '../components/GitHubActivity.astro';
+import ContactForm from '../islands/contact-form';
+import pic from '../assets/pic.webp';
+
+const shell = 'mx-auto w-full max-w-[1320px] px-5 sm:px-8 lg:px-10';
+const display = 'font-[family-name:var(--font-nunito)] font-extrabold leading-[0.98] tracking-[-0.01em]';
+const delay = (ms: number) => (ms ? `transition-delay:${ms}ms;animation-delay:${ms}ms` : undefined);
+
+const contactRows = [
+  { icon: Mail, label: profile.email, href: `mailto:${profile.email}` },
+  { icon: MessageCircle, label: `WhatsApp · ${profile.phone}`, href: profile.whatsapp },
+  { icon: Phone, label: profile.phone, href: `tel:${profile.phone.replaceAll(' ', '')}` },
+];
+const socials = [
+  ['LinkedIn', profile.linkedin],
+  ['Instagram', profile.instagram],
+  ['GitHub', profile.github],
+  ['CodeSandbox', profile.codesandbox],
+];
+const versions = [1, 2, 3, 4, 5, 6, 7].map((n) => [`v${n}`, `https://mehfoozurrehmanv${n}.web.app/`]);
+---
+
+<Base>
+  <main class="relative min-h-screen overflow-x-hidden bg-[var(--color-page)] text-[var(--color-text)]">
+    <div id="page-top" aria-hidden="true" class="absolute top-0"></div>
+    <SiteNav />
+
+    <section id="top" class="relative flex min-h-svh flex-col overflow-hidden pt-28 sm:pt-32">
+      <div class="halo -left-[10%] -top-[10%] h-[40rem] w-[40rem]" style="background: var(--halo-a)"></div>
+      <div class="halo -right-[8%] top-[20%] h-[32rem] w-[32rem]" style="background: var(--halo-b)"></div>
+      <div
+        class="pointer-events-none absolute inset-0 z-0 opacity-70"
+        style="background-image: linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px); background-size: 64px 64px; mask-image: radial-gradient(120% 80% at 50% 0%, #000 30%, transparent 78%); -webkit-mask-image: radial-gradient(120% 80% at 50% 0%, #000 30%, transparent 78%)"
+      >
+      </div>
+
+      <div class={`${shell} relative z-10 flex flex-1 flex-col justify-center`}>
+        <div class="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
+          <div>
+            <div class="hero-in">
+              <span class="inline-flex items-center gap-2 rounded-full border border-[var(--border-card)] bg-[var(--color-field)] px-3 py-1.5 font-mono-label text-[0.66rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-text)]">
+                <span class="relative flex size-2">
+                  <span class="absolute inline-flex size-full animate-ping rounded-full bg-[var(--color-accent-2)] opacity-70"></span>
+                  <span class="relative inline-flex size-2 rounded-full bg-[var(--color-accent-2)]"></span>
+                </span>
+                Available for product builds
+              </span>
+            </div>
+
+            <div class="hero-in" style={delay(60)}>
+              <h1 class={`${display} mt-6 text-[clamp(2.1rem,5.6vw,4.3rem)]`}>
+                Products built
+                <br />
+                from{' '}
+                <span class="relative whitespace-nowrap text-[var(--color-accent)]">
+                  idea
+                  <svg class="absolute -bottom-0.5 left-0 w-full" viewBox="0 0 200 12" fill="none" preserveAspectRatio="none" aria-hidden="true">
+                    <path d="M2 8c40-6 158-6 196 0" stroke="var(--color-accent)" stroke-width="3" stroke-linecap="round"></path>
+                  </svg>
+                </span>{' '}
+                to launch.
+              </h1>
+            </div>
+
+            <div class="hero-in" style={delay(120)}>
+              <p class="mt-7 max-w-[36rem] text-[1rem] leading-8 text-[var(--color-muted)] sm:text-[1.06rem]">
+                I'm <span class="font-bold text-[var(--color-text)]">Mehfooz-ur-Rehman</span> — a full-stack product developer shipping web, mobile, desktop, AI and automation systems that businesses
+                rely on every day.
+              </p>
+            </div>
+
+            <div class="hero-in" style={delay(180)}>
+              <div class="mt-9 flex flex-wrap items-center gap-3">
+                <a
+                  href="#contact"
+                  class="group inline-flex min-h-12 items-center gap-2 rounded-full bg-[var(--color-accent)] px-6 text-[0.9rem] font-bold text-[var(--color-on-accent)] shadow-lg shadow-[color:var(--shadow-accent)] transition hover:shadow-xl"
+                >
+                  Let's build
+                  <ArrowRight size={17} class="transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+                </a>
+                <a
+                  href="/cv.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="inline-flex min-h-12 items-center gap-2 rounded-full border border-[var(--border-card)] bg-[var(--color-field)] px-5 text-[0.9rem] font-bold text-[var(--color-text)] transition hover:border-[var(--border-hover)] hover:text-[var(--color-accent)]"
+                >
+                  Download CV
+                  <ArrowUpRight size={17} aria-hidden="true" />
+                </a>
+                <a
+                  href={profile.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  class="inline-flex min-h-12 items-center gap-2 rounded-full border border-[var(--border-card)] px-5 text-[0.9rem] font-bold text-[var(--color-text)] transition hover:border-[var(--border-hover)] hover:text-[var(--color-accent)]"
+                >
+                  <CodeXml size={17} aria-hidden="true" /> GitHub
+                </a>
+              </div>
+            </div>
+
+            <div class="hero-in" style={delay(240)}>
+              <div class="mt-11 grid max-w-[34rem] grid-cols-3 gap-4 border-t border-[var(--border-subtle)] pt-6">
+                {
+                  [
+                    ['6+', 'Years shipping'],
+                    ['400+', 'Projects built'],
+                    [profile.company, 'Currently at'],
+                  ].map(([value, label]) => (
+                    <div>
+                      <div class={`${display} text-[clamp(1.3rem,2.4vw,1.9rem)]`}>{value}</div>
+                      <div class="mt-1 font-mono-label text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-soft)]">{label}</div>
+                    </div>
+                  ))
+                }
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-in relative mx-auto w-full max-w-[28.5rem]" style={delay(140)}>
+            <div class="relative">
+              <div class="absolute -inset-3 -z-10 rounded-[2rem] bg-gradient-to-br from-[var(--color-accent)]/25 to-[var(--color-accent-2)]/20 blur-2xl"></div>
+              <div class="overflow-hidden rounded-[1.7rem] border border-[var(--border-card)] bg-[var(--color-raise)] shadow-[0_30px_80px_-40px_var(--shadow-strong)]">
+                <div class="relative aspect-[4/5] w-full overflow-hidden">
+                  <Picture
+                    src={pic}
+                    alt="Portrait of Mehfooz-ur-Rehman"
+                    formats={["avif", "webp"]}
+                    fallbackFormat="webp"
+                    widths={[420, 640, 840]}
+                    sizes="(max-width: 1024px) 90vw, 420px"
+                    loading="eager"
+                    fetchpriority="high"
+                    decoding="sync"
+                    class="absolute inset-0 size-full object-cover object-center"
+                  />
+                  <div class="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black/55 to-transparent"></div>
+                  <div class="absolute inset-x-4 bottom-4 flex items-center justify-between">
+                    <div>
+                      <div class="font-mono-label text-[0.6rem] font-semibold uppercase tracking-[0.18em] text-white/70">{profile.role}</div>
+                      <div class="mt-0.5 text-[0.95rem] font-extrabold text-white">Web · Mobile · AI</div>
+                    </div>
+                    <a
+                      href="#work"
+                      aria-label="View work"
+                      class="grid size-11 place-items-center rounded-full bg-white/95 text-[#17140f] transition hover:bg-[var(--color-accent)] hover:text-white"
+                    >
+                      <ArrowUpRight size={19} aria-hidden="true" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="absolute -left-4 top-8 hidden rounded-2xl border border-[var(--border-card)] bg-[var(--color-page-soft)]/90 px-3.5 py-2.5 shadow-lg shadow-[color:var(--shadow-ambient)] backdrop-blur-md sm:block">
+                <div class="font-mono-label text-[0.58rem] font-semibold uppercase tracking-[0.16em] text-[var(--color-soft)]">Stack</div>
+                <div class="text-[0.82rem] font-bold text-[var(--color-text)]">Next · Convex · AI</div>
+              </div>
+              <div class="absolute -right-3 bottom-16 hidden items-center gap-2 rounded-2xl border border-[var(--border-card)] bg-[var(--color-page-soft)]/90 px-3.5 py-2.5 shadow-lg shadow-[color:var(--shadow-ambient)] backdrop-blur-md sm:flex">
+                <MapPin size={14} class="text-[var(--color-accent)]" aria-hidden="true" />
+                <span class="text-[0.78rem] font-bold text-[var(--color-text)]">Faisalabad, PK</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 flex items-center gap-3 font-mono-label text-[0.64rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-soft)]">
+          <ArrowDown size={14} class="animate-bounce" aria-hidden="true" />
+          Scroll to explore
+        </div>
+      </div>
+
+      <div class="marquee-wrap marquee-mask relative z-10 mt-12 overflow-hidden border-y border-[var(--border-subtle)] bg-[var(--color-page-soft)] py-4 sm:mt-16" aria-label="Technologies I use">
+        <div class="marquee-track">
+          {
+            [0, 1].map((copy) => (
+              <div class="flex" aria-hidden={copy === 1 ? 'true' : undefined}>
+                {stack.map((item) => (
+                  <span class="flex items-center gap-6 whitespace-nowrap pr-6 font-mono-label text-[0.9rem] font-semibold uppercase tracking-[0.12em] text-[var(--color-muted)]">
+                    {item}
+                    <span class="text-[var(--color-accent)]">✦</span>
+                  </span>
+                ))}
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class={`${shell} py-14 sm:py-20`}>
+      <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+        <div class="reveal">
+          <SectionMarker index="01" label="Profile" />
+          <h2 class={`${display} text-[clamp(1.55rem,2.9vw,2.35rem)]`}>A product developer with real, practical range.</h2>
+          <p class="mt-6 text-[0.98rem] leading-8 text-[var(--color-muted)]">{profile.about}</p>
+          <p class="mt-4 text-[0.98rem] leading-8 text-[var(--color-muted)]">{profile.subheadline}</p>
+        </div>
+
+        <div class="grid gap-3 sm:grid-cols-2">
+          {
+            profileHighlights.map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <article class="reveal card-hover flex flex-col rounded-2xl border border-[var(--border-card)] bg-[var(--color-raise)] p-6" style={delay(i * 70)}>
+                  <span class="grid size-11 place-items-center rounded-xl bg-[var(--color-accent)]/10 text-[var(--color-accent)]">
+                    <Icon size={22} aria-hidden="true" />
+                  </span>
+                  <h3 class="mt-5 text-[1.05rem] font-extrabold leading-tight">{item.title}</h3>
+                  <p class="mt-2 text-[0.9rem] leading-7 text-[var(--color-muted)]">{item.text}</p>
+                </article>
+              );
+            })
+          }
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="border-y border-[var(--border-subtle)] bg-[var(--color-page-soft)]">
+      <div class={`${shell} py-14 sm:py-20`}>
+        <div class="reveal">
+          <SectionMarker index="02" label="What I build" />
+          <div class="grid gap-6 lg:grid-cols-[1fr_1fr] lg:items-end">
+            <h2 class={`${display} text-[clamp(1.55rem,2.9vw,2.35rem)]`}>Complete business systems, not isolated screens.</h2>
+            <p class="text-[0.96rem] leading-8 text-[var(--color-muted)]">
+              I build the workflows around the screen too: data, roles, automation, integrations and the launch details that make software actually usable.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12 divide-y divide-[var(--border-subtle)] border-t border-[var(--border-subtle)]">
+          {
+            services.map((service, i) => {
+              const Icon = service.icon;
+              return (
+                <article class="reveal group grid grid-cols-[auto_1fr] items-start gap-5 py-7 transition sm:grid-cols-[auto_0.4fr_1fr] sm:items-center sm:gap-8">
+                  <span class="font-mono-label text-[0.72rem] font-semibold text-[var(--color-soft)]">0{i + 1}</span>
+                  <div class="flex items-center gap-4">
+                    <span class="grid size-12 shrink-0 place-items-center rounded-xl border border-[var(--border-card)] bg-[var(--color-raise)] text-[var(--color-accent)] transition group-hover:border-[var(--border-hover)]">
+                      <Icon size={22} aria-hidden="true" />
+                    </span>
+                    <h3 class="text-[1.2rem] font-extrabold leading-tight transition group-hover:text-[var(--color-accent)]">{service.title}</h3>
+                  </div>
+                  <p class="col-span-2 text-[0.92rem] leading-7 text-[var(--color-muted)] sm:col-span-1">{service.description}</p>
+                </article>
+              );
+            })
+          }
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class={`${shell} py-14 sm:py-20`}>
+      <div class="reveal">
+        <SectionMarker index="03" label="Featured work" />
+        <h2 class={`${display} max-w-2xl text-[clamp(1.55rem,2.9vw,2.35rem)]`}>Products shaped around operations, revenue and daily use.</h2>
+      </div>
+
+      <div class="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        {
+          projects.map((project, i) => {
+            const Icon = project.icon;
+            return (
+              <article class="reveal card-hover group flex flex-col overflow-hidden rounded-2xl border border-[var(--border-card)] bg-[var(--color-raise)]" style={delay((i % 3) * 60)}>
+                {project.hero ? (
+                  <div class="relative aspect-[16/10] w-full overflow-hidden bg-[var(--color-page-soft)]">
+                    <Image
+                      src={project.hero}
+                      alt={`${project.title} preview`}
+                      widths={[400, 640, 800]}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                      loading="lazy"
+                      decoding="async"
+                      class="absolute inset-0 size-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent opacity-0 transition group-hover:opacity-100" />
+                  </div>
+                ) : (
+                  <div class="relative flex aspect-[16/10] w-full items-center justify-center overflow-hidden bg-gradient-to-br from-[var(--color-accent)]/12 to-[var(--color-accent-2)]/10">
+                    <Icon size={44} class="text-[var(--color-accent)] opacity-80" aria-hidden="true" />
+                  </div>
+                )}
+
+                <div class="flex flex-1 flex-col p-5">
+                  <div class="mb-3 flex items-center gap-2.5">
+                    {project.logo ? (
+                      <span class="grid size-8 shrink-0 place-items-center overflow-hidden rounded-lg border border-[var(--border-subtle)] bg-[var(--color-page)]">
+                        <Image src={project.logo} alt="" width={40} height={40} class="size-5 object-contain" aria-hidden="true" />
+                      </span>
+                    ) : null}
+                    <span class="font-mono-label text-[0.6rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-soft)]">{project.category}</span>
+                  </div>
+
+                  <h3 class="text-[1.25rem] font-extrabold leading-tight">{project.title}</h3>
+                  <p class="mt-2.5 text-[0.88rem] leading-7 text-[var(--color-muted)]">{project.summary}</p>
+
+                  <div class="mt-4 flex flex-wrap gap-1.5">
+                    {project.stack.slice(0, 4).map((s) => (
+                      <span class="rounded-md border border-[var(--border-subtle)] bg-[var(--color-page)] px-2 py-1 font-mono-label text-[0.62rem] font-semibold tracking-[0.04em] text-[var(--color-muted)]">{s}</span>
+                    ))}
+                  </div>
+
+                  <div class="mt-auto flex items-center gap-2 pt-6">
+                    <a
+                      href={`/case-studies/${project.slug}`}
+                      data-astro-prefetch="hover"
+                      class="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-[var(--border-card)] px-4 py-2.5 text-[0.78rem] font-bold text-[var(--color-text)] transition hover:border-[var(--border-hover)] hover:text-[var(--color-accent)]"
+                    >
+                      Case study
+                      <ArrowRight size={14} aria-hidden="true" />
+                    </a>
+                    {project.url ? (
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`Visit ${project.title}`}
+                        class="grid size-10 shrink-0 place-items-center rounded-full bg-[var(--color-inverse)] text-[var(--color-inverse-text)] transition hover:bg-[var(--color-accent)] hover:text-[var(--color-on-accent)]"
+                      >
+                        <ArrowUpRight size={16} aria-hidden="true" />
+                      </a>
+                    ) : null}
+                  </div>
+                </div>
+              </article>
+            );
+          })
+        }
+      </div>
+    </section>
+
+    <GitHubActivity />
+
+    <section id="experience" class="border-y border-[var(--border-subtle)] bg-[var(--color-page-soft)]">
+      <div class={`${shell} py-14 sm:py-20`}>
+        <div class="reveal">
+          <SectionMarker index="04" label="Experience" />
+          <h2 class={`${display} max-w-2xl text-[clamp(1.55rem,2.9vw,2.35rem)]`}>Work across schools, SaaS teams and business systems.</h2>
+        </div>
+
+        <div class="mt-12 border-l border-[var(--border-card)] pl-6 sm:pl-8">
+          {
+            experience.map((item, i) => (
+              <article class="reveal relative pb-10 last:pb-0" style={delay(i * 50)}>
+                <span class="absolute -left-[calc(1.5rem+5px)] top-1.5 grid size-2.5 place-items-center rounded-full bg-[var(--color-accent)] ring-4 ring-[var(--color-page-soft)] sm:-left-[calc(2rem+5px)]" />
+                <div class="font-mono-label text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-accent)]">{item.period}</div>
+                <h3 class="mt-2 text-[1.2rem] font-extrabold leading-tight">{item.role}</h3>
+                <p class="mt-1 text-[0.92rem] font-bold text-[var(--color-soft)]">
+                  {item.company} · {item.location}
+                </p>
+                <p class="mt-3 max-w-2xl text-[0.92rem] leading-7 text-[var(--color-muted)]">{item.summary}</p>
+                <div class="mt-4 flex flex-wrap gap-1.5">
+                  {item.skills.map((skill) => (
+                    <span class="rounded-md border border-[var(--border-subtle)] bg-[var(--color-raise)] px-2.5 py-1 font-mono-label text-[0.64rem] font-semibold text-[var(--color-muted)]">{skill}</span>
+                  ))}
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class={`${shell} py-14 sm:py-20`}>
+      <div class="reveal">
+        <SectionMarker index="05" label="How I work" />
+        <h2 class={`${display} max-w-2xl text-[clamp(1.55rem,2.9vw,2.35rem)]`}>A direct path from workflow to working software.</h2>
+      </div>
+      <div class="mt-12 grid gap-4 md:grid-cols-3">
+        {
+          process.map((item, i) => {
+            const Icon = item.icon;
+            return (
+              <article class="reveal card-hover relative overflow-hidden rounded-2xl border border-[var(--border-card)] bg-[var(--color-raise)] p-6" style={delay(i * 70)}>
+                <span class={`${display} absolute -right-2 -top-3 text-[5rem] text-[var(--color-text)] opacity-[0.05]`} aria-hidden="true">{i + 1}</span>
+                <span class="grid size-11 place-items-center rounded-xl bg-[var(--color-accent)]/10 text-[var(--color-accent)]">
+                  <Icon size={22} aria-hidden="true" />
+                </span>
+                <h3 class="mt-5 text-[1.1rem] font-extrabold leading-tight">{item.title}</h3>
+                <p class="mt-2 text-[0.9rem] leading-7 text-[var(--color-muted)]">{item.text}</p>
+              </article>
+            );
+          })
+        }
+      </div>
+    </section>
+
+    <section id="education" class="border-t border-[var(--border-subtle)] bg-[var(--color-page-soft)]">
+      <div class={`${shell} grid gap-12 py-14 sm:py-20 lg:grid-cols-2 lg:gap-16`}>
+        <div class="reveal">
+          <SectionMarker index="06" label="Education" />
+          {
+            education.map((item) => (
+              <article class="rounded-2xl border border-[var(--border-card)] bg-[var(--color-raise)] p-6">
+                <div class="flex items-start gap-4">
+                  <span class="grid size-12 shrink-0 place-items-center rounded-xl bg-[var(--color-inverse)] text-[var(--color-inverse-text)]">
+                    <GraduationCap size={22} aria-hidden="true" />
+                  </span>
+                  <div>
+                    <h3 class="text-[1.12rem] font-extrabold leading-tight">{item.school}</h3>
+                    <p class="mt-1 text-[0.9rem] text-[var(--color-muted)]">{item.degree}</p>
+                    <p class="mt-2 font-mono-label text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-accent)]">{item.period}</p>
+                  </div>
+                </div>
+                <div class="mt-5 flex flex-wrap gap-1.5">
+                  {item.focus.map((f) => (
+                    <span class="rounded-md border border-[var(--border-subtle)] bg-[var(--color-page)] px-2.5 py-1 font-mono-label text-[0.64rem] font-semibold text-[var(--color-muted)]">{f}</span>
+                  ))}
+                </div>
+              </article>
+            ))
+          }
+        </div>
+
+        <div class="reveal" style={delay(80)}>
+          <SectionMarker index="07" label="Toolkit" />
+          <h3 class={`${display} text-[1.4rem]`}>Modern tools I already use to ship.</h3>
+          <ul class="mt-6 flex flex-wrap gap-2">
+            {
+              stack.map((item) => (
+                <li class="rounded-full border border-[var(--border-card)] bg-[var(--color-raise)] px-3.5 py-2 font-mono-label text-[0.72rem] font-semibold text-[var(--color-text)] transition hover:border-[var(--border-hover)] hover:text-[var(--color-accent)]">{item}</li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class={`${shell} py-14 sm:py-20`}>
+      <div class="reveal">
+        <SectionMarker index="08" label="Testimonials" />
+        <h2 class={`${display} max-w-2xl text-[clamp(1.55rem,2.9vw,2.35rem)]`}>What clients and teammates already say.</h2>
+      </div>
+      <div class="mt-12 grid gap-4 lg:grid-cols-3">
+        {
+          testimonials.map((t, i) => (
+            <blockquote class="reveal card-hover flex flex-col rounded-2xl border border-[var(--border-card)] bg-[var(--color-raise)] p-6" style={delay(i * 70)}>
+              <span class={`${display} text-[3rem] leading-none text-[var(--color-accent)]/30`} aria-hidden="true">&ldquo;</span>
+              <p class="-mt-3 text-[1.02rem] font-bold leading-8 text-[var(--color-text)]">{t.quote}</p>
+              <footer class="mt-6 flex items-center gap-3 border-t border-[var(--border-subtle)] pt-5">
+                <span class="grid size-10 place-items-center rounded-full bg-[var(--color-accent)]/12 font-extrabold text-[var(--color-accent)]" aria-hidden="true">{t.name.charAt(0)}</span>
+                <span>
+                  <span class="block text-[0.9rem] font-extrabold">{t.name}</span>
+                  <span class="block text-[0.8rem] text-[var(--color-muted)]">{t.role}</span>
+                </span>
+              </footer>
+            </blockquote>
+          ))
+        }
+      </div>
+    </section>
+
+    <section id="contact" class="relative overflow-hidden border-t border-[var(--border-subtle)] bg-[var(--color-page-soft)]">
+      <div class="halo -bottom-[20%] left-[10%] h-[30rem] w-[30rem]" style="background: var(--halo-a)"></div>
+      <div class={`${shell} relative z-10 grid items-center gap-12 py-14 sm:py-20 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16`}>
+        <div class="reveal">
+          <SectionMarker index="09" label="Start here" />
+          <h2 class={`${display} text-[clamp(1.7rem,3.1vw,2.55rem)]`}>Need a reliable developer to build your product?</h2>
+          <p class="mt-6 max-w-xl text-[0.98rem] leading-8 text-[var(--color-muted)]">
+            Send the workflow, product idea or stuck project. I'm strongest when the job needs product thinking, full-stack execution and a practical launch path.
+          </p>
+
+          <div class="mt-8 grid gap-2.5">
+            {
+              contactRows.map((row) => {
+                const Icon = row.icon;
+                return (
+                  <a href={row.href} class="card-hover flex items-center gap-3 rounded-xl border border-[var(--border-card)] bg-[var(--color-raise)] px-4 py-3.5 text-[0.9rem] font-bold text-[var(--color-text)]">
+                    <span class="grid size-9 place-items-center rounded-lg bg-[var(--color-accent)]/10 text-[var(--color-accent)]">
+                      <Icon size={16} aria-hidden="true" />
+                    </span>
+                    {row.label}
+                    <ArrowUpRight size={15} class="ml-auto text-[var(--color-soft)]" aria-hidden="true" />
+                  </a>
+                );
+              })
+            }
+          </div>
+
+          <div class="mt-6 flex flex-wrap gap-2">
+            {
+              socials.map(([label, href]) => (
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  class="inline-flex items-center gap-1.5 rounded-full border border-[var(--border-card)] px-3.5 py-2 font-mono-label text-[0.68rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-text)] transition hover:border-[var(--border-hover)] hover:text-[var(--color-accent)]"
+                >
+                  {label}
+                  <ArrowUpRight size={13} aria-hidden="true" />
+                </a>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="reveal" style={delay(80)}>
+          <ContactForm client:visible />
+        </div>
+      </div>
+    </section>
+
+    <footer class="border-t border-[var(--border-hairline)] bg-[var(--color-page)]">
+      <div class={`${shell} py-8`}>
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <p class="font-mono-label text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[var(--color-soft)]">Portfolio versions</p>
+          <div class="flex flex-wrap gap-1.5">
+            {
+              versions.map(([label, href]) => (
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  class="inline-flex items-center gap-1 rounded-full border border-[var(--border-subtle)] px-2.5 py-1 font-mono-label text-[0.66rem] font-semibold text-[var(--color-text)] transition hover:border-[var(--border-hover)] hover:text-[var(--color-accent)]"
+                >
+                  {label}
+                  <ArrowUpRight size={12} aria-hidden="true" />
+                </a>
+              ))
+            }
+          </div>
+        </div>
+        <p class="mt-5 border-t border-[var(--border-subtle)] pt-5 text-[0.72rem] text-[var(--color-muted)]">
+          © {new Date().getFullYear()} Mehfoozur Rehman. source on{' '}
+          <a
+            href="https://github.com/MehfoozurRehman/portfolio"
+            target="_blank"
+            rel="noreferrer"
+            class="text-[var(--color-text)] underline decoration-[var(--border-subtle)] underline-offset-4 transition hover:text-[var(--color-accent)]">GitHub</a
+          >
+          {' · '}hosted on Firebase.
+        </p>
+      </div>
+    </footer>
+  </main>
+</Base>
