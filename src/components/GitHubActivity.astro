@@ -1,0 +1,101 @@
+---
+import { getContributions, type Day } from '../lib/github';
+import { profile } from '../data';
+
+const username = 'MehfoozurRehman';
+const data = await getContributions(username);
+
+const BLOCK = 13;
+const GAP = 4;
+const STEP = BLOCK + GAP;
+const LEFT = 0;
+const TOP = 22;
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+let weeks: (Day | null)[][] = [];
+let monthLabels: { x: number; label: string }[] = [];
+
+if (data) {
+  // Group into Sunday-first weeks, padding the first week.
+  const first = new Date(data.days[0].date + 'T00:00:00Z');
+  let current: (Day | null)[] = Array(first.getUTCDay()).fill(null);
+  for (const day of data.days) {
+    current.push(day);
+    if (current.length === 7) {
+      weeks.push(current);
+      current = [];
+    }
+  }
+  if (current.length) weeks.push(current);
+
+  let lastMonth = -1;
+  weeks.forEach((week, i) => {
+    const d = week.find(Boolean);
+    if (!d) return;
+    const m = new Date(d.date + 'T00:00:00Z').getUTCMonth();
+    if (m !== lastMonth && (i === 0 || new Date(d.date + 'T00:00:00Z').getUTCDate() <= 7)) {
+      const x = LEFT + i * STEP;
+      const prev = monthLabels[monthLabels.length - 1];
+      // A partial first month would collide with the next label; drop it.
+      if (prev && x - prev.x < STEP * 3) monthLabels.pop();
+      monthLabels.push({ x, label: MONTHS[m] });
+      lastMonth = m;
+    }
+  });
+}
+
+const width = LEFT + weeks.length * STEP - GAP;
+const height = TOP + 7 * STEP - GAP;
+---
+
+<section class="mx-auto w-full max-w-[1320px] px-5 py-10 sm:px-8 sm:py-12 lg:px-10" aria-labelledby="activity-heading">
+  <div class="mb-10">
+    <div class="mb-8 flex items-center gap-3">
+      <span class="font-mono-label text-[0.68rem] font-semibold tracking-[0.2em] text-[var(--color-soft)]">✦</span>
+      <span class="h-px w-8 bg-[var(--border-card)]"></span>
+      <span class="font-mono-label text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-[var(--color-accent)]">Activity</span>
+    </div>
+    <h2 id="activity-heading" class="max-w-2xl font-[family-name:var(--font-nunito)] text-[clamp(1.55rem,2.9vw,2.35rem)] font-extrabold leading-[0.98] tracking-[-0.01em]">GitHub contributions, past year.</h2>
+  </div>
+
+  <div class="no-scrollbar w-full overflow-x-auto rounded-2xl border border-[var(--border-card)] bg-[var(--color-raise)] p-6 sm:p-8">
+    {
+      data ? (
+        <div class="gh-cal min-w-[700px] lg:min-w-0">
+          <svg viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`${data.total} GitHub contributions in the last year`} class="block h-auto w-full" style={`aspect-ratio:${width}/${height}`}>
+            {monthLabels.map((m) => (
+              <text x={m.x} y="12" font-size="11" font-family="var(--font-nunito)">{m.label}</text>
+            ))}
+            {weeks.map((week, wi) =>
+              week.map((day, di) =>
+                day ? (
+                  <rect x={LEFT + wi * STEP} y={TOP + di * STEP} width={BLOCK} height={BLOCK} rx="3" data-level={day.level}>
+                    <title>{`${day.count} contribution${day.count === 1 ? '' : 's'} on ${day.date}`}</title>
+                  </rect>
+                ) : null,
+              ),
+            )}
+          </svg>
+          <div class="mt-5 flex w-full items-center justify-between text-[0.82rem] text-[var(--color-muted)]">
+            <span>
+              {data.total.toLocaleString('en-US')} contributions in the last year ·{' '}
+              <a href={profile.github} target="_blank" rel="noreferrer" class="underline decoration-[var(--border-subtle)] underline-offset-4 hover:text-[var(--color-accent)]">@{username}</a>
+            </span>
+            <span class="flex items-center gap-1.5" aria-hidden="true">
+              Less
+              {[0, 1, 2, 3, 4].map((l) => (
+                <svg width="12" height="12" class="gh-cal"><rect width="12" height="12" rx="3" data-level={l}></rect></svg>
+              ))}
+              More
+            </span>
+          </div>
+        </div>
+      ) : (
+        <p class="text-[0.95rem] text-[var(--color-muted)]">
+          Contribution graph is unavailable right now.{' '}
+          <a href={profile.github} target="_blank" rel="noreferrer" class="text-[var(--color-accent)] underline underline-offset-4">See my activity on GitHub</a>.
+        </p>
+      )
+    }
+  </div>
+</section>

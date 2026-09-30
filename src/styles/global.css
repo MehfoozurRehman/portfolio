@@ -1,5 +1,24 @@
 @import 'tailwindcss';
 
+@source '../';
+
+@font-face {
+  font-family: 'Nunito Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 1000;
+  src: url('@fontsource-variable/nunito/files/nunito-latin-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'JetBrains Mono Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 800;
+  src: url('@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 :root {
   color-scheme: light;
 
@@ -118,6 +137,11 @@
   --font-mono: var(--font-mono);
 }
 
+:root {
+  --font-nunito: 'Nunito Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 6rem;
@@ -157,7 +181,7 @@ body::before {
   color: transparent;
 }
 
-.reveal {
+.js .reveal {
   opacity: 0;
   transform: translateY(22px);
   transition:
@@ -165,13 +189,27 @@ body::before {
     transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: opacity, transform;
 }
-.reveal[data-shown='true'] {
+.js .reveal[data-shown='true'] {
   opacity: 1;
   transform: none;
 }
 
+/* Above-the-fold entrance: pure CSS so it never waits on JavaScript (keeps LCP fast). */
+.hero-in {
+  animation: hero-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .reveal {
+  .hero-in {
+    animation: none;
+  }
+  .js .reveal {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
@@ -262,32 +300,20 @@ body::before {
   background-size: 100% 1.5px;
 }
 
-.react-github-calendar {
-  color: var(--color-text);
-  font-family: inherit;
+.gh-cal rect[data-level='0'] { fill: var(--gh-0); }
+.gh-cal rect[data-level='1'] { fill: var(--gh-1); }
+.gh-cal rect[data-level='2'] { fill: var(--gh-2); }
+.gh-cal rect[data-level='3'] { fill: var(--gh-3); }
+.gh-cal rect[data-level='4'] { fill: var(--gh-4); }
+.gh-cal text { fill: var(--color-muted); }
+:root {
+  --gh-0: #e4e0d2; --gh-1: #d7f0e3; --gh-2: #a8e4c3; --gh-3: #79d7a0; --gh-4: #4ab580;
 }
-.react-github-calendar text {
-  fill: var(--color-muted);
+:root[data-theme='dark'] {
+  --gh-0: #151a1c; --gh-1: #0a3f35; --gh-2: #0a5a46; --gh-3: #0d7a5c; --gh-4: #1a9d6f;
 }
-.react-github-calendar-month-label {
-  color: var(--color-muted);
-  font-size: 0.75rem;
-}
-.react-github-calendar .react-github-calendar-month-label {
-  text-anchor: start;
-}
-.react-activity-calendar__scroll-container {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-.react-activity-calendar__scroll-container::-webkit-scrollbar {
-  display: none;
-}
-.react-github-calendar-tooltip {
-  background-color: var(--color-inverse);
-  color: var(--color-inverse-text);
-  border-radius: 6px;
-  padding: 6px 8px;
-  font-size: 0.75rem;
-  box-shadow: 0 4px 12px var(--shadow-strong);
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --gh-0: #151a1c; --gh-1: #0a3f35; --gh-2: #0a5a46; --gh-3: #0d7a5c; --gh-4: #1a9d6f;
+  }
 }

@@ -3,7 +3,7 @@ import {
   BrainCircuit,
   BriefcaseBusiness,
   Building2,
-  Code2,
+  CodeXml,
   Laptop,
   Layers,
   Map,
@@ -16,9 +16,20 @@ import {
   Sparkles,
   Store,
   UsersRound,
-} from 'lucide-react';
+} from '@lucide/astro';
 
-import type { LucideIcon } from 'lucide-react';
+import type { ImageMetadata } from 'astro';
+import cover_whatsapp from './assets/projects/cover-whatsapp.svg';
+import cover_expo from './assets/projects/cover-expo.svg';
+import schooliee_hero from './assets/projects/schooliee-hero.webp';
+import dsme_hero from './assets/projects/dsme-hero.webp';
+import dsme_logo from './assets/projects/dsme-logo-transparent.webp';
+import leadprofit_hero from './assets/projects/leadprofit-hero.webp';
+import logo_github from './assets/projects/logo-github.png';
+import logo_leadprofit from './assets/projects/logo-leadprofit.png';
+
+// Any @lucide/astro icon component.
+export type LucideIcon = typeof CodeXml;
 
 export type Service = {
   title: string;
@@ -35,8 +46,8 @@ export type Project = {
   stack: string[];
   icon: LucideIcon;
   url?: string;
-  logoUrl?: string;
-  heroImageUrl?: string;
+  logo?: ImageMetadata;
+  hero?: ImageMetadata;
   problem: string;
   approach: string;
   outcome: string;
@@ -121,7 +132,8 @@ export const projects: Project[] = [
     category: 'Founder & Product Lead · Conversational AI Commerce',
     icon: Store,
     url: 'https://github.com/MehfoozurRehman/karobari',
-    heroImageUrl: '/cover-whatsapp.svg',
+    logo: logo_github,
+    hero: cover_whatsapp,
     summary: 'An automated digital identity and e-commerce engine enabling local businesses to launch online stores, manage inventory, and fulfill orders entirely through WhatsApp voice and text.',
     businessValue: 'Removes the digital divide for millions of physical merchants in emerging markets by turning the app they already use daily into a full-scale digital commerce operating system.',
     stack: ['Next.js 16', 'React 19', 'Convex', 'OpenAI Agents', 'WhatsApp Cloud API', 'Clerk Auth', 'Tailwind CSS v4'],
@@ -137,7 +149,8 @@ export const projects: Project[] = [
     category: 'Cloud SaaS & Mobile Ecosystem',
     icon: School,
     url: 'https://github.com/MehfoozurRehman/schooliee',
-    heroImageUrl: '/schooliee-hero.webp',
+    logo: logo_github,
+    hero: schooliee_hero,
     summary: 'A cloud school management ecosystem with role-based web portals, native mobile apps, background SMS relays, and automated WhatsApp parent notifications.',
     businessValue: 'Replaces fragmented paper registers and spreadsheets with a single connected platform for fee challans, student attendance, exams, and family engagement.',
     stack: ['Turborepo', 'Next.js', 'React Native', 'Expo', 'Convex', 'Prisma', 'WhatsApp API'],
@@ -153,8 +166,8 @@ export const projects: Project[] = [
     category: 'Enterprise Digital Platform',
     icon: Building2,
     url: 'https://dsmeglobal.web.app',
-    logoUrl: '/dsme-logo-transparent.webp',
-    heroImageUrl: '/dsme-hero.webp',
+    logo: dsme_logo,
+    hero: dsme_hero,
     summary: 'The digital engineering showcase and product consulting portal for DSME Globals, presenting enterprise client case studies and full-stack solutions.',
     businessValue: 'Delivers a high-conversion client acquisition channel and establishes credible technical authority for international enterprise software contracts.',
     stack: ['React 18', 'Vite', 'SCSS', 'Firebase Hosting', 'UI/UX Design'],
@@ -170,7 +183,8 @@ export const projects: Project[] = [
     category: 'E-Commerce Intelligence & Data Modeling',
     icon: MessageCircle,
     url: 'https://www.leadprofit.com',
-    heroImageUrl: '/leadprofit-hero.webp',
+    logo: logo_leadprofit,
+    hero: leadprofit_hero,
     summary: 'An Amazon seller intelligence suite focusing on live repricing algorithms, inventory tracking, order analytics, and profit margin visibility.',
     businessValue: 'Gives multi-channel Amazon merchants real-time margin visibility and dynamic repricing controls to prevent inventory dead-stock and protect ROI.',
     stack: ['React.js', 'Node.js', 'Amazon SP-API', 'OpenAPI / Swagger', 'Analytics Data Models'],
@@ -185,7 +199,7 @@ export const projects: Project[] = [
     title: 'Native WhatsApp Automation & Messaging Gateway',
     category: 'Microservices & Desktop Infrastructure',
     icon: MessageCircle,
-    heroImageUrl: '/cover-whatsapp.svg',
+    hero: cover_whatsapp,
     summary: 'High-throughput desktop and headless microservice gateways for automated WhatsApp messaging, lead qualification, and customer engagement.',
     businessValue: 'Enables high-volume transactional messaging and conversational bots without exorbitant third-party per-message API overhead.',
     stack: ['Electron', 'Hono', 'TypeScript', 'Puppeteer', 'Webhooks', 'Docker'],
@@ -200,7 +214,7 @@ export const projects: Project[] = [
     title: 'Cross-Platform Mobile Ecosystems & Native Modules',
     category: 'React Native & Native Mobile Engineering',
     icon: Smartphone,
-    heroImageUrl: '/cover-expo.svg',
+    hero: cover_expo,
     summary: 'Suite of production iOS and Android mobile apps spanning logistics driver dispatchers, on-demand food delivery, BLE hardware monitors, and health coaching.',
     businessValue: 'Maximizes development speed and code reuse across mobile platforms while retaining 60fps native performance and native device access.',
     stack: ['React Native', 'Expo', 'EAS', 'TypeScript', 'BLE', 'Google Maps', 'HealthKit'],
@@ -225,7 +239,7 @@ export const process: ProcessStep[] = [
   },
   {
     title: '3. Hardened, Maintainable Scale',
-    icon: Code2,
+    icon: CodeXml,
     text: 'Build with type safety, clean schemas, reactive real-time backends (Convex/Prisma), and automated messaging pipelines ready to handle daily production scale.',
   },
 ];
@@ -244,7 +258,7 @@ export const profileHighlights = [
   {
     title: 'Full-Spectrum Technical Range',
     text: 'Fluently architecting across React 19, Next.js 16, Convex, React Native, Electron, Docker, and LLM agent orchestration.',
-    icon: Code2,
+    icon: CodeXml,
   },
   {
     title: 'Commercial & Operational Empathy',
