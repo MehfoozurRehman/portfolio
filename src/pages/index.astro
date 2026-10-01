@@ -13,6 +13,7 @@ const shell = 'mx-auto w-full max-w-[1320px] px-5 sm:px-8 lg:px-10';
 const display = 'font-[family-name:var(--font-nunito)] font-extrabold leading-[0.98] tracking-[-0.01em]';
 const delay = (ms: number) => (ms ? `transition-delay:${ms}ms;animation-delay:${ms}ms` : undefined);
 
+const proof = ['karobari', 'schooliee', 'expo-mobile-apps'].map((slug) => projects.find((p) => p.slug === slug)!);
 const contactRows = [
   { icon: Mail, label: profile.email, href: `mailto:${profile.email}` },
   { icon: MessageCircle, label: `WhatsApp · ${profile.phone}`, href: profile.whatsapp },
@@ -193,6 +194,41 @@ const versions = [1, 2, 3, 4, 5, 6, 7].map((n) => [`v${n}`, `https://mehfoozurre
           }
         </div>
       </div>
+    </section>
+
+    <section id="proof" class={`${shell} -mt-2 pb-4 pt-12 sm:pt-16`} aria-labelledby="proof-heading">
+      <div class="reveal">
+        <SectionMarker index="✦" label="Results" />
+        <h2 id="proof-heading" class={`${display} max-w-2xl text-[clamp(1.55rem,2.9vw,2.35rem)]`}>Shipped, in production, and used daily.</h2>
+      </div>
+      <ul class="mt-10 grid gap-4 md:grid-cols-3">
+        {
+          proof.map((p, i) => (
+            <li class="reveal" style={delay(i * 70)}>
+              <a
+                href={`/case-studies/${p.slug}`}
+                data-astro-prefetch="hover"
+                class="card-hover group flex h-full flex-col overflow-hidden rounded-2xl border border-[var(--border-card)] bg-[var(--color-raise)]"
+              >
+                {p.hero ? (
+                  <div class="relative aspect-[16/9] w-full overflow-hidden bg-[var(--color-page-soft)]">
+                    <Image src={p.hero} alt="" widths={[400, 640]} sizes="(max-width: 768px) 92vw, 30vw" loading="lazy" class="absolute inset-0 size-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]" />
+                  </div>
+                ) : null}
+                <div class="flex flex-1 flex-col justify-between gap-5 p-6">
+                  <div>
+                    <p class="font-mono-label text-[0.6rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-soft)]">{p.title.split(':')[0]}</p>
+                    <p class={`${display} mt-2 text-[1.2rem] leading-snug`}>{p.result}</p>
+                  </div>
+                  <span class="inline-flex items-center gap-1.5 font-mono-label text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-accent)]">
+                    Read the case study <ArrowRight size={13} class="transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+                  </span>
+                </div>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
     </section>
 
     <section id="about" class={`${shell} py-14 sm:py-20`}>

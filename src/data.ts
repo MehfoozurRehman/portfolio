@@ -50,6 +50,8 @@ export type Project = {
   hero?: ImageMetadata;
   problem: string;
   approach: string;
+  /** One-line, headline-style result used in compact proof cards. */
+  result: string;
   outcome: string;
   responsibilities: string[];
   highlights: string[];
@@ -139,6 +141,7 @@ export const projects: Project[] = [
     stack: ['Next.js 16', 'React 19', 'Convex', 'OpenAI Agents', 'WhatsApp Cloud API', 'Clerk Auth', 'Tailwind CSS v4'],
     problem: 'Traditional e-commerce platforms and complex admin panels are too intimidating and friction-heavy for local shop owners, who rely solely on WhatsApp and phone calls to do business.',
     approach: 'Engineered an AI conversational ingestion pipeline where merchants can speak or text product details in Urdu/English over WhatsApp to automatically generate live web stores, track inventory decrements, and send customer order receipts.',
+    result: 'Shop to live storefront in under 2 minutes, entirely through WhatsApp.',
     outcome: 'Enables any retail merchant or wholesaler to go from a physical shop to an active digital selling engine in less than 2 minutes without writing a single line of data manually.',
     responsibilities: ['Product architecture', 'Conversational AI pipeline', 'Convex real-time schemas', 'WhatsApp webhook infrastructure', 'Merchant UX'],
     highlights: ['WhatsApp Voice Ingestion', 'Urdu/English AI Understanding', 'Instant Storefront Generation', 'Order & Inventory Automation'],
@@ -156,6 +159,7 @@ export const projects: Project[] = [
     stack: ['Turborepo', 'Next.js', 'React Native', 'Expo', 'Convex', 'Prisma', 'WhatsApp API'],
     problem: 'Schools struggled with manual fee collection, delayed parent updates, and disjointed systems for student academic records and attendance.',
     approach: 'Architected a monorepo housing the admin dashboard, mobile apps for teachers/parents, and microservices for automated WhatsApp and SIM SMS notifications.',
+    result: 'Attendance alerts, fee challans and grading, automated end to end.',
     outcome: 'Successfully automated daily attendance broadcasts, computerized fee challan generation, and synchronized teacher grading directly into parent mobile feeds.',
     responsibilities: ['Full-stack monorepo engineering', 'Parent & staff workflows', 'WhatsApp desktop messaging engine', 'Mobile app delivery'],
     highlights: ['Multi-tenant school ERP', 'Automated Fee Challans', 'WhatsApp & SMS Gateways', 'Parent & Teacher Apps'],
@@ -173,6 +177,7 @@ export const projects: Project[] = [
     stack: ['React 18', 'Vite', 'SCSS', 'Firebase Hosting', 'UI/UX Design'],
     problem: 'The engineering firm needed a high-performance, polished digital presence to represent its cross-platform product delivery capabilities to global clients.',
     approach: 'Designed a fast, accessible web portal highlighting past architectures, service roadmaps, and instant consultation intake flows.',
+    result: 'The portal behind international software contracts in logistics, healthcare and retail.',
     outcome: 'Served as the core digital portal securing international software contracts across logistics, healthcare, and retail sectors.',
     responsibilities: ['Information architecture', 'Frontend performance optimization', 'Service positioning', 'Responsive UI engineering'],
     highlights: ['Corporate Engineering Brand', 'Service Architecture Clarity', 'High-Performance SPA', 'Global Client Acquisition'],
@@ -190,6 +195,7 @@ export const projects: Project[] = [
     stack: ['React.js', 'Node.js', 'Amazon SP-API', 'OpenAPI / Swagger', 'Analytics Data Models'],
     problem: 'High-volume marketplace sellers often suffer margin erosion due to unmonitored supplier price fluctuations and manual buy-box tracking.',
     approach: 'Constructed real-time analytical dashboards and OpenAPI-documented REST APIs pulling live Amazon SP-API inventory and sales metrics.',
+    result: 'One command center for instant repricing and profit tracking.',
     outcome: 'Gave sellers a unified command center to execute instant repricing strategies and track profit metrics without manual calculations.',
     responsibilities: ['Marketplace data modeling', 'Dashboard UI architecture', 'Swagger API documentation', 'Repricing workflows'],
     highlights: ['Live Margin Analytics', 'Amazon SP-API Integration', 'Interactive Swagger UI', 'Inventory Health Monitoring'],
@@ -205,6 +211,7 @@ export const projects: Project[] = [
     stack: ['Electron', 'Hono', 'TypeScript', 'Puppeteer', 'Webhooks', 'Docker'],
     problem: 'Businesses needed reliable mass notifications and conversational workflows without being locked into rigid, costly cloud messaging providers.',
     approach: 'Engineered both an Electron desktop client (`schooliee-whatsapp`) and a containerized headless engine (`schooliee-wbm`) with Puppeteer session persistence.',
+    result: 'Thousands of daily receipts and reminders, delivered instantly.',
     outcome: 'Processes thousands of automated daily fee receipts, event reminders, and customer confirmations reliably with instant delivery.',
     responsibilities: ['Headless browser automation', 'Electron desktop wrapper', 'Webhook queueing', 'Session management'],
     highlights: ['Desktop & Docker Engine', 'Puppeteer Session Persistence', 'Bulk Delivery Queues', 'Instant Webhook Triggers'],
@@ -220,6 +227,7 @@ export const projects: Project[] = [
     stack: ['React Native', 'Expo', 'EAS', 'TypeScript', 'BLE', 'Google Maps', 'HealthKit'],
     problem: 'Building separate native Swift and Kotlin applications slowed down time-to-market and increased ongoing maintenance costs.',
     approach: 'Leveraged unified React Native architectures with custom native modules (e.g. `expo-quick-actions`), native gesture handling, and EAS cloud build pipelines.',
+    result: '10+ mobile apps shipped to the App Store and Google Play.',
     outcome: 'Shipped over 10+ distinct mobile apps to the App Store and Google Play covering complex GPS routing, biometric sync, and hardware scanning.',
     responsibilities: ['Mobile system architecture', 'Store submission (EAS/TestFlight)', 'Native hardware integrations', 'State & performance optimization'],
     highlights: ['Production EAS Pipelines', 'Bluetooth Low Energy (BLE)', 'Live Geolocation Maps', 'Custom Native Expo Plugins'],
