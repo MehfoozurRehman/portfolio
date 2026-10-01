@@ -1,0 +1,284 @@
+---
+import { Image } from 'astro:assets';
+import { ArrowLeft, ArrowRight, ArrowUpRight, CircleCheck, Mail } from '@lucide/astro';
+import type { GetStaticPaths } from 'astro';
+import { profile, projects } from '../../data';
+import Base from '../../layouts/Base.astro';
+import SiteNav from '../../components/SiteNav.astro';
+import SectionMarker from '../../components/SectionMarker.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE_URL } from '../../lib/site';
+
+export const getStaticPaths = (() => projects.map((project, index) => ({ params: { slug: project.slug }, props: { project, index } }))) satisfies GetStaticPaths;
+
+const { project, index } = Astro.props;
+const Icon = project.icon;
+const others = projects.filter((p) => p.slug !== project.slug).slice(0, 3);
+
+const display = 'font-[family-name:var(--font-nunito)] font-extrabold tracking-[-0.01em]';
+const mono = 'font-mono-label text-[0.66rem] font-semibold uppercase tracking-[0.18em]';
+const shell = 'mx-auto w-full max-w-[1320px] px-5 sm:px-8 lg:px-10';
+const block = 'mt-16 sm:mt-24';
+
+const path = `/case-studies/${project.slug}`;
+const title = `${project.title} — Case Study | Mehfooz-ur-Rehman`;
+const description = project.summary;
+
+const facts = [
+  ['Role', 'Full-stack delivery'],
+  ['Focus', project.category],
+  ['Core stack', project.stack.slice(0, 2).join(' · ') || 'Web'],
+  ['Engagement', 'Product build'],
+];
+const story = [
+  ['Problem', project.problem],
+  ['Approach', project.approach],
+  ['Outcome', project.outcome],
+];
+
+const jsonLd = [
+  {
+    '@type': 'CreativeWork',
+    '@id': `${SITE_URL}${path}#work`,
+    name: project.title,
+    description: project.summary,
+    url: `${SITE_URL}${path}`,
+    author: { '@id': `${SITE_URL}/#person` },
+    keywords: project.stack.join(', '),
+    genre: project.category,
+    ...(project.url ? { sameAs: project.url } : {}),
+  },
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Portfolio', item: SITE_URL },
+      { '@type': 'ListItem', position: 2, name: project.title, item: `${SITE_URL}${path}` },
+    ],
+  },
+];
+---
+
+<Base title={title} description={description} path={path} ogType="article" jsonLd={jsonLd}>
+  <SiteNav base="/" />
+  <main class="relative min-h-screen overflow-x-hidden bg-[var(--color-page)] text-[var(--color-text)]">
+    <div class="halo -left-[10%] -top-[6%] h-[34rem] w-[34rem]" style="background: var(--halo-a)"></div>
+    <div class="halo -right-[10%] top-[18%] h-[28rem] w-[28rem]" style="background: var(--halo-b)"></div>
+
+    <div class={`${shell} relative z-10 pb-24 pt-28 sm:pt-32`}>
+      <!-- Breadcrumb -->
+      <nav aria-label="Breadcrumb" class={`${mono} flex flex-wrap items-center gap-2 text-[var(--color-muted)]`}>
+        <a href="/" class="inline-flex items-center gap-1.5 py-2 transition hover:text-[var(--color-accent)]"><ArrowLeft size={13} aria-hidden="true" /> Portfolio</a>
+        <span aria-hidden="true">/</span>
+        <a href="/#work" class="py-2 transition hover:text-[var(--color-accent)]">Work</a>
+        <span aria-hidden="true">/</span>
+        <span class="text-[var(--color-text)]" aria-current="page">Case {String(index + 1).padStart(2, '0')}</span>
+      </nav>
+
+      <!-- Hero -->
+      <header class="mt-10 grid gap-12 lg:grid-cols-[1fr_1.05fr] lg:items-center lg:gap-14">
+        <div>
+          <p class={`${mono} inline-flex items-center gap-2 text-[var(--color-accent)]`}>
+            <span class="grid size-8 place-items-center rounded-lg border border-[var(--border-card)] bg-[var(--color-raise)]">
+              {
+                project.logo ? (
+                  <Image src={project.logo} alt="" width={40} height={40} class="size-4 object-contain" aria-hidden="true" />
+                ) : (
+                  <Icon size={15} aria-hidden="true" />
+                )
+              }
+            </span>
+            {project.category}
+          </p>
+          <h1 class={`${display} mt-6 text-[clamp(2.2rem,4.6vw,3.9rem)] leading-[1]`}>{project.title}</h1>
+          <p class="mt-6 max-w-xl text-[1.02rem] leading-8 text-[var(--color-muted)]">{project.summary}</p>
+
+          <ul class="mt-7 flex flex-wrap gap-1.5">
+            {
+              project.highlights.map((item) => (
+                <li class="rounded-md border border-[var(--border-subtle)] bg-[var(--color-raise)] px-2.5 py-1 font-mono-label text-[0.64rem] font-semibold text-[var(--color-muted)]">{item}</li>
+              ))
+            }
+          </ul>
+
+          <div class="mt-9 flex flex-wrap items-center gap-3">
+            {
+              project.url ? (
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  class="group inline-flex min-h-12 items-center gap-2 rounded-full bg-[var(--color-accent)] px-6 text-[0.9rem] font-bold text-[var(--color-on-accent)] shadow-lg shadow-[color:var(--shadow-accent)] transition hover:shadow-xl"
+                >
+                  Visit project
+                  <ArrowUpRight size={17} class="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
+                </a>
+              ) : null
+            }
+            <a
+              href={`mailto:${profile.email}?subject=${encodeURIComponent('Project inquiry: similar to ' + project.title)}`}
+              class="inline-flex min-h-12 items-center gap-2 rounded-full border border-[var(--border-card)] bg-[var(--color-field)] px-5 text-[0.9rem] font-bold text-[var(--color-text)] transition hover:border-[var(--border-hover)] hover:text-[var(--color-accent)]"
+            >
+              <Mail size={16} aria-hidden="true" /> Discuss something similar
+            </a>
+          </div>
+        </div>
+
+        {
+          project.hero ? (
+            <figure class="relative">
+              <div class="absolute -inset-3 -z-10 rounded-[2rem] bg-gradient-to-br from-[var(--color-accent)]/20 to-[var(--color-accent-2)]/15 blur-2xl" />
+              <div class="overflow-hidden rounded-2xl border border-[var(--border-card)] bg-[var(--color-raise)] shadow-[0_30px_80px_-40px_var(--shadow-strong)]">
+                <div class="flex items-center gap-1.5 border-b border-[var(--border-subtle)] bg-[var(--color-page-soft)] px-4 py-3" aria-hidden="true">
+                  <span class="size-2.5 rounded-full bg-[var(--border-card)]" />
+                  <span class="size-2.5 rounded-full bg-[var(--border-card)]" />
+                  <span class="size-2.5 rounded-full bg-[var(--border-card)]" />
+                  <span class="ml-3 truncate rounded-md bg-[var(--color-field)] px-3 py-1 font-mono-label text-[0.62rem] text-[var(--color-soft)]">
+                    {project.url ? new URL(project.url).hostname : project.slug}
+                  </span>
+                </div>
+                <Image
+                  src={project.hero}
+                  alt={`${project.title} screenshot`}
+                  widths={[640, 960, 1280]}
+                  sizes="(max-width: 1024px) 92vw, 600px"
+                  loading="eager"
+                  fetchpriority="high"
+                  class="aspect-[16/10] h-auto w-full object-cover object-top"
+                />
+              </div>
+            </figure>
+          ) : null
+        }
+      </header>
+
+      <!-- Facts strip -->
+      <dl class="mt-14 grid grid-cols-2 gap-y-6 border-y border-[var(--border-subtle)] py-7 sm:mt-16 lg:grid-cols-4">
+        {
+          facts.map(([label, value], i) => (
+            <div class={`px-0 lg:px-6 ${i === 0 ? 'lg:pl-0' : ''} ${i > 0 ? 'lg:border-l lg:border-[var(--border-subtle)]' : ''}`}>
+              <dt class={`${mono} text-[var(--color-accent)]`}>{label}</dt>
+              <dd class="mt-2 text-[0.95rem] font-bold leading-snug">{value}</dd>
+            </div>
+          ))
+        }
+      </dl>
+
+      <!-- Story -->
+      <section class={block} aria-labelledby="story-heading">
+        <SectionMarker index="01" label="The story" />
+        <h2 id="story-heading" class={`${display} max-w-2xl text-[clamp(1.55rem,2.9vw,2.35rem)] leading-[1.05]`}>From the problem to the outcome.</h2>
+        <ol class="mt-10 grid gap-4 md:grid-cols-3">
+          {
+            story.map(([label, value], i) => (
+              <li class="card-hover relative flex flex-col overflow-hidden rounded-2xl border border-[var(--border-card)] bg-[var(--color-raise)] p-7">
+                <span class={`${display} pointer-events-none absolute -right-2 -top-4 select-none text-[6rem] leading-none text-[var(--color-text)] opacity-[0.05]`} aria-hidden="true">{i + 1}</span>
+                <span class={`${mono} text-[var(--color-accent)]`}>{label}</span>
+                <p class="mt-4 text-[0.95rem] leading-7 text-[var(--color-muted)]">{value}</p>
+              </li>
+            ))
+          }
+        </ol>
+      </section>
+
+      <!-- Scope -->
+      <section class={block} aria-labelledby="scope-heading">
+        <SectionMarker index="02" label="Scope & stack" />
+        <h2 id="scope-heading" class={`${display} max-w-2xl text-[clamp(1.55rem,2.9vw,2.35rem)] leading-[1.05]`}>What I owned, and what it runs on.</h2>
+        <div class="mt-10 grid gap-4 lg:grid-cols-[1.05fr_0.95fr]">
+          <article class="rounded-2xl border border-[var(--border-card)] bg-[var(--color-raise)] p-7">
+            <h3 class={`${mono} text-[var(--color-accent)]`}>Responsibilities</h3>
+            <ul class="mt-5 grid gap-3.5 text-[0.95rem] leading-7 text-[var(--color-muted)]">
+              {
+                project.responsibilities.map((item) => (
+                  <li class="flex gap-3">
+                    <CircleCheck class="mt-1 shrink-0 text-[var(--color-accent-2)]" size={17} aria-hidden="true" />
+                    <span>{item}</span>
+                  </li>
+                ))
+              }
+            </ul>
+          </article>
+
+          <article class="flex flex-col rounded-2xl border border-[var(--border-card)] bg-[var(--color-raise)] p-7">
+            <h3 class={`${mono} text-[var(--color-accent)]`}>Stack</h3>
+            <ul class="mt-5 flex flex-wrap gap-1.5">
+              {
+                project.stack.map((item) => (
+                  <li class="rounded-md border border-[var(--border-subtle)] bg-[var(--color-page)] px-2.5 py-1 font-mono-label text-[0.66rem] font-semibold text-[var(--color-muted)]">{item}</li>
+                ))
+              }
+            </ul>
+          </article>
+        </div>
+
+        <figure class="mt-4 rounded-2xl border border-[var(--border-card)] bg-[var(--color-page-soft)] p-7 sm:p-9">
+          <figcaption class={`${mono} text-[var(--color-soft)]`}>Business value</figcaption>
+          <blockquote class={`${display} mt-4 max-w-4xl text-[clamp(1.15rem,2vw,1.55rem)] leading-snug`}>{project.businessValue}</blockquote>
+        </figure>
+      </section>
+
+      <!-- More -->
+      <section class={block} aria-labelledby="more-work">
+        <SectionMarker index="03" label="More work" />
+        <h2 id="more-work" class="sr-only">More case studies</h2>
+        <ul class="grid gap-4 md:grid-cols-3">
+          {
+            others.map((p) => {
+              const OtherIcon = p.icon;
+              return (
+                <li>
+                  <a
+                    href={`/case-studies/${p.slug}`}
+                    data-astro-prefetch="hover"
+                    class="card-hover group flex h-full flex-col overflow-hidden rounded-2xl border border-[var(--border-card)] bg-[var(--color-raise)]"
+                  >
+                    <div class="relative aspect-[16/9] w-full overflow-hidden bg-[var(--color-page-soft)]">
+                      {p.hero ? (
+                        <Image src={p.hero} alt="" widths={[360, 560]} sizes="(max-width: 768px) 92vw, 30vw" loading="lazy" class="absolute inset-0 size-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]" />
+                      ) : (
+                        <span class="grid size-full place-items-center text-[var(--color-accent)]"><OtherIcon size={32} aria-hidden="true" /></span>
+                      )}
+                    </div>
+                    <div class="flex flex-1 flex-col justify-between gap-4 p-5">
+                      <span class="text-[1rem] font-extrabold leading-snug">{p.title}</span>
+                      <span class="inline-flex items-center gap-1.5 font-mono-label text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-accent)]">
+                        Read case study <ArrowRight size={13} class="transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+                      </span>
+                    </div>
+                  </a>
+                </li>
+              );
+            })
+          }
+        </ul>
+      </section>
+
+      <!-- CTA -->
+      <section class={`${block} relative overflow-hidden rounded-3xl border border-[var(--border-card)] bg-[var(--color-page-soft)] p-8 sm:p-12`}>
+        <div class="halo -bottom-[40%] -right-[10%] h-[24rem] w-[24rem]" style="background: var(--halo-a)"></div>
+        <div class="relative z-10 flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
+          <div>
+            <h2 class={`${display} text-[clamp(1.5rem,2.8vw,2.2rem)] leading-tight`}>Building something similar?</h2>
+            <p class="mt-3 max-w-lg text-[0.95rem] leading-7 text-[var(--color-muted)]">Send the workflow or the stuck project. I'll reply with a practical plan and a launch path.</p>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <a
+              href={`mailto:${profile.email}`}
+              class="group inline-flex min-h-12 items-center gap-2 rounded-full bg-[var(--color-accent)] px-6 text-[0.9rem] font-bold text-[var(--color-on-accent)] shadow-lg shadow-[color:var(--shadow-accent)] transition hover:shadow-xl"
+            >
+              Email me
+              <ArrowUpRight size={17} class="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
+            </a>
+            <a
+              href="/#contact"
+              class="inline-flex min-h-12 items-center gap-2 rounded-full border border-[var(--border-card)] bg-[var(--color-field)] px-5 text-[0.9rem] font-bold text-[var(--color-text)] transition hover:border-[var(--border-hover)] hover:text-[var(--color-accent)]"
+            >
+              Use the contact form
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <Footer base="/" />
+</Base>
