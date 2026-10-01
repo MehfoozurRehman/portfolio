@@ -55,6 +55,7 @@ if (glow && matchMedia('(pointer: fine)').matches && !reduceMotion) {
 // --- Scroll-dependent UI (scroll-to-top, nav background, scroll-spy) -------
 const topBtn = document.querySelector<HTMLElement>('[data-scroll-top]');
 const nav = document.querySelector<HTMLElement>('[data-nav]');
+const progress = document.querySelector<HTMLElement>('[data-progress]');
 const spyLinks = [...document.querySelectorAll<HTMLAnchorElement>('[data-spy]')];
 const spyIds = [...new Set([...spyLinks.map((a) => a.hash.slice(1)), 'contact'])];
 const spyTargets = spyIds.map((id) => document.getElementById(id));
@@ -65,6 +66,8 @@ function onScroll() {
   const y = scrollY;
   topBtn?.setAttribute('data-visible', String(y > 320));
   nav?.setAttribute('data-scrolled', String(y > 24));
+  const max = root.scrollHeight - innerHeight;
+  progress?.style.setProperty('--progress', String(max > 0 ? Math.min(1, y / max) : 0));
   if (!spyLinks.length) return;
 
   let current = '';

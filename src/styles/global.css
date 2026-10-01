@@ -317,3 +317,77 @@ body::before {
     --gh-0: #151a1c; --gh-1: #0a3f35; --gh-2: #0a5a46; --gh-3: #0d7a5c; --gh-4: #1a9d6f;
   }
 }
+
+/* Keyboard focus: visible, on-brand, never shown for mouse clicks. */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+input:focus-visible,
+textarea:focus-visible {
+  outline: none;
+}
+
+/* Horizontal snap carousel on small screens, regular grid from md up. */
+.carousel {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 1.25rem;
+  margin-inline: -1.25rem;
+  padding: 0.25rem 1.25rem 1rem;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+}
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+.carousel-item {
+  flex: 0 0 84%;
+  scroll-snap-align: center;
+}
+@media (min-width: 640px) {
+  .carousel {
+    margin-inline: -2rem;
+    padding-inline: 2rem;
+    scroll-padding-inline: 2rem;
+  }
+  .carousel-item {
+    flex-basis: 56%;
+  }
+}
+@media (min-width: 768px) {
+  .carousel {
+    display: grid;
+    gap: 1rem;
+    overflow: visible;
+    margin-inline: 0;
+    padding: 0;
+  }
+  .carousel-item {
+    flex: none;
+  }
+}
+
+/* Top scroll-progress line. */
+.scroll-progress {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 70;
+  height: 2px;
+  transform-origin: 0 50%;
+  transform: scaleX(var(--progress, 0));
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-2));
+  pointer-events: none;
+}
+
+/* No sticky hover lift on touch screens. */
+@media (hover: none) {
+  .card-hover:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
