@@ -27,8 +27,8 @@
   --color-raise: #faf8f1;
   --color-text: #17140f;
   --color-muted: #574f45;
-  --color-soft: #7c7264;
-  --color-accent: #d9531e;
+  --color-soft: #6b6254;
+  --color-accent: #b8420f;
   --color-accent-2: #1c6b56;
   --color-on-accent: #fdf6ee;
   --color-danger: #b42318;
@@ -40,10 +40,10 @@
   --border-subtle: rgb(23 20 15 / 0.11);
   --border-card: rgb(23 20 15 / 0.14);
   --border-input-hover: rgb(23 20 15 / 0.24);
-  --border-hover: rgb(217 83 30 / 0.5);
+  --border-hover: rgb(184 66 15 / 0.5);
 
   --shadow-strong: rgb(23 20 15 / 0.16);
-  --shadow-accent: rgb(217 83 30 / 0.22);
+  --shadow-accent: rgb(184 66 15 / 0.22);
   --shadow-ambient: rgb(23 20 15 / 0.08);
 
   --grid-line: rgb(23 20 15 / 0.05);

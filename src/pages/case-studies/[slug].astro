@@ -6,6 +6,7 @@ import { profile, projects } from '../../data';
 import Base from '../../layouts/Base.astro';
 import SiteNav from '../../components/SiteNav.astro';
 import SectionMarker from '../../components/SectionMarker.astro';
+import Footer from '../../components/Footer.astro';
 import { SITE_URL } from '../../lib/site';
 
 export const getStaticPaths = (() => projects.map((project, index) => ({ params: { slug: project.slug }, props: { project, index } }))) satisfies GetStaticPaths;
@@ -65,10 +66,10 @@ const jsonLd = [
 
     <div class={`${shell} relative z-10 pb-24 pt-28 sm:pt-32`}>
       <!-- Breadcrumb -->
-      <nav aria-label="Breadcrumb" class={`${mono} flex flex-wrap items-center gap-2 text-[var(--color-soft)]`}>
-        <a href="/" class="inline-flex items-center gap-1.5 transition hover:text-[var(--color-accent)]"><ArrowLeft size={13} aria-hidden="true" /> Portfolio</a>
+      <nav aria-label="Breadcrumb" class={`${mono} flex flex-wrap items-center gap-2 text-[var(--color-muted)]`}>
+        <a href="/" class="inline-flex items-center gap-1.5 py-2 transition hover:text-[var(--color-accent)]"><ArrowLeft size={13} aria-hidden="true" /> Portfolio</a>
         <span aria-hidden="true">/</span>
-        <a href="/#work" class="transition hover:text-[var(--color-accent)]">Work</a>
+        <a href="/#work" class="py-2 transition hover:text-[var(--color-accent)]">Work</a>
         <span aria-hidden="true">/</span>
         <span class="text-[var(--color-text)]" aria-current="page">Case {String(index + 1).padStart(2, '0')}</span>
       </nav>
@@ -279,4 +280,5 @@ const jsonLd = [
       </section>
     </div>
   </main>
+  <Footer base="/" />
 </Base>
