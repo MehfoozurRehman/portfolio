@@ -1,32 +1,18 @@
 {
   "name": "Mehfooz-ur-Rehman Portfolio",
-  "short_name": "MUR Portfolio",
-  "description": "This is Mehfooz-ur-Rehman's portfolio.",
-  "icons": [
-    {
-      "src": "favicon.svg",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/svg+xml"
-    },
-    {
-      "src": "favicon.svg",
-      "type": "image/svg+xml",
-      "sizes": "192x192",
-      "purpose": "any"
-    },
-    {
-      "src": "favicon.svg",
-      "type": "image/svg+xml",
-      "sizes": "512x512",
-      "purpose": "maskable"
-    }
-  ],
+  "short_name": "Mehfooz",
+  "description": "Portfolio of Mehfooz-ur-Rehman, a full-stack product developer.",
+  "id": "/",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#F1EFE5",
-  "theme_color": "#0C2120",
-  "orientation": "natural",
+  "background_color": "#efece2",
+  "theme_color": "#d9531e",
   "lang": "en",
-  "dir": "auto",
-  "scope": "."
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
 }
