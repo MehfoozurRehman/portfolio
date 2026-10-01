@@ -5,7 +5,16 @@ export type Day = { date: string; count: number; level: 0 | 1 | 2 | 3 | 4 };
 
 const API = 'https://github-contributions-api.jogruber.de/v4';
 
-export async function getContributions(username: string): Promise<{ days: Day[]; total: number } | null> {
+type Contributions = { days: Day[]; total: number } | null;
+const cache = new Map<string, Promise<Contributions>>();
+
+/** Memoised so several components can use the data with a single request per build. */
+export function getContributions(username: string): Promise<Contributions> {
+  if (!cache.has(username)) cache.set(username, fetchContributions(username));
+  return cache.get(username)!;
+}
+
+async function fetchContributions(username: string): Promise<Contributions> {
   try {
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), 15000);

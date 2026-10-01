@@ -20,6 +20,7 @@ import {
 
 import type { ImageMetadata } from 'astro';
 import cover_whatsapp from './assets/projects/cover-whatsapp.svg';
+import cover_karobari from './assets/projects/cover-karobari.svg';
 import cover_expo from './assets/projects/cover-expo.svg';
 import schooliee_hero from './assets/projects/schooliee-hero.webp';
 import dsme_hero from './assets/projects/dsme-hero.webp';
@@ -221,7 +222,7 @@ export const projects: Project[] = [
     icon: Store,
     url: 'https://github.com/MehfoozurRehman/karobari',
     logo: logo_github,
-    hero: cover_whatsapp,
+    hero: cover_karobari,
     summary: 'An automated digital identity and e-commerce engine enabling local businesses to launch online stores, manage inventory, and fulfill orders entirely through WhatsApp voice and text.',
     businessValue: 'Removes the digital divide for millions of physical merchants in emerging markets by turning the app they already use daily into a full-scale digital commerce operating system.',
     stack: ['Next.js 16', 'React 19', 'Convex', 'OpenAI Agents', 'WhatsApp Cloud API', 'Clerk Auth', 'Tailwind CSS v4'],
