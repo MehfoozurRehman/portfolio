@@ -143,7 +143,6 @@
 }
 
 html {
-  scroll-behavior: smooth;
   scroll-padding-top: 6rem;
   background: var(--color-page);
   -webkit-font-smoothing: antialiased;
