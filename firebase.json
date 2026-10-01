@@ -55,15 +55,6 @@
           ]
         },
         {
-          "source": "/_astro/**",
-          "headers": [
-            {
-              "key": "Cache-Control",
-              "value": "public, max-age=31536000, immutable"
-            }
-          ]
-        },
-        {
           "source": "**/*.@(png|svg|webp|avif|ico|pdf|woff2)",
           "headers": [
             {
@@ -87,6 +78,15 @@
             {
               "key": "Cache-Control",
               "value": "no-cache"
+            }
+          ]
+        },
+        {
+          "source": "/_astro/**",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=31536000, immutable"
             }
           ]
         }
@@ -147,15 +147,6 @@
           ]
         },
         {
-          "source": "/_astro/**",
-          "headers": [
-            {
-              "key": "Cache-Control",
-              "value": "public, max-age=31536000, immutable"
-            }
-          ]
-        },
-        {
           "source": "**/*.@(png|svg|webp|avif|ico|pdf|woff2)",
           "headers": [
             {
@@ -179,6 +170,15 @@
             {
               "key": "Cache-Control",
               "value": "no-cache"
+            }
+          ]
+        },
+        {
+          "source": "/_astro/**",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=31536000, immutable"
             }
           ]
         }
