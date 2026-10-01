@@ -94,8 +94,78 @@ addEventListener(
 addEventListener('resize', onScroll);
 onScroll();
 
+// --- Smooth scrolling ---------------------------------------------------------
+// One eased, slower scroll for every in-page link (CSS smooth scrolling is too abrupt).
+let scrollFrame = 0;
+function cancelScroll() {
+  if (scrollFrame) cancelAnimationFrame(scrollFrame);
+  scrollFrame = 0;
+}
+['wheel', 'touchstart', 'keydown'].forEach((type) => addEventListener(type, cancelScroll, { passive: true }));
+
+function smoothScrollTo(targetY: number) {
+  cancelScroll();
+  const startY = scrollY;
+  const maxY = root.scrollHeight - innerHeight;
+  const endY = Math.max(0, Math.min(targetY, maxY));
+  const distance = endY - startY;
+  if (reduceMotion || Math.abs(distance) < 2) {
+    scrollTo(0, endY);
+    return;
+  }
+  const duration = Math.min(1400, Math.max(700, Math.abs(distance) * 0.45));
+  const start = performance.now();
+  const ease = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+  const step = (now: number) => {
+    const t = Math.min(1, (now - start) / duration);
+    scrollTo(0, startY + distance * ease(t));
+    scrollFrame = t < 1 ? requestAnimationFrame(step) : 0;
+  };
+  scrollFrame = requestAnimationFrame(step);
+}
+
+function scrollToHash(hash: string, updateUrl = true) {
+  const id = decodeURIComponent(hash.slice(1));
+  const el = id ? document.getElementById(id) : null;
+  if (!el && id) return false;
+  const offset = parseFloat(getComputedStyle(root).scrollPaddingTop) || 0;
+  smoothScrollTo(el ? el.getBoundingClientRect().top + scrollY - (id === 'page-top' ? 0 : offset) : 0);
+  if (updateUrl) history.replaceState(null, '', id && id !== 'page-top' ? hash : location.pathname);
+  return true;
+}
+
+const isHome = (path: string) => path === '/' || path === '/index' || path === '/index.html';
+
+document.addEventListener('click', (e) => {
+  if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+  const a = (e.target as Element).closest<HTMLAnchorElement>('a[href]');
+  if (!a || a.target === '_blank' || !a.hash) return;
+  const url = new URL(a.href, location.href);
+  if (url.origin !== location.origin) return;
+
+  if (url.pathname === location.pathname) {
+    if (scrollToHash(url.hash)) e.preventDefault();
+  } else if (isHome(url.pathname) && !isHome(location.pathname)) {
+    // From a case study: load home at the top, then glide to the section.
+    e.preventDefault();
+    try {
+      sessionStorage.setItem('smooth-to', url.hash);
+    } catch {}
+    location.href = '/';
+  }
+});
+
+try {
+  const pending = sessionStorage.getItem('smooth-to');
+  if (pending && isHome(location.pathname)) {
+    sessionStorage.removeItem('smooth-to');
+    scrollTo(0, 0);
+    setTimeout(() => scrollToHash(pending), 350);
+  }
+} catch {}
+
 function scrollTop() {
-  scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+  smoothScrollTo(0);
 }
 topBtn?.addEventListener('click', scrollTop);
 
@@ -108,16 +178,6 @@ function setMenu(open: boolean) {
 }
 menuBtn?.addEventListener('click', () => setMenu(menu?.getAttribute('data-open') !== 'true'));
 menu?.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
-
-document.querySelectorAll('[data-home]').forEach((el) =>
-  el.addEventListener('click', (e) => {
-    if (location.pathname !== '/' && location.pathname !== '/index') return;
-    e.preventDefault();
-    scrollTop();
-    history.replaceState(null, '', '#page-top');
-    setMenu(false);
-  }),
-);
 
 // --- Theme -------------------------------------------------------------------
 function applyTheme(t: 'dark' | 'light') {
