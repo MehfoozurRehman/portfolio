@@ -9,12 +9,32 @@ import SectionMarker from '../components/SectionMarker.astro';
 import GitHubActivity from '../components/GitHubActivity.astro';
 import ContactForm from '../islands/contact-form';
 import pic from '../assets/pic.webp';
+import { getContributions } from '../lib/github';
 
 const shell = 'mx-auto w-full max-w-[1320px] px-5 sm:px-8 lg:px-10';
 const display = 'font-[family-name:var(--font-nunito)] font-extrabold leading-[0.98] tracking-[-0.01em]';
 const delay = (ms: number) => (ms ? `transition-delay:${ms}ms;animation-delay:${ms}ms` : undefined);
 
 const proof = ['schooliee', 'dsme-globals', 'expo-mobile-apps'].map((slug) => projects.find((p) => p.slug === slug)!);
+// Mini heatmap for the "more on GitHub" card: the most recent 22 weeks of real activity.
+const gh = await getContributions('MehfoozurRehman');
+const MINI_WEEKS = 16;
+const miniWeeks: ({ level: number; count: number; date: string } | null)[][] = [];
+if (gh) {
+  const first = new Date(gh.days[0].date + 'T00:00:00Z');
+  let col: ({ level: number; count: number; date: string } | null)[] = Array(first.getUTCDay()).fill(null);
+  for (const d of gh.days) {
+    col.push(d);
+    if (col.length === 7) {
+      miniWeeks.push(col);
+      col = [];
+    }
+  }
+  if (col.length) miniWeeks.push(col);
+}
+const recentWeeks = miniWeeks.slice(-MINI_WEEKS);
+const recentTotal = recentWeeks.flat().reduce((sum, d) => sum + (d?.count ?? 0), 0);
+
 const contactRows = [
   { icon: Mail, label: profile.email, href: `mailto:${profile.email}` },
   { icon: MessageCircle, label: `WhatsApp · ${profile.phone}`, href: profile.whatsapp },
@@ -412,9 +432,26 @@ const versions = [1, 2, 3, 4, 5, 6, 7].map((n) => [`v${n}`, `https://mehfoozurre
           href={`${profile.github}?tab=repositories`}
           target="_blank"
           rel="noreferrer"
-          class="carousel-item card-hover group relative flex min-h-[16rem] flex-col items-start justify-between overflow-hidden rounded-2xl border border-dashed border-[var(--border-card)] bg-[var(--color-page-soft)] p-7"
+          class="carousel-item card-hover group relative flex min-h-[16rem] flex-col items-start justify-between gap-6 overflow-hidden rounded-2xl border border-dashed border-[var(--border-card)] bg-[var(--color-page-soft)] p-7"
         >
-          <span class="grid size-12 place-items-center rounded-xl bg-[var(--color-accent)]/10 text-[var(--color-accent)]"><CodeXml size={22} aria-hidden="true" /></span>
+          <div class="w-full">
+            <div class="flex items-center justify-between gap-3">
+              <span class="grid size-12 place-items-center rounded-xl bg-[var(--color-accent)]/10 text-[var(--color-accent)]"><CodeXml size={22} aria-hidden="true" /></span>
+              {recentTotal > 0 ? (
+                <span class="text-right">
+                  <span class={`${display} block text-[1.5rem] leading-none`}>{recentTotal.toLocaleString('en-US')}</span>
+                  <span class="mt-1 block font-mono-label text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-soft)]">contributions · {recentWeeks.length} weeks</span>
+                </span>
+              ) : null}
+            </div>
+            {recentWeeks.length ? (
+              <svg viewBox={`0 0 ${recentWeeks.length * 12 - 3} 81`} class="gh-cal mt-6 block h-auto w-full" role="img" aria-label={`Recent GitHub activity: ${recentTotal} contributions in the last ${recentWeeks.length} weeks`}>
+                {recentWeeks.map((week, wi) =>
+                  week.map((day, di) => (day ? <rect x={wi * 12} y={di * 12} width="9" height="9" rx="2.5" data-level={day.level} /> : null)),
+                )}
+              </svg>
+            ) : null}
+          </div>
           <div>
             <p class={`${display} text-[1.35rem] leading-snug`}>There's more on GitHub.</p>
             <p class="mt-2 text-[0.9rem] leading-7 text-[var(--color-muted)]">Open-source experiments, tools and side projects.</p>
