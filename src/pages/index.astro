@@ -4,7 +4,7 @@ import { ArrowDown, ArrowRight, ArrowUpRight, CodeXml, GraduationCap, Mail, MapP
 import { education, experience, process, profile, profileHighlights, projects, services, stackGroups, testimonials } from '../data';
 import Base from '../layouts/Base.astro';
 import SiteNav from '../components/SiteNav.astro';
-import Logo from '../components/Logo.astro';
+import Footer from '../components/Footer.astro';
 import SectionMarker from '../components/SectionMarker.astro';
 import GitHubActivity from '../components/GitHubActivity.astro';
 import ContactForm from '../islands/contact-form';
@@ -46,7 +46,6 @@ const socials = [
   ['GitHub', profile.github],
   ['CodeSandbox', profile.codesandbox],
 ];
-const versions = [1, 2, 3, 4, 5, 6, 7].map((n) => [`v${n}`, `https://mehfoozurrehmanv${n}.web.app/`]);
 ---
 
 <Base>
@@ -100,10 +99,10 @@ const versions = [1, 2, 3, 4, 5, 6, 7].map((n) => [`v${n}`, `https://mehfoozurre
             </div>
 
             <div class="hero-in" style={delay(180)}>
-              <div class="mt-9 flex flex-wrap items-center gap-3">
+              <div class="mt-9 flex flex-wrap items-center gap-2.5 sm:gap-3">
                 <a
                   href="#contact"
-                  class="group inline-flex min-h-12 items-center gap-2 rounded-full bg-[var(--color-accent)] px-6 text-[0.9rem] font-bold text-[var(--color-on-accent)] shadow-lg shadow-[color:var(--shadow-accent)] transition hover:shadow-xl"
+                  class="group inline-flex min-h-12 items-center gap-2 rounded-full bg-[var(--color-accent)] px-5 text-[0.88rem] font-bold sm:px-6 sm:text-[0.9rem] text-[var(--color-on-accent)] shadow-lg shadow-[color:var(--shadow-accent)] transition hover:shadow-xl"
                 >
                   Let's build
                   <ArrowRight size={17} class="transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
@@ -112,10 +111,10 @@ const versions = [1, 2, 3, 4, 5, 6, 7].map((n) => [`v${n}`, `https://mehfoozurre
                   href="/cv.pdf"
                   target="_blank"
                   rel="noreferrer"
-                  class="inline-flex min-h-12 items-center gap-2 rounded-full border border-[var(--border-card)] bg-[var(--color-field)] px-5 text-[0.9rem] font-bold text-[var(--color-text)] transition hover:border-[var(--border-hover)] hover:text-[var(--color-accent)]"
+                  class="inline-flex min-h-12 items-center gap-2 rounded-full border border-[var(--border-card)] bg-[var(--color-field)] px-4 text-[0.88rem] font-bold text-[var(--color-text)] transition hover:border-[var(--border-hover)] hover:text-[var(--color-accent)] sm:px-5 sm:text-[0.9rem]"
                 >
                   Download CV
-                  <ArrowUpRight size={17} aria-hidden="true" />
+                  <ArrowUpRight size={17} class="hidden min-[400px]:block" aria-hidden="true" />
                 </a>
                 <a
                   href={profile.github}
@@ -580,7 +579,7 @@ const versions = [1, 2, 3, 4, 5, 6, 7].map((n) => [`v${n}`, `https://mehfoozurre
           <button
             type="button"
             data-copy={profile.email}
-            class="mt-3 inline-flex items-center gap-2 rounded-full px-1 font-mono-label text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-muted)] transition hover:text-[var(--color-accent)]"
+            class="mt-3 inline-flex min-h-10 items-center gap-2 rounded-full border border-dashed border-[var(--border-card)] px-4 font-mono-label text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-muted)] transition hover:border-[var(--border-hover)] hover:text-[var(--color-accent)]"
           >
             <span data-copy-label aria-live="polite">Copy email address</span>
           </button>
@@ -608,43 +607,6 @@ const versions = [1, 2, 3, 4, 5, 6, 7].map((n) => [`v${n}`, `https://mehfoozurre
       </div>
     </section>
 
-    <footer class="border-t border-[var(--border-hairline)] bg-[var(--color-page)]">
-      <div class={`${shell} py-10`}>
-        <div class="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
-          <a href="#page-top" data-home class="flex items-center gap-3" aria-label="Back to top">
-            <Logo class="size-9" />
-            <span class="font-mono-label text-[0.72rem] font-semibold uppercase tracking-[0.2em]">Mehfooz-ur-Rehman</span>
-          </a>
-          <nav aria-label="Footer" class="flex flex-wrap gap-x-6 gap-y-2 font-mono-label text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-muted)]">
-            {
-              [
-                ['Work', '#work'],
-                ['Experience', '#experience'],
-                ['Contact', '#contact'],
-                ['CV', '/cv.pdf'],
-                ['GitHub', profile.github],
-                ['LinkedIn', profile.linkedin],
-              ].map(([label, href]) => (
-                <a href={href} {...(href.startsWith('http') ? { target: '_blank', rel: 'noreferrer' } : {})} class="transition hover:text-[var(--color-accent)]">{label}</a>
-              ))
-            }
-          </nav>
-        </div>
-        <div class="mt-8 flex flex-col gap-3 border-t border-[var(--border-subtle)] pt-6 text-[0.72rem] text-[var(--color-muted)] sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            © {new Date().getFullYear()} Mehfooz-ur-Rehman. Built with Astro and React ·{' '}
-            <a href="https://github.com/MehfoozurRehman/portfolio" target="_blank" rel="noreferrer" class="text-[var(--color-text)] underline decoration-[var(--border-subtle)] underline-offset-4 transition hover:text-[var(--color-accent)]">source on GitHub</a>
-          </p>
-          <p class="flex flex-wrap items-center gap-x-2.5 gap-y-1">
-            <span class="text-[var(--color-soft)]">Earlier versions</span>
-            {
-              versions.map(([label, href]) => (
-                <a href={href} target="_blank" rel="noreferrer" class="font-mono-label font-semibold transition hover:text-[var(--color-accent)]" aria-label={`Portfolio ${label}`}>{label}</a>
-              ))
-            }
-          </p>
-        </div>
-      </div>
-    </footer>
+    <Footer />
   </main>
 </Base>
