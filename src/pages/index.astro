@@ -257,6 +257,17 @@ const versions = [1, 2, 3, 4, 5, 6, 7].map((n) => [`v${n}`, `https://mehfoozurre
           }
         </div>
       </div>
+          <div class="reveal mt-16">
+        <p class="font-mono-label text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-[var(--color-accent)]">Toolkit</p>
+        <h3 class={`${display} mt-4 text-[1.4rem]`}>Modern tools I already use to ship.</h3>
+        <ul class="mt-6 flex flex-wrap gap-2">
+          {
+            stack.map((item) => (
+              <li class="rounded-full border border-[var(--border-card)] bg-[var(--color-raise)] px-3.5 py-2 font-mono-label text-[0.72rem] font-semibold text-[var(--color-text)] transition hover:border-[var(--border-hover)] hover:text-[var(--color-accent)]">{item}</li>
+            ))
+          }
+        </ul>
+      </div>
     </section>
 
     <section id="services" class="border-y border-[var(--border-subtle)] bg-[var(--color-page-soft)]">
@@ -289,6 +300,28 @@ const versions = [1, 2, 3, 4, 5, 6, 7].map((n) => [`v${n}`, `https://mehfoozurre
               );
             })
           }
+        </div>
+
+        <div class="reveal mt-20">
+          <p class="font-mono-label text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-[var(--color-accent)]">How I work</p>
+          <h3 class={`${display} mt-4 max-w-2xl text-[clamp(1.3rem,2.2vw,1.8rem)]`}>A direct path from workflow to working software.</h3>
+          <ol class="mt-8 grid gap-4 md:grid-cols-3">
+            {
+              process.map((item, i) => {
+                const Icon = item.icon;
+                return (
+                  <li class="card-hover relative overflow-hidden rounded-2xl border border-[var(--border-card)] bg-[var(--color-raise)] p-6">
+                    <span class={`${display} absolute -right-2 -top-3 text-[5rem] text-[var(--color-text)] opacity-[0.05]`} aria-hidden="true">{i + 1}</span>
+                    <span class="grid size-11 place-items-center rounded-xl bg-[var(--color-accent)]/10 text-[var(--color-accent)]">
+                      <Icon size={22} aria-hidden="true" />
+                    </span>
+                    <h4 class="mt-5 text-[1.1rem] font-extrabold leading-tight">{item.title.replace(/^\d+\.\s*/, '')}</h4>
+                    <p class="mt-2 text-[0.9rem] leading-7 text-[var(--color-muted)]">{item.text}</p>
+                  </li>
+                );
+              })
+            }
+          </ol>
         </div>
       </div>
     </section>
@@ -406,77 +439,39 @@ const versions = [1, 2, 3, 4, 5, 6, 7].map((n) => [`v${n}`, `https://mehfoozurre
             ))
           }
         </div>
-      </div>
-    </section>
 
-    <section id="process" class={`${shell} py-14 sm:py-20`}>
-      <div class="reveal">
-        <SectionMarker index="05" label="How I work" />
-        <h2 class={`${display} max-w-2xl text-[clamp(1.55rem,2.9vw,2.35rem)]`}>A direct path from workflow to working software.</h2>
-      </div>
-      <div class="mt-12 grid gap-4 md:grid-cols-3">
-        {
-          process.map((item, i) => {
-            const Icon = item.icon;
-            return (
-              <article class="reveal card-hover relative overflow-hidden rounded-2xl border border-[var(--border-card)] bg-[var(--color-raise)] p-6" style={delay(i * 70)}>
-                <span class={`${display} absolute -right-2 -top-3 text-[5rem] text-[var(--color-text)] opacity-[0.05]`} aria-hidden="true">{i + 1}</span>
-                <span class="grid size-11 place-items-center rounded-xl bg-[var(--color-accent)]/10 text-[var(--color-accent)]">
-                  <Icon size={22} aria-hidden="true" />
-                </span>
-                <h3 class="mt-5 text-[1.1rem] font-extrabold leading-tight">{item.title}</h3>
-                <p class="mt-2 text-[0.9rem] leading-7 text-[var(--color-muted)]">{item.text}</p>
-              </article>
-            );
-          })
-        }
-      </div>
-    </section>
-
-    <section id="education" class="border-t border-[var(--border-subtle)] bg-[var(--color-page-soft)]">
-      <div class={`${shell} grid gap-12 py-14 sm:py-20 lg:grid-cols-2 lg:gap-16`}>
-        <div class="reveal">
-          <SectionMarker index="06" label="Education" />
-          {
-            education.map((item) => (
-              <article class="rounded-2xl border border-[var(--border-card)] bg-[var(--color-raise)] p-6">
-                <div class="flex items-start gap-4">
-                  <span class="grid size-12 shrink-0 place-items-center rounded-xl bg-[var(--color-inverse)] text-[var(--color-inverse-text)]">
-                    <GraduationCap size={22} aria-hidden="true" />
-                  </span>
-                  <div>
-                    <h3 class="text-[1.12rem] font-extrabold leading-tight">{item.school}</h3>
-                    <p class="mt-1 text-[0.9rem] text-[var(--color-muted)]">{item.degree}</p>
-                    <p class="mt-2 font-mono-label text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-accent)]">{item.period}</p>
-                  </div>
-                </div>
-                <div class="mt-5 flex flex-wrap gap-1.5">
-                  {item.focus.map((f) => (
-                    <span class="rounded-md border border-[var(--border-subtle)] bg-[var(--color-page)] px-2.5 py-1 font-mono-label text-[0.64rem] font-semibold text-[var(--color-muted)]">{f}</span>
-                  ))}
-                </div>
-              </article>
-            ))
-          }
-        </div>
-
-        <div class="reveal" style={delay(80)}>
-          <SectionMarker index="07" label="Toolkit" />
-          <h3 class={`${display} text-[1.4rem]`}>Modern tools I already use to ship.</h3>
-          <ul class="mt-6 flex flex-wrap gap-2">
+        <div class="reveal mt-14 border-t border-[var(--border-subtle)] pt-10">
+          <p class="font-mono-label text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-[var(--color-accent)]">Education</p>
+          <div class="mt-6 grid gap-4 lg:grid-cols-2">
             {
-              stack.map((item) => (
-                <li class="rounded-full border border-[var(--border-card)] bg-[var(--color-raise)] px-3.5 py-2 font-mono-label text-[0.72rem] font-semibold text-[var(--color-text)] transition hover:border-[var(--border-hover)] hover:text-[var(--color-accent)]">{item}</li>
+              education.map((item) => (
+                <article class="rounded-2xl border border-[var(--border-card)] bg-[var(--color-raise)] p-6">
+                  <div class="flex items-start gap-4">
+                    <span class="grid size-12 shrink-0 place-items-center rounded-xl bg-[var(--color-inverse)] text-[var(--color-inverse-text)]">
+                      <GraduationCap size={22} aria-hidden="true" />
+                    </span>
+                    <div>
+                      <h3 class="text-[1.12rem] font-extrabold leading-tight">{item.school}</h3>
+                      <p class="mt-1 text-[0.9rem] text-[var(--color-muted)]">{item.degree}</p>
+                      <p class="mt-2 font-mono-label text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-accent)]">{item.period}</p>
+                    </div>
+                  </div>
+                  <div class="mt-5 flex flex-wrap gap-1.5">
+                    {item.focus.map((f) => (
+                      <span class="rounded-md border border-[var(--border-subtle)] bg-[var(--color-page)] px-2.5 py-1 font-mono-label text-[0.64rem] font-semibold text-[var(--color-muted)]">{f}</span>
+                    ))}
+                  </div>
+                </article>
               ))
             }
-          </ul>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="testimonials" class={`${shell} py-14 sm:py-20`}>
       <div class="reveal">
-        <SectionMarker index="08" label="Testimonials" />
+        <SectionMarker index="05" label="Testimonials" />
         <h2 class={`${display} max-w-2xl text-[clamp(1.55rem,2.9vw,2.35rem)]`}>What clients and teammates already say.</h2>
       </div>
       <div class="carousel mt-10 md:mt-12 lg:grid lg:grid-cols-3">
@@ -502,7 +497,7 @@ const versions = [1, 2, 3, 4, 5, 6, 7].map((n) => [`v${n}`, `https://mehfoozurre
       <div class="halo -bottom-[20%] left-[10%] h-[30rem] w-[30rem]" style="background: var(--halo-a)"></div>
       <div class={`${shell} relative z-10 grid items-center gap-12 py-14 sm:py-20 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16`}>
         <div class="reveal">
-          <SectionMarker index="09" label="Start here" />
+          <SectionMarker index="06" label="Start here" />
           <h2 class={`${display} text-[clamp(1.7rem,3.1vw,2.55rem)]`}>Need a reliable developer to build your product?</h2>
           <p class="mt-6 max-w-xl text-[0.98rem] leading-8 text-[var(--color-muted)]">
             Send the workflow, product idea or stuck project. I'm strongest when the job needs product thinking, full-stack execution and a practical launch path.
