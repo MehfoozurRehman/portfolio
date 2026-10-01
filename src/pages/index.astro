@@ -28,7 +28,8 @@ const versions = [1, 2, 3, 4, 5, 6, 7].map((n) => [`v${n}`, `https://mehfoozurre
 ---
 
 <Base>
-  <main class="relative min-h-screen overflow-x-hidden bg-[var(--color-page)] text-[var(--color-text)]">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-[var(--color-accent)] focus:px-4 focus:py-2 focus:text-[0.8rem] focus:font-bold focus:text-[var(--color-on-accent)]">Skip to content</a>
+  <main id="main" class="relative min-h-screen overflow-x-hidden bg-[var(--color-page)] text-[var(--color-text)]">
     <div id="page-top" aria-hidden="true" class="absolute top-0"></div>
     <SiteNav />
 
@@ -98,9 +99,10 @@ const versions = [1, 2, 3, 4, 5, 6, 7].map((n) => [`v${n}`, `https://mehfoozurre
                   href={profile.github}
                   target="_blank"
                   rel="noreferrer"
-                  class="inline-flex min-h-12 items-center gap-2 rounded-full border border-[var(--border-card)] px-5 text-[0.9rem] font-bold text-[var(--color-text)] transition hover:border-[var(--border-hover)] hover:text-[var(--color-accent)]"
+                  aria-label="GitHub"
+                  class="inline-flex size-12 items-center justify-center gap-2 rounded-full border border-[var(--border-card)] text-[0.9rem] font-bold text-[var(--color-text)] transition hover:border-[var(--border-hover)] hover:text-[var(--color-accent)] sm:w-auto sm:px-5"
                 >
-                  <CodeXml size={17} aria-hidden="true" /> GitHub
+                  <CodeXml size={17} aria-hidden="true" /> <span class="hidden sm:inline">GitHub</span>
                 </a>
               </div>
             </div>
@@ -261,12 +263,13 @@ const versions = [1, 2, 3, 4, 5, 6, 7].map((n) => [`v${n}`, `https://mehfoozurre
         <h2 class={`${display} max-w-2xl text-[clamp(1.55rem,2.9vw,2.35rem)]`}>Products shaped around operations, revenue and daily use.</h2>
       </div>
 
-      <div class="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+      <p class="mt-6 font-mono-label text-[0.64rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-soft)] md:hidden" aria-hidden="true">Swipe to browse →</p>
+      <div class="carousel mt-6 md:mt-12 md:grid md:grid-cols-2 xl:grid-cols-3">
         {
-          projects.map((project, i) => {
+          projects.map((project) => {
             const Icon = project.icon;
             return (
-              <article class="reveal card-hover group flex flex-col overflow-hidden rounded-2xl border border-[var(--border-card)] bg-[var(--color-raise)]" style={delay((i % 3) * 60)}>
+              <article class="carousel-item card-hover group flex flex-col overflow-hidden rounded-2xl border border-[var(--border-card)] bg-[var(--color-raise)]">
                 {project.hero ? (
                   <div class="relative aspect-[16/10] w-full overflow-hidden bg-[var(--color-page-soft)]">
                     <Image
@@ -436,10 +439,10 @@ const versions = [1, 2, 3, 4, 5, 6, 7].map((n) => [`v${n}`, `https://mehfoozurre
         <SectionMarker index="08" label="Testimonials" />
         <h2 class={`${display} max-w-2xl text-[clamp(1.55rem,2.9vw,2.35rem)]`}>What clients and teammates already say.</h2>
       </div>
-      <div class="mt-12 grid gap-4 lg:grid-cols-3">
+      <div class="carousel mt-10 md:mt-12 lg:grid lg:grid-cols-3">
         {
-          testimonials.map((t, i) => (
-            <blockquote class="reveal card-hover flex flex-col rounded-2xl border border-[var(--border-card)] bg-[var(--color-raise)] p-6" style={delay(i * 70)}>
+          testimonials.map((t) => (
+            <blockquote class="carousel-item card-hover flex flex-col rounded-2xl border border-[var(--border-card)] bg-[var(--color-raise)] p-6">
               <span class={`${display} text-[3rem] leading-none text-[var(--color-accent)]/30`} aria-hidden="true">&ldquo;</span>
               <p class="-mt-3 text-[1.02rem] font-bold leading-8 text-[var(--color-text)]">{t.quote}</p>
               <footer class="mt-6 flex items-center gap-3 border-t border-[var(--border-subtle)] pt-5">
