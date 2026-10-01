@@ -140,3 +140,18 @@ matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
   } catch {}
   applyTheme(e.matches ? 'dark' : 'light');
 });
+
+// --- Copy to clipboard ---------------------------------------------------------
+document.querySelectorAll<HTMLButtonElement>('[data-copy]').forEach((btn) =>
+  btn.addEventListener('click', async () => {
+    const label = btn.querySelector<HTMLElement>('[data-copy-label]');
+    const original = label?.textContent ?? '';
+    try {
+      await navigator.clipboard.writeText(btn.dataset.copy ?? '');
+      if (label) label.textContent = 'Copied ✓';
+    } catch {
+      if (label) label.textContent = 'Press Ctrl+C to copy';
+    }
+    setTimeout(() => label && (label.textContent = original), 2000);
+  }),
+);
