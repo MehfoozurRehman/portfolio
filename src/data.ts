@@ -327,25 +327,14 @@ export const education: Education[] = [
   },
 ];
 
-export const stack = [
-  'Karobari Engine',
-  'Next.js 16',
-  'React 19',
-  'TypeScript',
-  'React Native',
-  'Expo',
-  'Convex (Real-Time)',
-  'OpenAI Agents',
-  'WhatsApp Cloud API',
-  'Tailwind CSS v4',
-  'Prisma ORM',
-  'MongoDB',
-  'PostgreSQL',
-  'Node.js / Express / Hono',
-  'Electron',
-  'Docker',
-  'Mapbox GL / Three.js',
+export const stackGroups = [
+  { label: 'Web & UI', items: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS v4', 'Mapbox GL / Three.js'] },
+  { label: 'Mobile & desktop', items: ['React Native', 'Expo', 'Electron'] },
+  { label: 'Backend & data', items: ['Convex (Real-Time)', 'Node.js / Express / Hono', 'Prisma ORM', 'PostgreSQL', 'MongoDB', 'Docker'] },
+  { label: 'AI & automation', items: ['OpenAI Agents', 'WhatsApp Cloud API', 'Karobari Engine'] },
 ] as const;
+
+export const stack = stackGroups.flatMap((group) => group.items);
 
 export const testimonials: Testimonial[] = [
   {
