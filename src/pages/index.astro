@@ -1,7 +1,7 @@
 ---
 import { Image, Picture } from 'astro:assets';
 import { ArrowDown, ArrowRight, ArrowUpRight, CodeXml, GraduationCap, Mail, MapPin, MessageCircle, Phone } from '@lucide/astro';
-import { education, experience, process, profile, profileHighlights, projects, services, stack, testimonials } from '../data';
+import { education, experience, process, profile, profileHighlights, projects, services, stackGroups, testimonials } from '../data';
 import Base from '../layouts/Base.astro';
 import SiteNav from '../components/SiteNav.astro';
 import SectionMarker from '../components/SectionMarker.astro';
@@ -177,23 +177,6 @@ const versions = [1, 2, 3, 4, 5, 6, 7].map((n) => [`v${n}`, `https://mehfoozurre
           Scroll to explore
         </div>
       </div>
-
-      <div class="marquee-wrap marquee-mask relative z-10 mt-12 overflow-hidden border-y border-[var(--border-subtle)] bg-[var(--color-page-soft)] py-4 sm:mt-16" aria-label="Technologies I use">
-        <div class="marquee-track">
-          {
-            [0, 1].map((copy) => (
-              <div class="flex" aria-hidden={copy === 1 ? 'true' : undefined}>
-                {stack.map((item) => (
-                  <span class="flex items-center gap-6 whitespace-nowrap pr-6 font-mono-label text-[0.9rem] font-semibold uppercase tracking-[0.12em] text-[var(--color-muted)]">
-                    {item}
-                    <span class="text-[var(--color-accent)]">✦</span>
-                  </span>
-                ))}
-              </div>
-            ))
-          }
-        </div>
-      </div>
     </section>
 
     <section id="proof" class={`${shell} -mt-2 pb-4 pt-12 sm:pt-16`} aria-labelledby="proof-heading">
@@ -260,13 +243,20 @@ const versions = [1, 2, 3, 4, 5, 6, 7].map((n) => [`v${n}`, `https://mehfoozurre
           <div class="reveal mt-16">
         <p class="font-mono-label text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-[var(--color-accent)]">Toolkit</p>
         <h3 class={`${display} mt-4 text-[1.4rem]`}>Modern tools I already use to ship.</h3>
-        <ul class="mt-6 flex flex-wrap gap-2">
+        <div class="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
           {
-            stack.map((item) => (
-              <li class="rounded-full border border-[var(--border-card)] bg-[var(--color-raise)] px-3.5 py-2 font-mono-label text-[0.72rem] font-semibold text-[var(--color-text)] transition hover:border-[var(--border-hover)] hover:text-[var(--color-accent)]">{item}</li>
+            stackGroups.map((group) => (
+              <div class="border-t border-[var(--border-card)] pt-4">
+                <h4 class="font-mono-label text-[0.66rem] font-semibold uppercase tracking-[0.16em] text-[var(--color-soft)]">{group.label}</h4>
+                <ul class="mt-4 flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <li class="rounded-full border border-[var(--border-card)] bg-[var(--color-raise)] px-3 py-1.5 font-mono-label text-[0.7rem] font-semibold text-[var(--color-text)] transition hover:border-[var(--border-hover)] hover:text-[var(--color-accent)]">{item}</li>
+                  ))}
+                </ul>
+              </div>
             ))
           }
-        </ul>
+        </div>
       </div>
     </section>
 

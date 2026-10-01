@@ -219,29 +219,6 @@ body::before {
   }
 }
 
-.marquee-track {
-  display: flex;
-  width: max-content;
-  animation: marquee 38s linear infinite;
-}
-.marquee-mask {
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-}
-.marquee-wrap:hover .marquee-track {
-  animation-play-state: paused;
-}
-@keyframes marquee {
-  to {
-    transform: translateX(-50%);
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .marquee-track {
-    animation: none;
-  }
-}
-
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
