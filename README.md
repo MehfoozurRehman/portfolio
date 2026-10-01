@@ -1,53 +1,48 @@
 # Developer Portfolio & CV Generator
 
-The personal portfolio, interactive GitHub contributions heatmap, and automated PDF resume generator for Mehfooz-ur-Rehman built with Next.js 16 App Router, React 19, Tailwind CSS v4, and PDFKit.
+Personal portfolio of Mehfooz-ur-Rehman, built with **Astro 7**, **React 19 islands**, **Tailwind CSS v4** and a PDFKit-generated CV. Output is fully static and deployed to Firebase Hosting.
 
-## Overview
+## Architecture
 
-`portfolio` is Mehfooz-ur-Rehman's central web presence highlighting engineering case studies, full-stack open source projects, live GitHub activity visualizers (`react-github-calendar`), automated programmatic PDF curriculum vitae compilation (`pdfkit`), EmailJS contact routing, and Firebase Hosting deployment.
+- **Static-first**: every page is pre-rendered HTML. Only the contact form ships React (hydrated on `client:visible`); theme toggle, scroll reveal, nav and cursor glow are ~2 KB of vanilla TypeScript (`src/scripts/behaviors.ts`).
+- **GitHub contribution graph** is fetched at build time and inlined as SVG (`src/lib/github.ts`), so there is no runtime third-party call. CI rebuilds daily to keep it fresh.
+- **Images** go through `astro:assets` (AVIF/WebP, responsive `srcset`, explicit dimensions). Fonts are self-hosted, latin-subset variable fonts, preloaded.
+- **SEO**: per-page title/description/canonical/Open Graph, JSON-LD (`Person`, `WebSite`, `CreativeWork`, `BreadcrumbList`), sitemap, `robots.txt`, social card (`public/og.png`).
+- **Content** lives in `src/data.ts`; case-study pages are generated from `projects`.
 
-## Tech Stack
+## Structure
 
-- **Framework**: [Next.js](https://nextjs.org/) (v16 App Router)
-- **Frontend Core**: React 19, TypeScript
-- **Styling**: Tailwind CSS v4 (`@tailwindcss/postcss`)
-- **PDF Generation**: PDFKit (`pdfkit`, `scripts/generate-cv-pdf.mjs`)
-- **Visuals & Heatmaps**: `react-github-calendar`, Lucide Icons
-- **Email Service**: `@emailjs/browser`
-- **Hosting**: Firebase Hosting (`firebase.json`)
+```
+src/
+  pages/            index.astro, case-studies/[slug].astro, 404.astro
+  layouts/Base.astro  head, SEO, theme bootstrap
+  components/       SiteNav, SectionMarker, GitHubActivity, Logo
+  islands/          contact-form.tsx (React)
+  scripts/          behaviors.ts (vanilla)
+  lib/              site constants, GitHub fetcher
+  assets/           optimized images
+scripts/            generate-cv-pdf.mjs, generate-icons.mjs
+public/             static files (cv.pdf, icons, og.png, manifest, robots)
+```
 
-## Prerequisites
+## Commands
 
-- Node.js (v20 or higher recommended)
-- Package manager (`pnpm` v11+ recommended)
+| Command | Action |
+| --- | --- |
+| `pnpm dev` | Dev server at `localhost:4321` |
+| `pnpm build` | Generate CV PDF, then build to `dist/` |
+| `pnpm build:site` | Build without regenerating the CV |
+| `pnpm preview` | Preview the production build |
+| `pnpm check` | Type-check `.astro` / `.ts` / `.tsx` |
+| `pnpm generate:cv` | Rebuild `public/cv.pdf` |
+| `pnpm generate:icons` | Rebuild PWA icons and `og.png` |
+| `pnpm deploy` | Build and deploy to Firebase Hosting |
 
-## Getting Started
+## Configuration
 
-1. **Install dependencies**:
-   ```bash
-   pnpm install
-   ```
+Optional env vars (public, used by the contact form; defaults are built in): `PUBLIC_EMAILJS_PUBLIC_KEY`, `PUBLIC_EMAILJS_SERVICE_ID`, `PUBLIC_EMAILJS_TEMPLATE_ID`, `PUBLIC_CONTACT_EMAIL`.
 
-2. **Generate CV PDF**:
-   ```bash
-   pnpm generate:cv
-   ```
-
-3. **Run the Development Server**:
-   ```bash
-   pnpm dev
-   ```
-
-4. **Access the Portfolio**:
-   Open `http://localhost:3000` in your web browser.
-
-## Available Scripts
-
-- `pnpm dev` - Starts the Next.js development server.
-- `pnpm generate:cv` - Builds the PDF resume via PDFKit.
-- `pnpm build` - Generates PDF resume and compiles the Next.js production application.
-- `pnpm start` - Starts the production server.
-- `pnpm deploy` - Builds and deploys directly to Firebase Hosting.
+Requires Node 20+ (CI uses 24) and pnpm 11.
 
 ## Author
 

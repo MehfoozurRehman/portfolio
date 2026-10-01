@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main
+  # Rebuild daily so the build-time GitHub contribution graph stays fresh.
+  schedule:
+    - cron: '17 3 * * *'
+  workflow_dispatch:
 
 permissions:
   contents: read

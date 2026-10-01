@@ -3,7 +3,7 @@ import {
   BrainCircuit,
   BriefcaseBusiness,
   Building2,
-  Code2,
+  CodeXml,
   Laptop,
   Layers,
   Map,
@@ -16,9 +16,21 @@ import {
   Sparkles,
   Store,
   UsersRound,
-} from 'lucide-react';
+} from '@lucide/astro';
 
-import type { LucideIcon } from 'lucide-react';
+import type { ImageMetadata } from 'astro';
+import cover_whatsapp from './assets/projects/cover-whatsapp.svg';
+import cover_karobari from './assets/projects/cover-karobari.svg';
+import cover_expo from './assets/projects/cover-expo.svg';
+import schooliee_hero from './assets/projects/schooliee-hero.webp';
+import dsme_hero from './assets/projects/dsme-hero.webp';
+import dsme_logo from './assets/projects/dsme-logo-transparent.webp';
+import leadprofit_hero from './assets/projects/leadprofit-hero.webp';
+import logo_github from './assets/projects/logo-github.png';
+import logo_leadprofit from './assets/projects/logo-leadprofit.png';
+
+// Any @lucide/astro icon component.
+export type LucideIcon = typeof CodeXml;
 
 export type Service = {
   title: string;
@@ -35,10 +47,12 @@ export type Project = {
   stack: string[];
   icon: LucideIcon;
   url?: string;
-  logoUrl?: string;
-  heroImageUrl?: string;
+  logo?: ImageMetadata;
+  hero?: ImageMetadata;
   problem: string;
   approach: string;
+  /** One-line, headline-style result used in compact proof cards. */
+  result: string;
   outcome: string;
   responsibilities: string[];
   highlights: string[];
@@ -116,33 +130,19 @@ export const services: Service[] = [
 
 export const projects: Project[] = [
   {
-    slug: 'karobari',
-    title: 'Karobari: WhatsApp-First AI Commerce Platform',
-    category: 'Founder & Product Lead · Conversational AI Commerce',
-    icon: Store,
-    url: 'https://github.com/MehfoozurRehman/karobari',
-    heroImageUrl: '/cover-whatsapp.svg',
-    summary: 'An automated digital identity and e-commerce engine enabling local businesses to launch online stores, manage inventory, and fulfill orders entirely through WhatsApp voice and text.',
-    businessValue: 'Removes the digital divide for millions of physical merchants in emerging markets by turning the app they already use daily into a full-scale digital commerce operating system.',
-    stack: ['Next.js 16', 'React 19', 'Convex', 'OpenAI Agents', 'WhatsApp Cloud API', 'Clerk Auth', 'Tailwind CSS v4'],
-    problem: 'Traditional e-commerce platforms and complex admin panels are too intimidating and friction-heavy for local shop owners, who rely solely on WhatsApp and phone calls to do business.',
-    approach: 'Engineered an AI conversational ingestion pipeline where merchants can speak or text product details in Urdu/English over WhatsApp to automatically generate live web stores, track inventory decrements, and send customer order receipts.',
-    outcome: 'Enables any retail merchant or wholesaler to go from a physical shop to an active digital selling engine in less than 2 minutes without writing a single line of data manually.',
-    responsibilities: ['Product architecture', 'Conversational AI pipeline', 'Convex real-time schemas', 'WhatsApp webhook infrastructure', 'Merchant UX'],
-    highlights: ['WhatsApp Voice Ingestion', 'Urdu/English AI Understanding', 'Instant Storefront Generation', 'Order & Inventory Automation'],
-  },
-  {
     slug: 'schooliee',
     title: 'Schooliee: Multi-School ERP & Parent Communication',
     category: 'Cloud SaaS & Mobile Ecosystem',
     icon: School,
     url: 'https://github.com/MehfoozurRehman/schooliee',
-    heroImageUrl: '/schooliee-hero.webp',
+    logo: logo_github,
+    hero: schooliee_hero,
     summary: 'A cloud school management ecosystem with role-based web portals, native mobile apps, background SMS relays, and automated WhatsApp parent notifications.',
     businessValue: 'Replaces fragmented paper registers and spreadsheets with a single connected platform for fee challans, student attendance, exams, and family engagement.',
     stack: ['Turborepo', 'Next.js', 'React Native', 'Expo', 'Convex', 'Prisma', 'WhatsApp API'],
     problem: 'Schools struggled with manual fee collection, delayed parent updates, and disjointed systems for student academic records and attendance.',
     approach: 'Architected a monorepo housing the admin dashboard, mobile apps for teachers/parents, and microservices for automated WhatsApp and SIM SMS notifications.',
+    result: 'Attendance alerts, fee challans and grading, automated end to end.',
     outcome: 'Successfully automated daily attendance broadcasts, computerized fee challan generation, and synchronized teacher grading directly into parent mobile feeds.',
     responsibilities: ['Full-stack monorepo engineering', 'Parent & staff workflows', 'WhatsApp desktop messaging engine', 'Mobile app delivery'],
     highlights: ['Multi-tenant school ERP', 'Automated Fee Challans', 'WhatsApp & SMS Gateways', 'Parent & Teacher Apps'],
@@ -153,13 +153,14 @@ export const projects: Project[] = [
     category: 'Enterprise Digital Platform',
     icon: Building2,
     url: 'https://dsmeglobal.web.app',
-    logoUrl: '/dsme-logo-transparent.webp',
-    heroImageUrl: '/dsme-hero.webp',
+    logo: dsme_logo,
+    hero: dsme_hero,
     summary: 'The digital engineering showcase and product consulting portal for DSME Globals, presenting enterprise client case studies and full-stack solutions.',
     businessValue: 'Delivers a high-conversion client acquisition channel and establishes credible technical authority for international enterprise software contracts.',
     stack: ['React 18', 'Vite', 'SCSS', 'Firebase Hosting', 'UI/UX Design'],
     problem: 'The engineering firm needed a high-performance, polished digital presence to represent its cross-platform product delivery capabilities to global clients.',
     approach: 'Designed a fast, accessible web portal highlighting past architectures, service roadmaps, and instant consultation intake flows.',
+    result: 'The portal behind international software contracts in logistics, healthcare and retail.',
     outcome: 'Served as the core digital portal securing international software contracts across logistics, healthcare, and retail sectors.',
     responsibilities: ['Information architecture', 'Frontend performance optimization', 'Service positioning', 'Responsive UI engineering'],
     highlights: ['Corporate Engineering Brand', 'Service Architecture Clarity', 'High-Performance SPA', 'Global Client Acquisition'],
@@ -170,45 +171,67 @@ export const projects: Project[] = [
     category: 'E-Commerce Intelligence & Data Modeling',
     icon: MessageCircle,
     url: 'https://www.leadprofit.com',
-    heroImageUrl: '/leadprofit-hero.webp',
+    logo: logo_leadprofit,
+    hero: leadprofit_hero,
     summary: 'An Amazon seller intelligence suite focusing on live repricing algorithms, inventory tracking, order analytics, and profit margin visibility.',
     businessValue: 'Gives multi-channel Amazon merchants real-time margin visibility and dynamic repricing controls to prevent inventory dead-stock and protect ROI.',
     stack: ['React.js', 'Node.js', 'Amazon SP-API', 'OpenAPI / Swagger', 'Analytics Data Models'],
     problem: 'High-volume marketplace sellers often suffer margin erosion due to unmonitored supplier price fluctuations and manual buy-box tracking.',
     approach: 'Constructed real-time analytical dashboards and OpenAPI-documented REST APIs pulling live Amazon SP-API inventory and sales metrics.',
+    result: 'One command center for instant repricing and profit tracking.',
     outcome: 'Gave sellers a unified command center to execute instant repricing strategies and track profit metrics without manual calculations.',
     responsibilities: ['Marketplace data modeling', 'Dashboard UI architecture', 'Swagger API documentation', 'Repricing workflows'],
     highlights: ['Live Margin Analytics', 'Amazon SP-API Integration', 'Interactive Swagger UI', 'Inventory Health Monitoring'],
-  },
-  {
-    slug: 'whatsapp-business-automation',
-    title: 'Native WhatsApp Automation & Messaging Gateway',
-    category: 'Microservices & Desktop Infrastructure',
-    icon: MessageCircle,
-    heroImageUrl: '/cover-whatsapp.svg',
-    summary: 'High-throughput desktop and headless microservice gateways for automated WhatsApp messaging, lead qualification, and customer engagement.',
-    businessValue: 'Enables high-volume transactional messaging and conversational bots without exorbitant third-party per-message API overhead.',
-    stack: ['Electron', 'Hono', 'TypeScript', 'Puppeteer', 'Webhooks', 'Docker'],
-    problem: 'Businesses needed reliable mass notifications and conversational workflows without being locked into rigid, costly cloud messaging providers.',
-    approach: 'Engineered both an Electron desktop client (`schooliee-whatsapp`) and a containerized headless engine (`schooliee-wbm`) with Puppeteer session persistence.',
-    outcome: 'Processes thousands of automated daily fee receipts, event reminders, and customer confirmations reliably with instant delivery.',
-    responsibilities: ['Headless browser automation', 'Electron desktop wrapper', 'Webhook queueing', 'Session management'],
-    highlights: ['Desktop & Docker Engine', 'Puppeteer Session Persistence', 'Bulk Delivery Queues', 'Instant Webhook Triggers'],
   },
   {
     slug: 'expo-mobile-apps',
     title: 'Cross-Platform Mobile Ecosystems & Native Modules',
     category: 'React Native & Native Mobile Engineering',
     icon: Smartphone,
-    heroImageUrl: '/cover-expo.svg',
+    hero: cover_expo,
     summary: 'Suite of production iOS and Android mobile apps spanning logistics driver dispatchers, on-demand food delivery, BLE hardware monitors, and health coaching.',
     businessValue: 'Maximizes development speed and code reuse across mobile platforms while retaining 60fps native performance and native device access.',
     stack: ['React Native', 'Expo', 'EAS', 'TypeScript', 'BLE', 'Google Maps', 'HealthKit'],
     problem: 'Building separate native Swift and Kotlin applications slowed down time-to-market and increased ongoing maintenance costs.',
     approach: 'Leveraged unified React Native architectures with custom native modules (e.g. `expo-quick-actions`), native gesture handling, and EAS cloud build pipelines.',
+    result: '10+ mobile apps shipped to the App Store and Google Play.',
     outcome: 'Shipped over 10+ distinct mobile apps to the App Store and Google Play covering complex GPS routing, biometric sync, and hardware scanning.',
     responsibilities: ['Mobile system architecture', 'Store submission (EAS/TestFlight)', 'Native hardware integrations', 'State & performance optimization'],
     highlights: ['Production EAS Pipelines', 'Bluetooth Low Energy (BLE)', 'Live Geolocation Maps', 'Custom Native Expo Plugins'],
+  },
+  {
+    slug: 'whatsapp-business-automation',
+    title: 'Native WhatsApp Automation & Messaging Gateway',
+    category: 'Microservices & Desktop Infrastructure',
+    icon: MessageCircle,
+    hero: cover_whatsapp,
+    summary: 'High-throughput desktop and headless microservice gateways for automated WhatsApp messaging, lead qualification, and customer engagement.',
+    businessValue: 'Enables high-volume transactional messaging and conversational bots without exorbitant third-party per-message API overhead.',
+    stack: ['Electron', 'Hono', 'TypeScript', 'Puppeteer', 'Webhooks', 'Docker'],
+    problem: 'Businesses needed reliable mass notifications and conversational workflows without being locked into rigid, costly cloud messaging providers.',
+    approach: 'Engineered both an Electron desktop client (`schooliee-whatsapp`) and a containerized headless engine (`schooliee-wbm`) with Puppeteer session persistence.',
+    result: 'Thousands of daily receipts and reminders, delivered instantly.',
+    outcome: 'Processes thousands of automated daily fee receipts, event reminders, and customer confirmations reliably with instant delivery.',
+    responsibilities: ['Headless browser automation', 'Electron desktop wrapper', 'Webhook queueing', 'Session management'],
+    highlights: ['Desktop & Docker Engine', 'Puppeteer Session Persistence', 'Bulk Delivery Queues', 'Instant Webhook Triggers'],
+  },
+  {
+    slug: 'karobari',
+    title: 'Karobari: WhatsApp-First AI Commerce Platform',
+    category: 'Founder & Product Lead · Conversational AI Commerce',
+    icon: Store,
+    url: 'https://github.com/MehfoozurRehman/karobari',
+    logo: logo_github,
+    hero: cover_karobari,
+    summary: 'An automated digital identity and e-commerce engine enabling local businesses to launch online stores, manage inventory, and fulfill orders entirely through WhatsApp voice and text.',
+    businessValue: 'Removes the digital divide for millions of physical merchants in emerging markets by turning the app they already use daily into a full-scale digital commerce operating system.',
+    stack: ['Next.js 16', 'React 19', 'Convex', 'OpenAI Agents', 'WhatsApp Cloud API', 'Clerk Auth', 'Tailwind CSS v4'],
+    problem: 'Traditional e-commerce platforms and complex admin panels are too intimidating and friction-heavy for local shop owners, who rely solely on WhatsApp and phone calls to do business.',
+    approach: 'Engineered an AI conversational ingestion pipeline where merchants can speak or text product details in Urdu/English over WhatsApp to automatically generate live web stores, track inventory decrements, and send customer order receipts.',
+    result: 'Shop to live storefront in under 2 minutes, entirely through WhatsApp.',
+    outcome: 'Enables any retail merchant or wholesaler to go from a physical shop to an active digital selling engine in less than 2 minutes without writing a single line of data manually.',
+    responsibilities: ['Product architecture', 'Conversational AI pipeline', 'Convex real-time schemas', 'WhatsApp webhook infrastructure', 'Merchant UX'],
+    highlights: ['WhatsApp Voice Ingestion', 'Urdu/English AI Understanding', 'Instant Storefront Generation', 'Order & Inventory Automation'],
   },
 ];
 
@@ -225,7 +248,7 @@ export const process: ProcessStep[] = [
   },
   {
     title: '3. Hardened, Maintainable Scale',
-    icon: Code2,
+    icon: CodeXml,
     text: 'Build with type safety, clean schemas, reactive real-time backends (Convex/Prisma), and automated messaging pipelines ready to handle daily production scale.',
   },
 ];
@@ -244,7 +267,7 @@ export const profileHighlights = [
   {
     title: 'Full-Spectrum Technical Range',
     text: 'Fluently architecting across React 19, Next.js 16, Convex, React Native, Electron, Docker, and LLM agent orchestration.',
-    icon: Code2,
+    icon: CodeXml,
   },
   {
     title: 'Commercial & Operational Empathy',
@@ -305,25 +328,14 @@ export const education: Education[] = [
   },
 ];
 
-export const stack = [
-  'Karobari Engine',
-  'Next.js 16',
-  'React 19',
-  'TypeScript',
-  'React Native',
-  'Expo',
-  'Convex (Real-Time)',
-  'OpenAI Agents',
-  'WhatsApp Cloud API',
-  'Tailwind CSS v4',
-  'Prisma ORM',
-  'MongoDB',
-  'PostgreSQL',
-  'Node.js / Express / Hono',
-  'Electron',
-  'Docker',
-  'Mapbox GL / Three.js',
+export const stackGroups = [
+  { label: 'Web & UI', items: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS v4', 'Mapbox GL / Three.js'] },
+  { label: 'Mobile & desktop', items: ['React Native', 'Expo', 'Electron'] },
+  { label: 'Backend & data', items: ['Convex (Real-Time)', 'Node.js / Express / Hono', 'Prisma ORM', 'PostgreSQL', 'MongoDB', 'Docker'] },
+  { label: 'AI & automation', items: ['OpenAI Agents', 'WhatsApp Cloud API', 'Karobari Engine'] },
 ] as const;
+
+export const stack = stackGroups.flatMap((group) => group.items);
 
 export const testimonials: Testimonial[] = [
   {
