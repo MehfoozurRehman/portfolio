@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+import SiteNav from '../components/SiteNav.astro';
+---
+
+<Base title="Page not found | Mehfooz-ur-Rehman" description="This page could not be found." path="/404" noindex>
+  <SiteNav base="/" />
+  <main class="grid min-h-screen place-items-center px-5 text-center">
+    <div>
+      <p class="font-mono-label text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-[var(--color-accent)]">404</p>
+      <h1 class="mt-4 font-[family-name:var(--font-nunito)] text-[clamp(2rem,5vw,3.5rem)] font-extrabold leading-tight">This page doesn't exist.</h1>
+      <a href="/" class="mt-8 inline-flex min-h-12 items-center rounded-full bg-[var(--color-accent)] px-6 text-[0.9rem] font-bold text-[var(--color-on-accent)]">Back to portfolio</a>
+    </div>
+  </main>
+</Base>
