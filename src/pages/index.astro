@@ -333,24 +333,32 @@ const versions = [1, 2, 3, 4, 5, 6, 7].map((n) => [`v${n}`, `https://mehfoozurre
       </div>
 
       <p class="mt-6 font-mono-label text-[0.64rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-soft)] md:hidden" aria-hidden="true">Swipe to browse →</p>
-      <div class="carousel mt-6 md:mt-12 md:grid md:grid-cols-2 xl:grid-cols-3">
+      <div class="carousel mt-6 md:mt-12 md:grid-cols-2 xl:grid-cols-3">
         {
-          projects.map((project) => {
+          projects.map((project, i) => {
             const Icon = project.icon;
+            const featured = i === 0;
             return (
-              <article class="carousel-item card-hover group flex flex-col overflow-hidden rounded-2xl border border-[var(--border-card)] bg-[var(--color-raise)]">
+              <article
+                class={`carousel-item card-hover group flex flex-col overflow-hidden rounded-2xl border border-[var(--border-card)] bg-[var(--color-raise)] ${
+                  featured ? 'md:col-span-2 md:grid md:grid-cols-[1.1fr_0.9fr] xl:col-span-3' : ''
+                }`}
+              >
                 {project.hero ? (
-                  <div class="relative aspect-[16/10] w-full overflow-hidden bg-[var(--color-page-soft)]">
+                  <div class={`relative aspect-[16/10] w-full overflow-hidden bg-[var(--color-page-soft)] ${featured ? 'md:aspect-auto md:min-h-[24rem]' : ''}`}>
                     <Image
                       src={project.hero}
                       alt={`${project.title} preview`}
-                      widths={[400, 640, 800]}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                      loading="lazy"
+                      widths={featured ? [600, 900, 1200] : [400, 640, 800]}
+                      sizes={featured ? '(max-width: 768px) 84vw, 55vw' : '(max-width: 768px) 84vw, (max-width: 1280px) 50vw, 33vw'}
+                      loading={featured ? 'eager' : 'lazy'}
                       decoding="async"
                       class="absolute inset-0 size-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
                     />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent opacity-0 transition group-hover:opacity-100" />
+                    {featured ? (
+                      <span class="absolute left-4 top-4 rounded-full bg-[var(--color-accent)] px-3 py-1 font-mono-label text-[0.6rem] font-bold uppercase tracking-[0.16em] text-[var(--color-on-accent)]">Featured</span>
+                    ) : null}
                   </div>
                 ) : (
                   <div class="relative flex aspect-[16/10] w-full items-center justify-center overflow-hidden bg-gradient-to-br from-[var(--color-accent)]/12 to-[var(--color-accent-2)]/10">
@@ -358,7 +366,7 @@ const versions = [1, 2, 3, 4, 5, 6, 7].map((n) => [`v${n}`, `https://mehfoozurre
                   </div>
                 )}
 
-                <div class="flex flex-1 flex-col p-5">
+                <div class={`flex flex-1 flex-col p-5 ${featured ? 'md:justify-center md:p-10' : ''}`}>
                   <div class="mb-3 flex items-center gap-2.5">
                     {project.logo ? (
                       <span class="grid size-8 shrink-0 place-items-center overflow-hidden rounded-lg border border-[var(--border-subtle)] bg-[var(--color-page)]">
@@ -368,16 +376,22 @@ const versions = [1, 2, 3, 4, 5, 6, 7].map((n) => [`v${n}`, `https://mehfoozurre
                     <span class="font-mono-label text-[0.6rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-soft)]">{project.category}</span>
                   </div>
 
-                  <h3 class="text-[1.25rem] font-extrabold leading-tight">{project.title}</h3>
-                  <p class="mt-2.5 text-[0.88rem] leading-7 text-[var(--color-muted)]">{project.summary}</p>
+                  <h3 class={featured ? 'text-[1.25rem] font-extrabold leading-tight md:text-[clamp(1.6rem,2.4vw,2.1rem)] md:leading-[1.08]' : 'text-[1.25rem] font-extrabold leading-tight'}>{project.title}</h3>
+                  <p class="mt-2.5 text-[0.88rem] leading-7 text-[var(--color-muted)] md:text-[0.95rem]">{project.summary}</p>
+                  {featured ? (
+                    <p class="mt-4 hidden rounded-xl border border-[var(--border-subtle)] bg-[var(--color-page)] p-4 text-[0.92rem] font-bold leading-7 md:block">
+                      <span class="mb-1 block font-mono-label text-[0.6rem] font-semibold uppercase tracking-[0.16em] text-[var(--color-accent)]">Result</span>
+                      {project.result}
+                    </p>
+                  ) : null}
 
                   <div class="mt-4 flex flex-wrap gap-1.5">
-                    {project.stack.slice(0, 4).map((s) => (
+                    {project.stack.slice(0, featured ? 6 : 4).map((s) => (
                       <span class="rounded-md border border-[var(--border-subtle)] bg-[var(--color-page)] px-2 py-1 font-mono-label text-[0.62rem] font-semibold tracking-[0.04em] text-[var(--color-muted)]">{s}</span>
                     ))}
                   </div>
 
-                  <div class="mt-auto flex items-center gap-2 pt-6">
+                  <div class={`mt-auto flex items-center gap-2 pt-6 ${featured ? 'md:mt-6 md:max-w-sm md:pt-0' : ''}`}>
                     <a
                       href={`/case-studies/${project.slug}`}
                       data-astro-prefetch="hover"
@@ -403,6 +417,21 @@ const versions = [1, 2, 3, 4, 5, 6, 7].map((n) => [`v${n}`, `https://mehfoozurre
             );
           })
         }
+        <a
+          href={`${profile.github}?tab=repositories`}
+          target="_blank"
+          rel="noreferrer"
+          class="carousel-item card-hover group relative flex min-h-[16rem] flex-col items-start justify-between overflow-hidden rounded-2xl border border-dashed border-[var(--border-card)] bg-[var(--color-page-soft)] p-7"
+        >
+          <span class="grid size-12 place-items-center rounded-xl bg-[var(--color-accent)]/10 text-[var(--color-accent)]"><CodeXml size={22} aria-hidden="true" /></span>
+          <div>
+            <p class={`${display} text-[1.35rem] leading-snug`}>There's more on GitHub.</p>
+            <p class="mt-2 text-[0.9rem] leading-7 text-[var(--color-muted)]">Open-source experiments, tools and side projects.</p>
+            <span class="mt-5 inline-flex items-center gap-1.5 font-mono-label text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-accent)]">
+              Browse repositories <ArrowUpRight size={13} aria-hidden="true" />
+            </span>
+          </div>
+        </a>
       </div>
     </section>
 
