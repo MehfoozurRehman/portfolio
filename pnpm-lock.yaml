@@ -15,8 +15,8 @@ importers:
         specifier: ^3.7.4
         version: 3.7.4
       '@emailjs/browser':
-        specifier: ^4.4.1
-        version: 4.4.1
+        specifier: ^5.0.3
+        version: 5.0.3
       '@fontsource-variable/jetbrains-mono':
         specifier: ^5.3.0
         version: 5.3.0
@@ -273,8 +273,8 @@ packages:
     resolution: {integrity: sha512-dlT1m5e/0yUL0kRNcQn7yGLVThkgbB0Ga/1AmfDDC/8ik6AIiSf2QLQO2zPYvefsHP0aFgxO93cVLCCfDp7kzQ==}
     engines: {node: '>= 20.12.0'}
 
-  '@emailjs/browser@4.4.1':
-    resolution: {integrity: sha512-DGSlP9sPvyFba3to2A50kDtZ+pXVp/0rhmqs2LmbMS3I5J8FSOgLwzY2Xb4qfKlOVHh29EAutLYwe5yuEZmEFg==}
+  '@emailjs/browser@5.0.3':
+    resolution: {integrity: sha512-4HGAkWdzql7mrG34ZFFj7IDJNRgtbl1+yVgHdQJ6XSfhq9gxGUHtttr4UKNi7Fk++1hMXRHy1lTeGZrkioOtsw==}
     engines: {node: '>=14.0.0'}
 
   '@emmetio/abbreviation@2.3.3':
@@ -2393,7 +2393,7 @@ snapshots:
       fast-wrap-ansi: 0.2.2
       sisteransi: 1.0.5
 
-  '@emailjs/browser@4.4.1': {}
+  '@emailjs/browser@5.0.3': {}
 
   '@emmetio/abbreviation@2.3.3':
     dependencies:

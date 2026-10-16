@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
-    "build": "node scripts/generate-cv-pdf.mjs && astro build",
+    "dev": "node api.js && astro dev",
+    "build": "node api.js && node scripts/generate-cv-pdf.mjs && astro build",
     "build:site": "astro build",
     "preview": "astro preview",
     "check": "astro check",
@@ -15,7 +15,7 @@
   "dependencies": {
     "@astrojs/react": "^7.0.0",
     "@astrojs/sitemap": "^3.7.4",
-    "@emailjs/browser": "^4.4.1",
+    "@emailjs/browser": "^5.0.3",
     "@fontsource-variable/jetbrains-mono": "^5.3.0",
     "@fontsource-variable/nunito": "^5.3.0",
     "@lucide/astro": "^1.49.0",
