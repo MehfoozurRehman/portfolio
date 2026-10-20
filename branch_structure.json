@@ -1,0 +1,18 @@
+{
+  "default_branch": "main",
+  "branches": [
+    "main",
+    "migrate-astro",
+    "origin"
+  ],
+  "parent": {
+    "main": null,
+    "migrate-astro": "main",
+    "origin": "main"
+  },
+  "order": [
+    "main",
+    "migrate-astro",
+    "origin"
+  ]
+}
