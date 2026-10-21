@@ -1,49 +1,40 @@
-# Developer Portfolio & CV Generator
+# Portfolio and CV generator
 
-Personal portfolio of Mehfooz-ur-Rehman, built with **Astro 7**, **React 19 islands**, **Tailwind CSS v4** and a PDFKit-generated CV. Output is fully static and deployed to Firebase Hosting.
+A static, SEO-first personal site where the case studies and the downloadable CV are generated from one content source.
 
-## Architecture
+## The problem
 
-- **Static-first**: every page is pre-rendered HTML. Only the contact form ships React (hydrated on `client:visible`); theme toggle, scroll reveal, nav and cursor glow are ~2 KB of vanilla TypeScript (`src/scripts/behaviors.ts`).
-- **GitHub contribution graph** is fetched at build time and inlined as SVG (`src/lib/github.ts`), so there is no runtime third-party call. CI rebuilds daily to keep it fresh.
-- **Images** go through `astro:assets` (AVIF/WebP, responsive `srcset`, explicit dimensions). Fonts are self-hosted, latin-subset variable fonts, preloaded.
-- **SEO**: per-page title/description/canonical/Open Graph, JSON-LD (`Person`, `WebSite`, `CreativeWork`, `BreadcrumbList`), sitemap, `robots.txt`, social card (`public/og.png`).
-- **Content** lives in `src/data.ts`; case-study pages are generated from `projects`.
+Developer portfolios usually end up as either stock templates or heavy single-page apps that are slow to load and hard to keep current. This site is pre-rendered and fast by default. Adding a project means editing one data file: the project gets its own case-study page, a sitemap entry and structured data, and it appears in the index.
 
-## Structure
+## What it does
 
+- **Case-study pages from one data file.** Seven projects in `src/data.ts` each render at `/case-studies/[slug]` with a problem, approach, outcome, stack and links to three related projects.
+- **Contact form as an island.** The only React component on the page. It hydrates when visible and sends through EmailJS, configured by environment variables with built-in defaults.
+- **GitHub activity without a runtime call.** The contribution graph is fetched at build time and inlined as SVG, so visitors make no third-party request.
+- **CV generated as a PDF.** `scripts/generate-cv-pdf.mjs` builds `public/cv.pdf` with PDFKit from structured content in `scripts/cv-content.mjs` on every full build.
+- **Search and share metadata.** Per-page title, description, canonical and Open Graph tags, JSON-LD (`Person`, `WebSite`, `CreativeWork`, `BreadcrumbList`), a sitemap, `robots.txt` and a social card.
+- **Optimised assets.** Images go through `astro:assets` (AVIF/WebP with responsive `srcset`). Fonts are self-hosted variable fonts.
+
+## How it's built
+
+- **Stack:** Astro 7, React 19 islands, Tailwind CSS v4 through its Vite plugin, TypeScript, PDFKit, pnpm 11, deployed to Firebase Hosting.
+- **Static first.** Every page is pre-rendered HTML. Only the contact form ships React. The theme toggle, scroll reveal, navigation and cursor glow are small vanilla TypeScript in `src/scripts/behaviors.ts`.
+- **Build-time data, scheduled rebuilds.** The GitHub fetch and the CV both run during `pnpm build`, so the output needs no server. A scheduled workflow rebuilds daily at 03:17 UTC so the activity graph stays current, and pushes to `main` deploy to Firebase Hosting.
+
+## Running it locally
+
+```bash
+pnpm install
+pnpm dev          # dev server on http://localhost:4321
+pnpm build        # regenerates the CV, then builds to dist/
+pnpm preview      # serves the production build
 ```
-src/
-  pages/            index.astro, case-studies/[slug].astro, 404.astro
-  layouts/Base.astro  head, SEO, theme bootstrap
-  components/       SiteNav, SectionMarker, GitHubActivity, Logo
-  islands/          contact-form.tsx (React)
-  scripts/          behaviors.ts (vanilla)
-  lib/              site constants, GitHub fetcher
-  assets/           optimized images
-scripts/            generate-cv-pdf.mjs, generate-icons.mjs
-public/             static files (cv.pdf, icons, og.png, manifest, robots)
-```
 
-## Commands
+Other scripts: `pnpm check` (type checks), `pnpm generate:cv`, `pnpm generate:icons`. CI uses Node 24 and pnpm 11.
 
-| Command | Action |
-| --- | --- |
-| `pnpm dev` | Dev server at `localhost:4321` |
-| `pnpm build` | Generate CV PDF, then build to `dist/` |
-| `pnpm build:site` | Build without regenerating the CV |
-| `pnpm preview` | Preview the production build |
-| `pnpm check` | Type-check `.astro` / `.ts` / `.tsx` |
-| `pnpm generate:cv` | Rebuild `public/cv.pdf` |
-| `pnpm generate:icons` | Rebuild PWA icons and `og.png` |
-| `pnpm deploy` | Build and deploy to Firebase Hosting |
+## What I learned and what I'd do next
 
-## Configuration
-
-Optional env vars (public, used by the contact form; defaults are built in): `PUBLIC_EMAILJS_PUBLIC_KEY`, `PUBLIC_EMAILJS_SERVICE_ID`, `PUBLIC_EMAILJS_TEMPLATE_ID`, `PUBLIC_CONTACT_EMAIL`.
-
-Requires Node 20+ (CI uses 24) and pnpm 11.
-
-## Author
-
-Created by [Mehfooz-ur-Rehman](https://github.com/MehfoozurRehman).
+- There are no automated tests. Quality is checked by `pnpm check` and the production build. Browser or link checks on the case-study pages would catch regressions the build does not.
+- Three service-worker files sit in `public/` (`sw.js`, `service-worker.js`, `firebase-messaging-sw.js`), and nothing in `src/` registers them. Decide whether they are needed, and remove the ones that are not.
+- The GitHub activity fetch depends on a third-party API at build time. It returns `null` on error, so confirm the component handles an empty result before relying on it.
+- The EmailJS keys are public by design and visible in the client bundle. Rate limits on the EmailJS side are the main protection against spam.
