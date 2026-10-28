@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
-    "build": "node scripts/generate-cv-pdf.mjs && astro build",
+    "dev": "node api.js && astro dev",
+    "build": "node api.js && node scripts/generate-cv-pdf.mjs && astro build",
     "build:site": "astro build",
     "preview": "astro preview",
     "check": "astro check",
@@ -13,14 +13,14 @@
     "deploy": "pnpm build && firebase deploy --only hosting"
   },
   "dependencies": {
-    "@astrojs/react": "^7.1.1",
+    "@astrojs/react": "^7.1.2",
     "@astrojs/sitemap": "^3.7.4",
     "@emailjs/browser": "^4.4.1",
     "@fontsource-variable/jetbrains-mono": "^5.3.0",
     "@fontsource-variable/nunito": "^5.3.0",
-    "@lucide/astro": "^1.61.0",
-    "astro": "^7.4.2",
-    "lucide-react": "^1.61.0",
+    "@lucide/astro": "^1.63.0",
+    "astro": "^7.4.3",
+    "lucide-react": "^1.63.0",
     "pdfkit": "^0.20.2",
     "react": "19.3.1",
     "react-dom": "19.3.1",
@@ -29,11 +29,11 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.12",
     "@tailwindcss/vite": "^4.3.3",
-    "@types/node": "^26.6.5",
+    "@types/node": "^26.6.6",
     "@types/react": "^19.3.0",
-    "sharp": "^0.35.4",
+    "sharp": "^0.35.5",
     "tailwindcss": "^4.3.3",
     "typescript": "^5.9.3"
   },
-  "packageManager": "pnpm@11.27.0"
+  "packageManager": "pnpm@11.28.9"
 }
