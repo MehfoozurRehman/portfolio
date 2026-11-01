@@ -10,7 +10,7 @@ export const cvContent = {
     location: 'Samundri, Faisalabad, Punjab, Pakistan',
   },
   links: [
-    ['Portfolio', 'mehfoozurrehmanv8.web.app'],
+    ['Portfolio', 'mehfooz-ur-rehman.web.app'],
     ['GitHub', 'github.com/MehfoozurRehman'],
     ['LinkedIn', 'linkedin.com/in/mehfoozurrehman786'],
   ],
