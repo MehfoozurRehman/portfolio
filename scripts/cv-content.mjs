@@ -10,9 +10,9 @@ export const cvContent = {
     location: 'Samundri, Faisalabad, Punjab, Pakistan',
   },
   links: [
-    ['Portfolio', 'mehfooz-ur-rehman.web.app'],
+    ['Portfolio', 'mehfoozurrehmanv8.web.app'],
     ['GitHub', 'github.com/MehfoozurRehman'],
-    ['LinkedIn', 'linkedin.com/in/mehfooz-rehman-37a1b0231'],
+    ['LinkedIn', 'linkedin.com/in/mehfoozurrehman786'],
   ],
   profileHighlights: [
     ['Lead Full-Stack at Devscot', 'Spearheading product engineering and core multi-tenant architectures across enterprise SaaS products.'],

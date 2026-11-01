@@ -95,7 +95,7 @@ export const profile = {
   phone: '+92 313 7178074',
   whatsapp: 'https://wa.me/923137178074',
   github: 'https://github.com/MehfoozurRehman',
-  linkedin: 'https://www.linkedin.com/in/mehfooz-rehman-37a1b0231/',
+  linkedin: 'https://www.linkedin.com/in/mehfoozurrehman786/',
   instagram: 'https://www.instagram.com/mehfoozurrehman___/',
   facebook: 'https://www.facebook.com/MehfoozurRehmanIjaz/',
   codesandbox: 'https://codesandbox.io/u/MehfoozurRehman',
