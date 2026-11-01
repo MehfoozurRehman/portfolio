@@ -1,0 +1,4 @@
+[
+  {"waitFor": "!document.getElementById('title').hidden", "timeout": 180000},
+  {"log": "(() => { const P = __game.physics; const pts = [[-27.7,-17.5],[42.1,21.2],[22.5,16.4],[-17.3,18.7],[10.6,-14.8],[-33.1,3.3]]; return pts.map(([x,z]) => { const obs = P.obstacles.filter(o => o.enabled && Math.hypot(o.x-x,o.z-z) < 2).map(o => o.kind + '@' + o.x.toFixed(1) + ',' + o.z.toFixed(1) + (o.kind==='circle' ? ' r' + o.r.toFixed(2) : ' ' + o.hw.toFixed(2) + 'x' + o.hd.toFixed(2)) + ' top' + o.top.toFixed(1)); const near = __game.world.props.filter(p => Math.hypot(p.x-x,p.z-z) < 2.2).map(p => p.name); const g = [0, 0.5, -0.5].map(d => [P.ground(x+d, z), P.ground(x, z+d)]); const regs = P.regions.filter(r => Math.hypot(r.x-x, r.z-z) < 3).map(r => r.kind + ' ' + r.tag + ' y' + r.y.toFixed(2) + (r.y2 !== undefined ? '->' + r.y2.toFixed(2) : '')); return { at: [x,z], ground: g, obs, near, regs }; }); })()"}
+]

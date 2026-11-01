@@ -1,0 +1,1 @@
+[{"waitFor":"!document.getElementById('title').hidden","timeout":180000},{"clickSel":"#start"},{"wait":3500},{"eval":"__game.toIsland('garden', -6, 3.2)"},{"wait":2500,"shot":"garden"},{"eval":"__game.cam.focus = { point: __game.player.pos.clone().set(__game.world.garden.x, 0, __game.world.garden.z), dist: 34 }"},{"wait":2500,"shot":"garden-wide"}]

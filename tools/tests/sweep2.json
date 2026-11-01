@@ -1,0 +1,14 @@
+[
+  {"waitFor": "!document.getElementById('title').hidden", "timeout": 180000},
+  {"log": "window.__timings"},
+  {"clickSel": "#start"}, {"wait": 4000},
+  {"eval": "__game.toIsland('home', -2.5, 6.0)"}, {"wait": 1500, "shot": "numbers"},
+  {"eval": "(() => { const it = __game.world.interactables.find(i => i.type === 'service' && i.service === 'whatsapp-ai'); __game.teleport(it.x, it.z, 0); })()"},
+  {"wait": 800}, {"press": "e"}, {"wait": 2200, "shot": "demo-1"}, {"wait": 3600, "shot": "demo-2"},
+  {"press": "esc"},
+  {"eval": "__game.toIsland('schooliee', 0, 1)"}, {"wait": 1500, "shot": "blueprint-idle"},
+  {"eval": "(() => { const P = __game.physics; const W = __game.world; const isl = W.islands.lighthouse; for (let r = 4; r < 9; r += 0.5) { const x = isl.x - r, z = isl.z; if (P.ground(x, z) === null && P.waterGround(x, z) !== null) { __game.teleport(isl.x - 2.6, isl.z, 270); return r; } } return null; })()"},
+  {"wait": 800}, {"key": "a", "hold": 1500}, {"wait": 400, "shot": "wade"}, {"log": "__game.state()"},
+  {"key": "d", "hold": 2200}, {"log": "__game.state()"},
+  {"log": "window.__fps"}
+]

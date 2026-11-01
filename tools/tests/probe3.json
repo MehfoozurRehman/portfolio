@@ -1,0 +1,5 @@
+[
+  {"waitFor": "!document.getElementById('title').hidden", "timeout": 180000},
+  {"eval": "__game.launchAll()"}, {"wait": 12000},
+  {"log": "(() => { const P = __game.physics; return [[21.6,16.4,21.6,15.5],[-18.5,13.8,-18.5,15.5],[7.8,-21.1,7.8,-20.6]].map(([x,z,tx,tz]) => { const d = Math.hypot(tx-x,tz-z); const r = P.move(x, z, 0, (tx-x)/d*0.08, (tz-z)/d*0.08); const res = P.resolve(x, z + (tz-z)/d*0.08, 0); const all = P.obstacles.filter(o => Math.hypot(o.x-x,o.z-z) < 3).map(o => (o.enabled?'on ':'off ') + o.kind + '@' + o.x.toFixed(1) + ',' + o.z.toFixed(1) + (o.kind==='box' ? ' ' + o.hw.toFixed(2) + 'x' + o.hd.toFixed(2) : ' r' + o.r.toFixed(2)) + ' top' + o.top.toFixed(2) + ' ' + (o.id||'')); return { from: [x,z], move: [r.x.toFixed(3), r.z.toFixed(3), r.blocked], g: P.ground(x, z + 0.08), res: [res.x.toFixed(3), res.z.toFixed(3)], all }; }); })()"}
+]

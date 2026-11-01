@@ -1,0 +1,7 @@
+[
+  {"waitFor": "!document.getElementById('title').hidden", "timeout": 180000},
+  {"log": "__game.nav.nodes.length"},
+  {"eval": "__game.launchAll()"}, {"wait": 6000}, {"log": "[__game.nav.nodes.length, __game.game.state.launched.length, !!__game.game.nav]"},
+  {"wait": 8000}, {"log": "[__game.nav.nodes.length, [...__game.game.state.launched].length]"},
+  {"log": "__game.nav.nodes.filter(n => Math.abs(n.x - 21.6) < 0.4 && Math.abs(n.z - 15.5) < 0.4).length"}
+]

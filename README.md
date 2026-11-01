@@ -1,40 +1,45 @@
-# Portfolio and CV generator
+# Launch Isles: Mehfooz-ur-Rehman's portfolio
 
-A static, SEO-first personal site where the case studies and the downloadable CV are generated from one content source.
+A playable 3D portfolio. Visitors walk a small character (me) around a pastel clay world. Every island is something I built. You can launch the projects, sit on the benches, take the slide, wade into the shallows, and say hello at the lighthouse. There is a GitHub Garden that grows from my real contribution calendar. A **Classic view** button shows the same content as a plain, accessible page.
 
-## The problem
+Live: https://mehfooz-ur-rehman.web.app (archives: v9 https://mehfoozurrehmanv9.web.app, v8 https://mehfoozurrehmanv8.web.app)
 
-Developer portfolios usually end up as either stock templates or heavy single-page apps that are slow to load and hard to keep current. This site is pre-rendered and fast by default. Adding a project means editing one data file: the project gets its own case-study page, a sitemap entry and structured data, and it appears in the index.
+## Stack
 
-## What it does
+- **Three.js r171** for rendering, with a custom water shader, a day/golden/night cycle, adaptive post-processing and instanced scatter.
+- **GSAP** for camera moves and UI motion.
+- **Vite 6** for the static build, served from Firebase Hosting.
+- **Blender 5** for the asset packs (`src/models/*.glb`), built headless from the Python scripts in `blender/`.
 
-- **Case-study pages from one data file.** Seven projects in `src/data.ts` each render at `/case-studies/[slug]` with a problem, approach, outcome, stack and links to three related projects.
-- **Contact form as an island.** The only React component on the page. It hydrates when visible and sends through EmailJS, configured by environment variables with built-in defaults.
-- **GitHub activity without a runtime call.** The contribution graph is fetched at build time and inlined as SVG, so visitors make no third-party request.
-- **CV generated as a PDF.** `scripts/generate-cv-pdf.mjs` builds `public/cv.pdf` with PDFKit from structured content in `scripts/cv-content.mjs` on every full build.
-- **Search and share metadata.** Per-page title, description, canonical and Open Graph tags, JSON-LD (`Person`, `WebSite`, `CreativeWork`, `BreadcrumbList`), a sitemap, `robots.txt` and a social card.
-- **Optimised assets.** Images go through `astro:assets` (AVIF/WebP with responsive `srcset`). Fonts are self-hosted variable fonts.
+## How it works
 
-## How it's built
+- `src/world/`: hex-tile islands, buildings, props, ambient life (townsfolk in shalwar kameez, ducks, a rickshaw…), the GitHub Garden.
+- `src/game/`: player controller (coyote time, jump buffering, seats sampled from the sit clip), 2D collision against ground footprints, a dense A* navigation grid for click-to-walk, interactions and demos.
+- `src/ui/`: HUD, panels, map, touch controls, Classic view.
+- `src/shared/content.js`: all portfolio content (projects, services, story, links).
+- `src/data/github.json`: refreshed before every build by `scripts/fetch-github.mjs`. If GitHub can't be reached, the existing file is kept.
 
-- **Stack:** Astro 7, React 19 islands, Tailwind CSS v4 through its Vite plugin, TypeScript, PDFKit, pnpm 11, deployed to Firebase Hosting.
-- **Static first.** Every page is pre-rendered HTML. Only the contact form ships React. The theme toggle, scroll reveal, navigation and cursor glow are small vanilla TypeScript in `src/scripts/behaviors.ts`.
-- **Build-time data, scheduled rebuilds.** The GitHub fetch and the CV both run during `pnpm build`, so the output needs no server. A scheduled workflow rebuilds daily at 03:17 UTC so the activity graph stays current, and pushes to `main` deploy to Firebase Hosting.
-
-## Running it locally
+## Commands
 
 ```bash
 pnpm install
-pnpm dev          # dev server on http://localhost:4321
-pnpm build        # regenerates the CV, then builds to dist/
-pnpm preview      # serves the production build
+pnpm dev            # local dev server
+pnpm build          # refresh GitHub data + production build to dist/
+pnpm preview        # serve dist/
+pnpm generate:cv    # rebuild public/cv.pdf from scripts/cv-content.mjs
+node tools/shoot.mjs dist shots/check --scenario tools/tests/check.json --wait 0   # headless playtest
 ```
 
-Other scripts: `pnpm check` (type checks), `pnpm generate:cv`, `pnpm generate:icons`. CI uses Node 24 and pnpm 11.
+The playtest needs a local Chrome or Edge (puppeteer-core). `check.json` runs the layout overlap check and random walk-reachability routes through the `window.__game` test hook.
 
-## What I learned and what I'd do next
+## Deploy
 
-- There are no automated tests. Quality is checked by `pnpm check` and the production build. Browser or link checks on the case-study pages would catch regressions the build does not.
-- Three service-worker files sit in `public/` (`sw.js`, `service-worker.js`, `firebase-messaging-sw.js`), and nothing in `src/` registers them. Decide whether they are needed, and remove the ones that are not.
-- The GitHub activity fetch depends on a third-party API at build time. It returns `null` on error, so confirm the component handles an empty result before relying on it.
-- The EmailJS keys are public by design and visible in the client bundle. Rate limits on the EmailJS side are the main protection against spam.
+Pushing to `main` builds and deploys through `.github/workflows/firebase-hosting-merge.yml`. A daily scheduled rebuild keeps the GitHub Garden current. To deploy by hand:
+
+```bash
+pnpm build && firebase deploy --only hosting --project mehfooz-ur-rehman
+```
+
+`firebase.json` deploys to the main site and the v9 archive. The v8 (Astro) and older archives are not in the config, so deploys never touch them.
+
+Design notes are in `docs/DESIGN.md`, asset notes in `docs/ASSETS.md`, and the play-test sweep in `docs/FIXLIST.md`.

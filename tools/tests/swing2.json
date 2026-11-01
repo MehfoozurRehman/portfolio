@@ -1,0 +1,6 @@
+[
+  {"waitFor": "!document.getElementById('title').hidden", "timeout": 180000},
+  {"clickSel": "#start"}, {"wait": 3000},
+  {"eval": "__game.launchAll()"}, {"wait": 8000},
+  {"log": "(() => { const it = __game.world.interactables.find(i => i.type === 'swing'); const o = it.obj; const V = __game.player.pos.constructor; const w = (n) => { const e = o.getObjectByName(n); return e ? e.getWorldPosition(new V()).toArray().map(v => +v.toFixed(2)) : null; }; const s0 = o.getObjectByName('seat_0'); return { root: o.position.toArray().map(v=>+v.toFixed(2)), pivot: w('swing_0'), seat: w('seat_0'), seatParent: s0 && s0.parent.name, seatLocal: s0 && s0.position.toArray().map(v=>+v.toFixed(2)), meshes: o.children.map(c => c.name + ':' + c.type) }; })()"}
+]

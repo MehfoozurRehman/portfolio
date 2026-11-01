@@ -1,0 +1,1 @@
+[{"waitFor":"!document.getElementById('title').hidden","timeout":180000},{"log":"window.__timings"},{"log":"__game.nav.nodes.length"},{"log":"__game.layout()"},{"log":"__game.walkCheck(40)"},{"eval":"__game.launchAll()"},{"wait":17000},{"log":"__game.walkCheck(40)"}]

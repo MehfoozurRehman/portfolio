@@ -1,0 +1,13 @@
+[
+  {"waitFor": "!document.getElementById('title').hidden", "timeout": 180000},
+  {"clickSel": "#start"}, {"wait": 3500},
+  {"eval": "__game.launchAll()"}, {"wait": 8500},
+  {"eval": "__game.toIsland('karobari', 0, 2.2)"},
+  {"clickSel": "#btn-time"}, {"wait": 2200, "shot": "golden"},
+  {"clickSel": "#btn-time"}, {"wait": 2200, "shot": "night"},
+  {"eval": "__game.toIsland('home', 0.2, 1)"}, {"wait": 1800, "shot": "night-home"},
+  {"eval": "__game.toIsland('lighthouse', 0, 2)"}, {"wait": 1800, "shot": "night-lighthouse"},
+  {"eval": "__game.toIsland('lighthouse', 0, 2); __game.game.state.launched.size"},
+  {"key": "w", "hold": 1200}, {"wait": 300, "shot": "night-walk-sand"},
+  {"log": "window.__fps"}
+]

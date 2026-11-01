@@ -1,0 +1,1 @@
+[{"waitFor":"!document.getElementById('title').hidden","timeout":180000},{"clickSel":"#start"},{"wait":6000},{"log":"window.__fps"},{"wait":2000},{"log":"window.__fps"},{"log":"__game.cam.camera.parent ? 1 : 0"}]

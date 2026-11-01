@@ -1,0 +1,9 @@
+[
+  {"waitFor": "!document.getElementById('title').hidden", "timeout": 180000},
+  {"clickSel": "#start"}, {"wait": 3500},
+  {"eval": "(() => { const P = __game.physics; const isl = __game.world.islands.home; const t = isl.tiles.filter(t => t.type === 'grass').sort((a,b) => (b.z - isl.z) - (a.z - isl.z))[0]; __game.teleport(t.x, t.z, 0); window.__wadeStart = [t.x, t.z]; return [t.x, t.z]; })()"},
+  {"wait": 600}, {"key": "s", "hold": 2600}, {"wait": 300, "shot": "wade-in"}, {"log": "__game.state()"},
+  {"key": "s", "hold": 2500}, {"log": "__game.state()"},
+  {"key": "w", "hold": 3500}, {"wait": 300, "shot": "wade-out"}, {"log": "__game.state()"},
+  {"eval": "__game.toIsland('home', -2.5, 6.0)"}, {"wait": 1500, "shot": "numbers"}
+]

@@ -1,0 +1,12 @@
+[
+  {"waitFor": "!document.getElementById('title').hidden", "timeout": 180000},
+  {"wait": 1500, "shot": "title"},
+  {"clickSel": "#start"}, {"wait": 4200, "shot": "start"},
+  {"eval": "__game.game.openPanel('project:karobari')"}, {"wait": 800, "shot": "panel-project"},
+  {"eval": "__game.ui.closePanel(); __game.game.openPanel('contact')"}, {"wait": 800, "shot": "panel-contact"},
+  {"eval": "__game.ui.closePanel(); __game.game.openPanel('repos')"}, {"wait": 800, "shot": "panel-repos"},
+  {"eval": "__game.ui.closePanel(); __game.game.openPanel('garden')"}, {"wait": 800, "shot": "panel-garden"},
+  {"eval": "__game.ui.closePanel(); document.getElementById('btn-map').click()"}, {"wait": 800, "shot": "map"},
+  {"eval": "__game.ui.closeMap(); __game.ui.openClassic()"}, {"wait": 900, "shot": "classic"},
+  {"eval": "document.getElementById('classic').scrollTop = 2600"}, {"wait": 500, "shot": "classic-2"}
+]

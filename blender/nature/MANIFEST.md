@@ -1,0 +1,75 @@
+# nature pack: MANIFEST
+
+`nature.glb` - 69 roots, 88934 triangles total, 2030 KB. Built by `build_nature.py`. Units metres; sizes are the glTF bounding box (x, y, z) in Blender axes (Z up, front -Y). Every mesh carries baked AO as COLOR_0 (`Col`). Palette materials only. No animations.
+
+Conventions: every moving part (`swing_0/1`, `beam`, `lid`, `flag`, `stump_0..2`, `bails`, `arrow_0..3`, `wing_l/r`, lily `flower`) is an Empty at its hinge/axis with the mesh `<name>_geo` under it; seat/slide/use Empties face local -Y. Swings and the seesaw beam (laid along Y) rotate about X; wings flap about Y; signpost arrows point along local +-X with `label_N` quads (UV 0..1) facing -Y. `bridge` and `dock` have deck top at Z=0 with structure below (ends at Y=+-1). `ball` radius is 0.1 m. `lily_pad` origin is at water level. `fence`, `fence_picket` and `hedge` chain along X at x=+-1.
+
+- **hex_grass**: 3.46 x 4.00 x 1.20 m (z -1.20..0.00), 284 tris; special: none; pointy-top hex R2.0, top Z0, body to Z-1.2; top colour wraps 0.1 m over the edge
+- **hex_grass_deep**: 3.46 x 4.00 x 1.20 m (z -1.20..0.00), 284 tris; special: none; pointy-top hex R2.0, top Z0, body to Z-1.2; top colour wraps 0.1 m over the edge
+- **hex_sand**: 3.46 x 4.00 x 1.20 m (z -1.20..0.00), 284 tris; special: none; pointy-top hex R2.0, top Z0, body to Z-1.2; top colour wraps 0.1 m over the edge
+- **hex_stone**: 3.46 x 4.00 x 1.20 m (z -1.20..0.00), 284 tris; special: none; pointy-top hex R2.0, top Z0, body to Z-1.2; top colour wraps 0.1 m over the edge
+- **hex_cream**: 3.46 x 3.96 x 1.20 m (z -1.20..0.00), 236 tris; special: none; pointy-top hex R2.0, top Z0, body to Z-1.2; top colour wraps 0.1 m over the edge
+- **hex_column**: 3.46 x 3.96 x 4.00 m (z -4.00..0.00), 92 tris; special: none; cream column under raised tiles, top Z0 to Z-4
+- **hex_step**: 1.39 x 1.55 x 1.20 m (z -1.20..0.00), 236 tris; special: none; stepping stone R0.8, top Z0, body to Z-1.2
+- **hex_planter**: 1.73 x 1.94 x 0.35 m (z 0.00..0.35), 472 tris; special: none; raised plinth R1.0, 0.35 tall, origin at bottom
+- **tree_cushion_deep**: 1.84 x 1.84 x 2.03 m (z 0.00..2.03), 2272 tris; special: none; stacked rounded cushions
+- **tree_pear_mint**: 1.32 x 1.31 x 2.40 m (z 0.00..2.40), 1236 tris; special: none; teardrop canopy
+- **tree_pear_light**: 1.08 x 1.07 x 1.98 m (z 0.00..1.98), 1236 tris; special: none; teardrop canopy
+- **tree_capsule_coral**: 0.84 x 0.84 x 2.60 m (z 0.00..2.60), 1304 tris; special: none; tall capsule canopy
+- **tree_blob_coral**: 1.42 x 1.11 x 2.58 m (z 0.00..2.58), 1952 tris; special: none; cluster of 5 spheres
+- **tree_blob_mint**: 1.52 x 1.27 x 2.08 m (z 0.00..2.08), 1952 tris; special: none; cluster of 5 spheres
+- **palm**: 2.28 x 2.19 x 2.56 m (z -0.00..2.56), 2038 tris; special: none; curved ringed trunk, 7 fronds
+- **agave**: 1.32 x 1.32 x 0.47 m (z -0.01..0.46), 1066 tris; special: none; rosette of thick blades
+- **cactus_finger**: 0.71 x 0.54 x 1.00 m (z -0.03..0.97), 1918 tris; special: none; cluster of rounded fingers
+- **tulips**: 0.46 x 0.39 x 0.57 m (z -0.00..0.57), 1636 tris; special: none; 5 coral tulips with leaves
+- **bush_round**: 1.30 x 1.16 x 0.77 m (z -0.03..0.75), 1120 tris; special: none; clustered spheres
+- **grass_spike**: 0.07 x 0.07 x 0.15 m (z -0.01..0.14), 72 tris; special: none; single instanced cone, 0.14 m
+- **grass_tuft**: 0.17 x 0.16 x 0.18 m (z -0.02..0.16), 360 tris; special: none; 5 spikes
+- **rock_a**: 0.69 x 0.58 x 0.31 m (z -0.02..0.29), 320 tris; special: none; rounded boulder
+- **rock_b**: 0.70 x 0.54 x 0.23 m (z -0.02..0.21), 480 tris; special: none; pebble cluster
+- **rock_c**: 0.62 x 0.44 x 0.61 m (z -0.02..0.59), 400 tris; special: none; tall standing stone with a pebble
+- **pebbles**: 0.61 x 0.79 x 0.05 m (z -0.01..0.05), 640 tris; special: none; cluster of 8 small flat stones
+- **mushrooms**: 0.39 x 0.30 x 0.33 m (z 0.00..0.33), 1434 tris; special: none; three coral-capped mushrooms with cream spots
+- **log**: 1.08 x 0.32 x 0.41 m (z -0.02..0.40), 964 tris; special: none; fallen cream log along X with a mossy top
+- **tree_stump**: 0.62 x 0.62 x 0.39 m (z -0.04..0.34), 1238 tris; special: none; cream stump with wood-ring top
+- **lily_pad**: 0.60 x 0.59 x 0.08 m (z -0.01..0.07), 1092 tris; special: `flower`, `flower_geo`; notched pad, origin at water level; `flower` (optional) can be hidden
+- **reeds**: 0.33 x 0.39 x 1.00 m (z -0.00..1.00), 1068 tris; special: none; reed clump with three cattails
+- **flower_bed**: 1.24 x 1.24 x 0.79 m (z 0.00..0.79), 2864 tris; special: none; round cream planter of tulips and leaves
+- **hedge**: 2.06 x 0.60 x 0.75 m (z 0.00..0.75), 1196 tris; special: none; 2 m rounded hedge along X; chains at x=+-1
+- **path_stones**: 0.71 x 2.03 x 0.07 m (z -0.03..0.04), 1024 tris; special: none; trail of 4 flat stepping stones along Y (y -0.9..0.9)
+- **bush_flowering**: 1.30 x 1.05 x 0.78 m (z -0.03..0.76), 1568 tris; special: none; round bush dotted with coral flowers
+- **tree_small_mint**: 0.72 x 0.71 x 1.22 m (z 0.00..1.22), 968 tris; special: none; 1.2 m sapling, teardrop canopy
+- **tree_small_coral**: 0.64 x 0.63 x 1.25 m (z 0.00..1.25), 1036 tris; special: none; 1.2 m sapling, two stacked coral blobs
+- **grass_tall**: 0.36 x 0.28 x 0.36 m (z -0.01..0.35), 504 tris; special: none; clump of 7 tall curving blades ~0.45 m
+- **shell**: 0.24 x 0.16 x 0.04 m (z -0.00..0.04), 846 tris; special: none; scallop shell, hinge toward +Y
+- **starfish**: 0.23 x 0.24 x 0.05 m (z 0.00..0.05), 1000 tris; special: none; coral starfish ~0.26 m
+- **flower_patch**: 0.96 x 0.96 x 0.20 m (z -0.01..0.19), 2388 tris; special: none; flowers on a low grass disc
+- **cloud**: 3.34 x 1.58 x 1.33 m (z -0.33..1.00), 1344 tris; special: none; puffy cloud ~3 m wide, origin at centre
+- **bench**: 1.60 x 0.58 x 0.89 m (z -0.00..0.88), 3140 tris; special: `seat`, `use`; coral slats, cream frame; seat height 0.42
+- **swing_set**: 2.84 x 1.66 x 2.25 m (z -0.00..2.25), 5424 tris; special: `swing_0`, `seat_0`, `swing_0_geo`, `swing_1`, `seat_1`, `swing_1_geo`, `use`; swing_N pivots on the top bar rotate about X
+- **slide**: 0.77 x 3.82 x 1.81 m (z -0.01..1.81), 5352 tris; special: `slide_0`, `slide_1`, `slide_2`, `slide_3`, `slide_4`, `slide_5`, `slide_6`, `slide_7`, `use`; slide_0..7 from top to bottom; ladder at +Y
+- **seesaw**: 0.60 x 2.70 x 0.89 m (z 0.00..0.89), 2232 tris; special: `beam`, `beam_geo`, `seat_0`, `seat_1`, `use`; beam pivot at the fulcrum, rotates about X
+- **lamp_post**: 0.43 x 0.42 x 2.81 m (z 0.00..2.81), 1724 tris; special: none; pal_emissive bulb
+- **signpost**: 1.51 x 0.40 x 2.12 m (z 0.00..2.12), 1420 tris; special: `arrow_0`, `arrow_0_geo`, `label_0`, `arrow_1`, `arrow_1_geo`, `label_1`, `arrow_2`, `arrow_2_geo`, `label_2`, `arrow_3`, `arrow_3_geo`, `label_3`; arrow_N boards pivot on the post axis; label_N quads face -Y
+- **flagpole**: 1.19 x 0.48 x 3.44 m (z 0.00..3.44), 1708 tris; special: `flag`, `flag_geo`; flag pivot at the hoist; green pennant, white crescent and star
+- **mailbox**: 0.31 x 0.54 x 1.28 m (z 0.00..1.28), 1548 tris; special: `lid`, `lid_geo`, `use`; lid hinges at its bottom front edge (rotates about X)
+- **crate**: 0.60 x 0.60 x 0.60 m (z 0.00..0.60), 1060 tris; special: none; 0.6 m wood crate
+- **crate_stack**: 1.29 x 0.71 x 1.20 m (z 0.00..1.20), 3180 tris; special: none; three crates
+- **barrel**: 0.55 x 0.55 x 0.70 m (z 0.00..0.70), 1080 tris; special: none; bulged wood barrel
+- **fence**: 2.00 x 0.14 x 0.83 m (z 0.00..0.83), 1320 tris; special: none; 2 m rail fence along X, chain at x=+-1
+- **fence_picket**: 2.00 x 0.12 x 0.88 m (z 0.00..0.88), 1656 tris; special: none; 2 m cream picket fence along X, chain at x=+-1
+- **bridge**: 1.56 x 2.00 x 0.85 m (z -0.19..0.66), 2632 tris; special: none; 2 m plank segment along Y, ends at Y=+-1, deck top Z=0 (structure hangs below)
+- **dock**: 2.02 x 2.00 x 1.40 m (z -1.20..0.20), 1720 tris; special: none; 2 x 2 m deck, top Z=0, posts to Z=-1.2
+- **cricket_stumps**: 0.24 x 0.04 x 0.62 m (z 0.00..0.62), 704 tris; special: `bails`, `bails_geo`, `stump_0`, `stump_0_geo`, `stump_1`, `stump_1_geo`, `stump_2`, `stump_2_geo`; stump_N pivot at the base; bails rest on top
+- **ball**: 0.20 x 0.22 x 0.22 m (z -0.11..0.11), 636 tris; special: none; cricket ball radius 0.1 m, origin at centre
+- **paper_boat**: 0.13 x 0.41 x 0.22 m (z 0.00..0.22), 266 tris; special: none; paper boat, bow toward -Y
+- **kite**: 0.60 x 0.06 x 2.03 m (z -1.60..0.43), 1402 tris; special: none; diamond kite, origin at the bridle point
+- **idea_bulb**: 0.25 x 0.25 x 0.44 m (z -0.22..0.22), 1026 tris; special: none; collectible bulb, origin at centre
+- **idea_seed**: 0.73 x 0.80 x 0.35 m (z 0.00..0.35), 808 tris; special: none; glowing sprout on a pal_sky hex pad
+- **chai_cup**: 0.15 x 0.15 x 0.09 m (z 0.00..0.09), 624 tris; special: none; glass cup of chai on a saucer
+- **bird**: 0.32 x 0.25 x 0.18 m (z 0.00..0.18), 1316 tris; special: `wing_l`, `wing_l_geo`, `wing_r`, `wing_r_geo`; seagull ~0.21 m; wing_l (+X) / wing_r (-X) pivot at shoulders, flap about Y
+- **garden_tile**: 0.43 x 0.43 x 0.09 m (z 0.00..0.09), 540 tris; special: none; 0.42 m soil tile, cream rim, origin at bottom; soil top Z=0.065
+- **garden_plant_1**: 0.12 x 0.09 x 0.11 m (z 0.00..0.11), 252 tris; special: none; growth stage 1: sprout ~0.12 m
+- **garden_plant_2**: 0.16 x 0.16 x 0.23 m (z 0.00..0.23), 500 tris; special: none; growth stage 2: leafy ~0.22 m
+- **garden_plant_3**: 0.27 x 0.21 x 0.38 m (z 0.00..0.38), 1172 tris; special: none; growth stage 3: budding with two yellow flowers ~0.4 m
+- **garden_plant_4**: 0.40 x 0.31 x 0.51 m (z 0.00..0.51), 1784 tris; special: none; growth stage 4: in full bloom ~0.53 m, coral / yellow / mint flowers

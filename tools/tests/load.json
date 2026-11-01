@@ -1,0 +1,4 @@
+[ {"waitFor": "document.getElementById('loader-pct') && document.getElementById('loader-pct').textContent !== '0%'"},
+  {"waitFor": "!document.getElementById('title').hidden", "timeout": 180000},
+  {"log": "performance.getEntriesByType('resource').filter(r => r.name.includes('.js')).map(r => r.name.split('/').pop() + ' ' + Math.round(r.duration) + 'ms ' + Math.round(r.transferSize/1024) + 'KB')"},
+  {"log": "performance.now()"} ]

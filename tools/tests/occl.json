@@ -1,0 +1,11 @@
+[
+  {"waitFor": "!document.getElementById('title').hidden", "timeout": 180000},
+  {"clickSel": "#start"}, {"wait": 3500},
+  {"eval": "__game.launchAll()"}, {"wait": 8000},
+  {"eval": "(() => { const s = __game.world.props.find(p => p.name === 'school'); __game.teleport(s.x + 0.5, s.z - 3.2, 0); __game.cam.distTarget = 20; })()"},
+  {"wait": 2000, "shot": "behind-school"},
+  {"eval": "__game.toIsland('home', 0.2, 1); __game.cam.distTarget = 14"}, {"wait": 1500},
+  {"key": "w", "hold": 700}, {"shot": "walk-close"},
+  {"keys": ["w", "shift"], "hold": 800}, {"shot": "run-close"},
+  {"log": "window.__fps"}
+]

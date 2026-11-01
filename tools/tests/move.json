@@ -1,0 +1,17 @@
+[
+  {"waitFor": "!document.getElementById('title').hidden", "timeout": 180000},
+  {"clickSel": "#start"}, {"wait": 3800},
+  {"log": "[__game.player.natWalk, __game.player.natRun].map(v => +v.toFixed(2))"},
+  {"log": "__game.state().pos"},
+  {"key": "d", "hold": 2500}, {"log": "__game.state().pos"},
+  {"key": "a", "hold": 2500}, {"log": "__game.state().pos"},
+  {"keys": ["s", "shift"], "hold": 3000}, {"log": "__game.state().pos"}, {"shot": "edge"},
+  {"keys": ["s", "d"], "hold": 2000}, {"log": "__game.state().pos"}, {"shot": "slide-along"},
+  {"eval": "__game.toIsland('home', 0.2, 1)"}, {"wait": 500},
+  {"eval": "__game.game.goTo('lighthouse')"}, {"wait": 9000}, {"log": "__game.state().pos"}, {"shot": "goto"},
+  {"wait": 6000}, {"log": "__game.state()"},
+  {"eval": "__game.toIsland('timeline', 4, 6)"}, {"wait": 500},
+  {"key": "w", "hold": 3000}, {"log": "__game.state().pos"}, {"shot": "climb"},
+  {"press": "space"}, {"wait": 200}, {"log": "__game.player.pos.y.toFixed(2) + ' vy ' + __game.player.vy.toFixed(2)"}, {"wait": 1200},
+  {"log": "window.__fps"}
+]

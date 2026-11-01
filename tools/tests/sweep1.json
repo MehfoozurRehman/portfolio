@@ -1,0 +1,16 @@
+[
+  {"waitFor": "!document.getElementById('title').hidden", "timeout": 180000},
+  {"clickSel": "#start"}, {"wait": 4200, "shot": "home"},
+  {"eval": "__game.toIsland('home', 0.2, 6.2)"}, {"wait": 800},
+  {"key": "s", "hold": 1600}, {"wait": 300, "shot": "wade"}, {"log": "__game.state()"},
+  {"key": "w", "hold": 2200}, {"log": "__game.state()"},
+  {"eval": "__game.toIsland('garden', 0, 5)"}, {"wait": 2500, "shot": "garden"},
+  {"eval": "(() => { const it = __game.world.interactables.find(i => i.type === 'sit' && i.id.includes('park')); __game.teleport(it.x, it.z, 0); })()"},
+  {"wait": 700}, {"press": "e"}, {"wait": 1800, "shot": "bench"},
+  {"key": "w", "hold": 400},
+  {"eval": "(() => { const it = __game.world.interactables.find(i => i.type === 'desk'); __game.teleport(it.x, it.z, 0); })()"},
+  {"wait": 700}, {"press": "e"}, {"wait": 1500}, {"press": "esc"}, {"wait": 800, "shot": "desk"},
+  {"key": "w", "hold": 400},
+  {"eval": "__game.toIsland('home', -2.5, 5.5)"}, {"wait": 1500, "shot": "numbers"},
+  {"log": "window.__fps"}
+]

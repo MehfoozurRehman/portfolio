@@ -82,7 +82,7 @@
           ]
         },
         {
-          "source": "/_astro/**",
+          "source": "/assets/**",
           "headers": [
             {
               "key": "Cache-Control",
@@ -93,7 +93,7 @@
       ]
     },
     {
-      "site": "mehfoozurrehmanv8",
+      "site": "mehfoozurrehmanv9",
       "public": "dist",
       "ignore": [
         "firebase.json",
@@ -174,7 +174,7 @@
           ]
         },
         {
-          "source": "/_astro/**",
+          "source": "/assets/**",
           "headers": [
             {
               "key": "Cache-Control",

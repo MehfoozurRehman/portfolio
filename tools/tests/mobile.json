@@ -1,0 +1,9 @@
+[
+  {"waitFor": "!document.getElementById('title').hidden", "timeout": 180000},
+  {"wait": 800, "shot": "title"},
+  {"clickSel": "#start"}, {"wait": 4500, "shot": "start"},
+  {"log": "window.__fps"},
+  {"eval": "__game.toIsland('karobari', 0, 2.5)"}, {"wait": 2000, "shot": "karobari"},
+  {"eval": "__game.game.openPanel('project:schooliee')"}, {"wait": 900, "shot": "panel"},
+  {"log": "window.__fps"}
+]

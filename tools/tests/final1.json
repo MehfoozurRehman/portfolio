@@ -1,0 +1,9 @@
+[
+  {"waitFor": "!document.getElementById('title').hidden", "timeout": 180000},
+  {"wait": 600, "shot": "title"},
+  {"clickSel": "#start"}, {"wait": 4200, "shot": "start"},
+  {"eval": "__game.toIsland('home', -2.5, 6.4)"}, {"wait": 1500, "shot": "numbers"},
+  {"eval": "(() => { const it = __game.world.interactables.find(i => i.type === 'phone'); __game.game.launch('expo-mobile-apps'); return !!it; })()"}, {"wait": 7500},
+  {"eval": "(() => { const it = __game.world.interactables.find(i => i.type === 'phone'); __game.teleport(it.x, it.z, 0); })()"}, {"wait": 700}, {"press": "e"}, {"wait": 900, "shot": "phone"},
+  {"log": "window.__fps"}, {"log": "window.__timings"}
+]

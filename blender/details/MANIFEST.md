@@ -1,0 +1,50 @@
+# details pack: MANIFEST
+
+`details.glb` - 46 roots, 115470 triangles total, 2690 KB. Built by `build_details.py` (one command rebuilds everything). Units metres; sizes are the bounding box (x, y, z) in Blender axes (Z up, front -Y). Every mesh carries baked AO as COLOR_0 (`Col`). Palette materials only. No animations (wings, heads and fish jumps are animated by the engine). `screen` and `label` quads have UVs 0..1 and face -Y.
+
+- **duck**: 0.18 x 0.32 x 0.23 m (z -0.04..0.20), 2440 tris; special: `head`; white clay duck ~0.3 m; origin at waterline; `head` pivots at the neck
+- **duckling**: 0.10 x 0.18 x 0.13 m (z -0.02..0.11), 1912 tris; special: `head`; yellow duckling; origin at waterline; `head` pivots at the neck
+- **fish**: 0.08 x 0.27 x 0.13 m (z -0.06..0.07), 1252 tris; special: none; coral fish 0.28 m incl. tail; origin at body centre; head toward -Y
+- **rowboat**: 1.11 x 2.42 x 0.66 m (z -0.16..0.50), 4536 tris; special: none; cream-and-coral rowboat 2.4 m; origin at waterline centre; bow at -Y
+- **sailboat_toy**: 0.62 x 1.60 x 1.82 m (z -0.10..1.72), 2624 tris; special: none; toy sailboat 1.6 m long; origin at waterline centre; bow at -Y
+- **buoy**: 0.79 x 0.79 x 1.31 m (z -0.32..0.99), 1776 tris; special: none; coral and cream buoy; origin at waterline (float 0.3 m below)
+- **lily_cluster**: 0.77 x 0.70 x 0.22 m (z -0.02..0.20), 2376 tris; special: none; 3 lily pads and a lotus flower; origin at waterline
+- **butterfly**: 0.11 x 0.08 x 0.03 m (z -0.01..0.02), 1296 tris; special: `wing_l`, `wing_r`; 0.12 m wingspan; origin at centre; `wing_l` (+X) / `wing_r` (-X) hinge on the body axis (rotate about Y)
+- **seagull**: 0.91 x 0.47 x 0.17 m (z -0.07..0.10), 1840 tris; special: `wing_l`, `wing_r`; seagull, body 0.35 m; origin at centre; `wing_l` (+X) / `wing_r` (-X) pivot at the shoulder (rotate about Y)
+- **kite_bird**: 1.19 x 0.41 x 1.80 m (z -1.32..0.48), 3358 tris; special: none; bird-shaped kite 1.2 m wide; origin at the kite centre (bridle point); faces -Y; ribbon tail hangs down
+- **rickshaw**: 1.66 x 2.69 x 1.95 m (z -0.01..1.94), 10416 tris; special: none; chingchi motor-rickshaw 2.6 m, parked; coral and mint with a canopy; front at -Y
+- **bicycle**: 0.61 x 1.80 x 1.11 m (z 0.00..1.11), 5628 tris; special: none; bicycle, upright; cream frame, coral seat; front at -Y; origin between the tyre contact points
+- **bicycle_lean**: 0.60 x 1.80 x 1.14 m (z -0.05..1.09), 5628 tris; special: none; bicycle leaning 13 deg on its kickstand side; cream frame, coral seat; front at -Y; origin between the tyre contact points
+- **fruit_cart**: 1.89 x 2.14 x 2.34 m (z -0.00..2.34), 7204 tris; special: none; wooden handcart with striped umbrella and fruit piles; handles toward +Y
+- **chai_set**: 0.47 x 0.47 x 0.21 m (z 0.00..0.21), 2484 tris; special: none; kettle and four glass chai cups on a round tray, 0.46 m
+- **charpai**: 2.04 x 1.08 x 0.61 m (z 0.00..0.61), 4732 tris; special: `seat`; woven cot 2.0 x 1.0 m, painted legs; `seat` on the -Y long side facing -Y
+- **string_lights**: 4.05 x 0.09 x 0.59 m (z -0.56..0.03), 2268 tris; special: none; 4 m sagging string with 13 pal_emissive bulbs; origin at the left anchor, right anchor at (4, 0, 0); hangs 0.45 m
+- **bunting**: 4.05 x 0.05 x 0.61 m (z -0.59..0.03), 1724 tris; special: none; 4 m string of 14 triangle flags in palette colours; origin at the left anchor, right anchor at (4, 0, 0)
+- **potted_plant_a**: 0.49 x 0.48 x 0.77 m (z 0.00..0.77), 1064 tris; special: none; tall leafy plant in a terracotta-coral pot, 0.95 m
+- **potted_plant_b**: 0.50 x 0.44 x 0.67 m (z 0.00..0.67), 2160 tris; special: none; round shrub with coral flowers in a squat terracotta-coral pot, 0.65 m
+- **water_cooler**: 0.56 x 0.71 x 1.33 m (z -0.00..1.33), 2092 tris; special: none; street water cooler (sabeel) on a stand, tap at front (-Y), 1.35 m
+- **cricket_bat**: 0.11 x 0.06 x 0.88 m (z 0.00..0.88), 1336 tris; special: none; cricket bat standing upright on its toe, 0.86 m; face toward -Y
+- **kids_ball**: 0.36 x 0.36 x 0.37 m (z 0.00..0.37), 964 tris; special: none; beach ball 0.36 m, six coloured gores; origin at its bottom
+- **parcel**: 0.42 x 0.33 x 0.29 m (z 0.00..0.29), 460 tris; special: none; cardboard box 0.42 x 0.32 x 0.28 m with tape and a shipping tag
+- **mail_sack**: 0.54 x 0.51 x 0.71 m (z 0.00..0.71), 1320 tris; special: none; canvas mail sack 0.65 m with envelopes poking out
+- **laptop_open**: 0.36 x 0.32 x 0.25 m (z 0.00..0.25), 494 tris; special: `screen`; small open laptop 0.36 m; `screen` quad on the lid faces -Y (tilted back 15 deg)
+- **phone_giant**: 0.80 x 0.42 x 1.20 m (z 0.00..1.20), 1338 tris; special: `screen`; 1.2 m phone sculpture on a plinth, leaning back 6 deg; `screen` quad faces -Y
+- **app_balloon**: 0.54 x 0.36 x 1.81 m (z -0.02..1.79), 1696 tris; special: none; rounded-square app-icon balloon, coral, 1.75 m tall; origin at the bottom of the string (tie point)
+- **crate_fruit**: 0.56 x 0.42 x 0.33 m (z -0.00..0.33), 2712 tris; special: none; shallow wooden crate 0.52 x 0.38 x 0.3 m heaped with oranges
+- **sack_grain**: 0.53 x 0.53 x 0.63 m (z 0.00..0.63), 1140 tris; special: none; open burlap sack of grain with a scoop, 0.55 m
+- **barrel_small**: 0.43 x 0.43 x 0.53 m (z 0.00..0.53), 1740 tris; special: none; small wooden barrel 0.52 m with coral hoops and a lid
+- **bollard**: 0.42 x 0.65 x 0.56 m (z 0.00..0.56), 924 tris; special: none; harbour bollard 0.55 m, cream with a coral cap and a rope loop
+- **rope_coil**: 0.57 x 0.50 x 0.26 m (z 0.00..0.26), 1604 tris; special: none; coiled rope 0.5 m across with a loose end
+- **lantern**: 0.28 x 0.28 x 0.46 m (z -0.45..0.01), 1108 tris; special: none; hanging lantern 0.45 m with pal_emissive glass; origin at the hang point (top of the ring), body hangs below
+- **street_lamp_double**: 1.72 x 0.46 x 3.05 m (z 0.00..3.05), 3112 tris; special: none; 3.3 m double street lamp, cream post, two pal_emissive globes on curled arms
+- **bench_picnic**: 1.60 x 1.56 x 0.79 m (z -0.02..0.77), 2396 tris; special: `seat`; picnic table 1.6 m with attached benches; `seat` on the -Y bench facing the table (+Y)
+- **umbrella_beach**: 1.99 x 1.97 x 2.27 m (z -0.00..2.27), 1456 tris; special: none; beach umbrella 2.3 m, coral and cream stripes, slight tilt
+- **sun_lounger**: 0.66 x 1.82 x 0.91 m (z 0.00..0.91), 1996 tris; special: none; wooden sun lounger 1.85 m with striped cushions; feet at -Y, backrest at +Y
+- **bin**: 0.57 x 0.57 x 0.95 m (z 0.00..0.95), 736 tris; special: none; rounded street bin 0.9 m, mint with a cream lid and coral flap
+- **notice_pillar**: 1.06 x 1.06 x 2.67 m (z 0.00..2.67), 1466 tris; special: `label`; round advertising pillar 2.6 m; `label` quad on the front board faces -Y
+- **bus_stop**: 3.12 x 1.44 x 2.47 m (z 0.00..2.47), 3282 tris; special: `label`, `seat`; small bus shelter 2.6 x 1.3 m; `label` quad on the roof fascia faces -Y; `seat` on the bench facing -Y
+- **fountain**: 2.40 x 2.40 x 1.66 m (z 0.00..1.66), 3888 tris; special: none; round fountain 2.4 m, cream basin with pal_water water and a two-tier spout
+- **cat**: 0.30 x 0.32 x 0.48 m (z -0.00..0.48), 2868 tris; special: none; sitting cat 0.45 m, cream with coral patches; faces -Y
+- **cat_sleep**: 0.41 x 0.39 x 0.20 m (z -0.02..0.18), 1844 tris; special: none; curled sleeping cat 0.4 m across, cream with coral patches
+- **dog**: 0.37 x 0.55 x 0.59 m (z -0.00..0.58), 3416 tris; special: none; friendly sitting dog 0.6 m, sand with wood ears and a coral collar; faces -Y
+- **goat**: 0.32 x 0.90 x 0.81 m (z -0.00..0.81), 3364 tris; special: none; small cream goat 0.75 m tall, standing; faces -Y; a coral collar with a bell
