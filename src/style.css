@@ -70,6 +70,8 @@ kbd { display: inline-grid; place-items: center; min-width: 26px; height: 26px; 
 .ic { width: 18px; height: 18px; display: inline-block; background: currentColor; mask-size: contain; mask-repeat: no-repeat; mask-position: center; -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; -webkit-mask-position: center; }
 .ic-map { -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linejoin='round'%3E%3Cpath d='M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3z'/%3E%3Cpath d='M9 3v15M15 6v15'/%3E%3C/svg%3E"); mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linejoin='round'%3E%3Cpath d='M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3z'/%3E%3Cpath d='M9 3v15M15 6v15'/%3E%3C/svg%3E"); }
 .ic-sound { -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 9v6h4l5 4V5L8 9z'/%3E%3Cpath d='M16 9a4 4 0 010 6M19 6a8 8 0 010 12'/%3E%3C/svg%3E"); mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 9v6h4l5 4V5L8 9z'/%3E%3Cpath d='M16 9a4 4 0 010 6M19 6a8 8 0 010 12'/%3E%3C/svg%3E"); }
+.ic-mail { -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linejoin='round'%3E%3Crect x='3' y='5' width='18' height='14' rx='3'/%3E%3Cpath d='M4 7l8 6 8-6'/%3E%3C/svg%3E"); mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linejoin='round'%3E%3Crect x='3' y='5' width='18' height='14' rx='3'/%3E%3Cpath d='M4 7l8 6 8-6'/%3E%3C/svg%3E"); }
+.chip-contact { background: var(--coral); color: #fff; }
 #btn-sound[aria-pressed="false"] { opacity: 0.55; }
 .ic-time { -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='4.5'/%3E%3Cpath d='M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4'/%3E%3C/svg%3E"); mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='4.5'/%3E%3Cpath d='M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4'/%3E%3C/svg%3E"); }
 #btn-time[data-mode="night"] { background: #2B2F5C; color: #F6E7B5; }
@@ -205,3 +207,26 @@ body.is-touch .prompt { bottom: max(170px, calc(env(safe-area-inset-bottom) + 16
   .panel-body h2 { font-size: 26px; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+
+/* contact form (lighthouse panel and classic view) */
+.contact-form { display: grid; gap: 12px; margin: 16px 0 8px; max-width: 520px; }
+.contact-form label { display: grid; gap: 6px; }
+.contact-form label span { font: 700 12px var(--display); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.contact-form input, .contact-form textarea { width: 100%; box-sizing: border-box; padding: 12px 14px; border: 0; border-radius: 14px; background: #fff; color: var(--ink); font: 500 16px var(--body); box-shadow: inset 0 0 0 1.5px var(--line); outline: none; resize: vertical; }
+.contact-form input:focus, .contact-form textarea:focus { box-shadow: inset 0 0 0 2px var(--coral); }
+.contact-form .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.contact-form button { justify-self: start; }
+.contact-form button:disabled { opacity: 0.7; cursor: wait; }
+.form-status { margin: 0; min-height: 1.2em; font: 600 14px var(--body); }
+.form-status[data-kind="ok"] { color: var(--deep); }
+.form-status[data-kind="error"] { color: var(--coral-deep); }
+.contact-or { margin: 18px 0 4px; font: 700 12px var(--display); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+
+/* narrow phones: avatar-only brand and tighter chips so every HUD button fits */
+@media (max-width: 440px) {
+  .brand { padding: 4px; }
+  .brand span { display: none; }
+  .hud-right { gap: 6px; }
+  .chip { height: 40px; min-width: 40px; padding: 0 11px; white-space: nowrap; }
+  .brand img { width: 36px; height: 36px; }
+}

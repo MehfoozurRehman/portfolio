@@ -13,6 +13,7 @@
     "deploy": "pnpm build && firebase deploy --only hosting"
   },
   "dependencies": {
+    "@emailjs/browser": "^5.0.3",
     "gsap": "3.12.7",
     "three": "0.171.0"
   },

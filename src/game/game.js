@@ -6,6 +6,7 @@ import { work, process, testimonials, profile } from '@shared/content.js';
 import { bulbFacts } from '../world/map.js';
 import { makeGlowSprite } from './fx.js';
 import { sampleHips } from './player.js';
+import { track } from '../core/analytics.js';
 
 const V = (x, y, z) => new THREE.Vector3(x, y, z);
 const SIT_DROP = 0.0; // the seat empties are at hip height; the sit clip lowers the hips itself
@@ -658,6 +659,7 @@ export class Game {
         d.launched = true;
         d.building = false;
         this.state.launched.add(slug);
+        track('project_launch', { project: slug, launched_count: this.state.launched.size });
         if (d.seed) { gsap.to(d.seed.scale, { x: 0.01, y: 0.01, z: 0.01, duration: 0.4 }); }
         if (d.glow) d.glow.visible = false;
         this.fx.confetti(center.clone().add(V(0, 2, 0)), 90, 7);
@@ -721,6 +723,7 @@ export class Game {
       if (this.state.visited.has(pl.id)) continue;
       if (Math.hypot(pl.x - p.x, pl.z - p.z) < 6) {
         this.state.visited.add(pl.id);
+        track('island_visit', { island: pl.id });
         if (this.state.started && pl.id !== 'home') {
           this.ui.toast(`Discovered: ${pl.name}`, pl.project ? 'Find the glowing seed to launch it.' : '', '📍', 3000);
           this.audio.pop();

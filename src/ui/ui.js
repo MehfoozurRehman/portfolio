@@ -3,6 +3,8 @@ import * as THREE from 'three';
 import { profile, hero, about, services, process, work, experience, education, stack, testimonials, contact, socials } from '@shared/content.js';
 import github from '../data/github.json';
 import { timeline } from '../world/builder.js';
+import { contactFormHTML, bindContactForms } from './contact.js';
+import { track } from '../core/analytics.js';
 
 const $ = (s) => document.querySelector(s);
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -26,6 +28,13 @@ export class UI {
     $('#map-close').addEventListener('click', () => this.closeMap());
     $('#map').addEventListener('click', (e) => { if (e.target.id === 'map') this.closeMap(); });
     this.panelBody.addEventListener('click', (e) => this.handlePanelClick(e));
+    bindContactForms(this.panelBody);
+    bindContactForms($('#classic'));
+    // Outbound links (projects, socials, WhatsApp, GitHub) from anywhere in the UI.
+    addEventListener('click', (e) => {
+      const a = e.target.closest('a[href^="http"]');
+      if (a) track('click', { link_url: a.href, link_text: a.textContent.trim().slice(0, 60), outbound: true });
+    });
   }
 
   // ---------- prompt ----------
@@ -97,6 +106,8 @@ export class UI {
     this.panelOpen = true;
     this.onClose = onClose || null;
     this.panelBody.scrollTop = 0;
+    const [kind, arg] = id.split(/:(.*)/s);
+    track('panel_open', { panel: kind, item: arg || kind });
     setTimeout(() => $('#panel-close').focus({ preventScroll: true }), 50);
     return true;
   }
@@ -202,6 +213,8 @@ export class UI {
     }
     if (kind === 'contact') {
       return `<p class="kicker">Lighthouse post</p><h2>${esc(contact.heading)}</h2><p>${esc(contact.body)}</p>
+        ${contactFormHTML('lighthouse')}
+        <p class="contact-or">Or reach me directly</p>
         <div class="copyline"><span>${esc(profile.email)}</span><button type="button" data-copy="${esc(profile.email)}">Copy</button></div>
         <div class="copyline"><span>${esc(profile.phone)}</span><button type="button" data-copy="${esc(profile.phone)}">Copy</button></div>
         <div class="actions"><a class="btn btn-primary btn-small" href="${profile.whatsapp}" target="_blank" rel="noopener">Message on WhatsApp ↗</a></div>
@@ -265,6 +278,7 @@ export class UI {
     el.hidden = false;
     el.focus({ preventScroll: true });
     this.classicOpen = true;
+    track('classic_view_open');
   }
   closeClassic() { $('#classic').hidden = true; this.classicOpen = false; }
 }
@@ -290,6 +304,8 @@ function classicHTML() {
     <h2>GitHub</h2><p>${(github.total?.lastYear ?? 0).toLocaleString('en-US')} contributions in the last year across ${esc(github.user.publicRepos)} public repositories.</p>
     <h2>${esc(testimonials.heading)}</h2><div class="c-grid">${testimonials.items.map((t) => `<blockquote class="c-card" style="margin:0"><p class="quote">"${esc(t.quote)}"</p><p><b>${esc(t.name)}</b>, ${esc(t.role)}</p></blockquote>`).join('')}</div>
     <h2>${esc(contact.heading)}</h2><p>${esc(contact.body)}</p>
+    ${contactFormHTML('classic')}
+    <p class="contact-or">Or reach me directly</p>
     <div style="max-width:520px"><div class="copyline"><span>${esc(profile.email)}</span><button type="button" data-copy="${esc(profile.email)}">Copy</button></div><div class="copyline"><span>${esc(profile.phone)}</span><button type="button" data-copy="${esc(profile.phone)}">Copy</button></div></div>
     <div class="actions"><a class="btn btn-primary" href="${profile.whatsapp}" target="_blank" rel="noopener">Message on WhatsApp ↗</a></div>
     <div class="socials">${socials.map((s) => `<a href="${s.href}" target="_blank" rel="noopener">${esc(s.label)} ↗</a>`).join('')}</div>

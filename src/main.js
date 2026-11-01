@@ -18,6 +18,7 @@ import { Player } from './game/player.js';
 import { FollowCamera } from './game/camera.js';
 import { FX } from './game/fx.js';
 import { Game } from './game/game.js';
+import { track } from './core/analytics.js';
 import { UI } from './ui/ui.js';
 
 const $ = (s) => document.querySelector(s);
@@ -137,6 +138,7 @@ async function boot() {
   const startGame = () => {
     if (!titleMode) return;
     titleMode = false;
+    track('game_start', { device: touch ? 'touch' : 'desktop' });
     $('#title').hidden = true;
     $('#hud').hidden = false;
     $('#progress').hidden = false;
@@ -158,6 +160,7 @@ async function boot() {
   $('#classic-open-title').addEventListener('click', () => ui.openClassic());
   $('#btn-classic').addEventListener('click', () => ui.openClassic());
   $('#brand').addEventListener('click', () => game.openPanel('about'));
+  $('#btn-contact').addEventListener('click', () => game.openPanel('contact'));
   $('#btn-map').addEventListener('click', () => ui.openMap(world, player, (id) => game.goTo(id)));
   $('#btn-time').addEventListener('click', () => { day.next(); audio.open(); });
   $('#btn-sound').addEventListener('click', (e) => {

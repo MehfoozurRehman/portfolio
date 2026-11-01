@@ -32,3 +32,6 @@ yarn-error.log*
 # playtest output
 /dist
 /shots
+
+# session working copy of the 3D build (concepts, scratch), not part of the site
+/portfolio-3d

@@ -1,0 +1,15 @@
+[
+  {"waitFor": "!document.getElementById('title').hidden", "timeout": 180000},
+  {"clickSel": "#start"}, {"wait": 3000},
+  {"eval": "document.getElementById('btn-contact').click()"}, {"wait": 800, "shot": "contact-panel"},
+  {"eval": "document.querySelector('#panel [data-contact-form] button[type=submit]').click()"},
+  {"log": "document.querySelector('#panel .form-status').textContent"},
+  {"eval": "(() => { const f = document.querySelector('#panel [data-contact-form]'); f.elements.name.value = 'Test'; f.elements.email.value = 'not-an-email'; f.elements.project.value = 'hi'; f.requestSubmit(); })()"},
+  {"log": "document.querySelector('#panel .form-status').dataset.kind"},
+  {"eval": "(() => { const i = document.querySelector('#panel [data-contact-form] input[name=name]'); i.focus(); i.dispatchEvent(new KeyboardEvent('keydown', { key: 'w', bubbles: true })); })()"},
+  {"log": "__game.input.keys.has('w')"},
+  {"wait": 300, "shot": "contact-error"},
+  {"eval": "__game.ui.closePanel(); __game.ui.openClassic()"},
+  {"log": "!!document.querySelector('#classic [data-contact-form]')"},
+  {"eval": "(() => { const c = document.getElementById('classic'); c.scrollTop = c.scrollHeight; })()"}, {"wait": 500, "shot": "classic-contact"}
+]
