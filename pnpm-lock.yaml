@@ -22,8 +22,8 @@ importers:
         specifier: 4.1.1
         version: 4.1.1
       '@gltf-transform/extensions':
-        specifier: 4.1.1
-        version: 4.1.1
+        specifier: 4.5.1
+        version: 4.5.1
       '@gltf-transform/functions':
         specifier: 4.5.1
         version: 4.5.1(@types/node@26.6.6)
@@ -207,9 +207,6 @@ packages:
 
   '@gltf-transform/core@4.5.1':
     resolution: {integrity: sha512-OWgBYssKHKoXMIrMb2N20jXqWRnMP9HdtcTFQBEAJtz4P+OOxx5fozl5eAeK7nktIs5uDE/lu4NbkE5VCZaR9g==}
-
-  '@gltf-transform/extensions@4.1.1':
-    resolution: {integrity: sha512-WQG21HmSd8dhNZfGLPtrZGoBb3VLR2buYl/P76hw9nk9G+CswYWRNC28N9q1y2QVcx2ZODf57Np5bvASNmXKFw==}
 
   '@gltf-transform/extensions@4.5.1':
     resolution: {integrity: sha512-3jTe+GWRy4fj1TU790LPsO+rpO/4byUWPTpNkjy6M6h8RvrUivRf12Mptc0770K4ZczibpJDNHXZFkFsFMRDLA==}
@@ -660,9 +657,6 @@ packages:
     resolution: {integrity: sha512-AC/7JofJvZGrrneWNaEnJeOLUx+JlGt7tNa0wZiRPT4MY1wmfKjt2+6O2p2uz2+skll8OZZmJMNqeke7kKbNgQ==}
     hasBin: true
 
-  ktx-parse@0.7.1:
-    resolution: {integrity: sha512-FeA3g56ksdFNwjXJJsc1CCc7co+AJYDp6ipIp878zZ2bU8kWROatLYf39TQEd4/XRSUvBXovQ8gaVKWPXsCLEQ==}
-
   ktx-parse@1.1.0:
     resolution: {integrity: sha512-mKp3y+FaYgR7mXWAbyyzpa/r1zDWeaunH+INJO4fou3hb45XuNSwar+7llrRyvpMWafxSIi99RNFJ05MHedaJQ==}
 
@@ -1035,11 +1029,6 @@ snapshots:
     dependencies:
       property-graph: 4.1.0
 
-  '@gltf-transform/extensions@4.1.1':
-    dependencies:
-      '@gltf-transform/core': 4.1.1
-      ktx-parse: 0.7.1
-
   '@gltf-transform/extensions@4.5.1':
     dependencies:
       '@gltf-transform/core': 4.5.1
@@ -1375,8 +1364,6 @@ snapshots:
 
   jiti@2.7.0:
     optional: true
-
-  ktx-parse@0.7.1: {}
 
   ktx-parse@1.1.0: {}
 

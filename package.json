@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@gltf-transform/core": "4.1.1",
-    "@gltf-transform/extensions": "4.1.1",
+    "@gltf-transform/extensions": "4.5.1",
     "@gltf-transform/functions": "4.5.1",
     "pdfkit": "^0.20.2",
     "puppeteer-core": "25.16.0",
