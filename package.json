@@ -15,7 +15,7 @@
   "dependencies": {
     "@emailjs/browser": "^5.0.3",
     "gsap": "3.12.7",
-    "three": "0.171.0"
+    "three": "0.187.0"
   },
   "devDependencies": {
     "@gltf-transform/core": "4.1.1",
