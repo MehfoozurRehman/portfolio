@@ -4,9 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "node init && vite",
-    "build": "node init && node scripts/fetch-github.mjs && vite build",
-    "build:site": "node init && vite build",
+    "dev": "vite",
+    "build": "node scripts/fetch-github.mjs && vite build",
+    "build:site": "vite build",
     "preview": "vite preview",
     "playtest": "node tools/shoot.mjs dist shots --scenario",
     "generate:cv": "node scripts/generate-cv-pdf.mjs",
