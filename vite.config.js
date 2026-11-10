@@ -1,9 +1,5 @@
 import { defineConfig } from 'vite';
 import path from 'node:path';
-import { createRequire } from 'module';
-
-const require = createRequire(import.meta.url);
-
 // Launch Isles: a static Vite build served from Firebase Hosting (dist/).
 // The Blender packs in src/models are emitted as separate .glb files (cached by the browser),
 // and @shared points at the portfolio content and loaders.
