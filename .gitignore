@@ -35,3 +35,6 @@ yarn-error.log*
 /portfolio-3d
 
 .env
+
+.env*
+!.env.example
